@@ -1,0 +1,19 @@
+# CryptoBeacon
+
+> Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and the wider digital-asset ecosystem.
+
+CryptoBeacon publishes editorial coverage of cryptocurrency markets, blockchain infrastructure, and crypto security with a focus on rigor and clarity.
+
+## Pages
+
+- [Home](/): Latest intelligence across crypto markets and blockchain infrastructure.
+- [News](/news): Daily crypto news, regulatory shifts, and market intelligence.
+- [Guides](/guides): Long-form guides on self-custody, DeFi, on-chain analytics, and adoption.
+- [Security](/security): Wallet safety, phishing awareness, and rug-pull forensics.
+- [Bitcoin](/bitcoin): Analysis of Bitcoin architecture, halving cycles, and network health.
+- [Ethereum](/ethereum): Coverage of Ethereum rollups, staking, EIPs, and the scaling roadmap.
+
+## Optional
+
+- [Privacy Policy](/privacy): How CryptoBeacon handles user data.
+- [Terms of Service](/terms): Terms governing use of CryptoBeacon.
