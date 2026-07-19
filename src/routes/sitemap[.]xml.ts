@@ -21,6 +21,11 @@ export const Route = createFileRoute("/sitemap.xml")({
             changefreq: "monthly",
             priority: "0.9",
           },
+          {
+            path: "/news/what-is-a-blockchain-fork",
+            changefreq: "monthly",
+            priority: "0.9",
+          },
           { path: "/guides", changefreq: "weekly", priority: "0.8" },
           { path: "/security", changefreq: "weekly", priority: "0.8" },
           {

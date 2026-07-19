@@ -26,6 +26,7 @@ import { Route as BitcoinIndexRouteImport } from './routes/bitcoin.index'
 import { Route as SecurityHowToStoreCryptoSeedPhraseSafelyRouteImport } from './routes/security.how-to-store-crypto-seed-phrase-safely'
 import { Route as SecurityHowToAvoidCryptoPhishingScamsRouteImport } from './routes/security.how-to-avoid-crypto-phishing-scams'
 import { Route as NewsWhyGovernmentsRegulateCryptocurrencyRouteImport } from './routes/news.why-governments-regulate-cryptocurrency'
+import { Route as NewsWhatIsABlockchainForkRouteImport } from './routes/news.what-is-a-blockchain-fork'
 import { Route as GuidesNotYourKeysNotYourCoinsMeaningRouteImport } from './routes/guides.not-your-keys-not-your-coins-meaning'
 import { Route as EthereumCanYouSendBitcoinToAnEthereumAddressRouteImport } from './routes/ethereum.can-you-send-bitcoin-to-an-ethereum-address'
 import { Route as BitcoinHowToSendBitcoinSafelyRouteImport } from './routes/bitcoin.how-to-send-bitcoin-safely'
@@ -118,6 +119,12 @@ const NewsWhyGovernmentsRegulateCryptocurrencyRoute =
     path: '/why-governments-regulate-cryptocurrency',
     getParentRoute: () => NewsRoute,
   } as any)
+const NewsWhatIsABlockchainForkRoute =
+  NewsWhatIsABlockchainForkRouteImport.update({
+    id: '/what-is-a-blockchain-fork',
+    path: '/what-is-a-blockchain-fork',
+    getParentRoute: () => NewsRoute,
+  } as any)
 const GuidesNotYourKeysNotYourCoinsMeaningRoute =
   GuidesNotYourKeysNotYourCoinsMeaningRouteImport.update({
     id: '/not-your-keys-not-your-coins-meaning',
@@ -150,6 +157,7 @@ export interface FileRoutesByFullPath {
   '/bitcoin/how-to-send-bitcoin-safely': typeof BitcoinHowToSendBitcoinSafelyRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
   '/guides/not-your-keys-not-your-coins-meaning': typeof GuidesNotYourKeysNotYourCoinsMeaningRoute
+  '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
   '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
@@ -167,6 +175,7 @@ export interface FileRoutesByTo {
   '/bitcoin/how-to-send-bitcoin-safely': typeof BitcoinHowToSendBitcoinSafelyRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
   '/guides/not-your-keys-not-your-coins-meaning': typeof GuidesNotYourKeysNotYourCoinsMeaningRoute
+  '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
   '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
@@ -190,6 +199,7 @@ export interface FileRoutesById {
   '/bitcoin/how-to-send-bitcoin-safely': typeof BitcoinHowToSendBitcoinSafelyRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
   '/guides/not-your-keys-not-your-coins-meaning': typeof GuidesNotYourKeysNotYourCoinsMeaningRoute
+  '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
   '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
@@ -214,6 +224,7 @@ export interface FileRouteTypes {
     | '/bitcoin/how-to-send-bitcoin-safely'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
     | '/guides/not-your-keys-not-your-coins-meaning'
+    | '/news/what-is-a-blockchain-fork'
     | '/news/why-governments-regulate-cryptocurrency'
     | '/security/how-to-avoid-crypto-phishing-scams'
     | '/security/how-to-store-crypto-seed-phrase-safely'
@@ -231,6 +242,7 @@ export interface FileRouteTypes {
     | '/bitcoin/how-to-send-bitcoin-safely'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
     | '/guides/not-your-keys-not-your-coins-meaning'
+    | '/news/what-is-a-blockchain-fork'
     | '/news/why-governments-regulate-cryptocurrency'
     | '/security/how-to-avoid-crypto-phishing-scams'
     | '/security/how-to-store-crypto-seed-phrase-safely'
@@ -253,6 +265,7 @@ export interface FileRouteTypes {
     | '/bitcoin/how-to-send-bitcoin-safely'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
     | '/guides/not-your-keys-not-your-coins-meaning'
+    | '/news/what-is-a-blockchain-fork'
     | '/news/why-governments-regulate-cryptocurrency'
     | '/security/how-to-avoid-crypto-phishing-scams'
     | '/security/how-to-store-crypto-seed-phrase-safely'
@@ -396,6 +409,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsWhyGovernmentsRegulateCryptocurrencyRouteImport
       parentRoute: typeof NewsRoute
     }
+    '/news/what-is-a-blockchain-fork': {
+      id: '/news/what-is-a-blockchain-fork'
+      path: '/what-is-a-blockchain-fork'
+      fullPath: '/news/what-is-a-blockchain-fork'
+      preLoaderRoute: typeof NewsWhatIsABlockchainForkRouteImport
+      parentRoute: typeof NewsRoute
+    }
     '/guides/not-your-keys-not-your-coins-meaning': {
       id: '/guides/not-your-keys-not-your-coins-meaning'
       path: '/not-your-keys-not-your-coins-meaning'
@@ -463,11 +483,13 @@ const GuidesRouteWithChildren =
   GuidesRoute._addFileChildren(GuidesRouteChildren)
 
 interface NewsRouteChildren {
+  NewsWhatIsABlockchainForkRoute: typeof NewsWhatIsABlockchainForkRoute
   NewsWhyGovernmentsRegulateCryptocurrencyRoute: typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
   NewsIndexRoute: typeof NewsIndexRoute
 }
 
 const NewsRouteChildren: NewsRouteChildren = {
+  NewsWhatIsABlockchainForkRoute: NewsWhatIsABlockchainForkRoute,
   NewsWhyGovernmentsRegulateCryptocurrencyRoute:
     NewsWhyGovernmentsRegulateCryptocurrencyRoute,
   NewsIndexRoute: NewsIndexRoute,

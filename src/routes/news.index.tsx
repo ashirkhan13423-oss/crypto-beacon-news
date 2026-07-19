@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import regulationHero from "@/assets/news-crypto-regulation.jpg";
+import blockchainForkHero from "@/assets/news-blockchain-fork.png";
 
 export const Route = createFileRoute("/news/")({
   head: () => ({
@@ -75,6 +76,33 @@ function NewsHub() {
               <p className="font-body-md text-body-md text-on-surface-variant">
                 A plain-language explainer on why governments regulate crypto, the main categories
                 of rules, and what that means for everyday users.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            to="/news/what-is-a-blockchain-fork"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden border-b border-outline-variant">
+              <img
+                src={blockchainForkHero}
+                alt="Abstract illustration representing a blockchain splitting into two separate paths"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                News · Explainer
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                What Is a Blockchain Fork?
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A plain-language explainer on what a blockchain fork is, the difference between hard and soft forks, and why cryptocurrencies sometimes split into two.
               </p>
             </div>
           </Link>
