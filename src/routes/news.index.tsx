@@ -3,6 +3,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import regulationHero from "@/assets/news-crypto-regulation.jpg";
 import blockchainForkHero from "@/assets/news-blockchain-fork.png";
+import { Newspaper } from "lucide-react";
+
 
 export const Route = createFileRoute("/news/")({
   head: () => ({
@@ -19,9 +21,9 @@ export const Route = createFileRoute("/news/")({
         content:
           "Evergreen explainers and editorial coverage of the crypto industry, its rules, and what they mean for everyday users.",
       },
-      { property: "og:url", content: "https://cryptobeaconnews.lovable.app/news" },
+      { property: "og:url", content: "https://crypto-beacon-news.vercel.app/news" },
     ],
-    links: [{ rel: "canonical", href: "https://cryptobeaconnews.lovable.app/news" }],
+    links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/news" }],
   }),
   component: NewsHub,
 });
@@ -34,12 +36,7 @@ function NewsHub() {
         <header className="mb-xl border-b border-outline-variant pb-lg">
           <div className="flex items-center space-x-md mb-md">
             <div className="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant">
-              <span
-                className="material-symbols-outlined text-on-surface-variant"
-                style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }}
-              >
-                newspaper
-              </span>
+              <Newspaper className="text-on-surface-variant" style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }} />
             </div>
             <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary">
               News

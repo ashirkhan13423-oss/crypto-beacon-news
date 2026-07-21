@@ -2,8 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/exchange-vs-wallet.png";
+import { CheckSquare, Plus } from "lucide-react";
 
-const URL = "https://cryptobeaconnews.lovable.app/guides/exchange-or-personal-wallet-crypto-storage";
+
+const URL = "https://crypto-beacon-news.vercel.app/guides/exchange-or-personal-wallet-crypto-storage";
 const TITLE = "Exchange or Personal Wallet? A Crypto Storage Guide | CryptoBeacon";
 const DESC =
   "Should your crypto stay on an exchange or move to your own wallet? A clear, neutral decision framework based on how you actually use your crypto.";
@@ -41,11 +43,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://cryptobeaconnews.lovable.app/favicon.png",
+      url: "https://crypto-beacon-news.vercel.app/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://cryptobeaconnews.lovable.app${hero}`,
+  image: `https://crypto-beacon-news.vercel.app${hero}`,
 };
 
 const faqSchema = {
@@ -298,17 +300,13 @@ function ArticlePage() {
         <P>Ask yourself:</P>
         <ul className="my-md space-y-sm">
           <li className="flex items-start gap-sm p-md rounded-lg border border-outline-variant bg-surface-container-lowest">
-            <span aria-hidden className="material-symbols-outlined text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }}>
-              check_box
-            </span>
+            <CheckSquare aria-hidden className="text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }} />
             <span className="font-body-md text-body-md text-on-surface leading-relaxed">
               <strong>Do I plan to trade this soon, or hold it long-term?</strong> Frequent trading favors exchange convenience; long-term holding favors self-custody.
             </span>
           </li>
           <li className="flex items-start gap-sm p-md rounded-lg border border-outline-variant bg-surface-container-lowest">
-            <span aria-hidden className="material-symbols-outlined text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }}>
-              check_box
-            </span>
+            <CheckSquare aria-hidden className="text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }} />
             <span className="font-body-md text-body-md text-on-surface leading-relaxed">
               <strong>Am I comfortable managing a seed phrase safely?</strong> If not yet, that's worth addressing (see our guide to{" "}
               <Link
@@ -321,17 +319,13 @@ function ArticlePage() {
             </span>
           </li>
           <li className="flex items-start gap-sm p-md rounded-lg border border-outline-variant bg-surface-container-lowest">
-            <span aria-hidden className="material-symbols-outlined text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }}>
-              check_box
-            </span>
+            <CheckSquare aria-hidden className="text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }} />
             <span className="font-body-md text-body-md text-on-surface leading-relaxed">
               <strong>How would I feel if this specific platform had a serious problem tomorrow?</strong> If the answer is "that would be a serious loss," that's a signal to reduce exchange-held exposure.
             </span>
           </li>
           <li className="flex items-start gap-sm p-md rounded-lg border border-outline-variant bg-surface-container-lowest">
-            <span aria-hidden className="material-symbols-outlined text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }}>
-              check_box
-            </span>
+            <CheckSquare aria-hidden className="text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }} />
             <span className="font-body-md text-body-md text-on-surface leading-relaxed">
               <strong>Have I tested a small self-custody transfer before moving a large amount?</strong> Confirming a wallet works correctly with a{" "}
               <Link
@@ -363,9 +357,7 @@ function ArticlePage() {
             <details key={f.q} className="group py-md">
               <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
                 <span>{f.q}</span>
-                <span className="material-symbols-outlined text-secondary transition-transform group-open:rotate-45">
-                  add
-                </span>
+                <Plus className="text-secondary transition-transform group-open:rotate-45" />
               </summary>
               <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
                 {f.a}

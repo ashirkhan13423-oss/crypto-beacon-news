@@ -1,4 +1,6 @@
 import { Link } from "@tanstack/react-router";
+import { Search, Menu } from "lucide-react";
+
 
 const navLinks: { label: string; to: string }[] = [
   { label: "News", to: "/news" },
@@ -8,6 +10,7 @@ const navLinks: { label: string; to: string }[] = [
   { label: "Ethereum", to: "/ethereum" },
   { label: "Privacy", to: "/privacy" },
   { label: "Terms", to: "/terms" },
+  { label: "About", to: "/about" },
 ];
 
 export function SiteHeader() {
@@ -37,11 +40,11 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="flex items-center gap-md text-primary">
-          <Link to="/search" aria-label="Search" className="material-symbols-outlined cursor-pointer hover:text-secondary transition-all bg-transparent border-0 p-0 flex items-center justify-center">
-            search
+          <Link to="/search" aria-label="Search" className="cursor-pointer hover:text-secondary transition-all bg-transparent border-0 p-0 flex items-center justify-center">
+            <Search />
           </Link>
-          <button type="button" aria-label="Open menu" className="material-symbols-outlined cursor-pointer hover:text-secondary transition-all md:hidden bg-transparent border-0 p-0">
-            menu
+          <button type="button" aria-label="Open menu" className="cursor-pointer hover:text-secondary transition-all md:hidden bg-transparent border-0 p-0">
+            <Menu />
           </button>
         </div>
       </div>

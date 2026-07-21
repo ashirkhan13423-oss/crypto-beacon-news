@@ -2,8 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroImage from "@/assets/ethereum-address-mismatch.png";
+import { ChevronDown } from "lucide-react";
 
-const URL = "https://cryptobeaconnews.lovable.app/ethereum/can-you-send-bitcoin-to-an-ethereum-address";
+
+const URL = "https://crypto-beacon-news.vercel.app/ethereum/can-you-send-bitcoin-to-an-ethereum-address";
 const TITLE = "Can You Send Bitcoin to an Ethereum Address? What Actually Happens | CryptoBeacon";
 const DESC =
   "Worried you sent Bitcoin to an Ethereum address by mistake? Here's what actually happens, why it's rarer than you think, and what to check.";
@@ -41,11 +43,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://cryptobeaconnews.lovable.app/favicon.png",
+      url: "https://crypto-beacon-news.vercel.app/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://cryptobeaconnews.lovable.app${heroImage}`,
+  image: `https://crypto-beacon-news.vercel.app${heroImage}`,
 };
 
 const faqSchema = {
@@ -324,9 +326,7 @@ function ArticlePage() {
             >
               <summary className="flex cursor-pointer items-center justify-between p-lg font-headline-sm text-headline-sm text-primary group-hover:text-secondary">
                 {faq.q}
-                <span className="material-symbols-outlined text-on-surface-variant transition-transform group-open:rotate-180">
-                  expand_more
-                </span>
+                <ChevronDown className="text-on-surface-variant transition-transform group-open:rotate-180" />
               </summary>
               <div className="px-lg pb-lg pt-0">
                 <p className="font-body-md text-body-md text-on-surface leading-relaxed">

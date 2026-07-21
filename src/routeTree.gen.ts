@@ -18,6 +18,7 @@ import { Route as NewsRouteImport } from './routes/news'
 import { Route as GuidesRouteImport } from './routes/guides'
 import { Route as EthereumRouteImport } from './routes/ethereum'
 import { Route as BitcoinRouteImport } from './routes/bitcoin'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SecurityIndexRouteImport } from './routes/security.index'
 import { Route as NewsIndexRouteImport } from './routes/news.index'
@@ -76,6 +77,11 @@ const EthereumRoute = EthereumRouteImport.update({
 const BitcoinRoute = BitcoinRouteImport.update({
   id: '/bitcoin',
   path: '/bitcoin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -159,6 +165,7 @@ const BitcoinHowToSendBitcoinSafelyRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/bitcoin': typeof BitcoinRouteWithChildren
   '/ethereum': typeof EthereumRouteWithChildren
   '/guides': typeof GuidesRouteWithChildren
@@ -184,6 +191,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/privacy': typeof PrivacyRoute
   '/search': typeof SearchRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -205,6 +213,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/bitcoin': typeof BitcoinRouteWithChildren
   '/ethereum': typeof EthereumRouteWithChildren
   '/guides': typeof GuidesRouteWithChildren
@@ -232,6 +241,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/bitcoin'
     | '/ethereum'
     | '/guides'
@@ -257,6 +267,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/privacy'
     | '/search'
     | '/sitemap.xml'
@@ -277,6 +288,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/bitcoin'
     | '/ethereum'
     | '/guides'
@@ -303,6 +315,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   BitcoinRoute: typeof BitcoinRouteWithChildren
   EthereumRoute: typeof EthereumRouteWithChildren
   GuidesRoute: typeof GuidesRouteWithChildren
@@ -377,6 +390,13 @@ declare module '@tanstack/react-router' {
       path: '/bitcoin'
       fullPath: '/bitcoin'
       preLoaderRoute: typeof BitcoinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -560,6 +580,7 @@ const SecurityRouteWithChildren = SecurityRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   BitcoinRoute: BitcoinRouteWithChildren,
   EthereumRoute: EthereumRouteWithChildren,
   GuidesRoute: GuidesRouteWithChildren,

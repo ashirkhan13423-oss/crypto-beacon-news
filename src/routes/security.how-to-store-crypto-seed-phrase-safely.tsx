@@ -4,8 +4,10 @@ import { SiteFooter } from "@/components/SiteFooter";
 import seedVault from "@/assets/seed-phrase-vault.jpg";
 import seedMetalPaper from "@/assets/seed-metal-vs-paper.jpg";
 import seedPhishing from "@/assets/seed-phishing.jpg";
+import { Plus } from "lucide-react";
 
-const URL = "https://cryptobeaconnews.lovable.app/security/how-to-store-crypto-seed-phrase-safely";
+
+const URL = "https://crypto-beacon-news.vercel.app/security/how-to-store-crypto-seed-phrase-safely";
 const TITLE = "How to Store a Crypto Seed Phrase Safely | CryptoBeacon";
 const DESC =
   "Learn how to store your crypto seed phrase safely, avoid the mistakes that cause permanent loss, and choose the right backup method for you.";
@@ -47,11 +49,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://cryptobeaconnews.lovable.app/favicon.png",
+      url: "https://crypto-beacon-news.vercel.app/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://cryptobeaconnews.lovable.app${seedVault}`,
+  image: `https://crypto-beacon-news.vercel.app${seedVault}`,
 };
 
 const faqSchema = {
@@ -495,9 +497,7 @@ function ArticlePage() {
             <details key={f.q} className="group py-md">
               <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
                 <span>{f.q}</span>
-                <span className="material-symbols-outlined text-secondary transition-transform group-open:rotate-45">
-                  add
-                </span>
+                <Plus className="text-secondary transition-transform group-open:rotate-45" />
               </summary>
               <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
                 {f.a}

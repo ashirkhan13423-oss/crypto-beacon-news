@@ -3,6 +3,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import nyknycHero from "@/assets/keys-coins-meaning.jpg";
 import exchangeHero from "@/assets/exchange-vs-wallet.png";
+import { BookOpen } from "lucide-react";
+
 
 export const Route = createFileRoute("/guides/")({
   head: () => ({
@@ -19,9 +21,9 @@ export const Route = createFileRoute("/guides/")({
         content:
           "Foundational, cross-cutting concept explainers that connect the dots across self-custody, wallets, transactions, and crypto safety.",
       },
-      { property: "og:url", content: "https://cryptobeaconnews.lovable.app/guides" },
+      { property: "og:url", content: "https://crypto-beacon-news.vercel.app/guides" },
     ],
-    links: [{ rel: "canonical", href: "https://cryptobeaconnews.lovable.app/guides" }],
+    links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/guides" }],
   }),
   component: GuidesHub,
 });
@@ -34,12 +36,7 @@ function GuidesHub() {
         <header className="mb-xl border-b border-outline-variant pb-lg">
           <div className="flex items-center space-x-md mb-md">
             <div className="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant">
-              <span
-                className="material-symbols-outlined text-on-surface-variant"
-                style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }}
-              >
-                menu_book
-              </span>
+              <BookOpen className="text-on-surface-variant" style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }} />
             </div>
             <h1 className="font-display-lg text-display-lg text-primary">Guides</h1>
           </div>

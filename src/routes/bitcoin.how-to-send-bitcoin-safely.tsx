@@ -2,8 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/bitcoin-send-safely.jpg";
+import { CheckSquare, Plus } from "lucide-react";
 
-const URL = "https://cryptobeaconnews.lovable.app/bitcoin/how-to-send-bitcoin-safely";
+
+const URL = "https://crypto-beacon-news.vercel.app/bitcoin/how-to-send-bitcoin-safely";
 const TITLE = "How to Send Bitcoin Safely (Beginner's Guide) | CryptoBeacon";
 const DESC =
   "Learn how Bitcoin transactions work, the mistakes that cause permanent loss, and a simple checklist to send Bitcoin safely every time.";
@@ -45,11 +47,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://cryptobeaconnews.lovable.app/favicon.png",
+      url: "https://crypto-beacon-news.vercel.app/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://cryptobeaconnews.lovable.app${hero}`,
+  image: `https://crypto-beacon-news.vercel.app${hero}`,
 };
 
 const faqSchema = {
@@ -182,13 +184,7 @@ function Checklist() {
           key={item}
           className="flex items-start gap-sm p-md rounded-lg border border-outline-variant bg-surface-container-lowest"
         >
-          <span
-            aria-hidden
-            className="material-symbols-outlined text-[#0F9D58] shrink-0"
-            style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }}
-          >
-            check_box
-          </span>
+          <CheckSquare aria-hidden className="text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }} />
           <span className="font-body-md text-body-md text-on-surface leading-relaxed">{item}</span>
         </li>
       ))}
@@ -469,9 +465,7 @@ function ArticlePage() {
             <details key={f.q} className="group py-md">
               <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
                 <span>{f.q}</span>
-                <span className="material-symbols-outlined text-secondary transition-transform group-open:rotate-45">
-                  add
-                </span>
+                <Plus className="text-secondary transition-transform group-open:rotate-45" />
               </summary>
               <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
                 {f.a}

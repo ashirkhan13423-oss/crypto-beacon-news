@@ -2,8 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/news-crypto-regulation.jpg";
+import { Plus, ShieldAlert, Gavel, ReceiptText } from "lucide-react";
 
-const URL = "https://cryptobeaconnews.lovable.app/news/why-governments-regulate-cryptocurrency";
+const URL = "https://crypto-beacon-news.vercel.app/news/why-governments-regulate-cryptocurrency";
 const TITLE = "Why Do Governments Regulate Cryptocurrency? | Crypto Beacon";
 const DESC =
   "A plain-language explainer on why governments regulate crypto, the main categories of rules, and what that means for everyday users.";
@@ -37,11 +38,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://cryptobeaconnews.lovable.app/favicon.png",
+      url: "https://crypto-beacon-news.vercel.app/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://cryptobeaconnews.lovable.app${hero}`,
+  image: `https://crypto-beacon-news.vercel.app${hero}`,
 };
 
 const faqSchema = {
@@ -112,19 +113,19 @@ function P({ children }: { children: React.ReactNode }) {
   );
 }
 
-const reasons: { icon: string; title: string; body: string }[] = [
+const reasons: { icon: React.ReactNode; title: string; body: string }[] = [
   {
-    icon: "shield_person",
+    icon: <ShieldAlert />,
     title: "Consumer Protection",
     body: "Exchanges and wallet providers hold real value on behalf of users. Licensing and disclosure rules exist so a company can't operate unchecked with people's funds, similar to why banks are regulated.",
   },
   {
-    icon: "gavel",
+    icon: <Gavel />,
     title: "Preventing Illicit Use",
     body: "Anti-money-laundering (AML) and identity-verification (KYC) rules exist because any system that moves value can be misused for fraud or laundering — this isn't unique to crypto, but crypto's speed and reach make it a focus area.",
   },
   {
-    icon: "receipt_long",
+    icon: <ReceiptText />,
     title: "Taxation",
     body: "Most jurisdictions treat crypto as property or an asset, meaning gains are typically taxable. Reporting rules exist so tax authorities can track that, the same as with stocks or real estate.",
   },
@@ -199,13 +200,12 @@ function ArticlePage() {
               key={r.title}
               className="p-lg rounded-lg border border-outline-variant bg-surface-container-lowest"
             >
-              <span
+              <div
                 aria-hidden
-                className="material-symbols-outlined text-[#0F9D58]"
-                style={{ fontVariationSettings: "'FILL' 1", fontSize: "32px" }}
+                className="text-[#0F9D58] flex items-center justify-center w-8 h-8 [&>svg]:w-full [&>svg]:h-full"
               >
                 {r.icon}
-              </span>
+              </div>
               <h3 className="mt-sm font-headline-sm text-headline-sm text-primary">{r.title}</h3>
             </div>
           ))}
@@ -284,9 +284,7 @@ function ArticlePage() {
             <details key={f.q} className="group py-md">
               <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
                 <span>{f.q}</span>
-                <span className="material-symbols-outlined text-secondary transition-transform group-open:rotate-45">
-                  add
-                </span>
+                <Plus className="text-secondary transition-transform group-open:rotate-45" />
               </summary>
               <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
                 {f.a}

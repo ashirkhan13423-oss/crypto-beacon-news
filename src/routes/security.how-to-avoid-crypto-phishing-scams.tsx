@@ -2,8 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/phishing-padlock.jpg";
+import { AlertTriangle, Plus } from "lucide-react";
 
-const URL = "https://cryptobeaconnews.lovable.app/security/how-to-avoid-crypto-phishing-scams";
+
+const URL = "https://crypto-beacon-news.vercel.app/security/how-to-avoid-crypto-phishing-scams";
 const TITLE = "How to Avoid Crypto Phishing Scams | CryptoBeacon";
 const DESC =
   "Learn how crypto phishing scams actually work, the red flags that repeat across every version, and the verification habits that keep your wallet safe.";
@@ -45,11 +47,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://cryptobeaconnews.lovable.app/favicon.png",
+      url: "https://crypto-beacon-news.vercel.app/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://cryptobeaconnews.lovable.app${hero}`,
+  image: `https://crypto-beacon-news.vercel.app${hero}`,
 };
 
 const faqSchema = {
@@ -366,13 +368,7 @@ function ArticlePage() {
         </ul>
 
         <H2 id="redflags">
-          <span
-            aria-hidden
-            className="material-symbols-outlined align-middle text-[#0F9D58] mr-xs"
-            style={{ fontSize: "0.9em" }}
-          >
-            warning
-          </span>
+          <AlertTriangle aria-hidden className="align-middle text-[#0F9D58] mr-xs" style={{ fontSize: "0.9em" }} />
           4. Red Flags That Repeat Across Almost Every Scam
         </H2>
         <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
@@ -511,9 +507,7 @@ function ArticlePage() {
             <details key={f.q} className="group py-md">
               <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
                 <span>{f.q}</span>
-                <span className="material-symbols-outlined text-secondary transition-transform group-open:rotate-45">
-                  add
-                </span>
+                <Plus className="text-secondary transition-transform group-open:rotate-45" />
               </summary>
               <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
                 {f.a}

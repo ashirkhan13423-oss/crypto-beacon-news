@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { RefreshCw, AlertTriangle, Ban, Gavel, Scissors, Scale } from "lucide-react";
+
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
@@ -17,9 +19,9 @@ export const Route = createFileRoute("/terms")({
         content:
           "The terms and conditions governing your use of CryptoBeacon, including intellectual property, disclaimers, and limitation of liability.",
       },
-      { property: "og:url", content: "https://cryptobeaconnews.lovable.app/terms" },
+      { property: "og:url", content: "https://crypto-beacon-news.vercel.app/terms" },
     ],
-    links: [{ rel: "canonical", href: "https://cryptobeaconnews.lovable.app/terms" }],
+    links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/terms" }],
   }),
   component: TermsPage,
 });
@@ -37,7 +39,7 @@ function TermsPage() {
             Terms of Service
           </h1>
           <p className="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
-            <span className="material-symbols-outlined text-secondary" style={{ fontSize: '18px' }}>update</span>
+            <RefreshCw className="text-secondary" style={{ fontSize: '18px' }} />
             Last updated: July 12, 2026
           </p>
         </header>
@@ -64,7 +66,7 @@ function TermsPage() {
 
           <section className="bg-secondary/10 border-l-4 border-secondary p-lg rounded-r-xl">
             <h2 className="font-headline-md text-headline-md text-primary mb-sm flex items-center gap-xs">
-              <span className="material-symbols-outlined text-secondary">warning</span>
+              <AlertTriangle className="text-secondary" />
               3. Not Financial, Investment, or Legal Advice
             </h2>
             <p className="text-on-surface font-medium">
@@ -171,28 +173,28 @@ function TermsPage() {
             <h2 className="font-headline-md text-headline-md text-primary mb-md">9. General Provisions</h2>
             <ul className="space-y-md list-none pl-0">
               <li className="flex gap-md">
-                <span className="material-symbols-outlined text-secondary mt-1">update</span>
+                <RefreshCw className="text-secondary mt-1" />
                 <div>
                   <strong className="text-on-surface block">Changes to These Terms</strong>
                   We may revise these Terms at any time. Continued use of the Site after changes are posted constitutes acceptance of the revised Terms.
                 </div>
               </li>
               <li className="flex gap-md">
-                <span className="material-symbols-outlined text-secondary mt-1">block</span>
+                <Ban className="text-secondary mt-1" />
                 <div>
                   <strong className="text-on-surface block">Termination</strong>
                   We reserve the right to restrict or terminate your access to the Site at our discretion, without notice, for conduct that violates these Terms.
                 </div>
               </li>
               <li className="flex gap-md">
-                <span className="material-symbols-outlined text-secondary mt-1">gavel</span>
+                <Gavel className="text-secondary mt-1" />
                 <div>
                   <strong className="text-on-surface block">Governing Law</strong>
                   These Terms are governed by the laws of the United States, without regard to its conflict-of-law principles. Any disputes arising under these Terms shall be resolved in the courts of the United States.
                 </div>
               </li>
               <li className="flex gap-md">
-                <span className="material-symbols-outlined text-secondary mt-1">cut</span>
+                <Scissors className="text-secondary mt-1" />
                 <div>
                   <strong className="text-on-surface block">Severability</strong>
                   If any provision of these Terms is found unenforceable, the remaining provisions will remain in full effect.
@@ -209,10 +211,10 @@ function TermsPage() {
               </p>
             </div>
             <a 
-              href="mailto:legal@cryptobeaconnews.lovable.app" 
+              href="mailto:legal@crypto-beacon-news.vercel.app" 
               className="inline-flex items-center gap-xs bg-primary text-primary-foreground px-lg py-sm rounded-full font-label-lg font-medium hover:bg-primary/90 transition-colors"
             >
-              <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>balance</span>
+              <Scale style={{ fontSize: '20px' }} />
               Email Legal Team
             </a>
           </section>

@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import sendHero from "@/assets/bitcoin-send-safely.jpg";
+import { Bitcoin } from "lucide-react";
+
 
 export const Route = createFileRoute("/bitcoin/")({
   head: () => ({
@@ -18,9 +20,9 @@ export const Route = createFileRoute("/bitcoin/")({
         content:
           "Definitive Bitcoin analysis: transactions, architecture, network fundamentals, and beginner-friendly safety guides.",
       },
-      { property: "og:url", content: "https://cryptobeaconnews.lovable.app/bitcoin" },
+      { property: "og:url", content: "https://crypto-beacon-news.vercel.app/bitcoin" },
     ],
-    links: [{ rel: "canonical", href: "https://cryptobeaconnews.lovable.app/bitcoin" }],
+    links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/bitcoin" }],
   }),
   component: BitcoinPage,
 });
@@ -33,12 +35,7 @@ function BitcoinPage() {
         <header className="mb-xl border-b border-outline-variant pb-lg">
           <div className="flex items-center space-x-md mb-md">
             <div className="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant">
-              <span
-                className="material-symbols-outlined text-on-surface-variant"
-                style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }}
-              >
-                currency_bitcoin
-              </span>
+              <Bitcoin className="text-on-surface-variant" style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }} />
             </div>
             <h1 className="font-display-lg text-display-lg text-primary">Bitcoin</h1>
           </div>

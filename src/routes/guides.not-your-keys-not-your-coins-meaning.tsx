@@ -2,8 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/keys-coins-meaning.jpg";
+import { Key, Lock, HelpCircle, Plus } from "lucide-react";
 
-const URL = "https://cryptobeaconnews.lovable.app/guides/not-your-keys-not-your-coins-meaning";
+
+const URL = "https://crypto-beacon-news.vercel.app/guides/not-your-keys-not-your-coins-meaning";
 const TITLE = 'What "Not Your Keys, Not Your Coins" Means | CryptoBeacon';
 const DESC =
   'A plain-language explainer on what "not your keys, not your coins" means, why it matters, and how to tell if you actually control your crypto.';
@@ -41,11 +43,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://cryptobeaconnews.lovable.app/favicon.png",
+      url: "https://crypto-beacon-news.vercel.app/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://cryptobeaconnews.lovable.app${hero}`,
+  image: `https://crypto-beacon-news.vercel.app${hero}`,
 };
 
 const faqSchema = {
@@ -353,26 +355,14 @@ function ArticlePage() {
         </P>
         <ul className="list-none pl-0 space-y-md font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
           <li className="flex items-start gap-sm">
-            <span
-              aria-hidden
-              className="material-symbols-outlined text-[#0F9D58] shrink-0"
-              style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }}
-            >
-              key
-            </span>
+            <Key aria-hidden className="text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }} />
             <span>
               <strong>Did I write down a seed phrase when I set this up, and does this platform
               never see it?</strong> If yes, you likely have self-custody.
             </span>
           </li>
           <li className="flex items-start gap-sm">
-            <span
-              aria-hidden
-              className="material-symbols-outlined text-[#2563EB] shrink-0"
-              style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }}
-            >
-              shield_lock
-            </span>
+            <Lock aria-hidden className="text-[#2563EB] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }} />
             <span>
               <strong>Do I log in with just a username and password, with no seed phrase
               involved?</strong> If yes, you're very likely in a custodial arrangement — the
@@ -380,13 +370,7 @@ function ArticlePage() {
             </span>
           </li>
           <li className="flex items-start gap-sm">
-            <span
-              aria-hidden
-              className="material-symbols-outlined text-[#0F9D58] shrink-0"
-              style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }}
-            >
-              help
-            </span>
+            <HelpCircle aria-hidden className="text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }} />
             <span>
               <strong>If this company disappeared tomorrow, would I still be able to access my
               funds using only something I personally hold?</strong> If the honest answer is no,
@@ -436,9 +420,7 @@ function ArticlePage() {
             <details key={f.q} className="group py-md">
               <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
                 <span>{f.q}</span>
-                <span className="material-symbols-outlined text-secondary transition-transform group-open:rotate-45">
-                  add
-                </span>
+                <Plus className="text-secondary transition-transform group-open:rotate-45" />
               </summary>
               <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
                 {f.a}

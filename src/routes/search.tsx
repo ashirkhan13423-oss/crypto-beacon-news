@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { useState } from "react";
+import { Search, SearchX, FileSearch } from "lucide-react";
+
 
 export const Route = createFileRoute("/search")({
   component: SearchPage,
@@ -78,20 +80,13 @@ function SearchPage() {
         <header className="mb-xl border-b border-outline-variant pb-lg">
           <div className="flex items-center space-x-md mb-md">
             <div className="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant">
-              <span
-                className="material-symbols-outlined text-on-surface-variant"
-                style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }}
-              >
-                search
-              </span>
+              <Search className="text-on-surface-variant" style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }} />
             </div>
             <h1 className="font-display-lg text-display-lg text-primary">Search</h1>
           </div>
           
           <div className="relative max-w-2xl mt-lg">
-            <span className="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">
-              search
-            </span>
+            <Search className="absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant" />
             <input
               type="text"
               value={query}
@@ -131,9 +126,7 @@ function SearchPage() {
               </div>
             ) : (
               <div className="py-xxl text-center max-w-2xl mx-auto border border-dashed border-outline-variant rounded-xl bg-surface-container-lowest">
-                <span className="material-symbols-outlined text-4xl text-on-surface-variant mb-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  search_off
-                </span>
+                <SearchX className="text-4xl text-on-surface-variant mb-sm" style={{ fontVariationSettings: "'FILL' 1" }} />
                 <p className="font-body-lg text-body-lg text-primary font-semibold mb-xs">No results found</p>
                 <p className="font-body-md text-body-md text-on-surface-variant">Try adjusting your search or check for typos.</p>
               </div>
@@ -143,9 +136,7 @@ function SearchPage() {
         
         {query.trim() === "" && (
           <div className="py-xxl text-center max-w-2xl mx-auto opacity-60">
-            <span className="material-symbols-outlined text-5xl text-on-surface-variant mb-sm">
-              manage_search
-            </span>
+            <FileSearch className="text-5xl text-on-surface-variant mb-sm" />
             <p className="font-body-lg text-body-lg text-on-surface-variant">
               Type above to search through our articles and guides.
             </p>

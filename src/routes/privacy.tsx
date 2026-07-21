@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { RefreshCw, FileEdit, Cpu, Mail } from "lucide-react";
+
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
@@ -17,9 +19,9 @@ export const Route = createFileRoute("/privacy")({
         content:
           "How CryptoBeacon collects, uses, and protects your information, including cookies, analytics, and advertising practices.",
       },
-      { property: "og:url", content: "https://cryptobeaconnews.lovable.app/privacy" },
+      { property: "og:url", content: "https://crypto-beacon-news.vercel.app/privacy" },
     ],
-    links: [{ rel: "canonical", href: "https://cryptobeaconnews.lovable.app/privacy" }],
+    links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/privacy" }],
   }),
   component: PrivacyPage,
 });
@@ -37,7 +39,7 @@ function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
-            <span className="material-symbols-outlined text-secondary" style={{ fontSize: '18px' }}>update</span>
+            <RefreshCw className="text-secondary" style={{ fontSize: '18px' }} />
             Last updated: July 12, 2026
           </p>
         </header>
@@ -47,7 +49,7 @@ function PrivacyPage() {
             <h2 className="font-headline-md text-headline-md text-primary mb-md">1. Introduction</h2>
             <p className="mb-sm">
               CryptoBeacon ("CryptoBeacon," "we," "us," or "our") operates
-              cryptobeaconnews.lovable.app (the "Site"). This Privacy Policy explains what
+              crypto-beacon-news.vercel.app (the "Site"). This Privacy Policy explains what
               information we collect, how we use it, and what choices you have.
               By using the Site, you agree to the practices described here.
             </p>
@@ -65,7 +67,7 @@ function PrivacyPage() {
             <div className="grid md:grid-cols-2 gap-lg">
               <div className="bg-surface-container-low p-md rounded-xl border border-outline-variant">
                 <h3 className="font-headline-sm text-headline-sm text-primary mb-sm flex items-center gap-xs">
-                  <span className="material-symbols-outlined text-secondary">edit_document</span>
+                  <FileEdit className="text-secondary" />
                   Provided Directly
                 </h3>
                 <ul className="list-disc pl-lg space-y-sm text-body-md marker:text-secondary">
@@ -78,7 +80,7 @@ function PrivacyPage() {
               </div>
               <div className="bg-surface-container-low p-md rounded-xl border border-outline-variant">
                 <h3 className="font-headline-sm text-headline-sm text-primary mb-sm flex items-center gap-xs">
-                  <span className="material-symbols-outlined text-secondary">memory</span>
+                  <Cpu className="text-secondary" />
                   Collected Automatically
                 </h3>
                 <ul className="list-disc pl-lg space-y-sm text-body-md marker:text-secondary">
@@ -187,10 +189,10 @@ function PrivacyPage() {
               </p>
             </div>
             <a 
-              href="mailto:privacy@cryptobeaconnews.lovable.app" 
+              href="mailto:privacy@crypto-beacon-news.vercel.app" 
               className="inline-flex items-center gap-xs bg-primary text-primary-foreground px-lg py-sm rounded-full font-label-lg font-medium hover:bg-primary/90 transition-colors"
             >
-              <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>mail</span>
+              <Mail style={{ fontSize: '20px' }} />
               Email Privacy Team
             </a>
           </section>

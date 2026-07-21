@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroImage from "@/assets/ethereum-address-mismatch.png";
+import { Network } from "lucide-react";
+
 
 export const Route = createFileRoute("/ethereum/")({
   head: () => ({
@@ -18,9 +20,9 @@ export const Route = createFileRoute("/ethereum/")({
         content:
           "Deep coverage of Ethereum: rollups, staking economics, EIPs, and the roadmap toward institutional-grade scalability.",
       },
-      { property: "og:url", content: "https://cryptobeaconnews.lovable.app/ethereum" },
+      { property: "og:url", content: "https://crypto-beacon-news.vercel.app/ethereum" },
     ],
-    links: [{ rel: "canonical", href: "https://cryptobeaconnews.lovable.app/ethereum" }],
+    links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/ethereum" }],
   }),
   component: EthereumPage,
 });
@@ -33,12 +35,7 @@ function EthereumPage() {
         <header className="mb-xl border-b border-outline-variant pb-lg">
           <div className="flex items-center gap-sm mb-md">
             <div className="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center">
-              <span
-                className="material-symbols-outlined text-secondary"
-                style={{ fontSize: "18px" }}
-              >
-                account_tree
-              </span>
+              <Network className="text-secondary" style={{ fontSize: "18px" }} />
             </div>
             <h1 className="font-headline-lg text-headline-lg text-primary">Ethereum</h1>
           </div>

@@ -23,9 +23,9 @@ export const Route = createFileRoute("/")({
         content:
           "Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and the digital-asset ecosystem.",
       },
-      { property: "og:url", content: "https://cryptobeaconnews.lovable.app/" },
+      { property: "og:url", content: "https://crypto-beacon-news.vercel.app/" },
     ],
-    links: [{ rel: "canonical", href: "https://cryptobeaconnews.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/" }],
   }),
   component: IndexPage,
 });
