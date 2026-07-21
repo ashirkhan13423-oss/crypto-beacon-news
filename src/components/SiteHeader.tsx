@@ -37,12 +37,9 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="flex items-center gap-md text-primary">
-          <button type="button" aria-label="Search" className="material-symbols-outlined cursor-pointer hover:text-secondary transition-all bg-transparent border-0 p-0">
+          <Link to="/search" aria-label="Search" className="material-symbols-outlined cursor-pointer hover:text-secondary transition-all bg-transparent border-0 p-0 flex items-center justify-center">
             search
-          </button>
-          <button type="button" aria-label="Toggle theme" className="material-symbols-outlined cursor-pointer hover:text-secondary transition-all hidden md:block bg-transparent border-0 p-0">
-            contrast
-          </button>
+          </Link>
           <button type="button" aria-label="Open menu" className="material-symbols-outlined cursor-pointer hover:text-secondary transition-all md:hidden bg-transparent border-0 p-0">
             menu
           </button>

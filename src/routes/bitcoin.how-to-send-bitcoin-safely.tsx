@@ -540,6 +540,15 @@ function ArticlePage() {
                 Can You Send Bitcoin to an Ethereum Address?
               </h3>
             </Link>
+            <Link
+              to="/guides/exchange-or-personal-wallet-crypto-storage"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                Exchange or Personal Wallet?
+              </h3>
+            </Link>
           </div>
         </section>
       </main>

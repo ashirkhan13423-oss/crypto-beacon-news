@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import nyknycHero from "@/assets/keys-coins-meaning.jpg";
+import exchangeHero from "@/assets/exchange-vs-wallet.png";
 
 export const Route = createFileRoute("/guides/")({
   head: () => ({
@@ -73,6 +74,32 @@ function GuidesHub() {
               <p className="font-body-md text-body-md text-on-surface-variant">
                 A plain-language explainer on what the phrase means, why it matters, and how to
                 tell if you actually control your crypto.
+              </p>
+            </div>
+          </Link>
+          <Link
+            to="/guides/exchange-or-personal-wallet-crypto-storage"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={exchangeHero}
+                alt="Illustration representing the choice between exchange storage and personal wallet custody"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1600}
+                height={900}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Guides · Concept
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Should You Keep Your Crypto on an Exchange or Move It to Your Own Wallet?
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A clear, neutral decision framework based on how you actually use your crypto.
               </p>
             </div>
           </Link>

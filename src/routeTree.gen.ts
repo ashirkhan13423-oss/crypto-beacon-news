@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SecurityRouteImport } from './routes/security'
+import { Route as SearchRouteImport } from './routes/search'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as GuidesRouteImport } from './routes/guides'
@@ -28,6 +29,7 @@ import { Route as SecurityHowToAvoidCryptoPhishingScamsRouteImport } from './rou
 import { Route as NewsWhyGovernmentsRegulateCryptocurrencyRouteImport } from './routes/news.why-governments-regulate-cryptocurrency'
 import { Route as NewsWhatIsABlockchainForkRouteImport } from './routes/news.what-is-a-blockchain-fork'
 import { Route as GuidesNotYourKeysNotYourCoinsMeaningRouteImport } from './routes/guides.not-your-keys-not-your-coins-meaning'
+import { Route as GuidesExchangeOrPersonalWalletCryptoStorageRouteImport } from './routes/guides.exchange-or-personal-wallet-crypto-storage'
 import { Route as EthereumCanYouSendBitcoinToAnEthereumAddressRouteImport } from './routes/ethereum.can-you-send-bitcoin-to-an-ethereum-address'
 import { Route as BitcoinHowToSendBitcoinSafelyRouteImport } from './routes/bitcoin.how-to-send-bitcoin-safely'
 
@@ -44,6 +46,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const SecurityRoute = SecurityRouteImport.update({
   id: '/security',
   path: '/security',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -131,6 +138,12 @@ const GuidesNotYourKeysNotYourCoinsMeaningRoute =
     path: '/not-your-keys-not-your-coins-meaning',
     getParentRoute: () => GuidesRoute,
   } as any)
+const GuidesExchangeOrPersonalWalletCryptoStorageRoute =
+  GuidesExchangeOrPersonalWalletCryptoStorageRouteImport.update({
+    id: '/exchange-or-personal-wallet-crypto-storage',
+    path: '/exchange-or-personal-wallet-crypto-storage',
+    getParentRoute: () => GuidesRoute,
+  } as any)
 const EthereumCanYouSendBitcoinToAnEthereumAddressRoute =
   EthereumCanYouSendBitcoinToAnEthereumAddressRouteImport.update({
     id: '/can-you-send-bitcoin-to-an-ethereum-address',
@@ -151,11 +164,13 @@ export interface FileRoutesByFullPath {
   '/guides': typeof GuidesRouteWithChildren
   '/news': typeof NewsRouteWithChildren
   '/privacy': typeof PrivacyRoute
+  '/search': typeof SearchRoute
   '/security': typeof SecurityRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/bitcoin/how-to-send-bitcoin-safely': typeof BitcoinHowToSendBitcoinSafelyRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
+  '/guides/exchange-or-personal-wallet-crypto-storage': typeof GuidesExchangeOrPersonalWalletCryptoStorageRoute
   '/guides/not-your-keys-not-your-coins-meaning': typeof GuidesNotYourKeysNotYourCoinsMeaningRoute
   '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
   '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
@@ -170,10 +185,12 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/privacy': typeof PrivacyRoute
+  '/search': typeof SearchRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/bitcoin/how-to-send-bitcoin-safely': typeof BitcoinHowToSendBitcoinSafelyRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
+  '/guides/exchange-or-personal-wallet-crypto-storage': typeof GuidesExchangeOrPersonalWalletCryptoStorageRoute
   '/guides/not-your-keys-not-your-coins-meaning': typeof GuidesNotYourKeysNotYourCoinsMeaningRoute
   '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
   '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
@@ -193,11 +210,13 @@ export interface FileRoutesById {
   '/guides': typeof GuidesRouteWithChildren
   '/news': typeof NewsRouteWithChildren
   '/privacy': typeof PrivacyRoute
+  '/search': typeof SearchRoute
   '/security': typeof SecurityRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/bitcoin/how-to-send-bitcoin-safely': typeof BitcoinHowToSendBitcoinSafelyRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
+  '/guides/exchange-or-personal-wallet-crypto-storage': typeof GuidesExchangeOrPersonalWalletCryptoStorageRoute
   '/guides/not-your-keys-not-your-coins-meaning': typeof GuidesNotYourKeysNotYourCoinsMeaningRoute
   '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
   '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
@@ -218,11 +237,13 @@ export interface FileRouteTypes {
     | '/guides'
     | '/news'
     | '/privacy'
+    | '/search'
     | '/security'
     | '/sitemap.xml'
     | '/terms'
     | '/bitcoin/how-to-send-bitcoin-safely'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
+    | '/guides/exchange-or-personal-wallet-crypto-storage'
     | '/guides/not-your-keys-not-your-coins-meaning'
     | '/news/what-is-a-blockchain-fork'
     | '/news/why-governments-regulate-cryptocurrency'
@@ -237,10 +258,12 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/privacy'
+    | '/search'
     | '/sitemap.xml'
     | '/terms'
     | '/bitcoin/how-to-send-bitcoin-safely'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
+    | '/guides/exchange-or-personal-wallet-crypto-storage'
     | '/guides/not-your-keys-not-your-coins-meaning'
     | '/news/what-is-a-blockchain-fork'
     | '/news/why-governments-regulate-cryptocurrency'
@@ -259,11 +282,13 @@ export interface FileRouteTypes {
     | '/guides'
     | '/news'
     | '/privacy'
+    | '/search'
     | '/security'
     | '/sitemap.xml'
     | '/terms'
     | '/bitcoin/how-to-send-bitcoin-safely'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
+    | '/guides/exchange-or-personal-wallet-crypto-storage'
     | '/guides/not-your-keys-not-your-coins-meaning'
     | '/news/what-is-a-blockchain-fork'
     | '/news/why-governments-regulate-cryptocurrency'
@@ -283,6 +308,7 @@ export interface RootRouteChildren {
   GuidesRoute: typeof GuidesRouteWithChildren
   NewsRoute: typeof NewsRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
+  SearchRoute: typeof SearchRoute
   SecurityRoute: typeof SecurityRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
@@ -309,6 +335,13 @@ declare module '@tanstack/react-router' {
       path: '/security'
       fullPath: '/security'
       preLoaderRoute: typeof SecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -423,6 +456,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuidesNotYourKeysNotYourCoinsMeaningRouteImport
       parentRoute: typeof GuidesRoute
     }
+    '/guides/exchange-or-personal-wallet-crypto-storage': {
+      id: '/guides/exchange-or-personal-wallet-crypto-storage'
+      path: '/exchange-or-personal-wallet-crypto-storage'
+      fullPath: '/guides/exchange-or-personal-wallet-crypto-storage'
+      preLoaderRoute: typeof GuidesExchangeOrPersonalWalletCryptoStorageRouteImport
+      parentRoute: typeof GuidesRoute
+    }
     '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': {
       id: '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
       path: '/can-you-send-bitcoin-to-an-ethereum-address'
@@ -469,11 +509,14 @@ const EthereumRouteWithChildren = EthereumRoute._addFileChildren(
 )
 
 interface GuidesRouteChildren {
+  GuidesExchangeOrPersonalWalletCryptoStorageRoute: typeof GuidesExchangeOrPersonalWalletCryptoStorageRoute
   GuidesNotYourKeysNotYourCoinsMeaningRoute: typeof GuidesNotYourKeysNotYourCoinsMeaningRoute
   GuidesIndexRoute: typeof GuidesIndexRoute
 }
 
 const GuidesRouteChildren: GuidesRouteChildren = {
+  GuidesExchangeOrPersonalWalletCryptoStorageRoute:
+    GuidesExchangeOrPersonalWalletCryptoStorageRoute,
   GuidesNotYourKeysNotYourCoinsMeaningRoute:
     GuidesNotYourKeysNotYourCoinsMeaningRoute,
   GuidesIndexRoute: GuidesIndexRoute,
@@ -522,6 +565,7 @@ const rootRouteChildren: RootRouteChildren = {
   GuidesRoute: GuidesRouteWithChildren,
   NewsRoute: NewsRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
+  SearchRoute: SearchRoute,
   SecurityRoute: SecurityRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,

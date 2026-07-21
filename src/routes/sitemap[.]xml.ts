@@ -49,6 +49,11 @@ export const Route = createFileRoute("/sitemap.xml")({
             changefreq: "monthly",
             priority: "0.9",
           },
+          {
+            path: "/guides/exchange-or-personal-wallet-crypto-storage",
+            changefreq: "monthly",
+            priority: "0.9",
+          },
           { path: "/ethereum", changefreq: "daily", priority: "0.8" },
           {
             path: "/ethereum/can-you-send-bitcoin-to-an-ethereum-address",
