@@ -19,9 +19,9 @@ export const Route = createFileRoute("/privacy")({
         content:
           "How CryptoBeacon collects, uses, and protects your information, including cookies, analytics, and advertising practices.",
       },
-      { property: "og:url", content: "https://crypto-beacon-news.vercel.app/privacy" },
+      { property: "og:url", content: "https://cryptobeaconnews.com/privacy" },
     ],
-    links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/privacy" }],
+    links: [{ rel: "canonical", href: "https://cryptobeaconnews.com/privacy" }],
   }),
   component: PrivacyPage,
 });

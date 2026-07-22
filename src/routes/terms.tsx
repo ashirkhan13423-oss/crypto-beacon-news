@@ -19,9 +19,9 @@ export const Route = createFileRoute("/terms")({
         content:
           "The terms and conditions governing your use of CryptoBeacon, including intellectual property, disclaimers, and limitation of liability.",
       },
-      { property: "og:url", content: "https://crypto-beacon-news.vercel.app/terms" },
+      { property: "og:url", content: "https://cryptobeaconnews.com/terms" },
     ],
-    links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/terms" }],
+    links: [{ rel: "canonical", href: "https://cryptobeaconnews.com/terms" }],
   }),
   component: TermsPage,
 });
@@ -211,12 +211,13 @@ function TermsPage() {
               </p>
             </div>
             <a 
-              href="mailto:legal@crypto-beacon-news.vercel.app" 
+              href="mailto:legal@cryptobeaconnews.com" 
               className="inline-flex items-center gap-xs bg-primary text-primary-foreground px-lg py-sm rounded-full font-label-lg font-medium hover:bg-primary/90 transition-colors"
             >
               <Scale style={{ fontSize: '20px' }} />
               Email Legal Team
             </a>
+            <p className="text-body-md text-on-surface-variant mt-sm">CryptoBeacon Ltd., 123 Crypto Ave, Suite 456, New York, NY 10001, USA</p>
           </section>
         </article>
       </main>
