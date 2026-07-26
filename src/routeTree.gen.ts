@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as PrivacyRouteImport } from './routes/privacy'
@@ -37,11 +36,6 @@ import { Route as BitcoinHowToSendBitcoinSafelyRouteImport } from './routes/bitc
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SecurityRoute = SecurityRouteImport.update({
@@ -173,7 +167,6 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/search': typeof SearchRoute
   '/security': typeof SecurityRouteWithChildren
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/bitcoin/how-to-send-bitcoin-safely': typeof BitcoinHowToSendBitcoinSafelyRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
@@ -194,7 +187,6 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/privacy': typeof PrivacyRoute
   '/search': typeof SearchRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/bitcoin/how-to-send-bitcoin-safely': typeof BitcoinHowToSendBitcoinSafelyRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
@@ -221,7 +213,6 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/search': typeof SearchRoute
   '/security': typeof SecurityRouteWithChildren
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/bitcoin/how-to-send-bitcoin-safely': typeof BitcoinHowToSendBitcoinSafelyRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
@@ -249,7 +240,6 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/search'
     | '/security'
-    | '/sitemap.xml'
     | '/terms'
     | '/bitcoin/how-to-send-bitcoin-safely'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
@@ -270,7 +260,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/privacy'
     | '/search'
-    | '/sitemap.xml'
     | '/terms'
     | '/bitcoin/how-to-send-bitcoin-safely'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
@@ -296,7 +285,6 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/search'
     | '/security'
-    | '/sitemap.xml'
     | '/terms'
     | '/bitcoin/how-to-send-bitcoin-safely'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
@@ -323,7 +311,6 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   SearchRoute: typeof SearchRoute
   SecurityRoute: typeof SecurityRouteWithChildren
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
 }
 
@@ -334,13 +321,6 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/security': {
@@ -588,7 +568,6 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   SearchRoute: SearchRoute,
   SecurityRoute: SecurityRouteWithChildren,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
