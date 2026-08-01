@@ -90,19 +90,6 @@ export const Route = createFileRoute(
   component: ArticlePage,
 });
 
-function AdSlot({ id }: { id: string }) {
-  return (
-    <div className="my-xl" data-ad-slot={id}>
-      <div className="text-center font-label-caps text-[11px] uppercase tracking-widest text-on-surface-variant mb-xs">
-        Advertisement
-      </div>
-      <div className="border border-dashed border-outline-variant rounded-lg h-[90px] md:h-[250px] flex items-center justify-center bg-surface-container-lowest">
-        <span className="text-xs text-on-surface-variant">Ad Placeholder</span>
-      </div>
-    </div>
-  );
-}
-
 function H2({ id, children }: { id: string; children: React.ReactNode }) {
   return (
     <h2
@@ -216,8 +203,6 @@ function ArticlePage() {
           <em>This article is educational. It isn't financial advice.</em>
         </P>
 
-        <AdSlot id="top" />
-
         <aside className="my-xl p-lg rounded-lg border border-outline-variant bg-surface-container-low">
           <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">
             Table of Contents
@@ -266,8 +251,6 @@ function ArticlePage() {
         <P>
           Most wallets validate the address format before allowing a transaction to be created. When you paste an Ethereum-style address into a Bitcoin wallet's send field, the wallet typically recognizes it doesn't match a valid Bitcoin address and blocks the transaction before anything is broadcast.
         </P>
-        
-        <AdSlot id="middle" />
 
         <H2 id="what-happens">2. What Happens When You Try This Send</H2>
         <P>
@@ -314,8 +297,6 @@ function ArticlePage() {
             <li>If a send fails due to format mismatch, nothing is lost — but always verify the correct network before retrying.</li>
           </ul>
         </div>
-        
-        <AdSlot id="bottom" />
 
         <H2 id="faq">6. Frequently Asked Questions</H2>
         <div className="space-y-sm">

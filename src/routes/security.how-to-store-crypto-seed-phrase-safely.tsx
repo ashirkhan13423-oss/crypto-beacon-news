@@ -90,19 +90,6 @@ export const Route = createFileRoute("/security/how-to-store-crypto-seed-phrase-
   component: ArticlePage,
 });
 
-function AdSlot({ id }: { id: string }) {
-  return (
-    <div className="my-xl" data-ad-slot={id}>
-      <div className="text-center font-label-caps text-[11px] uppercase tracking-widest text-on-surface-variant mb-xs">
-        Advertisement
-      </div>
-      <div className="border border-dashed border-outline-variant rounded-lg h-[90px] md:h-[250px] flex items-center justify-center bg-surface-container-lowest">
-        <span className="text-xs text-on-surface-variant">Ad Placeholder</span>
-      </div>
-    </div>
-  );
-}
-
 function H2({ id, children }: { id: string; children: React.ReactNode }) {
   return (
     <h2
@@ -182,8 +169,6 @@ function ArticlePage() {
           <em>This article is educational. It does not recommend any specific product or brand,
           and it isn't financial advice.</em>
         </P>
-
-        <AdSlot id="top" />
 
         {/* Table of contents */}
         <aside className="my-xl p-lg rounded-lg border border-outline-variant bg-surface-container-low">
@@ -376,8 +361,6 @@ function ArticlePage() {
           beats convenience every time.
         </P>
 
-        <AdSlot id="mid" />
-
         <H2 id="plan">5. Building a Storage Plan That Fits Your Holdings</H2>
         <P>
           Rather than asking "what's the single best storage method," it's more useful to ask: what
@@ -488,8 +471,6 @@ function ArticlePage() {
             </li>
           </ul>
         </div>
-
-        <AdSlot id="bottom" />
 
         <H2 id="faq">9. Frequently Asked Questions</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">

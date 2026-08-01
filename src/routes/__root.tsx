@@ -8,7 +8,6 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import AdScripts from "@/components/AdScripts";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
@@ -140,7 +139,7 @@ function RootShell({ children }: { children: ReactNode }) {
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        <AdScripts />{children}
+        {children}
         <Scripts />
       </body>
     </html>

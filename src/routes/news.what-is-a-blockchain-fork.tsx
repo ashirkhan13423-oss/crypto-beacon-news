@@ -84,19 +84,6 @@ export const Route = createFileRoute("/news/what-is-a-blockchain-fork")({
   component: ArticlePage,
 });
 
-function AdSlot({ id }: { id: string }) {
-  return (
-    <div className="my-xl" data-ad-slot={id}>
-      <div className="text-center font-label-caps text-[11px] uppercase tracking-widest text-on-surface-variant mb-xs">
-        Advertisement
-      </div>
-      <div className="border border-dashed border-outline-variant rounded-lg h-[90px] md:h-[250px] flex items-center justify-center bg-surface-container-lowest">
-        <span className="text-xs text-on-surface-variant">Ad Placeholder</span>
-      </div>
-    </div>
-  );
-}
-
 function H2({ id, children }: { id: string; children: React.ReactNode }) {
   return (
     <h2
@@ -173,8 +160,6 @@ function ArticlePage() {
           <em>This article is educational. It isn't financial advice.</em>
         </P>
 
-        <AdSlot id="top" />
-
         <H2 id="what-a-fork-actually-is">What a Fork Actually Is</H2>
         <P>
           A blockchain is governed by a shared set of rules that every participant's software follows to agree on what counts as a valid transaction. A fork happens when that rule set changes — either through an upgrade everyone adopts together, or through a disagreement so significant that the network splits into two separate, independently operating chains.
@@ -232,8 +217,6 @@ function ArticlePage() {
           </svg>
         </figure>
 
-        <AdSlot id="mid" />
-
         <H2 id="why-forks-happen">Why Forks Happen</H2>
         <P>
           Forks generally stem from one of two situations:
@@ -277,8 +260,6 @@ function ArticlePage() {
             </li>
           </ul>
         </div>
-
-        <AdSlot id="bottom" />
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
