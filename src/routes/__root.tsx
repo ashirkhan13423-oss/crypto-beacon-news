@@ -103,6 +103,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "google-site-verification", content: "H2r-VbnLhzPsY9KMxhbDMqo0owMSdsqwWrQwUBDIGIc" },
+      { name: "monetag", content: "89060bb807d6727004743f9b2760ad70" },
       { title: "CryptoBeacon | Crypto News, Guides & Security" },
       {
         name: "description",
