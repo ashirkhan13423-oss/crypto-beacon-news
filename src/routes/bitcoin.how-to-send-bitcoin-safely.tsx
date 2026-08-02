@@ -4,7 +4,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/bitcoin-send-safely.jpg";
 import { CheckSquare, Plus } from "lucide-react";
 
-
 const URL = "https://crypto-beacon-news.vercel.app/bitcoin/how-to-send-bitcoin-safely";
 const TITLE = "How to Send Bitcoin Safely (Beginner's Guide) | CryptoBeacon";
 const DESC =
@@ -36,7 +35,7 @@ const faqs: { q: string; a: string }[] = [
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "NewsArticle",
   headline: "How to Send Bitcoin Safely",
   description: DESC,
   datePublished: PUBLISHED,
@@ -52,6 +51,12 @@ const articleSchema = {
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
   image: `https://crypto-beacon-news.vercel.app${hero}`,
+  inLanguage: "en-US",
+  keywords:
+    "how to send bitcoin safely, bitcoin transaction mistakes, sending bitcoin to wrong address, bitcoin transaction confirmations explained, bitcoin transaction fees explained for beginners, UTXO, mempool, replace by fee",
+  articleSection: "Bitcoin",
+  wordCount: 1400,
+  isAccessibleForFree: true,
 };
 
 const faqSchema = {
@@ -62,6 +67,31 @@ const faqSchema = {
     name: f.q,
     acceptedAnswer: { "@type": "Answer", text: f.a },
   })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://crypto-beacon-news.vercel.app/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Bitcoin",
+      item: "https://crypto-beacon-news.vercel.app/bitcoin",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Send Bitcoin Safely",
+      item: URL,
+    },
+  ],
 };
 
 export const Route = createFileRoute("/bitcoin/how-to-send-bitcoin-safely")({
@@ -87,6 +117,7 @@ export const Route = createFileRoute("/bitcoin/how-to-send-bitcoin-safely")({
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
     ],
   }),
   component: ArticlePage,
@@ -171,7 +202,11 @@ function Checklist() {
           key={item}
           className="flex items-start gap-sm p-md rounded-lg border border-outline-variant bg-surface-container-lowest"
         >
-          <CheckSquare aria-hidden className="text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }} />
+          <CheckSquare
+            aria-hidden
+            className="text-[#0F9D58] shrink-0"
+            style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }}
+          />
           <span className="font-body-md text-body-md text-on-surface leading-relaxed">{item}</span>
         </li>
       ))}
@@ -232,10 +267,10 @@ function ArticlePage() {
         </figure>
 
         <P>
-          Sending Bitcoin is simple in mechanics — copy an address, enter an amount, confirm —
-          which is exactly what makes it risky. There's no undo button. Once a transaction is
-          confirmed on the network, it's final, regardless of whether the address was correct, the
-          network fee was too low, or you meant to send a completely different asset.
+          Sending Bitcoin is simple in mechanics — copy an address, enter an amount, confirm — which
+          is exactly what makes it risky. There's no undo button. Once a transaction is confirmed on
+          the network, it's final, regardless of whether the address was correct, the network fee
+          was too low, or you meant to send a completely different asset.
         </P>
         <P>
           This guide walks through how a Bitcoin transaction actually works, the specific mistakes
@@ -297,16 +332,16 @@ function ArticlePage() {
         <H2 id="how-works">1. How a Bitcoin Transaction Actually Works</H2>
         <P>
           When you send Bitcoin, you're not moving a file from one place to another — you're
-          broadcasting a message to the network stating that a certain amount, tied to your
-          wallet's keys, should now be associated with the recipient's address instead. That
-          message sits in a waiting area called the mempool until a miner includes it in a block.
-          Once included, and once enough additional blocks are added on top of it, the transaction
-          is considered confirmed and effectively permanent.
+          broadcasting a message to the network stating that a certain amount, tied to your wallet's
+          keys, should now be associated with the recipient's address instead. That message sits in
+          a waiting area called the mempool until a miner includes it in a block. Once included, and
+          once enough additional blocks are added on top of it, the transaction is considered
+          confirmed and effectively permanent.
         </P>
         <P>
-          This is why a Bitcoin address, not a name or account number, is the only thing the
-          network actually checks. If the address is correct, the transaction succeeds exactly as
-          instructed — even if that wasn't what you meant to do.
+          This is why a Bitcoin address, not a name or account number, is the only thing the network
+          actually checks. If the address is correct, the transaction succeeds exactly as instructed
+          — even if that wasn't what you meant to do.
         </P>
 
         <TransactionFlow />
@@ -329,9 +364,9 @@ function ArticlePage() {
           </li>
           <li>
             <strong>Sending to an address on the wrong network.</strong> Some assets exist on
-            multiple networks (for example, wrapped or bridged versions of Bitcoin). Sending
-            native Bitcoin to an address expecting a different network's token format can result
-            in permanent loss.
+            multiple networks (for example, wrapped or bridged versions of Bitcoin). Sending native
+            Bitcoin to an address expecting a different network's token format can result in
+            permanent loss.
           </li>
           <li>
             <strong>
@@ -344,28 +379,29 @@ function ArticlePage() {
               .
             </strong>{" "}
             Some malware silently replaces a copied address with an attacker's address the moment
-            before you paste it. This is why checking the pasted address against the original —
-            not just trusting that copy-paste "worked" — matters.
+            before you paste it. This is why checking the pasted address against the original — not
+            just trusting that copy-paste "worked" — matters.
           </li>
           <li>
             <strong>Underpaying the network fee.</strong> A fee that's too low for current network
             conditions can leave a transaction stuck unconfirmed for a long time, though it
-            typically isn't permanently lost — most wallets offer a way to speed it up (see
-            below).
+            typically isn't permanently lost — most wallets offer a way to speed it up (see below).
           </li>
           <li>
-            <strong>Sending an amount smaller than the network considers economical ("dust").</strong>{" "}
-            Extremely small amounts can become impractical to spend later once fees exceed the
-            value being moved.
+            <strong>
+              Sending an amount smaller than the network considers economical ("dust").
+            </strong>{" "}
+            Extremely small amounts can become impractical to spend later once fees exceed the value
+            being moved.
           </li>
         </ul>
 
         <H2 id="confirmations">4. Understanding Confirmations and Network Fees</H2>
         <P>
           A confirmation is simply one additional block added to the blockchain after the block
-          containing your transaction. Each additional confirmation makes it exponentially harder
-          to reverse, which is why the number of confirmations considered "safe" scales with the
-          value being sent:
+          containing your transaction. Each additional confirmation makes it exponentially harder to
+          reverse, which is why the number of confirmations considered "safe" scales with the value
+          being sent:
         </P>
         <ul className="list-disc pl-lg space-y-sm font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
           <li>Small, low-stakes transactions: many services accept 1 confirmation.</li>
@@ -376,8 +412,8 @@ function ArticlePage() {
           Network fees work on a simple principle: miners prioritize transactions offering higher
           fees relative to their data size, especially when the network is busy. A low fee doesn't
           cause loss of funds — it simply means a longer wait. Most modern wallets let you either
-          estimate an appropriate fee automatically or replace a stuck transaction with a
-          higher-fee version (often called "fee bumping" or RBF — Replace-By-Fee). The{" "}
+          estimate an appropriate fee automatically or replace a stuck transaction with a higher-fee
+          version (often called "fee bumping" or RBF — Replace-By-Fee). The{" "}
           <a
             href="https://bitcoin.org/en/you-need-to-know"
             target="_blank"
@@ -403,8 +439,8 @@ function ArticlePage() {
           If funds were sent to the wrong address, there is no built-in reversal mechanism. If the
           address belongs to a service (like an exchange), contacting their support promptly is
           worth attempting, but there's no guarantee of recovery. If the address belongs to an
-          unknown wallet, the funds are generally unrecoverable. This is precisely why the
-          pre-send checklist above matters more than any recovery step after the fact — and why{" "}
+          unknown wallet, the funds are generally unrecoverable. This is precisely why the pre-send
+          checklist above matters more than any recovery step after the fact — and why{" "}
           <Link
             to="/security/how-to-store-crypto-seed-phrase-safely"
             className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
@@ -418,8 +454,8 @@ function ArticlePage() {
         <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
           <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
             <li>
-              A confirmed Bitcoin transaction cannot be reversed — there is no central authority
-              to appeal to.
+              A confirmed Bitcoin transaction cannot be reversed — there is no central authority to
+              appeal to.
             </li>
             <li>
               The address is the only thing the network checks; a correct-looking mistake still
@@ -430,8 +466,8 @@ function ArticlePage() {
               correct network before sending anything significant.
             </li>
             <li>
-              A low network fee causes delay, not loss — most wallets can bump a stuck
-              transaction's fee.
+              A low network fee causes delay, not loss — most wallets can bump a stuck transaction's
+              fee.
             </li>
             <li>
               Prevention through careful verification is the only reliable protection; there's no
@@ -457,12 +493,47 @@ function ArticlePage() {
 
         <H2 id="conclusion">Conclusion</H2>
         <P>
-          Bitcoin's lack of a reversal mechanism is a feature, not a flaw — but it means the
-          entire burden of accuracy sits with whoever hits send. A short checklist — verify the
-          full address, confirm the network, test with a small amount first — prevents the
-          overwhelming majority of losses that have nothing to do with hacking or scams and
-          everything to do with an unverified copy-paste.
+          Bitcoin's lack of a reversal mechanism is a feature, not a flaw — but it means the entire
+          burden of accuracy sits with whoever hits send. A short checklist — verify the full
+          address, confirm the network, test with a small amount first — prevents the overwhelming
+          majority of losses that have nothing to do with hacking or scams and everything to do with
+          an unverified copy-paste.
         </P>
+
+        <H2 id="sources">Sources</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://bitcoin.org/en/you-need-to-know"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Bitcoin.org — "You Need to Know" (how Bitcoin transactions, fees, and confirmations
+              work)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://en.bitcoin.it/wiki/Transaction"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Bitcoin Wiki — Transaction (how a transaction is created, broadcast, and confirmed)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://en.bitcoin.it/wiki/Replace_by_fee"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Bitcoin Wiki — Replace-by-fee (how stuck transactions can be superseded)
+            </a>
+          </li>
+        </ul>
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
@@ -470,9 +541,9 @@ function ArticlePage() {
           </h3>
           <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
             This article is for informational and educational purposes only and should not be
-            considered financial or investment advice. Cryptocurrency transactions are
-            irreversible; readers should verify all transaction details independently and
-            exercise caution proportional to the amount being sent.
+            considered financial or investment advice. Cryptocurrency transactions are irreversible;
+            readers should verify all transaction details independently and exercise caution
+            proportional to the amount being sent.
           </p>
         </div>
 

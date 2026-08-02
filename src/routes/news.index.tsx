@@ -5,6 +5,24 @@ import regulationHero from "@/assets/news-crypto-regulation.jpg";
 import blockchainForkHero from "@/assets/news-blockchain-fork.png";
 import { Newspaper } from "lucide-react";
 
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Crypto News",
+  url: "https://crypto-beacon-news.vercel.app/news",
+  hasPart: [
+    {
+      "@type": "WebPage",
+      name: "Why Do Governments Regulate Cryptocurrency?",
+      url: "https://crypto-beacon-news.vercel.app/news/why-governments-regulate-cryptocurrency",
+    },
+    {
+      "@type": "WebPage",
+      name: "What Is a Blockchain Fork?",
+      url: "https://crypto-beacon-news.vercel.app/news/what-is-a-blockchain-fork",
+    },
+  ],
+};
 
 export const Route = createFileRoute("/news/")({
   head: () => ({
@@ -24,6 +42,7 @@ export const Route = createFileRoute("/news/")({
       { property: "og:url", content: "https://crypto-beacon-news.vercel.app/news" },
     ],
     links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/news" }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
   }),
   component: NewsHub,
 });
@@ -36,7 +55,10 @@ function NewsHub() {
         <header className="mb-xl border-b border-outline-variant pb-lg">
           <div className="flex items-center space-x-md mb-md">
             <div className="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant">
-              <Newspaper className="text-on-surface-variant" style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }} />
+              <Newspaper
+                className="text-on-surface-variant"
+                style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }}
+              />
             </div>
             <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary">
               News
@@ -99,7 +121,8 @@ function NewsHub() {
                 What Is a Blockchain Fork?
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
-                A plain-language explainer on what a blockchain fork is, the difference between hard and soft forks, and why cryptocurrencies sometimes split into two.
+                A plain-language explainer on what a blockchain fork is, the difference between hard
+                and soft forks, and why cryptocurrencies sometimes split into two.
               </p>
             </div>
           </Link>

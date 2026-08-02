@@ -11,6 +11,30 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
+const SITE_URL = "https://crypto-beacon-news.vercel.app";
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "CryptoBeacon",
+  url: `${SITE_URL}/`,
+  description:
+    "Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and the digital-asset ecosystem.",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${SITE_URL}/search?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "CryptoBeacon",
+  url: `${SITE_URL}/`,
+  logo: `${SITE_URL}/favicon.png`,
+};
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -85,6 +109,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and the wider digital-asset ecosystem.",
       },
+      {
+        name: "keywords",
+        content:
+          "crypto currency, what is crypto currency, fintechzoom.com crypto currency, crypto currencies, crypto currency price, chicksx crypto & currency exchange, crypto currency news, crypto currency meaning, crypto currency prices, trump crypto currency",
+      },
       { name: "author", content: "CryptoBeacon" },
       { property: "og:site_name", content: "CryptoBeacon" },
       { property: "og:title", content: "CryptoBeacon | Crypto News, Guides & Security" },
@@ -96,7 +125,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "CryptoBeacon | Crypto News, Guides & Security" },
-      { name: "twitter:description", content: "Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and the wider digital-asset ecosystem." },
+      {
+        name: "twitter:description",
+        content:
+          "Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and the wider digital-asset ecosystem.",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -111,11 +144,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { src: "https://cdn.tailwindcss.com?plugins=forms,container-queries" },
       { children: twConfig },
       { src: "https://www.googletagmanager.com/gtag/js?id=G-VY7EVVG1WL", async: true },
-      { children: "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-VY7EVVG1WL');" },
+      {
+        children:
+          "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-VY7EVVG1WL');",
+      },
       {
         children:
           "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NZ2CN7HG');",
       },
+      { type: "application/ld+json", children: JSON.stringify(websiteSchema) },
+      { type: "application/ld+json", children: JSON.stringify(organizationSchema) },
     ],
   }),
   shellComponent: RootShell,

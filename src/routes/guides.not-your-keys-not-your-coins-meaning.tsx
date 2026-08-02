@@ -4,7 +4,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/keys-coins-meaning.jpg";
 import { Key, Lock, HelpCircle, Plus } from "lucide-react";
 
-
 const URL = "https://crypto-beacon-news.vercel.app/guides/not-your-keys-not-your-coins-meaning";
 const TITLE = 'What "Not Your Keys, Not Your Coins" Means | CryptoBeacon';
 const DESC =
@@ -32,7 +31,7 @@ const faqs: { q: string; a: string }[] = [
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "NewsArticle",
   headline: '"Not Your Keys, Not Your Coins" — What It Actually Means',
   description: DESC,
   datePublished: PUBLISHED,
@@ -48,6 +47,12 @@ const articleSchema = {
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
   image: `https://crypto-beacon-news.vercel.app${hero}`,
+  inLanguage: "en-US",
+  keywords:
+    "not your keys not your coins meaning, custodial vs non-custodial wallet explained, why does self-custody matter, what happens if an exchange gets hacked, private key, self-custody, counterparty risk",
+  articleSection: "Guides",
+  wordCount: 1400,
+  isAccessibleForFree: true,
 };
 
 const faqSchema = {
@@ -58,6 +63,31 @@ const faqSchema = {
     name: f.q,
     acceptedAnswer: { "@type": "Answer", text: f.a },
   })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://crypto-beacon-news.vercel.app/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Guides",
+      item: "https://crypto-beacon-news.vercel.app/guides",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: '"Not Your Keys, Not Your Coins" — What It Means',
+      item: URL,
+    },
+  ],
 };
 
 export const Route = createFileRoute("/guides/not-your-keys-not-your-coins-meaning")({
@@ -83,6 +113,7 @@ export const Route = createFileRoute("/guides/not-your-keys-not-your-coins-meani
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
     ],
   }),
   component: ArticlePage,
@@ -135,7 +166,8 @@ function ComparisonTable() {
   ];
   return (
     <figure className="my-xl overflow-x-auto">
-      <table className="w-full min-w-[640px] border border-outline-variant rounded-lg overflow-hidden text-left"
+      <table
+        className="w-full min-w-[640px] border border-outline-variant rounded-lg overflow-hidden text-left"
         style={{ fontFamily: "'Inter', sans-serif" }}
       >
         <thead>
@@ -286,13 +318,13 @@ function ArticlePage() {
         <H2 id="keys">1. What "Keys" Actually Means Here</H2>
         <P>
           Every cryptocurrency holding is controlled by a private key — a piece of cryptographic
-          data that proves ownership and authorizes spending. Whoever holds the private key
-          controls the funds, full stop. It doesn't matter whose name is on an account, whose app
-          displays the balance, or who originally deposited the funds.
+          data that proves ownership and authorizes spending. Whoever holds the private key controls
+          the funds, full stop. It doesn't matter whose name is on an account, whose app displays
+          the balance, or who originally deposited the funds.
         </P>
         <P>
-          When you use a wallet where you generate and hold that private key yourself (typically
-          via a{" "}
+          When you use a wallet where you generate and hold that private key yourself (typically via
+          a{" "}
           <Link
             to="/security/how-to-store-crypto-seed-phrase-safely"
             className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
@@ -300,8 +332,8 @@ function ArticlePage() {
             seed phrase
           </Link>
           ), you have self-custody. When you deposit crypto onto an exchange or into a custodial
-          app, the platform generates and holds the private key on your behalf — you have a claim
-          on a balance they track internally, not direct control of the key itself.
+          app, the platform generates and holds the private key on your behalf — you have a claim on
+          a balance they track internally, not direct control of the key itself.
         </P>
 
         <H2 id="vs">2. Custodial vs. Non-Custodial: The Real Difference</H2>
@@ -333,31 +365,47 @@ function ArticlePage() {
         </P>
 
         <H2 id="which">4. How to Tell Which Category You're In</H2>
-        <P>
-          Ask yourself these questions about wherever your crypto currently sits:
-        </P>
+        <P>Ask yourself these questions about wherever your crypto currently sits:</P>
         <ul className="list-none pl-0 space-y-md font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
           <li className="flex items-start gap-sm">
-            <Key aria-hidden className="text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }} />
+            <Key
+              aria-hidden
+              className="text-[#0F9D58] shrink-0"
+              style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }}
+            />
             <span>
-              <strong>Did I write down a seed phrase when I set this up, and does this platform
-              never see it?</strong> If yes, you likely have self-custody.
+              <strong>
+                Did I write down a seed phrase when I set this up, and does this platform never see
+                it?
+              </strong>{" "}
+              If yes, you likely have self-custody.
             </span>
           </li>
           <li className="flex items-start gap-sm">
-            <Lock aria-hidden className="text-[#2563EB] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }} />
+            <Lock
+              aria-hidden
+              className="text-[#2563EB] shrink-0"
+              style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }}
+            />
             <span>
-              <strong>Do I log in with just a username and password, with no seed phrase
-              involved?</strong> If yes, you're very likely in a custodial arrangement — the
-              platform holds the keys.
+              <strong>
+                Do I log in with just a username and password, with no seed phrase involved?
+              </strong>{" "}
+              If yes, you're very likely in a custodial arrangement — the platform holds the keys.
             </span>
           </li>
           <li className="flex items-start gap-sm">
-            <HelpCircle aria-hidden className="text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }} />
+            <HelpCircle
+              aria-hidden
+              className="text-[#0F9D58] shrink-0"
+              style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }}
+            />
             <span>
-              <strong>If this company disappeared tomorrow, would I still be able to access my
-              funds using only something I personally hold?</strong> If the honest answer is no,
-              you don't currently control the keys.
+              <strong>
+                If this company disappeared tomorrow, would I still be able to access my funds using
+                only something I personally hold?
+              </strong>{" "}
+              If the honest answer is no, you don't currently control the keys.
             </span>
           </li>
         </ul>
@@ -365,12 +413,12 @@ function ArticlePage() {
         <H2 id="right-choice">5. Is Custodial Ever the Right Choice?</H2>
         <P>
           Yes — for some situations, it's a reasonable trade-off. Beginners taking their first
-          steps, people making frequent small trades, or anyone not yet comfortable managing a
-          seed phrase safely may reasonably choose convenience over full control, at least
-          temporarily. The goal of understanding NYKNYC isn't to declare custodial wallets wrong
-          — it's to make sure the choice is informed rather than accidental. A common and
-          reasonable pattern many people settle into is using custodial platforms for active
-          trading and non-custodial wallets for anything they intend to hold long-term.
+          steps, people making frequent small trades, or anyone not yet comfortable managing a seed
+          phrase safely may reasonably choose convenience over full control, at least temporarily.
+          The goal of understanding NYKNYC isn't to declare custodial wallets wrong — it's to make
+          sure the choice is informed rather than accidental. A common and reasonable pattern many
+          people settle into is using custodial platforms for active trading and non-custodial
+          wallets for anything they intend to hold long-term.
         </P>
 
         <H2 id="takeaways">6. Key Takeaways</H2>
@@ -414,9 +462,43 @@ function ArticlePage() {
         <P>
           "Not your keys, not your coins" isn't crypto slang for its own sake — it's a precise
           description of where control actually sits. Understanding which category your holdings
-          fall into is one of the most useful five-minute checks you can do, regardless of how
-          much or how little you hold.
+          fall into is one of the most useful five-minute checks you can do, regardless of how much
+          or how little you hold.
         </P>
+
+        <H2 id="sources">Sources</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://bitcoin.org/en/secure-your-wallet"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Bitcoin.org — Securing Your Wallet (why private keys matter)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://en.bitcoin.it/wiki/Private_key"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Bitcoin Wiki — Private Key (what controls a Bitcoin balance)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.ledger.com/academy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Ledger Academy — Self-Custody and Wallets
+            </a>
+          </li>
+        </ul>
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
@@ -424,9 +506,8 @@ function ArticlePage() {
           </h3>
           <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
             This article is for informational and educational purposes only and should not be
-            considered financial or investment advice. Choosing between custodial and
-            non-custodial storage involves trade-offs specific to your own circumstances and risk
-            tolerance.
+            considered financial or investment advice. Choosing between custodial and non-custodial
+            storage involves trade-offs specific to your own circumstances and risk tolerance.
           </p>
         </div>
 

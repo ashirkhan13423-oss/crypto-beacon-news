@@ -4,7 +4,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/news-blockchain-fork.png";
 import { Plus } from "lucide-react";
 
-
 const URL = "https://crypto-beacon-news.vercel.app/news/what-is-a-blockchain-fork";
 const TITLE = "What Is a Blockchain Fork? Explained Simply | CryptoBeacon";
 const DESC =
@@ -28,7 +27,7 @@ const faqs: { q: string; a: string }[] = [
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "NewsArticle",
   headline: "What Is a Blockchain Fork? Why Cryptocurrencies Sometimes Split in Two",
   description: DESC,
   datePublished: PUBLISHED,
@@ -44,6 +43,12 @@ const articleSchema = {
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
   image: `https://crypto-beacon-news.vercel.app${hero}`,
+  inLanguage: "en-US",
+  keywords:
+    "what is a blockchain fork, hard fork vs soft fork explained, why do cryptocurrencies split, what happens in a crypto fork, hard fork, soft fork, consensus rules, chain split, node, protocol upgrade",
+  articleSection: "News",
+  wordCount: 1200,
+  isAccessibleForFree: true,
 };
 
 const faqSchema = {
@@ -54,6 +59,31 @@ const faqSchema = {
     name: f.q,
     acceptedAnswer: { "@type": "Answer", text: f.a },
   })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://crypto-beacon-news.vercel.app/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "News",
+      item: "https://crypto-beacon-news.vercel.app/news",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "What Is a Blockchain Fork?",
+      item: URL,
+    },
+  ],
 };
 
 export const Route = createFileRoute("/news/what-is-a-blockchain-fork")({
@@ -79,6 +109,7 @@ export const Route = createFileRoute("/news/what-is-a-blockchain-fork")({
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
     ],
   }),
   component: ArticlePage,
@@ -154,7 +185,10 @@ function ArticlePage() {
         </figure>
 
         <P>
-          If you've ever noticed two cryptocurrencies with confusingly similar names — Bitcoin and Bitcoin Cash, Ethereum and Ethereum Classic — you've encountered the result of a blockchain fork. This guide explains what a fork actually is, why they happen, and what it means when one occurs.
+          If you've ever noticed two cryptocurrencies with confusingly similar names — Bitcoin and
+          Bitcoin Cash, Ethereum and Ethereum Classic — you've encountered the result of a
+          blockchain fork. This guide explains what a fork actually is, why they happen, and what it
+          means when one occurs.
         </P>
         <P>
           <em>This article is educational. It isn't financial advice.</em>
@@ -162,19 +196,33 @@ function ArticlePage() {
 
         <H2 id="what-a-fork-actually-is">What a Fork Actually Is</H2>
         <P>
-          A blockchain is governed by a shared set of rules that every participant's software follows to agree on what counts as a valid transaction. A fork happens when that rule set changes — either through an upgrade everyone adopts together, or through a disagreement so significant that the network splits into two separate, independently operating chains.
+          A blockchain is governed by a shared set of rules that every participant's software
+          follows to agree on what counts as a valid transaction. A fork happens when that rule set
+          changes — either through an upgrade everyone adopts together, or through a disagreement so
+          significant that the network splits into two separate, independently operating chains.
         </P>
 
         <H2 id="soft-forks-vs-hard-forks">Soft Forks vs. Hard Forks</H2>
         <P>
-          <strong>A soft fork</strong> tightens the rules in a way that's still compatible with older software. Nodes that haven't upgraded still recognize new blocks as valid, even if they can't take full advantage of the new rules. This generally doesn't split the network.
+          <strong>A soft fork</strong> tightens the rules in a way that's still compatible with
+          older software. Nodes that haven't upgraded still recognize new blocks as valid, even if
+          they can't take full advantage of the new rules. This generally doesn't split the network.
         </P>
         <P>
-          <strong>A hard fork</strong> changes the rules in a way that's <em>not</em> backward-compatible. Older software rejects blocks that follow the new rules, and newer software rejects blocks that follow the old ones. If both groups of participants keep running their own version, the result is two separate chains — and, since both usually preserve the transaction history up to the split, holders of the original asset typically end up holding a balance on both resulting chains.
+          <strong>A hard fork</strong> changes the rules in a way that's <em>not</em>{" "}
+          backward-compatible. Older software rejects blocks that follow the new rules, and newer
+          software rejects blocks that follow the old ones. If both groups of participants keep
+          running their own version, the result is two separate chains — and, since both usually
+          preserve the transaction history up to the split, holders of the original asset typically
+          end up holding a balance on both resulting chains.
         </P>
 
         <figure className="my-xl p-xl bg-surface-container-lowest border border-outline-variant rounded-xl flex items-center justify-center">
-          <svg viewBox="0 0 600 300" className="w-full max-w-[500px] h-auto" aria-label="Diagram showing a shared blockchain splitting into Chain A and Chain B">
+          <svg
+            viewBox="0 0 600 300"
+            className="w-full max-w-[500px] h-auto"
+            aria-label="Diagram showing a shared blockchain splitting into Chain A and Chain B"
+          >
             <style>
               {`
                 .diagram-text {
@@ -184,8 +232,14 @@ function ArticlePage() {
                 }
               `}
             </style>
-            
-            <g stroke="currentColor" strokeWidth="8" strokeLinecap="round" fill="none" className="text-secondary">
+
+            <g
+              stroke="currentColor"
+              strokeWidth="8"
+              strokeLinecap="round"
+              fill="none"
+              className="text-secondary"
+            >
               {/* Main trunk */}
               <path d="M 50 150 L 250 150" />
               {/* Branch A (Top) */}
@@ -201,62 +255,96 @@ function ArticlePage() {
               <circle cx="100" cy="150" r="12" className="text-primary" />
               <circle cx="170" cy="150" r="12" className="text-primary" />
               <circle cx="240" cy="150" r="12" className="text-primary" />
-              
+
               <circle cx="380" cy="95" r="12" className="text-secondary" />
               <circle cx="450" cy="70" r="12" className="text-secondary" />
               <circle cx="520" cy="70" r="12" className="text-secondary" />
-              
+
               <circle cx="380" cy="205" r="12" className="text-[#0F9D58]" />
               <circle cx="450" cy="230" r="12" className="text-[#0F9D58]" />
               <circle cx="520" cy="230" r="12" className="text-[#0F9D58]" />
             </g>
 
-            <text x="150" y="110" textAnchor="middle" className="diagram-text text-xl text-primary">Shared History</text>
-            <text x="500" y="40" textAnchor="middle" className="diagram-text text-xl text-secondary">Chain A</text>
-            <text x="500" y="280" textAnchor="middle" className="diagram-text text-xl text-[#0F9D58]">Chain B</text>
+            <text x="150" y="110" textAnchor="middle" className="diagram-text text-xl text-primary">
+              Shared History
+            </text>
+            <text
+              x="500"
+              y="40"
+              textAnchor="middle"
+              className="diagram-text text-xl text-secondary"
+            >
+              Chain A
+            </text>
+            <text
+              x="500"
+              y="280"
+              textAnchor="middle"
+              className="diagram-text text-xl text-[#0F9D58]"
+            >
+              Chain B
+            </text>
           </svg>
         </figure>
 
         <H2 id="why-forks-happen">Why Forks Happen</H2>
-        <P>
-          Forks generally stem from one of two situations:
-        </P>
+        <P>Forks generally stem from one of two situations:</P>
         <ul className="list-disc pl-lg space-y-md font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
           <li>
-            <strong>A planned upgrade</strong> the community broadly agrees on — improving scalability, adding functionality, or fixing an issue — carried out via a coordinated hard fork with wide support.
+            <strong>A planned upgrade</strong> the community broadly agrees on — improving
+            scalability, adding functionality, or fixing an issue — carried out via a coordinated
+            hard fork with wide support.
           </li>
           <li>
-            <strong>A genuine disagreement</strong> about the project's direction — for example, differing opinions on transaction capacity or protocol philosophy — that can't be resolved, leading part of the community to continue on a separate chain with the old or modified rules.
+            <strong>A genuine disagreement</strong> about the project's direction — for example,
+            differing opinions on transaction capacity or protocol philosophy — that can't be
+            resolved, leading part of the community to continue on a separate chain with the old or
+            modified rules.
           </li>
         </ul>
 
         <H2 id="what-happens-to-your-coins">What Happens to Your Coins in a Fork</H2>
         <P>
-          If you hold the original asset in a wallet where you control the private keys at the moment of a contentious hard fork, you generally end up with a balance on both resulting chains, since the transaction history is shared up to the split point. Accessing the new chain's balance typically requires wallet software that specifically supports it — it doesn't happen automatically inside every wallet.
+          If you hold the original asset in a wallet where you control the private keys at the
+          moment of a contentious hard fork, you generally end up with a balance on both resulting
+          chains, since the transaction history is shared up to the split point. Accessing the new
+          chain's balance typically requires wallet software that specifically supports it — it
+          doesn't happen automatically inside every wallet.
         </P>
         <P>
-          If your coins are held on an exchange at the time of a fork, whether you receive the new asset depends entirely on that platform's individual policy — some list and credit new fork assets, others don't.
+          If your coins are held on an exchange at the time of a fork, whether you receive the new
+          asset depends entirely on that platform's individual policy — some list and credit new
+          fork assets, others don't.
         </P>
 
         <H2 id="is-a-fork-good-or-bad">Is a Fork Good or Bad?</H2>
         <P>
-          Neither, inherently — a fork is simply a mechanism for change, and its outcome depends entirely on the specific situation. A well-supported planned upgrade is usually a routine, low-drama event. A contentious split reflects a genuine disagreement within a community and can fragment attention, developer effort, and network security across two smaller chains instead of one larger one. Neither outcome is guaranteed in advance — evaluating a specific fork means looking at the situation on its own terms.
+          Neither, inherently — a fork is simply a mechanism for change, and its outcome depends
+          entirely on the specific situation. A well-supported planned upgrade is usually a routine,
+          low-drama event. A contentious split reflects a genuine disagreement within a community
+          and can fragment attention, developer effort, and network security across two smaller
+          chains instead of one larger one. Neither outcome is guaranteed in advance — evaluating a
+          specific fork means looking at the situation on its own terms.
         </P>
 
         <H2 id="takeaways">Key Takeaways</H2>
         <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
           <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
             <li>
-              A fork happens when a blockchain's rule set changes — either compatibly (soft fork) or incompatibly (hard fork).
+              A fork happens when a blockchain's rule set changes — either compatibly (soft fork) or
+              incompatibly (hard fork).
             </li>
             <li>
-              A hard fork with lasting disagreement produces two separate, independently operating chains.
+              A hard fork with lasting disagreement produces two separate, independently operating
+              chains.
             </li>
             <li>
-              Holding the original asset at the time of a contentious hard fork generally means a balance on both chains, though accessing it may require specific wallet support.
+              Holding the original asset at the time of a contentious hard fork generally means a
+              balance on both chains, though accessing it may require specific wallet support.
             </li>
             <li>
-              A fork's outcome — whether it strengthens or fragments a project — depends on the specific case, not the mechanism itself.
+              A fork's outcome — whether it strengthens or fragments a project — depends on the
+              specific case, not the mechanism itself.
             </li>
           </ul>
         </div>
@@ -276,12 +364,47 @@ function ArticlePage() {
           ))}
         </div>
 
+        <H2 id="sources">Sources</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://en.bitcoin.it/wiki/Fork"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Bitcoin Wiki — Fork (hard forks, soft forks, and chain splits explained)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://ethereum.org/developers/docs/consensus-mechanisms/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Ethereum.org — Consensus Mechanisms (how a network agrees on rules and upgrades)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://bitcoin.org/en/faq"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Bitcoin.org — Frequently Asked Questions (protocol upgrades and network rules)
+            </a>
+          </li>
+        </ul>
+
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
           <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be considered financial or investment advice.
+            This article is for informational and educational purposes only and should not be
+            considered financial or investment advice.
           </p>
         </div>
 

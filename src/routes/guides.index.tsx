@@ -5,6 +5,24 @@ import nyknycHero from "@/assets/keys-coins-meaning.jpg";
 import exchangeHero from "@/assets/exchange-vs-wallet.png";
 import { BookOpen } from "lucide-react";
 
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Crypto Guides",
+  url: "https://crypto-beacon-news.vercel.app/guides",
+  hasPart: [
+    {
+      "@type": "WebPage",
+      name: '"Not Your Keys, Not Your Coins" — What It Means',
+      url: "https://crypto-beacon-news.vercel.app/guides/not-your-keys-not-your-coins-meaning",
+    },
+    {
+      "@type": "WebPage",
+      name: "Should You Keep Your Crypto on an Exchange or Move It to Your Own Wallet?",
+      url: "https://crypto-beacon-news.vercel.app/guides/exchange-or-personal-wallet-crypto-storage",
+    },
+  ],
+};
 
 export const Route = createFileRoute("/guides/")({
   head: () => ({
@@ -24,6 +42,7 @@ export const Route = createFileRoute("/guides/")({
       { property: "og:url", content: "https://crypto-beacon-news.vercel.app/guides" },
     ],
     links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/guides" }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
   }),
   component: GuidesHub,
 });
@@ -36,7 +55,10 @@ function GuidesHub() {
         <header className="mb-xl border-b border-outline-variant pb-lg">
           <div className="flex items-center space-x-md mb-md">
             <div className="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant">
-              <BookOpen className="text-on-surface-variant" style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }} />
+              <BookOpen
+                className="text-on-surface-variant"
+                style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }}
+              />
             </div>
             <h1 className="font-display-lg text-display-lg text-primary">Guides</h1>
           </div>
@@ -69,8 +91,8 @@ function GuidesHub() {
                 "Not Your Keys, Not Your Coins" — What It Actually Means
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
-                A plain-language explainer on what the phrase means, why it matters, and how to
-                tell if you actually control your crypto.
+                A plain-language explainer on what the phrase means, why it matters, and how to tell
+                if you actually control your crypto.
               </p>
             </div>
           </Link>

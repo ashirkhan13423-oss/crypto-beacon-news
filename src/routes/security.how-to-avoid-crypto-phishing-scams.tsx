@@ -4,7 +4,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/phishing-padlock.jpg";
 import { AlertTriangle, Plus } from "lucide-react";
 
-
 const URL = "https://crypto-beacon-news.vercel.app/security/how-to-avoid-crypto-phishing-scams";
 const TITLE = "How to Avoid Crypto Phishing Scams | CryptoBeacon";
 const DESC =
@@ -36,7 +35,7 @@ const faqs: { q: string; a: string }[] = [
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "NewsArticle",
   headline: "How to Avoid Crypto Phishing Scams",
   description: DESC,
   datePublished: PUBLISHED,
@@ -52,6 +51,12 @@ const articleSchema = {
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
   image: `https://crypto-beacon-news.vercel.app${hero}`,
+  inLanguage: "en-US",
+  keywords:
+    "how to avoid crypto phishing scams, crypto phishing red flags, how to spot a fake crypto website, wallet drainer scam explained, crypto phishing checklist, address poisoning, seed phrase phishing",
+  articleSection: "Security",
+  wordCount: 1500,
+  isAccessibleForFree: true,
 };
 
 const faqSchema = {
@@ -62,6 +67,31 @@ const faqSchema = {
     name: f.q,
     acceptedAnswer: { "@type": "Answer", text: f.a },
   })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://crypto-beacon-news.vercel.app/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Security",
+      item: "https://crypto-beacon-news.vercel.app/security",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Avoid Crypto Phishing Scams",
+      item: URL,
+    },
+  ],
 };
 
 export const Route = createFileRoute("/security/how-to-avoid-crypto-phishing-scams")({
@@ -87,6 +117,7 @@ export const Route = createFileRoute("/security/how-to-avoid-crypto-phishing-sca
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
     ],
   }),
   component: ArticlePage,
@@ -206,16 +237,16 @@ function ArticlePage() {
         </figure>
 
         <P>
-          Phishing is the most common way people lose cryptocurrency — not because the technology
-          is weak, but because it targets something far harder to patch than software: human trust
+          Phishing is the most common way people lose cryptocurrency — not because the technology is
+          weak, but because it targets something far harder to patch than software: human trust
           under pressure. Unlike a hacked exchange or a broken smart contract, phishing doesn't
-          require any flaw in the blockchain at all. It only requires you to click, connect, or
-          type something you shouldn't.
+          require any flaw in the blockchain at all. It only requires you to click, connect, or type
+          something you shouldn't.
         </P>
         <P>
           This guide explains how crypto phishing actually works, the patterns that repeat across
-          nearly every version of it, and the habits that make you a much harder target —
-          regardless of how the specific scam is dressed up.
+          nearly every version of it, and the habits that make you a much harder target — regardless
+          of how the specific scam is dressed up.
         </P>
         <P>
           <em>
@@ -276,15 +307,14 @@ function ArticlePage() {
         <P>
           Traditional phishing usually aims to steal a password that a company can later reset.
           Crypto phishing aims for something with no reset button: your seed phrase, your private
-          key, or your explicit approval to move funds. Once any of those are handed over or
-          signed, the transaction is final. There's no bank to call, no chargeback, and no customer
-          service escalation that can undo it.
+          key, or your explicit approval to move funds. Once any of those are handed over or signed,
+          the transaction is final. There's no bank to call, no chargeback, and no customer service
+          escalation that can undo it.
         </P>
         <P>
-          This is why crypto phishing tends to focus less on tricking you into giving up a
-          password, and more on tricking you into taking an action — connecting a wallet, approving
-          a transaction, or entering a recovery phrase into something that looks legitimate but
-          isn't.
+          This is why crypto phishing tends to focus less on tricking you into giving up a password,
+          and more on tricking you into taking an action — connecting a wallet, approving a
+          transaction, or entering a recovery phrase into something that looks legitimate but isn't.
         </P>
 
         <H2 id="how">2. How a Typical Phishing Attack Works</H2>
@@ -301,13 +331,13 @@ function ArticlePage() {
             limited-time claim, a "verify now or lose access" warning.
           </li>
           <li>
-            <strong>Redirect.</strong> You're pushed toward a link, often a domain that looks
-            nearly identical to the real one, sometimes just a single character off.
+            <strong>Redirect.</strong> You're pushed toward a link, often a domain that looks nearly
+            identical to the real one, sometimes just a single character off.
           </li>
           <li>
-            <strong>The ask.</strong> The fake site or app asks you to either type your seed
-            phrase, connect your wallet, or approve a transaction — usually framed as a routine,
-            harmless step.
+            <strong>The ask.</strong> The fake site or app asks you to either type your seed phrase,
+            connect your wallet, or approve a transaction — usually framed as a routine, harmless
+            step.
           </li>
           <li>
             <strong>The loss.</strong> Once you comply, funds move, or the attacker gains standing
@@ -315,8 +345,8 @@ function ArticlePage() {
           </li>
         </ol>
         <P>
-          Recognizing this shape matters more than memorizing any single scam — the wrapper
-          changes constantly, but the underlying steps rarely do.
+          Recognizing this shape matters more than memorizing any single scam — the wrapper changes
+          constantly, but the underlying steps rarely do.
         </P>
 
         <FlowDiagram />
@@ -325,13 +355,13 @@ function ArticlePage() {
         <ul className="list-disc pl-lg space-y-md font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
           <li>
             <strong>Fake support.</strong> Someone contacts you claiming to be from a wallet or
-            exchange's support team, often after you've posted publicly about an issue, and asks
-            for your seed phrase or remote access to "help."
+            exchange's support team, often after you've posted publicly about an issue, and asks for
+            your seed phrase or remote access to "help."
           </li>
           <li>
-            <strong>Fake airdrops and claims.</strong> A site invites you to "claim" free tokens
-            by connecting your wallet and signing a transaction — one that actually grants the
-            site broad spending permission.
+            <strong>Fake airdrops and claims.</strong> A site invites you to "claim" free tokens by
+            connecting your wallet and signing a transaction — one that actually grants the site
+            broad spending permission.
           </li>
           <li>
             <strong>Lookalike websites.</strong> A domain nearly identical to a real service,
@@ -340,8 +370,7 @@ function ArticlePage() {
           </li>
           <li>
             <strong>Malicious browser extensions.</strong> Tools that present themselves as useful
-            crypto utilities but alter transaction details or intercept wallet data once
-            installed.
+            crypto utilities but alter transaction details or intercept wallet data once installed.
           </li>
           <li>
             <strong>Clipboard hijacking.</strong> Malware that silently replaces a copied wallet
@@ -351,7 +380,11 @@ function ArticlePage() {
         </ul>
 
         <H2 id="redflags">
-          <AlertTriangle aria-hidden className="align-middle text-[#0F9D58] mr-xs" style={{ fontSize: "0.9em" }} />
+          <AlertTriangle
+            aria-hidden
+            className="align-middle text-[#0F9D58] mr-xs"
+            style={{ fontSize: "0.9em" }}
+          />
           4. Red Flags That Repeat Across Almost Every Scam
         </H2>
         <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
@@ -396,9 +429,9 @@ function ArticlePage() {
             rely on people confirming only the first and last few characters.
           </li>
           <li>
-            <strong>Read what you're signing.</strong> If a wallet interface shows a transaction
-            in unreadable technical format, treat that as a reason to slow down, not proceed. The
-            U.S. Federal Trade Commission's{" "}
+            <strong>Read what you're signing.</strong> If a wallet interface shows a transaction in
+            unreadable technical format, treat that as a reason to slow down, not proceed. The U.S.
+            Federal Trade Commission's{" "}
             <a
               href="https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-and-scams"
               target="_blank"
@@ -436,8 +469,8 @@ function ArticlePage() {
             "verify" anything further.
           </li>
           <li>
-            If you've connected a wallet to a suspicious site, use your wallet's
-            approval-management feature to revoke access as soon as possible.
+            If you've connected a wallet to a suspicious site, use your wallet's approval-management
+            feature to revoke access as soon as possible.
           </li>
           <li>
             If you've entered or exposed your seed phrase, treat it as compromised. Move remaining
@@ -461,8 +494,8 @@ function ArticlePage() {
         <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
           <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
             <li>
-              Crypto phishing targets actions and permissions, not just passwords — there's no
-              reset once a transaction is signed.
+              Crypto phishing targets actions and permissions, not just passwords — there's no reset
+              once a transaction is signed.
             </li>
             <li>
               The specific scam format changes constantly, but the underlying pattern — contact,
@@ -476,8 +509,8 @@ function ArticlePage() {
               setting.
             </li>
             <li>
-              If you suspect exposure, move funds to a new wallet immediately rather than waiting
-              to be certain.
+              If you suspect exposure, move funds to a new wallet immediately rather than waiting to
+              be certain.
             </li>
           </ul>
         </div>
@@ -501,10 +534,44 @@ function ArticlePage() {
         <P>
           Crypto phishing succeeds by targeting behavior, not code — which means the best defense
           isn't a single tool, but a consistent set of habits: navigating directly instead of
-          clicking links, reading what you sign, and treating any request for your seed phrase as
-          an automatic red flag. The specific disguise will keep changing. The underlying pattern
+          clicking links, reading what you sign, and treating any request for your seed phrase as an
+          automatic red flag. The specific disguise will keep changing. The underlying pattern
           rarely does.
         </P>
+
+        <H2 id="sources">Sources</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-and-scams"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              FTC — What to Know About Cryptocurrency and Scams
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              CISA — Avoiding Social Engineering and Phishing Attacks
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/crypto-scams"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              U.S. SEC Investor.gov — 5 Ways Fraudsters Lure Victims Into Crypto Scams
+            </a>
+          </li>
+        </ul>
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
@@ -519,9 +586,7 @@ function ArticlePage() {
         </div>
 
         <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">
-            Related Reading
-          </h2>
+          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
             <Link
               to="/security/how-to-store-crypto-seed-phrase-safely"

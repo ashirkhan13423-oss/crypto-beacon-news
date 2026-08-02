@@ -6,7 +6,6 @@ import seedMetalPaper from "@/assets/seed-metal-vs-paper.jpg";
 import seedPhishing from "@/assets/seed-phishing.jpg";
 import { Plus } from "lucide-react";
 
-
 const URL = "https://crypto-beacon-news.vercel.app/security/how-to-store-crypto-seed-phrase-safely";
 const TITLE = "How to Store a Crypto Seed Phrase Safely | CryptoBeacon";
 const DESC =
@@ -38,7 +37,7 @@ const faqs: { q: string; a: string }[] = [
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "NewsArticle",
   headline: "How to Store Your Crypto Seed Phrase Safely",
   description: DESC,
   datePublished: PUBLISHED,
@@ -54,6 +53,12 @@ const articleSchema = {
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
   image: `https://crypto-beacon-news.vercel.app${seedVault}`,
+  inLanguage: "en-US",
+  keywords:
+    "how to store a crypto seed phrase safely, seed phrase storage best practices, seed phrase mistakes to avoid, where to store your seed phrase, metal seed phrase storage, how to backup a crypto wallet, BIP39, self-custody, hardware wallet",
+  articleSection: "Security",
+  wordCount: 1800,
+  isAccessibleForFree: true,
 };
 
 const faqSchema = {
@@ -66,12 +71,41 @@ const faqSchema = {
   })),
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://crypto-beacon-news.vercel.app/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Security",
+      item: "https://crypto-beacon-news.vercel.app/security",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Store Your Seed Phrase Safely",
+      item: URL,
+    },
+  ],
+};
+
 export const Route = createFileRoute("/security/how-to-store-crypto-seed-phrase-safely")({
   head: () => ({
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      { name: "keywords", content: "how to store a crypto seed phrase safely, seed phrase storage best practices, seed phrase mistakes to avoid, where to store your seed phrase, metal seed phrase storage, how to backup a crypto wallet, BIP39, self-custody, hardware wallet" },
+      {
+        name: "keywords",
+        content:
+          "how to store a crypto seed phrase safely, seed phrase storage best practices, seed phrase mistakes to avoid, where to store your seed phrase, metal seed phrase storage, how to backup a crypto wallet, BIP39, self-custody, hardware wallet",
+      },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
@@ -85,6 +119,7 @@ export const Route = createFileRoute("/security/how-to-store-crypto-seed-phrase-
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
     ],
   }),
   component: ArticlePage,
@@ -113,14 +148,21 @@ function ArticlePage() {
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
         {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
+        <nav
+          aria-label="Breadcrumb"
+          className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
+        >
           <ol className="flex flex-wrap items-center gap-xs">
             <li>
-              <Link to="/" className="hover:text-secondary">Home</Link>
+              <Link to="/" className="hover:text-secondary">
+                Home
+              </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link to="/security" className="hover:text-secondary">Security</Link>
+              <Link to="/security" className="hover:text-secondary">
+                Security
+              </Link>
             </li>
             <li aria-hidden>/</li>
             <li className="text-primary">Seed Phrase Storage</li>
@@ -166,23 +208,63 @@ function ArticlePage() {
           savings.
         </P>
         <P>
-          <em>This article is educational. It does not recommend any specific product or brand,
-          and it isn't financial advice.</em>
+          <em>
+            This article is educational. It does not recommend any specific product or brand, and it
+            isn't financial advice.
+          </em>
         </P>
 
         {/* Table of contents */}
         <aside className="my-xl p-lg rounded-lg border border-outline-variant bg-surface-container-low">
-          <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">Table of Contents</h2>
+          <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">
+            Table of Contents
+          </h2>
           <ol className="list-decimal list-inside space-y-xs font-body-md text-body-md text-on-surface">
-            <li><a href="#what" className="hover:underline decoration-secondary">What Is a Seed Phrase, Exactly?</a></li>
-            <li><a href="#different" className="hover:underline decoration-secondary">Why Seed Phrase Security Is Different From Password Security</a></li>
-            <li><a href="#mistakes" className="hover:underline decoration-secondary">Common Seed Phrase Storage Mistakes</a></li>
-            <li><a href="#methods" className="hover:underline decoration-secondary">Storage Methods Compared</a></li>
-            <li><a href="#plan" className="hover:underline decoration-secondary">Building a Storage Plan That Fits Your Holdings</a></li>
-            <li><a href="#test" className="hover:underline decoration-secondary">Testing Your Backup Before You Need It</a></li>
-            <li><a href="#compromised" className="hover:underline decoration-secondary">What to Do If You Suspect Your Seed Phrase Is Compromised</a></li>
-            <li><a href="#takeaways" className="hover:underline decoration-secondary">Key Takeaways</a></li>
-            <li><a href="#faq" className="hover:underline decoration-secondary">Frequently Asked Questions</a></li>
+            <li>
+              <a href="#what" className="hover:underline decoration-secondary">
+                What Is a Seed Phrase, Exactly?
+              </a>
+            </li>
+            <li>
+              <a href="#different" className="hover:underline decoration-secondary">
+                Why Seed Phrase Security Is Different From Password Security
+              </a>
+            </li>
+            <li>
+              <a href="#mistakes" className="hover:underline decoration-secondary">
+                Common Seed Phrase Storage Mistakes
+              </a>
+            </li>
+            <li>
+              <a href="#methods" className="hover:underline decoration-secondary">
+                Storage Methods Compared
+              </a>
+            </li>
+            <li>
+              <a href="#plan" className="hover:underline decoration-secondary">
+                Building a Storage Plan That Fits Your Holdings
+              </a>
+            </li>
+            <li>
+              <a href="#test" className="hover:underline decoration-secondary">
+                Testing Your Backup Before You Need It
+              </a>
+            </li>
+            <li>
+              <a href="#compromised" className="hover:underline decoration-secondary">
+                What to Do If You Suspect Your Seed Phrase Is Compromised
+              </a>
+            </li>
+            <li>
+              <a href="#takeaways" className="hover:underline decoration-secondary">
+                Key Takeaways
+              </a>
+            </li>
+            <li>
+              <a href="#faq" className="hover:underline decoration-secondary">
+                Frequently Asked Questions
+              </a>
+            </li>
           </ol>
         </aside>
 
@@ -209,8 +291,8 @@ function ArticlePage() {
         </P>
         <P>
           That's what makes it powerful for recovery, and dangerous if mishandled. There's no
-          customer support line to call if it's lost, and no way to freeze funds if it's stolen.
-          The phrase itself is the entire security model.
+          customer support line to call if it's lost, and no way to freeze funds if it's stolen. The
+          phrase itself is the entire security model.
         </P>
 
         <H2 id="different">2. Why Seed Phrase Security Is Different From Password Security</H2>
@@ -251,8 +333,8 @@ function ArticlePage() {
           </li>
           <li>
             <strong>Treating "written down" as "done."</strong> Writing the phrase is step one.
-            Where it's stored, how many copies exist, and who could physically access it matter
-            just as much.
+            Where it's stored, how many copies exist, and who could physically access it matter just
+            as much.
           </li>
           <li>
             <strong>Sharing it under pressure.</strong> Scammers posing as wallet or exchange
@@ -289,7 +371,10 @@ function ArticlePage() {
         <div className="overflow-x-auto -mx-gutter md:mx-0 mb-md">
           <table className="w-full min-w-[640px] border-collapse text-left font-body-md text-body-md">
             <thead>
-              <tr className="bg-[#0F9D58] text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <tr
+                className="bg-[#0F9D58] text-white"
+                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+              >
                 <th className="p-md font-semibold border border-[#0F9D58]">Method</th>
                 <th className="p-md font-semibold border border-[#0F9D58]">Offline?</th>
                 <th className="p-md font-semibold border border-[#0F9D58]">Durability</th>
@@ -300,32 +385,54 @@ function ArticlePage() {
               <tr>
                 <td className="p-md border border-outline-variant">Paper</td>
                 <td className="p-md border border-outline-variant">Yes</td>
-                <td className="p-md border border-outline-variant">Low — vulnerable to fire, water, fading</td>
-                <td className="p-md border border-outline-variant">Small test wallets, short-term use</td>
+                <td className="p-md border border-outline-variant">
+                  Low — vulnerable to fire, water, fading
+                </td>
+                <td className="p-md border border-outline-variant">
+                  Small test wallets, short-term use
+                </td>
               </tr>
               <tr>
                 <td className="p-md border border-outline-variant">Metal plate (steel/titanium)</td>
                 <td className="p-md border border-outline-variant">Yes</td>
-                <td className="p-md border border-outline-variant">High — fire and water resistant</td>
-                <td className="p-md border border-outline-variant">Long-term savings, larger holdings</td>
+                <td className="p-md border border-outline-variant">
+                  High — fire and water resistant
+                </td>
+                <td className="p-md border border-outline-variant">
+                  Long-term savings, larger holdings
+                </td>
               </tr>
               <tr>
-                <td className="p-md border border-outline-variant">Password manager / cloud note</td>
+                <td className="p-md border border-outline-variant">
+                  Password manager / cloud note
+                </td>
                 <td className="p-md border border-outline-variant">No</td>
                 <td className="p-md border border-outline-variant">N/A — internet-connected</td>
-                <td className="p-md border border-outline-variant">Not recommended at any amount</td>
+                <td className="p-md border border-outline-variant">
+                  Not recommended at any amount
+                </td>
               </tr>
               <tr>
                 <td className="p-md border border-outline-variant">Memory only</td>
                 <td className="p-md border border-outline-variant">Yes</td>
-                <td className="p-md border border-outline-variant">Unreliable — human memory fails</td>
-                <td className="p-md border border-outline-variant">Not recommended except as a supplementary factor (e.g., a passphrase)</td>
+                <td className="p-md border border-outline-variant">
+                  Unreliable — human memory fails
+                </td>
+                <td className="p-md border border-outline-variant">
+                  Not recommended except as a supplementary factor (e.g., a passphrase)
+                </td>
               </tr>
               <tr>
-                <td className="p-md border border-outline-variant">Split storage (e.g., Shamir's Secret Sharing)</td>
+                <td className="p-md border border-outline-variant">
+                  Split storage (e.g., Shamir's Secret Sharing)
+                </td>
                 <td className="p-md border border-outline-variant">Yes</td>
-                <td className="p-md border border-outline-variant">High, but operationally complex</td>
-                <td className="p-md border border-outline-variant">Larger holdings, multiple trusted parties</td>
+                <td className="p-md border border-outline-variant">
+                  High, but operationally complex
+                </td>
+                <td className="p-md border border-outline-variant">
+                  Larger holdings, multiple trusted parties
+                </td>
               </tr>
             </tbody>
           </table>
@@ -357,8 +464,8 @@ function ArticlePage() {
           >
             CISA guidance on protecting sensitive information
           </a>{" "}
-          reinforces the same principle: offline, redundant, and physically controlled storage
-          beats convenience every time.
+          reinforces the same principle: offline, redundant, and physically controlled storage beats
+          convenience every time.
         </P>
 
         <H2 id="plan">5. Building a Storage Plan That Fits Your Holdings</H2>
@@ -369,8 +476,8 @@ function ArticlePage() {
         <P>A reasonable framework:</P>
         <ul className="list-disc pl-lg space-y-md font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
           <li>
-            Write it down accurately, offline, away from cameras or onlookers, and double-check
-            word order and spelling against the device before funding the wallet.
+            Write it down accurately, offline, away from cameras or onlookers, and double-check word
+            order and spelling against the device before funding the wallet.
           </li>
           <li>
             <strong>Avoid a single point of failure.</strong> Keep at least two copies, in two
@@ -388,8 +495,8 @@ function ArticlePage() {
             purpose if it sits somewhere accessible to anyone who visits your home.
           </li>
           <li>
-            <strong>Never digitize it "just to be safe."</strong> The instinct to photograph or
-            type out a backup as insurance is exactly what creates most real-world losses.
+            <strong>Never digitize it "just to be safe."</strong> The instinct to photograph or type
+            out a backup as insurance is exactly what creates most real-world losses.
           </li>
         </ul>
         <P>
@@ -397,7 +504,10 @@ function ArticlePage() {
           use has different needs than someone holding long-term savings. The goal is a setup that
           survives ordinary real-world accidents and human error, not just a theoretical attacker.
           For a deeper look at the trade-offs, see our guide to{" "}
-          <Link to="/bitcoin" className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]">
+          <Link
+            to="/bitcoin"
+            className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+          >
             Bitcoin self-custody
           </Link>{" "}
           and how it compares to leaving funds on exchanges.
@@ -420,8 +530,8 @@ function ArticlePage() {
           </li>
         </ol>
         <P>
-          If anything goes wrong during this process, it happens with a small test amount instead
-          of your full holdings.
+          If anything goes wrong during this process, it happens with a small test amount instead of
+          your full holdings.
         </P>
 
         <H2 id="compromised">7. What to Do If You Suspect Your Seed Phrase Is Compromised</H2>
@@ -442,16 +552,16 @@ function ArticlePage() {
           </li>
         </ul>
         <P>
-          Speed matters more than perfection here. A partially rushed move to safety is better
-          than a delayed, perfect one.
+          Speed matters more than perfection here. A partially rushed move to safety is better than
+          a delayed, perfect one.
         </P>
 
         <H2 id="takeaways">8. Key Takeaways</H2>
         <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
           <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
             <li>
-              A seed phrase generates every private key your wallet will ever use — treat it as
-              more sensitive than any password you own.
+              A seed phrase generates every private key your wallet will ever use — treat it as more
+              sensitive than any password you own.
             </li>
             <li>
               The most common losses come from digital storage, single points of failure, and
@@ -466,8 +576,8 @@ function ArticlePage() {
               funds.
             </li>
             <li>
-              No legitimate service will ever ask for your seed phrase — treat any request for it
-              as a scam.
+              No legitimate service will ever ask for your seed phrase — treat any request for it as
+              a scam.
             </li>
           </ul>
         </div>
@@ -490,12 +600,46 @@ function ArticlePage() {
         <H2 id="conclusion">Conclusion</H2>
         <P>
           Seed phrase security isn't about finding one perfect product — it's about eliminating the
-          single points of failure that cause almost all real-world losses: digital exposure,
-          single copies, untested backups, and social engineering. A setup that's boring,
-          duplicated, and verified will outperform an expensive one that's rushed or untested. Take
-          the time to write it down carefully, store it offline in more than one place, and confirm
-          it works before you trust it with real funds.
+          single points of failure that cause almost all real-world losses: digital exposure, single
+          copies, untested backups, and social engineering. A setup that's boring, duplicated, and
+          verified will outperform an expensive one that's rushed or untested. Take the time to
+          write it down carefully, store it offline in more than one place, and confirm it works
+          before you trust it with real funds.
         </P>
+
+        <H2 id="sources">Sources</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Bitcoin BIP-39 — Mnemonic Code (how seed phrases are generated)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-and-scams"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              FTC — What to Know About Cryptocurrency and Scams
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.cisa.gov/news-events/news/using-encryption-protect-sensitive-information"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              CISA — Using Encryption to Protect Sensitive Information
+            </a>
+          </li>
+        </ul>
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
@@ -504,9 +648,9 @@ function ArticlePage() {
           <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
             This article is for informational and educational purposes only and should not be
             considered financial or investment advice. Cryptocurrency self-custody carries risk,
-            including the risk of permanent loss of funds. Readers should conduct their own
-            research and exercise independent judgment before making decisions about how to store
-            or manage their digital assets.
+            including the risk of permanent loss of funds. Readers should conduct their own research
+            and exercise independent judgment before making decisions about how to store or manage
+            their digital assets.
           </p>
         </div>
 

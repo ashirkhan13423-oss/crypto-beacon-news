@@ -138,12 +138,24 @@
     background-color: #f9f9ff;
     color: #151c27;
   }
-  h1, h2, h3, h4, h5, h6,
-  .font-headline-md, .font-headline-lg, .font-display-lg, .font-headline-sm {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-headline-md,
+  .font-headline-lg,
+  .font-display-lg,
+  .font-headline-sm {
     font-family: "Space Grotesk", sans-serif;
   }
 }
 
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

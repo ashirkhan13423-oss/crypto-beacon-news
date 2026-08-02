@@ -48,14 +48,15 @@ function AboutPage() {
               <Users className="text-secondary" /> Who We Are
             </h2>
             <p className="mb-sm">
-              CryptoBeacon is run by the <strong>CryptoBeacon Editorial Team</strong>, a dedicated group of 
-              independent blockchain analysts, technologists, and researchers. We launched this platform to 
-              bridge the gap between highly technical protocol documentation and mainstream financial reporting.
+              CryptoBeacon is run by the <strong>CryptoBeacon Editorial Team</strong>, a dedicated
+              group of independent blockchain analysts, technologists, and researchers. We launched
+              this platform to bridge the gap between highly technical protocol documentation and
+              mainstream financial reporting.
             </p>
             <p>
-              In a space often driven by speculation and short-term narratives, our mission is to provide 
-              clear, objective, and deeply researched educational content that empowers our readers to make 
-              informed decisions about their digital assets and security.
+              In a space often driven by speculation and short-term narratives, our mission is to
+              provide clear, objective, and deeply researched educational content that empowers our
+              readers to make informed decisions about their digital assets and security.
             </p>
           </section>
 
@@ -65,20 +66,25 @@ function AboutPage() {
             </h2>
             <div className="space-y-md">
               <div className="bg-surface-container-low p-md rounded-xl border border-outline-variant">
-                <h3 className="font-headline-sm text-headline-sm text-primary mb-sm">No Financial Advice</h3>
+                <h3 className="font-headline-sm text-headline-sm text-primary mb-sm">
+                  No Financial Advice
+                </h3>
                 <p className="text-body-md">
-                  We are educators, not financial advisors. Nothing on CryptoBeacon constitutes investment, 
-                  trading, legal, or financial advice. Our content is designed to help you understand how 
-                  blockchain technology works and the structural risks involved—never to tell you what to buy, 
-                  sell, or hold.
+                  We are educators, not financial advisors. Nothing on CryptoBeacon constitutes
+                  investment, trading, legal, or financial advice. Our content is designed to help
+                  you understand how blockchain technology works and the structural risks
+                  involved—never to tell you what to buy, sell, or hold.
                 </p>
               </div>
               <div className="bg-surface-container-low p-md rounded-xl border border-outline-variant">
-                <h3 className="font-headline-sm text-headline-sm text-primary mb-sm">Evergreen-First Focus</h3>
+                <h3 className="font-headline-sm text-headline-sm text-primary mb-sm">
+                  Evergreen-First Focus
+                </h3>
                 <p className="text-body-md">
-                  Instead of chasing fleeting price action, daily market gossip, or unverified rumors, we focus 
-                  on "evergreen" content. We prioritize foundational guides, security best practices, and 
-                  architectural deep-dives that will remain relevant and useful to readers for years to come.
+                  Instead of chasing fleeting price action, daily market gossip, or unverified
+                  rumors, we focus on "evergreen" content. We prioritize foundational guides,
+                  security best practices, and architectural deep-dives that will remain relevant
+                  and useful to readers for years to come.
                 </p>
               </div>
             </div>
@@ -89,20 +95,22 @@ function AboutPage() {
               <ShieldCheck className="text-secondary" /> How Content is Researched
             </h2>
             <p className="mb-md">
-              Trust is our most important metric. To ensure accuracy and authority, our editorial process 
-              mandates strict fact-checking against primary sources. When we write about a protocol or security 
-              practice, our research involves:
+              Trust is our most important metric. To ensure accuracy and authority, our editorial
+              process mandates strict fact-checking against primary sources. When we write about a
+              protocol or security practice, our research involves:
             </p>
             <ul className="list-disc pl-xl space-y-sm marker:text-secondary">
               <li>Direct review of official whitepapers and technical documentation.</li>
               <li>Analysis of open-source GitHub repositories and developer commits.</li>
-              <li>Verification of historical events using raw on-chain data and blockchain explorers.</li>
+              <li>
+                Verification of historical events using raw on-chain data and blockchain explorers.
+              </li>
               <li>Consultation with recognized security frameworks and cryptographic standards.</li>
             </ul>
             <p className="mt-md">
-              We do not publish unverified claims, nor do we accept paid promotions masquerading as editorial 
-              content. If an article includes sponsored content or affiliate links, it will be explicitly 
-              and prominently disclosed at the top of the page.
+              We do not publish unverified claims, nor do we accept paid promotions masquerading as
+              editorial content. If an article includes sponsored content or affiliate links, it
+              will be explicitly and prominently disclosed at the top of the page.
             </p>
           </section>
 
@@ -113,11 +121,11 @@ function AboutPage() {
                 Have a correction or a topic suggestion? Contact our editorial team.
               </p>
             </div>
-            <a 
-              href="mailto:editorial@crypto-beacon-news.vercel.app" 
+            <a
+              href="mailto:editorial@crypto-beacon-news.vercel.app"
               className="inline-flex items-center gap-xs bg-primary text-primary-foreground px-lg py-sm rounded-full font-label-lg font-medium hover:bg-primary/90 transition-colors"
             >
-              <Mail style={{ fontSize: '20px' }} />
+              <Mail style={{ fontSize: "20px" }} />
               Contact Editorial
             </a>
           </section>

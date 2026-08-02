@@ -4,8 +4,8 @@ import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/exchange-vs-wallet.png";
 import { CheckSquare, Plus } from "lucide-react";
 
-
-const URL = "https://crypto-beacon-news.vercel.app/guides/exchange-or-personal-wallet-crypto-storage";
+const URL =
+  "https://crypto-beacon-news.vercel.app/guides/exchange-or-personal-wallet-crypto-storage";
 const TITLE = "Exchange or Personal Wallet? A Crypto Storage Guide | CryptoBeacon";
 const DESC =
   "Should your crypto stay on an exchange or move to your own wallet? A clear, neutral decision framework based on how you actually use your crypto.";
@@ -32,7 +32,7 @@ const faqs: { q: string; a: string }[] = [
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "NewsArticle",
   headline: "Should You Keep Your Crypto on an Exchange or Move It to Your Own Wallet?",
   description: DESC,
   datePublished: PUBLISHED,
@@ -48,6 +48,12 @@ const articleSchema = {
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
   image: `https://crypto-beacon-news.vercel.app${hero}`,
+  inLanguage: "en-US",
+  keywords:
+    "should I keep crypto on an exchange or move it to a wallet, exchange vs personal wallet crypto, is it safe to leave crypto on an exchange, when to move crypto off an exchange, custodial risk, counterparty risk, self-custody, cold storage, exchange insolvency, withdrawal freeze",
+  articleSection: "Guides",
+  wordCount: 1200,
+  isAccessibleForFree: true,
 };
 
 const faqSchema = {
@@ -58,6 +64,31 @@ const faqSchema = {
     name: f.q,
     acceptedAnswer: { "@type": "Answer", text: f.a },
   })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://crypto-beacon-news.vercel.app/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Guides",
+      item: "https://crypto-beacon-news.vercel.app/guides",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Exchange or Personal Wallet?",
+      item: URL,
+    },
+  ],
 };
 
 export const Route = createFileRoute("/guides/exchange-or-personal-wallet-crypto-storage")({
@@ -83,6 +114,7 @@ export const Route = createFileRoute("/guides/exchange-or-personal-wallet-crypto
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
     ],
   }),
   component: ArticlePage,
@@ -219,8 +251,8 @@ function ArticlePage() {
 
         <H2 id="what-youre-choosing">1. What You're Actually Choosing Between</H2>
         <P>
-          This isn't really a choice between two products — it's a choice between two different
-          risk profiles:
+          This isn't really a choice between two products — it's a choice between two different risk
+          profiles:
         </P>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md my-lg">
@@ -239,7 +271,10 @@ function ArticlePage() {
             </h3>
             <ul className="list-disc pl-md space-y-xs font-body-md text-body-md text-on-surface">
               <li>You control the keys directly</li>
-              <li>You're solely responsible for backing up and protecting them, with no company able to help if something goes wrong</li>
+              <li>
+                You're solely responsible for backing up and protecting them, with no company able
+                to help if something goes wrong
+              </li>
             </ul>
           </div>
         </div>
@@ -250,23 +285,37 @@ function ArticlePage() {
 
         <H2 id="exchange-makes-sense">2. When Keeping Crypto on an Exchange Makes Sense</H2>
         <ul className="list-disc pl-lg space-y-sm font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
-          <li>You're actively trading or plan to sell/rebalance soon, and moving funds back and forth would be impractical.</li>
-          <li>You're still new to self-custody and haven't yet built confidence managing a seed phrase safely.</li>
-          <li>The amount involved is small enough that the convenience trade-off outweighs the custodial risk, for now.</li>
+          <li>
+            You're actively trading or plan to sell/rebalance soon, and moving funds back and forth
+            would be impractical.
+          </li>
+          <li>
+            You're still new to self-custody and haven't yet built confidence managing a seed phrase
+            safely.
+          </li>
+          <li>
+            The amount involved is small enough that the convenience trade-off outweighs the
+            custodial risk, for now.
+          </li>
         </ul>
 
         <H2 id="wallet-makes-sense">3. When Moving to Your Own Wallet Makes Sense</H2>
         <ul className="list-disc pl-lg space-y-sm font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
           <li>You intend to hold for the long term without frequent trading.</li>
-          <li>The amount involved is significant enough that counterparty risk (the platform's own security or solvency) matters more than convenience.</li>
-          <li>You've taken the time to{" "}
-          <Link
-            to="/security/how-to-store-crypto-seed-phrase-safely"
-            className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
-          >
-            understand seed phrase storage
-          </Link>
-          {" "}and feel confident managing your own backup safely.</li>
+          <li>
+            The amount involved is significant enough that counterparty risk (the platform's own
+            security or solvency) matters more than convenience.
+          </li>
+          <li>
+            You've taken the time to{" "}
+            <Link
+              to="/security/how-to-store-crypto-seed-phrase-safely"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              understand seed phrase storage
+            </Link>{" "}
+            and feel confident managing your own backup safely.
+          </li>
         </ul>
 
         <H2 id="hybrid-approach">4. The Hybrid Approach Most People Land On</H2>
@@ -283,15 +332,25 @@ function ArticlePage() {
         <P>Ask yourself:</P>
         <ul className="my-md space-y-sm">
           <li className="flex items-start gap-sm p-md rounded-lg border border-outline-variant bg-surface-container-lowest">
-            <CheckSquare aria-hidden className="text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }} />
+            <CheckSquare
+              aria-hidden
+              className="text-[#0F9D58] shrink-0"
+              style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }}
+            />
             <span className="font-body-md text-body-md text-on-surface leading-relaxed">
-              <strong>Do I plan to trade this soon, or hold it long-term?</strong> Frequent trading favors exchange convenience; long-term holding favors self-custody.
+              <strong>Do I plan to trade this soon, or hold it long-term?</strong> Frequent trading
+              favors exchange convenience; long-term holding favors self-custody.
             </span>
           </li>
           <li className="flex items-start gap-sm p-md rounded-lg border border-outline-variant bg-surface-container-lowest">
-            <CheckSquare aria-hidden className="text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }} />
+            <CheckSquare
+              aria-hidden
+              className="text-[#0F9D58] shrink-0"
+              style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }}
+            />
             <span className="font-body-md text-body-md text-on-surface leading-relaxed">
-              <strong>Am I comfortable managing a seed phrase safely?</strong> If not yet, that's worth addressing (see our guide to{" "}
+              <strong>Am I comfortable managing a seed phrase safely?</strong> If not yet, that's
+              worth addressing (see our guide to{" "}
               <Link
                 to="/security/how-to-store-crypto-seed-phrase-safely"
                 className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
@@ -302,22 +361,37 @@ function ArticlePage() {
             </span>
           </li>
           <li className="flex items-start gap-sm p-md rounded-lg border border-outline-variant bg-surface-container-lowest">
-            <CheckSquare aria-hidden className="text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }} />
+            <CheckSquare
+              aria-hidden
+              className="text-[#0F9D58] shrink-0"
+              style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }}
+            />
             <span className="font-body-md text-body-md text-on-surface leading-relaxed">
-              <strong>How would I feel if this specific platform had a serious problem tomorrow?</strong> If the answer is "that would be a serious loss," that's a signal to reduce exchange-held exposure.
+              <strong>
+                How would I feel if this specific platform had a serious problem tomorrow?
+              </strong>{" "}
+              If the answer is "that would be a serious loss," that's a signal to reduce
+              exchange-held exposure.
             </span>
           </li>
           <li className="flex items-start gap-sm p-md rounded-lg border border-outline-variant bg-surface-container-lowest">
-            <CheckSquare aria-hidden className="text-[#0F9D58] shrink-0" style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }} />
+            <CheckSquare
+              aria-hidden
+              className="text-[#0F9D58] shrink-0"
+              style={{ fontVariationSettings: "'FILL' 1", fontSize: "22px" }}
+            />
             <span className="font-body-md text-body-md text-on-surface leading-relaxed">
-              <strong>Have I tested a small self-custody transfer before moving a large amount?</strong> Confirming a wallet works correctly with a{" "}
+              <strong>
+                Have I tested a small self-custody transfer before moving a large amount?
+              </strong>{" "}
+              Confirming a wallet works correctly with a{" "}
               <Link
                 to="/bitcoin/how-to-send-bitcoin-safely"
                 className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
               >
                 test a small self-custody transfer
-              </Link>
-              {" "}avoids costly mistakes on a larger one.
+              </Link>{" "}
+              avoids costly mistakes on a larger one.
             </span>
           </li>
         </ul>
@@ -325,10 +399,22 @@ function ArticlePage() {
         <H2 id="takeaways">6. Key Takeaways</H2>
         <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
           <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
-            <li>This decision is about matching custody type to how you actually use your crypto, not about one option being universally correct.</li>
-            <li>Exchange custody trades control for convenience; personal wallet custody trades convenience for full control and full responsibility.</li>
-            <li>A hybrid approach — active balance on an exchange, long-term holdings self-custodied — is common and reasonable.</li>
-            <li>Confidence with seed phrase management should come before moving significant amounts into self-custody.</li>
+            <li>
+              This decision is about matching custody type to how you actually use your crypto, not
+              about one option being universally correct.
+            </li>
+            <li>
+              Exchange custody trades control for convenience; personal wallet custody trades
+              convenience for full control and full responsibility.
+            </li>
+            <li>
+              A hybrid approach — active balance on an exchange, long-term holdings self-custodied —
+              is common and reasonable.
+            </li>
+            <li>
+              Confidence with seed phrase management should come before moving significant amounts
+              into self-custody.
+            </li>
           </ul>
         </div>
 
@@ -349,20 +435,54 @@ function ArticlePage() {
 
         <H2 id="conclusion">Conclusion</H2>
         <P>
-          There's no single correct answer to "exchange or personal wallet" — there's only the answer
-          that matches how you actually intend to use your crypto and how much counterparty risk you're
-          comfortable carrying. Many people find that a hybrid approach — a small active balance on an
-          exchange, the rest self-custodied — reflects that trade-off well.
+          There's no single correct answer to "exchange or personal wallet" — there's only the
+          answer that matches how you actually intend to use your crypto and how much counterparty
+          risk you're comfortable carrying. Many people find that a hybrid approach — a small active
+          balance on an exchange, the rest self-custodied — reflects that trade-off well.
         </P>
+
+        <H2 id="sources">Sources</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://bitcoin.org/en/secure-your-wallet"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Bitcoin.org — Securing Your Wallet (self-custody vs. custodial services)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://en.bitcoin.it/wiki/Exchange"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Bitcoin Wiki — Exchange (how custodial exchanges hold user funds)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.investor.gov/additional-resources/spotlight/crypto-assets"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              U.S. SEC Investor.gov — Crypto Assets (risks of trading and holding crypto)
+            </a>
+          </li>
+        </ul>
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
           <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be considered
-            financial or investment advice. Custody decisions involve trade-offs specific to your own
-            circumstances and risk tolerance.
+            This article is for informational and educational purposes only and should not be
+            considered financial or investment advice. Custody decisions involve trade-offs specific
+            to your own circumstances and risk tolerance.
           </p>
         </div>
 

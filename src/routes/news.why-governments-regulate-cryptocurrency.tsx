@@ -5,7 +5,7 @@ import hero from "@/assets/news-crypto-regulation.jpg";
 import { Plus, ShieldAlert, Gavel, ReceiptText } from "lucide-react";
 
 const URL = "https://crypto-beacon-news.vercel.app/news/why-governments-regulate-cryptocurrency";
-const TITLE = "Why Do Governments Regulate Cryptocurrency? | Crypto Beacon";
+const TITLE = "Why Do Governments Regulate Cryptocurrency? | CryptoBeacon";
 const DESC =
   "A plain-language explainer on why governments regulate crypto, the main categories of rules, and what that means for everyday users.";
 const PUBLISHED = "2026-07-05";
@@ -27,7 +27,7 @@ const faqs: { q: string; a: string }[] = [
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "NewsArticle",
   headline: "Why Do Governments Regulate Cryptocurrency?",
   description: DESC,
   datePublished: PUBLISHED,
@@ -43,6 +43,12 @@ const articleSchema = {
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
   image: `https://crypto-beacon-news.vercel.app${hero}`,
+  inLanguage: "en-US",
+  keywords:
+    "why do governments regulate cryptocurrency, crypto regulation explained simply, why is crypto regulated, types of crypto regulation",
+  articleSection: "News",
+  wordCount: 1000,
+  isAccessibleForFree: true,
 };
 
 const faqSchema = {
@@ -53,6 +59,31 @@ const faqSchema = {
     name: f.q,
     acceptedAnswer: { "@type": "Answer", text: f.a },
   })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://crypto-beacon-news.vercel.app/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "News",
+      item: "https://crypto-beacon-news.vercel.app/news",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Why Governments Regulate Cryptocurrency",
+      item: URL,
+    },
+  ],
 };
 
 export const Route = createFileRoute("/news/why-governments-regulate-cryptocurrency")({
@@ -78,6 +109,7 @@ export const Route = createFileRoute("/news/why-governments-regulate-cryptocurre
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
     ],
   }),
   component: ArticlePage,
@@ -171,9 +203,9 @@ function ArticlePage() {
         </figure>
 
         <P>
-          Crypto was built to work without banks or central authorities — so why do governments
-          keep passing rules about it? The short answer: regulation isn't really about controlling
-          the technology itself. It's about the same three things governments regulate in every
+          Crypto was built to work without banks or central authorities — so why do governments keep
+          passing rules about it? The short answer: regulation isn't really about controlling the
+          technology itself. It's about the same three things governments regulate in every
           financial system: protecting consumers, preventing crime, and collecting tax.
         </P>
 
@@ -197,9 +229,9 @@ function ArticlePage() {
         </div>
 
         <P>
-          <strong>1. Consumer protection.</strong> Exchanges and wallet providers hold real value
-          on behalf of users. Licensing and disclosure rules exist so a company can't operate
-          unchecked with people's funds, similar to why banks are regulated.
+          <strong>1. Consumer protection.</strong> Exchanges and wallet providers hold real value on
+          behalf of users. Licensing and disclosure rules exist so a company can't operate unchecked
+          with people's funds, similar to why banks are regulated.
         </P>
         <P>
           <strong>2. Preventing illicit use.</strong> Anti-money-laundering (AML) and{" "}
@@ -221,11 +253,11 @@ function ArticlePage() {
 
         <H2 id="why-differ">Why Rules Differ So Much by Country</H2>
         <P>
-          Crypto doesn't fit neatly into existing legal categories — depending on how it's used,
-          the same token can look like a currency, a commodity, or a security. Different countries
-          have leaned on different existing legal frameworks to regulate it, which is why the rules
-          can look so inconsistent from one place to the next. This isn't likely to fully resolve
-          any time soon, since it reflects a genuine legal ambiguity, not just slow lawmaking.
+          Crypto doesn't fit neatly into existing legal categories — depending on how it's used, the
+          same token can look like a currency, a commodity, or a security. Different countries have
+          leaned on different existing legal frameworks to regulate it, which is why the rules can
+          look so inconsistent from one place to the next. This isn't likely to fully resolve any
+          time soon, since it reflects a genuine legal ambiguity, not just slow lawmaking.
         </P>
 
         <H2 id="what-means">What This Means for Everyday Users</H2>
@@ -235,8 +267,7 @@ function ArticlePage() {
             platform is being invasive.
           </li>
           <li>
-            Reporting crypto gains at tax time is a real, growing obligation in most
-            jurisdictions.
+            Reporting crypto gains at tax time is a real, growing obligation in most jurisdictions.
           </li>
           <li>
             Regulation doesn't equal endorsement or risk-free status — a licensed platform still
@@ -273,6 +304,40 @@ function ArticlePage() {
             </details>
           ))}
         </div>
+
+        <H2 id="sources">Sources</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              FATF — Guidance for a Risk-Based Approach to Virtual Assets (AML/CFT rules for crypto)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/crypto-asset-securities"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              U.S. SEC Investor.gov — Investor Alert: Exercise Caution with Crypto Asset Securities
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.sec.gov"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              U.S. Securities and Exchange Commission (SEC)
+            </a>
+          </li>
+        </ul>
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">

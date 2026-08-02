@@ -4,6 +4,19 @@ import { SiteFooter } from "@/components/SiteFooter";
 import sendHero from "@/assets/bitcoin-send-safely.jpg";
 import { Bitcoin } from "lucide-react";
 
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Bitcoin",
+  url: "https://crypto-beacon-news.vercel.app/bitcoin",
+  hasPart: [
+    {
+      "@type": "WebPage",
+      name: "How to Send Bitcoin Safely",
+      url: "https://crypto-beacon-news.vercel.app/bitcoin/how-to-send-bitcoin-safely",
+    },
+  ],
+};
 
 export const Route = createFileRoute("/bitcoin/")({
   head: () => ({
@@ -23,6 +36,7 @@ export const Route = createFileRoute("/bitcoin/")({
       { property: "og:url", content: "https://crypto-beacon-news.vercel.app/bitcoin" },
     ],
     links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/bitcoin" }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
   }),
   component: BitcoinPage,
 });
@@ -35,7 +49,10 @@ function BitcoinPage() {
         <header className="mb-xl border-b border-outline-variant pb-lg">
           <div className="flex items-center space-x-md mb-md">
             <div className="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant">
-              <Bitcoin className="text-on-surface-variant" style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }} />
+              <Bitcoin
+                className="text-on-surface-variant"
+                style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }}
+              />
             </div>
             <h1 className="font-display-lg text-display-lg text-primary">Bitcoin</h1>
           </div>

@@ -4,6 +4,19 @@ import { SiteFooter } from "@/components/SiteFooter";
 import heroImage from "@/assets/ethereum-address-mismatch.png";
 import { Network } from "lucide-react";
 
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Ethereum",
+  url: "https://crypto-beacon-news.vercel.app/ethereum",
+  hasPart: [
+    {
+      "@type": "WebPage",
+      name: "Can You Send Bitcoin to an Ethereum Address? What Actually Happens",
+      url: "https://crypto-beacon-news.vercel.app/ethereum/can-you-send-bitcoin-to-an-ethereum-address",
+    },
+  ],
+};
 
 export const Route = createFileRoute("/ethereum/")({
   head: () => ({
@@ -23,6 +36,7 @@ export const Route = createFileRoute("/ethereum/")({
       { property: "og:url", content: "https://crypto-beacon-news.vercel.app/ethereum" },
     ],
     links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/ethereum" }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
   }),
   component: EthereumPage,
 });
@@ -67,7 +81,8 @@ function EthereumPage() {
                 Can You Send Bitcoin to an Ethereum Address? What Actually Happens
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
-                Worried you sent Bitcoin to an Ethereum address by mistake? Here's what actually happens, why it's rarer than you think, and what to check.
+                Worried you sent Bitcoin to an Ethereum address by mistake? Here's what actually
+                happens, why it's rarer than you think, and what to check.
               </p>
             </div>
           </Link>

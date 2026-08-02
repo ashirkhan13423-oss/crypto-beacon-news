@@ -4,6 +4,25 @@ import { SiteFooter } from "@/components/SiteFooter";
 import seedVault from "@/assets/seed-phrase-vault.jpg";
 import phishingHero from "@/assets/phishing-padlock.jpg";
 
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Crypto Security & Scam Awareness",
+  url: "https://crypto-beacon-news.vercel.app/security",
+  hasPart: [
+    {
+      "@type": "WebPage",
+      name: "How to Store Your Crypto Seed Phrase Safely",
+      url: "https://crypto-beacon-news.vercel.app/security/how-to-store-crypto-seed-phrase-safely",
+    },
+    {
+      "@type": "WebPage",
+      name: "How to Avoid Crypto Phishing Scams",
+      url: "https://crypto-beacon-news.vercel.app/security/how-to-avoid-crypto-phishing-scams",
+    },
+  ],
+};
+
 export const Route = createFileRoute("/security/")({
   head: () => ({
     meta: [
@@ -22,6 +41,7 @@ export const Route = createFileRoute("/security/")({
       { property: "og:url", content: "https://crypto-beacon-news.vercel.app/security" },
     ],
     links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/security" }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
   }),
   component: SecurityPage,
 });
@@ -36,8 +56,8 @@ function SecurityPage() {
             Security & Scam Awareness
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
-            Wallet safety, phishing awareness, and rug-pull forensics — peer-reviewed guidance
-            for protecting your assets.
+            Wallet safety, phishing awareness, and rug-pull forensics — peer-reviewed guidance for
+            protecting your assets.
           </p>
         </header>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
@@ -90,8 +110,8 @@ function SecurityPage() {
                 How to Avoid Crypto Phishing Scams
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
-                How crypto phishing actually works, the red flags that repeat across every
-                version, and the verification habits that keep your wallet safe.
+                How crypto phishing actually works, the red flags that repeat across every version,
+                and the verification habits that keep your wallet safe.
               </p>
             </div>
           </Link>
