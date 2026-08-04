@@ -17,6 +17,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "CryptoBeacon",
+  alternateName: ["Crypto Beacon", "Crypto Beacon News", "CryptoBeacon News"],
   url: `${SITE_URL}/`,
   description:
     "Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and the digital-asset ecosystem.",

@@ -38,6 +38,7 @@ export const Route = createFileRoute("/")({
             {
               "@type": "WebSite",
               "name": "CryptoBeacon",
+              "alternateName": ["Crypto Beacon", "Crypto Beacon News", "CryptoBeacon News"],
               "url": "https://crypto-beacon-news.vercel.app/"
             },
             {
