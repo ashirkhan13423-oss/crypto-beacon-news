@@ -27,6 +27,7 @@ import { Route as BitcoinIndexRouteImport } from './routes/bitcoin.index'
 import { Route as SecurityHowToStoreCryptoSeedPhraseSafelyRouteImport } from './routes/security.how-to-store-crypto-seed-phrase-safely'
 import { Route as SecurityHowToAvoidCryptoPhishingScamsRouteImport } from './routes/security.how-to-avoid-crypto-phishing-scams'
 import { Route as NewsWhyGovernmentsRegulateCryptocurrencyRouteImport } from './routes/news.why-governments-regulate-cryptocurrency'
+import { Route as NewsWhatItMeansWhenExchangePausesWithdrawalsRouteImport } from './routes/news.what-it-means-when-exchange-pauses-withdrawals'
 import { Route as NewsWhatIsABlockchainForkRouteImport } from './routes/news.what-is-a-blockchain-fork'
 import { Route as GuidesNotYourKeysNotYourCoinsMeaningRouteImport } from './routes/guides.not-your-keys-not-your-coins-meaning'
 import { Route as GuidesExchangeOrPersonalWalletCryptoStorageRouteImport } from './routes/guides.exchange-or-personal-wallet-crypto-storage'
@@ -126,6 +127,12 @@ const NewsWhyGovernmentsRegulateCryptocurrencyRoute =
     path: '/why-governments-regulate-cryptocurrency',
     getParentRoute: () => NewsRoute,
   } as any)
+const NewsWhatItMeansWhenExchangePausesWithdrawalsRoute =
+  NewsWhatItMeansWhenExchangePausesWithdrawalsRouteImport.update({
+    id: '/what-it-means-when-exchange-pauses-withdrawals',
+    path: '/what-it-means-when-exchange-pauses-withdrawals',
+    getParentRoute: () => NewsRoute,
+  } as any)
 const NewsWhatIsABlockchainForkRoute =
   NewsWhatIsABlockchainForkRouteImport.update({
     id: '/what-is-a-blockchain-fork',
@@ -173,6 +180,7 @@ export interface FileRoutesByFullPath {
   '/guides/exchange-or-personal-wallet-crypto-storage': typeof GuidesExchangeOrPersonalWalletCryptoStorageRoute
   '/guides/not-your-keys-not-your-coins-meaning': typeof GuidesNotYourKeysNotYourCoinsMeaningRoute
   '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
+  '/news/what-it-means-when-exchange-pauses-withdrawals': typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
   '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
@@ -193,6 +201,7 @@ export interface FileRoutesByTo {
   '/guides/exchange-or-personal-wallet-crypto-storage': typeof GuidesExchangeOrPersonalWalletCryptoStorageRoute
   '/guides/not-your-keys-not-your-coins-meaning': typeof GuidesNotYourKeysNotYourCoinsMeaningRoute
   '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
+  '/news/what-it-means-when-exchange-pauses-withdrawals': typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
   '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
@@ -219,6 +228,7 @@ export interface FileRoutesById {
   '/guides/exchange-or-personal-wallet-crypto-storage': typeof GuidesExchangeOrPersonalWalletCryptoStorageRoute
   '/guides/not-your-keys-not-your-coins-meaning': typeof GuidesNotYourKeysNotYourCoinsMeaningRoute
   '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
+  '/news/what-it-means-when-exchange-pauses-withdrawals': typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
   '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
@@ -246,6 +256,7 @@ export interface FileRouteTypes {
     | '/guides/exchange-or-personal-wallet-crypto-storage'
     | '/guides/not-your-keys-not-your-coins-meaning'
     | '/news/what-is-a-blockchain-fork'
+    | '/news/what-it-means-when-exchange-pauses-withdrawals'
     | '/news/why-governments-regulate-cryptocurrency'
     | '/security/how-to-avoid-crypto-phishing-scams'
     | '/security/how-to-store-crypto-seed-phrase-safely'
@@ -266,6 +277,7 @@ export interface FileRouteTypes {
     | '/guides/exchange-or-personal-wallet-crypto-storage'
     | '/guides/not-your-keys-not-your-coins-meaning'
     | '/news/what-is-a-blockchain-fork'
+    | '/news/what-it-means-when-exchange-pauses-withdrawals'
     | '/news/why-governments-regulate-cryptocurrency'
     | '/security/how-to-avoid-crypto-phishing-scams'
     | '/security/how-to-store-crypto-seed-phrase-safely'
@@ -291,6 +303,7 @@ export interface FileRouteTypes {
     | '/guides/exchange-or-personal-wallet-crypto-storage'
     | '/guides/not-your-keys-not-your-coins-meaning'
     | '/news/what-is-a-blockchain-fork'
+    | '/news/what-it-means-when-exchange-pauses-withdrawals'
     | '/news/why-governments-regulate-cryptocurrency'
     | '/security/how-to-avoid-crypto-phishing-scams'
     | '/security/how-to-store-crypto-seed-phrase-safely'
@@ -442,6 +455,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsWhyGovernmentsRegulateCryptocurrencyRouteImport
       parentRoute: typeof NewsRoute
     }
+    '/news/what-it-means-when-exchange-pauses-withdrawals': {
+      id: '/news/what-it-means-when-exchange-pauses-withdrawals'
+      path: '/what-it-means-when-exchange-pauses-withdrawals'
+      fullPath: '/news/what-it-means-when-exchange-pauses-withdrawals'
+      preLoaderRoute: typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRouteImport
+      parentRoute: typeof NewsRoute
+    }
     '/news/what-is-a-blockchain-fork': {
       id: '/news/what-is-a-blockchain-fork'
       path: '/what-is-a-blockchain-fork'
@@ -527,12 +547,15 @@ const GuidesRouteWithChildren =
 
 interface NewsRouteChildren {
   NewsWhatIsABlockchainForkRoute: typeof NewsWhatIsABlockchainForkRoute
+  NewsWhatItMeansWhenExchangePausesWithdrawalsRoute: typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
   NewsWhyGovernmentsRegulateCryptocurrencyRoute: typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
   NewsIndexRoute: typeof NewsIndexRoute
 }
 
 const NewsRouteChildren: NewsRouteChildren = {
   NewsWhatIsABlockchainForkRoute: NewsWhatIsABlockchainForkRoute,
+  NewsWhatItMeansWhenExchangePausesWithdrawalsRoute:
+    NewsWhatItMeansWhenExchangePausesWithdrawalsRoute,
   NewsWhyGovernmentsRegulateCryptocurrencyRoute:
     NewsWhyGovernmentsRegulateCryptocurrencyRoute,
   NewsIndexRoute: NewsIndexRoute,

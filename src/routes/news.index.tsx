@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import regulationHero from "@/assets/news-crypto-regulation.jpg";
 import blockchainForkHero from "@/assets/news-blockchain-fork.png";
+import pausedHero from "@/assets/news-paused-withdrawals.svg";
 import { Newspaper } from "lucide-react";
 
 const collectionSchema = {
@@ -20,6 +21,11 @@ const collectionSchema = {
       "@type": "WebPage",
       name: "What Is a Blockchain Fork?",
       url: "https://crypto-beacon-news.vercel.app/news/what-is-a-blockchain-fork",
+    },
+    {
+      "@type": "WebPage",
+      name: "What Does It Mean When a Crypto Exchange Pauses Withdrawals?",
+      url: "https://crypto-beacon-news.vercel.app/news/what-it-means-when-exchange-pauses-withdrawals",
     },
   ],
 };
@@ -123,6 +129,33 @@ function NewsHub() {
               <p className="font-body-md text-body-md text-on-surface-variant">
                 A plain-language explainer on what a blockchain fork is, the difference between hard
                 and soft forks, and why cryptocurrencies sometimes split into two.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            to="/news/what-it-means-when-exchange-pauses-withdrawals"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden border-b border-outline-variant">
+              <img
+                src={pausedHero}
+                alt="Illustration representing a paused crypto withdrawal process"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                News · Guide
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                What Does It Mean When an Exchange Pauses Withdrawals?
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                Your crypto exchange paused withdrawals — is that normal or a red flag? A clear framework for telling routine maintenance from a genuine warning sign.
               </p>
             </div>
           </Link>

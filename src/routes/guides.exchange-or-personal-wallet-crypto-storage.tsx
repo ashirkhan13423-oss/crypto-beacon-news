@@ -508,12 +508,12 @@ function ArticlePage() {
               </h3>
             </Link>
             <Link
-              to="/bitcoin/how-to-send-bitcoin-safely"
+              to="/news/what-it-means-when-exchange-pauses-withdrawals"
               className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
             >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
+              <span className="font-label-caps text-label-caps text-secondary">News</span>
               <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                How to Send Bitcoin Safely
+                Exchange Pausing Withdrawals
               </h3>
             </Link>
           </div>

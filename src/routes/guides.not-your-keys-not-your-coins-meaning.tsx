@@ -533,12 +533,12 @@ function ArticlePage() {
               </h3>
             </Link>
             <Link
-              to="/security/how-to-avoid-crypto-phishing-scams"
+              to="/news/what-it-means-when-exchange-pauses-withdrawals"
               className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
             >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
+              <span className="font-label-caps text-label-caps text-secondary">News</span>
               <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                How to Avoid Crypto Phishing Scams
+                Exchange Pausing Withdrawals
               </h3>
             </Link>
             <Link
