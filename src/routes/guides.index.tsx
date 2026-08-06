@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import nyknycHero from "@/assets/keys-coins-meaning.jpg";
 import exchangeHero from "@/assets/exchange-vs-wallet.png";
-import walletAddressHero from "@/assets/crypto-wallet-address.png";
+import walletAddressHero from "@/assets/guides-wallet-address.png";
 import { BookOpen } from "lucide-react";
 
 const collectionSchema = {

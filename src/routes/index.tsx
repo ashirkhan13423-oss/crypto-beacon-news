@@ -7,10 +7,10 @@ import regulationHero from "@/assets/news-crypto-regulation.jpg";
 import nyknycHero from "@/assets/keys-coins-meaning.jpg";
 import sendHero from "@/assets/bitcoin-send-safely.jpg";
 import ethereumHero from "@/assets/ethereum-address-mismatch.png";
-import walletTypesHero from "@/assets/bitcoin-wallet-types.png";
-import bitcoinMiningHero from "@/assets/bitcoin-mining.png";
+import walletTypesHero from "@/assets/bitcoin-what-is-a-wallet.png";
+import bitcoinMiningHero from "@/assets/bitcoin-what-is-mining.png";
 import exchangeHero from "@/assets/exchange-vs-wallet.png";
-import walletAddressHero from "@/assets/crypto-wallet-address.png";
+import walletAddressHero from "@/assets/guides-wallet-address.png";
 import blockchainForkHero from "@/assets/news-blockchain-fork.png";
 import pausedHero from "@/assets/news-paused-withdrawals.svg";
 
