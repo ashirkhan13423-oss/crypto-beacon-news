@@ -12,7 +12,7 @@ export function SiteFooter() {
             className="h-14 md:h-16 w-auto"
           />
           <span className="font-body-md text-body-md text-on-surface">
-            © 2024 CryptoBeacon. Editorial Rigor. Financial Clarity.
+            © 2026 CryptoBeacon. Editorial Rigor. Financial Clarity.
           </span>
         </div>
         <div className="flex flex-col gap-sm">
@@ -49,6 +49,12 @@ export function SiteFooter() {
           >
             About
           </Link>
+          <Link
+            to="/contact"
+            className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
+          >
+            Contact
+          </Link>
         </div>
         <div className="flex flex-col gap-sm">
           <span className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
@@ -66,70 +72,64 @@ export function SiteFooter() {
           >
             Ethereum
           </Link>
-          <a
-            href="#"
+          <Link
+            to="/news"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
-            Altcoins
-          </a>
+            Altcoins Analysis
+          </Link>
         </div>
         <div className="flex flex-col gap-sm">
           <span className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Sectors
           </span>
-          <a
-            href="#"
+          <Link
+            to="/news"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
-            Blockchain
-          </a>
-          <a
-            href="#"
+            Blockchain News
+          </Link>
+          <Link
+            to="/guides"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
-            DeFi
-          </a>
-          <a
-            href="#"
+            DeFi &amp; Storage
+          </Link>
+          <Link
+            to="/security"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
-            NFTs
-          </a>
+            Security Guides
+          </Link>
         </div>
         <div className="flex flex-col gap-sm">
           <span className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
-            Legal & Ethics
+            Legal &amp; Ethics
           </span>
-          <a
-            href="#"
+          <Link
+            to="/about"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
-            Opinion
-          </a>
+            Editorial Policy
+          </Link>
           <Link
             to="/privacy"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
-            Privacy
+            Privacy Policy
           </Link>
-          <a
-            href="#"
-            className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
-          >
-            Disclaimer
-          </a>
           <Link
             to="/terms"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
-            Terms
+            Terms of Service
           </Link>
-          <a
-            href="#"
+          <Link
+            to="/disclaimer"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
-            Editorial Policy
-          </a>
+            Financial Disclaimer
+          </Link>
         </div>
       </div>
     </footer>

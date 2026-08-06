@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import sendHero from "@/assets/bitcoin-send-safely.jpg";
+import walletHero from "@/assets/bitcoin-what-is-a-wallet.png";
+import miningHero from "@/assets/bitcoin-what-is-mining.png";
 import { Bitcoin } from "lucide-react";
 
 const collectionSchema = {
@@ -14,6 +16,16 @@ const collectionSchema = {
       "@type": "WebPage",
       name: "How to Send Bitcoin Safely",
       url: "https://crypto-beacon-news.vercel.app/bitcoin/how-to-send-bitcoin-safely",
+    },
+    {
+      "@type": "WebPage",
+      name: "What Is a Bitcoin Wallet?",
+      url: "https://crypto-beacon-news.vercel.app/bitcoin/what-is-a-bitcoin-wallet",
+    },
+    {
+      "@type": "WebPage",
+      name: "What Is Bitcoin Mining?",
+      url: "https://crypto-beacon-news.vercel.app/bitcoin/what-is-bitcoin-mining",
     },
   ],
 };
@@ -87,6 +99,60 @@ function BitcoinPage() {
               <p className="font-body-md text-body-md text-on-surface-variant">
                 How Bitcoin transactions actually work, the mistakes that cause permanent loss, and
                 a simple checklist to send safely every time.
+              </p>
+            </div>
+          </Link>
+          <Link
+            to="/bitcoin/what-is-a-bitcoin-wallet"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={walletHero}
+                alt="Illustration contrasting a hot software wallet and a cold hardware wallet"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1024}
+                height={1024}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Bitcoin · Guide
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                What Is a Bitcoin Wallet?
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                Hot, cold, and custodial wallets explained — what a Bitcoin wallet actually stores
+                and which type is right for your situation.
+              </p>
+            </div>
+          </Link>
+          <Link
+            to="/bitcoin/what-is-bitcoin-mining"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={miningHero}
+                alt="Abstract illustration of Bitcoin mining with glowing coins and computational nodes"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1024}
+                height={1024}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Bitcoin · Explainer
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                What Is Bitcoin Mining?
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                How new Bitcoin is created, what proof of work actually means, and why the halving
+                matters.
               </p>
             </div>
           </Link>

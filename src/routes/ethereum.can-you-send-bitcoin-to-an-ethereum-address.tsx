@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroImage from "@/assets/ethereum-address-mismatch.png";
-import { ChevronDown } from "lucide-react";
+import { Plus } from "lucide-react";
 
 const URL =
   "https://crypto-beacon-news.vercel.app/ethereum/can-you-send-bitcoin-to-an-ethereum-address";
@@ -423,22 +423,28 @@ function ArticlePage() {
         </div>
 
         <H2 id="faq">6. Frequently Asked Questions</H2>
-        <div className="space-y-sm">
+        <div className="divide-y divide-outline-variant border-y border-outline-variant">
           {faqs.map((faq, index) => (
-            <details
-              key={index}
-              className="group rounded-lg border border-outline-variant bg-surface-container-lowest"
-            >
-              <summary className="flex cursor-pointer items-center justify-between p-lg font-headline-sm text-headline-sm text-primary group-hover:text-secondary">
-                {faq.q}
-                <ChevronDown className="text-on-surface-variant transition-transform group-open:rotate-180" />
+            <details key={index} className="group py-md">
+              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
+                <span>{faq.q}</span>
+                <Plus className="text-secondary transition-transform group-open:rotate-45 shrink-0" />
               </summary>
-              <div className="px-lg pb-lg pt-0">
-                <p className="font-body-md text-body-md text-on-surface leading-relaxed">{faq.a}</p>
-              </div>
+              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                {faq.a}
+              </p>
             </details>
           ))}
         </div>
+
+        <H2 id="conclusion">Conclusion</H2>
+        <P>
+          The fear of sending Bitcoin to an Ethereum address is understandable, but the mechanics
+          work in your favour: the address formats are so different that most wallets block the
+          attempt before anything moves. The genuine risks — wrong-network exchange deposits and
+          sends to valid-but-unintended addresses — are subtler, which is why understanding the
+          distinction matters more than worrying about the headline scenario.
+        </P>
 
         <H2 id="sources">Sources</H2>
         <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
@@ -485,6 +491,39 @@ function ArticlePage() {
             before sending funds.
           </p>
         </div>
+
+        <section className="mt-xxl">
+          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
+            <Link
+              to="/bitcoin/how-to-send-bitcoin-safely"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                How to Send Bitcoin Safely
+              </h3>
+            </Link>
+            <Link
+              to="/guides/not-your-keys-not-your-coins-meaning"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                "Not Your Keys, Not Your Coins" — What It Means
+              </h3>
+            </Link>
+            <Link
+              to="/guides/exchange-or-personal-wallet-crypto-storage"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                Exchange vs. Personal Wallet
+              </h3>
+            </Link>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>

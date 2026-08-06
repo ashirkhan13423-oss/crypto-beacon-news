@@ -7,6 +7,12 @@ import regulationHero from "@/assets/news-crypto-regulation.jpg";
 import nyknycHero from "@/assets/keys-coins-meaning.jpg";
 import sendHero from "@/assets/bitcoin-send-safely.jpg";
 import ethereumHero from "@/assets/ethereum-address-mismatch.png";
+import walletTypesHero from "@/assets/bitcoin-wallet-types.png";
+import bitcoinMiningHero from "@/assets/bitcoin-mining.png";
+import exchangeHero from "@/assets/exchange-vs-wallet.png";
+import walletAddressHero from "@/assets/crypto-wallet-address.png";
+import blockchainForkHero from "@/assets/news-blockchain-fork.png";
+import pausedHero from "@/assets/news-paused-withdrawals.svg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -99,6 +105,105 @@ export const Route = createFileRoute("/")({
   component: IndexPage,
 });
 
+const articles = [
+  {
+    to: "/guides/exchange-or-personal-wallet-crypto-storage",
+    image: exchangeHero,
+    alt: "Exchange or Personal Wallet Crypto Storage",
+    tag: "Guides · Custody",
+    title: "Exchange vs. Personal Wallet: How to Store Crypto Safely",
+    desc: "A clear, neutral decision framework based on how you actually use your crypto. Learn when to use self-custody versus centralized exchanges.",
+  },
+  {
+    to: "/guides/what-is-a-crypto-wallet-address",
+    image: walletAddressHero,
+    alt: "What Is a Crypto Wallet Address",
+    tag: "Guides · Security",
+    title: "What Is a Crypto Wallet Address? How to Use It Safely",
+    desc: "How public keys and wallet addresses work across blockchains, how to share them safely, and how to verify address formats.",
+  },
+  {
+    to: "/bitcoin/what-is-a-bitcoin-wallet",
+    image: walletTypesHero,
+    alt: "What Is a Bitcoin Wallet",
+    tag: "Bitcoin · Custody",
+    title: "What Is a Bitcoin Wallet? Hot, Cold & Custodial Explained",
+    desc: "Understand how software, hardware, and exchange wallets manage Bitcoin private keys, and how to select the right storage option.",
+  },
+  {
+    to: "/bitcoin/what-is-bitcoin-mining",
+    image: bitcoinMiningHero,
+    alt: "What Is Bitcoin Mining",
+    tag: "Bitcoin · Technology",
+    title: "What Is Bitcoin Mining? How New Bitcoin Is Created",
+    desc: "Proof-of-Work, block rewards, mining pools, and network difficulty explained in plain language for beginners.",
+  },
+  {
+    to: "/news/what-it-means-when-exchange-pauses-withdrawals",
+    image: pausedHero,
+    alt: "What Does It Mean When an Exchange Pauses Withdrawals",
+    tag: "News · Analysis",
+    title: "What It Means When an Exchange Pauses Withdrawals",
+    desc: "Your crypto exchange paused withdrawals — is that normal or a red flag? A clear framework for telling routine maintenance from liquidity crises.",
+  },
+  {
+    to: "/news/what-is-a-blockchain-fork",
+    image: blockchainForkHero,
+    alt: "What Is a Blockchain Fork",
+    tag: "News · Technology",
+    title: "What Is a Blockchain Fork? Hard & Soft Forks Explained",
+    desc: "How consensus rules change on public blockchains, why hard forks create new coins, and what happens to your tokens during a fork.",
+  },
+  {
+    to: "/ethereum/can-you-send-bitcoin-to-an-ethereum-address",
+    image: ethereumHero,
+    alt: "Incompatible Bitcoin and Ethereum address formats",
+    tag: "Ethereum · Guide",
+    title: "Can You Send Bitcoin to an Ethereum Address?",
+    desc: "Worried you sent Bitcoin to an Ethereum address by mistake? What actually happens, format validation, and wrong-network deposit recovery.",
+  },
+  {
+    to: "/bitcoin/how-to-send-bitcoin-safely",
+    image: sendHero,
+    alt: "Bitcoin transaction moving safely between wallets",
+    tag: "Bitcoin · Guide",
+    title: "How to Send Bitcoin Safely: Essential Verification Checklist",
+    desc: "How Bitcoin transactions work, common user errors, network fees, address validation, and a pre-flight safety checklist.",
+  },
+  {
+    to: "/news/why-governments-regulate-cryptocurrency",
+    image: regulationHero,
+    alt: "Government regulatory oversight of cryptocurrency",
+    tag: "News · Policy",
+    title: "Why Do Governments Regulate Cryptocurrency?",
+    desc: "In-depth breakdown of consumer protection, AML/KYC standards, tax mandates, MiCA in the EU, and SEC oversight in the US.",
+  },
+  {
+    to: "/security/how-to-store-crypto-seed-phrase-safely",
+    image: seedVault,
+    alt: "Secure vault representing safe crypto seed phrase storage",
+    tag: "Security · Guide",
+    title: "How to Store Your Crypto Seed Phrase Safely",
+    desc: "Physical storage methods, steel backups, redundancy planning, and common mistakes to prevent total asset loss.",
+  },
+  {
+    to: "/security/how-to-avoid-crypto-phishing-scams",
+    image: phishingHero,
+    alt: "Minimalist padlock representing crypto phishing scam protection",
+    tag: "Security · Guide",
+    title: "How to Avoid Crypto Phishing Scams",
+    desc: "Recognizing malicious dApps, fake wallet approval prompts, spoofed search ads, and hardware verification habits.",
+  },
+  {
+    to: "/guides/not-your-keys-not-your-coins-meaning",
+    image: nyknycHero,
+    alt: "Golden key securing a digital coin",
+    tag: "Guides · Concept",
+    title: '"Not Your Keys, Not Your Coins" — What It Means',
+    desc: "The core principle of cryptographic ownership. Self-custody mechanics, exchange risk factors, and verifying wallet control.",
+  },
+];
+
 function IndexPage() {
   return (
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
@@ -122,7 +227,6 @@ function IndexPage() {
         <section className="mb-xxl max-w-4xl bg-surface-container-low p-8 rounded-2xl border border-outline-variant">
           <h2 className="font-headline-md text-headline-md text-primary mb-md">What is Crypto Currency?</h2>
           <div className="space-y-6 font-body-md text-on-surface-variant">
-            {/* Direct Definition Snippet for AI Overviews */}
             <p className="text-lg font-medium text-on-surface">
               <strong>Crypto currency is</strong> a digital or virtual form of money secured by cryptography and operating on decentralized networks, independent of traditional banks. 
             </p>
@@ -138,7 +242,7 @@ function IndexPage() {
             </div>
 
             <p>
-              As the ecosystem expands, resources like the <strong>fintechzoom.com crypto currency</strong> section or the <strong>chicksx crypto &amp; currency exchange</strong> provide tools to track <strong>crypto currency prices</strong> and read the latest <strong>crypto currency news</strong>. Even political figures are entering the space, with initiatives like the proposed <strong>trump crypto currency</strong> showing the growing mainstream adoption of various <strong>crypto currencies</strong>.
+              As the ecosystem expands, resources tracking <strong>crypto currency prices</strong> and <strong>crypto currency news</strong> provide transparency on market shifts. Mainstream institutional adoption and regulatory frameworks continue to integrate digital currencies into traditional finance.
             </p>
 
             <div>
@@ -160,13 +264,13 @@ function IndexPage() {
                     </tr>
                     <tr>
                       <td className="p-3 border border-outline-variant font-medium">Supply</td>
-                      <td className="p-3 border border-outline-variant">Often capped (e.g., Bitcoin)</td>
-                      <td className="p-3 border border-outline-variant">Unlimited (Printed by banks)</td>
+                      <td className="p-3 border border-outline-variant">Often capped (e.g., Bitcoin 21M limit)</td>
+                      <td className="p-3 border border-outline-variant">Central bank discretion</td>
                     </tr>
                     <tr>
                       <td className="p-3 border border-outline-variant font-medium">Transactions</td>
                       <td className="p-3 border border-outline-variant">Peer-to-peer, borderless</td>
-                      <td className="p-3 border border-outline-variant">Requires intermediaries</td>
+                      <td className="p-3 border border-outline-variant">Requires banking intermediaries</td>
                     </tr>
                   </tbody>
                 </table>
@@ -185,7 +289,7 @@ function IndexPage() {
                   </span>
                 </summary>
                 <p className="px-4 pb-4 leading-relaxed text-on-surface-variant font-body-md">
-                  Crypto currency is a digital payment system that doesn't rely on banks to verify transactions. It's a peer-to-peer system that can enable anyone anywhere to send and receive payments using cryptography.
+                  Crypto currency is a digital payment system that doesn't rely on banks to verify transactions. It's a peer-to-peer system that enables anyone anywhere to send and receive payments using cryptography.
                 </p>
               </details>
               
@@ -197,7 +301,7 @@ function IndexPage() {
                   </span>
                 </summary>
                 <p className="px-4 pb-4 leading-relaxed text-on-surface-variant font-body-md">
-                  The meaning refers to the fusion of "cryptography" and "currency." It relies on encryption algorithms to create, secure, and verify the transfer of funds independently of a central bank.
+                  The meaning refers to the fusion of "cryptography" and "currency." It relies on encryption algorithms to create, secure, and verify transactions independently of a central bank.
                 </p>
               </details>
 
@@ -209,200 +313,48 @@ function IndexPage() {
                   </span>
                 </summary>
                 <p className="px-4 pb-4 leading-relaxed text-on-surface-variant font-body-md">
-                  A crypto currency price is largely determined by market supply and demand. Trading on exchanges globally means prices can fluctuate heavily based on news, regulation, and macroeconomic factors.
+                  A crypto currency price is largely determined by market supply and demand. Trading on global exchanges means prices adjust in real time based on trading volume, news, regulation, and macroeconomic trends.
                 </p>
               </details>
             </div>
-          </div>
-
-          <div className="mt-8 pt-6 border-t border-outline-variant">
-            <h4 className="font-label-caps text-label-caps text-secondary mb-2">Citations &amp; References</h4>
-            <ul className="list-disc list-inside space-y-1 font-body-sm text-on-surface-variant">
-              <li>Nakamoto, S. (2008). <em>Bitcoin: A Peer-to-Peer Electronic Cash System</em>.</li>
-              <li>Ethereum Foundation. <em>What is Ethereum?</em> Ethereum.org.</li>
-              <li>Financial Action Task Force (FATF). <em>Virtual Assets Regulatory Framework</em>.</li>
-            </ul>
           </div>
         </section>
 
         <section>
           <div className="flex items-center justify-between border-b border-primary pb-sm mb-lg">
             <h2 className="font-headline-md text-headline-md text-primary">Latest Intelligence</h2>
+            <span className="font-body-md text-on-surface-variant">Showing {articles.length} Published Articles</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            {/* Ethereum Article */}
-            <Link
-              to="/ethereum/can-you-send-bitcoin-to-an-ethereum-address"
-              className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-            >
-              <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
-                <img
-                  src={ethereumHero}
-                  alt="Illustration representing incompatible Bitcoin and Ethereum address formats"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  width={1600}
-                  height={900}
-                />
-              </div>
-              <div className="p-lg">
-                <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                  Ethereum · Guide
-                </span>
-                <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                  Can You Send Bitcoin to an Ethereum Address? What Actually Happens
-                </h2>
-                <p className="font-body-md text-body-md text-on-surface-variant line-clamp-3">
-                  Worried you sent Bitcoin to an Ethereum address by mistake? Here's what actually
-                  happens, why it's rarer than you think, and what to check.
-                </p>
-              </div>
-            </Link>
-
-            {/* Bitcoin Article */}
-            <Link
-              to="/bitcoin/how-to-send-bitcoin-safely"
-              className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-            >
-              <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
-                <img
-                  src={sendHero}
-                  alt="Illustration representing a Bitcoin transaction moving safely between wallets"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  width={1600}
-                  height={896}
-                />
-              </div>
-              <div className="p-lg">
-                <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                  Bitcoin · Guide
-                </span>
-                <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                  How to Send Bitcoin Safely
-                </h2>
-                <p className="font-body-md text-body-md text-on-surface-variant line-clamp-3">
-                  How Bitcoin transactions actually work, the mistakes that cause permanent loss,
-                  and a simple checklist to send safely every time.
-                </p>
-              </div>
-            </Link>
-
-            {/* News Article */}
-            <Link
-              to="/news/why-governments-regulate-cryptocurrency"
-              className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-            >
-              <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
-                <img
-                  src={regulationHero}
-                  alt="Abstract architectural pillars representing government regulation"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  width={1600}
-                  height={896}
-                />
-              </div>
-              <div className="p-lg">
-                <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                  News · Analysis
-                </span>
-                <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                  Why Governments Regulate Cryptocurrency
-                </h2>
-                <p className="font-body-md text-body-md text-on-surface-variant line-clamp-3">
-                  The primary drivers behind digital asset regulation—consumer protection, financial
-                  stability, and anti-money laundering frameworks.
-                </p>
-              </div>
-            </Link>
-
-            {/* Security Seed Phrase */}
-            <Link
-              to="/security/how-to-store-crypto-seed-phrase-safely"
-              className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-            >
-              <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
-                <img
-                  src={seedVault}
-                  alt="Illustration of a secure vault representing safe crypto seed phrase storage"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  width={1536}
-                  height={896}
-                />
-              </div>
-              <div className="p-lg">
-                <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                  Security · Guide
-                </span>
-                <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                  How to Store Your Crypto Seed Phrase Safely
-                </h2>
-                <p className="font-body-md text-body-md text-on-surface-variant line-clamp-3">
-                  Learn how to store your crypto seed phrase safely, avoid the mistakes that cause
-                  permanent loss, and choose the right backup method for you.
-                </p>
-              </div>
-            </Link>
-
-            {/* Security Phishing */}
-            <Link
-              to="/security/how-to-avoid-crypto-phishing-scams"
-              className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-            >
-              <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
-                <img
-                  src={phishingHero}
-                  alt="Minimalist padlock illustration representing crypto phishing scam protection"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  width={1600}
-                  height={896}
-                />
-              </div>
-              <div className="p-lg">
-                <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                  Security · Guide
-                </span>
-                <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                  How to Avoid Crypto Phishing Scams
-                </h2>
-                <p className="font-body-md text-body-md text-on-surface-variant line-clamp-3">
-                  How crypto phishing actually works, the red flags that repeat across every
-                  version, and the verification habits that keep your wallet safe.
-                </p>
-              </div>
-            </Link>
-
-            {/* Guides NYKNYC */}
-            <Link
-              to="/guides/not-your-keys-not-your-coins-meaning"
-              className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-            >
-              <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
-                <img
-                  src={nyknycHero}
-                  alt="Illustration representing a golden key securing a digital coin"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  width={1600}
-                  height={896}
-                />
-              </div>
-              <div className="p-lg">
-                <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                  Guides · Concept
-                </span>
-                <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                  "Not Your Keys, Not Your Coins" — What It Means
-                </h2>
-                <p className="font-body-md text-body-md text-on-surface-variant line-clamp-3">
-                  The fundamental rule of digital ownership. What self-custody actually means, why
-                  it matters, and when it makes sense to trust an exchange.
-                </p>
-              </div>
-            </Link>
+            {articles.map((a) => (
+              <Link
+                key={a.to}
+                to={a.to}
+                className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all flex flex-col"
+              >
+                <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden border-b border-outline-variant">
+                  <img
+                    src={a.image}
+                    alt={a.alt}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    width={1600}
+                    height={900}
+                  />
+                </div>
+                <div className="p-lg flex flex-col flex-grow">
+                  <span className="font-label-caps text-label-caps text-secondary font-semibold mb-xs">
+                    {a.tag}
+                  </span>
+                  <h3 className="font-headline-sm text-headline-sm text-primary mb-sm group-hover:underline decoration-secondary">
+                    {a.title}
+                  </h3>
+                  <p className="font-body-md text-body-md text-on-surface-variant line-clamp-3 mt-auto">
+                    {a.desc}
+                  </p>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
       </main>

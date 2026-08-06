@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import nyknycHero from "@/assets/keys-coins-meaning.jpg";
 import exchangeHero from "@/assets/exchange-vs-wallet.png";
+import walletAddressHero from "@/assets/crypto-wallet-address.png";
 import { BookOpen } from "lucide-react";
 
 const collectionSchema = {
@@ -21,19 +22,24 @@ const collectionSchema = {
       name: "Should You Keep Your Crypto on an Exchange or Move It to Your Own Wallet?",
       url: "https://crypto-beacon-news.vercel.app/guides/exchange-or-personal-wallet-crypto-storage",
     },
+    {
+      "@type": "WebPage",
+      name: "What Is a Crypto Wallet Address? How It Works and How to Use It Safely",
+      url: "https://crypto-beacon-news.vercel.app/guides/what-is-a-crypto-wallet-address",
+    },
   ],
 };
 
 export const Route = createFileRoute("/guides/")({
   head: () => ({
     meta: [
-      { title: "Guides — CryptoBeacon" },
+      { title: "Crypto Guides — CryptoBeacon" },
       {
         name: "description",
         content:
           "Foundational, cross-cutting concept explainers that connect the dots across self-custody, wallets, transactions, and crypto safety.",
       },
-      { property: "og:title", content: "Guides — CryptoBeacon" },
+      { property: "og:title", content: "Crypto Guides — CryptoBeacon" },
       {
         property: "og:description",
         content:
@@ -112,13 +118,39 @@ function GuidesHub() {
             </div>
             <div className="p-lg">
               <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                Guides · Concept
+                Guides · Custody
               </span>
               <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                Should You Keep Your Crypto on an Exchange or Move It to Your Own Wallet?
+                Exchange vs. Personal Wallet: How to Store Crypto
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 A clear, neutral decision framework based on how you actually use your crypto.
+              </p>
+            </div>
+          </Link>
+          <Link
+            to="/guides/what-is-a-crypto-wallet-address"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden border-b border-outline-variant">
+              <img
+                src={walletAddressHero}
+                alt="Illustration representing a digital crypto wallet address"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width={1600}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Guides · Security
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                What Is a Crypto Wallet Address?
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                How public keys and wallet addresses work, how to share them safely, and how to verify address formats across blockchains.
               </p>
             </div>
           </Link>

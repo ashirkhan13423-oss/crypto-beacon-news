@@ -23,13 +23,27 @@ export const Route = createFileRoute("/search")({
   component: SearchPage,
 });
 
-// All articles for search
+// All 12 articles for search index
 const ARTICLES = [
   {
     title: "How to Send Bitcoin Safely",
     description:
       "Learn how Bitcoin transactions work, the mistakes that cause permanent loss, and a simple checklist to send Bitcoin safely every time.",
     path: "/bitcoin/how-to-send-bitcoin-safely",
+    category: "Bitcoin",
+  },
+  {
+    title: "What Is a Bitcoin Wallet? Hot, Cold & Custodial Explained",
+    description:
+      "Understand how software, hardware, and exchange wallets manage Bitcoin private keys, and how to select the right storage option.",
+    path: "/bitcoin/what-is-a-bitcoin-wallet",
+    category: "Bitcoin",
+  },
+  {
+    title: "What Is Bitcoin Mining? How New Bitcoin Is Created",
+    description:
+      "Proof-of-Work, block rewards, mining pools, and network difficulty explained in plain language for beginners.",
+    path: "/bitcoin/what-is-bitcoin-mining",
     category: "Bitcoin",
   },
   {
@@ -54,17 +68,31 @@ const ARTICLES = [
     category: "Guides",
   },
   {
-    title: "What Is a Blockchain Fork?",
+    title: "What Is a Crypto Wallet Address? How to Use It Safely",
+    description:
+      "How public keys and wallet addresses work across blockchains, how to share them safely, and how to verify address formats.",
+    path: "/guides/what-is-a-crypto-wallet-address",
+    category: "Guides",
+  },
+  {
+    title: "What Is a Blockchain Fork? Hard & Soft Forks Explained",
     description:
       "A beginner-friendly explainer on what a blockchain fork is, why they happen, and the difference between hard forks and soft forks.",
     path: "/news/what-is-a-blockchain-fork",
     category: "News",
   },
   {
-    title: "Why Governments Regulate Cryptocurrency",
+    title: "Why Do Governments Regulate Cryptocurrency?",
     description:
-      "An objective look at the primary reasons governments regulate cryptocurrency, from preventing money laundering to protecting retail investors.",
+      "An in-depth editorial guide on why governments regulate crypto, the major global legal frameworks (MiCA, SEC, FATF), and what regulations mean for retail investors.",
     path: "/news/why-governments-regulate-cryptocurrency",
+    category: "News",
+  },
+  {
+    title: "What Does It Mean When an Exchange Pauses Withdrawals?",
+    description:
+      "Your crypto exchange paused withdrawals — is that normal or a red flag? A clear framework for telling routine maintenance from liquidity crises.",
+    path: "/news/what-it-means-when-exchange-pauses-withdrawals",
     category: "News",
   },
   {

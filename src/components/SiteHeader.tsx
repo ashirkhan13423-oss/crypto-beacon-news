@@ -10,6 +10,7 @@ const navLinks: { label: string; to: string }[] = [
   { label: "Privacy", to: "/privacy" },
   { label: "Terms", to: "/terms" },
   { label: "About", to: "/about" },
+  { label: "Contact", to: "/contact" },
 ];
 
 export function SiteHeader() {
