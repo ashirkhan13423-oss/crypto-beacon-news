@@ -50,13 +50,12 @@ function AboutPage() {
             <p className="mb-sm">
               CryptoBeacon is run by the <strong>CryptoBeacon Editorial Team</strong>, a dedicated
               group of independent blockchain analysts, technologists, and researchers. We launched
-              this platform to bridge the gap between highly technical protocol documentation and
-              mainstream financial reporting.
+              this platform to clarify <strong>what crypto currency is</strong>, explain the true <strong>crypto currency meaning</strong> behind self-custody, and deliver objective <strong>crypto currency news</strong> across global markets.
             </p>
             <p>
               In a space often driven by speculation and short-term narratives, our mission is to
               provide clear, objective, and deeply researched educational content that empowers our
-              readers to make informed decisions about their digital assets and security.
+              readers to evaluate <strong>crypto currency prices</strong> and make informed decisions about major <strong>crypto currencies</strong> and security.
             </p>
           </section>
 

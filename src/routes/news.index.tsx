@@ -33,17 +33,22 @@ const collectionSchema = {
 export const Route = createFileRoute("/news/")({
   head: () => ({
     meta: [
-      { title: "Crypto News — CryptoBeacon" },
+      { title: "Crypto Currency News & Industry Analysis — CryptoBeacon" },
       {
         name: "description",
         content:
-          "Evergreen explainers and editorial coverage of the crypto industry, its rules, and what they mean for everyday users.",
+          "Institutional crypto currency news, policy explainers, market telemetry (including fintechzoom.com crypto currency price trends), and political regulation developments like Trump crypto currency policy.",
       },
-      { property: "og:title", content: "Crypto News — CryptoBeacon" },
+      {
+        name: "keywords",
+        content:
+          "crypto currency news, trump crypto currency, fintechzoom.com crypto currency, crypto currencies, crypto currency regulation, blockchain news",
+      },
+      { property: "og:title", content: "Crypto Currency News & Industry Analysis — CryptoBeacon" },
       {
         property: "og:description",
         content:
-          "Evergreen explainers and editorial coverage of the crypto industry, its rules, and what they mean for everyday users.",
+          "Institutional crypto currency news, policy explainers, market telemetry, and political regulation developments.",
       },
       { property: "og:url", content: "https://crypto-beacon-news.vercel.app/news" },
     ],
@@ -67,12 +72,11 @@ function NewsHub() {
               />
             </div>
             <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary">
-              News
+              Crypto Currency News &amp; Analysis
             </h1>
           </div>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-            Evergreen explainers on how the crypto industry actually works — the rules, the
-            institutions, and what they mean for everyday users.
+          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+            Get authoritative <strong>crypto currency news</strong>, market telemetry breakdowns (including market indices like <strong>fintechzoom.com crypto currency</strong> indicators), and institutional policy coverage on topics such as <strong>trump crypto currency</strong> regulatory initiatives.
           </p>
         </header>
 

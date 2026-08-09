@@ -56,35 +56,35 @@ const ARTICLES = [
   {
     title: "Should You Keep Your Crypto on an Exchange or Move It to Your Own Wallet?",
     description:
-      "Should your crypto stay on an exchange or move to your own wallet? A clear, neutral decision framework based on how you actually use your crypto.",
+      "Comparing exchange custody (including ChicksX crypto & currency exchange and major venues) vs personal wallet custody across top crypto currencies.",
     path: "/guides/exchange-or-personal-wallet-crypto-storage",
     category: "Guides",
   },
   {
     title: '"Not Your Keys, Not Your Coins" — What It Actually Means',
     description:
-      'A plain-language explainer on what "not your keys, not your coins" means, why it matters, and how to tell if you actually control your crypto.',
+      'The foundational crypto currency meaning of self-custody: why private key ownership matters when holding crypto currencies.',
     path: "/guides/not-your-keys-not-your-coins-meaning",
     category: "Guides",
   },
   {
     title: "What Is a Crypto Wallet Address? How to Use It Safely",
     description:
-      "How public keys and wallet addresses work across blockchains, how to share them safely, and how to verify address formats.",
+      "How public keys and wallet addresses work across major crypto currencies, address format validation, and transfer safety.",
     path: "/guides/what-is-a-crypto-wallet-address",
     category: "Guides",
   },
   {
     title: "What Is a Blockchain Fork? Hard & Soft Forks Explained",
     description:
-      "A beginner-friendly explainer on what a blockchain fork is, why they happen, and the difference between hard forks and soft forks.",
+      "A beginner-friendly explainer on what a blockchain fork is, hard vs soft forks, and what happens to crypto currency prices during network splits.",
     path: "/news/what-is-a-blockchain-fork",
     category: "News",
   },
   {
     title: "Why Do Governments Regulate Cryptocurrency?",
     description:
-      "An in-depth editorial guide on why governments regulate crypto, the major global legal frameworks (MiCA, SEC, FATF), and what regulations mean for retail investors.",
+      "An in-depth editorial guide on why governments regulate crypto, political policy shifts (including Trump crypto currency regulation proposals), SEC oversight, and MiCA.",
     path: "/news/why-governments-regulate-cryptocurrency",
     category: "News",
   },
@@ -210,11 +210,36 @@ function SearchPage() {
         )}
 
         {query.trim() === "" && (
-          <div className="py-xxl text-center max-w-2xl mx-auto opacity-60">
-            <FileSearch className="text-5xl text-on-surface-variant mb-sm" />
-            <p className="font-body-lg text-body-lg text-on-surface-variant">
-              Type above to search through our articles and guides.
+          <div className="py-xl max-w-3xl">
+            <div className="flex items-center gap-xs mb-md text-on-surface-variant">
+              <FileSearch className="w-5 h-5 text-secondary" />
+              <h2 className="font-headline-sm text-headline-sm text-primary">Popular &amp; Trending Searches</h2>
+            </div>
+            <p className="font-body-md text-on-surface-variant mb-md">
+              Select a trending topic to search through our editorial guides and crypto currency news index:
             </p>
+            <div className="flex flex-wrap gap-xs">
+              {[
+                "crypto currency",
+                "what is crypto currency",
+                "crypto currency price",
+                "crypto currency prices",
+                "crypto currency news",
+                "crypto currency meaning",
+                "crypto currencies",
+                "fintechzoom.com crypto currency",
+                "chicksx crypto & currency exchange",
+                "trump crypto currency",
+              ].map((term) => (
+                <button
+                  key={term}
+                  onClick={() => handleQueryChange(term)}
+                  className="px-md py-xs bg-surface-container-low hover:bg-surface-container-high border border-outline-variant hover:border-secondary rounded-full font-label-md text-on-surface hover:text-primary transition-all text-sm"
+                >
+                  {term}
+                </button>
+              ))}
+            </div>
           </div>
         )}
       </main>

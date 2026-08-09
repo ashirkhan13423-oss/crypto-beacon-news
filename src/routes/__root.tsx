@@ -20,7 +20,7 @@ const websiteSchema = {
   alternateName: ["Crypto Beacon", "Crypto Beacon News", "CryptoBeacon News"],
   url: `${SITE_URL}/`,
   description:
-    "Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and the digital-asset ecosystem.",
+    "Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and major crypto currencies, including real-time crypto currency price updates and crypto currency news.",
   potentialAction: {
     "@type": "SearchAction",
     target: `${SITE_URL}/search?q={search_term_string}`,

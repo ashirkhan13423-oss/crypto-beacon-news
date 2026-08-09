@@ -33,17 +33,22 @@ const collectionSchema = {
 export const Route = createFileRoute("/guides/")({
   head: () => ({
     meta: [
-      { title: "Crypto Guides — CryptoBeacon" },
+      { title: "Crypto Currency Guides & Explanations — CryptoBeacon" },
       {
         name: "description",
         content:
-          "Foundational, cross-cutting concept explainers that connect the dots across self-custody, wallets, transactions, and crypto safety.",
+          "Comprehensive guides on what crypto currency is, the true crypto currency meaning behind self-custody, wallet management, and securing your crypto currencies.",
       },
-      { property: "og:title", content: "Crypto Guides — CryptoBeacon" },
+      {
+        name: "keywords",
+        content:
+          "what is crypto currency, crypto currency meaning, crypto currencies, crypto currency storage, crypto wallet guide, self custody crypto",
+      },
+      { property: "og:title", content: "Crypto Currency Guides & Explanations — CryptoBeacon" },
       {
         property: "og:description",
         content:
-          "Foundational, cross-cutting concept explainers that connect the dots across self-custody, wallets, transactions, and crypto safety.",
+          "Comprehensive guides on what crypto currency is, the true crypto currency meaning, and how to store major crypto currencies safely.",
       },
       { property: "og:url", content: "https://crypto-beacon-news.vercel.app/guides" },
     ],
@@ -66,11 +71,10 @@ function GuidesHub() {
                 style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }}
               />
             </div>
-            <h1 className="font-display-lg text-display-lg text-primary">Guides</h1>
+            <h1 className="font-display-lg text-display-lg text-primary">Crypto Currency Guides</h1>
           </div>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-            Foundational, cross-cutting concept explainers — the plain-language "why" behind the
-            habits, tools, and choices that make up sound crypto practice.
+          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+            Essential educational references explaining <strong>what crypto currency is</strong>, the deeper <strong>crypto currency meaning</strong> of private key custody, and how to safely manage major <strong>crypto currencies</strong>.
           </p>
         </header>
 

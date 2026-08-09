@@ -33,17 +33,22 @@ const collectionSchema = {
 export const Route = createFileRoute("/bitcoin/")({
   head: () => ({
     meta: [
-      { title: "Bitcoin — CryptoBeacon" },
+      { title: "Bitcoin (BTC): Benchmark Crypto Currency Price & Architecture — CryptoBeacon" },
       {
         name: "description",
         content:
-          "Definitive Bitcoin analysis: transactions, architecture, network fundamentals, and beginner-friendly safety guides.",
+          "Definitive Bitcoin analysis: global crypto currency price factors, network difficulty, halving mechanics, and transaction security.",
       },
-      { property: "og:title", content: "Bitcoin — CryptoBeacon" },
+      {
+        name: "keywords",
+        content:
+          "crypto currency price, crypto currency prices, crypto currency, bitcoin price, btc halving, proof of work",
+      },
+      { property: "og:title", content: "Bitcoin (BTC): Benchmark Crypto Currency Price & Architecture — CryptoBeacon" },
       {
         property: "og:description",
         content:
-          "Definitive Bitcoin analysis: transactions, architecture, network fundamentals, and beginner-friendly safety guides.",
+          "Definitive Bitcoin analysis: global crypto currency price factors, network difficulty, and transaction security.",
       },
       { property: "og:url", content: "https://crypto-beacon-news.vercel.app/bitcoin" },
     ],
@@ -66,11 +71,10 @@ function BitcoinPage() {
                 style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }}
               />
             </div>
-            <h1 className="font-display-lg text-display-lg text-primary">Bitcoin</h1>
+            <h1 className="font-display-lg text-display-lg text-primary">Bitcoin (BTC)</h1>
           </div>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-            The foundational network of the digital asset ecosystem — in-depth analysis,
-            architectural developments, and market fundamentals.
+          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+            The foundational <strong>crypto currency</strong> of the digital asset ecosystem — in-depth analysis of supply caps, global <strong>crypto currency price</strong> drivers, and network safety.
           </p>
         </header>
 
