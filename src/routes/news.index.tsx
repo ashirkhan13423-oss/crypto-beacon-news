@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import regulationHero from "@/assets/news-crypto-regulation.jpg";
 import blockchainForkHero from "@/assets/news-blockchain-fork.png";
 import pausedHero from "@/assets/news-paused-withdrawals.svg";
+import bitcoinVolatilityHero from "@/assets/news-bitcoin-volatility.svg";
 import { Newspaper } from "lucide-react";
 
 const collectionSchema = {
@@ -26,6 +27,11 @@ const collectionSchema = {
       "@type": "WebPage",
       name: "What Does It Mean When a Crypto Exchange Pauses Withdrawals?",
       url: "https://crypto-beacon-news.vercel.app/news/what-it-means-when-exchange-pauses-withdrawals",
+    },
+    {
+      "@type": "WebPage",
+      name: "Why Does Bitcoin's Price Move More Than Stocks?",
+      url: "https://crypto-beacon-news.vercel.app/news/why-bitcoin-price-moves-more-than-stocks",
     },
   ],
 };
@@ -160,6 +166,33 @@ function NewsHub() {
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 Your crypto exchange paused withdrawals — is that normal or a red flag? A clear framework for telling routine maintenance from a genuine warning sign.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            to="/news/why-bitcoin-price-moves-more-than-stocks"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={bitcoinVolatilityHero}
+                alt="Illustration representing Bitcoin's price movement compared to traditional markets"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                News · Guide
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Why Does Bitcoin's Price Move More Than Stocks?
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A plain-language look at the structural reasons Bitcoin's price swings more than traditional assets.
               </p>
             </div>
           </Link>

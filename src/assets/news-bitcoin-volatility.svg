@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 896" width="1536" height="896">
+  <rect width="1536" height="896" fill="#0A0B0D" />
+  <!-- Subtle Grid lines (no labels or numbers) -->
+  <line x1="200" y1="200" x2="1336" y2="200" stroke="#1F2937" stroke-width="2" stroke-dasharray="8 8" />
+  <line x1="200" y1="448" x2="1336" y2="448" stroke="#1F2937" stroke-width="2" stroke-dasharray="8 8" />
+  <line x1="200" y1="696" x2="1336" y2="696" stroke="#1F2937" stroke-width="2" stroke-dasharray="8 8" />
+  
+  <!-- Traditional Asset Line (broad, gentle curve) -->
+  <path d="M 200 480 Q 450 460 700 440 T 1200 410 T 1336 400" fill="none" stroke="#64748B" stroke-width="12" stroke-linecap="round" />
+  
+  <!-- Bitcoin Line (narrow, sharply-angled, vibrant brand green) -->
+  <path d="M 200 580 L 380 280 L 540 680 L 720 220 L 900 620 L 1080 320 L 1220 520 L 1336 260" fill="none" stroke="#0F9D58" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Glowing nodes on Bitcoin path -->
+  <circle cx="380" cy="280" r="10" fill="#0F9D58" />
+  <circle cx="720" cy="220" r="10" fill="#0F9D58" />
+  <circle cx="1080" cy="320" r="10" fill="#0F9D58" />
+  <circle cx="1336" cy="260" r="10" fill="#0F9D58" />
+</svg>
