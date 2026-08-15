@@ -54,6 +54,20 @@ const ARTICLES = [
     category: "Ethereum",
   },
   {
+    title: "What Is Ethereum Staking? Proof-of-Stake & Yield Mechanics Explained",
+    description:
+      "Learn how Proof-of-Stake works, solo staking vs liquid staking, protocol inflation, and key validator risks.",
+    path: "/ethereum/what-is-ethereum-staking",
+    category: "Ethereum",
+  },
+  {
+    title: "Ethereum Layer 2 Scaling & Rollups Explained",
+    description:
+      "Understand Optimistic vs ZK Rollups, blob space (EIP-4844), and how L2s scale Ethereum while preserving security.",
+    path: "/ethereum/ethereum-layer-2-scaling-rollups-explained",
+    category: "Ethereum",
+  },
+  {
     title: "Should You Keep Your Crypto on an Exchange or Move It to Your Own Wallet?",
     description:
       "Comparing exchange custody vs personal wallet custody across top crypto currencies.",

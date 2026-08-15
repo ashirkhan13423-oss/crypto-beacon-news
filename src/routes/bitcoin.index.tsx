@@ -51,6 +51,7 @@ export const Route = createFileRoute("/bitcoin/")({
           "Definitive Bitcoin analysis: global crypto currency price factors, network difficulty, and transaction security.",
       },
       { property: "og:url", content: "https://crypto-beacon-news.vercel.app/bitcoin" },
+      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/bitcoin" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],

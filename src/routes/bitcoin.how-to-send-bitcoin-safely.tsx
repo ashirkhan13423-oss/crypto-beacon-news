@@ -8,7 +8,7 @@ const URL = "https://crypto-beacon-news.vercel.app/bitcoin/how-to-send-bitcoin-s
 const TITLE = "How to Send Bitcoin Safely (Beginner's Guide) | CryptoBeacon";
 const DESC =
   "Learn how Bitcoin transactions work, the mistakes that cause permanent loss, and a simple checklist to send Bitcoin safely every time.";
-const PUBLISHED = "2026-07-04";
+const PUBLISHED = "2026-08-15";
 
 const faqs: { q: string; a: string }[] = [
   {
@@ -40,7 +40,12 @@ const articleSchema = {
   description: DESC,
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
-  author: { "@type": "Organization", name: "CryptoBeacon Editorial" },
+  author: {
+    "@type": "Person",
+    name: "Elena Rostova",
+    jobTitle: "Lead Security Analyst",
+    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
+  },
   publisher: {
     "@type": "Organization",
     name: "CryptoBeacon",
@@ -108,10 +113,13 @@ export const Route = createFileRoute("/bitcoin/how-to-send-bitcoin-safely")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
       { property: "og:url", content: URL },
+      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
       { property: "article:published_time", content: PUBLISHED },
       { property: "article:section", content: "Bitcoin" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
+      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [
@@ -249,7 +257,7 @@ function ArticlePage() {
         </h1>
 
         <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By CryptoBeacon Editorial</span>
+          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">Elena Rostova</Link> (Lead Security Analyst) · Reviewed by CryptoBeacon Editorial</span>
           <span aria-hidden>·</span>
           <time dateTime={PUBLISHED}>July 4, 2026</time>
           <span aria-hidden>·</span>

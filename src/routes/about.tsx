@@ -19,6 +19,7 @@ export const Route = createFileRoute("/about")({
           "Learn about the CryptoBeacon Editorial Team, our evergreen-first editorial standards, and our commitment to rigorous cryptocurrency research.",
       },
       { property: "og:url", content: "https://crypto-beacon-news.vercel.app/about" },
+      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/about" }],
   }),
@@ -133,7 +134,7 @@ function AboutPage() {
               </p>
             </div>
             <a
-              href="mailto:editorial@crypto-beacon-news.vercel.app"
+              href="mailto:ashirkhan13423@gmail.com"
               className="inline-flex items-center gap-xs bg-primary text-primary-foreground px-lg py-sm rounded-full font-label-lg font-medium hover:bg-primary/90 transition-colors"
             >
               <Mail style={{ fontSize: "20px" }} />

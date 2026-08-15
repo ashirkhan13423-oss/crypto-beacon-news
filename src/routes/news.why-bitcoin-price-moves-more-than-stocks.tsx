@@ -32,7 +32,12 @@ const articleSchema = {
   description: DESC,
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
-  author: { "@type": "Organization", name: "CryptoBeacon Editorial" },
+  author: {
+    "@type": "Person",
+    name: "Marcus Vance",
+    jobTitle: "Senior Market & Macro Analyst",
+    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
+  },
   publisher: {
     "@type": "Organization",
     name: "CryptoBeacon",
@@ -100,10 +105,13 @@ export const Route = createFileRoute("/news/why-bitcoin-price-moves-more-than-st
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
       { property: "og:url", content: URL },
+      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
       { property: "article:published_time", content: PUBLISHED },
       { property: "article:section", content: "News" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
+      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [
@@ -188,7 +196,7 @@ function ArticlePage() {
         </h1>
 
         <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By CryptoBeacon Editorial</span>
+          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">Marcus Vance</Link> (Senior Macro Analyst) · Reviewed by CryptoBeacon Editorial</span>
           <span aria-hidden>·</span>
           <time dateTime={PUBLISHED}>August 12, 2026</time>
           <span aria-hidden>·</span>

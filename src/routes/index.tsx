@@ -75,10 +75,10 @@ const homepageSchema = {
       "description": DESC,
       "datePublished": PUBLISHED_DATE,
       "dateModified": MODIFIED_DATE,
-      "author": {
-        "@type": "Organization",
-        "name": "CryptoBeacon Editorial"
-      },
+      "author": [
+        { "@type": "Person", "name": "Elena Rostova", "jobTitle": "Lead Security Analyst" },
+        { "@type": "Person", "name": "Marcus Vance", "jobTitle": "Senior Market & Macro Analyst" }
+      ],
       "publisher": {
         "@type": "Organization",
         "name": "CryptoBeacon",
@@ -262,7 +262,7 @@ function IndexPage() {
         <section className="mb-xl max-w-4xl">
           <div className="flex flex-wrap items-center gap-sm mb-md">
             <span className="inline-block bg-surface-container-high text-secondary font-label-caps text-label-caps px-md py-xs rounded-full border border-outline-variant font-semibold">
-              CryptoBeacon Editorial
+              Elena Rostova &amp; Marcus Vance · Editorial Team
             </span>
             <span className="inline-flex items-center gap-xs font-body-sm text-body-sm text-on-surface-variant">
               <Calendar className="w-4 h-4 text-secondary" />

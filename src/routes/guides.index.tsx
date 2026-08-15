@@ -51,6 +51,7 @@ export const Route = createFileRoute("/guides/")({
           "Comprehensive guides on what crypto currency is, the true crypto currency meaning, and how to store major crypto currencies safely.",
       },
       { property: "og:url", content: "https://crypto-beacon-news.vercel.app/guides" },
+      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/guides" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],

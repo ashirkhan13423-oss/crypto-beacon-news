@@ -57,6 +57,7 @@ export const Route = createFileRoute("/news/")({
           "Institutional crypto currency news, policy explainers, market telemetry, and political regulation developments.",
       },
       { property: "og:url", content: "https://crypto-beacon-news.vercel.app/news" },
+      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/news" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],

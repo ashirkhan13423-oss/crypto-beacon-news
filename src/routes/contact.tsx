@@ -19,17 +19,17 @@ const contactSchema = {
     "@type": "Organization",
     name: "CryptoBeacon",
     url: "https://crypto-beacon-news.vercel.app",
-    email: "contact@crypto-beacon-news.vercel.app",
+    email: "ashirkhan13423@gmail.com",
     contactPoint: [
       {
         "@type": "ContactPoint",
-        email: "editorial@crypto-beacon-news.vercel.app",
+        email: "ashirkhan13423@gmail.com",
         contactType: "editorial newsroom",
         availableLanguage: ["English"],
       },
       {
         "@type": "ContactPoint",
-        email: "security@crypto-beacon-news.vercel.app",
+        email: "ashirkhan13423@gmail.com",
         contactType: "security research",
         availableLanguage: ["English"],
       },
@@ -46,8 +46,10 @@ export const Route = createFileRoute("/contact")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { property: "og:url", content: URL },
+      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
+      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [
@@ -109,10 +111,10 @@ function ContactPage() {
                 Press releases, news tips, and content suggestions.
               </p>
               <a
-                href="mailto:editorial@crypto-beacon-news.vercel.app"
+                href="mailto:ashirkhan13423@gmail.com"
                 className="font-body-md text-secondary font-medium hover:underline"
               >
-                editorial@crypto-beacon-news.vercel.app
+                ashirkhan13423@gmail.com
               </a>
             </div>
 
@@ -125,10 +127,10 @@ function ContactPage() {
                 Vulnerability disclosures and security topic requests.
               </p>
               <a
-                href="mailto:security@crypto-beacon-news.vercel.app"
+                href="mailto:ashirkhan13423@gmail.com"
                 className="font-body-md text-secondary font-medium hover:underline"
               >
-                security@crypto-beacon-news.vercel.app
+                ashirkhan13423@gmail.com
               </a>
             </div>
 

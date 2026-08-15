@@ -17,6 +17,7 @@ export const Route = createFileRoute("/disclaimer")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { property: "og:url", content: URL },
+      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
   }),
@@ -107,7 +108,7 @@ function DisclaimerPage() {
               <Link to="/contact" className="text-secondary underline font-medium">
                 Contact Page
               </Link>{" "}
-              or email us directly at <a href="mailto:editorial@crypto-beacon-news.vercel.app" className="text-secondary hover:underline">editorial@crypto-beacon-news.vercel.app</a>.
+              or email us directly at <a href="mailto:ashirkhan13423@gmail.com" className="text-secondary hover:underline">ashirkhan13423@gmail.com</a>.
             </p>
           </section>
         </article>

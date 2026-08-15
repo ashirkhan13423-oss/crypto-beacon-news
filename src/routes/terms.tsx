@@ -19,6 +19,7 @@ export const Route = createFileRoute("/terms")({
           "The terms and conditions governing your use of CryptoBeacon, including intellectual property, disclaimers, and limitation of liability.",
       },
       { property: "og:url", content: "https://crypto-beacon-news.vercel.app/terms" },
+      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/terms" }],
   }),
@@ -232,7 +233,7 @@ function TermsPage() {
               </p>
             </div>
             <a
-              href="mailto:legal@crypto-beacon-news.vercel.app"
+              href="mailto:ashirkhan13423@gmail.com"
               className="inline-flex items-center gap-xs bg-primary text-primary-foreground px-lg py-sm rounded-full font-label-lg font-medium hover:bg-primary/90 transition-colors"
             >
               <Scale style={{ fontSize: "20px" }} />

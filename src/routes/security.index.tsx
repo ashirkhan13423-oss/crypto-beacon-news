@@ -39,6 +39,7 @@ export const Route = createFileRoute("/security/")({
           "Wallet safety, phishing awareness, and rug-pull forensics. Practical crypto security guidance.",
       },
       { property: "og:url", content: "https://crypto-beacon-news.vercel.app/security" },
+      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/security" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],

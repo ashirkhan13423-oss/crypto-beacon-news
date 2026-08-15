@@ -58,59 +58,59 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-col gap-sm">
           <span className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
-            Markets
-          </span>
-          <Link
-            to="/bitcoin"
-            className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
-          >
-            Bitcoin
-          </Link>
-          <Link
-            to="/ethereum"
-            className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
-          >
-            Ethereum
-          </Link>
-          <Link
-            to="/news"
-            className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
-          >
-            Altcoins Analysis
-          </Link>
-        </div>
-        <div className="flex flex-col gap-sm">
-          <span className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
-            Sectors
+            Categories &amp; Hubs
           </span>
           <Link
             to="/news"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
-            Blockchain News
+            News Hub
           </Link>
           <Link
             to="/guides"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
-            DeFi &amp; Storage
+            Guides &amp; Tutorials
           </Link>
           <Link
             to="/security"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
-            Security Guides
+            Security &amp; Phishing
           </Link>
         </div>
         <div className="flex flex-col gap-sm">
           <span className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
-            Legal &amp; Ethics
+            Asset Focus
+          </span>
+          <Link
+            to="/bitcoin"
+            className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
+          >
+            Bitcoin (BTC)
+          </Link>
+          <Link
+            to="/ethereum"
+            className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
+          >
+            Ethereum (ETH)
+          </Link>
+        </div>
+        <div className="flex flex-col gap-sm">
+          <span className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
+            Company &amp; Legal
           </span>
           <Link
             to="/about"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
-            Editorial Policy
+            About &amp; Editorial Standards
+          </Link>
+          <Link
+            to="/contact"
+            className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
+          >
+            Contact
           </Link>
           <Link
             to="/privacy"

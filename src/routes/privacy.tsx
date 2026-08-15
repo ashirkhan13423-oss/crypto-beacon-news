@@ -19,6 +19,7 @@ export const Route = createFileRoute("/privacy")({
           "How CryptoBeacon collects, uses, and protects your information, including cookies, analytics, and advertising practices.",
       },
       { property: "og:url", content: "https://crypto-beacon-news.vercel.app/privacy" },
+      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/privacy" }],
   }),
@@ -39,7 +40,7 @@ function PrivacyPage() {
           </h1>
           <p className="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
             <RefreshCw className="text-secondary" style={{ fontSize: "18px" }} />
-            Last updated: July 12, 2026
+            Last updated: August 15, 2026
           </p>
         </header>
 
@@ -168,6 +169,12 @@ function PrivacyPage() {
                 .
               </div>
               <div className="bg-surface-container-lowest p-md rounded-lg border border-outline-variant">
+                <strong className="text-primary block mb-xs">No other ad networks:</strong>
+                CryptoBeacon uses only Google AdSense for advertising. No other third-party ad
+                network, demand-side platform, or monetisation service (including Monetag or any
+                similar network) is active on this Site.
+              </div>
+              <div className="bg-surface-container-lowest p-md rounded-lg border border-outline-variant">
                 <strong className="text-primary block mb-xs">Email service provider:</strong>
                 If you subscribe to our newsletter, your email address is stored with our secure
                 email service providers, which process it under their own privacy policy in order to
@@ -258,7 +265,7 @@ function PrivacyPage() {
               </p>
             </div>
             <a
-              href="mailto:privacy@crypto-beacon-news.vercel.app"
+              href="mailto:ashirkhan13423@gmail.com"
               className="inline-flex items-center gap-xs bg-primary text-primary-foreground px-lg py-sm rounded-full font-label-lg font-medium hover:bg-primary/90 transition-colors"
             >
               <Mail style={{ fontSize: "20px" }} />
