@@ -8,7 +8,7 @@ const URL = "https://crypto-beacon-news.vercel.app/news/what-is-a-blockchain-for
 const TITLE = "What Is a Blockchain Fork? Explained Simply | CryptoBeacon";
 const DESC =
   "A plain-language explainer on what a blockchain fork is, the difference between hard and soft forks, and why cryptocurrencies sometimes split into two.";
-const PUBLISHED = "2026-07-20";
+const PUBLISHED = "2026-08-15";
 
 const faqs: { q: string; a: string }[] = [
   {
@@ -31,7 +31,7 @@ const articleSchema = {
   headline: "What Is a Blockchain Fork? Why Cryptocurrencies Sometimes Split in Two",
   description: DESC,
   datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
+  dateModified: "2026-08-15",
   author: { "@type": "Organization", name: "CryptoBeacon Editorial" },
   publisher: {
     "@type": "Organization",

@@ -165,18 +165,6 @@ export function SiteFooter() {
             <Link to="/search" search={{ q: "crypto currencies" }} className="hover:text-primary hover:underline">
               Crypto Currencies
             </Link>
-            <span aria-hidden>·</span>
-            <Link to="/search" search={{ q: "fintechzoom.com crypto currency" }} className="hover:text-primary hover:underline">
-              FintechZoom Crypto Currency
-            </Link>
-            <span aria-hidden>·</span>
-            <Link to="/search" search={{ q: "chicksx crypto & currency exchange" }} className="hover:text-primary hover:underline">
-              ChicksX Crypto &amp; Currency Exchange
-            </Link>
-            <span aria-hidden>·</span>
-            <Link to="/search" search={{ q: "trump crypto currency" }} className="hover:text-primary hover:underline">
-              Trump Crypto Currency
-            </Link>
           </div>
         </div>
       </div>

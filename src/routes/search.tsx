@@ -56,7 +56,7 @@ const ARTICLES = [
   {
     title: "Should You Keep Your Crypto on an Exchange or Move It to Your Own Wallet?",
     description:
-      "Comparing exchange custody (including ChicksX crypto & currency exchange and major venues) vs personal wallet custody across top crypto currencies.",
+      "Comparing exchange custody vs personal wallet custody across top crypto currencies.",
     path: "/guides/exchange-or-personal-wallet-crypto-storage",
     category: "Guides",
   },
@@ -84,7 +84,7 @@ const ARTICLES = [
   {
     title: "Why Do Governments Regulate Cryptocurrency?",
     description:
-      "An in-depth editorial guide on why governments regulate crypto, political policy shifts (including Trump crypto currency regulation proposals), SEC oversight, and MiCA.",
+      "An in-depth editorial guide on why governments regulate crypto, political policy shifts, SEC oversight, and MiCA.",
     path: "/news/why-governments-regulate-cryptocurrency",
     category: "News",
   },
@@ -227,9 +227,6 @@ function SearchPage() {
                 "crypto currency news",
                 "crypto currency meaning",
                 "crypto currencies",
-                "fintechzoom.com crypto currency",
-                "chicksx crypto & currency exchange",
-                "trump crypto currency",
               ].map((term) => (
                 <button
                   key={term}

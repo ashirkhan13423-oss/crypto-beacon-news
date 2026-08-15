@@ -43,12 +43,12 @@ export const Route = createFileRoute("/news/")({
       {
         name: "description",
         content:
-          "Institutional crypto currency news, policy explainers, market telemetry (including fintechzoom.com crypto currency price trends), and political regulation developments like Trump crypto currency policy.",
+          "Institutional crypto currency news, policy explainers, market telemetry, and political regulation developments.",
       },
       {
         name: "keywords",
         content:
-          "crypto currency news, trump crypto currency, fintechzoom.com crypto currency, crypto currencies, crypto currency regulation, blockchain news",
+          "crypto currency news, crypto currencies, crypto currency regulation, blockchain news",
       },
       { property: "og:title", content: "Crypto Currency News & Industry Analysis — CryptoBeacon" },
       {
@@ -82,7 +82,7 @@ function NewsHub() {
             </h1>
           </div>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
-            Get authoritative <strong>crypto currency news</strong>, market telemetry breakdowns (including market indices like <strong>fintechzoom.com crypto currency</strong> indicators), and institutional policy coverage on topics such as <strong>trump crypto currency</strong> regulatory initiatives.
+            Get authoritative <strong>crypto currency news</strong>, market telemetry breakdowns, and institutional policy coverage on regulatory initiatives and market developments.
           </p>
         </header>
 

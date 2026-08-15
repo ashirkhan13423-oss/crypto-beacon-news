@@ -117,31 +117,6 @@ const homepageSchema = {
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Crypto currency prices are determined by global market supply and demand on liquid exchanges, influenced by trading volume, supply caps, liquidity, and adoption."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do financial market trackers like fintechzoom.com crypto currency compare to exchanges?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Market intelligence platforms monitoring fintechzoom.com crypto currency data aggregate order-book depth and spot pricing, whereas centralized and P2P platforms facilitate direct trading."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What should users evaluate when using services like ChicksX crypto & currency exchange?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Before using any platform such as ChicksX crypto & currency exchange, users should inspect wallet security features, fee transparency, and custodial deposit policies."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does political policy like Trump crypto currency initiatives affect market sentiment?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Executive policies, regulatory proposals, and Trump crypto currency news directly influence investor expectations, institutional capital flows, and crypto currency price volatility."
-          }
         }
       ]
     }
@@ -156,17 +131,17 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "crypto currency, what is crypto currency, fintechzoom.com crypto currency, crypto currencies, crypto currency price, chicksx crypto & currency exchange, crypto currency news, crypto currency meaning, crypto currency prices, trump crypto currency",
+          "crypto currency, what is crypto currency, crypto currencies, crypto currency price, crypto currency news, crypto currency meaning, crypto currency prices",
       },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/favicon.png" },
+      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/favicon.png" },
+      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [
@@ -487,19 +462,19 @@ function IndexPage() {
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
                 <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Market Telemetry &amp; Price Feeds</h3>
                 <p className="font-body-md text-on-surface-variant">
-                  Investors monitor aggregated telemetry on platforms like <strong>fintechzoom.com crypto currency</strong> indices and spot order books to evaluate real-time <strong>crypto currency prices</strong> across global markets.
+                  Investors monitor aggregated market telemetry and spot order books to evaluate real-time <strong>crypto currency prices</strong> across global exchanges.
                 </p>
               </div>
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
                 <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Exchange Security &amp; Custody</h3>
                 <p className="font-body-md text-on-surface-variant">
-                  Whether using global spot platforms or P2P venues like <strong>chicksx crypto &amp; currency exchange</strong>, verifying withdrawal policies, cold storage reserves, and key ownership is essential for safe trading.
+                  Whether using global spot platforms or peer-to-peer venues, verifying withdrawal policies, cold storage reserves, and key ownership is essential for safe trading.
                 </p>
               </div>
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
                 <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Political Policy &amp; Regulations</h3>
                 <p className="font-body-md text-on-surface-variant">
-                  Government policy changes—such as high-profile <strong>trump crypto currency</strong> proposals and strategic reserve legislation—shape global market sentiment and regulatory compliance rules.
+                  Government policy changes—such as high-profile regulatory proposals and strategic reserve legislation—shape global market sentiment and compliance rules.
                 </p>
               </div>
             </div>
@@ -545,42 +520,6 @@ function IndexPage() {
                 </summary>
                 <p className="px-4 pb-4 leading-relaxed text-on-surface-variant font-body-md">
                   A crypto currency price is determined by real-time order-book matching across global exchanges based on market supply and demand, total token liquidity, macroeconomic interest rates, regulatory news, and investor sentiment.
-                </p>
-              </details>
-
-              <details className="group border border-outline-variant rounded-lg bg-surface-container-lowest [&_summary::-webkit-details-marker]:hidden">
-                <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg p-4 text-on-surface font-medium">
-                  How do platforms tracking fintechzoom.com crypto currency data work?
-                  <span className="shrink-0 transition duration-300 group-open:-rotate-180">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
-                  </span>
-                </summary>
-                <p className="px-4 pb-4 leading-relaxed text-on-surface-variant font-body-md">
-                  Financial coverage and aggregators monitoring fintechzoom.com crypto currency metrics compile live exchange feeds, macroeconomic data, and crypto currency news to give traders broad market context.
-                </p>
-              </details>
-
-              <details className="group border border-outline-variant rounded-lg bg-surface-container-lowest [&_summary::-webkit-details-marker]:hidden">
-                <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg p-4 text-on-surface font-medium">
-                  What security steps apply when trading on ChicksX crypto &amp; currency exchange?
-                  <span className="shrink-0 transition duration-300 group-open:-rotate-180">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
-                  </span>
-                </summary>
-                <p className="px-4 pb-4 leading-relaxed text-on-surface-variant font-body-md">
-                  When interacting with platforms like ChicksX crypto &amp; currency exchange or peer-to-peer services, always double-check deposit addresses, verify two-factor authentication (2FA), and transfer long-term assets to non-custodial wallets.
-                </p>
-              </details>
-
-              <details className="group border border-outline-variant rounded-lg bg-surface-container-lowest [&_summary::-webkit-details-marker]:hidden">
-                <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg p-4 text-on-surface font-medium">
-                  How does Trump crypto currency policy impact global digital asset regulations?
-                  <span className="shrink-0 transition duration-300 group-open:-rotate-180">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
-                  </span>
-                </summary>
-                <p className="px-4 pb-4 leading-relaxed text-on-surface-variant font-body-md">
-                  Regulatory announcements and political news regarding Trump crypto currency initiatives affect market expectations for SEC oversight, US reserve holdings, and broader institutional adoption of major crypto currencies.
                 </p>
               </details>
 

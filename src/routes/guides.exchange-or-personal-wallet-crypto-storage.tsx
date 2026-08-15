@@ -99,7 +99,7 @@ export const Route = createFileRoute("/guides/exchange-or-personal-wallet-crypto
       {
         name: "keywords",
         content:
-          "chicksx crypto & currency exchange, crypto currencies, crypto currency price, exchange vs personal wallet crypto, should I keep crypto on an exchange or move it to a wallet, custodial risk, self-custody, cold storage, exchange insolvency",
+          "crypto currencies, crypto currency price, exchange vs personal wallet crypto, should I keep crypto on an exchange or move it to a wallet, custodial risk, self-custody, cold storage, exchange insolvency",
       },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
@@ -280,7 +280,7 @@ function ArticlePage() {
         </div>
 
         <P>
-          Whether holding major <strong>crypto currencies</strong> on large centralized spot venues or utilizing specialized peer-to-peer trading platforms such as <strong>chicksx crypto &amp; currency exchange</strong>, understanding counterparty risk vs self-custody is critical.
+          Whether holding major <strong>crypto currencies</strong> on large centralized spot venues or using specialized peer-to-peer trading platforms, understanding counterparty risk vs self-custody is critical.
         </P>
 
         <P>

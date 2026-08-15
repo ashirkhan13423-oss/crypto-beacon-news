@@ -232,15 +232,12 @@ function TermsPage() {
               </p>
             </div>
             <a
-              href="mailto:legal@cryptobeaconnews.com"
+              href="mailto:legal@crypto-beacon-news.vercel.app"
               className="inline-flex items-center gap-xs bg-primary text-primary-foreground px-lg py-sm rounded-full font-label-lg font-medium hover:bg-primary/90 transition-colors"
             >
               <Scale style={{ fontSize: "20px" }} />
               Email Legal Team
             </a>
-            <p className="text-body-md text-on-surface-variant mt-sm">
-              CryptoBeacon Ltd., 123 Crypto Ave, Suite 456, New York, NY 10001, USA
-            </p>
           </section>
         </article>
       </main>

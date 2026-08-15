@@ -114,7 +114,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "keywords",
         content:
-          "crypto currency, what is crypto currency, fintechzoom.com crypto currency, crypto currencies, crypto currency price, chicksx crypto & currency exchange, crypto currency news, crypto currency meaning, crypto currency prices, trump crypto currency",
+          "crypto currency, what is crypto currency, crypto currencies, crypto currency price, crypto currency news, crypto currency meaning, crypto currency prices",
       },
       { name: "author", content: "CryptoBeacon" },
       { property: "og:site_name", content: "CryptoBeacon" },
@@ -125,6 +125,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and the wider digital-asset ecosystem.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "CryptoBeacon | Crypto News, Guides & Security" },
       {
@@ -132,6 +133,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and the wider digital-asset ecosystem.",
       },
+      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

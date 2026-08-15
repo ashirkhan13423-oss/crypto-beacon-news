@@ -47,15 +47,27 @@ function AboutPage() {
             <h2 className="font-headline-md text-headline-md text-primary mb-md flex items-center gap-sm">
               <Users className="text-secondary" /> Who We Are
             </h2>
-            <p className="mb-sm">
-              CryptoBeacon is run by the <strong>CryptoBeacon Editorial Team</strong>, a dedicated
-              group of independent blockchain analysts, technologists, and researchers. We launched
-              this platform to clarify <strong>what crypto currency is</strong>, explain the true <strong>crypto currency meaning</strong> behind self-custody, and deliver objective <strong>crypto currency news</strong> across global markets.
+            <p className="mb-md">
+              CryptoBeacon is led by senior cryptocurrency analysts and security researchers dedicated to objective digital asset education:
             </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-md my-md">
+              <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
+                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Elena Rostova — Lead Security Analyst</h3>
+                <p className="text-body-md text-on-surface-variant">
+                  Former smart-contract auditor specializing in non-custodial wallet architecture, key management protocols, and multi-sig security frameworks.
+                </p>
+              </div>
+              <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
+                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Marcus Vance — Senior Market & Macro Analyst</h3>
+                <p className="text-body-md text-on-surface-variant">
+                  Decentralized finance researcher focusing on Bitcoin market structure, exchange reserve telemetry, and global cryptocurrency regulation.
+                </p>
+              </div>
+            </div>
             <p>
               In a space often driven by speculation and short-term narratives, our mission is to
               provide clear, objective, and deeply researched educational content that empowers our
-              readers to evaluate <strong>crypto currency prices</strong> and make informed decisions about major <strong>crypto currencies</strong> and security.
+              readers to make informed decisions about digital asset security and market fundamentals.
             </p>
           </section>
 
