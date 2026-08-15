@@ -10,22 +10,22 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "Bitcoin",
-  url: "https://crypto-beacon-news.vercel.app/bitcoin",
+  url: "https://www.cryptobeacon.site/bitcoin",
   hasPart: [
     {
       "@type": "WebPage",
       name: "How to Send Bitcoin Safely",
-      url: "https://crypto-beacon-news.vercel.app/bitcoin/how-to-send-bitcoin-safely",
+      url: "https://www.cryptobeacon.site/bitcoin/how-to-send-bitcoin-safely",
     },
     {
       "@type": "WebPage",
       name: "What Is a Bitcoin Wallet?",
-      url: "https://crypto-beacon-news.vercel.app/bitcoin/what-is-a-bitcoin-wallet",
+      url: "https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-wallet",
     },
     {
       "@type": "WebPage",
       name: "What Is Bitcoin Mining?",
-      url: "https://crypto-beacon-news.vercel.app/bitcoin/what-is-bitcoin-mining",
+      url: "https://www.cryptobeacon.site/bitcoin/what-is-bitcoin-mining",
     },
   ],
 };
@@ -50,10 +50,10 @@ export const Route = createFileRoute("/bitcoin/")({
         content:
           "Definitive Bitcoin analysis: global crypto currency price factors, network difficulty, and transaction security.",
       },
-      { property: "og:url", content: "https://crypto-beacon-news.vercel.app/bitcoin" },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:url", content: "https://www.cryptobeacon.site/bitcoin" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/bitcoin" }],
+    links: [{ rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
   }),
   component: BitcoinPage,

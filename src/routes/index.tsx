@@ -15,7 +15,7 @@ import blockchainForkHero from "@/assets/news-blockchain-fork.png";
 import pausedHero from "@/assets/news-paused-withdrawals.svg";
 import { ShieldCheck, BookOpen, ExternalLink, Calendar, CheckCircle2, FileText, BarChart3, HelpCircle } from "lucide-react";
 
-const URL = "https://crypto-beacon-news.vercel.app/";
+const URL = "https://www.cryptobeacon.site/";
 const TITLE = "Crypto Currency: News, Prices & Meaning | CryptoBeacon";
 const DESC =
   "Your definitive guide on what crypto currency is. Get the latest crypto currency news, meaning, and crypto currency prices. Protect your assets today.";
@@ -37,7 +37,7 @@ const homepageSchema = {
         "url": URL,
         "logo": {
           "@type": "ImageObject",
-          "url": "https://crypto-beacon-news.vercel.app/favicon.png"
+          "url": "https://www.cryptobeacon.site/favicon.png"
         },
         "sameAs": [
           "https://en.wikipedia.org/wiki/Cryptocurrency",
@@ -84,7 +84,7 @@ const homepageSchema = {
         "name": "CryptoBeacon",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://crypto-beacon-news.vercel.app/favicon.png"
+          "url": "https://www.cryptobeacon.site/favicon.png"
         }
       },
       "mainEntityOfPage": {
@@ -138,11 +138,11 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

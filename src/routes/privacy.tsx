@@ -18,10 +18,10 @@ export const Route = createFileRoute("/privacy")({
         content:
           "How CryptoBeacon collects, uses, and protects your information, including cookies, analytics, and advertising practices.",
       },
-      { property: "og:url", content: "https://crypto-beacon-news.vercel.app/privacy" },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:url", content: "https://www.cryptobeacon.site/privacy" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/privacy" }],
+    links: [{ rel: "canonical", href: "https://www.cryptobeacon.site/privacy" }],
   }),
   component: PrivacyPage,
 });
@@ -51,7 +51,7 @@ function PrivacyPage() {
             </h2>
             <p className="mb-sm">
               CryptoBeacon ("CryptoBeacon," "we," "us," or "our") operates
-              crypto-beacon-news.vercel.app (the "Site"). This Privacy Policy explains what
+              www.cryptobeacon.site (the "Site"). This Privacy Policy explains what
               information we collect, how we use it, and what choices you have. By using the Site,
               you agree to the practices described here.
             </p>

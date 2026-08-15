@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/bitcoin-send-safely.jpg";
 import { CheckSquare, Plus } from "lucide-react";
 
-const URL = "https://crypto-beacon-news.vercel.app/bitcoin/how-to-send-bitcoin-safely";
+const URL = "https://www.cryptobeacon.site/bitcoin/how-to-send-bitcoin-safely";
 const TITLE = "How to Send Bitcoin Safely (Beginner's Guide) | CryptoBeacon";
 const DESC =
   "Learn how Bitcoin transactions work, the mistakes that cause permanent loss, and a simple checklist to send Bitcoin safely every time.";
@@ -51,11 +51,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://crypto-beacon-news.vercel.app/favicon.png",
+      url: "https://www.cryptobeacon.site/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://crypto-beacon-news.vercel.app${hero}`,
+  image: `https://www.cryptobeacon.site${hero}`,
   inLanguage: "en-US",
   keywords:
     "how to send bitcoin safely, bitcoin transaction mistakes, sending bitcoin to wrong address, bitcoin transaction confirmations explained, bitcoin transaction fees explained for beginners, UTXO, mempool, replace by fee",
@@ -82,13 +82,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://crypto-beacon-news.vercel.app/",
+      item: "https://www.cryptobeacon.site/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Bitcoin",
-      item: "https://crypto-beacon-news.vercel.app/bitcoin",
+      item: "https://www.cryptobeacon.site/bitcoin",
     },
     {
       "@type": "ListItem",
@@ -113,13 +113,13 @@ export const Route = createFileRoute("/bitcoin/how-to-send-bitcoin-safely")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { property: "article:published_time", content: PUBLISHED },
       { property: "article:section", content: "Bitcoin" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

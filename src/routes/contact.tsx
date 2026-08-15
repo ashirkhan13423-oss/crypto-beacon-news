@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Mail, MessageSquare, ShieldCheck, Send, Clock, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 
-const URL = "https://crypto-beacon-news.vercel.app/contact";
+const URL = "https://www.cryptobeacon.site/contact";
 const TITLE = "Contact Us & Editorial Inquiries | CryptoBeacon";
 const DESC =
   "Get in touch with the CryptoBeacon editorial team. Contact us for press inquiries, editorial corrections, security research submissions, or general feedback.";
@@ -18,7 +18,7 @@ const contactSchema = {
   mainEntity: {
     "@type": "Organization",
     name: "CryptoBeacon",
-    url: "https://crypto-beacon-news.vercel.app",
+    url: "https://www.cryptobeacon.site",
     email: "ashirkhan13423@gmail.com",
     contactPoint: [
       {
@@ -46,10 +46,10 @@ export const Route = createFileRoute("/contact")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

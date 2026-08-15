@@ -5,7 +5,7 @@ import hero from "@/assets/exchange-vs-wallet.png";
 import { CheckSquare, Plus } from "lucide-react";
 
 const URL =
-  "https://crypto-beacon-news.vercel.app/guides/exchange-or-personal-wallet-crypto-storage";
+  "https://www.cryptobeacon.site/guides/exchange-or-personal-wallet-crypto-storage";
 const TITLE = "Exchange or Personal Wallet? A Crypto Storage Guide | CryptoBeacon";
 const DESC =
   "Should your crypto stay on an exchange or move to your own wallet? A clear, neutral decision framework based on how you actually use your crypto.";
@@ -48,11 +48,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://crypto-beacon-news.vercel.app/favicon.png",
+      url: "https://www.cryptobeacon.site/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://crypto-beacon-news.vercel.app${hero}`,
+  image: `https://www.cryptobeacon.site${hero}`,
   inLanguage: "en-US",
   keywords:
     "should I keep crypto on an exchange or move it to a wallet, exchange vs personal wallet crypto, is it safe to leave crypto on an exchange, when to move crypto off an exchange, custodial risk, counterparty risk, self-custody, cold storage, exchange insolvency, withdrawal freeze",
@@ -79,13 +79,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://crypto-beacon-news.vercel.app/",
+      item: "https://www.cryptobeacon.site/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Guides",
-      item: "https://crypto-beacon-news.vercel.app/guides",
+      item: "https://www.cryptobeacon.site/guides",
     },
     {
       "@type": "ListItem",
@@ -110,13 +110,13 @@ export const Route = createFileRoute("/guides/exchange-or-personal-wallet-crypto
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { property: "article:published_time", content: PUBLISHED },
       { property: "article:section", content: "Guides" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

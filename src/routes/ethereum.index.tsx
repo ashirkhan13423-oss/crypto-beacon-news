@@ -11,22 +11,22 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "Ethereum",
-  url: "https://crypto-beacon-news.vercel.app/ethereum",
+  url: "https://www.cryptobeacon.site/ethereum",
   hasPart: [
     {
       "@type": "WebPage",
       name: "Can You Send Bitcoin to an Ethereum Address? What Actually Happens",
-      url: "https://crypto-beacon-news.vercel.app/ethereum/can-you-send-bitcoin-to-an-ethereum-address",
+      url: "https://www.cryptobeacon.site/ethereum/can-you-send-bitcoin-to-an-ethereum-address",
     },
     {
       "@type": "WebPage",
       name: "What Is Ethereum Staking? Proof-of-Stake & Yield Mechanics Explained",
-      url: "https://crypto-beacon-news.vercel.app/ethereum/what-is-ethereum-staking",
+      url: "https://www.cryptobeacon.site/ethereum/what-is-ethereum-staking",
     },
     {
       "@type": "WebPage",
       name: "Ethereum Layer 2 Scaling & Rollups Explained",
-      url: "https://crypto-beacon-news.vercel.app/ethereum/ethereum-layer-2-scaling-rollups-explained",
+      url: "https://www.cryptobeacon.site/ethereum/ethereum-layer-2-scaling-rollups-explained",
     },
   ],
 };
@@ -46,10 +46,10 @@ export const Route = createFileRoute("/ethereum/")({
         content:
           "Deep coverage of Ethereum: rollups, staking economics, EIPs, and the roadmap toward institutional-grade scalability.",
       },
-      { property: "og:url", content: "https://crypto-beacon-news.vercel.app/ethereum" },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:url", content: "https://www.cryptobeacon.site/ethereum" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/ethereum" }],
+    links: [{ rel: "canonical", href: "https://www.cryptobeacon.site/ethereum" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
   }),
   component: EthereumPage,

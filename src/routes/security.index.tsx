@@ -8,17 +8,17 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "Crypto Security & Scam Awareness",
-  url: "https://crypto-beacon-news.vercel.app/security",
+  url: "https://www.cryptobeacon.site/security",
   hasPart: [
     {
       "@type": "WebPage",
       name: "How to Store Your Crypto Seed Phrase Safely",
-      url: "https://crypto-beacon-news.vercel.app/security/how-to-store-crypto-seed-phrase-safely",
+      url: "https://www.cryptobeacon.site/security/how-to-store-crypto-seed-phrase-safely",
     },
     {
       "@type": "WebPage",
       name: "How to Avoid Crypto Phishing Scams",
-      url: "https://crypto-beacon-news.vercel.app/security/how-to-avoid-crypto-phishing-scams",
+      url: "https://www.cryptobeacon.site/security/how-to-avoid-crypto-phishing-scams",
     },
   ],
 };
@@ -38,10 +38,10 @@ export const Route = createFileRoute("/security/")({
         content:
           "Wallet safety, phishing awareness, and rug-pull forensics. Practical crypto security guidance.",
       },
-      { property: "og:url", content: "https://crypto-beacon-news.vercel.app/security" },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:url", content: "https://www.cryptobeacon.site/security" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/security" }],
+    links: [{ rel: "canonical", href: "https://www.cryptobeacon.site/security" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
   }),
   component: SecurityPage,

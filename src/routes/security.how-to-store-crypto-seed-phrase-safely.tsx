@@ -6,7 +6,7 @@ import seedMetalPaper from "@/assets/seed-metal-vs-paper.jpg";
 import seedPhishing from "@/assets/seed-phishing.jpg";
 import { Plus } from "lucide-react";
 
-const URL = "https://crypto-beacon-news.vercel.app/security/how-to-store-crypto-seed-phrase-safely";
+const URL = "https://www.cryptobeacon.site/security/how-to-store-crypto-seed-phrase-safely";
 const TITLE = "How to Store a Crypto Seed Phrase Safely | CryptoBeacon";
 const DESC =
   "Learn how to store your crypto seed phrase safely, avoid the mistakes that cause permanent loss, and choose the right backup method for you.";
@@ -53,11 +53,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://crypto-beacon-news.vercel.app/favicon.png",
+      url: "https://www.cryptobeacon.site/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://crypto-beacon-news.vercel.app${seedVault}`,
+  image: `https://www.cryptobeacon.site${seedVault}`,
   inLanguage: "en-US",
   keywords:
     "how to store a crypto seed phrase safely, seed phrase storage best practices, seed phrase mistakes to avoid, where to store your seed phrase, metal seed phrase storage, how to backup a crypto wallet, BIP39, self-custody, hardware wallet",
@@ -84,13 +84,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://crypto-beacon-news.vercel.app/",
+      item: "https://www.cryptobeacon.site/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Security",
-      item: "https://crypto-beacon-news.vercel.app/security",
+      item: "https://www.cryptobeacon.site/security",
     },
     {
       "@type": "ListItem",
@@ -115,13 +115,13 @@ export const Route = createFileRoute("/security/how-to-store-crypto-seed-phrase-
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { property: "article:published_time", content: PUBLISHED },
       { property: "article:section", content: "Security" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

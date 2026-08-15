@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/bitcoin-what-is-mining.png";
 import { Plus } from "lucide-react";
 
-const URL = "https://crypto-beacon-news.vercel.app/bitcoin/what-is-bitcoin-mining";
+const URL = "https://www.cryptobeacon.site/bitcoin/what-is-bitcoin-mining";
 const TITLE = "What Is Bitcoin Mining? How New Bitcoin Is Created | CryptoBeacon";
 const DESC =
   "A plain-language guide to what Bitcoin mining actually is, why it exists, what miners do, and why the process is designed the way it is.";
@@ -47,11 +47,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://crypto-beacon-news.vercel.app/favicon.png",
+      url: "https://www.cryptobeacon.site/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://crypto-beacon-news.vercel.app${hero}`,
+  image: `https://www.cryptobeacon.site${hero}`,
   inLanguage: "en-US",
   keywords:
     "what is bitcoin mining, how does bitcoin mining work, bitcoin proof of work explained, bitcoin block reward, bitcoin mining difficulty, what is a bitcoin halving",
@@ -78,13 +78,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://crypto-beacon-news.vercel.app/",
+      item: "https://www.cryptobeacon.site/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Bitcoin",
-      item: "https://crypto-beacon-news.vercel.app/bitcoin",
+      item: "https://www.cryptobeacon.site/bitcoin",
     },
     {
       "@type": "ListItem",
@@ -109,13 +109,13 @@ export const Route = createFileRoute("/bitcoin/what-is-bitcoin-mining")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { property: "article:published_time", content: PUBLISHED },
       { property: "article:section", content: "Bitcoin" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

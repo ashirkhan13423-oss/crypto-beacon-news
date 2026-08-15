@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/news-paused-withdrawals.svg";
 import { Plus } from "lucide-react";
 
-const URL = "https://crypto-beacon-news.vercel.app/news/what-it-means-when-exchange-pauses-withdrawals";
+const URL = "https://www.cryptobeacon.site/news/what-it-means-when-exchange-pauses-withdrawals";
 const TITLE = "What Does It Mean When an Exchange Pauses Withdrawals? | CryptoBeacon";
 const DESC =
   "Your crypto exchange paused withdrawals — is that normal or a red flag? A clear framework for telling routine maintenance from a genuine warning sign.";
@@ -43,11 +43,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://crypto-beacon-news.vercel.app/favicon.png",
+      url: "https://www.cryptobeacon.site/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://crypto-beacon-news.vercel.app${hero}`,
+  image: `https://www.cryptobeacon.site${hero}`,
   inLanguage: "en-US",
   keywords:
     "what does it mean when an exchange pauses withdrawals, crypto exchange withdrawal freeze explained, is it bad when an exchange stops withdrawals, why do exchanges halt withdrawals",
@@ -73,13 +73,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://crypto-beacon-news.vercel.app/",
+      item: "https://www.cryptobeacon.site/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "News",
-      item: "https://crypto-beacon-news.vercel.app/news",
+      item: "https://www.cryptobeacon.site/news",
     },
     {
       "@type": "ListItem",
@@ -104,12 +104,12 @@ export const Route = createFileRoute("/news/what-it-means-when-exchange-pauses-w
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: `https://crypto-beacon-news.vercel.app${hero}` },
+      { property: "og:image", content: `https://www.cryptobeacon.site${hero}` },
       { property: "article:published_time", content: PUBLISHED },
       { property: "article:section", content: "News" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: `https://crypto-beacon-news.vercel.app${hero}` },
+      { name: "twitter:image", content: `https://www.cryptobeacon.site${hero}` },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

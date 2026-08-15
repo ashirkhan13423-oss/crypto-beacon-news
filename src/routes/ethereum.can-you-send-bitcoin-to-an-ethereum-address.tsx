@@ -5,7 +5,7 @@ import heroImage from "@/assets/ethereum-address-mismatch.png";
 import { Plus } from "lucide-react";
 
 const URL =
-  "https://crypto-beacon-news.vercel.app/ethereum/can-you-send-bitcoin-to-an-ethereum-address";
+  "https://www.cryptobeacon.site/ethereum/can-you-send-bitcoin-to-an-ethereum-address";
 const TITLE = "Can You Send Bitcoin to an Ethereum Address? What Actually Happens | CryptoBeacon";
 const DESC =
   "Worried you sent Bitcoin to an Ethereum address by mistake? Here's what actually happens, why it's rarer than you think, and what to check.";
@@ -48,11 +48,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://crypto-beacon-news.vercel.app/favicon.png",
+      url: "https://www.cryptobeacon.site/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://crypto-beacon-news.vercel.app${heroImage}`,
+  image: `https://www.cryptobeacon.site${heroImage}`,
   inLanguage: "en-US",
   keywords:
     "can you send bitcoin to an ethereum address, what happens if you send bitcoin to an ethereum address, bitcoin ethereum address format difference, sent crypto wrong network what to do",
@@ -79,13 +79,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://crypto-beacon-news.vercel.app/",
+      item: "https://www.cryptobeacon.site/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Ethereum",
-      item: "https://crypto-beacon-news.vercel.app/ethereum",
+      item: "https://www.cryptobeacon.site/ethereum",
     },
     {
       "@type": "ListItem",
@@ -110,13 +110,13 @@ export const Route = createFileRoute("/ethereum/can-you-send-bitcoin-to-an-ether
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { property: "article:published_time", content: PUBLISHED },
       { property: "article:section", content: "Ethereum" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

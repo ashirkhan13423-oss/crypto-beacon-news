@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://crypto-beacon-news.vercel.app/sitemap.xml
+Sitemap: https://www.cryptobeacon.site/sitemap.xml

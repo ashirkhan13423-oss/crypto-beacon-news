@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/keys-coins-meaning.jpg";
 import { Key, Lock, HelpCircle, Plus } from "lucide-react";
 
-const URL = "https://crypto-beacon-news.vercel.app/guides/not-your-keys-not-your-coins-meaning";
+const URL = "https://www.cryptobeacon.site/guides/not-your-keys-not-your-coins-meaning";
 const TITLE = 'What "Not Your Keys, Not Your Coins" Means | CryptoBeacon';
 const DESC =
   'A plain-language explainer on what "not your keys, not your coins" means, why it matters, and how to tell if you actually control your crypto.';
@@ -47,11 +47,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://crypto-beacon-news.vercel.app/favicon.png",
+      url: "https://www.cryptobeacon.site/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://crypto-beacon-news.vercel.app${hero}`,
+  image: `https://www.cryptobeacon.site${hero}`,
   inLanguage: "en-US",
   keywords:
     "not your keys not your coins meaning, custodial vs non-custodial wallet explained, why does self-custody matter, what happens if an exchange gets hacked, private key, self-custody, counterparty risk",
@@ -78,13 +78,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://crypto-beacon-news.vercel.app/",
+      item: "https://www.cryptobeacon.site/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Guides",
-      item: "https://crypto-beacon-news.vercel.app/guides",
+      item: "https://www.cryptobeacon.site/guides",
     },
     {
       "@type": "ListItem",
@@ -109,13 +109,13 @@ export const Route = createFileRoute("/guides/not-your-keys-not-your-coins-meani
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { property: "article:published_time", content: PUBLISHED },
       { property: "article:section", content: "Guides" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

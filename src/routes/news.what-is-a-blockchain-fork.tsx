@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/news-blockchain-fork.png";
 import { Plus } from "lucide-react";
 
-const URL = "https://crypto-beacon-news.vercel.app/news/what-is-a-blockchain-fork";
+const URL = "https://www.cryptobeacon.site/news/what-is-a-blockchain-fork";
 const TITLE = "What Is a Blockchain Fork? Explained Simply | CryptoBeacon";
 const DESC =
   "A plain-language explainer on what a blockchain fork is, the difference between hard and soft forks, and why cryptocurrencies sometimes split into two.";
@@ -43,11 +43,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://crypto-beacon-news.vercel.app/favicon.png",
+      url: "https://www.cryptobeacon.site/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://crypto-beacon-news.vercel.app${hero}`,
+  image: `https://www.cryptobeacon.site${hero}`,
   inLanguage: "en-US",
   keywords:
     "what is a blockchain fork, hard fork vs soft fork explained, why do cryptocurrencies split, what happens in a crypto fork, hard fork, soft fork, consensus rules, chain split, node, protocol upgrade",
@@ -74,13 +74,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://crypto-beacon-news.vercel.app/",
+      item: "https://www.cryptobeacon.site/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "News",
-      item: "https://crypto-beacon-news.vercel.app/news",
+      item: "https://www.cryptobeacon.site/news",
     },
     {
       "@type": "ListItem",
@@ -105,13 +105,13 @@ export const Route = createFileRoute("/news/what-is-a-blockchain-fork")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { property: "article:published_time", content: PUBLISHED },
       { property: "article:section", content: "News" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

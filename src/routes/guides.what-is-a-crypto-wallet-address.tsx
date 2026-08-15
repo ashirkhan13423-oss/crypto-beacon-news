@@ -5,7 +5,7 @@ import hero from "@/assets/guides-wallet-address.png";
 import { Plus, Copy, QrCode, ShieldCheck } from "lucide-react";
 
 const URL =
-  "https://crypto-beacon-news.vercel.app/guides/what-is-a-crypto-wallet-address";
+  "https://www.cryptobeacon.site/guides/what-is-a-crypto-wallet-address";
 const TITLE =
   "What Is a Crypto Wallet Address? How It Works and How to Use It Safely | CryptoBeacon";
 const DESC =
@@ -49,11 +49,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://crypto-beacon-news.vercel.app/favicon.png",
+      url: "https://www.cryptobeacon.site/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://crypto-beacon-news.vercel.app${hero}`,
+  image: `https://www.cryptobeacon.site${hero}`,
   inLanguage: "en-US",
   keywords:
     "what is a crypto wallet address, how does a cryptocurrency address work, is it safe to share crypto address, crypto wallet address explained, how to use crypto address safely",
@@ -80,13 +80,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://crypto-beacon-news.vercel.app/",
+      item: "https://www.cryptobeacon.site/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Guides",
-      item: "https://crypto-beacon-news.vercel.app/guides",
+      item: "https://www.cryptobeacon.site/guides",
     },
     {
       "@type": "ListItem",
@@ -111,13 +111,13 @@ export const Route = createFileRoute("/guides/what-is-a-crypto-wallet-address")(
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { property: "article:published_time", content: PUBLISHED },
       { property: "article:section", content: "Guides" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AlertTriangle, BookOpen, ShieldCheck, Scale } from "lucide-react";
 
-const URL = "https://crypto-beacon-news.vercel.app/disclaimer";
+const URL = "https://www.cryptobeacon.site/disclaimer";
 const TITLE = "Financial Disclaimer & Editorial Policy | CryptoBeacon";
 const DESC =
   "CryptoBeacon's financial disclaimer and editorial standards. Educational content only — no financial, investment, or legal advice.";
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/disclaimer")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
   }),

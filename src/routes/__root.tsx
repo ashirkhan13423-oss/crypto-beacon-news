@@ -10,8 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-
-const SITE_URL = "https://crypto-beacon-news.vercel.app";
+import { SITE_URL } from "../lib/site-config";
 
 const websiteSchema = {
   "@context": "https://schema.org",
@@ -124,7 +123,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and the wider digital-asset ecosystem.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:image", content: `${SITE_URL}/og-image.png` },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "CryptoBeacon | Crypto News, Guides & Security" },
       {
@@ -132,7 +131,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and the wider digital-asset ecosystem.",
       },
-      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.png` },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

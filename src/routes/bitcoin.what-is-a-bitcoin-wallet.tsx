@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/bitcoin-what-is-a-wallet.png";
 import { Plus, Wifi, WifiOff, Building2 } from "lucide-react";
 
-const URL = "https://crypto-beacon-news.vercel.app/bitcoin/what-is-a-bitcoin-wallet";
+const URL = "https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-wallet";
 const TITLE = "What Is a Bitcoin Wallet? Hot, Cold, and Custodial Wallets Explained | CryptoBeacon";
 const DESC =
   "A clear guide to what a Bitcoin wallet actually is, how hot, cold, and custodial wallets differ, and how to choose the right type for your situation.";
@@ -47,11 +47,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://crypto-beacon-news.vercel.app/favicon.png",
+      url: "https://www.cryptobeacon.site/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://crypto-beacon-news.vercel.app${hero}`,
+  image: `https://www.cryptobeacon.site${hero}`,
   inLanguage: "en-US",
   keywords:
     "what is a bitcoin wallet, bitcoin hot wallet vs cold wallet, custodial vs non-custodial wallet, how does a crypto wallet work, bitcoin wallet types explained",
@@ -78,13 +78,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://crypto-beacon-news.vercel.app/",
+      item: "https://www.cryptobeacon.site/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Bitcoin",
-      item: "https://crypto-beacon-news.vercel.app/bitcoin",
+      item: "https://www.cryptobeacon.site/bitcoin",
     },
     {
       "@type": "ListItem",
@@ -109,13 +109,13 @@ export const Route = createFileRoute("/bitcoin/what-is-a-bitcoin-wallet")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { property: "article:published_time", content: PUBLISHED },
       { property: "article:section", content: "Bitcoin" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

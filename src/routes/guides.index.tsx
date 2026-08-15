@@ -10,22 +10,22 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "Crypto Guides",
-  url: "https://crypto-beacon-news.vercel.app/guides",
+  url: "https://www.cryptobeacon.site/guides",
   hasPart: [
     {
       "@type": "WebPage",
       name: '"Not Your Keys, Not Your Coins" — What It Means',
-      url: "https://crypto-beacon-news.vercel.app/guides/not-your-keys-not-your-coins-meaning",
+      url: "https://www.cryptobeacon.site/guides/not-your-keys-not-your-coins-meaning",
     },
     {
       "@type": "WebPage",
       name: "Should You Keep Your Crypto on an Exchange or Move It to Your Own Wallet?",
-      url: "https://crypto-beacon-news.vercel.app/guides/exchange-or-personal-wallet-crypto-storage",
+      url: "https://www.cryptobeacon.site/guides/exchange-or-personal-wallet-crypto-storage",
     },
     {
       "@type": "WebPage",
       name: "What Is a Crypto Wallet Address? How It Works and How to Use It Safely",
-      url: "https://crypto-beacon-news.vercel.app/guides/what-is-a-crypto-wallet-address",
+      url: "https://www.cryptobeacon.site/guides/what-is-a-crypto-wallet-address",
     },
   ],
 };
@@ -50,10 +50,10 @@ export const Route = createFileRoute("/guides/")({
         content:
           "Comprehensive guides on what crypto currency is, the true crypto currency meaning, and how to store major crypto currencies safely.",
       },
-      { property: "og:url", content: "https://crypto-beacon-news.vercel.app/guides" },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:url", content: "https://www.cryptobeacon.site/guides" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/guides" }],
+    links: [{ rel: "canonical", href: "https://www.cryptobeacon.site/guides" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
   }),
   component: GuidesHub,

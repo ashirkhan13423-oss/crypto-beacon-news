@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/ethereum-layer-2-scaling.png";
 import { ChevronRight, Cpu, Layers, Shield, Zap } from "lucide-react";
 
-const URL = "https://crypto-beacon-news.vercel.app/ethereum/ethereum-layer-2-scaling-rollups-explained";
+const URL = "https://www.cryptobeacon.site/ethereum/ethereum-layer-2-scaling-rollups-explained";
 const TITLE = "Ethereum Layer 2 Scaling & Rollups Explained | CryptoBeacon";
 const DESC =
   "Understand how Optimistic Rollups and Zero-Knowledge (ZK) Rollups scale Ethereum, reduce transaction fees, and preserve Layer 1 security.";
@@ -43,11 +43,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://crypto-beacon-news.vercel.app/favicon.png",
+      url: "https://www.cryptobeacon.site/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: "https://crypto-beacon-news.vercel.app/og-image.png",
+  image: "https://www.cryptobeacon.site/og-image.png",
   inLanguage: "en-US",
   keywords:
     "ethereum layer 2 scaling, optimistic rollups vs zk rollups, arbitrary scaling ethereum, l2 gas fee reduction, EIP-4844 proto-danksharding, Arbitrum Optimism zkSync",
@@ -69,8 +69,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://crypto-beacon-news.vercel.app/" },
-    { "@type": "ListItem", position: 2, name: "Ethereum", item: "https://crypto-beacon-news.vercel.app/ethereum" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
+    { "@type": "ListItem", position: 2, name: "Ethereum", item: "https://www.cryptobeacon.site/ethereum" },
     { "@type": "ListItem", position: 3, name: "Ethereum Layer 2 Scaling", item: URL },
   ],
 };
@@ -89,13 +89,13 @@ export const Route = createFileRoute("/ethereum/ethereum-layer-2-scaling-rollups
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { property: "article:published_time", content: PUBLISHED },
       { property: "article:section", content: "Ethereum" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

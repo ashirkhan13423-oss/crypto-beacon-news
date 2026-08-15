@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/news-crypto-regulation.jpg";
 import { Plus, ShieldAlert, Gavel, ReceiptText, Building2, Globe, FileText, CheckCircle2 } from "lucide-react";
 
-const URL = "https://crypto-beacon-news.vercel.app/news/why-governments-regulate-cryptocurrency";
+const URL = "https://www.cryptobeacon.site/news/why-governments-regulate-cryptocurrency";
 const TITLE = "Why Do Governments Regulate Cryptocurrency? Full Guide | CryptoBeacon";
 const DESC =
   "An in-depth editorial guide on why governments regulate crypto, the major global legal frameworks (MiCA, SEC, FATF), and what regulations mean for retail investors.";
@@ -55,11 +55,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://crypto-beacon-news.vercel.app/favicon.png",
+      url: "https://www.cryptobeacon.site/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://crypto-beacon-news.vercel.app${hero}`,
+  image: `https://www.cryptobeacon.site${hero}`,
   inLanguage: "en-US",
   keywords:
     "why do governments regulate cryptocurrency, crypto currencies, crypto currency news, crypto regulation explained, MiCA regulation EU, SEC crypto oversight, FATF travel rule, crypto taxation laws",
@@ -86,13 +86,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://crypto-beacon-news.vercel.app/",
+      item: "https://www.cryptobeacon.site/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "News",
-      item: "https://crypto-beacon-news.vercel.app/news",
+      item: "https://www.cryptobeacon.site/news",
     },
     {
       "@type": "ListItem",
@@ -117,13 +117,13 @@ export const Route = createFileRoute("/news/why-governments-regulate-cryptocurre
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { property: "article:published_time", content: PUBLISHED },
       { property: "article:section", content: "News" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

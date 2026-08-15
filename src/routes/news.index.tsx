@@ -11,27 +11,27 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "Crypto News",
-  url: "https://crypto-beacon-news.vercel.app/news",
+  url: "https://www.cryptobeacon.site/news",
   hasPart: [
     {
       "@type": "WebPage",
       name: "Why Do Governments Regulate Cryptocurrency?",
-      url: "https://crypto-beacon-news.vercel.app/news/why-governments-regulate-cryptocurrency",
+      url: "https://www.cryptobeacon.site/news/why-governments-regulate-cryptocurrency",
     },
     {
       "@type": "WebPage",
       name: "What Is a Blockchain Fork?",
-      url: "https://crypto-beacon-news.vercel.app/news/what-is-a-blockchain-fork",
+      url: "https://www.cryptobeacon.site/news/what-is-a-blockchain-fork",
     },
     {
       "@type": "WebPage",
       name: "What Does It Mean When a Crypto Exchange Pauses Withdrawals?",
-      url: "https://crypto-beacon-news.vercel.app/news/what-it-means-when-exchange-pauses-withdrawals",
+      url: "https://www.cryptobeacon.site/news/what-it-means-when-exchange-pauses-withdrawals",
     },
     {
       "@type": "WebPage",
       name: "Why Does Bitcoin's Price Move More Than Stocks?",
-      url: "https://crypto-beacon-news.vercel.app/news/why-bitcoin-price-moves-more-than-stocks",
+      url: "https://www.cryptobeacon.site/news/why-bitcoin-price-moves-more-than-stocks",
     },
   ],
 };
@@ -56,10 +56,10 @@ export const Route = createFileRoute("/news/")({
         content:
           "Institutional crypto currency news, policy explainers, market telemetry, and political regulation developments.",
       },
-      { property: "og:url", content: "https://crypto-beacon-news.vercel.app/news" },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:url", content: "https://www.cryptobeacon.site/news" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/news" }],
+    links: [{ rel: "canonical", href: "https://www.cryptobeacon.site/news" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
   }),
   component: NewsHub,

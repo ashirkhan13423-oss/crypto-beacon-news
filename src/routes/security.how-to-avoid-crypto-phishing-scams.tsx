@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/phishing-padlock.jpg";
 import { AlertTriangle, Plus } from "lucide-react";
 
-const URL = "https://crypto-beacon-news.vercel.app/security/how-to-avoid-crypto-phishing-scams";
+const URL = "https://www.cryptobeacon.site/security/how-to-avoid-crypto-phishing-scams";
 const TITLE = "How to Avoid Crypto Phishing Scams | CryptoBeacon";
 const DESC =
   "Learn how crypto phishing scams actually work, the red flags that repeat across every version, and the verification habits that keep your wallet safe.";
@@ -51,11 +51,11 @@ const articleSchema = {
     name: "CryptoBeacon",
     logo: {
       "@type": "ImageObject",
-      url: "https://crypto-beacon-news.vercel.app/favicon.png",
+      url: "https://www.cryptobeacon.site/favicon.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://crypto-beacon-news.vercel.app${hero}`,
+  image: `https://www.cryptobeacon.site${hero}`,
   inLanguage: "en-US",
   keywords:
     "how to avoid crypto phishing scams, crypto phishing red flags, how to spot a fake crypto website, wallet drainer scam explained, crypto phishing checklist, address poisoning, seed phrase phishing",
@@ -82,13 +82,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://crypto-beacon-news.vercel.app/",
+      item: "https://www.cryptobeacon.site/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Security",
-      item: "https://crypto-beacon-news.vercel.app/security",
+      item: "https://www.cryptobeacon.site/security",
     },
     {
       "@type": "ListItem",
@@ -113,13 +113,13 @@ export const Route = createFileRoute("/security/how-to-avoid-crypto-phishing-sca
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { property: "article:published_time", content: PUBLISHED },
       { property: "article:section", content: "Security" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

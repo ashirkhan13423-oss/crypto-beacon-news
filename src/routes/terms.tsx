@@ -18,10 +18,10 @@ export const Route = createFileRoute("/terms")({
         content:
           "The terms and conditions governing your use of CryptoBeacon, including intellectual property, disclaimers, and limitation of liability.",
       },
-      { property: "og:url", content: "https://crypto-beacon-news.vercel.app/terms" },
-      { property: "og:image", content: "https://crypto-beacon-news.vercel.app/og-image.png" },
+      { property: "og:url", content: "https://www.cryptobeacon.site/terms" },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: "https://crypto-beacon-news.vercel.app/terms" }],
+    links: [{ rel: "canonical", href: "https://www.cryptobeacon.site/terms" }],
   }),
   component: TermsPage,
 });
