@@ -117,6 +117,7 @@ const homepageSchema = {
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Crypto currency prices are determined by global market supply and demand on liquid exchanges, influenced by trading volume, supply caps, liquidity, and adoption."
+          }
         }
       ]
     }

@@ -15,6 +15,7 @@ const faqs: { q: string; a: string }[] = [
     q: "Is cryptocurrency legal globally?",
     a: "In the vast majority of countries, holding and trading cryptocurrency is completely legal. However, governments enforce regulations on intermediaries like centralized exchanges, custodial wallets, and payment processors to ensure compliance with financial safety standards.",
   },
+  {
     q: "Why do governments regulate cryptocurrency?",
     a: "Governments regulate cryptocurrency to protect retail consumers from fraud and insolvency, prevent illicit finance (money laundering and tax evasion), maintain financial system stability, and establish taxation rules.",
   },
