@@ -265,7 +265,7 @@ function PrivacyPage() {
               </p>
             </div>
             <a
-              href="mailto:ashirkhan13423@gmail.com"
+              href="mailto:privacy@cryptobeacon.site"
               className="inline-flex items-center gap-xs bg-primary text-primary-foreground px-lg py-sm rounded-full font-label-lg font-medium hover:bg-primary/90 transition-colors"
             >
               <Mail style={{ fontSize: "20px" }} />

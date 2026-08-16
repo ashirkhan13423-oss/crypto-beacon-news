@@ -9,7 +9,6 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SITE_URL } from "../lib/site-config";
 
 const websiteSchema = {
@@ -60,9 +59,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -108,11 +104,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "description",
         content:
           "Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and the wider digital-asset ecosystem.",
-      },
-      {
-        name: "keywords",
-        content:
-          "crypto currency, what is crypto currency, crypto currencies, crypto currency price, crypto currency news, crypto currency meaning, crypto currency prices",
       },
       { name: "author", content: "CryptoBeacon" },
       { property: "og:site_name", content: "CryptoBeacon" },

@@ -104,11 +104,6 @@ export const Route = createFileRoute("/bitcoin/how-to-send-bitcoin-safely")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      {
-        name: "keywords",
-        content:
-          "how to send bitcoin safely, bitcoin transaction mistakes, sending bitcoin to wrong address, bitcoin transaction confirmations explained, bitcoin transaction fees explained for beginners, UTXO, mempool, replace by fee",
-      },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },

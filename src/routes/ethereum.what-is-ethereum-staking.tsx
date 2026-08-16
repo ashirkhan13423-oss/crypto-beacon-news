@@ -80,11 +80,6 @@ export const Route = createFileRoute("/ethereum/what-is-ethereum-staking")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      {
-        name: "keywords",
-        content:
-          "ethereum staking, proof of stake eth, eth staking yield, solo staking 32 eth, liquid staking derivatives, lido steth, slashing risks",
-      },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },

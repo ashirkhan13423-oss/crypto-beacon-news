@@ -45,11 +45,6 @@ export const Route = createFileRoute("/news/")({
         content:
           "Institutional crypto currency news, policy explainers, market telemetry, and political regulation developments.",
       },
-      {
-        name: "keywords",
-        content:
-          "crypto currency news, crypto currencies, crypto currency regulation, blockchain news",
-      },
       { property: "og:title", content: "Crypto Currency News & Industry Analysis — CryptoBeacon" },
       {
         property: "og:description",

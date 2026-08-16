@@ -47,7 +47,7 @@ const articleSchema = {
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
+  image: "https://www.cryptobeacon.site/og-image.png",
   inLanguage: "en-US",
   keywords:
     "what does it mean when an exchange pauses withdrawals, crypto exchange withdrawal freeze explained, is it bad when an exchange stops withdrawals, why do exchanges halt withdrawals",
@@ -95,21 +95,16 @@ export const Route = createFileRoute("/news/what-it-means-when-exchange-pauses-w
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      {
-        name: "keywords",
-        content:
-          "what does it mean when an exchange pauses withdrawals, crypto exchange withdrawal freeze explained, is it bad when an exchange stops withdrawals, why do exchanges halt withdrawals",
-      },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
       { property: "og:url", content: URL },
-      { property: "og:image", content: `https://www.cryptobeacon.site${hero}` },
+      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { property: "article:published_time", content: PUBLISHED },
       { property: "article:section", content: "News" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: `https://www.cryptobeacon.site${hero}` },
+      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

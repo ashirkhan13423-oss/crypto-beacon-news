@@ -39,11 +39,6 @@ export const Route = createFileRoute("/guides/")({
         content:
           "Comprehensive guides on what crypto currency is, the true crypto currency meaning behind self-custody, wallet management, and securing your crypto currencies.",
       },
-      {
-        name: "keywords",
-        content:
-          "what is crypto currency, crypto currency meaning, crypto currencies, crypto currency storage, crypto wallet guide, self custody crypto",
-      },
       { property: "og:title", content: "Crypto Currency Guides & Explanations — CryptoBeacon" },
       {
         property: "og:description",

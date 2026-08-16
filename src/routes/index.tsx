@@ -97,7 +97,7 @@ const homepageSchema = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is crypto currency?",
+          "name": "What exactly is cryptocurrency?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "A crypto currency is a decentralized digital asset secured by cryptography on distributed blockchain networks, operating independently of central banks."
@@ -105,7 +105,7 @@ const homepageSchema = {
         },
         {
           "@type": "Question",
-          "name": "What is the meaning of crypto currency?",
+          "name": "How does digital money differ from traditional fiat?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "The meaning of crypto currency refers to combining cryptography and digital currency to achieve permissionless peer-to-peer ownership without intermediaries."
@@ -113,7 +113,7 @@ const homepageSchema = {
         },
         {
           "@type": "Question",
-          "name": "How are crypto currency prices determined?",
+          "name": "What drives the value of digital assets?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Crypto currency prices are determined by global market supply and demand on liquid exchanges, influenced by trading volume, supply caps, liquidity, and adoption."
@@ -129,11 +129,6 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      {
-        name: "keywords",
-        content:
-          "crypto currency, what is crypto currency, crypto currencies, crypto currency price, crypto currency news, crypto currency meaning, crypto currency prices",
-      },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
@@ -490,7 +485,7 @@ function IndexPage() {
             <div className="space-y-4">
               <details className="group border border-outline-variant rounded-lg bg-surface-container-lowest [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg p-4 text-on-surface font-medium">
-                  What is crypto currency?
+                  What exactly is cryptocurrency?
                   <span className="shrink-0 transition duration-300 group-open:-rotate-180">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
                   </span>
@@ -502,7 +497,7 @@ function IndexPage() {
               
               <details className="group border border-outline-variant rounded-lg bg-surface-container-lowest [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg p-4 text-on-surface font-medium">
-                  What is the meaning of crypto currency?
+                  How does digital money differ from traditional fiat?
                   <span className="shrink-0 transition duration-300 group-open:-rotate-180">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
                   </span>
@@ -514,7 +509,7 @@ function IndexPage() {
 
               <details className="group border border-outline-variant rounded-lg bg-surface-container-lowest [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg p-4 text-on-surface font-medium">
-                  How are crypto currency prices determined?
+                  What drives the value of digital assets?
                   <span className="shrink-0 transition duration-300 group-open:-rotate-180">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
                   </span>

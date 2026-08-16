@@ -101,11 +101,6 @@ export const Route = createFileRoute("/ethereum/can-you-send-bitcoin-to-an-ether
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      {
-        name: "keywords",
-        content:
-          "can you send bitcoin to an ethereum address, what happens if you send bitcoin to an ethereum address, bitcoin ethereum address format difference, sent crypto wrong network what to do",
-      },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },

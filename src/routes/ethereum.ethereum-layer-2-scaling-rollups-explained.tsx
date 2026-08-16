@@ -80,11 +80,6 @@ export const Route = createFileRoute("/ethereum/ethereum-layer-2-scaling-rollups
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      {
-        name: "keywords",
-        content:
-          "ethereum layer 2, optimistic rollups, zk rollups, l2 scaling, arbitrum, optimism, zksync, eip 4844, proto danksharding",
-      },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },

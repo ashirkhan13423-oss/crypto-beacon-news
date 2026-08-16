@@ -101,11 +101,6 @@ export const Route = createFileRoute("/guides/exchange-or-personal-wallet-crypto
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      {
-        name: "keywords",
-        content:
-          "crypto currencies, crypto currency price, exchange vs personal wallet crypto, should I keep crypto on an exchange or move it to a wallet, custodial risk, self-custody, cold storage, exchange insolvency",
-      },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },

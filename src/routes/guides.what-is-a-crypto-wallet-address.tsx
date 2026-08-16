@@ -102,11 +102,6 @@ export const Route = createFileRoute("/guides/what-is-a-crypto-wallet-address")(
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      {
-        name: "keywords",
-        content:
-          "what is a crypto wallet address, how does a cryptocurrency address work, is it safe to share crypto address, crypto wallet address explained, how to use crypto address safely",
-      },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },

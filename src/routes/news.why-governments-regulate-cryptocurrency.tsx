@@ -108,11 +108,6 @@ export const Route = createFileRoute("/news/why-governments-regulate-cryptocurre
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      {
-        name: "keywords",
-        content:
-          "why do governments regulate cryptocurrency, crypto regulation explained, MiCA regulation EU, SEC crypto oversight, FATF travel rule, crypto taxation laws",
-      },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },

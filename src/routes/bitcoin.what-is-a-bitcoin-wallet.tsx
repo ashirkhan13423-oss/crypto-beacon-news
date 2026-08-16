@@ -100,11 +100,6 @@ export const Route = createFileRoute("/bitcoin/what-is-a-bitcoin-wallet")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      {
-        name: "keywords",
-        content:
-          "what is a bitcoin wallet, bitcoin hot wallet vs cold wallet, custodial vs non-custodial wallet, how does a crypto wallet work, bitcoin wallet types explained",
-      },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },

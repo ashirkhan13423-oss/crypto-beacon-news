@@ -106,11 +106,6 @@ export const Route = createFileRoute("/security/how-to-store-crypto-seed-phrase-
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      {
-        name: "keywords",
-        content:
-          "how to store a crypto seed phrase safely, seed phrase storage best practices, seed phrase mistakes to avoid, where to store your seed phrase, metal seed phrase storage, how to backup a crypto wallet, BIP39, self-custody, hardware wallet",
-      },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },

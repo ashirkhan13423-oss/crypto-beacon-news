@@ -104,11 +104,6 @@ export const Route = createFileRoute("/security/how-to-avoid-crypto-phishing-sca
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      {
-        name: "keywords",
-        content:
-          "how to avoid crypto phishing scams, crypto phishing red flags, how to spot a fake crypto website, wallet drainer scam explained, crypto phishing checklist, address poisoning, seed phrase phishing",
-      },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },

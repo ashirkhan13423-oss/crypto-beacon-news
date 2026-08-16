@@ -96,11 +96,6 @@ export const Route = createFileRoute("/news/why-bitcoin-price-moves-more-than-st
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      {
-        name: "keywords",
-        content:
-          "why does bitcoin's price move more than stocks, bitcoin volatility explained simply, why is crypto more volatile than traditional markets, bitcoin market structure explained",
-      },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },

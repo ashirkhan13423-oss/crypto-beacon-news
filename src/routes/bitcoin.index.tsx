@@ -39,11 +39,6 @@ export const Route = createFileRoute("/bitcoin/")({
         content:
           "Definitive Bitcoin analysis: global crypto currency price factors, network difficulty, halving mechanics, and transaction security.",
       },
-      {
-        name: "keywords",
-        content:
-          "crypto currency price, crypto currency prices, crypto currency, bitcoin price, btc halving, proof of work",
-      },
       { property: "og:title", content: "Bitcoin (BTC): Benchmark Crypto Currency Price & Architecture — CryptoBeacon" },
       {
         property: "og:description",
