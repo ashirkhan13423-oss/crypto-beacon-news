@@ -33,9 +33,9 @@ const articleSchema = {
   datePublished: PUBLISHED,
   dateModified: "2026-08-15",
   author: {
-    "@type": "Person",
-    name: "Marcus Vance",
-    jobTitle: "Senior Market & Macro Analyst",
+    "@type": "Organization",
+    name: "CryptoBeacon Editorial Team",
+    url: "https://www.cryptobeacon.site",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -170,7 +170,7 @@ function ArticlePage() {
         </h1>
 
         <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">Marcus Vance</Link> (Senior Macro Analyst) · Reviewed by CryptoBeacon Editorial</span>
+          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">CryptoBeacon Editorial Team</Link></span>
           <span aria-hidden>·</span>
           <time dateTime={PUBLISHED}>August 15, 2026</time>
           <span aria-hidden>·</span>

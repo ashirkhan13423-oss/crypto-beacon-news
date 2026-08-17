@@ -108,7 +108,7 @@ function DisclaimerPage() {
               <Link to="/contact" className="text-secondary underline font-medium">
                 Contact Page
               </Link>{" "}
-              or email us directly at <a href="mailto:ashirkhan13423@gmail.com" className="text-secondary hover:underline">ashirkhan13423@gmail.com</a>.
+              or email us directly at <a href="mailto:privacy@cryptobeacon.site" className="text-secondary hover:underline">privacy@cryptobeacon.site</a>.
             </p>
           </section>
         </article>

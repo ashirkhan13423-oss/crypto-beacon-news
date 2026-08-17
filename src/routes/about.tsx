@@ -49,19 +49,19 @@ function AboutPage() {
               <Users className="text-secondary" /> Who We Are
             </h2>
             <p className="mb-md">
-              CryptoBeacon is led by senior cryptocurrency analysts and security researchers dedicated to objective digital asset education:
+              CryptoBeacon is a specialist cryptocurrency editorial team dedicated to objective digital asset education and security research:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-md my-md">
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
-                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Elena Rostova — Lead Security Analyst</h3>
+                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Security Research</h3>
                 <p className="text-body-md text-on-surface-variant">
-                  Former smart-contract auditor specializing in non-custodial wallet architecture, key management protocols, and multi-sig security frameworks.
+                  Our security team specializes in non-custodial wallet architecture, key management protocols, multi-sig security frameworks, and real-world threat analysis.
                 </p>
               </div>
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
-                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Marcus Vance — Senior Market & Macro Analyst</h3>
+                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Market & Macro Analysis</h3>
                 <p className="text-body-md text-on-surface-variant">
-                  Decentralized finance researcher focusing on Bitcoin market structure, exchange reserve telemetry, and global cryptocurrency regulation.
+                  Our research desk focuses on Bitcoin market structure, exchange reserve telemetry, DeFi dynamics, and global cryptocurrency regulation.
                 </p>
               </div>
             </div>

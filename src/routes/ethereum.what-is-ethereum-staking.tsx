@@ -33,9 +33,9 @@ const articleSchema = {
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   author: {
-    "@type": "Person",
-    name: "Marcus Vance",
-    jobTitle: "Senior Market & Macro Analyst",
+    "@type": "Organization",
+    name: "CryptoBeacon Editorial Team",
+    url: "https://www.cryptobeacon.site",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -137,7 +137,7 @@ function ArticlePage() {
           <span>
             By{" "}
             <Link to="/about" className="text-secondary font-medium hover:underline">
-              Marcus Vance
+              CryptoBeacon Editorial Team
             </Link>{" "}
             (Senior Macro Analyst) · Reviewed by CryptoBeacon Editorial
           </span>

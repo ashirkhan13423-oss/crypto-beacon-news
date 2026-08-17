@@ -14,11 +14,12 @@ import walletAddressHero from "@/assets/guides-wallet-address.png";
 import blockchainForkHero from "@/assets/news-blockchain-fork.png";
 import pausedHero from "@/assets/news-paused-withdrawals.svg";
 import { ShieldCheck, BookOpen, ExternalLink, Calendar, CheckCircle2, FileText, BarChart3, HelpCircle } from "lucide-react";
+import { SITE_URL } from "../lib/site-config";
 
-const URL = "https://www.cryptobeacon.site/";
-const TITLE = "Crypto Currency: News, Prices & Meaning | CryptoBeacon";
+const PAGE_URL = `${SITE_URL}/`;
+const TITLE = "Cryptocurrency: News, Prices & Meaning | CryptoBeacon";
 const DESC =
-  "Your definitive guide on what crypto currency is. Get the latest crypto currency news, meaning, and crypto currency prices. Protect your assets today.";
+  "Your definitive guide on what cryptocurrency is. Get the latest cryptocurrency news, meaning, and cryptocurrency prices. Protect your assets today.";
 const PUBLISHED_DATE = "2026-01-15";
 const MODIFIED_DATE = "2026-08-06";
 
@@ -29,15 +30,15 @@ const homepageSchema = {
       "@type": "WebSite",
       "name": "CryptoBeacon",
       "alternateName": ["Crypto Beacon", "Crypto Beacon News", "CryptoBeacon News"],
-      "url": URL,
+      "url": PAGE_URL,
       "description": DESC,
       "publisher": {
         "@type": "Organization",
         "name": "CryptoBeacon",
-        "url": URL,
+        "url": PAGE_URL,
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.cryptobeacon.site/favicon.png"
+          "url": `${SITE_URL}/favicon.png`
         },
         "sameAs": [
           "https://en.wikipedia.org/wiki/Cryptocurrency",
@@ -49,14 +50,14 @@ const homepageSchema = {
     },
     {
       "@type": "WebPage",
-      "@id": URL,
-      "url": URL,
+      "@id": PAGE_URL,
+      "url": PAGE_URL,
       "name": TITLE,
       "description": DESC,
       "datePublished": PUBLISHED_DATE,
       "dateModified": MODIFIED_DATE,
       "inLanguage": "en-US",
-      "isPartOf": { "@type": "WebSite", "@id": URL }
+      "isPartOf": { "@type": "WebSite", "@id": PAGE_URL }
     },
     {
       "@type": "BreadcrumbList",
@@ -65,31 +66,30 @@ const homepageSchema = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": URL
+          "item": PAGE_URL
         }
       ]
     },
     {
       "@type": "Article",
-      "headline": "Crypto Currency: News, Prices & Meaning",
+      "headline": "Cryptocurrency: News, Prices & Meaning",
       "description": DESC,
       "datePublished": PUBLISHED_DATE,
       "dateModified": MODIFIED_DATE,
       "author": [
-        { "@type": "Person", "name": "Elena Rostova", "jobTitle": "Lead Security Analyst" },
-        { "@type": "Person", "name": "Marcus Vance", "jobTitle": "Senior Market & Macro Analyst" }
+        { "@type": "Organization", "name": "CryptoBeacon Editorial Team", "url": PAGE_URL }
       ],
       "publisher": {
         "@type": "Organization",
         "name": "CryptoBeacon",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.cryptobeacon.site/favicon.png"
+          "url": `${SITE_URL}/favicon.png`
         }
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": URL
+        "@id": PAGE_URL
       }
     },
     {
@@ -100,7 +100,7 @@ const homepageSchema = {
           "name": "What exactly is cryptocurrency?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A crypto currency is a decentralized digital asset secured by cryptography on distributed blockchain networks, operating independently of central banks."
+            "text": "Cryptocurrency is a decentralized digital asset secured by cryptography on distributed blockchain networks, operating independently of central banks."
           }
         },
         {
@@ -108,7 +108,7 @@ const homepageSchema = {
           "name": "How does digital money differ from traditional fiat?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The meaning of crypto currency refers to combining cryptography and digital currency to achieve permissionless peer-to-peer ownership without intermediaries."
+            "text": "Cryptocurrency combines cryptography and digital currency to achieve permissionless peer-to-peer ownership without intermediaries."
           }
         },
         {
@@ -116,7 +116,7 @@ const homepageSchema = {
           "name": "What drives the value of digital assets?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Crypto currency prices are determined by global market supply and demand on liquid exchanges, influenced by trading volume, supply caps, liquidity, and adoption."
+            "text": "Cryptocurrency prices are determined by global market supply and demand on liquid exchanges, influenced by trading volume, supply caps, liquidity, and adoption."
           }
         }
       ]
@@ -132,14 +132,14 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
+      { property: "og:url", content: PAGE_URL },
+      { property: "og:image", content: `${SITE_URL}/og-image.png` },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.png` },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [{ rel: "canonical", href: PAGE_URL }],
     scripts: [
       {
         type: "application/ld+json",
@@ -258,7 +258,7 @@ function IndexPage() {
         <section className="mb-xl max-w-4xl">
           <div className="flex flex-wrap items-center gap-sm mb-md">
             <span className="inline-block bg-surface-container-high text-secondary font-label-caps text-label-caps px-md py-xs rounded-full border border-outline-variant font-semibold">
-              Elena Rostova &amp; Marcus Vance · Editorial Team
+              CryptoBeacon Editorial Team
             </span>
             <span className="inline-flex items-center gap-xs font-body-sm text-body-sm text-on-surface-variant">
               <Calendar className="w-4 h-4 text-secondary" />
@@ -267,11 +267,11 @@ function IndexPage() {
           </div>
           
           <h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-md leading-tight">
-            Crypto Currency: News, Prices &amp; Meaning
+            Cryptocurrency: News, Prices &amp; Meaning
           </h1>
           
           <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
-            Welcome to CryptoBeacon — your institutional-grade editorial reference on what <strong>crypto currency</strong> is, the true <strong>crypto currency meaning</strong> behind self-custody and blockchain protocols, and how <strong>crypto currency prices</strong> are evaluated in global markets. Our independent research provides objective analysis on Bitcoin, Ethereum, regulatory policies, and essential security practices.
+            Welcome to CryptoBeacon — your institutional-grade editorial reference on what <strong>cryptocurrency</strong> is, how <strong>blockchain technology</strong> enables self-custody and permissionless transactions, and how <strong>cryptocurrency prices</strong> are evaluated in global markets. Our independent research provides objective analysis on Bitcoin, Ethereum, regulatory policies, and essential security practices.
           </p>
         </section>
 
@@ -282,21 +282,21 @@ function IndexPage() {
             Executive Summary &amp; Bottom Line
           </div>
           <h2 className="font-headline-md text-headline-md text-primary mb-md">
-            Key Takeaways: Understanding Crypto Currency
+            Key Takeaways: Understanding Cryptocurrency
           </h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-md font-body-md text-on-surface">
-            <li className="flex items-start gap-xs bg-surface-container-lowest p-sm rounded-lg border border-outline-variant">
-              <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-0.5" />
-              <span><strong>Decentralized Settlement:</strong> A <strong>crypto currency</strong> enables peer-to-peer value transfer without central bank intermediaries.</span>
-            </li>
+              <li className="flex items-start gap-xs bg-surface-container-lowest p-sm rounded-lg border border-outline-variant">
+                <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-0.5" />
+                <span><strong>Decentralized Settlement:</strong> Cryptocurrency enables peer-to-peer value transfer without central bank intermediaries.</span>
+              </li>
             <li className="flex items-start gap-xs bg-surface-container-lowest p-sm rounded-lg border border-outline-variant">
               <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-0.5" />
               <span><strong>Algorithmic Scarcity:</strong> Assets like Bitcoin enforce fixed supply limits (21M BTC max) programmed directly into open-source code.</span>
             </li>
-            <li className="flex items-start gap-xs bg-surface-container-lowest p-sm rounded-lg border border-outline-variant">
-              <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-0.5" />
-              <span><strong>Market Valuation:</strong> A <strong>crypto currency price</strong> is established 24/7 by order-book order matching across global spot exchanges.</span>
-            </li>
+              <li className="flex items-start gap-xs bg-surface-container-lowest p-sm rounded-lg border border-outline-variant">
+                <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-0.5" />
+                <span><strong>Market Valuation:</strong> A <strong>cryptocurrency price</strong> is established 24/7 by order-book order matching across global spot exchanges.</span>
+              </li>
             <li className="flex items-start gap-xs bg-surface-container-lowest p-sm rounded-lg border border-outline-variant">
               <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-0.5" />
               <span><strong>Self-Custody Ownership:</strong> Cryptographic private keys give users absolute control over funds, bypassing institutional risk.</span>
@@ -310,17 +310,17 @@ function IndexPage() {
           <div>
             <h2 id="what-is-crypto-currency" className="font-headline-md text-headline-md text-primary mb-md flex items-center gap-xs">
               <BookOpen className="w-6 h-6 text-secondary" />
-              What Is Crypto Currency? Meaning &amp; Fundamentals
+              What Is Cryptocurrency? Meaning &amp; Fundamentals
             </h2>
             
             {/* Direct Answer Box for Featured Snippets */}
             <div className="p-lg rounded-xl border border-secondary/30 bg-secondary/5 mb-lg font-body-lg text-on-surface leading-relaxed">
               <strong className="text-secondary block font-headline-sm text-headline-sm mb-xs">Direct Answer / Definition:</strong>
-              A <strong>crypto currency</strong> is a digital or virtual medium of exchange secured by advanced cryptography and maintained across distributed computer networks (blockchains). Unlike fiat currencies issued by sovereign governments, a crypto currency operates on algorithmic consensus rules, providing borderless, transparent, and immutable asset transfer.
+              <strong>Cryptocurrency</strong> is a digital or virtual medium of exchange secured by advanced cryptography and maintained across distributed computer networks (blockchains). Unlike fiat currencies issued by sovereign governments, cryptocurrency operates on algorithmic consensus rules, providing borderless, transparent, and immutable asset transfer.
             </div>
 
             <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
-              The fundamental <strong>crypto currency meaning</strong> rests on replacing institutional trust with mathematical verification. Rather than relying on commercial banks to verify ledger balances, decentralized networks utilize cryptographic public-key infrastructure and distributed validation nodes to guarantee transaction authenticity.
+              The fundamental <strong>cryptocurrency meaning</strong> rests on replacing institutional trust with mathematical verification. Rather than relying on commercial banks to verify ledger balances, decentralized networks utilize cryptographic public-key infrastructure and distributed validation nodes to guarantee transaction authenticity.
             </p>
 
             <div className="my-md p-md rounded-xl bg-surface-container-low border border-outline-variant">
@@ -341,7 +341,7 @@ function IndexPage() {
               How Crypto Currency Works: Blockchain &amp; Consensus
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
-              At the heart of every <strong>crypto currency</strong> ecosystem is a distributed ledger known as a blockchain. When a user sends tokens, the transaction request is cryptographically signed using the sender's private key and broadcast to thousands of independent validator nodes worldwide.
+              At the heart of every <strong>cryptocurrency</strong> ecosystem is a distributed ledger known as a blockchain. When a user sends tokens, the transaction request is cryptographically signed using the sender's private key and broadcast to thousands of independent validator nodes worldwide.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-md my-md">
@@ -367,7 +367,7 @@ function IndexPage() {
               Crypto Currency Prices &amp; Market Drivers
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
-              A <strong>crypto currency price</strong> is governed entirely by open market dynamics on liquid exchanges. Because digital assets trade continuously across international venues, spot prices fluctuate based on macroeconomic shifts, regulatory announcements, and total circulating supply metrics.
+              A <strong>cryptocurrency price</strong> is governed entirely by open market dynamics on liquid exchanges. Because digital assets trade continuously across international venues, spot prices fluctuate based on macroeconomic shifts, regulatory announcements, and total circulating supply metrics.
             </p>
 
             {/* Verified Data & Statistics Table */}
@@ -452,13 +452,13 @@ function IndexPage() {
               Market Intelligence, Exchange Ecosystems &amp; Policy Trends
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
-              Tracking top <strong>crypto currencies</strong> requires looking beyond raw price tickers to examine order-book liquidity, exchange security models, and geopolitical regulation.
+              Tracking top <strong>cryptocurrencies</strong> requires looking beyond raw price tickers to examine order-book liquidity, exchange security models, and geopolitical regulation.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-md my-md">
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
                 <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Market Telemetry &amp; Price Feeds</h3>
                 <p className="font-body-md text-on-surface-variant">
-                  Investors monitor aggregated market telemetry and spot order books to evaluate real-time <strong>crypto currency prices</strong> across global exchanges.
+                  Investors monitor aggregated market telemetry and spot order books to evaluate real-time <strong>cryptocurrency prices</strong> across global exchanges.
                 </p>
               </div>
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
@@ -480,7 +480,7 @@ function IndexPage() {
           <div>
             <h2 id="faq" className="font-headline-md text-headline-md text-primary mb-md flex items-center gap-xs">
               <HelpCircle className="w-6 h-6 text-secondary" />
-              Frequently Asked Questions About Crypto Currency
+              Frequently Asked Questions About Cryptocurrency
             </h2>
             <div className="space-y-4">
               <details className="group border border-outline-variant rounded-lg bg-surface-container-lowest [&_summary::-webkit-details-marker]:hidden">
@@ -491,7 +491,7 @@ function IndexPage() {
                   </span>
                 </summary>
                 <p className="px-4 pb-4 leading-relaxed text-on-surface-variant font-body-md">
-                  A crypto currency is a digital payment system that operates without central banks or commercial intermediaries. It relies on peer-to-peer cryptography on distributed blockchain networks to verify and record all transactions.
+                  Cryptocurrency is a digital payment system that operates without central banks or commercial intermediaries. It relies on peer-to-peer cryptography on distributed blockchain networks to verify and record all transactions.
                 </p>
               </details>
               
@@ -515,7 +515,7 @@ function IndexPage() {
                   </span>
                 </summary>
                 <p className="px-4 pb-4 leading-relaxed text-on-surface-variant font-body-md">
-                  A crypto currency price is determined by real-time order-book matching across global exchanges based on market supply and demand, total token liquidity, macroeconomic interest rates, regulatory news, and investor sentiment.
+                  A cryptocurrency price is determined by real-time order-book matching across global exchanges based on market supply and demand, total token liquidity, macroeconomic interest rates, regulatory news, and investor sentiment.
                 </p>
               </details>
 

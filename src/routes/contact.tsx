@@ -19,17 +19,17 @@ const contactSchema = {
     "@type": "Organization",
     name: "CryptoBeacon",
     url: "https://www.cryptobeacon.site",
-    email: "ashirkhan13423@gmail.com",
+    email: "editorial@cryptobeacon.site",
     contactPoint: [
       {
         "@type": "ContactPoint",
-        email: "ashirkhan13423@gmail.com",
+        email: "editorial@cryptobeacon.site",
         contactType: "editorial newsroom",
         availableLanguage: ["English"],
       },
       {
         "@type": "ContactPoint",
-        email: "ashirkhan13423@gmail.com",
+        email: "security@cryptobeacon.site",
         contactType: "security research",
         availableLanguage: ["English"],
       },
@@ -111,10 +111,10 @@ function ContactPage() {
                 Press releases, news tips, and content suggestions.
               </p>
               <a
-                href="mailto:ashirkhan13423@gmail.com"
+                href="mailto:editorial@cryptobeacon.site"
                 className="font-body-md text-secondary font-medium hover:underline"
               >
-                ashirkhan13423@gmail.com
+                editorial@cryptobeacon.site
               </a>
             </div>
 
@@ -127,10 +127,10 @@ function ContactPage() {
                 Vulnerability disclosures and security topic requests.
               </p>
               <a
-                href="mailto:ashirkhan13423@gmail.com"
+                href="mailto:security@cryptobeacon.site"
                 className="font-body-md text-secondary font-medium hover:underline"
               >
-                ashirkhan13423@gmail.com
+                security@cryptobeacon.site
               </a>
             </div>
 

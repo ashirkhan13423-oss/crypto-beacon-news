@@ -38,9 +38,9 @@ const articleSchema = {
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   author: {
-    "@type": "Person",
-    name: "Elena Rostova",
-    jobTitle: "Lead Security Analyst",
+    "@type": "Organization",
+    name: "CryptoBeacon Editorial Team",
+    url: "https://www.cryptobeacon.site",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -175,7 +175,7 @@ function ArticlePage() {
         </h1>
 
         <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">Elena Rostova</Link> (Lead Security Analyst) · Reviewed by CryptoBeacon Editorial</span>
+          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">CryptoBeacon Editorial Team</Link></span>
           <span aria-hidden>·</span>
           <time dateTime={PUBLISHED}>July 22, 2026</time>
           <span aria-hidden>·</span>
