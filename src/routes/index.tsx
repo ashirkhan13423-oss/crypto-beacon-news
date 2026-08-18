@@ -271,7 +271,7 @@ function IndexPage() {
           </h1>
           
           <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
-            Welcome to CryptoBeacon — your institutional-grade editorial reference on what <strong>cryptocurrency</strong> is, how <strong>blockchain technology</strong> enables self-custody and permissionless transactions, and how <strong>cryptocurrency prices</strong> are evaluated in global markets. Our independent research provides objective analysis on Bitcoin, Ethereum, regulatory policies, and essential security practices.
+            Welcome to CryptoBeacon — your institutional-grade editorial reference on what <strong>cryptocurrency</strong> is, how <strong>blockchain technology</strong> enables self-custody and permissionless transactions, and how cryptocurrency prices are evaluated in global markets. Our independent research provides objective analysis on Bitcoin, Ethereum, regulatory policies, and essential security practices.
           </p>
         </section>
 
@@ -295,7 +295,7 @@ function IndexPage() {
             </li>
               <li className="flex items-start gap-xs bg-surface-container-lowest p-sm rounded-lg border border-outline-variant">
                 <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-0.5" />
-                <span><strong>Market Valuation:</strong> A <strong>cryptocurrency price</strong> is established 24/7 by order-book order matching across global spot exchanges.</span>
+                <span><strong>Market Valuation:</strong> A cryptocurrency price is established 24/7 by order-book order matching across global spot exchanges.</span>
               </li>
             <li className="flex items-start gap-xs bg-surface-container-lowest p-sm rounded-lg border border-outline-variant">
               <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-0.5" />
@@ -320,7 +320,7 @@ function IndexPage() {
             </div>
 
             <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
-              The fundamental <strong>cryptocurrency meaning</strong> rests on replacing institutional trust with mathematical verification. Rather than relying on commercial banks to verify ledger balances, decentralized networks utilize cryptographic public-key infrastructure and distributed validation nodes to guarantee transaction authenticity.
+              The fundamental cryptocurrency meaning rests on replacing institutional trust with mathematical verification. Rather than relying on commercial banks to verify ledger balances, decentralized networks utilize cryptographic public-key infrastructure and distributed validation nodes to guarantee transaction authenticity.
             </p>
 
             <div className="my-md p-md rounded-xl bg-surface-container-low border border-outline-variant">
@@ -334,14 +334,14 @@ function IndexPage() {
             </div>
           </div>
 
-          {/* Section 2: How Crypto Currency Works */}
+          {/* Section 2: How Cryptocurrency Works */}
           <div>
             <h2 id="how-crypto-works" className="font-headline-md text-headline-md text-primary mb-md flex items-center gap-xs">
               <FileText className="w-6 h-6 text-secondary" />
-              How Crypto Currency Works: Blockchain &amp; Consensus
+              How Cryptocurrency Works: Blockchain &amp; Consensus
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
-              At the heart of every <strong>cryptocurrency</strong> ecosystem is a distributed ledger known as a blockchain. When a user sends tokens, the transaction request is cryptographically signed using the sender's private key and broadcast to thousands of independent validator nodes worldwide.
+              At the heart of every cryptocurrency ecosystem is a distributed ledger known as a blockchain. When a user sends tokens, the transaction request is cryptographically signed using the sender's private key and broadcast to thousands of independent validator nodes worldwide.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-md my-md">
@@ -360,14 +360,14 @@ function IndexPage() {
             </div>
           </div>
 
-          {/* Section 3: Crypto Currency Prices & Market Valuation */}
+          {/* Section 3: Cryptocurrency Prices & Market Valuation */}
           <div>
             <h2 id="crypto-prices" className="font-headline-md text-headline-md text-primary mb-md flex items-center gap-xs">
               <BarChart3 className="w-6 h-6 text-secondary" />
-              Crypto Currency Prices &amp; Market Drivers
+              Cryptocurrency Prices &amp; Market Drivers
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
-              A <strong>cryptocurrency price</strong> is governed entirely by open market dynamics on liquid exchanges. Because digital assets trade continuously across international venues, spot prices fluctuate based on macroeconomic shifts, regulatory announcements, and total circulating supply metrics.
+              A cryptocurrency price is governed entirely by open market dynamics on liquid exchanges. Because digital assets trade continuously across international venues, spot prices fluctuate based on macroeconomic shifts, regulatory announcements, and total circulating supply metrics.
             </p>
 
             {/* Verified Data & Statistics Table */}
@@ -409,14 +409,14 @@ function IndexPage() {
           {/* Section 4: Crypto vs Fiat Comparison */}
           <div>
             <h2 id="crypto-vs-fiat" className="font-headline-md text-headline-md text-primary mb-md">
-              Crypto Currency vs. Traditional Fiat Financial Systems
+              Cryptocurrency vs. Traditional Fiat Financial Systems
             </h2>
             <div className="overflow-x-auto mb-md">
               <table className="w-full text-left border-collapse border border-outline-variant rounded-lg">
                 <thead>
                   <tr className="bg-surface-container-highest text-on-surface font-body-md">
                     <th className="p-3 border border-outline-variant font-semibold">Dimension</th>
-                    <th className="p-3 border border-outline-variant font-semibold">Crypto Currency</th>
+                    <th className="p-3 border border-outline-variant font-semibold">Cryptocurrency</th>
                     <th className="p-3 border border-outline-variant font-semibold">Traditional Fiat (USD, EUR)</th>
                   </tr>
                 </thead>
@@ -452,13 +452,13 @@ function IndexPage() {
               Market Intelligence, Exchange Ecosystems &amp; Policy Trends
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
-              Tracking top <strong>cryptocurrencies</strong> requires looking beyond raw price tickers to examine order-book liquidity, exchange security models, and geopolitical regulation.
+              Tracking top cryptocurrencies requires looking beyond raw price tickers to examine order-book liquidity, exchange security models, and geopolitical regulation.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-md my-md">
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
                 <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Market Telemetry &amp; Price Feeds</h3>
                 <p className="font-body-md text-on-surface-variant">
-                  Investors monitor aggregated market telemetry and spot order books to evaluate real-time <strong>cryptocurrency prices</strong> across global exchanges.
+                  Investors monitor aggregated market telemetry and spot order books to evaluate real-time cryptocurrency prices across global exchanges.
                 </p>
               </div>
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
