@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Author } from "@/components/Author";
+import { AdUnit } from "@/components/AdUnit";
 import hero from "@/assets/news-paused-withdrawals.svg";
 import { Plus } from "lucide-react";
 
@@ -33,9 +35,9 @@ const articleSchema = {
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   author: {
-    "@type": "Organization",
-    name: "CryptoBeacon Editorial Team",
-    url: "https://www.cryptobeacon.site",
+    "@type": "Person",
+    name: "Sarah Jenkins",
+    url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -133,17 +135,6 @@ function P({ children }: { children: React.ReactNode }) {
   );
 }
 
-function AdUnit() {
-  return (
-    <div className="my-xl flex flex-col items-center justify-center p-md bg-surface-container-lowest border border-outline-variant rounded-lg min-h-[120px] mx-auto w-full max-w-[728px]">
-      <span className="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-xs">Advertisement</span>
-      <div className="w-full h-[90px] bg-surface-container flex items-center justify-center rounded">
-        <span className="text-on-surface-variant text-sm">Ad Placeholder</span>
-      </div>
-    </div>
-  );
-}
-
 function ArticlePage() {
   return (
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
@@ -178,13 +169,10 @@ function ArticlePage() {
           What Does It Mean When a Crypto Exchange Pauses Withdrawals?
         </h1>
 
-        <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">CryptoBeacon Editorial Team</Link></span>
-          <span aria-hidden>·</span>
-          <time dateTime={PUBLISHED}>August 4, 2026</time>
-          <span aria-hidden>·</span>
-          <span>4 min read</span>
-        </div>
+        <Author
+          publishedDate={<time dateTime={PUBLISHED}>August 4, 2026</time>}
+          readTime="4 min read"
+        />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -197,10 +185,14 @@ function ArticlePage() {
         </figure>
 
         <P>
-          Seeing a withdrawal button greyed out — or a banner saying withdrawals are "temporarily paused" — is unsettling the first time it happens. Most of the time, it's routine. Occasionally, it's a genuine warning sign. The difference matters, and it's usually possible to tell them apart.
+          Seeing a withdrawal button greyed out — or a banner saying withdrawals are "temporarily
+          paused" — is unsettling the first time it happens. Most of the time, it's routine.
+          Occasionally, it's a genuine warning sign. The difference matters, and it's usually
+          possible to tell them apart.
         </P>
         <P>
-          This article is educational and doesn't reference any specific company or incident. It isn't financial advice.
+          This article is educational and doesn't reference any specific company or incident. It
+          isn't financial advice.
         </P>
 
         <AdUnit />
@@ -208,21 +200,28 @@ function ArticlePage() {
         <H2 id="why-happens">Why Withdrawal Pauses Happen</H2>
         <ul className="list-disc pl-lg space-y-md font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
           <li>
-            <strong>Network congestion or maintenance.</strong> Blockchains occasionally get busy, or an exchange performs routine maintenance on a specific asset's withdrawal system. This typically affects one asset at a time and resolves within a defined, short window.
+            <strong>Network congestion or maintenance.</strong> Blockchains occasionally get busy,
+            or an exchange performs routine maintenance on a specific asset's withdrawal system.
+            This typically affects one asset at a time and resolves within a defined, short window.
           </li>
           <li>
-            <strong>Security holds.</strong> Unusual login activity or account behavior can trigger an automatic, temporary hold as a protective measure — this is about protecting the individual account, not a platform-wide issue.
+            <strong>Security holds.</strong> Unusual login activity or account behavior can trigger
+            an automatic, temporary hold as a protective measure — this is about protecting the
+            individual account, not a platform-wide issue.
           </li>
           <li>
-            <strong>Regulatory or compliance reviews.</strong> Identity verification updates or compliance checks can pause withdrawals for individual accounts until resolved.
+            <strong>Regulatory or compliance reviews.</strong> Identity verification updates or
+            compliance checks can pause withdrawals for individual accounts until resolved.
           </li>
           <li>
-            <strong>Genuine financial distress.</strong> Less commonly, a platform-wide, indefinite pause across many assets can reflect serious underlying problems with the platform itself.
+            <strong>Genuine financial distress.</strong> Less commonly, a platform-wide, indefinite
+            pause across many assets can reflect serious underlying problems with the platform
+            itself.
           </li>
         </ul>
 
         <H2 id="routine-vs-warning">Routine Pause vs. Genuine Warning Sign</H2>
-        
+
         <div className="overflow-x-auto my-lg rounded-xl border border-outline-variant shadow-sm">
           <table className="w-full text-left border-collapse min-w-[600px]">
             <thead>
@@ -234,31 +233,57 @@ function ArticlePage() {
             </thead>
             <tbody className="divide-y divide-outline-variant bg-surface-container-lowest">
               <tr>
-                <td className="p-md font-body-md text-body-md font-semibold text-primary align-top border-r border-outline-variant">Scope</td>
-                <td className="p-md font-body-md text-body-md text-on-surface-variant align-top border-r border-outline-variant">One asset or one account</td>
-                <td className="p-md font-body-md text-body-md text-on-surface-variant align-top">Many assets, platform-wide</td>
+                <td className="p-md font-body-md text-body-md font-semibold text-primary align-top border-r border-outline-variant">
+                  Scope
+                </td>
+                <td className="p-md font-body-md text-body-md text-on-surface-variant align-top border-r border-outline-variant">
+                  One asset or one account
+                </td>
+                <td className="p-md font-body-md text-body-md text-on-surface-variant align-top">
+                  Many assets, platform-wide
+                </td>
               </tr>
               <tr>
-                <td className="p-md font-body-md text-body-md font-semibold text-primary align-top border-r border-outline-variant">Duration</td>
-                <td className="p-md font-body-md text-body-md text-on-surface-variant align-top border-r border-outline-variant">Short, defined window</td>
-                <td className="p-md font-body-md text-body-md text-on-surface-variant align-top">Extended or "until further notice"</td>
+                <td className="p-md font-body-md text-body-md font-semibold text-primary align-top border-r border-outline-variant">
+                  Duration
+                </td>
+                <td className="p-md font-body-md text-body-md text-on-surface-variant align-top border-r border-outline-variant">
+                  Short, defined window
+                </td>
+                <td className="p-md font-body-md text-body-md text-on-surface-variant align-top">
+                  Extended or "until further notice"
+                </td>
               </tr>
               <tr>
-                <td className="p-md font-body-md text-body-md font-semibold text-primary align-top border-r border-outline-variant">Communication</td>
-                <td className="p-md font-body-md text-body-md text-on-surface-variant align-top border-r border-outline-variant">Clear, specific reason given</td>
-                <td className="p-md font-body-md text-body-md text-on-surface-variant align-top">Vague, or the explanation keeps changing</td>
+                <td className="p-md font-body-md text-body-md font-semibold text-primary align-top border-r border-outline-variant">
+                  Communication
+                </td>
+                <td className="p-md font-body-md text-body-md text-on-surface-variant align-top border-r border-outline-variant">
+                  Clear, specific reason given
+                </td>
+                <td className="p-md font-body-md text-body-md text-on-surface-variant align-top">
+                  Vague, or the explanation keeps changing
+                </td>
               </tr>
               <tr>
-                <td className="p-md font-body-md text-body-md font-semibold text-primary align-top border-r border-outline-variant">Deposits</td>
-                <td className="p-md font-body-md text-body-md text-on-surface-variant align-top border-r border-outline-variant">Deposits and withdrawals often both affected equally, or deposits unaffected while a specific asset's withdrawal is paused for maintenance</td>
-                <td className="p-md font-body-md text-body-md text-on-surface-variant align-top">Deposits still accepted while withdrawals stay frozen for an extended period</td>
+                <td className="p-md font-body-md text-body-md font-semibold text-primary align-top border-r border-outline-variant">
+                  Deposits
+                </td>
+                <td className="p-md font-body-md text-body-md text-on-surface-variant align-top border-r border-outline-variant">
+                  Deposits and withdrawals often both affected equally, or deposits unaffected while
+                  a specific asset's withdrawal is paused for maintenance
+                </td>
+                <td className="p-md font-body-md text-body-md text-on-surface-variant align-top">
+                  Deposits still accepted while withdrawals stay frozen for an extended period
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <P>
-          No single signal proves anything on its own — it's the combination and duration that matters most.
+          No single signal proves anything on its own — it's the combination and duration that
+          matters most.
         </P>
 
         <AdUnit />
@@ -266,39 +291,66 @@ function ArticlePage() {
         <H2 id="what-to-do">What to Do If You See a Withdrawal Pause</H2>
         <ul className="list-disc pl-lg space-y-md font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
           <li>
-            <strong>Check the platform's official status page or announcement first</strong>, rather than relying on social media speculation.
+            <strong>Check the platform's official status page or announcement first</strong>, rather
+            than relying on social media speculation.
           </li>
           <li>
-            <strong>Note whether the pause is asset-specific or platform-wide.</strong> A single paused asset with a clear technical reason is a very different situation than an unexplained, all-assets freeze.
+            <strong>Note whether the pause is asset-specific or platform-wide.</strong> A single
+            paused asset with a clear technical reason is a very different situation than an
+            unexplained, all-assets freeze.
           </li>
           <li>
-            <strong>Give it a reasonable, defined window before assuming the worst</strong> — most pauses genuinely resolve within the announced timeframe.
+            <strong>Give it a reasonable, defined window before assuming the worst</strong> — most
+            pauses genuinely resolve within the announced timeframe.
           </li>
           <li>
-            <strong>If the pause extends well beyond its stated window, or the explanation keeps shifting, treat that as a signal to reduce your exposure</strong> to that platform going forward, even if funds do eventually become accessible again.
+            <strong>
+              If the pause extends well beyond its stated window, or the explanation keeps shifting,
+              treat that as a signal to reduce your exposure
+            </strong>{" "}
+            to that platform going forward, even if funds do eventually become accessible again.
           </li>
         </ul>
 
         <H2 id="self-custody">Why This Connects to Self-Custody</H2>
         <P>
           This is exactly the kind of scenario the "
-          <Link to="/guides/exchange-or-personal-wallet-crypto-storage" className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]">
+          <Link
+            to="/guides/exchange-or-personal-wallet-crypto-storage"
+            className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+          >
             exchange vs. personal wallet
           </Link>
-          " decision is really about: a withdrawal pause only affects funds you don't directly control. Crypto held in a personal wallet, where you hold the{" "}
-          <Link to="/guides/not-your-keys-not-your-coins-meaning" className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]">
+          " decision is really about: a withdrawal pause only affects funds you don't directly
+          control. Crypto held in a personal wallet, where you hold the{" "}
+          <Link
+            to="/guides/not-your-keys-not-your-coins-meaning"
+            className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+          >
             private keys
           </Link>
-          , is entirely unaffected by any individual platform's operational issues — for better or worse, that's the trade-off self-custody involves.
+          , is entirely unaffected by any individual platform's operational issues — for better or
+          worse, that's the trade-off self-custody involves.
         </P>
 
         <H2 id="takeaways">Key Takeaways</H2>
         <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
           <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
-            <li>Most withdrawal pauses are routine — asset-specific, short, and clearly explained.</li>
-            <li>The warning signs to watch for are scope (platform-wide), duration (extended or open-ended), and communication (vague or shifting explanations).</li>
-            <li>Checking a platform's official status page is more reliable than reacting to social media speculation in the moment.</li>
-            <li>This scenario only affects custodial holdings — it's a direct, practical illustration of why the exchange-vs-wallet custody decision matters.</li>
+            <li>
+              Most withdrawal pauses are routine — asset-specific, short, and clearly explained.
+            </li>
+            <li>
+              The warning signs to watch for are scope (platform-wide), duration (extended or
+              open-ended), and communication (vague or shifting explanations).
+            </li>
+            <li>
+              Checking a platform's official status page is more reliable than reacting to social
+              media speculation in the moment.
+            </li>
+            <li>
+              This scenario only affects custodial holdings — it's a direct, practical illustration
+              of why the exchange-vs-wallet custody decision matters.
+            </li>
           </ul>
         </div>
 
@@ -324,7 +376,9 @@ function ArticlePage() {
             Financial Disclaimer
           </h3>
           <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and does not reference any specific company, platform, or incident. It isn't financial advice — always consult a platform's official communications for guidance on your specific situation.
+            This article is for informational and educational purposes only and does not reference
+            any specific company, platform, or incident. It isn't financial advice — always consult
+            a platform's official communications for guidance on your specific situation.
           </p>
         </div>
 

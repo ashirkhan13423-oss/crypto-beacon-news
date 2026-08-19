@@ -52,16 +52,19 @@ export const Route = createFileRoute("/contact")({
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
     links: [{ rel: "canonical", href: URL }],
-    scripts: [
-      { type: "application/ld+json", children: JSON.stringify(contactSchema) },
-    ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(contactSchema) }],
   }),
   component: ContactPage,
 });
 
 function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "", subject: "Editorial Inquiry", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "Editorial Inquiry",
+    message: "",
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -95,7 +98,8 @@ function ContactPage() {
             Contact CryptoBeacon
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-            Have a question, news tip, editorial correction, or security disclosure? Our editorial team reviews every inquiry promptly.
+            Have a question, news tip, editorial correction, or security disclosure? Our editorial
+            team reviews every inquiry promptly.
           </p>
         </header>
 
@@ -106,7 +110,9 @@ function ContactPage() {
               <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary mb-md">
                 <Mail className="w-5 h-5" />
               </div>
-              <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Editorial Inquiries</h3>
+              <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">
+                Editorial Inquiries
+              </h3>
               <p className="font-body-md text-body-md text-on-surface-variant mb-sm">
                 Press releases, news tips, and content suggestions.
               </p>
@@ -122,7 +128,9 @@ function ContactPage() {
               <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary mb-md">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Security Research</h3>
+              <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">
+                Security Research
+              </h3>
               <p className="font-body-md text-body-md text-on-surface-variant mb-sm">
                 Vulnerability disclosures and security topic requests.
               </p>
@@ -140,7 +148,8 @@ function ContactPage() {
                 <span>Response Time</span>
               </div>
               <p className="font-body-sm text-body-sm text-on-surface-variant">
-                We aim to respond to all editorial and press inquiries within 24 to 48 business hours.
+                We aim to respond to all editorial and press inquiries within 24 to 48 business
+                hours.
               </p>
             </div>
           </div>
@@ -150,9 +159,12 @@ function ContactPage() {
             {submitted ? (
               <div className="py-xl text-center flex flex-col items-center justify-center">
                 <CheckCircle2 className="w-16 h-16 text-[#0F9D58] mb-md" />
-                <h2 className="font-headline-md text-headline-md text-primary mb-sm">Message Received</h2>
+                <h2 className="font-headline-md text-headline-md text-primary mb-sm">
+                  Message Received
+                </h2>
                 <p className="font-body-lg text-body-lg text-on-surface-variant max-w-md">
-                  Thank you for reaching out to CryptoBeacon. A member of our editorial team will review your message shortly.
+                  Thank you for reaching out to CryptoBeacon. A member of our editorial team will
+                  review your message shortly.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
@@ -169,7 +181,10 @@ function ContactPage() {
                 </h2>
 
                 <div>
-                  <label htmlFor="name" className="block font-label-caps text-label-caps text-on-surface mb-xs">
+                  <label
+                    htmlFor="name"
+                    className="block font-label-caps text-label-caps text-on-surface mb-xs"
+                  >
                     Your Name
                   </label>
                   <input
@@ -184,7 +199,10 @@ function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block font-label-caps text-label-caps text-on-surface mb-xs">
+                  <label
+                    htmlFor="email"
+                    className="block font-label-caps text-label-caps text-on-surface mb-xs"
+                  >
                     Email Address
                   </label>
                   <input
@@ -199,7 +217,10 @@ function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block font-label-caps text-label-caps text-on-surface mb-xs">
+                  <label
+                    htmlFor="subject"
+                    className="block font-label-caps text-label-caps text-on-surface mb-xs"
+                  >
                     Subject / Topic
                   </label>
                   <select
@@ -217,7 +238,10 @@ function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block font-label-caps text-label-caps text-on-surface mb-xs">
+                  <label
+                    htmlFor="message"
+                    className="block font-label-caps text-label-caps text-on-surface mb-xs"
+                  >
                     Message
                   </label>
                   <textarea

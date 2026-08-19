@@ -13,7 +13,16 @@ import exchangeHero from "@/assets/exchange-vs-wallet.png";
 import walletAddressHero from "@/assets/guides-wallet-address.png";
 import blockchainForkHero from "@/assets/news-blockchain-fork.png";
 import pausedHero from "@/assets/news-paused-withdrawals.svg";
-import { ShieldCheck, BookOpen, ExternalLink, Calendar, CheckCircle2, FileText, BarChart3, HelpCircle } from "lucide-react";
+import {
+  ShieldCheck,
+  BookOpen,
+  ExternalLink,
+  Calendar,
+  CheckCircle2,
+  FileText,
+  BarChart3,
+  HelpCircle,
+} from "lucide-react";
 import { SITE_URL } from "../lib/site-config";
 
 const PAGE_URL = `${SITE_URL}/`;
@@ -28,100 +37,98 @@ const homepageSchema = {
   "@graph": [
     {
       "@type": "WebSite",
-      "name": "CryptoBeacon",
-      "alternateName": ["Crypto Beacon", "Crypto Beacon News", "CryptoBeacon News"],
-      "url": PAGE_URL,
-      "description": DESC,
-      "publisher": {
+      name: "CryptoBeacon",
+      alternateName: ["Crypto Beacon", "Crypto Beacon News", "CryptoBeacon News"],
+      url: PAGE_URL,
+      description: DESC,
+      publisher: {
         "@type": "Organization",
-        "name": "CryptoBeacon",
-        "url": PAGE_URL,
-        "logo": {
+        name: "CryptoBeacon",
+        url: PAGE_URL,
+        logo: {
           "@type": "ImageObject",
-          "url": `${SITE_URL}/favicon.png`
+          url: `${SITE_URL}/favicon.png`,
         },
-        "sameAs": [
+        sameAs: [
           "https://en.wikipedia.org/wiki/Cryptocurrency",
           "https://en.wikipedia.org/wiki/Bitcoin",
           "https://en.wikipedia.org/wiki/Ethereum",
-          "https://www.fatf-gafi.org"
-        ]
-      }
+          "https://www.fatf-gafi.org",
+        ],
+      },
     },
     {
       "@type": "WebPage",
       "@id": PAGE_URL,
-      "url": PAGE_URL,
-      "name": TITLE,
-      "description": DESC,
-      "datePublished": PUBLISHED_DATE,
-      "dateModified": MODIFIED_DATE,
-      "inLanguage": "en-US",
-      "isPartOf": { "@type": "WebSite", "@id": PAGE_URL }
+      url: PAGE_URL,
+      name: TITLE,
+      description: DESC,
+      datePublished: PUBLISHED_DATE,
+      dateModified: MODIFIED_DATE,
+      inLanguage: "en-US",
+      isPartOf: { "@type": "WebSite", "@id": PAGE_URL },
     },
     {
       "@type": "BreadcrumbList",
-      "itemListElement": [
+      itemListElement: [
         {
           "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": PAGE_URL
-        }
-      ]
+          position: 1,
+          name: "Home",
+          item: PAGE_URL,
+        },
+      ],
     },
     {
       "@type": "Article",
-      "headline": "Cryptocurrency: News, Prices & Meaning",
-      "description": DESC,
-      "datePublished": PUBLISHED_DATE,
-      "dateModified": MODIFIED_DATE,
-      "author": [
-        { "@type": "Organization", "name": "CryptoBeacon Editorial Team", "url": PAGE_URL }
-      ],
-      "publisher": {
+      headline: "Cryptocurrency: News, Prices & Meaning",
+      description: DESC,
+      datePublished: PUBLISHED_DATE,
+      dateModified: MODIFIED_DATE,
+      author: [{ "@type": "Organization", name: "CryptoBeacon Editorial Team", url: PAGE_URL }],
+      publisher: {
         "@type": "Organization",
-        "name": "CryptoBeacon",
-        "logo": {
+        name: "CryptoBeacon",
+        logo: {
           "@type": "ImageObject",
-          "url": `${SITE_URL}/favicon.png`
-        }
+          url: `${SITE_URL}/favicon.png`,
+        },
       },
-      "mainEntityOfPage": {
+      mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": PAGE_URL
-      }
+        "@id": PAGE_URL,
+      },
     },
     {
       "@type": "FAQPage",
-      "mainEntity": [
+      mainEntity: [
         {
           "@type": "Question",
-          "name": "What exactly is cryptocurrency?",
-          "acceptedAnswer": {
+          name: "What exactly is cryptocurrency?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Cryptocurrency is a decentralized digital asset secured by cryptography on distributed blockchain networks, operating independently of central banks."
-          }
+            text: "Cryptocurrency is a decentralized digital asset secured by cryptography on distributed blockchain networks, operating independently of central banks.",
+          },
         },
         {
           "@type": "Question",
-          "name": "How does digital money differ from traditional fiat?",
-          "acceptedAnswer": {
+          name: "How does digital money differ from traditional fiat?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Cryptocurrency combines cryptography and digital currency to achieve permissionless peer-to-peer ownership without intermediaries."
-          }
+            text: "Cryptocurrency combines cryptography and digital currency to achieve permissionless peer-to-peer ownership without intermediaries.",
+          },
         },
         {
           "@type": "Question",
-          "name": "What drives the value of digital assets?",
-          "acceptedAnswer": {
+          name: "What drives the value of digital assets?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Cryptocurrency prices are determined by global market supply and demand on liquid exchanges, influenced by trading volume, supply caps, liquidity, and adoption."
-          }
-        }
-      ]
-    }
-  ]
+            text: "Cryptocurrency prices are determined by global market supply and demand on liquid exchanges, influenced by trading volume, supply caps, liquidity, and adoption.",
+          },
+        },
+      ],
+    },
+  ],
 };
 
 export const Route = createFileRoute("/")({
@@ -265,18 +272,25 @@ function IndexPage() {
               <time dateTime={MODIFIED_DATE}>Last Updated: August 6, 2026</time>
             </span>
           </div>
-          
+
           <h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-md leading-tight">
             Cryptocurrency: News, Prices &amp; Meaning
           </h1>
-          
+
           <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
-            Welcome to CryptoBeacon — your institutional-grade editorial reference on what <strong>cryptocurrency</strong> is, how <strong>blockchain technology</strong> enables self-custody and permissionless transactions, and how cryptocurrency prices are evaluated in global markets. Our independent research provides objective analysis on Bitcoin, Ethereum, regulatory policies, and essential security practices.
+            Welcome to CryptoBeacon — your institutional-grade editorial reference on what{" "}
+            <strong>cryptocurrency</strong> is, how <strong>blockchain technology</strong> enables
+            self-custody and permissionless transactions, and how cryptocurrency prices are
+            evaluated in global markets. Our independent research provides objective analysis on
+            Bitcoin, Ethereum, regulatory policies, and essential security practices.
           </p>
         </section>
 
         {/* Executive Summary & AEO/GEO Direct Answer Box */}
-        <section id="key-takeaways" className="mb-xxl p-lg md:p-xl rounded-2xl border-l-4 border-l-secondary bg-surface-container-low border border-outline-variant shadow-sm max-w-4xl">
+        <section
+          id="key-takeaways"
+          className="mb-xxl p-lg md:p-xl rounded-2xl border-l-4 border-l-secondary bg-surface-container-low border border-outline-variant shadow-sm max-w-4xl"
+        >
           <div className="flex items-center gap-xs font-label-caps text-label-caps text-secondary font-semibold mb-sm uppercase tracking-wider">
             <ShieldCheck className="w-5 h-5 text-secondary" />
             Executive Summary &amp; Bottom Line
@@ -285,21 +299,33 @@ function IndexPage() {
             Key Takeaways: Understanding Cryptocurrency
           </h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-md font-body-md text-on-surface">
-              <li className="flex items-start gap-xs bg-surface-container-lowest p-sm rounded-lg border border-outline-variant">
-                <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-0.5" />
-                <span><strong>Decentralized Settlement:</strong> Cryptocurrency enables peer-to-peer value transfer without central bank intermediaries.</span>
-              </li>
             <li className="flex items-start gap-xs bg-surface-container-lowest p-sm rounded-lg border border-outline-variant">
               <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-0.5" />
-              <span><strong>Algorithmic Scarcity:</strong> Assets like Bitcoin enforce fixed supply limits (21M BTC max) programmed directly into open-source code.</span>
+              <span>
+                <strong>Decentralized Settlement:</strong> Cryptocurrency enables peer-to-peer value
+                transfer without central bank intermediaries.
+              </span>
             </li>
-              <li className="flex items-start gap-xs bg-surface-container-lowest p-sm rounded-lg border border-outline-variant">
-                <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-0.5" />
-                <span><strong>Market Valuation:</strong> A cryptocurrency price is established 24/7 by order-book order matching across global spot exchanges.</span>
-              </li>
             <li className="flex items-start gap-xs bg-surface-container-lowest p-sm rounded-lg border border-outline-variant">
               <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-0.5" />
-              <span><strong>Self-Custody Ownership:</strong> Cryptographic private keys give users absolute control over funds, bypassing institutional risk.</span>
+              <span>
+                <strong>Algorithmic Scarcity:</strong> Assets like Bitcoin enforce fixed supply
+                limits (21M BTC max) programmed directly into open-source code.
+              </span>
+            </li>
+            <li className="flex items-start gap-xs bg-surface-container-lowest p-sm rounded-lg border border-outline-variant">
+              <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-0.5" />
+              <span>
+                <strong>Market Valuation:</strong> A cryptocurrency price is established 24/7 by
+                order-book order matching across global spot exchanges.
+              </span>
+            </li>
+            <li className="flex items-start gap-xs bg-surface-container-lowest p-sm rounded-lg border border-outline-variant">
+              <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-0.5" />
+              <span>
+                <strong>Self-Custody Ownership:</strong> Cryptographic private keys give users
+                absolute control over funds, bypassing institutional risk.
+              </span>
             </li>
           </ul>
         </section>
@@ -308,53 +334,93 @@ function IndexPage() {
         <section className="mb-xxl max-w-4xl bg-surface-container-lowest p-8 md:p-10 rounded-2xl border border-outline-variant space-y-xl">
           {/* Section 1: Definition & Direct Answer */}
           <div>
-            <h2 id="what-is-crypto-currency" className="font-headline-md text-headline-md text-primary mb-md flex items-center gap-xs">
+            <h2
+              id="what-is-crypto-currency"
+              className="font-headline-md text-headline-md text-primary mb-md flex items-center gap-xs"
+            >
               <BookOpen className="w-6 h-6 text-secondary" />
               What Is Cryptocurrency? Meaning &amp; Fundamentals
             </h2>
-            
+
             {/* Direct Answer Box for Featured Snippets */}
             <div className="p-lg rounded-xl border border-secondary/30 bg-secondary/5 mb-lg font-body-lg text-on-surface leading-relaxed">
-              <strong className="text-secondary block font-headline-sm text-headline-sm mb-xs">Direct Answer / Definition:</strong>
-              <strong>Cryptocurrency</strong> is a digital or virtual medium of exchange secured by advanced cryptography and maintained across distributed computer networks (blockchains). Unlike fiat currencies issued by sovereign governments, cryptocurrency operates on algorithmic consensus rules, providing borderless, transparent, and immutable asset transfer.
+              <strong className="text-secondary block font-headline-sm text-headline-sm mb-xs">
+                Direct Answer / Definition:
+              </strong>
+              <strong>Cryptocurrency</strong> is a digital or virtual medium of exchange secured by
+              advanced cryptography and maintained across distributed computer networks
+              (blockchains). Unlike fiat currencies issued by sovereign governments, cryptocurrency
+              operates on algorithmic consensus rules, providing borderless, transparent, and
+              immutable asset transfer.
             </div>
 
             <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
-              The fundamental cryptocurrency meaning rests on replacing institutional trust with mathematical verification. Rather than relying on commercial banks to verify ledger balances, decentralized networks utilize cryptographic public-key infrastructure and distributed validation nodes to guarantee transaction authenticity.
+              The fundamental cryptocurrency meaning rests on replacing institutional trust with
+              mathematical verification. Rather than relying on commercial banks to verify ledger
+              balances, decentralized networks utilize cryptographic public-key infrastructure and
+              distributed validation nodes to guarantee transaction authenticity.
             </p>
 
             <div className="my-md p-md rounded-xl bg-surface-container-low border border-outline-variant">
-              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm">Core Technical Characteristics</h3>
+              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm">
+                Core Technical Characteristics
+              </h3>
               <ul className="list-disc list-inside space-y-2 font-body-md text-on-surface-variant">
-                <li><strong>Cryptographic Security:</strong> Uses SHA-256 and secp256k1 elliptic curve cryptography to prevent counterfeiting and double-spending.</li>
-                <li><strong>Permissionless Access:</strong> Anyone with an internet connection can generate a wallet address and broadcast transactions 24/7.</li>
-                <li><strong>Transparent Ledger:</strong> Every transaction is permanently recorded on a public blockchain visible via block explorers.</li>
-                <li><strong>Immutability:</strong> Once confirmed by network nodes, past transaction blocks cannot be altered or retroactively erased.</li>
+                <li>
+                  <strong>Cryptographic Security:</strong> Uses SHA-256 and secp256k1 elliptic curve
+                  cryptography to prevent counterfeiting and double-spending.
+                </li>
+                <li>
+                  <strong>Permissionless Access:</strong> Anyone with an internet connection can
+                  generate a wallet address and broadcast transactions 24/7.
+                </li>
+                <li>
+                  <strong>Transparent Ledger:</strong> Every transaction is permanently recorded on
+                  a public blockchain visible via block explorers.
+                </li>
+                <li>
+                  <strong>Immutability:</strong> Once confirmed by network nodes, past transaction
+                  blocks cannot be altered or retroactively erased.
+                </li>
               </ul>
             </div>
           </div>
 
           {/* Section 2: How Cryptocurrency Works */}
           <div>
-            <h2 id="how-crypto-works" className="font-headline-md text-headline-md text-primary mb-md flex items-center gap-xs">
+            <h2
+              id="how-crypto-works"
+              className="font-headline-md text-headline-md text-primary mb-md flex items-center gap-xs"
+            >
               <FileText className="w-6 h-6 text-secondary" />
               How Cryptocurrency Works: Blockchain &amp; Consensus
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
-              At the heart of every cryptocurrency ecosystem is a distributed ledger known as a blockchain. When a user sends tokens, the transaction request is cryptographically signed using the sender's private key and broadcast to thousands of independent validator nodes worldwide.
+              At the heart of every cryptocurrency ecosystem is a distributed ledger known as a
+              blockchain. When a user sends tokens, the transaction request is cryptographically
+              signed using the sender's private key and broadcast to thousands of independent
+              validator nodes worldwide.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-md my-md">
               <div className="p-md rounded-lg bg-surface-container-low border border-outline-variant">
-                <h4 className="font-headline-sm text-headline-sm text-primary mb-xs">Proof-of-Work (PoW)</h4>
+                <h4 className="font-headline-sm text-headline-sm text-primary mb-xs">
+                  Proof-of-Work (PoW)
+                </h4>
                 <p className="font-body-md text-on-surface-variant">
-                  Utilized by Bitcoin, miners solve complex cryptographic puzzles requiring computational energy to validate block transactions, receiving newly minted coins as a reward. (Target block frequency: ~10 minutes).
+                  Utilized by Bitcoin, miners solve complex cryptographic puzzles requiring
+                  computational energy to validate block transactions, receiving newly minted coins
+                  as a reward. (Target block frequency: ~10 minutes).
                 </p>
               </div>
               <div className="p-md rounded-lg bg-surface-container-low border border-outline-variant">
-                <h4 className="font-headline-sm text-headline-sm text-primary mb-xs">Proof-of-Stake (PoS)</h4>
+                <h4 className="font-headline-sm text-headline-sm text-primary mb-xs">
+                  Proof-of-Stake (PoS)
+                </h4>
                 <p className="font-body-md text-on-surface-variant">
-                  Utilized by Ethereum, validators lock up collateral (staked ETH) to propose and attest to new blocks, consuming 99.9% less energy while enforcing economic slashing penalties for fraud.
+                  Utilized by Ethereum, validators lock up collateral (staked ETH) to propose and
+                  attest to new blocks, consuming 99.9% less energy while enforcing economic
+                  slashing penalties for fraud.
                 </p>
               </div>
             </div>
@@ -362,12 +428,18 @@ function IndexPage() {
 
           {/* Section 3: Cryptocurrency Prices & Market Valuation */}
           <div>
-            <h2 id="crypto-prices" className="font-headline-md text-headline-md text-primary mb-md flex items-center gap-xs">
+            <h2
+              id="crypto-prices"
+              className="font-headline-md text-headline-md text-primary mb-md flex items-center gap-xs"
+            >
               <BarChart3 className="w-6 h-6 text-secondary" />
               Cryptocurrency Prices &amp; Market Drivers
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
-              A cryptocurrency price is governed entirely by open market dynamics on liquid exchanges. Because digital assets trade continuously across international venues, spot prices fluctuate based on macroeconomic shifts, regulatory announcements, and total circulating supply metrics.
+              A cryptocurrency price is governed entirely by open market dynamics on liquid
+              exchanges. Because digital assets trade continuously across international venues, spot
+              prices fluctuate based on macroeconomic shifts, regulatory announcements, and total
+              circulating supply metrics.
             </p>
 
             {/* Verified Data & Statistics Table */}
@@ -375,31 +447,51 @@ function IndexPage() {
               <table className="w-full text-left border-collapse border border-outline-variant rounded-lg">
                 <thead>
                   <tr className="bg-surface-container-highest text-on-surface font-body-md">
-                    <th className="p-3 border border-outline-variant font-semibold">Key Benchmark Metric</th>
-                    <th className="p-3 border border-outline-variant font-semibold">Bitcoin (BTC) Data</th>
-                    <th className="p-3 border border-outline-variant font-semibold">Ethereum (ETH) Data</th>
+                    <th className="p-3 border border-outline-variant font-semibold">
+                      Key Benchmark Metric
+                    </th>
+                    <th className="p-3 border border-outline-variant font-semibold">
+                      Bitcoin (BTC) Data
+                    </th>
+                    <th className="p-3 border border-outline-variant font-semibold">
+                      Ethereum (ETH) Data
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="font-body-md text-on-surface-variant">
                   <tr>
-                    <td className="p-3 border border-outline-variant font-medium text-primary">Maximum Supply Cap</td>
+                    <td className="p-3 border border-outline-variant font-medium text-primary">
+                      Maximum Supply Cap
+                    </td>
                     <td className="p-3 border border-outline-variant">21,000,000 BTC (Hard Cap)</td>
-                    <td className="p-3 border border-outline-variant">Dynamic (Deflationary EIP-1559)</td>
+                    <td className="p-3 border border-outline-variant">
+                      Dynamic (Deflationary EIP-1559)
+                    </td>
                   </tr>
                   <tr>
-                    <td className="p-3 border border-outline-variant font-medium text-primary">Consensus Mechanism</td>
+                    <td className="p-3 border border-outline-variant font-medium text-primary">
+                      Consensus Mechanism
+                    </td>
                     <td className="p-3 border border-outline-variant">Proof-of-Work (SHA-256)</td>
                     <td className="p-3 border border-outline-variant">Proof-of-Stake (PoS)</td>
                   </tr>
                   <tr>
-                    <td className="p-3 border border-outline-variant font-medium text-primary">Average Block Time</td>
+                    <td className="p-3 border border-outline-variant font-medium text-primary">
+                      Average Block Time
+                    </td>
                     <td className="p-3 border border-outline-variant">~10.0 Minutes</td>
                     <td className="p-3 border border-outline-variant">~12.0 Seconds</td>
                   </tr>
                   <tr>
-                    <td className="p-3 border border-outline-variant font-medium text-primary">Primary Use Case</td>
-                    <td className="p-3 border border-outline-variant">Digital Gold &amp; Store of Value</td>
-                    <td className="p-3 border border-outline-variant">Smart Contract Settlement Layer</td>
+                    <td className="p-3 border border-outline-variant font-medium text-primary">
+                      Primary Use Case
+                    </td>
+                    <td className="p-3 border border-outline-variant">
+                      Digital Gold &amp; Store of Value
+                    </td>
+                    <td className="p-3 border border-outline-variant">
+                      Smart Contract Settlement Layer
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -408,7 +500,10 @@ function IndexPage() {
 
           {/* Section 4: Crypto vs Fiat Comparison */}
           <div>
-            <h2 id="crypto-vs-fiat" className="font-headline-md text-headline-md text-primary mb-md">
+            <h2
+              id="crypto-vs-fiat"
+              className="font-headline-md text-headline-md text-primary mb-md"
+            >
               Cryptocurrency vs. Traditional Fiat Financial Systems
             </h2>
             <div className="overflow-x-auto mb-md">
@@ -416,29 +511,53 @@ function IndexPage() {
                 <thead>
                   <tr className="bg-surface-container-highest text-on-surface font-body-md">
                     <th className="p-3 border border-outline-variant font-semibold">Dimension</th>
-                    <th className="p-3 border border-outline-variant font-semibold">Cryptocurrency</th>
-                    <th className="p-3 border border-outline-variant font-semibold">Traditional Fiat (USD, EUR)</th>
+                    <th className="p-3 border border-outline-variant font-semibold">
+                      Cryptocurrency
+                    </th>
+                    <th className="p-3 border border-outline-variant font-semibold">
+                      Traditional Fiat (USD, EUR)
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="font-body-md text-on-surface-variant">
                   <tr>
-                    <td className="p-3 border border-outline-variant font-medium text-primary">Issuance &amp; Control</td>
-                    <td className="p-3 border border-outline-variant">Decentralized code &amp; consensus</td>
-                    <td className="p-3 border border-outline-variant">Central bank monetary policy</td>
+                    <td className="p-3 border border-outline-variant font-medium text-primary">
+                      Issuance &amp; Control
+                    </td>
+                    <td className="p-3 border border-outline-variant">
+                      Decentralized code &amp; consensus
+                    </td>
+                    <td className="p-3 border border-outline-variant">
+                      Central bank monetary policy
+                    </td>
                   </tr>
                   <tr>
-                    <td className="p-3 border border-outline-variant font-medium text-primary">Inflation Risk</td>
-                    <td className="p-3 border border-outline-variant">Predictable, programmatic halving</td>
-                    <td className="p-3 border border-outline-variant">Subject to currency printing</td>
+                    <td className="p-3 border border-outline-variant font-medium text-primary">
+                      Inflation Risk
+                    </td>
+                    <td className="p-3 border border-outline-variant">
+                      Predictable, programmatic halving
+                    </td>
+                    <td className="p-3 border border-outline-variant">
+                      Subject to currency printing
+                    </td>
                   </tr>
                   <tr>
-                    <td className="p-3 border border-outline-variant font-medium text-primary">Settlement Speed</td>
+                    <td className="p-3 border border-outline-variant font-medium text-primary">
+                      Settlement Speed
+                    </td>
                     <td className="p-3 border border-outline-variant">Minutes (24/7/365 global)</td>
-                    <td className="p-3 border border-outline-variant">1-3 Business Days (SWIFT/ACH)</td>
+                    <td className="p-3 border border-outline-variant">
+                      1-3 Business Days (SWIFT/ACH)
+                    </td>
                   </tr>
                   <tr>
-                    <td className="p-3 border border-outline-variant font-medium text-primary">Asset Custody</td>
-                    <td className="p-3 border border-outline-variant">Self-custody via private keys</td>
+                    <td className="p-3 border border-outline-variant font-medium text-primary">
+                      Asset Custody
+                    </td>
+                    <td className="p-3 border border-outline-variant">
+                      Self-custody via private keys
+                    </td>
                     <td className="p-3 border border-outline-variant">Held by commercial banks</td>
                   </tr>
                 </tbody>
@@ -448,29 +567,42 @@ function IndexPage() {
 
           {/* Section 5: Market Telemetry, Exchange Ecosystem & Policy Dynamics */}
           <div>
-            <h2 id="market-telemetry" className="font-headline-md text-headline-md text-primary mb-md">
+            <h2
+              id="market-telemetry"
+              className="font-headline-md text-headline-md text-primary mb-md"
+            >
               Market Intelligence, Exchange Ecosystems &amp; Policy Trends
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
-              Tracking top cryptocurrencies requires looking beyond raw price tickers to examine order-book liquidity, exchange security models, and geopolitical regulation.
+              Tracking top cryptocurrencies requires looking beyond raw price tickers to examine
+              order-book liquidity, exchange security models, and geopolitical regulation.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-md my-md">
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
-                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Market Telemetry &amp; Price Feeds</h3>
+                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">
+                  Market Telemetry &amp; Price Feeds
+                </h3>
                 <p className="font-body-md text-on-surface-variant">
-                  Investors monitor aggregated market telemetry and spot order books to evaluate real-time cryptocurrency prices across global exchanges.
+                  Investors monitor aggregated market telemetry and spot order books to evaluate
+                  real-time cryptocurrency prices across global exchanges.
                 </p>
               </div>
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
-                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Exchange Security &amp; Custody</h3>
+                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">
+                  Exchange Security &amp; Custody
+                </h3>
                 <p className="font-body-md text-on-surface-variant">
-                  Whether using global spot platforms or peer-to-peer venues, verifying withdrawal policies, cold storage reserves, and key ownership is essential for safe trading.
+                  Whether using global spot platforms or peer-to-peer venues, verifying withdrawal
+                  policies, cold storage reserves, and key ownership is essential for safe trading.
                 </p>
               </div>
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
-                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Political Policy &amp; Regulations</h3>
+                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">
+                  Political Policy &amp; Regulations
+                </h3>
                 <p className="font-body-md text-on-surface-variant">
-                  Government policy changes—such as high-profile regulatory proposals and strategic reserve legislation—shape global market sentiment and compliance rules.
+                  Government policy changes—such as high-profile regulatory proposals and strategic
+                  reserve legislation—shape global market sentiment and compliance rules.
                 </p>
               </div>
             </div>
@@ -478,7 +610,10 @@ function IndexPage() {
 
           {/* Section 6: FAQs */}
           <div>
-            <h2 id="faq" className="font-headline-md text-headline-md text-primary mb-md flex items-center gap-xs">
+            <h2
+              id="faq"
+              className="font-headline-md text-headline-md text-primary mb-md flex items-center gap-xs"
+            >
               <HelpCircle className="w-6 h-6 text-secondary" />
               Frequently Asked Questions About Cryptocurrency
             </h2>
@@ -487,23 +622,49 @@ function IndexPage() {
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg p-4 text-on-surface font-medium">
                   What exactly is cryptocurrency?
                   <span className="shrink-0 transition duration-300 group-open:-rotate-180">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
                   </span>
                 </summary>
                 <p className="px-4 pb-4 leading-relaxed text-on-surface-variant font-body-md">
-                  Cryptocurrency is a digital payment system that operates without central banks or commercial intermediaries. It relies on peer-to-peer cryptography on distributed blockchain networks to verify and record all transactions.
+                  Cryptocurrency is a digital payment system that operates without central banks or
+                  commercial intermediaries. It relies on peer-to-peer cryptography on distributed
+                  blockchain networks to verify and record all transactions.
                 </p>
               </details>
-              
+
               <details className="group border border-outline-variant rounded-lg bg-surface-container-lowest [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg p-4 text-on-surface font-medium">
                   How does digital money differ from traditional fiat?
                   <span className="shrink-0 transition duration-300 group-open:-rotate-180">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
                   </span>
                 </summary>
                 <p className="px-4 pb-4 leading-relaxed text-on-surface-variant font-body-md">
-                  The meaning stems from combining "cryptography" and "currency." It refers to digital assets that enforce sovereign individual ownership, open-source auditability, and mathematical scarcity independent of government central banks.
+                  The meaning stems from combining "cryptography" and "currency." It refers to
+                  digital assets that enforce sovereign individual ownership, open-source
+                  auditability, and mathematical scarcity independent of government central banks.
                 </p>
               </details>
 
@@ -511,11 +672,24 @@ function IndexPage() {
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg p-4 text-on-surface font-medium">
                   What drives the value of digital assets?
                   <span className="shrink-0 transition duration-300 group-open:-rotate-180">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
                   </span>
                 </summary>
                 <p className="px-4 pb-4 leading-relaxed text-on-surface-variant font-body-md">
-                  A cryptocurrency price is determined by real-time order-book matching across global exchanges based on market supply and demand, total token liquidity, macroeconomic interest rates, regulatory news, and investor sentiment.
+                  A cryptocurrency price is determined by real-time order-book matching across
+                  global exchanges based on market supply and demand, total token liquidity,
+                  macroeconomic interest rates, regulatory news, and investor sentiment.
                 </p>
               </details>
 
@@ -523,11 +697,24 @@ function IndexPage() {
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg p-4 text-on-surface font-medium">
                   How can I store my crypto currency safely?
                   <span className="shrink-0 transition duration-300 group-open:-rotate-180">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
                   </span>
                 </summary>
                 <p className="px-4 pb-4 leading-relaxed text-on-surface-variant font-body-md">
-                  The safest method is using a non-custodial hardware wallet (like Ledger or Trezor) where private keys remain offline, backed up on a physical steel seed phrase plate away from internet malware and exchange insolvency risks.
+                  The safest method is using a non-custodial hardware wallet (like Ledger or Trezor)
+                  where private keys remain offline, backed up on a physical steel seed phrase plate
+                  away from internet malware and exchange insolvency risks.
                 </p>
               </details>
             </div>
@@ -541,26 +728,49 @@ function IndexPage() {
             <ul className="space-y-2 font-body-sm text-on-surface-variant">
               <li className="flex items-center gap-xs">
                 <ExternalLink className="w-4 h-4 text-secondary shrink-0" />
-                <a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline text-primary">
+                <a
+                  href="https://bitcoin.org/bitcoin.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline text-primary"
+                >
                   Nakamoto, S. (2008). <em>Bitcoin: A Peer-to-Peer Electronic Cash System</em>.
                 </a>
               </li>
               <li className="flex items-center gap-xs">
                 <ExternalLink className="w-4 h-4 text-secondary shrink-0" />
-                <a href="https://ethereum.org/en/developers/docs/" target="_blank" rel="noopener noreferrer" className="hover:underline text-primary">
-                  Ethereum Foundation. <em>Ethereum Developer &amp; EVM Architecture Documentation</em>.
+                <a
+                  href="https://ethereum.org/en/developers/docs/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline text-primary"
+                >
+                  Ethereum Foundation.{" "}
+                  <em>Ethereum Developer &amp; EVM Architecture Documentation</em>.
                 </a>
               </li>
               <li className="flex items-center gap-xs">
                 <ExternalLink className="w-4 h-4 text-secondary shrink-0" />
-                <a href="https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets.html" target="_blank" rel="noopener noreferrer" className="hover:underline text-primary">
-                  Financial Action Task Force (FATF). <em>Updated Guidance for a Risk-Based Approach to Virtual Assets</em>.
+                <a
+                  href="https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline text-primary"
+                >
+                  Financial Action Task Force (FATF).{" "}
+                  <em>Updated Guidance for a Risk-Based Approach to Virtual Assets</em>.
                 </a>
               </li>
               <li className="flex items-center gap-xs">
                 <ExternalLink className="w-4 h-4 text-secondary shrink-0" />
-                <a href="https://www.bis.org/publ/arpdf/ar2022e3.htm" target="_blank" rel="noopener noreferrer" className="hover:underline text-primary">
-                  Bank for International Settlements (BIS). <em>Answering the Crypto Challenge: Monetary Infrastructure</em>.
+                <a
+                  href="https://www.bis.org/publ/arpdf/ar2022e3.htm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline text-primary"
+                >
+                  Bank for International Settlements (BIS).{" "}
+                  <em>Answering the Crypto Challenge: Monetary Infrastructure</em>.
                 </a>
               </li>
             </ul>
@@ -570,8 +780,12 @@ function IndexPage() {
         {/* Latest Intelligence Grid Section */}
         <section>
           <div className="flex items-center justify-between border-b border-primary pb-sm mb-lg">
-            <h2 className="font-headline-md text-headline-md text-primary">Latest Intelligence &amp; Editorial Analysis</h2>
-            <span className="font-body-md text-on-surface-variant">Showing All {articles.length} Articles</span>
+            <h2 className="font-headline-md text-headline-md text-primary">
+              Latest Intelligence &amp; Editorial Analysis
+            </h2>
+            <span className="font-body-md text-on-surface-variant">
+              Showing All {articles.length} Articles
+            </span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
             {articles.map((a) => (

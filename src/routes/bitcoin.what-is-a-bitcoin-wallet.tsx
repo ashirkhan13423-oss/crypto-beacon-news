@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { AdUnit } from "@/components/AdUnit";
+import { Author } from "@/components/Author";
 import hero from "@/assets/bitcoin-what-is-a-wallet.png";
 import { Plus, Wifi, WifiOff, Building2 } from "lucide-react";
 
@@ -37,9 +39,9 @@ const articleSchema = {
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   author: {
-    "@type": "Organization",
-    name: "CryptoBeacon Editorial Team",
-    url: "https://www.cryptobeacon.site",
+    "@type": "Person",
+    name: "Sarah Jenkins",
+    url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -139,17 +141,6 @@ function P({ children }: { children: React.ReactNode }) {
   );
 }
 
-function AdUnit() {
-  return (
-    <div className="my-xl flex flex-col items-center justify-center p-md bg-surface-container-lowest border border-outline-variant rounded-lg min-h-[120px] mx-auto w-full max-w-[728px]">
-      <span className="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-xs">Advertisement</span>
-      <div className="w-full h-[90px] bg-surface-container flex items-center justify-center rounded">
-        <span className="text-on-surface-variant text-sm">Ad Placeholder</span>
-      </div>
-    </div>
-  );
-}
-
 const walletTypes = [
   {
     icon: <Wifi />,
@@ -211,13 +202,10 @@ function ArticlePage() {
           What Is a Bitcoin Wallet? Hot, Cold, and Custodial Wallets Explained
         </h1>
 
-        <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">CryptoBeacon Editorial Team</Link></span>
-          <span aria-hidden>·</span>
-          <time dateTime={PUBLISHED}>August 6, 2026</time>
-          <span aria-hidden>·</span>
-          <span>5 min read</span>
-        </div>
+        <Author
+          publishedDate={<time dateTime={PUBLISHED}>August 6, 2026</time>}
+          readTime="5 min read"
+        />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -230,61 +218,46 @@ function ArticlePage() {
         </figure>
 
         <P>
-          "Bitcoin wallet" is one of those terms that sounds straightforward until you try to explain
-          it. A wallet doesn't hold Bitcoin the way a physical wallet holds cash. Understanding what
-          it actually does — and why there are so many different types — makes everything else about
-          using Bitcoin clearer.
+          "Bitcoin wallet" is one of those terms that sounds straightforward until you try to
+          explain it. A wallet doesn't hold Bitcoin the way a physical wallet holds cash.
+          Understanding what it actually does — and why there are so many different types — makes
+          everything else about using Bitcoin clearer.
         </P>
         <P>
           <em>This article is educational. It isn't financial advice.</em>
         </P>
 
-        <aside className="my-xl p-lg rounded-lg border border-outline-variant bg-surface-container-low">
-          <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">
-            Table of Contents
-          </h2>
-          <ol className="list-decimal list-inside space-y-xs font-body-md text-body-md text-on-surface">
-            <li>
-              <a href="#what-wallet-does" className="hover:underline decoration-secondary">
-                What a Wallet Actually Does
-              </a>
-            </li>
-            <li>
-              <a href="#wallet-types" className="hover:underline decoration-secondary">
-                Three Types of Bitcoin Wallet
-              </a>
-            </li>
-            <li>
-              <a href="#which-to-use" className="hover:underline decoration-secondary">
-                Which Type Is Right for You?
-              </a>
-            </li>
-            <li>
-              <a href="#key-takeaways" className="hover:underline decoration-secondary">
-                Key Takeaways
-              </a>
-            </li>
-            <li>
-              <a href="#faq" className="hover:underline decoration-secondary">
-                Frequently Asked Questions
-              </a>
-            </li>
-          </ol>
-        </aside>
+        <div className="my-xl grid grid-cols-1 md:grid-cols-3 gap-md">
+          <div className="p-md rounded-xl border border-outline-variant bg-surface-container-low text-center">
+            <Wifi className="w-8 h-8 text-secondary mx-auto mb-xs" />
+            <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Hot Wallet</h3>
+            <p className="font-body-sm text-body-sm text-on-surface-variant">Online, convenient for daily use. Higher exposure to threats.</p>
+          </div>
+          <div className="p-md rounded-xl border border-outline-variant bg-surface-container-low text-center">
+            <WifiOff className="w-8 h-8 text-secondary mx-auto mb-xs" />
+            <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Cold Wallet</h3>
+            <p className="font-body-sm text-body-sm text-on-surface-variant">Offline, best for long-term storage. Keys never touch the internet.</p>
+          </div>
+          <div className="p-md rounded-xl border border-outline-variant bg-surface-container-low text-center">
+            <Building2 className="w-8 h-8 text-secondary mx-auto mb-xs" />
+            <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Custodial</h3>
+            <p className="font-body-sm text-body-sm text-on-surface-variant">Third party holds keys. Easiest to use but carries counterparty risk.</p>
+          </div>
+        </div>
 
         <H2 id="what-wallet-does">1. What a Wallet Actually Does</H2>
         <P>
-          Bitcoin itself never moves — it exists as a record on the blockchain, a public ledger
-          that anyone can read. What changes is which address the Bitcoin is associated with. A
-          Bitcoin wallet's real job is to store and manage the{" "}
-          <strong>private key</strong> — the cryptographic secret that proves you have the right to
-          authorise a transaction from a given address.
+          Bitcoin itself never moves — it exists as a record on the blockchain, a public ledger that
+          anyone can read. What changes is which address the Bitcoin is associated with. A Bitcoin
+          wallet's real job is to store and manage the <strong>private key</strong> — the
+          cryptographic secret that proves you have the right to authorise a transaction from a
+          given address.
         </P>
         <P>
           Think of your Bitcoin address as an account number you can share freely, and your private
-          key as the only signature that can authorise spending from it. If you lose the private key,
-          you lose access to the Bitcoin permanently. If someone else gets it, they can move your
-          Bitcoin without your permission.
+          key as the only signature that can authorise spending from it. If you lose the private
+          key, you lose access to the Bitcoin permanently. If someone else gets it, they can move
+          your Bitcoin without your permission.
         </P>
         <P>
           This is why the phrase{" "}
@@ -314,16 +287,29 @@ function ArticlePage() {
               <div
                 aria-hidden
                 className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 [&>svg]:w-5 [&>svg]:h-5"
-                style={{ backgroundColor: `${w.noteColor}18`, border: `1px solid ${w.noteColor}30`, color: w.noteColor }}
+                style={{
+                  backgroundColor: `${w.noteColor}18`,
+                  border: `1px solid ${w.noteColor}30`,
+                  color: w.noteColor,
+                }}
               >
                 {w.icon}
               </div>
               <div>
                 <h3 className="font-headline-sm text-headline-sm text-primary">{w.title}</h3>
-                <span className="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-wider">{w.subtitle}</span>
+                <span className="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-wider">
+                  {w.subtitle}
+                </span>
               </div>
-              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed flex-grow">{w.body}</p>
-              <p className="font-label-caps text-[11px] uppercase tracking-wider font-semibold" style={{ color: w.noteColor }}>{w.note}</p>
+              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed flex-grow">
+                {w.body}
+              </p>
+              <p
+                className="font-label-caps text-[11px] uppercase tracking-wider font-semibold"
+                style={{ color: w.noteColor }}
+              >
+                {w.note}
+              </p>
             </div>
           ))}
         </div>
@@ -336,8 +322,8 @@ function ArticlePage() {
         <ul className="list-disc pl-lg space-y-md font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
           <li>
             <strong>If you're new and just buying small amounts</strong> to learn with, an exchange
-            or reputable mobile hot wallet is reasonable. The trade-off is that you're trusting
-            the platform (exchange) or accepting more online exposure (hot wallet).
+            or reputable mobile hot wallet is reasonable. The trade-off is that you're trusting the
+            platform (exchange) or accepting more online exposure (hot wallet).
           </li>
           <li>
             <strong>If you're holding a meaningful amount long-term</strong> and don't need to
@@ -368,31 +354,15 @@ function ArticlePage() {
           .
         </P>
 
-        <H2 id="key-takeaways">Key Takeaways</H2>
-        <div className="border-l-4 border-[#F7931A] bg-[#F7931A]/5 p-lg rounded-r-lg mb-md">
-          <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
-            <li>A Bitcoin wallet stores private keys, not Bitcoin itself — Bitcoin lives on the blockchain.</li>
-            <li>Whoever controls the private keys controls the Bitcoin associated with them.</li>
-            <li>Hot wallets (online) offer convenience; cold wallets (offline) reduce online exposure.</li>
-            <li>Custodial wallets (exchanges) are easiest to use but mean a third party holds your keys.</li>
-            <li>Most experienced holders use a combination depending on how they use their Bitcoin.</li>
-          </ul>
-        </div>
-
         <AdUnit />
 
         <H2 id="faq">Frequently Asked Questions</H2>
-        <div className="divide-y divide-outline-variant border-y border-outline-variant">
+        <div className="space-y-md mb-xl">
           {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45 shrink-0" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
+            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low">
+              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">{f.q}</h3>
+              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
+            </div>
           ))}
         </div>
 

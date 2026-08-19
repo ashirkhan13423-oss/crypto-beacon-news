@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Author } from "@/components/Author";
+import { AdUnit } from "@/components/AdUnit";
 import hero from "@/assets/news-bitcoin-volatility.svg";
 import { Plus, PieChart, Lock, Clock, Droplets, Building2 } from "lucide-react";
 
@@ -33,9 +35,9 @@ const articleSchema = {
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   author: {
-    "@type": "Organization",
-    name: "CryptoBeacon Editorial Team",
-    url: "https://www.cryptobeacon.site",
+    "@type": "Person",
+    name: "Sarah Jenkins",
+    url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -135,25 +137,32 @@ function P({ children }: { children: React.ReactNode }) {
   );
 }
 
-function AdUnit() {
-  return (
-    <div className="my-xl flex flex-col items-center justify-center p-md bg-surface-container-lowest border border-outline-variant rounded-lg min-h-[120px] mx-auto w-full max-w-[728px]">
-      <span className="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-xs">
-        Advertisement
-      </span>
-      <div className="w-full h-[90px] bg-surface-container flex items-center justify-center rounded">
-        <span className="text-on-surface-variant text-sm">Ad Placeholder</span>
-      </div>
-    </div>
-  );
-}
-
 const factors = [
-  { icon: <PieChart className="w-5 h-5 text-secondary" />, title: "Market Size", desc: "Smaller market capitalization" },
-  { icon: <Lock className="w-5 h-5 text-secondary" />, title: "Fixed Supply", desc: "Inflexible supply curve" },
-  { icon: <Clock className="w-5 h-5 text-secondary" />, title: "24/7 Trading", desc: "Continuous global trading" },
-  { icon: <Droplets className="w-5 h-5 text-secondary" />, title: "Liquidity Depth", desc: "Thinner order book depth" },
-  { icon: <Building2 className="w-5 h-5 text-secondary" />, title: "Infrastructure", desc: "Maturing market mechanisms" },
+  {
+    icon: <PieChart className="w-5 h-5 text-secondary" />,
+    title: "Market Size",
+    desc: "Smaller market capitalization",
+  },
+  {
+    icon: <Lock className="w-5 h-5 text-secondary" />,
+    title: "Fixed Supply",
+    desc: "Inflexible supply curve",
+  },
+  {
+    icon: <Clock className="w-5 h-5 text-secondary" />,
+    title: "24/7 Trading",
+    desc: "Continuous global trading",
+  },
+  {
+    icon: <Droplets className="w-5 h-5 text-secondary" />,
+    title: "Liquidity Depth",
+    desc: "Thinner order book depth",
+  },
+  {
+    icon: <Building2 className="w-5 h-5 text-secondary" />,
+    title: "Infrastructure",
+    desc: "Maturing market mechanisms",
+  },
 ];
 
 function ArticlePage() {
@@ -190,13 +199,10 @@ function ArticlePage() {
           Why Does Bitcoin's Price Move More Than Traditional Assets?
         </h1>
 
-        <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">CryptoBeacon Editorial Team</Link></span>
-          <span aria-hidden>·</span>
-          <time dateTime={PUBLISHED}>August 12, 2026</time>
-          <span aria-hidden>·</span>
-          <span>4 min read</span>
-        </div>
+        <Author
+          publishedDate={<time dateTime={PUBLISHED}>August 12, 2026</time>}
+          readTime="4 min read"
+        />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -209,7 +215,11 @@ function ArticlePage() {
         </figure>
 
         <P>
-          Bitcoin's price is known for moving further and faster than stocks, bonds, or major currencies. This isn't random — it comes down to a handful of structural differences between Bitcoin's market and the markets you're used to seeing in traditional finance. This article looks at the mechanics, not the direction — it won't predict where price is headed, only explain why it tends to move the way it does.
+          Bitcoin's price is known for moving further and faster than stocks, bonds, or major
+          currencies. This isn't random — it comes down to a handful of structural differences
+          between Bitcoin's market and the markets you're used to seeing in traditional finance.
+          This article looks at the mechanics, not the direction — it won't predict where price is
+          headed, only explain why it tends to move the way it does.
         </P>
         <P>This article is educational. It isn't financial advice.</P>
 
@@ -234,22 +244,38 @@ function ArticlePage() {
 
         <H2 id="smaller-younger-market">A Smaller, Younger Market</H2>
         <P>
-          Traditional stock markets have existed for well over a century and involve enormous amounts of capital moving through highly developed infrastructure. Bitcoin's market is, by comparison, still young and smaller in overall size. In smaller markets, a given amount of buying or selling activity moves the price more than the same activity would in a much larger, deeper market — simply because there's less on the other side of the trade to absorb it.
+          Traditional stock markets have existed for well over a century and involve enormous
+          amounts of capital moving through highly developed infrastructure. Bitcoin's market is, by
+          comparison, still young and smaller in overall size. In smaller markets, a given amount of
+          buying or selling activity moves the price more than the same activity would in a much
+          larger, deeper market — simply because there's less on the other side of the trade to
+          absorb it.
         </P>
 
         <H2 id="fixed-predictable-supply">Fixed, Predictable Supply</H2>
         <P>
-          Bitcoin has a fixed maximum supply, and new coins enter circulation at a known, unchangeable rate. Unlike a company that can issue more shares, or a central bank that can adjust currency supply in response to conditions, Bitcoin's supply side cannot flex to meet a sudden change in demand. When demand shifts quickly, that entire adjustment has to happen through price rather than supply.
+          Bitcoin has a fixed maximum supply, and new coins enter circulation at a known,
+          unchangeable rate. Unlike a company that can issue more shares, or a central bank that can
+          adjust currency supply in response to conditions, Bitcoin's supply side cannot flex to
+          meet a sudden change in demand. When demand shifts quickly, that entire adjustment has to
+          happen through price rather than supply.
         </P>
 
         <H2 id="market-never-closes">A Market That Never Closes</H2>
         <P>
-          Stock exchanges open and close on a fixed schedule, which naturally smooths out how information gets absorbed into price. Bitcoin trades continuously, every day, everywhere in the world. This means reactions to news or shifts in sentiment can happen immediately, at any hour, without the pause a traditional market's closing hours would otherwise provide.
+          Stock exchanges open and close on a fixed schedule, which naturally smooths out how
+          information gets absorbed into price. Bitcoin trades continuously, every day, everywhere
+          in the world. This means reactions to news or shifts in sentiment can happen immediately,
+          at any hour, without the pause a traditional market's closing hours would otherwise
+          provide.
         </P>
 
         <H2 id="thinner-liquidity">Thinner Liquidity Than It Appears</H2>
         <P>
-          Even though Bitcoin is the most liquid cryptocurrency, its liquidity is still thinner than most major stocks or currency pairs relative to how much attention it receives. Thinner liquidity means large trades can move the price more noticeably, and it can take less unusual activity to create a visible swing than it would in a deeper market.
+          Even though Bitcoin is the most liquid cryptocurrency, its liquidity is still thinner than
+          most major stocks or currency pairs relative to how much attention it receives. Thinner
+          liquidity means large trades can move the price more noticeably, and it can take less
+          unusual activity to create a visible swing than it would in a deeper market.
         </P>
 
         {/* Ad Unit #2: After "Thinner Liquidity Than It Appears" */}
@@ -257,16 +283,33 @@ function ArticlePage() {
 
         <H2 id="infrastructure">A Market Still Establishing Its Infrastructure</H2>
         <P>
-          Traditional finance has spent decades building the infrastructure — clearing systems, circuit breakers, market makers — that helps absorb shocks and reduce erratic price behavior. Bitcoin's market infrastructure is comparatively newer and still developing, which means fewer of these stabilizing mechanisms are in place. Over time, as infrastructure matures, this is often expected to reduce some volatility, though it's not something that happens on any fixed timeline.
+          Traditional finance has spent decades building the infrastructure — clearing systems,
+          circuit breakers, market makers — that helps absorb shocks and reduce erratic price
+          behavior. Bitcoin's market infrastructure is comparatively newer and still developing,
+          which means fewer of these stabilizing mechanisms are in place. Over time, as
+          infrastructure matures, this is often expected to reduce some volatility, though it's not
+          something that happens on any fixed timeline.
         </P>
 
         <H2 id="key-takeaways">Key Takeaways</H2>
         <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
           <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface marker:text-secondary">
-            <li>Bitcoin's price moves more than traditional assets largely due to market structure, not randomness.</li>
-            <li>A smaller, younger market, a fixed and inflexible supply, continuous 24/7 trading, and thinner liquidity all contribute to larger price swings.</li>
-            <li>These are structural characteristics of the market itself, not predictions about future price direction.</li>
-            <li>As the market's infrastructure matures over time, some of this volatility may moderate, though the timeline for that isn't predictable.</li>
+            <li>
+              Bitcoin's price moves more than traditional assets largely due to market structure,
+              not randomness.
+            </li>
+            <li>
+              A smaller, younger market, a fixed and inflexible supply, continuous 24/7 trading, and
+              thinner liquidity all contribute to larger price swings.
+            </li>
+            <li>
+              These are structural characteristics of the market itself, not predictions about
+              future price direction.
+            </li>
+            <li>
+              As the market's infrastructure matures over time, some of this volatility may
+              moderate, though the timeline for that isn't predictable.
+            </li>
           </ul>
         </div>
 
@@ -290,7 +333,10 @@ function ArticlePage() {
 
         <H2 id="conclusion">Conclusion</H2>
         <P>
-          Bitcoin's price behavior isn't mysterious — it's a direct consequence of market structure: size, supply mechanics, trading hours, liquidity, and infrastructure maturity. Understanding these mechanics doesn't tell you where the price is headed, but it does explain why it tends to move the way it does.
+          Bitcoin's price behavior isn't mysterious — it's a direct consequence of market structure:
+          size, supply mechanics, trading hours, liquidity, and infrastructure maturity.
+          Understanding these mechanics doesn't tell you where the price is headed, but it does
+          explain why it tends to move the way it does.
         </P>
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
@@ -298,7 +344,9 @@ function ArticlePage() {
             Financial Disclaimer
           </h3>
           <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be considered financial or investment advice. It does not predict or speculate about future price movement.
+            This article is for informational and educational purposes only and should not be
+            considered financial or investment advice. It does not predict or speculate about future
+            price movement.
           </p>
         </div>
       </main>

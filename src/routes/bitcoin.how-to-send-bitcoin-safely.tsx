@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Author } from "@/components/Author";
 import hero from "@/assets/bitcoin-send-safely.jpg";
-import { CheckSquare, Plus } from "lucide-react";
+import { ShieldCheck, Eye, RefreshCw, Key, Landmark, AlertTriangle } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/how-to-send-bitcoin-safely";
 const TITLE = "How to Send Bitcoin Safely (Beginner's Guide) | CryptoBeacon";
@@ -41,9 +42,9 @@ const articleSchema = {
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   author: {
-    "@type": "Organization",
-    name: "CryptoBeacon Editorial Team",
-    url: "https://www.cryptobeacon.site",
+    "@type": "Person",
+    name: "Sarah Jenkins",
+    url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -251,13 +252,10 @@ function ArticlePage() {
           How to Send Bitcoin Safely
         </h1>
 
-        <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">CryptoBeacon Editorial Team</Link></span>
-          <span aria-hidden>·</span>
-          <time dateTime={PUBLISHED}>July 4, 2026</time>
-          <span aria-hidden>·</span>
-          <span>8 min read</span>
-        </div>
+        <Author
+          publishedDate={<time dateTime={PUBLISHED}>July 4, 2026</time>}
+          readTime="8 min read"
+        />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -283,6 +281,34 @@ function ArticlePage() {
         <P>
           <em>This article is educational. It isn't financial advice.</em>
         </P>
+
+        <div className="my-xl p-lg rounded-xl border border-outline-variant bg-surface-container-low shadow-sm">
+          <h2 className="font-headline-sm text-headline-sm text-primary mb-md flex items-center gap-xs">
+            <ShieldCheck className="text-[#0F9D58] w-6 h-6 shrink-0" /> Executive Summary: Quick Safety Takeaways
+          </h2>
+          <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed">
+            <li>
+              A confirmed Bitcoin transaction cannot be reversed — there is no central authority to
+              appeal to.
+            </li>
+            <li>
+              The address is the only thing the network checks; a correct-looking mistake still
+              succeeds exactly as sent.
+            </li>
+            <li>
+              Test small amounts first, verify the full address, and confirm you're using the
+              correct network before sending anything significant.
+            </li>
+            <li>
+              A low network fee causes delay, not loss — most wallets can bump a stuck transaction's
+              fee.
+            </li>
+            <li>
+              Prevention through careful verification is the only reliable protection; there's no
+              dependable recovery path after a wrong-address send.
+            </li>
+          </ul>
+        </div>
 
         <aside className="my-xl p-lg rounded-lg border border-outline-variant bg-surface-container-low">
           <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">
@@ -317,11 +343,6 @@ function ArticlePage() {
             <li>
               <a href="#wrong" className="hover:underline decoration-secondary">
                 What to Do If Something Goes Wrong
-              </a>
-            </li>
-            <li>
-              <a href="#takeaways" className="hover:underline decoration-secondary">
-                Key Takeaways
               </a>
             </li>
             <li>
@@ -453,44 +474,17 @@ function ArticlePage() {
           starts with careful habits, not recovery tooling.
         </P>
 
-        <H2 id="takeaways">7. Key Takeaways</H2>
-        <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
-          <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
-            <li>
-              A confirmed Bitcoin transaction cannot be reversed — there is no central authority to
-              appeal to.
-            </li>
-            <li>
-              The address is the only thing the network checks; a correct-looking mistake still
-              succeeds exactly as sent.
-            </li>
-            <li>
-              Test small amounts first, verify the full address, and confirm you're using the
-              correct network before sending anything significant.
-            </li>
-            <li>
-              A low network fee causes delay, not loss — most wallets can bump a stuck transaction's
-              fee.
-            </li>
-            <li>
-              Prevention through careful verification is the only reliable protection; there's no
-              dependable recovery path after a wrong-address send.
-            </li>
-          </ul>
-        </div>
-
-        <H2 id="faq">8. Frequently Asked Questions</H2>
-        <div className="divide-y divide-outline-variant border-y border-outline-variant">
+        <H2 id="faq">7. Frequently Asked Questions</H2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
           {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low flex flex-col">
+              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">
+                {f.q}
+              </h3>
+              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
                 {f.a}
               </p>
-            </details>
+            </div>
           ))}
         </div>
 

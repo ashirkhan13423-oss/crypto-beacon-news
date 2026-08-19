@@ -39,7 +39,10 @@ export const Route = createFileRoute("/bitcoin/")({
         content:
           "Definitive Bitcoin analysis: global crypto currency price factors, network difficulty, halving mechanics, and transaction security.",
       },
-      { property: "og:title", content: "Bitcoin (BTC): Benchmark Crypto Currency Price & Architecture — CryptoBeacon" },
+      {
+        property: "og:title",
+        content: "Bitcoin (BTC): Benchmark Crypto Currency Price & Architecture — CryptoBeacon",
+      },
       {
         property: "og:description",
         content:
@@ -70,7 +73,9 @@ function BitcoinPage() {
             <h1 className="font-display-lg text-display-lg text-primary">Bitcoin (BTC)</h1>
           </div>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
-            The foundational <strong>crypto currency</strong> of the digital asset ecosystem — in-depth analysis of supply caps, global <strong>crypto currency price</strong> drivers, and network safety.
+            The foundational <strong>crypto currency</strong> of the digital asset ecosystem —
+            in-depth analysis of supply caps, global <strong>crypto currency price</strong> drivers,
+            and network safety.
           </p>
         </header>
 

@@ -78,7 +78,8 @@ function NewsHub() {
             </h1>
           </div>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
-            Get authoritative <strong>crypto currency news</strong>, market telemetry breakdowns, and institutional policy coverage on regulatory initiatives and market developments.
+            Get authoritative <strong>crypto currency news</strong>, market telemetry breakdowns,
+            and institutional policy coverage on regulatory initiatives and market developments.
           </p>
         </header>
 
@@ -161,7 +162,8 @@ function NewsHub() {
                 What Does It Mean When an Exchange Pauses Withdrawals?
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
-                Your crypto exchange paused withdrawals — is that normal or a red flag? A clear framework for telling routine maintenance from a genuine warning sign.
+                Your crypto exchange paused withdrawals — is that normal or a red flag? A clear
+                framework for telling routine maintenance from a genuine warning sign.
               </p>
             </div>
           </Link>
@@ -188,7 +190,8 @@ function NewsHub() {
                 Why Does Bitcoin's Price Move More Than Stocks?
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
-                A plain-language look at the structural reasons Bitcoin's price swings more than traditional assets.
+                A plain-language look at the structural reasons Bitcoin's price swings more than
+                traditional assets.
               </p>
             </div>
           </Link>

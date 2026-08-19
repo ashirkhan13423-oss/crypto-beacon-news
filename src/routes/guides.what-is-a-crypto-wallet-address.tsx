@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Author } from "@/components/Author";
+import { AdUnit } from "@/components/AdUnit";
 import hero from "@/assets/guides-wallet-address.png";
 import { Plus, Copy, QrCode, ShieldCheck } from "lucide-react";
 
-const URL =
-  "https://www.cryptobeacon.site/guides/what-is-a-crypto-wallet-address";
+const URL = "https://www.cryptobeacon.site/guides/what-is-a-crypto-wallet-address";
 const TITLE =
   "What Is a Crypto Wallet Address? How It Works and How to Use It Safely | CryptoBeacon";
 const DESC =
@@ -39,9 +40,9 @@ const articleSchema = {
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   author: {
-    "@type": "Organization",
-    name: "CryptoBeacon Editorial Team",
-    url: "https://www.cryptobeacon.site",
+    "@type": "Person",
+    name: "Sarah Jenkins",
+    url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -141,17 +142,6 @@ function P({ children }: { children: React.ReactNode }) {
   );
 }
 
-function AdUnit() {
-  return (
-    <div className="my-xl flex flex-col items-center justify-center p-md bg-surface-container-lowest border border-outline-variant rounded-lg min-h-[120px] mx-auto w-full max-w-[728px]">
-      <span className="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-xs">Advertisement</span>
-      <div className="w-full h-[90px] bg-surface-container flex items-center justify-center rounded">
-        <span className="text-on-surface-variant text-sm">Ad Placeholder</span>
-      </div>
-    </div>
-  );
-}
-
 function AddressAnatomyDiagram() {
   return (
     <figure className="my-xl">
@@ -166,7 +156,8 @@ function AddressAnatomyDiagram() {
               bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq
             </div>
             <p className="text-xs text-[#9CA3AF] mt-xs">
-              Starts with <strong className="text-[#F7931A]">bc1</strong> (native SegWit format) · 42 characters
+              Starts with <strong className="text-[#F7931A]">bc1</strong> (native SegWit format) ·
+              42 characters
             </p>
           </div>
           {/* Ethereum example */}
@@ -178,7 +169,8 @@ function AddressAnatomyDiagram() {
               0x71C7656EC7ab88b098defB751B7401B5f6d8976F
             </div>
             <p className="text-xs text-[#9CA3AF] mt-xs">
-              Always starts with <strong className="text-[#2563EB]">0x</strong> · 42 characters total
+              Always starts with <strong className="text-[#2563EB]">0x</strong> · 42 characters
+              total
             </p>
           </div>
         </div>
@@ -243,13 +235,10 @@ function ArticlePage() {
           What Is a Crypto Wallet Address? How It Works and How to Use It Safely
         </h1>
 
-        <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">CryptoBeacon Editorial Team</Link></span>
-          <span aria-hidden>·</span>
-          <time dateTime={PUBLISHED}>August 6, 2026</time>
-          <span aria-hidden>·</span>
-          <span>5 min read</span>
-        </div>
+        <Author
+          publishedDate={<time dateTime={PUBLISHED}>August 6, 2026</time>}
+          readTime="5 min read"
+        />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -263,68 +252,25 @@ function ArticlePage() {
 
         <P>
           A crypto wallet address is the string of letters and numbers you share with someone when
-          you want to receive cryptocurrency. It looks intimidating at first glance, but understanding
-          what it is — and what it isn't — is one of the most useful things you can know as a crypto
-          user.
+          you want to receive cryptocurrency. It looks intimidating at first glance, but
+          understanding what it is — and what it isn't — is one of the most useful things you can
+          know as a crypto user.
         </P>
         <P>
           <em>This article is educational. It isn't financial advice.</em>
         </P>
 
-        <aside className="my-xl p-lg rounded-lg border border-outline-variant bg-surface-container-low">
-          <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">
-            Table of Contents
-          </h2>
-          <ol className="list-decimal list-inside space-y-xs font-body-md text-body-md text-on-surface">
-            <li>
-              <a href="#what-address-is" className="hover:underline decoration-secondary">
-                What a Wallet Address Actually Is
-              </a>
-            </li>
-            <li>
-              <a href="#how-created" className="hover:underline decoration-secondary">
-                How an Address Is Created
-              </a>
-            </li>
-            <li>
-              <a href="#address-formats" className="hover:underline decoration-secondary">
-                Address Formats by Network
-              </a>
-            </li>
-            <li>
-              <a href="#safe-to-share" className="hover:underline decoration-secondary">
-                Is It Safe to Share Your Address?
-              </a>
-            </li>
-            <li>
-              <a href="#how-to-use-safely" className="hover:underline decoration-secondary">
-                How to Use an Address Safely
-              </a>
-            </li>
-            <li>
-              <a href="#key-takeaways" className="hover:underline decoration-secondary">
-                Key Takeaways
-              </a>
-            </li>
-            <li>
-              <a href="#faq" className="hover:underline decoration-secondary">
-                Frequently Asked Questions
-              </a>
-            </li>
-          </ol>
-        </aside>
-
         <H2 id="what-address-is">1. What a Wallet Address Actually Is</H2>
         <P>
-          A cryptocurrency address is a unique identifier derived from your wallet's public key —
-          a cryptographic string that tells the network where to direct incoming funds. Think of it
+          A cryptocurrency address is a unique identifier derived from your wallet's public key — a
+          cryptographic string that tells the network where to direct incoming funds. Think of it
           like an account number you can share freely: anyone can send funds to it, but only the
           holder of the corresponding private key can authorise spending from it.
         </P>
         <P>
-          Unlike a bank account number, a crypto address is generated mathematically from the private
-          key — no central authority assigns it. This means you can generate as many addresses as
-          you need, any time, without anyone's permission.
+          Unlike a bank account number, a crypto address is generated mathematically from the
+          private key — no central authority assigns it. This means you can generate as many
+          addresses as you need, any time, without anyone's permission.
         </P>
 
         <AdUnit />
@@ -334,13 +280,13 @@ function ArticlePage() {
           When a wallet is created, it generates a private key — a large random number. From that
           private key, a public key is derived using elliptic curve cryptography. The address is
           then produced by applying a hash function (and sometimes additional formatting steps) to
-          the public key. The process is one-way: you can always go from private key → public key
-          → address, but you cannot reverse it to work backwards from an address to a private key.
+          the public key. The process is one-way: you can always go from private key → public key →
+          address, but you cannot reverse it to work backwards from an address to a private key.
         </P>
         <P>
           This one-way relationship is the foundation of why sharing your address is safe and losing
-          your private key is unrecoverable — they're mathematically linked but one cannot be derived
-          from the other.
+          your private key is unrecoverable — they're mathematically linked but one cannot be
+          derived from the other.
         </P>
 
         <H2 id="address-formats">3. Address Formats by Network</H2>
@@ -391,7 +337,9 @@ function ArticlePage() {
                 {tip.icon}
               </div>
               <h3 className="font-headline-sm text-headline-sm text-primary">{tip.title}</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{tip.body}</p>
+              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                {tip.body}
+              </p>
             </div>
           ))}
         </div>
@@ -407,31 +355,37 @@ function ArticlePage() {
           .
         </P>
 
-        <H2 id="key-takeaways">Key Takeaways</H2>
-        <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
-          <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
-            <li>A wallet address is a publicly shareable identifier derived from your private key.</li>
-            <li>Sharing your address is safe — it cannot be used to spend your funds.</li>
-            <li>Different blockchains use different address formats; always send on the correct network.</li>
-            <li>Address errors when sending are generally irreversible — always copy and verify the full address.</li>
-            <li>Reusing addresses is possible but reduces privacy; most modern wallets generate new ones automatically.</li>
-          </ul>
+        <div className="my-xl p-lg rounded-xl border border-outline-variant bg-surface-container-low shadow-sm">
+          <h2 className="font-headline-sm text-headline-sm text-primary mb-md font-semibold">Address Anatomy: Quick Summary</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-md font-body-md text-body-md text-on-surface">
+            <div>
+              <h3 className="font-bold text-secondary mb-xs">What it is</h3>
+              <ul className="list-disc pl-md space-y-xs leading-relaxed">
+                <li>A publicly shareable identifier derived from your private key</li>
+                <li>Different blockchains use different address formats</li>
+                <li>Safe to share — cannot be used to spend your funds</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-bold text-secondary mb-xs">What to watch for</h3>
+              <ul className="list-disc pl-md space-y-xs leading-relaxed">
+                <li>Address errors when sending are generally irreversible</li>
+                <li>Always verify the full address before confirming</li>
+                <li>Most modern wallets generate new addresses automatically for privacy</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <AdUnit />
 
         <H2 id="faq">Frequently Asked Questions</H2>
-        <div className="divide-y divide-outline-variant border-y border-outline-variant">
+        <div className="space-y-md mb-xl">
           {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45 shrink-0" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
+            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low">
+              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">{f.q}</h3>
+              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
+            </div>
           ))}
         </div>
 

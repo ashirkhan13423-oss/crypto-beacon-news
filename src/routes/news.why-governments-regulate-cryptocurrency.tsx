@@ -1,8 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Author } from "@/components/Author";
 import hero from "@/assets/news-crypto-regulation.jpg";
-import { Plus, ShieldAlert, Gavel, ReceiptText, Building2, Globe, FileText, CheckCircle2 } from "lucide-react";
+import {
+  Plus,
+  ShieldAlert,
+  Gavel,
+  ReceiptText,
+  Building2,
+  Globe,
+  FileText,
+  CheckCircle2,
+} from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/news/why-governments-regulate-cryptocurrency";
 const TITLE = "Why Do Governments Regulate Cryptocurrency? Full Guide | CryptoBeacon";
@@ -45,9 +55,9 @@ const articleSchema = {
   datePublished: PUBLISHED,
   dateModified: "2026-08-15",
   author: {
-    "@type": "Organization",
-    name: "CryptoBeacon Editorial Team",
-    url: "https://www.cryptobeacon.site",
+    "@type": "Person",
+    name: "Sarah Jenkins",
+    url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -199,13 +209,10 @@ function ArticlePage() {
           Why Do Governments Regulate Cryptocurrency? Global Frameworks &amp; User Impact
         </h1>
 
-        <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">CryptoBeacon Editorial Team</Link></span>
-          <span aria-hidden>·</span>
-          <time dateTime={PUBLISHED}>August 15, 2026</time>
-          <span aria-hidden>·</span>
-          <span>8 min read</span>
-        </div>
+        <Author
+          publishedDate={<time dateTime={PUBLISHED}>August 15, 2026</time>}
+          readTime="8 min read"
+        />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -218,13 +225,22 @@ function ArticlePage() {
         </figure>
 
         <P>
-          Cryptocurrency was engineered to function permissionlessly — operating across borderless, peer-to-peer computer networks without relying on commercial banks or central governments. Yet over the past decade, financial authorities worldwide have passed an unprecedented array of laws, licensing requirements, and compliance standards governing digital assets.
+          Cryptocurrency was engineered to function permissionlessly — operating across borderless,
+          peer-to-peer computer networks without relying on commercial banks or central governments.
+          Yet over the past decade, financial authorities worldwide have passed an unprecedented
+          array of laws, licensing requirements, and compliance standards governing digital assets.
         </P>
         <P>
-          Why are sovereign governments so focused on regulating crypto? Contrary to popular belief, regulatory policy is rarely aimed at shutting down blockchain mathematics. Instead, governments regulate the bridge points — centralized exchanges, wallet services, stablecoin issuers, and banking gateways — to achieve three foundational goals: protecting consumer funds, preventing illicit financial flows, and securing national tax bases.
+          Why are sovereign governments so focused on regulating crypto? Contrary to popular belief,
+          regulatory policy is rarely aimed at shutting down blockchain mathematics. Instead,
+          governments regulate the bridge points — centralized exchanges, wallet services,
+          stablecoin issuers, and banking gateways — to achieve three foundational goals: protecting
+          consumer funds, preventing illicit financial flows, and securing national tax bases.
         </P>
         <P>
-          In this comprehensive breakdown, CryptoBeacon examines the structural motivations behind cryptocurrency regulation, the primary global regulatory regimes, and what these evolving rules mean for daily investors and self-custody users.
+          In this comprehensive breakdown, CryptoBeacon examines the structural motivations behind
+          cryptocurrency regulation, the primary global regulatory regimes, and what these evolving
+          rules mean for daily investors and self-custody users.
         </P>
 
         <aside className="my-xl p-lg rounded-lg border border-outline-variant bg-surface-container-low">
@@ -267,7 +283,9 @@ function ArticlePage() {
 
         <H2 id="three-core">1. The Three Pillars of Financial Regulation</H2>
         <P>
-          Whenever sovereign nations construct financial legislation, their objective is to maintain systemic stability and prevent public harm. In the context of digital assets, regulatory enforcement centers on three core pillars:
+          Whenever sovereign nations construct financial legislation, their objective is to maintain
+          systemic stability and prevent public harm. In the context of digital assets, regulatory
+          enforcement centers on three core pillars:
         </P>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-md my-lg">
@@ -283,14 +301,17 @@ function ArticlePage() {
                 {r.icon}
               </div>
               <h3 className="font-headline-sm text-headline-sm text-primary">{r.title}</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{r.body}</p>
+              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                {r.body}
+              </p>
             </div>
           ))}
         </div>
 
         <H2 id="global-frameworks">2. Major Global Frameworks: EU MiCA vs. US Oversight</H2>
         <P>
-          Because digital tokens cross international borders instantly, different economic jurisdictions have developed contrasting legal approaches to supervise the market:
+          Because digital tokens cross international borders instantly, different economic
+          jurisdictions have developed contrasting legal approaches to supervise the market:
         </P>
         <div className="space-y-md my-lg">
           <div className="p-lg rounded-xl border border-outline-variant bg-surface-container-lowest">
@@ -299,7 +320,11 @@ function ArticlePage() {
               European Union — Markets in Crypto-Assets (MiCA)
             </h3>
             <P>
-              The EU implemented the Markets in Crypto-Assets (MiCA) framework, providing a single, comprehensive regulatory standard across all 27 member states. MiCA establishes clear licensing rules for Crypto Asset Service Providers (CASPs), mandates 1:1 liquid reserve backing for fiat-backed stablecoins, and enforces strict disclosure standards for token issuers.
+              The EU implemented the Markets in Crypto-Assets (MiCA) framework, providing a single,
+              comprehensive regulatory standard across all 27 member states. MiCA establishes clear
+              licensing rules for Crypto Asset Service Providers (CASPs), mandates 1:1 liquid
+              reserve backing for fiat-backed stablecoins, and enforces strict disclosure standards
+              for token issuers.
             </P>
           </div>
 
@@ -309,7 +334,11 @@ function ArticlePage() {
               United States — Agency Oversight (SEC &amp; CFTC)
             </h3>
             <P>
-              In contrast to the EU's tailored legislation, the United States has largely relied on existing 20th-century financial statutes. The Securities and Exchange Commission (SEC) applies the Howey Test to determine whether specific tokens constitute unregistered securities, while the Commodity Futures Trading Commission (CFTC) oversees digital commodities like Bitcoin and Ethereum futures.
+              In contrast to the EU's tailored legislation, the United States has largely relied on
+              existing 20th-century financial statutes. The Securities and Exchange Commission (SEC)
+              applies the Howey Test to determine whether specific tokens constitute unregistered
+              securities, while the Commodity Futures Trading Commission (CFTC) oversees digital
+              commodities like Bitcoin and Ethereum futures.
             </P>
           </div>
 
@@ -319,7 +348,10 @@ function ArticlePage() {
               FATF — The Global Travel Rule
             </h3>
             <P>
-              The Financial Action Task Force (FATF), an intergovernmental anti-money laundering body, introduced the "Travel Rule" for crypto. This requirement mandates that virtual asset service providers (VASPs) share identifying customer data when executing transfers exceeding specified monetary thresholds between institutions.
+              The Financial Action Task Force (FATF), an intergovernmental anti-money laundering
+              body, introduced the "Travel Rule" for crypto. This requirement mandates that virtual
+              asset service providers (VASPs) share identifying customer data when executing
+              transfers exceeding specified monetary thresholds between institutions.
             </P>
           </div>
 
@@ -329,37 +361,58 @@ function ArticlePage() {
               Executive Policy &amp; Political Shift: Presidential Crypto Policy
             </h3>
             <P>
-              Political candidates and executive administrations have placed digital assets at the center of national economic strategy. Discussions surrounding political policy proposals—including a US Strategic Bitcoin Reserve, ending regulatory overreach, and establishing clear federal guidelines—have highlighted how presidential elections directly shape the regulatory environment for major digital assets and global investors.
+              Political candidates and executive administrations have placed digital assets at the
+              center of national economic strategy. Discussions surrounding political policy
+              proposals—including a US Strategic Bitcoin Reserve, ending regulatory overreach, and
+              establishing clear federal guidelines—have highlighted how presidential elections
+              directly shape the regulatory environment for major digital assets and global
+              investors.
             </P>
           </div>
         </div>
 
         <H2 id="historical-catalysts">3. Historical Catalysts: FTX, Terra, and Systemic Risk</H2>
         <P>
-          Regulatory acceleration is frequently triggered by major market insolvencies and consumer losses. Three defining historical incidents reshaped global regulatory priorities:
+          Regulatory acceleration is frequently triggered by major market insolvencies and consumer
+          losses. Three defining historical incidents reshaped global regulatory priorities:
         </P>
         <ul className="list-disc pl-lg space-y-md font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
           <li>
-            <strong>The Collapse of FTX (2022):</strong> When FTX, one of the world's largest centralized exchanges, filed for bankruptcy due to misappropriation of customer funds and unsegregated trading bets, global regulators shifted focus from token classification to custodial asset segregation and mandatory proof-of-reserve audits.
+            <strong>The Collapse of FTX (2022):</strong> When FTX, one of the world's largest
+            centralized exchanges, filed for bankruptcy due to misappropriation of customer funds
+            and unsegregated trading bets, global regulators shifted focus from token classification
+            to custodial asset segregation and mandatory proof-of-reserve audits.
           </li>
           <li>
-            <strong>The De-pegging of TerraUSD / Luna (2022):</strong> The sudden algorithmic collapse of TerraUSD wiped out tens of billions in market valuation within days. This event prompted central banks to prioritize strict reserve requirements and audit standards for all asset-backed stablecoins.
+            <strong>The De-pegging of TerraUSD / Luna (2022):</strong> The sudden algorithmic
+            collapse of TerraUSD wiped out tens of billions in market valuation within days. This
+            event prompted central banks to prioritize strict reserve requirements and audit
+            standards for all asset-backed stablecoins.
           </li>
           <li>
-            <strong>Banking Debanking Pressure (Operation Choke Point 2.0):</strong> Heightened regulatory scrutiny on crypto-friendly commercial banks led financial institutions to tighten access to fiat bank accounts for crypto businesses, driving exchanges toward strict compliance setups.
+            <strong>Banking Debanking Pressure (Operation Choke Point 2.0):</strong> Heightened
+            regulatory scrutiny on crypto-friendly commercial banks led financial institutions to
+            tighten access to fiat bank accounts for crypto businesses, driving exchanges toward
+            strict compliance setups.
           </li>
         </ul>
 
         <H2 id="user-impact">4. What Regulation Means for Everyday Crypto Users</H2>
         <P>
-          While legal frameworks are enacted at institutional levels, they directly shape the daily experience of retail cryptocurrency users:
+          While legal frameworks are enacted at institutional levels, they directly shape the daily
+          experience of retail cryptocurrency users:
         </P>
         <div className="space-y-sm mb-lg">
           <div className="flex items-start gap-sm p-md rounded-lg bg-surface-container-low border border-outline-variant">
             <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-1" />
             <div>
-              <strong className="text-primary block font-body-lg">Identity Verification (KYC)</strong>
-              <p className="font-body-md text-on-surface-variant">Opening an account at any compliant exchange requires submitting government identification, proof of address, and facial verification.</p>
+              <strong className="text-primary block font-body-lg">
+                Identity Verification (KYC)
+              </strong>
+              <p className="font-body-md text-on-surface-variant">
+                Opening an account at any compliant exchange requires submitting government
+                identification, proof of address, and facial verification.
+              </p>
             </div>
           </div>
 
@@ -367,17 +420,28 @@ function ArticlePage() {
             <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-1" />
             <div>
               <strong className="text-primary block font-body-lg">Automated Tax Reporting</strong>
-              <p className="font-body-md text-on-surface-variant">Exchanges are legally required to report annual transaction histories to national revenue agencies (such as the IRS or HMRC), making capital gain reporting standard practice.</p>
+              <p className="font-body-md text-on-surface-variant">
+                Exchanges are legally required to report annual transaction histories to national
+                revenue agencies (such as the IRS or HMRC), making capital gain reporting standard
+                practice.
+              </p>
             </div>
           </div>
 
           <div className="flex items-start gap-sm p-md rounded-lg bg-surface-container-low border border-outline-variant">
             <CheckCircle2 className="w-5 h-5 text-[#0F9D58] shrink-0 mt-1" />
             <div>
-              <strong className="text-primary block font-body-lg">Increased Self-Custody Awareness</strong>
+              <strong className="text-primary block font-body-lg">
+                Increased Self-Custody Awareness
+              </strong>
               <p className="font-body-md text-on-surface-variant">
-                Because regulated exchanges face operational constraints, many users opt for self-custodial wallets. Understanding safe storage protocols remains essential. Read our guide on{" "}
-                <Link to="/guides/not-your-keys-not-your-coins-meaning" className="text-secondary hover:underline">
+                Because regulated exchanges face operational constraints, many users opt for
+                self-custodial wallets. Understanding safe storage protocols remains essential. Read
+                our guide on{" "}
+                <Link
+                  to="/guides/not-your-keys-not-your-coins-meaning"
+                  className="text-secondary hover:underline"
+                >
                   "Not Your Keys, Not Your Coins"
                 </Link>{" "}
                 to learn more.
@@ -390,16 +454,20 @@ function ArticlePage() {
         <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
           <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface marker:text-secondary">
             <li>
-              Regulation targets centralized intermediaries (exchanges, custodians, stablecoin issuers) rather than mathematical blockchain protocols.
+              Regulation targets centralized intermediaries (exchanges, custodians, stablecoin
+              issuers) rather than mathematical blockchain protocols.
             </li>
             <li>
-              The primary motivations for regulation are consumer protection against insolvency, anti-money laundering enforcement, and tax collection.
+              The primary motivations for regulation are consumer protection against insolvency,
+              anti-money laundering enforcement, and tax collection.
             </li>
             <li>
-              Global frameworks differ significantly: the EU uses unified MiCA rules, while the US relies on existing securities laws and agency enforcement.
+              Global frameworks differ significantly: the EU uses unified MiCA rules, while the US
+              relies on existing securities laws and agency enforcement.
             </li>
             <li>
-              Regulation improves platform accountability but does not eliminate market volatility — self-custody and personal security habits remain critical.
+              Regulation improves platform accountability but does not eliminate market volatility —
+              self-custody and personal security habits remain critical.
             </li>
           </ul>
         </div>
@@ -448,7 +516,8 @@ function ArticlePage() {
               rel="noopener noreferrer"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              U.S. Securities and Exchange Commission (SEC) — Framework for Digital Asset Investment Contracts
+              U.S. Securities and Exchange Commission (SEC) — Framework for Digital Asset Investment
+              Contracts
             </a>
           </li>
         </ul>
@@ -458,7 +527,10 @@ function ArticlePage() {
             Financial &amp; Legal Disclaimer
           </h3>
           <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for educational and informational purposes only and does not constitute legal, tax, or financial advice. Regulatory policies vary significantly by jurisdiction and change frequently. Consult a qualified legal or tax professional for your specific circumstances.
+            This article is for educational and informational purposes only and does not constitute
+            legal, tax, or financial advice. Regulatory policies vary significantly by jurisdiction
+            and change frequently. Consult a qualified legal or tax professional for your specific
+            circumstances.
           </p>
         </div>
 

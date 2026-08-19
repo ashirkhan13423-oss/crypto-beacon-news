@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Author } from "@/components/Author";
 import hero from "@/assets/ethereum-staking-hero.png";
 import { CheckCircle2, ChevronRight, Layers, ShieldCheck, Lock } from "lucide-react";
 
@@ -33,9 +34,9 @@ const articleSchema = {
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   author: {
-    "@type": "Organization",
-    name: "CryptoBeacon Editorial Team",
-    url: "https://www.cryptobeacon.site",
+    "@type": "Person",
+    name: "Sarah Jenkins",
+    url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -70,7 +71,12 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Ethereum", item: "https://www.cryptobeacon.site/ethereum" },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Ethereum",
+      item: "https://www.cryptobeacon.site/ethereum",
+    },
     { "@type": "ListItem", position: 3, name: "What Is Ethereum Staking?", item: URL },
   ],
 };
@@ -114,13 +120,17 @@ function ArticlePage() {
                 Home
               </Link>
             </li>
-            <li aria-hidden><ChevronRight className="w-3 h-3" /></li>
+            <li aria-hidden>
+              <ChevronRight className="w-3 h-3" />
+            </li>
             <li>
               <Link to="/ethereum" className="hover:text-primary hover:underline">
                 Ethereum
               </Link>
             </li>
-            <li aria-hidden><ChevronRight className="w-3 h-3" /></li>
+            <li aria-hidden>
+              <ChevronRight className="w-3 h-3" />
+            </li>
             <li className="text-primary font-medium truncate">What Is Ethereum Staking?</li>
           </ol>
         </nav>
@@ -133,13 +143,10 @@ function ArticlePage() {
           What Is Ethereum Staking? Proof-of-Stake &amp; Yield Mechanics Explained
         </h1>
 
-        <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">CryptoBeacon Editorial Team</Link></span>
-          <span aria-hidden>·</span>
-          <time dateTime={PUBLISHED}>August 15, 2026</time>
-          <span aria-hidden>·</span>
-          <span>7 min read</span>
-        </div>
+        <Author
+          publishedDate={<time dateTime={PUBLISHED}>August 15, 2026</time>}
+          readTime="7 min read"
+        />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -157,10 +164,17 @@ function ArticlePage() {
               The Shift to Proof-of-Stake
             </h2>
             <p className="mb-md">
-              In September 2022, Ethereum completed "The Merge," transitioning its consensus mechanism from energy-intensive Proof-of-Work (mining) to Proof-of-Stake (staking). Instead of energy-hungry miners competing to solve cryptographic puzzles, Ethereum security is now maintained by validator nodes who deposit (or "stake") Ether as economic collateral.
+              In September 2022, Ethereum completed "The Merge," transitioning its consensus
+              mechanism from energy-intensive Proof-of-Work (mining) to Proof-of-Stake (staking).
+              Instead of energy-hungry miners competing to solve cryptographic puzzles, Ethereum
+              security is now maintained by validator nodes who deposit (or "stake") Ether as
+              economic collateral.
             </p>
             <p>
-              Staking serves as the security backbone of the Ethereum network. Validators perform crucial functions: proposing new blocks of transactions, attesting to blocks proposed by other validators, and penalizing protocol rule violations. In exchange for committing capital and compute resources, stakers earn yield distributed in ETH.
+              Staking serves as the security backbone of the Ethereum network. Validators perform
+              crucial functions: proposing new blocks of transactions, attesting to blocks proposed
+              by other validators, and penalizing protocol rule violations. In exchange for
+              committing capital and compute resources, stakers earn yield distributed in ETH.
             </p>
           </section>
 
@@ -169,7 +183,8 @@ function ArticlePage() {
               How Ethereum Staking Yield Works
             </h2>
             <p className="mb-md">
-              Staking rewards are not guaranteed dividends; they are technical compensation for validating network state. Yield comes from three primary components:
+              Staking rewards are not guaranteed dividends; they are technical compensation for
+              validating network state. Yield comes from three primary components:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-md my-md">
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
@@ -177,7 +192,8 @@ function ArticlePage() {
                   <ShieldCheck className="text-secondary w-5 h-5" /> Protocol Inflation
                 </h3>
                 <p className="text-body-md">
-                  Newly minted ETH emitted by the beacon chain to reward consensus participation and honest block attestations.
+                  Newly minted ETH emitted by the beacon chain to reward consensus participation and
+                  honest block attestations.
                 </p>
               </div>
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
@@ -185,7 +201,8 @@ function ArticlePage() {
                   <Layers className="text-secondary w-5 h-5" /> Priority Fees
                 </h3>
                 <p className="text-body-md">
-                  Tips paid directly by users to transaction proposers on the execution layer for faster block inclusion.
+                  Tips paid directly by users to transaction proposers on the execution layer for
+                  faster block inclusion.
                 </p>
               </div>
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
@@ -193,7 +210,8 @@ function ArticlePage() {
                   <Lock className="text-secondary w-5 h-5" /> MEV Yield
                 </h3>
                 <p className="text-body-md">
-                  Maximal Extractable Value captured via block builders reordering or bundling arbitrage transactions.
+                  Maximal Extractable Value captured via block builders reordering or bundling
+                  arbitrage transactions.
                 </p>
               </div>
             </div>
@@ -205,21 +223,34 @@ function ArticlePage() {
             </h2>
             <div className="space-y-md">
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
-                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">1. Solo Staking (The Gold Standard)</h3>
+                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">
+                  1. Solo Staking (The Gold Standard)
+                </h3>
                 <p className="text-body-md">
-                  Requires 32 ETH and a dedicated hardware node running execution and consensus clients 24/7. Offers total custody control with zero third-party middleman risk, though technical knowledge is mandatory to avoid maintenance offline penalties.
+                  Requires 32 ETH and a dedicated hardware node running execution and consensus
+                  clients 24/7. Offers total custody control with zero third-party middleman risk,
+                  though technical knowledge is mandatory to avoid maintenance offline penalties.
                 </p>
               </div>
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
-                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">2. Liquid Staking Pools</h3>
+                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">
+                  2. Liquid Staking Pools
+                </h3>
                 <p className="text-body-md">
-                  Services like Lido or Rocket Pool allow users to deposit any amount of ETH and receive a derivative token (e.g., stETH, rETH) representing their underlying deposit plus accumulated yield. Liquidity is retained while earning rewards, though smart contract risks apply.
+                  Services like Lido or Rocket Pool allow users to deposit any amount of ETH and
+                  receive a derivative token (e.g., stETH, rETH) representing their underlying
+                  deposit plus accumulated yield. Liquidity is retained while earning rewards,
+                  though smart contract risks apply.
                 </p>
               </div>
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
-                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">3. Centralized Exchange Staking</h3>
+                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">
+                  3. Centralized Exchange Staking
+                </h3>
                 <p className="text-body-md">
-                  Exchanges manage node operation on behalf of users. While convenient, exchange custody introduces counterparty risk ("not your keys, not your coins") and typically incurs higher commission fees.
+                  Exchanges manage node operation on behalf of users. While convenient, exchange
+                  custody introduces counterparty risk ("not your keys, not your coins") and
+                  typically incurs higher commission fees.
                 </p>
               </div>
             </div>
@@ -231,7 +262,10 @@ function ArticlePage() {
             </h2>
             <div className="space-y-md">
               {faqs.map((faq, i) => (
-                <div key={i} className="border-b border-outline-variant pb-md last:border-0 last:pb-0">
+                <div
+                  key={i}
+                  className="border-b border-outline-variant pb-md last:border-0 last:pb-0"
+                >
                   <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">{faq.q}</h3>
                   <p className="text-body-md text-on-surface-variant">{faq.a}</p>
                 </div>

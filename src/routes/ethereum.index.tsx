@@ -123,7 +123,8 @@ function EthereumPage() {
                 What Is Ethereum Staking? Proof-of-Stake &amp; Yield Mechanics Explained
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
-                Learn how Proof-of-Stake works, solo staking vs liquid staking, protocol inflation, and key validator risks.
+                Learn how Proof-of-Stake works, solo staking vs liquid staking, protocol inflation,
+                and key validator risks.
               </p>
             </div>
           </Link>
@@ -150,7 +151,8 @@ function EthereumPage() {
                 Ethereum Layer 2 Scaling &amp; Rollups Explained
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
-                Understand Optimistic vs ZK Rollups, blob space (EIP-4844), and how L2s scale Ethereum while preserving security.
+                Understand Optimistic vs ZK Rollups, blob space (EIP-4844), and how L2s scale
+                Ethereum while preserving security.
               </p>
             </div>
           </Link>

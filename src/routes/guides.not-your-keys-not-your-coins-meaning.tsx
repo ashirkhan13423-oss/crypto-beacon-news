@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Author } from "@/components/Author";
 import hero from "@/assets/keys-coins-meaning.jpg";
 import { Key, Lock, HelpCircle, Plus } from "lucide-react";
 
@@ -37,9 +38,9 @@ const articleSchema = {
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   author: {
-    "@type": "Organization",
-    name: "CryptoBeacon Editorial Team",
-    url: "https://www.cryptobeacon.site",
+    "@type": "Person",
+    name: "Sarah Jenkins",
+    url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -243,13 +244,10 @@ function ArticlePage() {
           "Not Your Keys, Not Your Coins" — What It Actually Means
         </h1>
 
-        <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">CryptoBeacon Editorial Team</Link></span>
-          <span aria-hidden>·</span>
-          <time dateTime={PUBLISHED}>July 6, 2026</time>
-          <span aria-hidden>·</span>
-          <span>7 min read</span>
-        </div>
+        <Author
+          publishedDate={<time dateTime={PUBLISHED}>July 6, 2026</time>}
+          readTime="7 min read"
+        />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -274,49 +272,6 @@ function ArticlePage() {
         <P>
           <em>This article is educational. It isn't financial advice.</em>
         </P>
-
-        <aside className="my-xl p-lg rounded-lg border border-outline-variant bg-surface-container-low">
-          <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">
-            Table of Contents
-          </h2>
-          <ol className="list-decimal list-inside space-y-xs font-body-md text-body-md text-on-surface">
-            <li>
-              <a href="#keys" className="hover:underline decoration-secondary">
-                What "Keys" Actually Means Here
-              </a>
-            </li>
-            <li>
-              <a href="#vs" className="hover:underline decoration-secondary">
-                Custodial vs. Non-Custodial: The Real Difference
-              </a>
-            </li>
-            <li>
-              <a href="#matters" className="hover:underline decoration-secondary">
-                Why This Distinction Matters
-              </a>
-            </li>
-            <li>
-              <a href="#which" className="hover:underline decoration-secondary">
-                How to Tell Which Category You're In
-              </a>
-            </li>
-            <li>
-              <a href="#right-choice" className="hover:underline decoration-secondary">
-                Is Custodial Ever the Right Choice?
-              </a>
-            </li>
-            <li>
-              <a href="#takeaways" className="hover:underline decoration-secondary">
-                Key Takeaways
-              </a>
-            </li>
-            <li>
-              <a href="#faq" className="hover:underline decoration-secondary">
-                Frequently Asked Questions
-              </a>
-            </li>
-          </ol>
-        </aside>
 
         <H2 id="keys">1. What "Keys" Actually Means Here</H2>
         <P>
@@ -424,40 +379,22 @@ function ArticlePage() {
           wallets for anything they intend to hold long-term.
         </P>
 
-        <H2 id="takeaways">6. Key Takeaways</H2>
-        <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
-          <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
-            <li>
-              "Not your keys, not your coins" describes the difference between owning crypto
-              directly and holding a claim on crypto someone else controls.
-            </li>
-            <li>
-              Custodial platforms hold your private key for you; non-custodial wallets put that
-              responsibility on you.
-            </li>
-            <li>
-              The risk isn't in the blockchain itself — it's in depending on a third party's
-              solvency and security when you don't hold the keys.
-            </li>
-            <li>
-              Neither approach is universally correct; the right mix depends on how you use your
-              crypto and how comfortable you are managing your own backup.
-            </li>
-          </ul>
+        <div className="my-xl p-xl rounded-2xl bg-surface-container-lowest border border-outline-variant shadow-sm text-center">
+          <p className="font-display-lg text-display-lg md:text-[2.5rem] text-primary font-bold leading-tight mb-md">
+            "Not your keys, not your coins."
+          </p>
+          <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-2xl mx-auto">
+            If someone else holds your private key, you don't truly own your crypto — you hold a claim that depends entirely on their security, solvency, and willingness to process your withdrawal.
+          </p>
         </div>
 
-        <H2 id="faq">7. Frequently Asked Questions</H2>
-        <div className="divide-y divide-outline-variant border-y border-outline-variant">
+        <H2 id="faq">6. Frequently Asked Questions</H2>
+        <div className="space-y-lg mb-xl">
           {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
+            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low">
+              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">{f.q}</h3>
+              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
+            </div>
           ))}
         </div>
 

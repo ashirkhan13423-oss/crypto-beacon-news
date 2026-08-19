@@ -63,13 +63,21 @@ function DisclaimerPage() {
               1. General Financial Disclaimer
             </h2>
             <p className="mb-md">
-              All content published by CryptoBeacon — including articles, guides, analysis, news coverage, market commentary, and interactive tools — is intended strictly for <strong>educational and informational purposes only</strong>.
+              All content published by CryptoBeacon — including articles, guides, analysis, news
+              coverage, market commentary, and interactive tools — is intended strictly for{" "}
+              <strong>educational and informational purposes only</strong>.
             </p>
             <p className="mb-md">
-              <strong>No Financial Advice:</strong> Nothing on this website constitutes investment advice, financial advice, trading advice, or legal advice. CryptoBeacon is an independent journalistic publisher and is not a registered investment advisor, broker-dealer, or financial institution.
+              <strong>No Financial Advice:</strong> Nothing on this website constitutes investment
+              advice, financial advice, trading advice, or legal advice. CryptoBeacon is an
+              independent journalistic publisher and is not a registered investment advisor,
+              broker-dealer, or financial institution.
             </p>
             <p>
-              Digital assets, cryptocurrencies, and blockchain protocols carry significant financial, technical, and regulatory risks. Always conduct your own research (DYOR) and consult with a licensed financial advisor or legal professional before executing financial transactions.
+              Digital assets, cryptocurrencies, and blockchain protocols carry significant
+              financial, technical, and regulatory risks. Always conduct your own research (DYOR)
+              and consult with a licensed financial advisor or legal professional before executing
+              financial transactions.
             </p>
           </section>
 
@@ -79,12 +87,24 @@ function DisclaimerPage() {
               2. Editorial Policy &amp; Rigor
             </h2>
             <p className="mb-md">
-              CryptoBeacon adheres to strict editorial independence. Our goal is to provide evergreen clarity and objective analysis on digital assets and technical infrastructure.
+              CryptoBeacon adheres to strict editorial independence. Our goal is to provide
+              evergreen clarity and objective analysis on digital assets and technical
+              infrastructure.
             </p>
             <ul className="list-disc pl-lg space-y-sm marker:text-secondary">
-              <li><strong>Fact-Checking:</strong> Content is researched against official blockchain documentation, whitepapers, and regulatory filings.</li>
-              <li><strong>No Paid Promotions for Unverified Tokens:</strong> We do not publish paid initial coin offering (ICO) promotional reviews or undisclosed sponsored token pumps.</li>
-              <li><strong>Corrections Transparency:</strong> If an error occurs in our reporting, we promptly update the text and disclose corrections clearly.</li>
+              <li>
+                <strong>Fact-Checking:</strong> Content is researched against official blockchain
+                documentation, whitepapers, and regulatory filings.
+              </li>
+              <li>
+                <strong>No Paid Promotions for Unverified Tokens:</strong> We do not publish paid
+                initial coin offering (ICO) promotional reviews or undisclosed sponsored token
+                pumps.
+              </li>
+              <li>
+                <strong>Corrections Transparency:</strong> If an error occurs in our reporting, we
+                promptly update the text and disclose corrections clearly.
+              </li>
             </ul>
           </section>
 
@@ -94,7 +114,9 @@ function DisclaimerPage() {
               3. Security Research &amp; Educational Focus
             </h2>
             <p className="mb-md">
-              Security tutorials on CryptoBeacon focus on threat prevention (phishing awareness, seed phrase backup standards, address verification). We encourage non-custodial safety habits and personal key management.
+              Security tutorials on CryptoBeacon focus on threat prevention (phishing awareness,
+              seed phrase backup standards, address verification). We encourage non-custodial safety
+              habits and personal key management.
             </p>
           </section>
 
@@ -108,7 +130,11 @@ function DisclaimerPage() {
               <Link to="/contact" className="text-secondary underline font-medium">
                 Contact Page
               </Link>{" "}
-              or email us directly at <a href="mailto:privacy@cryptobeacon.site" className="text-secondary hover:underline">privacy@cryptobeacon.site</a>.
+              or email us directly at{" "}
+              <a href="mailto:privacy@cryptobeacon.site" className="text-secondary hover:underline">
+                privacy@cryptobeacon.site
+              </a>
+              .
             </p>
           </section>
         </article>

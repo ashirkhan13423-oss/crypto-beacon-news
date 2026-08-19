@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Author } from "@/components/Author";
 import seedVault from "@/assets/seed-phrase-vault.jpg";
 import seedMetalPaper from "@/assets/seed-metal-vs-paper.jpg";
 import seedPhishing from "@/assets/seed-phishing.jpg";
@@ -43,9 +44,9 @@ const articleSchema = {
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   author: {
-    "@type": "Organization",
-    name: "CryptoBeacon Editorial Team",
-    url: "https://www.cryptobeacon.site",
+    "@type": "Person",
+    name: "Sarah Jenkins",
+    url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -180,13 +181,10 @@ function ArticlePage() {
           How to Store Your Crypto Seed Phrase Safely
         </h1>
 
-        <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">CryptoBeacon Editorial Team</Link></span>
-          <span aria-hidden>·</span>
-          <time dateTime={PUBLISHED}>July 2, 2026</time>
-          <span aria-hidden>·</span>
-          <span>10 min read</span>
-        </div>
+        <Author
+          publishedDate={<time dateTime={PUBLISHED}>July 2, 2026</time>}
+          readTime="10 min read"
+        />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img

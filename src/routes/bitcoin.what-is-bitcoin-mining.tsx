@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { AdUnit } from "@/components/AdUnit";
+import { Author } from "@/components/Author";
 import hero from "@/assets/bitcoin-what-is-mining.png";
 import { Plus } from "lucide-react";
 
@@ -37,9 +39,9 @@ const articleSchema = {
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   author: {
-    "@type": "Organization",
-    name: "CryptoBeacon Editorial Team",
-    url: "https://www.cryptobeacon.site",
+    "@type": "Person",
+    name: "Sarah Jenkins",
+    url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -139,17 +141,6 @@ function P({ children }: { children: React.ReactNode }) {
   );
 }
 
-function AdUnit() {
-  return (
-    <div className="my-xl flex flex-col items-center justify-center p-md bg-surface-container-lowest border border-outline-variant rounded-lg min-h-[120px] mx-auto w-full max-w-[728px]">
-      <span className="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-xs">Advertisement</span>
-      <div className="w-full h-[90px] bg-surface-container flex items-center justify-center rounded">
-        <span className="text-on-surface-variant text-sm">Ad Placeholder</span>
-      </div>
-    </div>
-  );
-}
-
 function MiningFlowDiagram() {
   return (
     <figure className="my-xl">
@@ -162,10 +153,18 @@ function MiningFlowDiagram() {
           style={{ fontFamily: "'Space Grotesk', sans-serif" }}
         >
           {/* Connector line */}
-          <line x1="60" y1="100" x2="840" y2="100" stroke="#F7931A" strokeWidth="1.5" strokeDasharray="6 4" />
+          <line
+            x1="60"
+            y1="100"
+            x2="840"
+            y2="100"
+            stroke="#F7931A"
+            strokeWidth="1.5"
+            strokeDasharray="6 4"
+          />
 
           {[
-            { cx: 80,  label: "Transactions\nBroadcast" },
+            { cx: 80, label: "Transactions\nBroadcast" },
             { cx: 260, label: "Miners\nCompete" },
             { cx: 450, label: "Block\nSolved" },
             { cx: 640, label: "Block\nAdded" },
@@ -173,7 +172,14 @@ function MiningFlowDiagram() {
           ].map((s, i) => (
             <g key={i}>
               <circle cx={s.cx} cy="100" r="38" fill="#0A0B0D" stroke="#F7931A" strokeWidth="2" />
-              <text x={s.cx} y="106" textAnchor="middle" fill="#FFFFFF" fontSize="16" fontWeight="700">
+              <text
+                x={s.cx}
+                y="106"
+                textAnchor="middle"
+                fill="#FFFFFF"
+                fontSize="16"
+                fontWeight="700"
+              >
                 {i + 1}
               </text>
               {s.label.split("\n").map((line, li) => (
@@ -234,13 +240,10 @@ function ArticlePage() {
           What Is Bitcoin Mining? How New Bitcoin Is Created
         </h1>
 
-        <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">CryptoBeacon Editorial Team</Link></span>
-          <span aria-hidden>·</span>
-          <time dateTime={PUBLISHED}>August 6, 2026</time>
-          <span aria-hidden>·</span>
-          <span>5 min read</span>
-        </div>
+        <Author
+          publishedDate={<time dateTime={PUBLISHED}>August 6, 2026</time>}
+          readTime="5 min read"
+        />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -253,8 +256,8 @@ function ArticlePage() {
         </figure>
 
         <P>
-          "Mining" is a deliberately evocative word — it suggests effort, scarcity, and reward.
-          In Bitcoin's case, that's intentional: mining is the mechanism that creates new Bitcoin,
+          "Mining" is a deliberately evocative word — it suggests effort, scarcity, and reward. In
+          Bitcoin's case, that's intentional: mining is the mechanism that creates new Bitcoin,
           processes transactions, and keeps the network secure, all at once. Understanding how it
           works explains a lot about why Bitcoin behaves the way it does.
         </P>
@@ -262,43 +265,23 @@ function ArticlePage() {
           <em>This article is educational. It isn't financial advice.</em>
         </P>
 
-        <aside className="my-xl p-lg rounded-lg border border-outline-variant bg-surface-container-low">
-          <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">
-            Table of Contents
-          </h2>
-          <ol className="list-decimal list-inside space-y-xs font-body-md text-body-md text-on-surface">
-            <li>
-              <a href="#what-mining-does" className="hover:underline decoration-secondary">
-                What Mining Actually Does
-              </a>
-            </li>
-            <li>
-              <a href="#proof-of-work" className="hover:underline decoration-secondary">
-                Proof of Work: The Core Mechanism
-              </a>
-            </li>
-            <li>
-              <a href="#difficulty-supply" className="hover:underline decoration-secondary">
-                Difficulty Adjustment and Fixed Supply
-              </a>
-            </li>
-            <li>
-              <a href="#halving" className="hover:underline decoration-secondary">
-                The Halving
-              </a>
-            </li>
-            <li>
-              <a href="#key-takeaways" className="hover:underline decoration-secondary">
-                Key Takeaways
-              </a>
-            </li>
-            <li>
-              <a href="#faq" className="hover:underline decoration-secondary">
-                Frequently Asked Questions
-              </a>
-            </li>
-          </ol>
-        </aside>
+        <nav className="my-xl flex flex-wrap gap-sm font-body-md text-body-md">
+          {[
+            { id: "what-mining-does", label: "What Mining Does" },
+            { id: "proof-of-work", label: "Proof of Work" },
+            { id: "difficulty-supply", label: "Difficulty & Supply" },
+            { id: "halving", label: "The Halving" },
+            { id: "faq", label: "FAQ" },
+          ].map((s) => (
+            <a
+              key={s.id}
+              href={`#${s.id}`}
+              className="px-md py-xs rounded-full border border-outline-variant text-on-surface hover:border-secondary hover:text-secondary transition-colors"
+            >
+              {s.label}
+            </a>
+          ))}
+        </nav>
 
         <H2 id="what-mining-does">1. What Mining Actually Does</H2>
         <P>
@@ -319,13 +302,13 @@ function ArticlePage() {
         <H2 id="proof-of-work">2. Proof of Work: The Core Mechanism</H2>
         <P>
           To add a block, a miner must solve a specific computational puzzle: find a number (called
-          a nonce) that, when combined with the block's data and run through a hash function, produces
-          an output below a target value. There's no shortcut — the only method is brute-force
-          guessing at enormous speed.
+          a nonce) that, when combined with the block's data and run through a hash function,
+          produces an output below a target value. There's no shortcut — the only method is
+          brute-force guessing at enormous speed.
         </P>
         <P>
-          This is called <strong>proof of work</strong>. The name reflects the key property: you
-          can verify a solution instantly, but producing one requires real, measurable computational
+          This is called <strong>proof of work</strong>. The name reflects the key property: you can
+          verify a solution instantly, but producing one requires real, measurable computational
           effort. This effort is what makes the system hard to cheat — rewriting Bitcoin's history
           would require outpacing the combined computing power of the entire network, which is
           prohibitively expensive in practice.
@@ -350,10 +333,10 @@ function ArticlePage() {
         <H2 id="halving">4. The Halving</H2>
         <P>
           Every 210,000 blocks (approximately every four years), the block reward paid to miners is
-          cut in half — an event known as the <strong>halving</strong>. This is how Bitcoin's
-          supply schedule becomes progressively more restrictive over time. The block reward
-          started at 50 BTC, is currently 3.125 BTC (as of 2024), and will continue halving until
-          all 21 million Bitcoin have been issued, around the year 2140.
+          cut in half — an event known as the <strong>halving</strong>. This is how Bitcoin's supply
+          schedule becomes progressively more restrictive over time. The block reward started at 50
+          BTC, is currently 3.125 BTC (as of 2024), and will continue halving until all 21 million
+          Bitcoin have been issued, around the year 2140.
         </P>
         <P>
           After all Bitcoin has been mined, miners will rely entirely on transaction fees for
@@ -361,37 +344,21 @@ function ArticlePage() {
           security long-term is an ongoing debate among researchers and participants.
         </P>
 
-        <H2 id="key-takeaways">Key Takeaways</H2>
-        <div className="border-l-4 border-[#F7931A] bg-[#F7931A]/5 p-lg rounded-r-lg mb-md">
-          <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
-            <li>Mining creates new Bitcoin and processes transactions, without any central authority.</li>
-            <li>Proof of work requires real computational effort, making the network expensive to attack.</li>
-            <li>Difficulty adjusts every ~2 weeks to keep block times near 10 minutes.</li>
-            <li>Bitcoin's supply is capped at 21 million, enforced by the protocol itself.</li>
-            <li>The halving reduces the block reward every ~4 years, progressively slowing new issuance.</li>
-          </ul>
-        </div>
-
         <H2 id="faq">Frequently Asked Questions</H2>
-        <div className="divide-y divide-outline-variant border-y border-outline-variant">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
           {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45 shrink-0" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
+            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low">
+              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">{f.q}</h3>
+              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
+            </div>
           ))}
         </div>
 
         <H2 id="conclusion">Conclusion</H2>
         <P>
           Bitcoin mining is not just about creating new coins — it's the engine of the entire
-          network's security and transaction finality. Proof of work, difficulty adjustment, and
-          the halving schedule all work together to produce a system where supply is predictable,
+          network's security and transaction finality. Proof of work, difficulty adjustment, and the
+          halving schedule all work together to produce a system where supply is predictable,
           history is expensive to rewrite, and no central party controls issuance. Understanding
           these mechanics explains much of what makes Bitcoin's design distinct from traditional
           financial systems.

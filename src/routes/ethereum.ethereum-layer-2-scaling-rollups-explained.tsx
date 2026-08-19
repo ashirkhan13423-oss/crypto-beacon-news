@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Author } from "@/components/Author";
 import hero from "@/assets/ethereum-layer-2-scaling.png";
 import { ChevronRight, Cpu, Layers, Shield, Zap } from "lucide-react";
 
@@ -33,9 +34,9 @@ const articleSchema = {
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   author: {
-    "@type": "Organization",
-    name: "CryptoBeacon Editorial Team",
-    url: "https://www.cryptobeacon.site",
+    "@type": "Person",
+    name: "Sarah Jenkins",
+    url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -70,7 +71,12 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Ethereum", item: "https://www.cryptobeacon.site/ethereum" },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Ethereum",
+      item: "https://www.cryptobeacon.site/ethereum",
+    },
     { "@type": "ListItem", position: 3, name: "Ethereum Layer 2 Scaling", item: URL },
   ],
 };
@@ -114,14 +120,20 @@ function ArticlePage() {
                 Home
               </Link>
             </li>
-            <li aria-hidden><ChevronRight className="w-3 h-3" /></li>
+            <li aria-hidden>
+              <ChevronRight className="w-3 h-3" />
+            </li>
             <li>
               <Link to="/ethereum" className="hover:text-primary hover:underline">
                 Ethereum
               </Link>
             </li>
-            <li aria-hidden><ChevronRight className="w-3 h-3" /></li>
-            <li className="text-primary font-medium truncate">Ethereum Layer 2 Scaling &amp; Rollups</li>
+            <li aria-hidden>
+              <ChevronRight className="w-3 h-3" />
+            </li>
+            <li className="text-primary font-medium truncate">
+              Ethereum Layer 2 Scaling &amp; Rollups
+            </li>
           </ol>
         </nav>
 
@@ -133,13 +145,10 @@ function ArticlePage() {
           Ethereum Layer 2 Scaling &amp; Rollups Explained
         </h1>
 
-        <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">CryptoBeacon Editorial Team</Link></span>
-          <span aria-hidden>·</span>
-          <time dateTime={PUBLISHED}>August 15, 2026</time>
-          <span aria-hidden>·</span>
-          <span>8 min read</span>
-        </div>
+        <Author
+          publishedDate={<time dateTime={PUBLISHED}>August 15, 2026</time>}
+          readTime="8 min read"
+        />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -157,10 +166,16 @@ function ArticlePage() {
               The Blockchain Scalability Challenge
             </h2>
             <p className="mb-md">
-              Ethereum Layer 1 processes approximately 15 to 30 transactions per second (TPS). When network activity surges, competition for block space drives gas fees up significantly. Rather than altering base layer parameters at the cost of decentralization or node operator hardware requirements, Ethereum adopted a <strong>rollup-centric roadmap</strong>.
+              Ethereum Layer 1 processes approximately 15 to 30 transactions per second (TPS). When
+              network activity surges, competition for block space drives gas fees up significantly.
+              Rather than altering base layer parameters at the cost of decentralization or node
+              operator hardware requirements, Ethereum adopted a{" "}
+              <strong>rollup-centric roadmap</strong>.
             </p>
             <p>
-              Layer 2 (L2) networks execute transactions off-chain in secondary execution environments while anchoring their security directly to Ethereum Layer 1 for settlement and data availability.
+              Layer 2 (L2) networks execute transactions off-chain in secondary execution
+              environments while anchoring their security directly to Ethereum Layer 1 for
+              settlement and data availability.
             </p>
           </section>
 
@@ -174,7 +189,10 @@ function ArticlePage() {
                   <Zap className="text-secondary w-5 h-5" /> Optimistic Rollups
                 </h3>
                 <p className="text-body-md">
-                  Assume state transitions are valid by default. Transactions run off-chain and state roots are submitted to L1. A challenge window (typically 7 days) allows network participants to submit <em>fraud proofs</em> if invalid transactions occur. Examples include Arbitrum and Optimism.
+                  Assume state transitions are valid by default. Transactions run off-chain and
+                  state roots are submitted to L1. A challenge window (typically 7 days) allows
+                  network participants to submit <em>fraud proofs</em> if invalid transactions
+                  occur. Examples include Arbitrum and Optimism.
                 </p>
               </div>
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
@@ -182,7 +200,10 @@ function ArticlePage() {
                   <Shield className="text-secondary w-5 h-5" /> ZK-Rollups (Zero Knowledge)
                 </h3>
                 <p className="text-body-md">
-                  Use advanced cryptographic <em>validity proofs</em> (SNARKs or STARKs). Every transaction batch submitted to L1 is accompanied by a mathematical proof confirming correctness, eliminating 7-day withdrawal delays. Examples include zkSync Era and Starknet.
+                  Use advanced cryptographic <em>validity proofs</em> (SNARKs or STARKs). Every
+                  transaction batch submitted to L1 is accompanied by a mathematical proof
+                  confirming correctness, eliminating 7-day withdrawal delays. Examples include
+                  zkSync Era and Starknet.
                 </p>
               </div>
             </div>
@@ -193,7 +214,10 @@ function ArticlePage() {
               Proto-Danksharding (EIP-4844) &amp; Fee Reduction
             </h2>
             <p className="text-body-md mb-sm">
-              EIP-4844 introduced specialized data containers called <strong>blobs</strong> to Ethereum blocks. Blobs allow Layer 2 rollups to store transaction data on L1 at a fraction of traditional calldata costs without permanently bloating the Ethereum execution state, reducing L2 transaction costs by up to 90%.
+              EIP-4844 introduced specialized data containers called <strong>blobs</strong> to
+              Ethereum blocks. Blobs allow Layer 2 rollups to store transaction data on L1 at a
+              fraction of traditional calldata costs without permanently bloating the Ethereum
+              execution state, reducing L2 transaction costs by up to 90%.
             </p>
           </section>
 
@@ -203,7 +227,10 @@ function ArticlePage() {
             </h2>
             <div className="space-y-md">
               {faqs.map((faq, i) => (
-                <div key={i} className="border-b border-outline-variant pb-md last:border-0 last:pb-0">
+                <div
+                  key={i}
+                  className="border-b border-outline-variant pb-md last:border-0 last:pb-0"
+                >
                   <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">{faq.q}</h3>
                   <p className="text-body-md text-on-surface-variant">{faq.a}</p>
                 </div>

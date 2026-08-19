@@ -50,10 +50,10 @@ function PrivacyPage() {
               1. Introduction
             </h2>
             <p className="mb-sm">
-              CryptoBeacon ("CryptoBeacon," "we," "us," or "our") operates
-              www.cryptobeacon.site (the "Site"). This Privacy Policy explains what
-              information we collect, how we use it, and what choices you have. By using the Site,
-              you agree to the practices described here.
+              CryptoBeacon ("CryptoBeacon," "we," "us," or "our") operates www.cryptobeacon.site
+              (the "Site"). This Privacy Policy explains what information we collect, how we use it,
+              and what choices you have. By using the Site, you agree to the practices described
+              here.
             </p>
             <p>
               CryptoBeacon provides educational content about cryptocurrency, digital wallets, and

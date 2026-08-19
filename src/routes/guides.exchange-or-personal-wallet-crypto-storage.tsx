@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Author } from "@/components/Author";
 import hero from "@/assets/exchange-vs-wallet.png";
 import { CheckSquare, Plus } from "lucide-react";
 
-const URL =
-  "https://www.cryptobeacon.site/guides/exchange-or-personal-wallet-crypto-storage";
+const URL = "https://www.cryptobeacon.site/guides/exchange-or-personal-wallet-crypto-storage";
 const TITLE = "Exchange or Personal Wallet? A Crypto Storage Guide | CryptoBeacon";
 const DESC =
   "Should your crypto stay on an exchange or move to your own wallet? A clear, neutral decision framework based on how you actually use your crypto.";
@@ -38,9 +38,9 @@ const articleSchema = {
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   author: {
-    "@type": "Organization",
-    name: "CryptoBeacon Editorial Team",
-    url: "https://www.cryptobeacon.site",
+    "@type": "Person",
+    name: "Sarah Jenkins",
+    url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -174,13 +174,10 @@ function ArticlePage() {
           Should You Keep Your Crypto on an Exchange or Move It to Your Own Wallet?
         </h1>
 
-        <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">CryptoBeacon Editorial Team</Link></span>
-          <span aria-hidden>·</span>
-          <time dateTime={PUBLISHED}>July 22, 2026</time>
-          <span aria-hidden>·</span>
-          <span>6 min read</span>
-        </div>
+        <Author
+          publishedDate={<time dateTime={PUBLISHED}>July 22, 2026</time>}
+          readTime="6 min read"
+        />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -208,49 +205,6 @@ function ArticlePage() {
         <P>
           <em>This article is educational. It isn't financial advice.</em>
         </P>
-
-        <aside className="my-xl p-lg rounded-lg border border-outline-variant bg-surface-container-low">
-          <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">
-            Table of Contents
-          </h2>
-          <ol className="list-decimal list-inside space-y-xs font-body-md text-body-md text-on-surface">
-            <li>
-              <a href="#what-youre-choosing" className="hover:underline decoration-secondary">
-                What You're Actually Choosing Between
-              </a>
-            </li>
-            <li>
-              <a href="#exchange-makes-sense" className="hover:underline decoration-secondary">
-                When Keeping Crypto on an Exchange Makes Sense
-              </a>
-            </li>
-            <li>
-              <a href="#wallet-makes-sense" className="hover:underline decoration-secondary">
-                When Moving to Your Own Wallet Makes Sense
-              </a>
-            </li>
-            <li>
-              <a href="#hybrid-approach" className="hover:underline decoration-secondary">
-                The Hybrid Approach Most People Land On
-              </a>
-            </li>
-            <li>
-              <a href="#decision-checklist" className="hover:underline decoration-secondary">
-                A Simple Decision Checklist
-              </a>
-            </li>
-            <li>
-              <a href="#takeaways" className="hover:underline decoration-secondary">
-                Key Takeaways
-              </a>
-            </li>
-            <li>
-              <a href="#faq" className="hover:underline decoration-secondary">
-                Frequently Asked Questions
-              </a>
-            </li>
-          </ol>
-        </aside>
 
         <H2 id="what-youre-choosing">1. What You're Actually Choosing Between</H2>
         <P>
@@ -283,7 +237,9 @@ function ArticlePage() {
         </div>
 
         <P>
-          Whether holding major <strong>crypto currencies</strong> on large centralized spot venues or using specialized peer-to-peer trading platforms, understanding counterparty risk vs self-custody is critical.
+          Whether holding major <strong>crypto currencies</strong> on large centralized spot venues
+          or using specialized peer-to-peer trading platforms, understanding counterparty risk vs
+          self-custody is critical.
         </P>
 
         <P>
@@ -403,41 +359,28 @@ function ArticlePage() {
           </li>
         </ul>
 
-        <H2 id="takeaways">6. Key Takeaways</H2>
-        <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
-          <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
-            <li>
-              This decision is about matching custody type to how you actually use your crypto, not
-              about one option being universally correct.
-            </li>
-            <li>
-              Exchange custody trades control for convenience; personal wallet custody trades
-              convenience for full control and full responsibility.
-            </li>
-            <li>
-              A hybrid approach — active balance on an exchange, long-term holdings self-custodied —
-              is common and reasonable.
-            </li>
-            <li>
-              Confidence with seed phrase management should come before moving significant amounts
-              into self-custody.
-            </li>
-          </ul>
-        </div>
-
-        <H2 id="faq">7. Frequently Asked Questions</H2>
-        <div className="divide-y divide-outline-variant border-y border-outline-variant">
-          {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
-          ))}
+        <div className="my-xl p-lg rounded-xl border border-outline-variant bg-surface-container-low shadow-sm">
+          <h2 className="font-headline-sm text-headline-sm text-primary mb-md font-semibold">
+            Custody Quick Reference
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-lg font-body-md text-body-md text-on-surface">
+            <div>
+              <h3 className="font-bold text-secondary mb-sm">Exchange Storage</h3>
+              <ul className="list-disc pl-lg space-y-xs leading-relaxed">
+                <li>Best for small amounts or active trading</li>
+                <li>Uses simple username/password and 2FA logins</li>
+                <li>Carries counterparty risk (exchange security/solvency)</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-bold text-primary mb-sm">Personal Wallet</h3>
+              <ul className="list-disc pl-lg space-y-xs leading-relaxed">
+                <li>Best for large, long-term asset custody</li>
+                <li>Requires secure storage of physical recovery phrase</li>
+                <li>Eliminates third-party risk; full control of keys</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <H2 id="conclusion">Conclusion</H2>

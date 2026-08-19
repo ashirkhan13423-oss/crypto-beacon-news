@@ -107,6 +107,12 @@ export function SiteFooter() {
             About &amp; Editorial Standards
           </Link>
           <Link
+            to="/author"
+            className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
+          >
+            Editorial Team
+          </Link>
+          <Link
             to="/contact"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
@@ -130,42 +136,6 @@ export function SiteFooter() {
           >
             Financial Disclaimer
           </Link>
-        </div>
-
-        {/* Trending Keywords & Search Index Footer Section */}
-        <div className="col-span-1 md:col-span-4 pt-lg mt-lg border-t border-outline-variant">
-          <span className="font-label-caps text-label-caps text-secondary font-semibold mb-sm block">
-            Trending Topics &amp; Search Index
-          </span>
-          <div className="flex flex-wrap gap-xs font-body-sm text-xs text-on-surface-variant">
-            <Link to="/search" search={{ q: "crypto currency" }} className="hover:text-primary hover:underline">
-              Crypto Currency
-            </Link>
-            <span aria-hidden>·</span>
-            <Link to="/search" search={{ q: "what is crypto currency" }} className="hover:text-primary hover:underline">
-              What Is Crypto Currency
-            </Link>
-            <span aria-hidden>·</span>
-            <Link to="/search" search={{ q: "crypto currency price" }} className="hover:text-primary hover:underline">
-              Crypto Currency Price
-            </Link>
-            <span aria-hidden>·</span>
-            <Link to="/search" search={{ q: "crypto currency prices" }} className="hover:text-primary hover:underline">
-              Crypto Currency Prices
-            </Link>
-            <span aria-hidden>·</span>
-            <Link to="/search" search={{ q: "crypto currency news" }} className="hover:text-primary hover:underline">
-              Crypto Currency News
-            </Link>
-            <span aria-hidden>·</span>
-            <Link to="/search" search={{ q: "crypto currency meaning" }} className="hover:text-primary hover:underline">
-              Crypto Currency Meaning
-            </Link>
-            <span aria-hidden>·</span>
-            <Link to="/search" search={{ q: "crypto currencies" }} className="hover:text-primary hover:underline">
-              Crypto Currencies
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

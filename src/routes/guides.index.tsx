@@ -70,7 +70,9 @@ function GuidesHub() {
             <h1 className="font-display-lg text-display-lg text-primary">Crypto Currency Guides</h1>
           </div>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
-            Essential educational references explaining <strong>what crypto currency is</strong>, the deeper <strong>crypto currency meaning</strong> of private key custody, and how to safely manage major <strong>crypto currencies</strong>.
+            Essential educational references explaining <strong>what crypto currency is</strong>,
+            the deeper <strong>crypto currency meaning</strong> of private key custody, and how to
+            safely manage major <strong>crypto currencies</strong>.
           </p>
         </header>
 
@@ -150,7 +152,8 @@ function GuidesHub() {
                 What Is a Crypto Wallet Address?
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
-                How public keys and wallet addresses work, how to share them safely, and how to verify address formats across blockchains.
+                How public keys and wallet addresses work, how to share them safely, and how to
+                verify address formats across blockchains.
               </p>
             </div>
           </Link>

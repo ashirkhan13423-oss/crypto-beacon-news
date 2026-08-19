@@ -77,7 +77,7 @@ const ARTICLES = [
   {
     title: '"Not Your Keys, Not Your Coins" — What It Actually Means',
     description:
-      'The foundational crypto currency meaning of self-custody: why private key ownership matters when holding crypto currencies.',
+      "The foundational crypto currency meaning of self-custody: why private key ownership matters when holding crypto currencies.",
     path: "/guides/not-your-keys-not-your-coins-meaning",
     category: "Guides",
   },
@@ -227,10 +227,13 @@ function SearchPage() {
           <div className="py-xl max-w-3xl">
             <div className="flex items-center gap-xs mb-md text-on-surface-variant">
               <FileSearch className="w-5 h-5 text-secondary" />
-              <h2 className="font-headline-sm text-headline-sm text-primary">Popular &amp; Trending Searches</h2>
+              <h2 className="font-headline-sm text-headline-sm text-primary">
+                Popular &amp; Trending Searches
+              </h2>
             </div>
             <p className="font-body-md text-on-surface-variant mb-md">
-              Select a trending topic to search through our editorial guides and crypto currency news index:
+              Select a trending topic to search through our editorial guides and crypto currency
+              news index:
             </p>
             <div className="flex flex-wrap gap-xs">
               {[

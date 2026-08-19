@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Users, BookOpen, ShieldCheck, Mail } from "lucide-react";
@@ -49,26 +49,38 @@ function AboutPage() {
               <Users className="text-secondary" /> Who We Are
             </h2>
             <p className="mb-md">
-              CryptoBeacon is a specialist cryptocurrency editorial team dedicated to objective digital asset education and security research:
+              CryptoBeacon is led by senior researcher and editor{" "}
+              <Link to="/author" className="text-secondary font-semibold hover:underline">
+                Sarah Jenkins
+              </Link>
+              , supported by a specialist cryptocurrency editorial team dedicated to objective digital
+              asset education and security research:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-md my-md">
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
-                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Security Research</h3>
+                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">
+                  Security Research
+                </h3>
                 <p className="text-body-md text-on-surface-variant">
-                  Our security team specializes in non-custodial wallet architecture, key management protocols, multi-sig security frameworks, and real-world threat analysis.
+                  Our security team specializes in non-custodial wallet architecture, key management
+                  protocols, multi-sig security frameworks, and real-world threat analysis.
                 </p>
               </div>
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
-                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Market & Macro Analysis</h3>
+                <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">
+                  Market & Macro Analysis
+                </h3>
                 <p className="text-body-md text-on-surface-variant">
-                  Our research desk focuses on Bitcoin market structure, exchange reserve telemetry, DeFi dynamics, and global cryptocurrency regulation.
+                  Our research desk focuses on Bitcoin market structure, exchange reserve telemetry,
+                  DeFi dynamics, and global cryptocurrency regulation.
                 </p>
               </div>
             </div>
             <p>
               In a space often driven by speculation and short-term narratives, our mission is to
               provide clear, objective, and deeply researched educational content that empowers our
-              readers to make informed decisions about digital asset security and market fundamentals.
+              readers to make informed decisions about digital asset security and market
+              fundamentals.
             </p>
           </section>
 
@@ -123,6 +135,13 @@ function AboutPage() {
               We do not publish unverified claims, nor do we accept paid promotions masquerading as
               editorial content. If an article includes sponsored content or affiliate links, it
               will be explicitly and prominently disclosed at the top of the page.
+            </p>
+          </section>
+
+          <section className="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm mt-xl">
+            <h2 className="font-headline-md text-headline-md text-primary mb-sm">Publisher Information</h2>
+            <p className="text-body-md text-on-surface-variant">
+              CryptoBeacon is an independent educational publication operated by Sarah Jenkins. We are based in Seattle, Washington, USA.
             </p>
           </section>
 

@@ -19,6 +19,7 @@ import { Route as EthereumRouteImport } from './routes/ethereum'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BitcoinRouteImport } from './routes/bitcoin'
+import { Route as AuthorRouteImport } from './routes/author'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SecurityIndexRouteImport } from './routes/security.index'
@@ -90,6 +91,11 @@ const ContactRoute = ContactRouteImport.update({
 const BitcoinRoute = BitcoinRouteImport.update({
   id: '/bitcoin',
   path: '/bitcoin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthorRoute = AuthorRouteImport.update({
+  id: '/author',
+  path: '/author',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -221,6 +227,7 @@ const BitcoinHowToSendBitcoinSafelyRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/author': typeof AuthorRoute
   '/bitcoin': typeof BitcoinRouteWithChildren
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
@@ -255,6 +262,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/author': typeof AuthorRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/privacy': typeof PrivacyRoute
@@ -285,6 +293,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/author': typeof AuthorRoute
   '/bitcoin': typeof BitcoinRouteWithChildren
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
@@ -321,6 +330,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/author'
     | '/bitcoin'
     | '/contact'
     | '/disclaimer'
@@ -355,6 +365,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/author'
     | '/contact'
     | '/disclaimer'
     | '/privacy'
@@ -384,6 +395,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/author'
     | '/bitcoin'
     | '/contact'
     | '/disclaimer'
@@ -419,6 +431,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AuthorRoute: typeof AuthorRoute
   BitcoinRoute: typeof BitcoinRouteWithChildren
   ContactRoute: typeof ContactRoute
   DisclaimerRoute: typeof DisclaimerRoute
@@ -501,6 +514,13 @@ declare module '@tanstack/react-router' {
       path: '/bitcoin'
       fullPath: '/bitcoin'
       preLoaderRoute: typeof BitcoinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/author': {
+      id: '/author'
+      path: '/author'
+      fullPath: '/author'
+      preLoaderRoute: typeof AuthorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -758,6 +778,7 @@ const SecurityRouteWithChildren = SecurityRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AuthorRoute: AuthorRoute,
   BitcoinRoute: BitcoinRouteWithChildren,
   ContactRoute: ContactRoute,
   DisclaimerRoute: DisclaimerRoute,

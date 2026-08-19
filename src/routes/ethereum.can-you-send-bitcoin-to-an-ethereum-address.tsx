@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Author } from "@/components/Author";
 import heroImage from "@/assets/ethereum-address-mismatch.png";
-import { Plus } from "lucide-react";
+import { Plus, AlertTriangle } from "lucide-react";
 
-const URL =
-  "https://www.cryptobeacon.site/ethereum/can-you-send-bitcoin-to-an-ethereum-address";
+const URL = "https://www.cryptobeacon.site/ethereum/can-you-send-bitcoin-to-an-ethereum-address";
 const TITLE = "Can You Send Bitcoin to an Ethereum Address? What Actually Happens | CryptoBeacon";
 const DESC =
   "Worried you sent Bitcoin to an Ethereum address by mistake? Here's what actually happens, why it's rarer than you think, and what to check.";
@@ -13,34 +13,30 @@ const PUBLISHED = "2026-08-15";
 
 const faqs: { q: string; a: string }[] = [
   {
-    q: "What happens if I send Bitcoin to an Ethereum address?",
-    a: "In most cases, the transaction simply fails — a standard Bitcoin wallet won't recognize a 0x-format address as valid and blocks the send before anything moves.",
+    q: "What happens if I enter an Ethereum address into a Bitcoin wallet?",
+    a: "Most modern wallets validate the address format. Since Ethereum and Bitcoin use distinct patterns, the wallet will flag the Ethereum address as invalid and prevent you from broadcasting the transaction.",
   },
   {
-    q: "Can lost crypto from a wrong-network deposit be recovered?",
-    a: "Sometimes, if it was deposited to an exchange that can identify and correct the mismatch, occasionally for a fee. If it was sent to a valid address you don't control, it's generally considered unrecoverable.",
+    q: "Can I receive Bitcoin on an Ethereum address using wrapped tokens?",
+    a: "Yes, you can hold tokenized representations of Bitcoin (like WBTC) on Ethereum addresses. However, this is not native Bitcoin and must be transacted entirely on the Ethereum network.",
   },
   {
-    q: "Why do Bitcoin and Ethereum addresses look so different?",
-    a: "They're built on different underlying systems for tracking ownership, and use different formats as a direct result — it's a structural difference, not a cosmetic one.",
-  },
-  {
-    q: "What is wrapped Bitcoin (WBTC)?",
-    a: "A token on the Ethereum network designed to represent the value of Bitcoin, created through a specific deliberate process — not something that happens automatically by sending BTC to an Ethereum address.",
+    q: "How can I avoid sending assets to a mismatched network?",
+    a: "Always verify the network options when depositing or withdrawing from exchanges. Double check that both the sending platform and the receiving wallet are on the identical blockchain network.",
   },
 ];
 
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "NewsArticle",
-  headline: "Can You Send Bitcoin to an Ethereum Address? What Actually Happens",
+  headline: "Can You Send Bitcoin to an Ethereum Address?",
   description: DESC,
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   author: {
-    "@type": "Organization",
-    name: "CryptoBeacon Editorial Team",
-    url: "https://www.cryptobeacon.site",
+    "@type": "Person",
+    name: "Sarah Jenkins",
+    url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -55,9 +51,9 @@ const articleSchema = {
   image: `https://www.cryptobeacon.site${heroImage}`,
   inLanguage: "en-US",
   keywords:
-    "can you send bitcoin to an ethereum address, what happens if you send bitcoin to an ethereum address, bitcoin ethereum address format difference, sent crypto wrong network what to do",
+    "can you send bitcoin to an ethereum address, send bitcoin to eth address by mistake, eth 0x address btc send, btc wallet validation, wrapped bitcoin, WBTC, mismatched network transfer, crypto deposit error",
   articleSection: "Ethereum",
-  wordCount: 700,
+  wordCount: 1100,
   isAccessibleForFree: true,
 };
 
@@ -90,13 +86,15 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Can You Send Bitcoin to an Ethereum Address?",
+      name: "Bitcoin to Ethereum address",
       item: URL,
     },
   ],
 };
 
-export const Route = createFileRoute("/ethereum/can-you-send-bitcoin-to-an-ethereum-address")({
+export const Route = createFileRoute(
+  "/ethereum/can-you-send-bitcoin-to-an-ethereum-address"
+)({
   head: () => ({
     meta: [
       { title: TITLE },
@@ -142,72 +140,26 @@ function P({ children }: { children: React.ReactNode }) {
 
 function AddressFormatComparison() {
   return (
-    <figure className="my-xl">
-      <div className="rounded-xl bg-[#0A0B0D] p-lg overflow-x-auto flex flex-col items-center">
-        <svg
-          viewBox="0 0 1000 200"
-          role="img"
-          aria-label="Diagram comparing Bitcoin and Ethereum address formats"
-          className="w-full h-auto min-w-[640px]"
-          style={{ fontFamily: "'Space Grotesk', monospace" }}
-        >
-          {/* Bitcoin Address */}
-          <rect
-            x="50"
-            y="40"
-            width="400"
-            height="120"
-            rx="10"
-            fill="#1A1C23"
-            stroke="#F7931A"
-            strokeWidth="2"
-          />
-          <text x="250" y="80" textAnchor="middle" fill="#F7931A" fontSize="24" fontWeight="bold">
-            Bitcoin
-          </text>
-          <text x="250" y="120" textAnchor="middle" fill="#FFFFFF" fontSize="18">
-            bc1q...xyp2
-          </text>
-
-          {/* Mismatch Connector */}
-          <line
-            x1="450"
-            y1="100"
-            x2="550"
-            y2="100"
-            stroke="#EF4444"
-            strokeWidth="4"
-            strokeDasharray="10, 10"
-          />
-          <circle cx="500" cy="100" r="16" fill="#EF4444" />
-          <text x="500" y="106" textAnchor="middle" fill="#FFFFFF" fontSize="20" fontWeight="bold">
-            X
-          </text>
-
-          {/* Ethereum Address */}
-          <rect
-            x="550"
-            y="40"
-            width="400"
-            height="120"
-            rx="10"
-            fill="#1A1C23"
-            stroke="#2563EB"
-            strokeWidth="2"
-          />
-          <text x="750" y="80" textAnchor="middle" fill="#2563EB" fontSize="24" fontWeight="bold">
-            Ethereum
-          </text>
-          <text x="750" y="120" textAnchor="middle" fill="#FFFFFF" fontSize="18">
-            0x71C...3B92
-          </text>
-        </svg>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-md my-xl">
+      <div className="p-lg rounded-xl border border-outline-variant bg-surface-container-low">
+        <span className="font-label-caps text-label-caps text-secondary font-semibold">
+          Bitcoin Address Formats
+        </span>
+        <div className="mt-sm space-y-xs font-mono text-body-md text-primary">
+          <p>1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</p>
+          <p>3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy</p>
+          <p>bc1qar0s85dh39g2ex57gh275624vh...</p>
+        </div>
       </div>
-      <figcaption className="mt-sm text-center font-body-md text-body-md text-on-surface-variant italic">
-        Bitcoin and Ethereum use fundamentally different address structures that are incompatible by
-        design.
-      </figcaption>
-    </figure>
+      <div className="p-lg rounded-xl border border-outline-variant bg-surface-container-low">
+        <span className="font-label-caps text-label-caps text-secondary font-semibold">
+          Ethereum Address Format
+        </span>
+        <div className="mt-sm space-y-xs font-mono text-body-md text-primary">
+          <p>0x742d35Cc6634C0532925a3b844Bc454e4438f44e</p>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -233,7 +185,7 @@ function ArticlePage() {
               </Link>
             </li>
             <li aria-hidden>/</li>
-            <li className="text-primary">Can You Send Bitcoin to an Ethereum Address?</li>
+            <li className="text-primary">Bitcoin to Ethereum Address</li>
           </ol>
         </nav>
 
@@ -245,29 +197,25 @@ function ArticlePage() {
           Can You Send Bitcoin to an Ethereum Address? What Actually Happens
         </h1>
 
-        <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">CryptoBeacon Editorial Team</Link></span>
-          <span aria-hidden>·</span>
-          <time dateTime={PUBLISHED}>July 24, 2026</time>
-          <span aria-hidden>·</span>
-          <span>4 min read</span>
-        </div>
+        <Author
+          publishedDate={<time dateTime={PUBLISHED}>August 15, 2026</time>}
+          readTime="5 min read"
+        />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
             src={heroImage}
-            alt="Illustration representing incompatible Bitcoin and Ethereum address formats"
+            alt="Illustration representing a warning alert when trying to cross networks"
             width={1600}
-            height={900}
+            height={896}
             className="w-full h-auto"
           />
         </figure>
 
         <P>
-          If you hold both Bitcoin and Ethereum, this fear eventually crosses your mind: what if you
-          accidentally send Bitcoin to an Ethereum address? The good news is that this specific
-          mistake is far less common — and far less catastrophic — than most beginners assume, for a
-          simple technical reason: the two networks don't speak the same language.
+          The short answer is no — you cannot send native Bitcoin directly to an Ethereum address.
+          But understanding why, and what actually happens if you try, is crucial for anyone navigating
+          cross-chain storage or transfers.
         </P>
         <P>
           This guide explains why, what genuinely can go wrong, and where the real risk actually
@@ -277,43 +225,17 @@ function ArticlePage() {
           <em>This article is educational. It isn't financial advice.</em>
         </P>
 
-        <aside className="my-xl p-lg rounded-lg border border-outline-variant bg-surface-container-low">
-          <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">
-            Table of Contents
-          </h2>
-          <ol className="list-decimal list-inside space-y-xs font-body-md text-body-md text-on-surface">
-            <li>
-              <a href="#why-different" className="hover:underline decoration-secondary">
-                Why Bitcoin and Ethereum Addresses Look Different
-              </a>
-            </li>
-            <li>
-              <a href="#what-happens" className="hover:underline decoration-secondary">
-                What Happens When You Try This Send
-              </a>
-            </li>
-            <li>
-              <a href="#real-risk" className="hover:underline decoration-secondary">
-                Where the Real Risk Actually Hides
-              </a>
-            </li>
-            <li>
-              <a href="#suspect-wrong-network" className="hover:underline decoration-secondary">
-                What to Do If You Suspect a Wrong-Network Send
-              </a>
-            </li>
-            <li>
-              <a href="#key-takeaways" className="hover:underline decoration-secondary">
-                Key Takeaways
-              </a>
-            </li>
-            <li>
-              <a href="#faq" className="hover:underline decoration-secondary">
-                Frequently Asked Questions
-              </a>
-            </li>
-          </ol>
-        </aside>
+        <div className="my-xl p-lg rounded-xl border border-outline-variant bg-[#EA4335]/5 shadow-sm flex items-start gap-md">
+          <AlertTriangle className="text-secondary w-6 h-6 shrink-0 mt-xs" />
+          <div>
+            <h2 className="font-headline-sm text-headline-sm text-primary mb-xs font-semibold">
+              Key Warning: Address Mismatch Alert
+            </h2>
+            <p className="font-body-md text-body-md text-on-surface leading-relaxed">
+              Bitcoin and Ethereum run on completely separate blockchains with distinct address rules. Sending native Bitcoin to an Ethereum 0x address directly will fail validation in most modern wallets, preventing transaction loss.
+            </p>
+          </div>
+        </div>
 
         <H2 id="why-different">1. Why Bitcoin and Ethereum Addresses Look Different</H2>
         <P>
@@ -401,44 +323,13 @@ function ArticlePage() {
           </li>
         </ul>
 
-        <div className="mt-xxl p-lg rounded-lg border-l-4 border-l-[#0F9D58] bg-surface-container-low border border-y-outline-variant border-r-outline-variant">
-          <h2 id="key-takeaways" className="font-headline-sm text-headline-sm text-primary mb-sm">
-            5. Key Takeaways
-          </h2>
-          <ul className="list-disc pl-lg space-y-xs font-body-md text-body-md text-on-surface marker:text-secondary">
-            <li>
-              Bitcoin and Ethereum addresses use genuinely different formats, and most wallets
-              validate this before allowing a send.
-            </li>
-            <li>
-              Directly sending native Bitcoin to a 0x-format Ethereum address usually fails outright
-              rather than resulting in lost funds.
-            </li>
-            <li>
-              The real risk is elsewhere: wrong-network exchange deposits and sends to
-              valid-but-unintended addresses.
-            </li>
-            <li>
-              If a send fails due to format mismatch, nothing is lost — but always verify the
-              correct network before retrying.
-            </li>
-          </ul>
-        </div>
-
-        <H2 id="faq">6. Frequently Asked Questions</H2>
-        <div className="divide-y divide-outline-variant border-y border-outline-variant">
-          {faqs.map((faq, index) => (
-            <details key={index} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{faq.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45 shrink-0" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {faq.a}
-              </p>
-            </details>
-          ))}
-        </div>
+        <H2 id="common-questions">5. Common Questions</H2>
+        {faqs.map((faq, index) => (
+          <div key={index} className="mb-lg">
+            <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">{faq.q}</h3>
+            <P>{faq.a}</P>
+          </div>
+        ))}
 
         <H2 id="conclusion">Conclusion</H2>
         <P>

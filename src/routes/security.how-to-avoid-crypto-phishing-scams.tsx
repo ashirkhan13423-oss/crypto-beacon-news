@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Author } from "@/components/Author";
 import hero from "@/assets/phishing-padlock.jpg";
 import { AlertTriangle, Plus } from "lucide-react";
 
@@ -41,9 +42,9 @@ const articleSchema = {
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   author: {
-    "@type": "Organization",
-    name: "CryptoBeacon Editorial Team",
-    url: "https://www.cryptobeacon.site",
+    "@type": "Person",
+    name: "Sarah Jenkins",
+    url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
   publisher: {
@@ -221,13 +222,10 @@ function ArticlePage() {
           How to Avoid Crypto Phishing Scams
         </h1>
 
-        <div className="mt-md flex flex-wrap items-center gap-md font-body-md text-body-md text-on-surface-variant">
-          <span>By <Link to="/about" className="text-secondary font-medium hover:underline">CryptoBeacon Editorial Team</Link></span>
-          <span aria-hidden>·</span>
-          <time dateTime={PUBLISHED}>July 3, 2026</time>
-          <span aria-hidden>·</span>
-          <span>9 min read</span>
-        </div>
+        <Author
+          publishedDate={<time dateTime={PUBLISHED}>July 3, 2026</time>}
+          readTime="9 min read"
+        />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -257,6 +255,30 @@ function ArticlePage() {
             isn't financial advice.
           </em>
         </P>
+
+        <div className="my-xl p-lg rounded-xl border border-outline-variant bg-surface-container-low shadow-sm">
+          <h2 className="font-headline-sm text-headline-sm text-primary mb-md flex items-center gap-xs">
+            <AlertTriangle className="text-secondary w-6 h-6 shrink-0" /> Quick Security Check: Red Flags vs. Safe Habits
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-md font-body-md text-body-md text-on-surface">
+            <div className="p-md rounded-lg bg-[#EA4335]/5 border border-[#EA4335]/20">
+              <h3 className="font-bold text-[#EA4335] mb-xs">Red Flags</h3>
+              <ul className="list-disc pl-md space-y-xs leading-relaxed">
+                <li>Direct messages containing links for "customer support"</li>
+                <li>Websites asking for your 12- or 24-word recovery seed phrase</li>
+                <li>Urgent requests to authorize transactions or verify holdings</li>
+              </ul>
+            </div>
+            <div className="p-md rounded-lg bg-[#0F9D58]/5 border border-[#0F9D58]/20">
+              <h3 className="font-bold text-[#0F9D58] mb-xs">Safe Habits</h3>
+              <ul className="list-disc pl-md space-y-xs leading-relaxed">
+                <li>Always navigate to domains manually rather than clicking links</li>
+                <li>Keep recovery phrases offline and in physical secure storage</li>
+                <li>Read and verify smart contract permissions carefully before signing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
         <aside className="my-xl p-lg rounded-lg border border-outline-variant bg-surface-container-low">
           <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">
@@ -291,11 +313,6 @@ function ArticlePage() {
             <li>
               <a href="#targeted" className="hover:underline decoration-secondary">
                 What to Do If You Think You've Been Targeted
-              </a>
-            </li>
-            <li>
-              <a href="#takeaways" className="hover:underline decoration-secondary">
-                Key Takeaways
               </a>
             </li>
             <li>
@@ -493,43 +510,17 @@ function ArticlePage() {
           </li>
         </ul>
 
-        <H2 id="takeaways">7. Key Takeaways</H2>
-        <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
-          <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
-            <li>
-              Crypto phishing targets actions and permissions, not just passwords — there's no reset
-              once a transaction is signed.
-            </li>
-            <li>
-              The specific scam format changes constantly, but the underlying pattern — contact,
-              urgency, redirect, ask — repeats almost every time.
-            </li>
-            <li>
-              No legitimate service will ever ask for your seed phrase, under any circumstance.
-            </li>
-            <li>
-              Slowing down and verifying independently is more effective than any single tool or
-              setting.
-            </li>
-            <li>
-              If you suspect exposure, move funds to a new wallet immediately rather than waiting to
-              be certain.
-            </li>
-          </ul>
-        </div>
-
-        <H2 id="faq">8. Frequently Asked Questions</H2>
-        <div className="divide-y divide-outline-variant border-y border-outline-variant">
+        <H2 id="faq">7. Frequently Asked Questions</H2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
           {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low flex flex-col">
+              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">
+                {f.q}
+              </h3>
+              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
                 {f.a}
               </p>
-            </details>
+            </div>
           ))}
         </div>
 
