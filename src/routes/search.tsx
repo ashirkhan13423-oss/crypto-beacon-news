@@ -223,39 +223,7 @@ function SearchPage() {
           </div>
         )}
 
-        {query.trim() === "" && (
-          <div className="py-xl max-w-3xl">
-            <div className="flex items-center gap-xs mb-md text-on-surface-variant">
-              <FileSearch className="w-5 h-5 text-secondary" />
-              <h2 className="font-headline-sm text-headline-sm text-primary">
-                Popular &amp; Trending Searches
-              </h2>
-            </div>
-            <p className="font-body-md text-on-surface-variant mb-md">
-              Select a trending topic to search through our editorial guides and crypto currency
-              news index:
-            </p>
-            <div className="flex flex-wrap gap-xs">
-              {[
-                "crypto currency",
-                "what is crypto currency",
-                "crypto currency price",
-                "crypto currency prices",
-                "crypto currency news",
-                "crypto currency meaning",
-                "crypto currencies",
-              ].map((term) => (
-                <button
-                  key={term}
-                  onClick={() => handleQueryChange(term)}
-                  className="px-md py-xs bg-surface-container-low hover:bg-surface-container-high border border-outline-variant hover:border-secondary rounded-full font-label-md text-on-surface hover:text-primary transition-all text-sm"
-                >
-                  {term}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
+
       </main>
       <SiteFooter />
     </div>

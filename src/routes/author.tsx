@@ -1,23 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import authorAvatar from "@/assets/sarah-jenkins.jpg";
+import authorAvatar from "@/assets/ashir.jpg";
 import { Award, BookOpen, GraduationCap, ShieldCheck, Mail, ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/author")({
   head: () => ({
     meta: [
-      { title: "Sarah Jenkins — Lead Editor & Researcher — CryptoBeacon" },
+      { title: "Ashir — Lead Editor & Researcher — CryptoBeacon" },
       {
         name: "description",
         content:
-          "Sarah Jenkins is the senior cryptocurrency researcher and editor at CryptoBeacon, specializing in blockchain mechanics, self-custody systems, and protocol audits.",
+          "Ashir is the senior cryptocurrency researcher and editor at CryptoBeacon, specializing in blockchain mechanics, self-custody systems, and protocol audits.",
       },
-      { property: "og:title", content: "Sarah Jenkins — CryptoBeacon" },
+      { property: "og:title", content: "Ashir — CryptoBeacon" },
       {
         property: "og:description",
         content:
-          "Sarah Jenkins is the senior cryptocurrency researcher and editor at CryptoBeacon, specializing in blockchain mechanics, self-custody systems, and protocol audits.",
+          "Ashir is the senior cryptocurrency researcher and editor at CryptoBeacon, specializing in blockchain mechanics, self-custody systems, and protocol audits.",
       },
       { property: "og:url", content: "https://www.cryptobeacon.site/author" },
       { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
@@ -44,7 +44,7 @@ function AuthorPage() {
         <header className="mb-xl border-b border-outline-variant pb-lg flex flex-col md:flex-row gap-lg items-start md:items-center">
           <img
             src={authorAvatar}
-            alt="Sarah Jenkins"
+            alt="Ashir"
             className="w-28 h-28 rounded-full object-cover border-4 border-primary-container shadow-md shrink-0"
           />
           <div>
@@ -52,7 +52,7 @@ function AuthorPage() {
               Lead Researcher & Editor
             </span>
             <h1 className="font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-primary mb-xs leading-tight">
-              Sarah Jenkins
+              Ashir
             </h1>
             <p className="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
               Specialist in Cryptographic Self-Custody & Blockchain Security
@@ -66,20 +66,20 @@ function AuthorPage() {
               <BookOpen className="text-secondary" /> Biography
             </h2>
             <p>
-              Sarah Jenkins is the Lead Editor and Senior Researcher at CryptoBeacon. She has spent
+              Ashir is the Lead Editor and Senior Researcher at CryptoBeacon. He has spent
               more than a decade studying digital privacy systems and decentralized cryptographic
-              networks. Sarah’s research is focused primarily on the intersection of user security,
+              networks. Ashir's research is focused primarily on the intersection of user security,
               non-custodial wallets, and sovereign money principles.
             </p>
             <p>
-              Before joining CryptoBeacon, Sarah served as a senior protocol security analyst, where she
+              Before joining CryptoBeacon, Ashir served as a senior protocol security analyst, where he
               conducted smart contract audits and evaluated consensus-level parameters for emerging Layer 1 and
-              Layer 2 blockchains. She has also served as a consultant for enterprise cryptocurrency custodians and
+              Layer 2 blockchains. He has also served as a consultant for enterprise cryptocurrency custodians and
               treasury management projects, designing robust multi-signature setups.
             </p>
             <p>
-              Through her editorial work, Sarah is dedicated to converting complex cryptographic primitives
-              and macro market data into clean, transparent, and objective learning resources. She believes that
+              Through his editorial work, Ashir is dedicated to converting complex cryptographic primitives
+              and macro market data into clean, transparent, and objective learning resources. He believes that
               safe, robust self-custody is the most critical hurdle to widespread cryptocurrency adoption.
             </p>
           </section>
@@ -98,7 +98,7 @@ function AuthorPage() {
                   <strong>Certified Blockchain Security Professional (CBSP)</strong>
                 </li>
                 <li>
-                  Former Lead Security Auditor at <em>Consensys-level Auditing Labs</em>
+                  Former Lead Security Auditor
                 </li>
               </ul>
             </section>
@@ -121,7 +121,7 @@ function AuthorPage() {
               <ShieldCheck className="text-secondary" /> Editorial Commitment
             </h2>
             <p className="text-body-md text-on-surface-variant">
-              Every guide and analysis published under Sarah’s oversight follows CryptoBeacon's
+              Every guide and analysis published under Ashir's oversight follows CryptoBeacon's
               evergreen-first policy. This means our material is focused on core blockchain properties
               and verified security practices rather than short-term market speculation.
             </p>
@@ -135,10 +135,10 @@ function AuthorPage() {
               </p>
             </div>
             <a
-              href="mailto:sarah.jenkins@cryptobeacon.site"
+              href="mailto:ashir@cryptobeacon.site"
               className="inline-flex items-center gap-xs px-md py-sm bg-primary text-on-primary font-medium rounded-lg hover:bg-primary-hover transition-colors"
             >
-              <Mail className="w-4 h-4" /> Email Sarah
+              <Mail className="w-4 h-4" /> Email Ashir
             </a>
           </section>
         </article>

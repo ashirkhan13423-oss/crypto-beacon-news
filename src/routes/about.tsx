@@ -51,7 +51,7 @@ function AboutPage() {
             <p className="mb-md">
               CryptoBeacon is led by senior researcher and editor{" "}
               <Link to="/author" className="text-secondary font-semibold hover:underline">
-                Sarah Jenkins
+                Ashir
               </Link>
               , supported by a specialist cryptocurrency editorial team dedicated to objective digital
               asset education and security research:
@@ -141,7 +141,7 @@ function AboutPage() {
           <section className="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm mt-xl">
             <h2 className="font-headline-md text-headline-md text-primary mb-sm">Publisher Information</h2>
             <p className="text-body-md text-on-surface-variant">
-              CryptoBeacon is an independent educational publication operated by Sarah Jenkins. We are based in Seattle, Washington, USA.
+              CryptoBeacon is an independent educational publication operated by Ashir. We are based in Seattle, Washington, USA.
             </p>
           </section>
 

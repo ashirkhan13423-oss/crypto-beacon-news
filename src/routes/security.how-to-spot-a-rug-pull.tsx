@@ -39,7 +39,7 @@ const articleSchema = {
   dateModified: PUBLISHED,
   author: {
     "@type": "Person",
-    name: "Sarah Jenkins",
+    name: "Ashir",
     url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
@@ -57,7 +57,7 @@ const articleSchema = {
   keywords:
     "how to spot a rug pull, crypto scams, locked liquidity, honeypot crypto, soft rug pull",
   articleSection: "Security",
-  wordCount: 1250,
+  wordCount: 1350,
   isAccessibleForFree: true,
 };
 
@@ -176,12 +176,12 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 20, 2026</time>}
-          readTime="6 min read"
+          readTime="7 min read"
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            src={hero}
+            fetchpriority="high" src={hero}
             alt="Glowing neon rug being pulled from underneath digital coins"
             width={1600}
             height={896}
@@ -227,13 +227,13 @@ function ArticlePage() {
         <P>
           For a new token to be traded on a decentralized exchange (like Uniswap), the developers
           must supply an initial "liquidity pool" — usually a mix of their new token and a valuable
-          asset like ETH. 
+          asset like ETH or USDC. This pool allows users to instantly swap their ETH for the new token.
         </P>
         <P>
           If the developers retain control of this liquidity pool, they can withdraw the ETH at any
           moment, destroying the ability for anyone else to sell. Legitimate projects use third-party
           smart contracts to time-lock their liquidity for months or years. If a new project has
-          unlocked liquidity, a rug pull is almost guaranteed.
+          unlocked liquidity, a rug pull is almost guaranteed. You can use blockchain explorers or tools like Team Finance to verify if a liquidity pool is genuinely locked.
         </P>
 
         <H2 id="concentration">2. Red Flag: High Wallet Concentration</H2>
@@ -298,6 +298,30 @@ function ArticlePage() {
           crypto ecosystem.
         </P>
 
+        <H2 id="sources">Sources & Further Reading</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://www.chainalysis.com/blog/2021-crypto-scam-revenues/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Chainalysis — The Rise of Rug Pulls
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://coinmarketcap.com/alexandria/glossary/rug-pull"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              CoinMarketCap — What is a Rug Pull?
+            </a>
+          </li>
+        </ul>
+
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
@@ -346,3 +370,4 @@ function ArticlePage() {
     </div>
   );
 }
+

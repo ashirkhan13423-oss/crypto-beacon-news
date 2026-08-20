@@ -36,7 +36,7 @@ const articleSchema = {
   dateModified: PUBLISHED,
   author: {
     "@type": "Person",
-    name: "Sarah Jenkins",
+    name: "Ashir",
     url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
@@ -54,7 +54,7 @@ const articleSchema = {
   keywords:
     "defi risks explained, smart contract vulnerabilities, impermanent loss, decentralized finance dangers, defi hacks",
   articleSection: "Security",
-  wordCount: 1300,
+  wordCount: 1400,
   isAccessibleForFree: true,
 };
 
@@ -173,12 +173,12 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 20, 2026</time>}
-          readTime="7 min read"
+          readTime="8 min read"
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            src={hero}
+            fetchpriority="high" src={hero}
             alt="Glowing decentralized finance graph with a red warning sign"
             width={1600}
             height={896}
@@ -230,14 +230,18 @@ function ArticlePage() {
         <H2 id="impermanent-loss">2. Impermanent Loss</H2>
         <P>
           Many DeFi users are lured in by the high Annual Percentage Yields (APY) offered for
-          providing liquidity to decentralized exchanges (like Uniswap). This involves depositing two
-          tokens (e.g., ETH and USDC) into a pool.
+          providing liquidity to decentralized exchanges (like Uniswap or SushiSwap). This involves depositing two
+          tokens (e.g., ETH and USDC) into a liquidity pool.
         </P>
         <P>
           However, if the price of ETH skyrockets (or crashes) while it is in the pool, the automated
-          market maker rebalances your ratio. When you withdraw, you may find that you have less
-          overall value than if you had simply held the ETH and USDC in your wallet. The yield you
-          earned from fees may not cover the "impermanent loss" caused by the price divergence.
+          market maker rebalances your ratio to ensure the pool maintains an equal dollar value of both assets. 
+          When you withdraw your liquidity, you may find that you have less
+          overall value than if you had simply held the ETH and USDC separately in your wallet. The yield you
+          earned from trading fees may not be enough to cover this "impermanent loss" caused by the price divergence.
+        </P>
+        <P>
+          It is called "impermanent" because if the prices return to the exact ratio they were at when you deposited, the loss vanishes. But in the highly volatile crypto market, that rarely happens.
         </P>
 
         <AdUnit />
@@ -273,6 +277,40 @@ function ArticlePage() {
           lose completely. Stick to established, battle-tested protocols for a longer period of time,
           and always assume that a high APY is compensating you for an equally high hidden risk.
         </P>
+
+        <H2 id="sources">Sources & Further Reading</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://ethereum.org/en/defi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Ethereum.org — Decentralized Finance (DeFi)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://finematics.com/impermanent-loss-explained/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Finematics — Impermanent Loss Explained
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://rekt.news/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Rekt.news — Journalism covering the worst DeFi hacks and exploits
+            </a>
+          </li>
+        </ul>
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
@@ -322,3 +360,4 @@ function ArticlePage() {
     </div>
   );
 }
+

@@ -35,7 +35,7 @@ const articleSchema = {
   dateModified: "2026-08-15",
   author: {
     "@type": "Person",
-    name: "Sarah Jenkins",
+    name: "Ashir",
     url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
@@ -52,7 +52,7 @@ const articleSchema = {
   inLanguage: "en-US",
   keywords:
     "what is a blockchain fork, hard fork vs soft fork explained, why do cryptocurrencies split, what happens in a crypto fork, hard fork, soft fork, consensus rules, chain split, node, protocol upgrade",
-  articleSection: "News",
+  articleSection: "Guides",
   wordCount: 1200,
   isAccessibleForFree: true,
 };
@@ -80,7 +80,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 2,
-      name: "News",
+      name: "Guides",
       item: "https://www.cryptobeacon.site/news",
     },
     {
@@ -92,7 +92,7 @@ const breadcrumbSchema = {
   ],
 };
 
-export const Route = createFileRoute("/news/what-is-a-blockchain-fork")({
+export const Route = createFileRoute("/guides/what-is-a-blockchain-fork")({
   head: () => ({
     meta: [
       { title: TITLE },
@@ -153,7 +153,7 @@ function ArticlePage() {
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link to="/news" className="hover:text-secondary">
+              <Link to="/guides" className="hover:text-secondary">
                 News
               </Link>
             </li>
@@ -172,12 +172,12 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 15, 2026</time>}
-          readTime="4 min read"
+          readTime="7 min read"
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            src={hero}
+            fetchpriority="high" src={hero}
             alt="Abstract illustration representing a blockchain splitting into two separate paths"
             width={1536}
             height={896}
@@ -197,25 +197,39 @@ function ArticlePage() {
 
         <H2 id="what-a-fork-actually-is">What a Fork Actually Is</H2>
         <P>
-          A blockchain is governed by a shared set of rules that every participant's software
-          follows to agree on what counts as a valid transaction. A fork happens when that rule set
-          changes — either through an upgrade everyone adopts together, or through a disagreement so
-          significant that the network splits into two separate, independently operating chains.
+          A blockchain is essentially a distributed ledger governed by a shared set of rules (the protocol) 
+          that every participant's software follows to agree on what counts as a valid transaction. Because 
+          there is no central server dictating these rules, every participant (node) must run compatible 
+          software to stay in sync.
+        </P>
+        <P>
+          A fork happens when that underlying rule set changes. This can happen through a planned upgrade 
+          that everyone adopts together (a protocol upgrade), or through a disagreement so significant that 
+          the network splits into two separate, independently operating chains. When a split occurs, the 
+          blockchain literally branches into two paths: one continuing with the old rules, and one forging 
+          ahead with the new rules.
         </P>
 
         <H2 id="soft-forks-vs-hard-forks">Soft Forks vs. Hard Forks</H2>
         <P>
           <strong>A soft fork</strong> tightens the rules in a way that's still compatible with
-          older software. Nodes that haven't upgraded still recognize new blocks as valid, even if
-          they can't take full advantage of the new rules. This generally doesn't split the network.
+          older software (backward-compatible). For example, if a new rule states that block sizes 
+          must now be smaller, older nodes will still recognize the new, smaller blocks as valid. 
+          Nodes that haven't upgraded can continue to interact with the network, even if they can't 
+          take full advantage of the new rules. This generally doesn't split the network because 
+          everyone remains on the same chain.
         </P>
         <P>
           <strong>A hard fork</strong> changes the rules in a way that's <em>not</em>{" "}
-          backward-compatible. Older software rejects blocks that follow the new rules, and newer
-          software rejects blocks that follow the old ones. If both groups of participants keep
-          running their own version, the result is two separate chains — and, since both usually
-          preserve the transaction history up to the split, holders of the original asset typically
-          end up holding a balance on both resulting chains.
+          backward-compatible. It usually loosens rules or adds new functionality that older software 
+          cannot process. Older software rejects blocks that follow the new rules, and newer software 
+          rejects blocks that follow the old ones. If both groups of participants (miners, validators, 
+          and users) keep running their own versions of the software, the result is two separate chains.
+        </P>
+        <P>
+          Since both chains share the exact same transaction history up to the block where the split 
+          occurred, holders of the original asset typically end up holding an equivalent balance on 
+          both resulting chains.
         </P>
 
         <figure className="my-xl p-xl bg-surface-container-lowest border border-outline-variant rounded-xl flex items-center justify-center">
@@ -292,15 +306,25 @@ function ArticlePage() {
         <P>Forks generally stem from one of two situations:</P>
         <ul className="list-disc pl-lg space-y-md font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
           <li>
-            <strong>A planned upgrade</strong> the community broadly agrees on — improving
-            scalability, adding functionality, or fixing an issue — carried out via a coordinated
-            hard fork with wide support.
+            <strong>A planned upgrade</strong> the community broadly agrees on. Just like your phone 
+            operating system requires updates to improve scalability, add functionality, or fix security 
+            issues, blockchains must evolve. These are carried out via coordinated hard forks with wide 
+            consensus. Everyone upgrades, and the old chain is simply abandoned.
           </li>
           <li>
-            <strong>A genuine disagreement</strong> about the project's direction — for example,
-            differing opinions on transaction capacity or protocol philosophy — that can't be
-            resolved, leading part of the community to continue on a separate chain with the old or
-            modified rules.
+            <strong>A genuine disagreement</strong> about the project's direction. The most famous example 
+            is the 2017 Bitcoin Cash (BCH) split. Part of the community wanted to increase Bitcoin's block 
+            size to allow for cheaper, faster transactions, while the other side argued this would make the 
+            network too centralized and harder for everyday users to run nodes. The disagreement couldn't be 
+            resolved, leading the block-size-increase camp to initiate a hard fork. Both chains continued 
+            independently: Bitcoin (BTC) and Bitcoin Cash (BCH).
+          </li>
+          <li>
+            <strong>A philosophical divergence after a hack.</strong> In 2016, a major project on Ethereum 
+            (The DAO) was hacked. The Ethereum community controversially decided to hard fork the network to 
+            rewrite history and return the stolen funds. Purists who believed "code is law" and history should 
+            never be rewritten refused to upgrade, continuing the original chain which is now known as Ethereum 
+            Classic (ETC).
           </li>
         </ul>
 
@@ -423,3 +447,5 @@ function ArticlePage() {
     </div>
   );
 }
+
+

@@ -171,8 +171,7 @@ function PrivacyPage() {
               <div className="bg-surface-container-lowest p-md rounded-lg border border-outline-variant">
                 <strong className="text-primary block mb-xs">No other ad networks:</strong>
                 CryptoBeacon uses only Google AdSense for advertising. No other third-party ad
-                network, demand-side platform, or monetisation service (including Monetag or any
-                similar network) is active on this Site.
+                network, demand-side platform, or monetisation service is active on this Site.
               </div>
               <div className="bg-surface-container-lowest p-md rounded-lg border border-outline-variant">
                 <strong className="text-primary block mb-xs">Email service provider:</strong>

@@ -21,7 +21,7 @@ const articleSchema = {
   dateModified: PUBLISHED,
   author: {
     "@type": "Person",
-    name: "Sarah Jenkins",
+    name: "Ashir",
     url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
@@ -39,7 +39,7 @@ const articleSchema = {
   keywords:
     "hardware wallet comparison, ledger vs trezor, best cold wallets 2026, cryptocurrency secure storage, self custody devices",
   articleSection: "Guides",
-  wordCount: 1450,
+  wordCount: 1550,
   isAccessibleForFree: true,
 };
 
@@ -201,12 +201,12 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 20, 2026</time>}
-          readTime="8 min read"
+          readTime="9 min read"
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            src={hero}
+            fetchpriority="high" src={hero}
             alt="Various physical crypto hardware wallets on a sleek dark surface"
             width={1600}
             height={896}
@@ -237,16 +237,15 @@ function ArticlePage() {
 
         <H2 id="why-hardware">Why You Need a Hardware Wallet</H2>
         <P>
-          When you keep crypto on an exchange, you have an IOU. When you use a software wallet on
-          your phone or laptop (a "hot wallet"), you control the keys, but they are vulnerable to
-          malware, keyloggers, and clipboard hijackers on that device.
+          When you keep crypto on an exchange (like Coinbase or Binance), you don't actually own the cryptocurrency; you have an IOU from a company. If that company goes bankrupt (as happened with FTX), your funds are likely gone. When you use a software wallet on
+          your phone or laptop (a "hot wallet" like MetaMask or Trust Wallet), you control the keys, but they are vulnerable to
+          malware, keyloggers, and clipboard hijackers on that internet-connected device.
         </P>
         <P>
-          A hardware wallet acts as an isolated, single-purpose computer. Even if your laptop is
+          A hardware wallet acts as an isolated, single-purpose computer designed to do only one thing: store secrets. Even if your laptop is
           completely compromised with malware, the hacker cannot extract the private keys from the
           hardware wallet when you plug it in. The device only sends the cryptographically signed
-          transaction back to the computer, keeping the keys safely locked inside its secure element
-          chip.
+          transaction back to the computer, keeping the keys safely locked inside its internal chip. You must physically push buttons on the device to approve any outbound transfer.
         </P>
 
         <H2 id="ledger">Ledger: The Industry Standard</H2>
@@ -314,7 +313,7 @@ function ArticlePage() {
         <P>
           There is no single "best" hardware wallet — the right choice depends on your technical
           comfort level, whether you demand open-source code, and whether you hold only Bitcoin or a
-          diverse portfolio of altcoins. 
+          diverse portfolio of altcoins. For most beginners wanting broad altcoin support, Ledger is the easiest starting point. For those who prioritize open-source verifiability, Trezor or BitBox are excellent upgrades. For the hardcore Bitcoin maximalist, Coldcard remains the ultimate bunker.
         </P>
         <div className="p-md rounded-lg border border-error/30 bg-error/5 my-md flex items-start gap-md">
           <ShieldAlert className="text-error w-6 h-6 shrink-0 mt-xs" />
@@ -324,6 +323,30 @@ function ArticlePage() {
             prevent supply-chain attacks where devices are tampered with before reaching you.
           </p>
         </div>
+
+        <H2 id="sources">Sources & Further Reading</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://bitcoin.org/en/choose-your-wallet"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Bitcoin.org — Choose your wallet
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.coindesk.com/learn/what-is-a-hardware-wallet/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              CoinDesk — What is a Hardware Wallet?
+            </a>
+          </li>
+        </ul>
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
@@ -374,3 +397,4 @@ function ArticlePage() {
     </div>
   );
 }
+

@@ -40,7 +40,7 @@ const articleSchema = {
   dateModified: PUBLISHED,
   author: {
     "@type": "Person",
-    name: "Sarah Jenkins",
+    name: "Ashir",
     url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
@@ -209,7 +209,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            src={hero}
+            fetchpriority="high" src={hero}
             alt="Illustration contrasting a hot software wallet and a cold hardware wallet for Bitcoin"
             width={1024}
             height={1024}
@@ -446,3 +446,4 @@ function ArticlePage() {
     </div>
   );
 }
+

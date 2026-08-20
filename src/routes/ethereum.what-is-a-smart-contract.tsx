@@ -40,7 +40,7 @@ const articleSchema = {
   dateModified: PUBLISHED,
   author: {
     "@type": "Person",
-    name: "Sarah Jenkins",
+    name: "Ashir",
     url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
@@ -58,7 +58,7 @@ const articleSchema = {
   keywords:
     "what is a smart contract, how do smart contracts work, ethereum smart contracts, solidity basics, crypto defi code",
   articleSection: "Ethereum",
-  wordCount: 1250,
+  wordCount: 1400,
   isAccessibleForFree: true,
 };
 
@@ -177,12 +177,12 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 20, 2026</time>}
-          readTime="7 min read"
+          readTime="8 min read"
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            src={hero}
+            fetchpriority="high" src={hero}
             alt="Glowing digital contract made of code and nodes"
             width={1600}
             height={896}
@@ -257,14 +257,22 @@ function ArticlePage() {
         <H2 id="how-it-works">1. How a Smart Contract Works</H2>
         <P>
           Imagine you want to bet a friend $50 on the outcome of a football game. Normally, you have
-          to trust each other to pay up, or hold the money with a trusted third party.
+          to trust each other to pay up, or hold the money with a trusted third party (like an escrow agent or betting house) who charges a fee.
         </P>
         <P>
           With a smart contract, you both deposit $50 into a piece of code on the blockchain. The code
-          states: "If Team A wins, send $100 to Alice. If Team B wins, send $100 to Bob." The smart
-          contract is connected to an 'oracle' (a data feed) that reports the final score of the game.
-          As soon as the game ends, the contract executes immediately, sending the money to the winner.
-          No trust, no arguments, and no middleman taking a fee.
+          states: "If Team A wins, send $100 to Alice. If Team B wins, send $100 to Bob." 
+        </P>
+        <P>
+          Since a blockchain cannot naturally browse the internet to see the game score, the smart contract 
+          is connected to an 'oracle' (a trusted data feed) that reports the final score of the game into 
+          the blockchain environment. As soon as the game ends and the oracle updates the data, the contract 
+          executes immediately, sending the money to the winner. No trust is needed, there are no arguments, 
+          and no middleman takes a significant cut.
+        </P>
+        <P>
+          This execution is powered by network nodes. Every computer on the Ethereum network runs this code 
+          to verify the outcome, ensuring that no single server can manipulate the result.
         </P>
 
         <H2 id="use-cases">2. Real-World Use Cases</H2>
@@ -283,14 +291,14 @@ function ArticlePage() {
         <H2 id="vulnerabilities">3. The Problem with "Code is Law"</H2>
         <P>
           The greatest strength of a smart contract is also its greatest weakness: it executes exactly
-          as written, blindly and without human nuance.
+          as written, blindly and without human nuance. In traditional finance, if a bank makes an error, 
+          a judge can order a reversal. On a blockchain, the code *is* the final arbiter.
         </P>
         <P>
-          If a developer makes a mistake and leaves a logical flaw in the code, a hacker can exploit
-          it. Because the contract is immutable (unchangeable), the developers cannot simply hit a
-          "pause" button and fix the code once it is deployed (unless they designed it with an admin
-          override, which defeats the purpose of decentralization). In the crypto world, if a contract
-          is hacked, those funds are almost always lost forever.
+          If a developer makes a mistake and leaves a logical flaw in the code (such as a reentrancy vulnerability or poor access controls), a hacker can exploit it. Because the contract is immutable (unchangeable), the developers cannot simply hit a "pause" button and fix the code once it is deployed. 
+        </P>
+        <P>
+          To mitigate this, some projects use "upgradeable" contracts (where a proxy contract points to a new version of the code). However, this introduces centralization, meaning a small group of developers could theoretically change the rules on users. Navigating this tradeoff between pure immutability (security via mathematics) and upgradeability (security via human intervention) is one of the biggest challenges in Web3.
         </P>
 
         <H2 id="faq">4. Frequently Asked Questions</H2>
@@ -315,6 +323,30 @@ function ArticlePage() {
           carries significant risks, it represents a fundamental shift in how digital agreements and
           financial services can operate on a global scale.
         </P>
+
+        <H2 id="sources">Sources & Further Reading</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://ethereum.org/en/developers/docs/smart-contracts/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Ethereum.org — Introduction to Smart Contracts
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.ibm.com/topics/smart-contracts"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              IBM — What are smart contracts on blockchain?
+            </a>
+          </li>
+        </ul>
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
@@ -363,3 +395,4 @@ function ArticlePage() {
     </div>
   );
 }
+

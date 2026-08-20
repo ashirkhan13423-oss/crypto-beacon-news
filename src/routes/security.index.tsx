@@ -3,6 +3,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import seedVault from "@/assets/seed-phrase-vault.jpg";
 import phishingHero from "@/assets/phishing-padlock.jpg";
+import smartContractHero from "@/assets/security-smart-contract-approvals.jpg";
+import hwMistakesHero from "@/assets/hardware-wallet-mistakes.jpg";
 
 const collectionSchema = {
   "@context": "https://schema.org",
@@ -19,6 +21,16 @@ const collectionSchema = {
       "@type": "WebPage",
       name: "How to Avoid Crypto Phishing Scams",
       url: "https://www.cryptobeacon.site/security/how-to-avoid-crypto-phishing-scams",
+    },
+    {
+      "@type": "WebPage",
+      name: "How to Revoke Smart Contract Approvals",
+      url: "https://www.cryptobeacon.site/security/how-to-revoke-smart-contract-approvals",
+    },
+    {
+      "@type": "WebPage",
+      name: "5 Fatal Hardware Wallet Mistakes",
+      url: "https://www.cryptobeacon.site/security/hardware-wallet-mistakes-to-avoid",
     },
   ],
 };
@@ -113,6 +125,58 @@ function SecurityPage() {
               <p className="font-body-md text-body-md text-on-surface-variant">
                 How crypto phishing actually works, the red flags that repeat across every version,
                 and the verification habits that keep your wallet safe.
+              </p>
+            </div>
+          </Link>
+          <Link
+            to="/security/how-to-revoke-smart-contract-approvals"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={smartContractHero}
+                alt="Glowing lock mechanism representing smart contract revokes"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Security · Guide
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                How to Revoke Smart Contract Approvals and Protect Your Crypto
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A deep dive into token allowances, why they are dangerous, and how to revoke them.
+              </p>
+            </div>
+          </Link>
+          <Link
+            to="/security/hardware-wallet-mistakes-to-avoid"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={hwMistakesHero}
+                alt="Glitched digital vault representing operational mistakes"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Security · Guide
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                5 Fatal Hardware Wallet Mistakes and How to Avoid Them
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                Buying a hardware wallet isn't enough. Learn the operational security errors to avoid.
               </p>
             </div>
           </Link>

@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import sendHero from "@/assets/bitcoin-send-safely.jpg";
 import walletHero from "@/assets/bitcoin-what-is-a-wallet.png";
 import miningHero from "@/assets/bitcoin-what-is-mining.png";
+import halvingHero from "@/assets/bitcoin-halving.jpg";
 import { Bitcoin } from "lucide-react";
 
 const collectionSchema = {
@@ -26,6 +27,11 @@ const collectionSchema = {
       "@type": "WebPage",
       name: "What Is Bitcoin Mining?",
       url: "https://www.cryptobeacon.site/bitcoin/what-is-bitcoin-mining",
+    },
+    {
+      "@type": "WebPage",
+      name: "What is the Bitcoin Halving?",
+      url: "https://www.cryptobeacon.site/bitcoin/what-is-the-bitcoin-halving",
     },
   ],
 };
@@ -158,6 +164,32 @@ function BitcoinPage() {
               <p className="font-body-md text-body-md text-on-surface-variant">
                 How new Bitcoin is created, what proof of work actually means, and why the halving
                 matters.
+              </p>
+            </div>
+          </Link>
+          <Link
+            to="/bitcoin/what-is-the-bitcoin-halving"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={halvingHero}
+                alt="Golden block splitting in half representing the halving"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Bitcoin · Explainer
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                What is the Bitcoin Halving?
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A clear, financial breakdown of Bitcoin's hard-capped supply and how the block subsidy halves every four years.
               </p>
             </div>
           </Link>

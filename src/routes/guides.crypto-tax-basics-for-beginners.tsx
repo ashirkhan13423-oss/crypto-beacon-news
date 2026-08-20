@@ -40,7 +40,7 @@ const articleSchema = {
   dateModified: PUBLISHED,
   author: {
     "@type": "Person",
-    name: "Sarah Jenkins",
+    name: "Ashir",
     url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
@@ -58,7 +58,7 @@ const articleSchema = {
   keywords:
     "crypto tax guide, how is crypto taxed, crypto capital gains, do i have to pay taxes on crypto, taxable events crypto",
   articleSection: "Guides",
-  wordCount: 1250,
+  wordCount: 1350,
   isAccessibleForFree: true,
 };
 
@@ -177,12 +177,12 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 20, 2026</time>}
-          readTime="7 min read"
+          readTime="8 min read"
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            src={hero}
+            fetchpriority="high" src={hero}
             alt="Sleek digital calculator hovering over glowing crypto coins"
             width={1600}
             height={896}
@@ -261,15 +261,17 @@ function ArticlePage() {
 
         <H2 id="property">1. Crypto is Treated as Property</H2>
         <P>
-          To understand crypto taxes, you must understand how the IRS (and similar agencies globally)
-          classifies it. They view Bitcoin not as "money," but as property — much like a stock or real
-          estate.
+          To understand crypto taxes, you must understand how the IRS (and similar agencies globally, such as HMRC in the UK)
+          classifies it. They view cryptocurrency not as a "currency" or "money," but as property — much like a stock, a bond, or a piece of real estate.
         </P>
         <P>
           When you buy property and sell it later for a higher price, you owe capital gains tax on the
           profit. If you sell it for less than you paid, you have a capital loss, which can often be
-          used to lower your overall tax bill. The amount you originally paid for the crypto, plus any
-          associated fees, is known as your <strong>cost basis</strong>.
+          used to lower your overall tax bill by offsetting other gains. The amount you originally paid for the crypto, plus any
+          associated trading fees or commissions, is known as your <strong>cost basis</strong>. 
+        </P>
+        <P>
+          If you hold the asset for less than a year before selling, it is typically subject to short-term capital gains tax (which is usually the same as your ordinary income tax rate). If you hold it for more than a year, it qualifies for long-term capital gains rates, which are historically significantly lower.
         </P>
 
         <H2 id="taxable-events">2. What Constitutes a Taxable Event?</H2>
@@ -278,9 +280,9 @@ function ArticlePage() {
           crypto taxable events include:
         </P>
         <ul className="list-disc pl-lg space-y-md font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
-          <li><strong>Selling crypto for fiat (USD):</strong> The most obvious event. If you bought 1 BTC for $10k and sold it for $50k, you owe taxes on the $40k profit.</li>
-          <li><strong>Trading one crypto for another:</strong> If you trade $1,000 worth of Bitcoin for $1,000 worth of Ethereum, the IRS views this as you selling your Bitcoin for $1,000 in cash, and then immediately using that cash to buy Ethereum. If your Bitcoin had increased in value since you bought it, you owe taxes on that gain, even though you never actually cashed out to a bank account.</li>
-          <li><strong>Buying goods or services with crypto:</strong> If you use Bitcoin to buy a cup of coffee, you are technically selling that fraction of a Bitcoin. If it appreciated since you bought it, you owe capital gains tax on the coffee purchase.</li>
+          <li><strong>Selling crypto for fiat (USD):</strong> The most obvious event. If you bought 1 BTC for $10k and sold it for $50k, you owe taxes on the $40k profit. The exchange you use will likely report this sale to the tax authorities.</li>
+          <li><strong>Trading one crypto for another:</strong> If you trade $1,000 worth of Bitcoin for $1,000 worth of Ethereum, the IRS views this as you selling your Bitcoin for $1,000 in cash, and then immediately using that cash to buy Ethereum. If your Bitcoin had increased in value since you bought it, you owe taxes on that gain, even though you never actually cashed out to a bank account. This is the rule that catches most beginners off guard.</li>
+          <li><strong>Buying goods or services with crypto:</strong> If you use Bitcoin to buy a cup of coffee (or a car), you are technically selling that fraction of a Bitcoin. If it appreciated since you bought it, you owe capital gains tax on the transaction, no matter how small.</li>
         </ul>
 
         <AdUnit />
@@ -332,6 +334,30 @@ function ArticlePage() {
           without losing your sanity.
         </P>
 
+        <H2 id="sources">Sources & Further Reading</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-on-virtual-currency-transactions"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              IRS.gov — Frequently Asked Questions on Virtual Currency Transactions
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.irs.gov/pub/irs-drop/n-14-21.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              IRS Notice 2014-21 (Original guidance treating virtual currency as property)
+            </a>
+          </li>
+        </ul>
+
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Important Tax Disclaimer
@@ -372,3 +398,4 @@ function ArticlePage() {
     </div>
   );
 }
+

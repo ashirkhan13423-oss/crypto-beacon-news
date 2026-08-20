@@ -40,7 +40,7 @@ const articleSchema = {
   dateModified: PUBLISHED,
   author: {
     "@type": "Person",
-    name: "Sarah Jenkins",
+    name: "Ashir",
     url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
@@ -58,7 +58,7 @@ const articleSchema = {
   keywords:
     "what is bitcoin mining, how does bitcoin mining work, bitcoin proof of work explained, bitcoin block reward, bitcoin mining difficulty, what is a bitcoin halving",
   articleSection: "Bitcoin",
-  wordCount: 950,
+  wordCount: 1350,
   isAccessibleForFree: true,
 };
 
@@ -242,12 +242,12 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 6, 2026</time>}
-          readTime="5 min read"
+          readTime="7 min read"
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            src={hero}
+            fetchpriority="high" src={hero}
             alt="Abstract illustration of Bitcoin mining with glowing coins and computational nodes"
             width={1024}
             height={1024}
@@ -286,31 +286,43 @@ function ArticlePage() {
         <H2 id="what-mining-does">1. What Mining Actually Does</H2>
         <P>
           When you send Bitcoin, your transaction is broadcast to the network but doesn't
-          immediately become permanent. Miners collect pending transactions into a candidate block,
-          then compete to add that block to the blockchain. The winner earns a reward — newly
-          created Bitcoin plus transaction fees. This is the only way new Bitcoin enters
-          circulation.
+          immediately become permanent. It sits in a waiting area called the "mempool". Miners collect 
+          these pending transactions into a candidate block, verify that all senders actually have the 
+          funds they are trying to send (preventing the "double-spend" problem), and then compete to 
+          add that block to the official blockchain.
         </P>
         <P>
-          Mining serves two distinct functions simultaneously: it processes and finalises
-          transactions, and it enforces the rules of the network without requiring any central
-          authority to do so.
+          The winner of this competition earns a reward consisting of two parts: newly
+          created Bitcoin (the block reward) plus all the transaction fees paid by the users whose 
+          transactions were included in the block. This block reward is the only way new Bitcoin 
+          enters circulation.
+        </P>
+        <P>
+          Mining serves two distinct functions simultaneously: it acts as a decentralized clearinghouse 
+          to process and finalise transactions, and it enforces the rules of the network (like the 21 
+          million supply cap) without requiring any central bank or corporate authority to oversee it.
         </P>
 
         <MiningFlowDiagram />
 
         <H2 id="proof-of-work">2. Proof of Work: The Core Mechanism</H2>
         <P>
-          To add a block, a miner must solve a specific computational puzzle: find a number (called
-          a nonce) that, when combined with the block's data and run through a hash function,
-          produces an output below a target value. There's no shortcut — the only method is
-          brute-force guessing at enormous speed.
+          To add a block to the chain, a miner must solve a specific computational puzzle. They take 
+          the data in their candidate block, add a random number (called a nonce), and run it through 
+          a cryptographic hash function (SHA-256). The goal is to produce an output hash that starts 
+          with a certain number of zeros (i.e. below a specific target value). 
         </P>
         <P>
-          This is called <strong>proof of work</strong>. The name reflects the key property: you can
-          verify a solution instantly, but producing one requires real, measurable computational
-          effort. This effort is what makes the system hard to cheat — rewriting Bitcoin's history
-          would require outpacing the combined computing power of the entire network, which is
+          Because hash functions are unpredictable, there's no mathematical shortcut or formula to solve 
+          it — the only method is brute-force guessing at enormous speed. Today's specialized mining 
+          machines (ASICs) can generate trillions of guesses per second.
+        </P>
+        <P>
+          This system is called <strong>proof of work</strong>. The name reflects its key property: you can
+          verify a correct solution instantly (with one simple calculation), but producing that solution 
+          requires real, measurable computational effort and electrical energy. This physical cost is what 
+          makes the system hard to cheat — rewriting Bitcoin's history would require an attacker to expend 
+          more computing power and electricity than the rest of the honest network combined, which is
           prohibitively expensive in practice.
         </P>
 
@@ -318,16 +330,20 @@ function ArticlePage() {
 
         <H2 id="difficulty-supply">3. Difficulty Adjustment and Fixed Supply</H2>
         <P>
-          Bitcoin's protocol adjusts the puzzle's difficulty roughly every two weeks (every 2,016
-          blocks) to maintain a target block time of approximately ten minutes, regardless of how
-          much or how little mining power is competing. As more miners join and computing power
-          increases, the puzzle gets harder. If miners leave, it gets easier.
+          If mining gets more profitable, more miners turn on their machines. If the total computing 
+          power (hash rate) of the network increases, blocks would naturally be solved faster than 
+          the 10-minute target. To prevent this, Bitcoin's protocol automatically adjusts the puzzle's 
+          difficulty roughly every two weeks (every 2,016 blocks). As more miners join, the puzzle 
+          gets mathematically harder. If miners leave and hash rate drops, the puzzle gets easier. 
+          This brilliant self-regulating mechanism ensures a steady issuance of blocks regardless of 
+          how much hardware is deployed.
         </P>
         <P>
-          Bitcoin's total supply is capped at 21 million coins — a rule enforced by the protocol
-          itself. No authority can change this without the agreement of the network's participants.
-          The predictable, declining rate at which new Bitcoin is issued is part of what gives the
-          supply schedule its credibility.
+          Because the block time is kept steady at 10 minutes, the issuance schedule of new coins is 
+          entirely predictable. Bitcoin's total supply is hard-capped at 21 million coins — a rule 
+          enforced by every node on the network. No government, CEO, or developer can simply "print" 
+          more Bitcoin. The predictable, mathematically enforced rate at which new Bitcoin is issued 
+          is the foundation of its monetary policy and scarcity.
         </P>
 
         <H2 id="halving">4. The Halving</H2>
@@ -446,3 +462,4 @@ function ArticlePage() {
     </div>
   );
 }
+

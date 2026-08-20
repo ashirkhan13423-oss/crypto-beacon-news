@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import nyknycHero from "@/assets/keys-coins-meaning.jpg";
 import exchangeHero from "@/assets/exchange-vs-wallet.png";
 import walletAddressHero from "@/assets/guides-wallet-address.png";
+import hotColdHero from "@/assets/hot-vs-cold-wallets.jpg";
 import { BookOpen } from "lucide-react";
 
 const collectionSchema = {
@@ -26,6 +27,11 @@ const collectionSchema = {
       "@type": "WebPage",
       name: "What Is a Crypto Wallet Address? How It Works and How to Use It Safely",
       url: "https://www.cryptobeacon.site/guides/what-is-a-crypto-wallet-address",
+    },
+    {
+      "@type": "WebPage",
+      name: "Hot Wallets vs. Cold Wallets: Which is Right for You?",
+      url: "https://www.cryptobeacon.site/guides/hot-wallets-vs-cold-wallets-explained",
     },
   ],
 };
@@ -154,6 +160,32 @@ function GuidesHub() {
               <p className="font-body-md text-body-md text-on-surface-variant">
                 How public keys and wallet addresses work, how to share them safely, and how to
                 verify address formats across blockchains.
+              </p>
+            </div>
+          </Link>
+          <Link
+            to="/guides/hot-wallets-vs-cold-wallets-explained"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden border-b border-outline-variant">
+              <img
+                src={hotColdHero}
+                alt="Digital wallet connected to network lines contrasted with a metallic vault"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Guides · Storage
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Hot Wallets vs. Cold Wallets: Which is Right for You?
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                Comparing internet-connected software wallets with offline hardware devices, focusing on the trade-offs.
               </p>
             </div>
           </Link>

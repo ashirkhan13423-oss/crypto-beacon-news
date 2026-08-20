@@ -26,12 +26,6 @@ export function SiteFooter() {
             Home
           </Link>
           <Link
-            to="/news"
-            className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
-          >
-            News
-          </Link>
-          <Link
             to="/guides"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
@@ -60,12 +54,6 @@ export function SiteFooter() {
           <span className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Categories &amp; Hubs
           </span>
-          <Link
-            to="/news"
-            className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
-          >
-            News Hub
-          </Link>
           <Link
             to="/guides"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"

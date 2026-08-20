@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import authorAvatar from "@/assets/sarah-jenkins.jpg";
+import authorAvatar from "@/assets/ashir.jpg";
 
 interface AuthorProps {
   publishedDate: React.ReactNode;
@@ -11,7 +11,7 @@ export function Author({ publishedDate, readTime }: AuthorProps) {
     <div className="mt-md mb-lg flex flex-col sm:flex-row items-start sm:items-center gap-md p-md bg-surface-container-low border border-outline-variant rounded-xl max-w-3xl">
       <img
         src={authorAvatar}
-        alt="Sarah Jenkins"
+        alt="Ashir"
         className="w-14 h-14 rounded-full object-cover border-2 border-primary-container shrink-0"
       />
       <div className="space-y-xs">
@@ -19,7 +19,7 @@ export function Author({ publishedDate, readTime }: AuthorProps) {
           <span>
             By{" "}
             <Link to="/author" className="text-secondary font-medium hover:underline">
-              Sarah Jenkins
+              Ashir
             </Link>
           </span>
           <span aria-hidden>·</span>
@@ -28,7 +28,7 @@ export function Author({ publishedDate, readTime }: AuthorProps) {
           <span>{readTime}</span>
         </div>
         <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-          Sarah Jenkins is a senior cryptocurrency researcher and editor with over a decade of experience in blockchain mechanics. She specializes in secure self-custody systems, protocol audits, and decentralized finance.
+          Ashir is a senior cryptocurrency researcher and editor with over a decade of experience in blockchain mechanics. He specializes in secure self-custody systems, protocol audits, and decentralized finance.
         </p>
       </div>
     </div>

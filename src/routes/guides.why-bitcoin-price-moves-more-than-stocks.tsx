@@ -36,7 +36,7 @@ const articleSchema = {
   dateModified: PUBLISHED,
   author: {
     "@type": "Person",
-    name: "Sarah Jenkins",
+    name: "Ashir",
     url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
@@ -52,9 +52,9 @@ const articleSchema = {
   image: `https://www.cryptobeacon.site${hero}`,
   inLanguage: "en-US",
   keywords:
-    "why does bitcoin's price move more than stocks, bitcoin volatility explained simply, why is crypto more volatile than traditional markets, bitcoin market structure explained",
-  articleSection: "News",
-  wordCount: 750,
+    "why does bitcoin's price move more than stocks, bitcoin volatility explained simply, why is crypto more volatile than traditional markets, bitcoin market structure explained, crypto liquidity depth",
+  articleSection: "Guides",
+  wordCount: 1300,
   isAccessibleForFree: true,
 };
 
@@ -81,7 +81,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 2,
-      name: "News",
+      name: "Guides",
       item: "https://www.cryptobeacon.site/news",
     },
     {
@@ -93,7 +93,7 @@ const breadcrumbSchema = {
   ],
 };
 
-export const Route = createFileRoute("/news/why-bitcoin-price-moves-more-than-stocks")({
+export const Route = createFileRoute("/guides/why-bitcoin-price-moves-more-than-stocks")({
   head: () => ({
     meta: [
       { title: TITLE },
@@ -182,7 +182,7 @@ function ArticlePage() {
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link to="/news" className="hover:text-secondary">
+              <Link to="/guides" className="hover:text-secondary">
                 News
               </Link>
             </li>
@@ -201,12 +201,12 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 12, 2026</time>}
-          readTime="4 min read"
+          readTime="7 min read"
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            src={hero}
+            fetchpriority="high" src={hero}
             alt="Illustration representing Bitcoin's price movement compared to traditional markets"
             width={1536}
             height={896}
@@ -245,37 +245,61 @@ function ArticlePage() {
         <H2 id="smaller-younger-market">A Smaller, Younger Market</H2>
         <P>
           Traditional stock markets have existed for well over a century and involve enormous
-          amounts of capital moving through highly developed infrastructure. Bitcoin's market is, by
-          comparison, still young and smaller in overall size. In smaller markets, a given amount of
-          buying or selling activity moves the price more than the same activity would in a much
-          larger, deeper market — simply because there's less on the other side of the trade to
-          absorb it.
+          amounts of capital moving through highly developed infrastructure. As of the early 2020s,
+          the total market capitalization of global equities was well over $100 trillion. Bitcoin's 
+          market is, by comparison, still young and smaller in overall size, typically hovering 
+          in the $1 to $2 trillion range.
+        </P>
+        <P>
+          In smaller markets, a given amount of buying or selling activity moves the price more than 
+          the same activity would in a much larger, deeper market — simply because there's less on 
+          the other side of the trade to absorb it. A multi-billion dollar trade in U.S. Treasuries 
+          barely registers as a blip on a chart; a trade of the same size in Bitcoin can swing the 
+          price by several percentage points.
         </P>
 
         <H2 id="fixed-predictable-supply">Fixed, Predictable Supply</H2>
         <P>
-          Bitcoin has a fixed maximum supply, and new coins enter circulation at a known,
-          unchangeable rate. Unlike a company that can issue more shares, or a central bank that can
-          adjust currency supply in response to conditions, Bitcoin's supply side cannot flex to
-          meet a sudden change in demand. When demand shifts quickly, that entire adjustment has to
-          happen through price rather than supply.
+          Bitcoin has a fixed maximum supply (21 million coins), and new coins enter circulation at a known,
+          unchangeable rate through a process called mining. Furthermore, this issuance rate is cut in half
+          roughly every four years (the "halving").
+        </P>
+        <P>
+          Unlike a company that can issue more shares to raise capital, or a central bank that can
+          adjust currency supply in response to macroeconomic conditions, Bitcoin's supply side cannot flex to
+          meet a sudden change in demand. In traditional economics, if demand spikes, producers create more 
+          of the good, which eventually cools the price. With Bitcoin, whether demand goes to zero or spikes 
+          parabolically, the supply issuance remains absolutely rigid. Therefore, when demand shifts quickly, 
+          that entire adjustment has to happen through price rather than supply.
         </P>
 
         <H2 id="market-never-closes">A Market That Never Closes</H2>
         <P>
-          Stock exchanges open and close on a fixed schedule, which naturally smooths out how
-          information gets absorbed into price. Bitcoin trades continuously, every day, everywhere
-          in the world. This means reactions to news or shifts in sentiment can happen immediately,
-          at any hour, without the pause a traditional market's closing hours would otherwise
-          provide.
+          Stock exchanges open and close on a fixed schedule (e.g., 9:30 AM to 4:00 PM in New York), 
+          which naturally smooths out how information gets absorbed into price. If major news breaks 
+          over the weekend, the market has time to digest it, and market makers can prepare their 
+          positions before Monday's opening bell.
+        </P>
+        <P>
+          Bitcoin trades continuously, every day, everywhere in the world. This means reactions to news,
+          macroeconomic data releases, or shifts in sentiment can happen immediately, at any hour, without 
+          the pause a traditional market's closing hours would otherwise provide. A regulatory announcement 
+          on a Saturday night can trigger an immediate price swing while traditional financial institutions 
+          are largely offline.
         </P>
 
         <H2 id="thinner-liquidity">Thinner Liquidity Than It Appears</H2>
         <P>
           Even though Bitcoin is the most liquid cryptocurrency, its liquidity is still thinner than
-          most major stocks or currency pairs relative to how much attention it receives. Thinner
-          liquidity means large trades can move the price more noticeably, and it can take less
-          unusual activity to create a visible swing than it would in a deeper market.
+          most major stocks or currency pairs relative to how much attention it receives. Liquidity 
+          refers to how easily an asset can be bought or sold without affecting its price. 
+        </P>
+        <P>
+          Furthermore, a significant portion of Bitcoin's supply is held by long-term investors 
+          in "cold storage" (offline wallets) who do not trade actively. The actual circulating supply 
+          available for active trading on exchanges at any given time is only a fraction of the total 
+          supply. Thinner liquidity means large trades can move the price more noticeably, and it can 
+          take less unusual activity to create a visible swing than it would in a deeper market.
         </P>
 
         {/* Ad Unit #2: After "Thinner Liquidity Than It Appears" */}
@@ -284,11 +308,17 @@ function ArticlePage() {
         <H2 id="infrastructure">A Market Still Establishing Its Infrastructure</H2>
         <P>
           Traditional finance has spent decades building the infrastructure — clearing systems,
-          circuit breakers, market makers — that helps absorb shocks and reduce erratic price
-          behavior. Bitcoin's market infrastructure is comparatively newer and still developing,
-          which means fewer of these stabilizing mechanisms are in place. Over time, as
-          infrastructure matures, this is often expected to reduce some volatility, though it's not
-          something that happens on any fixed timeline.
+          circuit breakers, market makers, and institutional prime brokerages — that helps absorb shocks 
+          and reduce erratic price behavior. For instance, if a stock drops 10% in minutes, traditional 
+          exchanges will halt trading to let the market cool down. 
+        </P>
+        <P>
+          Bitcoin's market infrastructure is comparatively newer and highly fragmented across dozens of 
+          independent exchanges globally. There are no centralized circuit breakers. Additionally, the 
+          heavy use of automated liquidation engines in cryptocurrency derivatives markets can trigger 
+          cascading sell-offs (long squeezes) or buy-ups (short squeezes), exacerbating volatility. 
+          Over time, as infrastructure matures, this is often expected to reduce some volatility, though 
+          it's not something that happens on any fixed timeline.
         </P>
 
         <H2 id="key-takeaways">Key Takeaways</H2>
@@ -339,6 +369,30 @@ function ArticlePage() {
           explain why it tends to move the way it does.
         </P>
 
+        <H2 id="sources">Sources & Further Reading</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://www.sec.gov/investor/alerts/ia_virtualcurrencies.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              U.S. SEC — Investor Alert: Bitcoin and Other Virtual Currency-Related Investments
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.investor.gov/introduction-investing/investing-basics/what-risk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              U.S. SEC Investor.gov — Understanding Market Risk and Volatility
+            </a>
+          </li>
+        </ul>
+
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
@@ -354,3 +408,5 @@ function ArticlePage() {
     </div>
   );
 }
+
+

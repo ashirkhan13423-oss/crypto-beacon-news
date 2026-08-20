@@ -6,6 +6,7 @@ import { Network } from "lucide-react";
 
 import stakingHero from "@/assets/ethereum-staking-hero.png";
 import l2Hero from "@/assets/ethereum-layer-2-scaling.png";
+import gasFeesHero from "@/assets/ethereum-gas-fees.jpg";
 
 const collectionSchema = {
   "@context": "https://schema.org",
@@ -27,6 +28,11 @@ const collectionSchema = {
       "@type": "WebPage",
       name: "Ethereum Layer 2 Scaling & Rollups Explained",
       url: "https://www.cryptobeacon.site/ethereum/ethereum-layer-2-scaling-rollups-explained",
+    },
+    {
+      "@type": "WebPage",
+      name: "What Are Ethereum Gas Fees and How to Save on Them?",
+      url: "https://www.cryptobeacon.site/ethereum/what-are-gas-fees-how-to-save",
     },
   ],
 };
@@ -153,6 +159,33 @@ function EthereumPage() {
               <p className="font-body-md text-body-md text-on-surface-variant">
                 Understand Optimistic vs ZK Rollups, blob space (EIP-4844), and how L2s scale
                 Ethereum while preserving security.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            to="/ethereum/what-are-gas-fees-how-to-save"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={gasFeesHero}
+                alt="Glowing data packets flowing through a network representing gas fees"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Ethereum · Explainer
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                What Are Ethereum Gas Fees and How to Save on Them?
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                An explainer on network congestion, how Gwei works, and practical strategies for minimizing fees using Layer 2s.
               </p>
             </div>
           </Link>

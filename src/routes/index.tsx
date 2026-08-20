@@ -13,6 +13,11 @@ import exchangeHero from "@/assets/exchange-vs-wallet.png";
 import walletAddressHero from "@/assets/guides-wallet-address.png";
 import blockchainForkHero from "@/assets/news-blockchain-fork.png";
 import pausedHero from "@/assets/news-paused-withdrawals.svg";
+import smartContractHero from "@/assets/security-smart-contract-approvals.jpg";
+import halvingHero from "@/assets/bitcoin-halving.jpg";
+import gasFeesHero from "@/assets/ethereum-gas-fees.jpg";
+import hotColdHero from "@/assets/hot-vs-cold-wallets.jpg";
+import hwMistakesHero from "@/assets/hardware-wallet-mistakes.jpg";
 import {
   ShieldCheck,
   BookOpen,
@@ -158,6 +163,46 @@ export const Route = createFileRoute("/")({
 });
 
 const articles = [
+  {
+    to: "/security/how-to-revoke-smart-contract-approvals",
+    image: smartContractHero,
+    alt: "Glowing lock mechanism representing smart contract revokes",
+    tag: "Security · Guide",
+    title: "How to Revoke Smart Contract Approvals and Protect Your Crypto",
+    desc: "A deep dive into token allowances, why they are dangerous, and how to revoke them.",
+  },
+  {
+    to: "/bitcoin/what-is-the-bitcoin-halving",
+    image: halvingHero,
+    alt: "Golden block splitting in half representing the halving",
+    tag: "Bitcoin · Explainer",
+    title: "What is the Bitcoin Halving?",
+    desc: "A clear, financial breakdown of Bitcoin's hard-capped supply and how the block subsidy halves every four years.",
+  },
+  {
+    to: "/ethereum/what-are-gas-fees-how-to-save",
+    image: gasFeesHero,
+    alt: "Glowing data packets flowing through a network representing gas fees",
+    tag: "Ethereum · Explainer",
+    title: "What Are Ethereum Gas Fees and How to Save on Them?",
+    desc: "An explainer on network congestion, how Gwei works, and practical strategies for minimizing fees using Layer 2s.",
+  },
+  {
+    to: "/guides/hot-wallets-vs-cold-wallets-explained",
+    image: hotColdHero,
+    alt: "Digital wallet connected to network lines contrasted with a metallic vault",
+    tag: "Guides · Storage",
+    title: "Hot Wallets vs. Cold Wallets: Which is Right for You?",
+    desc: "Comparing internet-connected software wallets with offline hardware devices, focusing on the trade-offs.",
+  },
+  {
+    to: "/security/hardware-wallet-mistakes-to-avoid",
+    image: hwMistakesHero,
+    alt: "Glitched digital vault representing operational mistakes",
+    tag: "Security · Guide",
+    title: "5 Fatal Hardware Wallet Mistakes and How to Avoid Them",
+    desc: "Buying a hardware wallet isn't enough. Learn the operational security errors to avoid.",
+  },
   {
     to: "/guides/exchange-or-personal-wallet-crypto-storage",
     image: exchangeHero,

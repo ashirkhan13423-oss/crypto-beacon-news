@@ -39,7 +39,7 @@ const articleSchema = {
   dateModified: PUBLISHED,
   author: {
     "@type": "Person",
-    name: "Sarah Jenkins",
+    name: "Ashir",
     url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
@@ -57,7 +57,7 @@ const articleSchema = {
   keywords:
     "what is a stablecoin, usdt vs usdc, how do stablecoins work, algorithmic stablecoins, fiat backed crypto",
   articleSection: "Guides",
-  wordCount: 1300,
+  wordCount: 1350,
   isAccessibleForFree: true,
 };
 
@@ -176,12 +176,12 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 20, 2026</time>}
-          readTime="7 min read"
+          readTime="8 min read"
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            src={hero}
+            fetchpriority="high" src={hero}
             alt="Glowing gold coin perfectly balanced on a scale with a US dollar sign"
             width={1600}
             height={896}
@@ -221,21 +221,28 @@ function ArticlePage() {
         <H2 id="how-they-work">1. How Do They Stay Stable?</H2>
         <P>
           Pegging a digital token to a real-world asset requires a mechanism to maintain that peg.
-          Broadly speaking, there are two main ways this is achieved:
+          Broadly speaking, there are three main ways this is achieved:
         </P>
         <ul className="list-disc pl-lg space-y-md font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
           <li>
             <strong>Fiat-Collateralized:</strong> This is the simplest and most common method. For
             every 1 stablecoin issued on the blockchain, the issuing company holds $1 in a real
-            bank account (or equivalent safe assets like US Treasuries). Examples include USDC and
+            bank account (or equivalent safe assets like short-term US Treasuries). Examples include USDC and
             Tether (USDT). If you want to redeem 100 USDC, the issuer destroys the tokens and wires
-            you $100.
+            you $100. This model relies on centralized trust in the issuing entity.
           </li>
           <li>
-            <strong>Algorithmic / Crypto-Collateralized:</strong> These do not rely on traditional
-            bank accounts. Instead, they are backed by other cryptocurrencies and use complex smart
-            contracts (algorithms) to automatically buy and sell assets to maintain the peg. These
-            are highly experimental and carry significant risk of collapse, as seen with Terra's UST.
+            <strong>Crypto-Collateralized:</strong> These stablecoins are backed by other cryptocurrencies. 
+            Because the collateral (like Ethereum) is volatile, these stablecoins are heavily over-collateralized. 
+            For example, to mint $100 worth of DAI, you might need to deposit $150 worth of Ethereum. If the 
+            price of Ethereum drops too far, the smart contract automatically liquidates the collateral to 
+            maintain the peg.
+          </li>
+          <li>
+            <strong>Algorithmic (Non-Collateralized):</strong> These do not rely on traditional
+            bank accounts or over-collateralization. Instead, they use complex smart contracts to automatically 
+            expand and contract the token supply to maintain the peg, often involving a secondary sister-token. 
+            These are highly experimental and carry significant risk of collapse, as seen with Terra's UST.
           </li>
         </ul>
 
@@ -287,6 +294,30 @@ function ArticlePage() {
           algorithm backing it — they are a powerful tool, but not an absolute guarantee.
         </P>
 
+        <H2 id="sources">Sources & Further Reading</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://www.federalreserve.gov/publications/stablecoin-report.htm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              U.S. Federal Reserve — Report on Stablecoins
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.investopedia.com/terms/s/stablecoin.asp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Investopedia — What is a Stablecoin?
+            </a>
+          </li>
+        </ul>
+
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
@@ -335,3 +366,4 @@ function ArticlePage() {
     </div>
   );
 }
+

@@ -56,7 +56,7 @@ const articleSchema = {
   dateModified: "2026-08-15",
   author: {
     "@type": "Person",
-    name: "Sarah Jenkins",
+    name: "Ashir",
     url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },
@@ -73,7 +73,7 @@ const articleSchema = {
   inLanguage: "en-US",
   keywords:
     "why do governments regulate cryptocurrency, crypto currencies, crypto currency news, crypto regulation explained, MiCA regulation EU, SEC crypto oversight, FATF travel rule, crypto taxation laws",
-  articleSection: "News",
+  articleSection: "Guides",
   wordCount: 1450,
   isAccessibleForFree: true,
 };
@@ -101,7 +101,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 2,
-      name: "News",
+      name: "Guides",
       item: "https://www.cryptobeacon.site/news",
     },
     {
@@ -113,7 +113,7 @@ const breadcrumbSchema = {
   ],
 };
 
-export const Route = createFileRoute("/news/why-governments-regulate-cryptocurrency")({
+export const Route = createFileRoute("/guides/why-governments-regulate-cryptocurrency")({
   head: () => ({
     meta: [
       { title: TITLE },
@@ -192,7 +192,7 @@ function ArticlePage() {
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link to="/news" className="hover:text-secondary">
+              <Link to="/guides" className="hover:text-secondary">
                 News
               </Link>
             </li>
@@ -216,7 +216,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            src={hero}
+            fetchpriority="high" src={hero}
             alt="Illustration representing government regulatory oversight of cryptocurrency"
             width={1536}
             height={896}
@@ -547,10 +547,10 @@ function ArticlePage() {
               </h3>
             </Link>
             <Link
-              to="/news/what-it-means-when-exchange-pauses-withdrawals"
+              to="/guides/what-it-means-when-exchange-pauses-withdrawals"
               className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
             >
-              <span className="font-label-caps text-label-caps text-secondary">News</span>
+              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
               <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
                 When an Exchange Pauses Withdrawals
               </h3>
@@ -571,3 +571,5 @@ function ArticlePage() {
     </div>
   );
 }
+
+
