@@ -131,8 +131,8 @@ function DisclaimerPage() {
                 Contact Page
               </Link>{" "}
               or email us directly at{" "}
-              <a href="mailto:privacy@cryptobeacon.site" className="text-secondary hover:underline">
-                privacy@cryptobeacon.site
+              <a href="mailto:crypto.beacon.site@gmail.com" className="text-secondary hover:underline">
+                crypto.beacon.site@gmail.com
               </a>
               .
             </p>

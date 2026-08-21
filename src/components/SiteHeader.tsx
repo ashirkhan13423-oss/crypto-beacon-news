@@ -17,7 +17,7 @@ export function SiteHeader() {
     <header className="bg-surface-bright border-b border-outline-variant sticky top-0 z-50 w-full">
       <div className="flex justify-between items-center w-full px-gutter max-w-max_width mx-auto h-24">
         <Link to="/" className="flex items-center gap-md">
-          <img alt="CryptoBeacon Logo" className="h-16 md:h-20 w-auto" src="/favicon.png" width="64" height="64" fetchpriority="high" />
+          <img alt="CryptoBeacon Logo" className="h-28 md:h-32 w-auto" src="/logo.png" height="128" fetchpriority="high" />
         </Link>
         <nav className="hidden md:flex items-center gap-lg">
           {navLinks.map((l) => (

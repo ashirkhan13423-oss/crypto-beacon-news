@@ -135,7 +135,7 @@ function AuthorPage() {
               </p>
             </div>
             <a
-              href="mailto:ashir@cryptobeacon.site"
+              href="mailto:crypto.beacon.site@gmail.com"
               className="inline-flex items-center gap-xs px-md py-sm bg-primary text-on-primary font-medium rounded-lg hover:bg-primary-hover transition-colors"
             >
               <Mail className="w-4 h-4" /> Email Ashir

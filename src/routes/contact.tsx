@@ -19,17 +19,17 @@ const contactSchema = {
     "@type": "Organization",
     name: "CryptoBeacon",
     url: "https://www.cryptobeacon.site",
-    email: "editorial@cryptobeacon.site",
+    email: "crypto.beacon.site@gmail.com",
     contactPoint: [
       {
         "@type": "ContactPoint",
-        email: "editorial@cryptobeacon.site",
+        email: "crypto.beacon.site@gmail.com",
         contactType: "editorial newsroom",
         availableLanguage: ["English"],
       },
       {
         "@type": "ContactPoint",
-        email: "security@cryptobeacon.site",
+        email: "crypto.beacon.site@gmail.com",
         contactType: "security research",
         availableLanguage: ["English"],
       },
@@ -103,9 +103,9 @@ function ContactPage() {
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-xl">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-xl">
           {/* Contact Direct Info Cards */}
-          <div className="space-y-md">
+          <div className="md:col-span-2 space-y-md">
             <div className="p-lg rounded-xl border border-outline-variant bg-surface-container-lowest">
               <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary mb-md">
                 <Mail className="w-5 h-5" />
@@ -117,10 +117,10 @@ function ContactPage() {
                 Press releases, news tips, and content suggestions.
               </p>
               <a
-                href="mailto:editorial@cryptobeacon.site"
+                href="mailto:crypto.beacon.site@gmail.com"
                 className="font-body-md text-secondary font-medium hover:underline"
               >
-                editorial@cryptobeacon.site
+                crypto.beacon.site@gmail.com
               </a>
             </div>
 
@@ -135,10 +135,10 @@ function ContactPage() {
                 Vulnerability disclosures and security topic requests.
               </p>
               <a
-                href="mailto:security@cryptobeacon.site"
+                href="mailto:crypto.beacon.site@gmail.com"
                 className="font-body-md text-secondary font-medium hover:underline"
               >
-                security@cryptobeacon.site
+                crypto.beacon.site@gmail.com
               </a>
             </div>
 
@@ -155,7 +155,7 @@ function ContactPage() {
           </div>
 
           {/* Contact Form */}
-          <div className="md:col-span-2 bg-surface-container-lowest p-lg md:p-xl rounded-2xl border border-outline-variant">
+          <div className="md:col-span-3 bg-surface-container-lowest p-lg md:p-xl rounded-2xl border border-outline-variant">
             {submitted ? (
               <div className="py-xl text-center flex flex-col items-center justify-center">
                 <CheckCircle2 className="w-16 h-16 text-[#0F9D58] mb-md" />
@@ -257,7 +257,7 @@ function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-xs bg-primary text-primary-foreground py-md rounded-lg font-label-lg font-medium hover:bg-primary/90 transition-colors cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-xs bg-primary text-white py-md rounded-lg font-label-lg font-medium hover:bg-primary/90 transition-colors cursor-pointer"
                 >
                   <Send className="w-4 h-4" />
                   Submit Message

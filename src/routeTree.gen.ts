@@ -13,7 +13,6 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as NewsRouteImport } from './routes/news'
 import { Route as GuidesRouteImport } from './routes/guides'
 import { Route as EthereumRouteImport } from './routes/ethereum'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
@@ -23,25 +22,37 @@ import { Route as AuthorRouteImport } from './routes/author'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SecurityIndexRouteImport } from './routes/security.index'
-import { Route as NewsIndexRouteImport } from './routes/news.index'
 import { Route as GuidesIndexRouteImport } from './routes/guides.index'
 import { Route as EthereumIndexRouteImport } from './routes/ethereum.index'
 import { Route as BitcoinIndexRouteImport } from './routes/bitcoin.index'
 import { Route as SecurityHowToStoreCryptoSeedPhraseSafelyRouteImport } from './routes/security.how-to-store-crypto-seed-phrase-safely'
+import { Route as SecurityHowToSpotARugPullRouteImport } from './routes/security.how-to-spot-a-rug-pull'
+import { Route as SecurityHowToRevokeSmartContractApprovalsRouteImport } from './routes/security.how-to-revoke-smart-contract-approvals'
 import { Route as SecurityHowToAvoidCryptoPhishingScamsRouteImport } from './routes/security.how-to-avoid-crypto-phishing-scams'
-import { Route as NewsWhyGovernmentsRegulateCryptocurrencyRouteImport } from './routes/news.why-governments-regulate-cryptocurrency'
-import { Route as NewsWhyBitcoinPriceMovesMoreThanStocksRouteImport } from './routes/news.why-bitcoin-price-moves-more-than-stocks'
-import { Route as NewsWhatItMeansWhenExchangePausesWithdrawalsRouteImport } from './routes/news.what-it-means-when-exchange-pauses-withdrawals'
-import { Route as NewsWhatIsABlockchainForkRouteImport } from './routes/news.what-is-a-blockchain-fork'
+import { Route as SecurityHardwareWalletMistakesToAvoidRouteImport } from './routes/security.hardware-wallet-mistakes-to-avoid'
+import { Route as SecurityDefiRisksExplainedRouteImport } from './routes/security.defi-risks-explained'
+import { Route as GuidesWhyGovernmentsRegulateCryptocurrencyRouteImport } from './routes/guides.why-governments-regulate-cryptocurrency'
+import { Route as GuidesWhyBitcoinPriceMovesMoreThanStocksRouteImport } from './routes/guides.why-bitcoin-price-moves-more-than-stocks'
+import { Route as GuidesWhatItMeansWhenExchangePausesWithdrawalsRouteImport } from './routes/guides.what-it-means-when-exchange-pauses-withdrawals'
+import { Route as GuidesWhatIsAStablecoinRouteImport } from './routes/guides.what-is-a-stablecoin'
 import { Route as GuidesWhatIsACryptoWalletAddressRouteImport } from './routes/guides.what-is-a-crypto-wallet-address'
+import { Route as GuidesWhatIsABlockchainForkRouteImport } from './routes/guides.what-is-a-blockchain-fork'
 import { Route as GuidesNotYourKeysNotYourCoinsMeaningRouteImport } from './routes/guides.not-your-keys-not-your-coins-meaning'
+import { Route as GuidesHowToReadABlockExplorerRouteImport } from './routes/guides.how-to-read-a-block-explorer'
+import { Route as GuidesHotWalletsVsColdWalletsExplainedRouteImport } from './routes/guides.hot-wallets-vs-cold-wallets-explained'
+import { Route as GuidesHardwareWalletComparisonGuideRouteImport } from './routes/guides.hardware-wallet-comparison-guide'
 import { Route as GuidesExchangeOrPersonalWalletCryptoStorageRouteImport } from './routes/guides.exchange-or-personal-wallet-crypto-storage'
+import { Route as GuidesCryptoTaxBasicsForBeginnersRouteImport } from './routes/guides.crypto-tax-basics-for-beginners'
 import { Route as EthereumWhatIsEthereumStakingRouteImport } from './routes/ethereum.what-is-ethereum-staking'
+import { Route as EthereumWhatIsASmartContractRouteImport } from './routes/ethereum.what-is-a-smart-contract'
+import { Route as EthereumWhatAreGasFeesHowToSaveRouteImport } from './routes/ethereum.what-are-gas-fees-how-to-save'
 import { Route as EthereumEthereumLayer2ScalingRollupsExplainedRouteImport } from './routes/ethereum.ethereum-layer-2-scaling-rollups-explained'
 import { Route as EthereumCanYouSendBitcoinToAnEthereumAddressRouteImport } from './routes/ethereum.can-you-send-bitcoin-to-an-ethereum-address'
+import { Route as BitcoinWhatIsTheBitcoinHalvingRouteImport } from './routes/bitcoin.what-is-the-bitcoin-halving'
 import { Route as BitcoinWhatIsBitcoinMiningRouteImport } from './routes/bitcoin.what-is-bitcoin-mining'
 import { Route as BitcoinWhatIsABitcoinWalletRouteImport } from './routes/bitcoin.what-is-a-bitcoin-wallet'
 import { Route as BitcoinHowToSendBitcoinSafelyRouteImport } from './routes/bitcoin.how-to-send-bitcoin-safely'
+import { Route as BitcoinHowToBuyYourFirstBitcoinSafelyRouteImport } from './routes/bitcoin.how-to-buy-your-first-bitcoin-safely'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -61,11 +72,6 @@ const SearchRoute = SearchRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewsRoute = NewsRouteImport.update({
-  id: '/news',
-  path: '/news',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GuidesRoute = GuidesRouteImport.update({
@@ -113,11 +119,6 @@ const SecurityIndexRoute = SecurityIndexRouteImport.update({
   path: '/',
   getParentRoute: () => SecurityRoute,
 } as any)
-const NewsIndexRoute = NewsIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => NewsRoute,
-} as any)
 const GuidesIndexRoute = GuidesIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -139,40 +140,69 @@ const SecurityHowToStoreCryptoSeedPhraseSafelyRoute =
     path: '/how-to-store-crypto-seed-phrase-safely',
     getParentRoute: () => SecurityRoute,
   } as any)
+const SecurityHowToSpotARugPullRoute =
+  SecurityHowToSpotARugPullRouteImport.update({
+    id: '/how-to-spot-a-rug-pull',
+    path: '/how-to-spot-a-rug-pull',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityHowToRevokeSmartContractApprovalsRoute =
+  SecurityHowToRevokeSmartContractApprovalsRouteImport.update({
+    id: '/how-to-revoke-smart-contract-approvals',
+    path: '/how-to-revoke-smart-contract-approvals',
+    getParentRoute: () => SecurityRoute,
+  } as any)
 const SecurityHowToAvoidCryptoPhishingScamsRoute =
   SecurityHowToAvoidCryptoPhishingScamsRouteImport.update({
     id: '/how-to-avoid-crypto-phishing-scams',
     path: '/how-to-avoid-crypto-phishing-scams',
     getParentRoute: () => SecurityRoute,
   } as any)
-const NewsWhyGovernmentsRegulateCryptocurrencyRoute =
-  NewsWhyGovernmentsRegulateCryptocurrencyRouteImport.update({
+const SecurityHardwareWalletMistakesToAvoidRoute =
+  SecurityHardwareWalletMistakesToAvoidRouteImport.update({
+    id: '/hardware-wallet-mistakes-to-avoid',
+    path: '/hardware-wallet-mistakes-to-avoid',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityDefiRisksExplainedRoute =
+  SecurityDefiRisksExplainedRouteImport.update({
+    id: '/defi-risks-explained',
+    path: '/defi-risks-explained',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const GuidesWhyGovernmentsRegulateCryptocurrencyRoute =
+  GuidesWhyGovernmentsRegulateCryptocurrencyRouteImport.update({
     id: '/why-governments-regulate-cryptocurrency',
     path: '/why-governments-regulate-cryptocurrency',
-    getParentRoute: () => NewsRoute,
+    getParentRoute: () => GuidesRoute,
   } as any)
-const NewsWhyBitcoinPriceMovesMoreThanStocksRoute =
-  NewsWhyBitcoinPriceMovesMoreThanStocksRouteImport.update({
+const GuidesWhyBitcoinPriceMovesMoreThanStocksRoute =
+  GuidesWhyBitcoinPriceMovesMoreThanStocksRouteImport.update({
     id: '/why-bitcoin-price-moves-more-than-stocks',
     path: '/why-bitcoin-price-moves-more-than-stocks',
-    getParentRoute: () => NewsRoute,
+    getParentRoute: () => GuidesRoute,
   } as any)
-const NewsWhatItMeansWhenExchangePausesWithdrawalsRoute =
-  NewsWhatItMeansWhenExchangePausesWithdrawalsRouteImport.update({
+const GuidesWhatItMeansWhenExchangePausesWithdrawalsRoute =
+  GuidesWhatItMeansWhenExchangePausesWithdrawalsRouteImport.update({
     id: '/what-it-means-when-exchange-pauses-withdrawals',
     path: '/what-it-means-when-exchange-pauses-withdrawals',
-    getParentRoute: () => NewsRoute,
+    getParentRoute: () => GuidesRoute,
   } as any)
-const NewsWhatIsABlockchainForkRoute =
-  NewsWhatIsABlockchainForkRouteImport.update({
-    id: '/what-is-a-blockchain-fork',
-    path: '/what-is-a-blockchain-fork',
-    getParentRoute: () => NewsRoute,
-  } as any)
+const GuidesWhatIsAStablecoinRoute = GuidesWhatIsAStablecoinRouteImport.update({
+  id: '/what-is-a-stablecoin',
+  path: '/what-is-a-stablecoin',
+  getParentRoute: () => GuidesRoute,
+} as any)
 const GuidesWhatIsACryptoWalletAddressRoute =
   GuidesWhatIsACryptoWalletAddressRouteImport.update({
     id: '/what-is-a-crypto-wallet-address',
     path: '/what-is-a-crypto-wallet-address',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesWhatIsABlockchainForkRoute =
+  GuidesWhatIsABlockchainForkRouteImport.update({
+    id: '/what-is-a-blockchain-fork',
+    path: '/what-is-a-blockchain-fork',
     getParentRoute: () => GuidesRoute,
   } as any)
 const GuidesNotYourKeysNotYourCoinsMeaningRoute =
@@ -181,16 +211,52 @@ const GuidesNotYourKeysNotYourCoinsMeaningRoute =
     path: '/not-your-keys-not-your-coins-meaning',
     getParentRoute: () => GuidesRoute,
   } as any)
+const GuidesHowToReadABlockExplorerRoute =
+  GuidesHowToReadABlockExplorerRouteImport.update({
+    id: '/how-to-read-a-block-explorer',
+    path: '/how-to-read-a-block-explorer',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesHotWalletsVsColdWalletsExplainedRoute =
+  GuidesHotWalletsVsColdWalletsExplainedRouteImport.update({
+    id: '/hot-wallets-vs-cold-wallets-explained',
+    path: '/hot-wallets-vs-cold-wallets-explained',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesHardwareWalletComparisonGuideRoute =
+  GuidesHardwareWalletComparisonGuideRouteImport.update({
+    id: '/hardware-wallet-comparison-guide',
+    path: '/hardware-wallet-comparison-guide',
+    getParentRoute: () => GuidesRoute,
+  } as any)
 const GuidesExchangeOrPersonalWalletCryptoStorageRoute =
   GuidesExchangeOrPersonalWalletCryptoStorageRouteImport.update({
     id: '/exchange-or-personal-wallet-crypto-storage',
     path: '/exchange-or-personal-wallet-crypto-storage',
     getParentRoute: () => GuidesRoute,
   } as any)
+const GuidesCryptoTaxBasicsForBeginnersRoute =
+  GuidesCryptoTaxBasicsForBeginnersRouteImport.update({
+    id: '/crypto-tax-basics-for-beginners',
+    path: '/crypto-tax-basics-for-beginners',
+    getParentRoute: () => GuidesRoute,
+  } as any)
 const EthereumWhatIsEthereumStakingRoute =
   EthereumWhatIsEthereumStakingRouteImport.update({
     id: '/what-is-ethereum-staking',
     path: '/what-is-ethereum-staking',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumWhatIsASmartContractRoute =
+  EthereumWhatIsASmartContractRouteImport.update({
+    id: '/what-is-a-smart-contract',
+    path: '/what-is-a-smart-contract',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumWhatAreGasFeesHowToSaveRoute =
+  EthereumWhatAreGasFeesHowToSaveRouteImport.update({
+    id: '/what-are-gas-fees-how-to-save',
+    path: '/what-are-gas-fees-how-to-save',
     getParentRoute: () => EthereumRoute,
   } as any)
 const EthereumEthereumLayer2ScalingRollupsExplainedRoute =
@@ -204,6 +270,12 @@ const EthereumCanYouSendBitcoinToAnEthereumAddressRoute =
     id: '/can-you-send-bitcoin-to-an-ethereum-address',
     path: '/can-you-send-bitcoin-to-an-ethereum-address',
     getParentRoute: () => EthereumRoute,
+  } as any)
+const BitcoinWhatIsTheBitcoinHalvingRoute =
+  BitcoinWhatIsTheBitcoinHalvingRouteImport.update({
+    id: '/what-is-the-bitcoin-halving',
+    path: '/what-is-the-bitcoin-halving',
+    getParentRoute: () => BitcoinRoute,
   } as any)
 const BitcoinWhatIsBitcoinMiningRoute =
   BitcoinWhatIsBitcoinMiningRouteImport.update({
@@ -223,6 +295,12 @@ const BitcoinHowToSendBitcoinSafelyRoute =
     path: '/how-to-send-bitcoin-safely',
     getParentRoute: () => BitcoinRoute,
   } as any)
+const BitcoinHowToBuyYourFirstBitcoinSafelyRoute =
+  BitcoinHowToBuyYourFirstBitcoinSafelyRouteImport.update({
+    id: '/how-to-buy-your-first-bitcoin-safely',
+    path: '/how-to-buy-your-first-bitcoin-safely',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -233,30 +311,41 @@ export interface FileRoutesByFullPath {
   '/disclaimer': typeof DisclaimerRoute
   '/ethereum': typeof EthereumRouteWithChildren
   '/guides': typeof GuidesRouteWithChildren
-  '/news': typeof NewsRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/search': typeof SearchRoute
   '/security': typeof SecurityRouteWithChildren
   '/terms': typeof TermsRoute
+  '/bitcoin/how-to-buy-your-first-bitcoin-safely': typeof BitcoinHowToBuyYourFirstBitcoinSafelyRoute
   '/bitcoin/how-to-send-bitcoin-safely': typeof BitcoinHowToSendBitcoinSafelyRoute
   '/bitcoin/what-is-a-bitcoin-wallet': typeof BitcoinWhatIsABitcoinWalletRoute
   '/bitcoin/what-is-bitcoin-mining': typeof BitcoinWhatIsBitcoinMiningRoute
+  '/bitcoin/what-is-the-bitcoin-halving': typeof BitcoinWhatIsTheBitcoinHalvingRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
   '/ethereum/ethereum-layer-2-scaling-rollups-explained': typeof EthereumEthereumLayer2ScalingRollupsExplainedRoute
+  '/ethereum/what-are-gas-fees-how-to-save': typeof EthereumWhatAreGasFeesHowToSaveRoute
+  '/ethereum/what-is-a-smart-contract': typeof EthereumWhatIsASmartContractRoute
   '/ethereum/what-is-ethereum-staking': typeof EthereumWhatIsEthereumStakingRoute
+  '/guides/crypto-tax-basics-for-beginners': typeof GuidesCryptoTaxBasicsForBeginnersRoute
   '/guides/exchange-or-personal-wallet-crypto-storage': typeof GuidesExchangeOrPersonalWalletCryptoStorageRoute
+  '/guides/hardware-wallet-comparison-guide': typeof GuidesHardwareWalletComparisonGuideRoute
+  '/guides/hot-wallets-vs-cold-wallets-explained': typeof GuidesHotWalletsVsColdWalletsExplainedRoute
+  '/guides/how-to-read-a-block-explorer': typeof GuidesHowToReadABlockExplorerRoute
   '/guides/not-your-keys-not-your-coins-meaning': typeof GuidesNotYourKeysNotYourCoinsMeaningRoute
+  '/guides/what-is-a-blockchain-fork': typeof GuidesWhatIsABlockchainForkRoute
   '/guides/what-is-a-crypto-wallet-address': typeof GuidesWhatIsACryptoWalletAddressRoute
-  '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
-  '/news/what-it-means-when-exchange-pauses-withdrawals': typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
-  '/news/why-bitcoin-price-moves-more-than-stocks': typeof NewsWhyBitcoinPriceMovesMoreThanStocksRoute
-  '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
+  '/guides/what-is-a-stablecoin': typeof GuidesWhatIsAStablecoinRoute
+  '/guides/what-it-means-when-exchange-pauses-withdrawals': typeof GuidesWhatItMeansWhenExchangePausesWithdrawalsRoute
+  '/guides/why-bitcoin-price-moves-more-than-stocks': typeof GuidesWhyBitcoinPriceMovesMoreThanStocksRoute
+  '/guides/why-governments-regulate-cryptocurrency': typeof GuidesWhyGovernmentsRegulateCryptocurrencyRoute
+  '/security/defi-risks-explained': typeof SecurityDefiRisksExplainedRoute
+  '/security/hardware-wallet-mistakes-to-avoid': typeof SecurityHardwareWalletMistakesToAvoidRoute
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
+  '/security/how-to-revoke-smart-contract-approvals': typeof SecurityHowToRevokeSmartContractApprovalsRoute
+  '/security/how-to-spot-a-rug-pull': typeof SecurityHowToSpotARugPullRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
   '/bitcoin/': typeof BitcoinIndexRoute
   '/ethereum/': typeof EthereumIndexRoute
   '/guides/': typeof GuidesIndexRoute
-  '/news/': typeof NewsIndexRoute
   '/security/': typeof SecurityIndexRoute
 }
 export interface FileRoutesByTo {
@@ -268,25 +357,37 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/search': typeof SearchRoute
   '/terms': typeof TermsRoute
+  '/bitcoin/how-to-buy-your-first-bitcoin-safely': typeof BitcoinHowToBuyYourFirstBitcoinSafelyRoute
   '/bitcoin/how-to-send-bitcoin-safely': typeof BitcoinHowToSendBitcoinSafelyRoute
   '/bitcoin/what-is-a-bitcoin-wallet': typeof BitcoinWhatIsABitcoinWalletRoute
   '/bitcoin/what-is-bitcoin-mining': typeof BitcoinWhatIsBitcoinMiningRoute
+  '/bitcoin/what-is-the-bitcoin-halving': typeof BitcoinWhatIsTheBitcoinHalvingRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
   '/ethereum/ethereum-layer-2-scaling-rollups-explained': typeof EthereumEthereumLayer2ScalingRollupsExplainedRoute
+  '/ethereum/what-are-gas-fees-how-to-save': typeof EthereumWhatAreGasFeesHowToSaveRoute
+  '/ethereum/what-is-a-smart-contract': typeof EthereumWhatIsASmartContractRoute
   '/ethereum/what-is-ethereum-staking': typeof EthereumWhatIsEthereumStakingRoute
+  '/guides/crypto-tax-basics-for-beginners': typeof GuidesCryptoTaxBasicsForBeginnersRoute
   '/guides/exchange-or-personal-wallet-crypto-storage': typeof GuidesExchangeOrPersonalWalletCryptoStorageRoute
+  '/guides/hardware-wallet-comparison-guide': typeof GuidesHardwareWalletComparisonGuideRoute
+  '/guides/hot-wallets-vs-cold-wallets-explained': typeof GuidesHotWalletsVsColdWalletsExplainedRoute
+  '/guides/how-to-read-a-block-explorer': typeof GuidesHowToReadABlockExplorerRoute
   '/guides/not-your-keys-not-your-coins-meaning': typeof GuidesNotYourKeysNotYourCoinsMeaningRoute
+  '/guides/what-is-a-blockchain-fork': typeof GuidesWhatIsABlockchainForkRoute
   '/guides/what-is-a-crypto-wallet-address': typeof GuidesWhatIsACryptoWalletAddressRoute
-  '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
-  '/news/what-it-means-when-exchange-pauses-withdrawals': typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
-  '/news/why-bitcoin-price-moves-more-than-stocks': typeof NewsWhyBitcoinPriceMovesMoreThanStocksRoute
-  '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
+  '/guides/what-is-a-stablecoin': typeof GuidesWhatIsAStablecoinRoute
+  '/guides/what-it-means-when-exchange-pauses-withdrawals': typeof GuidesWhatItMeansWhenExchangePausesWithdrawalsRoute
+  '/guides/why-bitcoin-price-moves-more-than-stocks': typeof GuidesWhyBitcoinPriceMovesMoreThanStocksRoute
+  '/guides/why-governments-regulate-cryptocurrency': typeof GuidesWhyGovernmentsRegulateCryptocurrencyRoute
+  '/security/defi-risks-explained': typeof SecurityDefiRisksExplainedRoute
+  '/security/hardware-wallet-mistakes-to-avoid': typeof SecurityHardwareWalletMistakesToAvoidRoute
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
+  '/security/how-to-revoke-smart-contract-approvals': typeof SecurityHowToRevokeSmartContractApprovalsRoute
+  '/security/how-to-spot-a-rug-pull': typeof SecurityHowToSpotARugPullRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
   '/bitcoin': typeof BitcoinIndexRoute
   '/ethereum': typeof EthereumIndexRoute
   '/guides': typeof GuidesIndexRoute
-  '/news': typeof NewsIndexRoute
   '/security': typeof SecurityIndexRoute
 }
 export interface FileRoutesById {
@@ -299,30 +400,41 @@ export interface FileRoutesById {
   '/disclaimer': typeof DisclaimerRoute
   '/ethereum': typeof EthereumRouteWithChildren
   '/guides': typeof GuidesRouteWithChildren
-  '/news': typeof NewsRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/search': typeof SearchRoute
   '/security': typeof SecurityRouteWithChildren
   '/terms': typeof TermsRoute
+  '/bitcoin/how-to-buy-your-first-bitcoin-safely': typeof BitcoinHowToBuyYourFirstBitcoinSafelyRoute
   '/bitcoin/how-to-send-bitcoin-safely': typeof BitcoinHowToSendBitcoinSafelyRoute
   '/bitcoin/what-is-a-bitcoin-wallet': typeof BitcoinWhatIsABitcoinWalletRoute
   '/bitcoin/what-is-bitcoin-mining': typeof BitcoinWhatIsBitcoinMiningRoute
+  '/bitcoin/what-is-the-bitcoin-halving': typeof BitcoinWhatIsTheBitcoinHalvingRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
   '/ethereum/ethereum-layer-2-scaling-rollups-explained': typeof EthereumEthereumLayer2ScalingRollupsExplainedRoute
+  '/ethereum/what-are-gas-fees-how-to-save': typeof EthereumWhatAreGasFeesHowToSaveRoute
+  '/ethereum/what-is-a-smart-contract': typeof EthereumWhatIsASmartContractRoute
   '/ethereum/what-is-ethereum-staking': typeof EthereumWhatIsEthereumStakingRoute
+  '/guides/crypto-tax-basics-for-beginners': typeof GuidesCryptoTaxBasicsForBeginnersRoute
   '/guides/exchange-or-personal-wallet-crypto-storage': typeof GuidesExchangeOrPersonalWalletCryptoStorageRoute
+  '/guides/hardware-wallet-comparison-guide': typeof GuidesHardwareWalletComparisonGuideRoute
+  '/guides/hot-wallets-vs-cold-wallets-explained': typeof GuidesHotWalletsVsColdWalletsExplainedRoute
+  '/guides/how-to-read-a-block-explorer': typeof GuidesHowToReadABlockExplorerRoute
   '/guides/not-your-keys-not-your-coins-meaning': typeof GuidesNotYourKeysNotYourCoinsMeaningRoute
+  '/guides/what-is-a-blockchain-fork': typeof GuidesWhatIsABlockchainForkRoute
   '/guides/what-is-a-crypto-wallet-address': typeof GuidesWhatIsACryptoWalletAddressRoute
-  '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
-  '/news/what-it-means-when-exchange-pauses-withdrawals': typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
-  '/news/why-bitcoin-price-moves-more-than-stocks': typeof NewsWhyBitcoinPriceMovesMoreThanStocksRoute
-  '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
+  '/guides/what-is-a-stablecoin': typeof GuidesWhatIsAStablecoinRoute
+  '/guides/what-it-means-when-exchange-pauses-withdrawals': typeof GuidesWhatItMeansWhenExchangePausesWithdrawalsRoute
+  '/guides/why-bitcoin-price-moves-more-than-stocks': typeof GuidesWhyBitcoinPriceMovesMoreThanStocksRoute
+  '/guides/why-governments-regulate-cryptocurrency': typeof GuidesWhyGovernmentsRegulateCryptocurrencyRoute
+  '/security/defi-risks-explained': typeof SecurityDefiRisksExplainedRoute
+  '/security/hardware-wallet-mistakes-to-avoid': typeof SecurityHardwareWalletMistakesToAvoidRoute
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
+  '/security/how-to-revoke-smart-contract-approvals': typeof SecurityHowToRevokeSmartContractApprovalsRoute
+  '/security/how-to-spot-a-rug-pull': typeof SecurityHowToSpotARugPullRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
   '/bitcoin/': typeof BitcoinIndexRoute
   '/ethereum/': typeof EthereumIndexRoute
   '/guides/': typeof GuidesIndexRoute
-  '/news/': typeof NewsIndexRoute
   '/security/': typeof SecurityIndexRoute
 }
 export interface FileRouteTypes {
@@ -336,30 +448,41 @@ export interface FileRouteTypes {
     | '/disclaimer'
     | '/ethereum'
     | '/guides'
-    | '/news'
     | '/privacy'
     | '/search'
     | '/security'
     | '/terms'
+    | '/bitcoin/how-to-buy-your-first-bitcoin-safely'
     | '/bitcoin/how-to-send-bitcoin-safely'
     | '/bitcoin/what-is-a-bitcoin-wallet'
     | '/bitcoin/what-is-bitcoin-mining'
+    | '/bitcoin/what-is-the-bitcoin-halving'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
     | '/ethereum/ethereum-layer-2-scaling-rollups-explained'
+    | '/ethereum/what-are-gas-fees-how-to-save'
+    | '/ethereum/what-is-a-smart-contract'
     | '/ethereum/what-is-ethereum-staking'
+    | '/guides/crypto-tax-basics-for-beginners'
     | '/guides/exchange-or-personal-wallet-crypto-storage'
+    | '/guides/hardware-wallet-comparison-guide'
+    | '/guides/hot-wallets-vs-cold-wallets-explained'
+    | '/guides/how-to-read-a-block-explorer'
     | '/guides/not-your-keys-not-your-coins-meaning'
+    | '/guides/what-is-a-blockchain-fork'
     | '/guides/what-is-a-crypto-wallet-address'
-    | '/news/what-is-a-blockchain-fork'
-    | '/news/what-it-means-when-exchange-pauses-withdrawals'
-    | '/news/why-bitcoin-price-moves-more-than-stocks'
-    | '/news/why-governments-regulate-cryptocurrency'
+    | '/guides/what-is-a-stablecoin'
+    | '/guides/what-it-means-when-exchange-pauses-withdrawals'
+    | '/guides/why-bitcoin-price-moves-more-than-stocks'
+    | '/guides/why-governments-regulate-cryptocurrency'
+    | '/security/defi-risks-explained'
+    | '/security/hardware-wallet-mistakes-to-avoid'
     | '/security/how-to-avoid-crypto-phishing-scams'
+    | '/security/how-to-revoke-smart-contract-approvals'
+    | '/security/how-to-spot-a-rug-pull'
     | '/security/how-to-store-crypto-seed-phrase-safely'
     | '/bitcoin/'
     | '/ethereum/'
     | '/guides/'
-    | '/news/'
     | '/security/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -371,25 +494,37 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/search'
     | '/terms'
+    | '/bitcoin/how-to-buy-your-first-bitcoin-safely'
     | '/bitcoin/how-to-send-bitcoin-safely'
     | '/bitcoin/what-is-a-bitcoin-wallet'
     | '/bitcoin/what-is-bitcoin-mining'
+    | '/bitcoin/what-is-the-bitcoin-halving'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
     | '/ethereum/ethereum-layer-2-scaling-rollups-explained'
+    | '/ethereum/what-are-gas-fees-how-to-save'
+    | '/ethereum/what-is-a-smart-contract'
     | '/ethereum/what-is-ethereum-staking'
+    | '/guides/crypto-tax-basics-for-beginners'
     | '/guides/exchange-or-personal-wallet-crypto-storage'
+    | '/guides/hardware-wallet-comparison-guide'
+    | '/guides/hot-wallets-vs-cold-wallets-explained'
+    | '/guides/how-to-read-a-block-explorer'
     | '/guides/not-your-keys-not-your-coins-meaning'
+    | '/guides/what-is-a-blockchain-fork'
     | '/guides/what-is-a-crypto-wallet-address'
-    | '/news/what-is-a-blockchain-fork'
-    | '/news/what-it-means-when-exchange-pauses-withdrawals'
-    | '/news/why-bitcoin-price-moves-more-than-stocks'
-    | '/news/why-governments-regulate-cryptocurrency'
+    | '/guides/what-is-a-stablecoin'
+    | '/guides/what-it-means-when-exchange-pauses-withdrawals'
+    | '/guides/why-bitcoin-price-moves-more-than-stocks'
+    | '/guides/why-governments-regulate-cryptocurrency'
+    | '/security/defi-risks-explained'
+    | '/security/hardware-wallet-mistakes-to-avoid'
     | '/security/how-to-avoid-crypto-phishing-scams'
+    | '/security/how-to-revoke-smart-contract-approvals'
+    | '/security/how-to-spot-a-rug-pull'
     | '/security/how-to-store-crypto-seed-phrase-safely'
     | '/bitcoin'
     | '/ethereum'
     | '/guides'
-    | '/news'
     | '/security'
   id:
     | '__root__'
@@ -401,30 +536,41 @@ export interface FileRouteTypes {
     | '/disclaimer'
     | '/ethereum'
     | '/guides'
-    | '/news'
     | '/privacy'
     | '/search'
     | '/security'
     | '/terms'
+    | '/bitcoin/how-to-buy-your-first-bitcoin-safely'
     | '/bitcoin/how-to-send-bitcoin-safely'
     | '/bitcoin/what-is-a-bitcoin-wallet'
     | '/bitcoin/what-is-bitcoin-mining'
+    | '/bitcoin/what-is-the-bitcoin-halving'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
     | '/ethereum/ethereum-layer-2-scaling-rollups-explained'
+    | '/ethereum/what-are-gas-fees-how-to-save'
+    | '/ethereum/what-is-a-smart-contract'
     | '/ethereum/what-is-ethereum-staking'
+    | '/guides/crypto-tax-basics-for-beginners'
     | '/guides/exchange-or-personal-wallet-crypto-storage'
+    | '/guides/hardware-wallet-comparison-guide'
+    | '/guides/hot-wallets-vs-cold-wallets-explained'
+    | '/guides/how-to-read-a-block-explorer'
     | '/guides/not-your-keys-not-your-coins-meaning'
+    | '/guides/what-is-a-blockchain-fork'
     | '/guides/what-is-a-crypto-wallet-address'
-    | '/news/what-is-a-blockchain-fork'
-    | '/news/what-it-means-when-exchange-pauses-withdrawals'
-    | '/news/why-bitcoin-price-moves-more-than-stocks'
-    | '/news/why-governments-regulate-cryptocurrency'
+    | '/guides/what-is-a-stablecoin'
+    | '/guides/what-it-means-when-exchange-pauses-withdrawals'
+    | '/guides/why-bitcoin-price-moves-more-than-stocks'
+    | '/guides/why-governments-regulate-cryptocurrency'
+    | '/security/defi-risks-explained'
+    | '/security/hardware-wallet-mistakes-to-avoid'
     | '/security/how-to-avoid-crypto-phishing-scams'
+    | '/security/how-to-revoke-smart-contract-approvals'
+    | '/security/how-to-spot-a-rug-pull'
     | '/security/how-to-store-crypto-seed-phrase-safely'
     | '/bitcoin/'
     | '/ethereum/'
     | '/guides/'
-    | '/news/'
     | '/security/'
   fileRoutesById: FileRoutesById
 }
@@ -437,7 +583,6 @@ export interface RootRouteChildren {
   DisclaimerRoute: typeof DisclaimerRoute
   EthereumRoute: typeof EthereumRouteWithChildren
   GuidesRoute: typeof GuidesRouteWithChildren
-  NewsRoute: typeof NewsRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
   SearchRoute: typeof SearchRoute
   SecurityRoute: typeof SecurityRouteWithChildren
@@ -472,13 +617,6 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/news': {
-      id: '/news'
-      path: '/news'
-      fullPath: '/news'
-      preLoaderRoute: typeof NewsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/guides': {
@@ -544,13 +682,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SecurityIndexRouteImport
       parentRoute: typeof SecurityRoute
     }
-    '/news/': {
-      id: '/news/'
-      path: '/'
-      fullPath: '/news/'
-      preLoaderRoute: typeof NewsIndexRouteImport
-      parentRoute: typeof NewsRoute
-    }
     '/guides/': {
       id: '/guides/'
       path: '/'
@@ -579,6 +710,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SecurityHowToStoreCryptoSeedPhraseSafelyRouteImport
       parentRoute: typeof SecurityRoute
     }
+    '/security/how-to-spot-a-rug-pull': {
+      id: '/security/how-to-spot-a-rug-pull'
+      path: '/how-to-spot-a-rug-pull'
+      fullPath: '/security/how-to-spot-a-rug-pull'
+      preLoaderRoute: typeof SecurityHowToSpotARugPullRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/how-to-revoke-smart-contract-approvals': {
+      id: '/security/how-to-revoke-smart-contract-approvals'
+      path: '/how-to-revoke-smart-contract-approvals'
+      fullPath: '/security/how-to-revoke-smart-contract-approvals'
+      preLoaderRoute: typeof SecurityHowToRevokeSmartContractApprovalsRouteImport
+      parentRoute: typeof SecurityRoute
+    }
     '/security/how-to-avoid-crypto-phishing-scams': {
       id: '/security/how-to-avoid-crypto-phishing-scams'
       path: '/how-to-avoid-crypto-phishing-scams'
@@ -586,39 +731,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SecurityHowToAvoidCryptoPhishingScamsRouteImport
       parentRoute: typeof SecurityRoute
     }
-    '/news/why-governments-regulate-cryptocurrency': {
-      id: '/news/why-governments-regulate-cryptocurrency'
+    '/security/hardware-wallet-mistakes-to-avoid': {
+      id: '/security/hardware-wallet-mistakes-to-avoid'
+      path: '/hardware-wallet-mistakes-to-avoid'
+      fullPath: '/security/hardware-wallet-mistakes-to-avoid'
+      preLoaderRoute: typeof SecurityHardwareWalletMistakesToAvoidRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/defi-risks-explained': {
+      id: '/security/defi-risks-explained'
+      path: '/defi-risks-explained'
+      fullPath: '/security/defi-risks-explained'
+      preLoaderRoute: typeof SecurityDefiRisksExplainedRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/guides/why-governments-regulate-cryptocurrency': {
+      id: '/guides/why-governments-regulate-cryptocurrency'
       path: '/why-governments-regulate-cryptocurrency'
-      fullPath: '/news/why-governments-regulate-cryptocurrency'
-      preLoaderRoute: typeof NewsWhyGovernmentsRegulateCryptocurrencyRouteImport
-      parentRoute: typeof NewsRoute
+      fullPath: '/guides/why-governments-regulate-cryptocurrency'
+      preLoaderRoute: typeof GuidesWhyGovernmentsRegulateCryptocurrencyRouteImport
+      parentRoute: typeof GuidesRoute
     }
-    '/news/why-bitcoin-price-moves-more-than-stocks': {
-      id: '/news/why-bitcoin-price-moves-more-than-stocks'
+    '/guides/why-bitcoin-price-moves-more-than-stocks': {
+      id: '/guides/why-bitcoin-price-moves-more-than-stocks'
       path: '/why-bitcoin-price-moves-more-than-stocks'
-      fullPath: '/news/why-bitcoin-price-moves-more-than-stocks'
-      preLoaderRoute: typeof NewsWhyBitcoinPriceMovesMoreThanStocksRouteImport
-      parentRoute: typeof NewsRoute
+      fullPath: '/guides/why-bitcoin-price-moves-more-than-stocks'
+      preLoaderRoute: typeof GuidesWhyBitcoinPriceMovesMoreThanStocksRouteImport
+      parentRoute: typeof GuidesRoute
     }
-    '/news/what-it-means-when-exchange-pauses-withdrawals': {
-      id: '/news/what-it-means-when-exchange-pauses-withdrawals'
+    '/guides/what-it-means-when-exchange-pauses-withdrawals': {
+      id: '/guides/what-it-means-when-exchange-pauses-withdrawals'
       path: '/what-it-means-when-exchange-pauses-withdrawals'
-      fullPath: '/news/what-it-means-when-exchange-pauses-withdrawals'
-      preLoaderRoute: typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRouteImport
-      parentRoute: typeof NewsRoute
+      fullPath: '/guides/what-it-means-when-exchange-pauses-withdrawals'
+      preLoaderRoute: typeof GuidesWhatItMeansWhenExchangePausesWithdrawalsRouteImport
+      parentRoute: typeof GuidesRoute
     }
-    '/news/what-is-a-blockchain-fork': {
-      id: '/news/what-is-a-blockchain-fork'
-      path: '/what-is-a-blockchain-fork'
-      fullPath: '/news/what-is-a-blockchain-fork'
-      preLoaderRoute: typeof NewsWhatIsABlockchainForkRouteImport
-      parentRoute: typeof NewsRoute
+    '/guides/what-is-a-stablecoin': {
+      id: '/guides/what-is-a-stablecoin'
+      path: '/what-is-a-stablecoin'
+      fullPath: '/guides/what-is-a-stablecoin'
+      preLoaderRoute: typeof GuidesWhatIsAStablecoinRouteImport
+      parentRoute: typeof GuidesRoute
     }
     '/guides/what-is-a-crypto-wallet-address': {
       id: '/guides/what-is-a-crypto-wallet-address'
       path: '/what-is-a-crypto-wallet-address'
       fullPath: '/guides/what-is-a-crypto-wallet-address'
       preLoaderRoute: typeof GuidesWhatIsACryptoWalletAddressRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/what-is-a-blockchain-fork': {
+      id: '/guides/what-is-a-blockchain-fork'
+      path: '/what-is-a-blockchain-fork'
+      fullPath: '/guides/what-is-a-blockchain-fork'
+      preLoaderRoute: typeof GuidesWhatIsABlockchainForkRouteImport
       parentRoute: typeof GuidesRoute
     }
     '/guides/not-your-keys-not-your-coins-meaning': {
@@ -628,6 +794,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuidesNotYourKeysNotYourCoinsMeaningRouteImport
       parentRoute: typeof GuidesRoute
     }
+    '/guides/how-to-read-a-block-explorer': {
+      id: '/guides/how-to-read-a-block-explorer'
+      path: '/how-to-read-a-block-explorer'
+      fullPath: '/guides/how-to-read-a-block-explorer'
+      preLoaderRoute: typeof GuidesHowToReadABlockExplorerRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/hot-wallets-vs-cold-wallets-explained': {
+      id: '/guides/hot-wallets-vs-cold-wallets-explained'
+      path: '/hot-wallets-vs-cold-wallets-explained'
+      fullPath: '/guides/hot-wallets-vs-cold-wallets-explained'
+      preLoaderRoute: typeof GuidesHotWalletsVsColdWalletsExplainedRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/hardware-wallet-comparison-guide': {
+      id: '/guides/hardware-wallet-comparison-guide'
+      path: '/hardware-wallet-comparison-guide'
+      fullPath: '/guides/hardware-wallet-comparison-guide'
+      preLoaderRoute: typeof GuidesHardwareWalletComparisonGuideRouteImport
+      parentRoute: typeof GuidesRoute
+    }
     '/guides/exchange-or-personal-wallet-crypto-storage': {
       id: '/guides/exchange-or-personal-wallet-crypto-storage'
       path: '/exchange-or-personal-wallet-crypto-storage'
@@ -635,11 +822,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuidesExchangeOrPersonalWalletCryptoStorageRouteImport
       parentRoute: typeof GuidesRoute
     }
+    '/guides/crypto-tax-basics-for-beginners': {
+      id: '/guides/crypto-tax-basics-for-beginners'
+      path: '/crypto-tax-basics-for-beginners'
+      fullPath: '/guides/crypto-tax-basics-for-beginners'
+      preLoaderRoute: typeof GuidesCryptoTaxBasicsForBeginnersRouteImport
+      parentRoute: typeof GuidesRoute
+    }
     '/ethereum/what-is-ethereum-staking': {
       id: '/ethereum/what-is-ethereum-staking'
       path: '/what-is-ethereum-staking'
       fullPath: '/ethereum/what-is-ethereum-staking'
       preLoaderRoute: typeof EthereumWhatIsEthereumStakingRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/what-is-a-smart-contract': {
+      id: '/ethereum/what-is-a-smart-contract'
+      path: '/what-is-a-smart-contract'
+      fullPath: '/ethereum/what-is-a-smart-contract'
+      preLoaderRoute: typeof EthereumWhatIsASmartContractRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/what-are-gas-fees-how-to-save': {
+      id: '/ethereum/what-are-gas-fees-how-to-save'
+      path: '/what-are-gas-fees-how-to-save'
+      fullPath: '/ethereum/what-are-gas-fees-how-to-save'
+      preLoaderRoute: typeof EthereumWhatAreGasFeesHowToSaveRouteImport
       parentRoute: typeof EthereumRoute
     }
     '/ethereum/ethereum-layer-2-scaling-rollups-explained': {
@@ -655,6 +863,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
       preLoaderRoute: typeof EthereumCanYouSendBitcoinToAnEthereumAddressRouteImport
       parentRoute: typeof EthereumRoute
+    }
+    '/bitcoin/what-is-the-bitcoin-halving': {
+      id: '/bitcoin/what-is-the-bitcoin-halving'
+      path: '/what-is-the-bitcoin-halving'
+      fullPath: '/bitcoin/what-is-the-bitcoin-halving'
+      preLoaderRoute: typeof BitcoinWhatIsTheBitcoinHalvingRouteImport
+      parentRoute: typeof BitcoinRoute
     }
     '/bitcoin/what-is-bitcoin-mining': {
       id: '/bitcoin/what-is-bitcoin-mining'
@@ -677,20 +892,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BitcoinHowToSendBitcoinSafelyRouteImport
       parentRoute: typeof BitcoinRoute
     }
+    '/bitcoin/how-to-buy-your-first-bitcoin-safely': {
+      id: '/bitcoin/how-to-buy-your-first-bitcoin-safely'
+      path: '/how-to-buy-your-first-bitcoin-safely'
+      fullPath: '/bitcoin/how-to-buy-your-first-bitcoin-safely'
+      preLoaderRoute: typeof BitcoinHowToBuyYourFirstBitcoinSafelyRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
   }
 }
 
 interface BitcoinRouteChildren {
+  BitcoinHowToBuyYourFirstBitcoinSafelyRoute: typeof BitcoinHowToBuyYourFirstBitcoinSafelyRoute
   BitcoinHowToSendBitcoinSafelyRoute: typeof BitcoinHowToSendBitcoinSafelyRoute
   BitcoinWhatIsABitcoinWalletRoute: typeof BitcoinWhatIsABitcoinWalletRoute
   BitcoinWhatIsBitcoinMiningRoute: typeof BitcoinWhatIsBitcoinMiningRoute
+  BitcoinWhatIsTheBitcoinHalvingRoute: typeof BitcoinWhatIsTheBitcoinHalvingRoute
   BitcoinIndexRoute: typeof BitcoinIndexRoute
 }
 
 const BitcoinRouteChildren: BitcoinRouteChildren = {
+  BitcoinHowToBuyYourFirstBitcoinSafelyRoute:
+    BitcoinHowToBuyYourFirstBitcoinSafelyRoute,
   BitcoinHowToSendBitcoinSafelyRoute: BitcoinHowToSendBitcoinSafelyRoute,
   BitcoinWhatIsABitcoinWalletRoute: BitcoinWhatIsABitcoinWalletRoute,
   BitcoinWhatIsBitcoinMiningRoute: BitcoinWhatIsBitcoinMiningRoute,
+  BitcoinWhatIsTheBitcoinHalvingRoute: BitcoinWhatIsTheBitcoinHalvingRoute,
   BitcoinIndexRoute: BitcoinIndexRoute,
 }
 
@@ -700,6 +927,8 @@ const BitcoinRouteWithChildren =
 interface EthereumRouteChildren {
   EthereumCanYouSendBitcoinToAnEthereumAddressRoute: typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
   EthereumEthereumLayer2ScalingRollupsExplainedRoute: typeof EthereumEthereumLayer2ScalingRollupsExplainedRoute
+  EthereumWhatAreGasFeesHowToSaveRoute: typeof EthereumWhatAreGasFeesHowToSaveRoute
+  EthereumWhatIsASmartContractRoute: typeof EthereumWhatIsASmartContractRoute
   EthereumWhatIsEthereumStakingRoute: typeof EthereumWhatIsEthereumStakingRoute
   EthereumIndexRoute: typeof EthereumIndexRoute
 }
@@ -709,6 +938,8 @@ const EthereumRouteChildren: EthereumRouteChildren = {
     EthereumCanYouSendBitcoinToAnEthereumAddressRoute,
   EthereumEthereumLayer2ScalingRollupsExplainedRoute:
     EthereumEthereumLayer2ScalingRollupsExplainedRoute,
+  EthereumWhatAreGasFeesHowToSaveRoute: EthereumWhatAreGasFeesHowToSaveRoute,
+  EthereumWhatIsASmartContractRoute: EthereumWhatIsASmartContractRoute,
   EthereumWhatIsEthereumStakingRoute: EthereumWhatIsEthereumStakingRoute,
   EthereumIndexRoute: EthereumIndexRoute,
 }
@@ -718,54 +949,67 @@ const EthereumRouteWithChildren = EthereumRoute._addFileChildren(
 )
 
 interface GuidesRouteChildren {
+  GuidesCryptoTaxBasicsForBeginnersRoute: typeof GuidesCryptoTaxBasicsForBeginnersRoute
   GuidesExchangeOrPersonalWalletCryptoStorageRoute: typeof GuidesExchangeOrPersonalWalletCryptoStorageRoute
+  GuidesHardwareWalletComparisonGuideRoute: typeof GuidesHardwareWalletComparisonGuideRoute
+  GuidesHotWalletsVsColdWalletsExplainedRoute: typeof GuidesHotWalletsVsColdWalletsExplainedRoute
+  GuidesHowToReadABlockExplorerRoute: typeof GuidesHowToReadABlockExplorerRoute
   GuidesNotYourKeysNotYourCoinsMeaningRoute: typeof GuidesNotYourKeysNotYourCoinsMeaningRoute
+  GuidesWhatIsABlockchainForkRoute: typeof GuidesWhatIsABlockchainForkRoute
   GuidesWhatIsACryptoWalletAddressRoute: typeof GuidesWhatIsACryptoWalletAddressRoute
+  GuidesWhatIsAStablecoinRoute: typeof GuidesWhatIsAStablecoinRoute
+  GuidesWhatItMeansWhenExchangePausesWithdrawalsRoute: typeof GuidesWhatItMeansWhenExchangePausesWithdrawalsRoute
+  GuidesWhyBitcoinPriceMovesMoreThanStocksRoute: typeof GuidesWhyBitcoinPriceMovesMoreThanStocksRoute
+  GuidesWhyGovernmentsRegulateCryptocurrencyRoute: typeof GuidesWhyGovernmentsRegulateCryptocurrencyRoute
   GuidesIndexRoute: typeof GuidesIndexRoute
 }
 
 const GuidesRouteChildren: GuidesRouteChildren = {
+  GuidesCryptoTaxBasicsForBeginnersRoute:
+    GuidesCryptoTaxBasicsForBeginnersRoute,
   GuidesExchangeOrPersonalWalletCryptoStorageRoute:
     GuidesExchangeOrPersonalWalletCryptoStorageRoute,
+  GuidesHardwareWalletComparisonGuideRoute:
+    GuidesHardwareWalletComparisonGuideRoute,
+  GuidesHotWalletsVsColdWalletsExplainedRoute:
+    GuidesHotWalletsVsColdWalletsExplainedRoute,
+  GuidesHowToReadABlockExplorerRoute: GuidesHowToReadABlockExplorerRoute,
   GuidesNotYourKeysNotYourCoinsMeaningRoute:
     GuidesNotYourKeysNotYourCoinsMeaningRoute,
+  GuidesWhatIsABlockchainForkRoute: GuidesWhatIsABlockchainForkRoute,
   GuidesWhatIsACryptoWalletAddressRoute: GuidesWhatIsACryptoWalletAddressRoute,
+  GuidesWhatIsAStablecoinRoute: GuidesWhatIsAStablecoinRoute,
+  GuidesWhatItMeansWhenExchangePausesWithdrawalsRoute:
+    GuidesWhatItMeansWhenExchangePausesWithdrawalsRoute,
+  GuidesWhyBitcoinPriceMovesMoreThanStocksRoute:
+    GuidesWhyBitcoinPriceMovesMoreThanStocksRoute,
+  GuidesWhyGovernmentsRegulateCryptocurrencyRoute:
+    GuidesWhyGovernmentsRegulateCryptocurrencyRoute,
   GuidesIndexRoute: GuidesIndexRoute,
 }
 
 const GuidesRouteWithChildren =
   GuidesRoute._addFileChildren(GuidesRouteChildren)
 
-interface NewsRouteChildren {
-  NewsWhatIsABlockchainForkRoute: typeof NewsWhatIsABlockchainForkRoute
-  NewsWhatItMeansWhenExchangePausesWithdrawalsRoute: typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
-  NewsWhyBitcoinPriceMovesMoreThanStocksRoute: typeof NewsWhyBitcoinPriceMovesMoreThanStocksRoute
-  NewsWhyGovernmentsRegulateCryptocurrencyRoute: typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
-  NewsIndexRoute: typeof NewsIndexRoute
-}
-
-const NewsRouteChildren: NewsRouteChildren = {
-  NewsWhatIsABlockchainForkRoute: NewsWhatIsABlockchainForkRoute,
-  NewsWhatItMeansWhenExchangePausesWithdrawalsRoute:
-    NewsWhatItMeansWhenExchangePausesWithdrawalsRoute,
-  NewsWhyBitcoinPriceMovesMoreThanStocksRoute:
-    NewsWhyBitcoinPriceMovesMoreThanStocksRoute,
-  NewsWhyGovernmentsRegulateCryptocurrencyRoute:
-    NewsWhyGovernmentsRegulateCryptocurrencyRoute,
-  NewsIndexRoute: NewsIndexRoute,
-}
-
-const NewsRouteWithChildren = NewsRoute._addFileChildren(NewsRouteChildren)
-
 interface SecurityRouteChildren {
+  SecurityDefiRisksExplainedRoute: typeof SecurityDefiRisksExplainedRoute
+  SecurityHardwareWalletMistakesToAvoidRoute: typeof SecurityHardwareWalletMistakesToAvoidRoute
   SecurityHowToAvoidCryptoPhishingScamsRoute: typeof SecurityHowToAvoidCryptoPhishingScamsRoute
+  SecurityHowToRevokeSmartContractApprovalsRoute: typeof SecurityHowToRevokeSmartContractApprovalsRoute
+  SecurityHowToSpotARugPullRoute: typeof SecurityHowToSpotARugPullRoute
   SecurityHowToStoreCryptoSeedPhraseSafelyRoute: typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
   SecurityIndexRoute: typeof SecurityIndexRoute
 }
 
 const SecurityRouteChildren: SecurityRouteChildren = {
+  SecurityDefiRisksExplainedRoute: SecurityDefiRisksExplainedRoute,
+  SecurityHardwareWalletMistakesToAvoidRoute:
+    SecurityHardwareWalletMistakesToAvoidRoute,
   SecurityHowToAvoidCryptoPhishingScamsRoute:
     SecurityHowToAvoidCryptoPhishingScamsRoute,
+  SecurityHowToRevokeSmartContractApprovalsRoute:
+    SecurityHowToRevokeSmartContractApprovalsRoute,
+  SecurityHowToSpotARugPullRoute: SecurityHowToSpotARugPullRoute,
   SecurityHowToStoreCryptoSeedPhraseSafelyRoute:
     SecurityHowToStoreCryptoSeedPhraseSafelyRoute,
   SecurityIndexRoute: SecurityIndexRoute,
@@ -784,7 +1028,6 @@ const rootRouteChildren: RootRouteChildren = {
   DisclaimerRoute: DisclaimerRoute,
   EthereumRoute: EthereumRouteWithChildren,
   GuidesRoute: GuidesRouteWithChildren,
-  NewsRoute: NewsRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
   SearchRoute: SearchRoute,
   SecurityRoute: SecurityRouteWithChildren,
@@ -793,13 +1036,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

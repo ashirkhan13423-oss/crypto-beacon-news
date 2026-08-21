@@ -153,7 +153,7 @@ function AboutPage() {
               </p>
             </div>
             <a
-              href="mailto:editorial@cryptobeacon.site"
+              href="mailto:crypto.beacon.site@gmail.com"
               className="inline-flex items-center gap-xs bg-primary text-primary-foreground px-lg py-sm rounded-full font-label-lg font-medium hover:bg-primary/90 transition-colors"
             >
               <Mail style={{ fontSize: "20px" }} />
