@@ -12,7 +12,7 @@ import bitcoinMiningHero from "@/assets/bitcoin-what-is-mining.png";
 import exchangeHero from "@/assets/exchange-vs-wallet.png";
 import walletAddressHero from "@/assets/guides-wallet-address.png";
 import blockchainForkHero from "@/assets/news-blockchain-fork.png";
-import pausedHero from "@/assets/news-paused-withdrawals.svg";
+import pausedHero from "@/assets/news-paused-withdrawals.jpg";
 import smartContractHero from "@/assets/security-smart-contract-approvals.jpg";
 import halvingHero from "@/assets/bitcoin-halving.jpg";
 import gasFeesHero from "@/assets/ethereum-gas-fees.jpg";
@@ -90,7 +90,7 @@ const homepageSchema = {
       description: DESC,
       datePublished: PUBLISHED_DATE,
       dateModified: MODIFIED_DATE,
-      author: [{ "@type": "Organization", name: "CryptoBeacon Editorial Team", url: PAGE_URL }],
+      author: [{ "@type": "Person", name: "Ashir", url: PAGE_URL }],
       publisher: {
         "@type": "Organization",
         name: "CryptoBeacon",
@@ -310,7 +310,7 @@ function IndexPage() {
         <section className="mb-xl max-w-4xl">
           <div className="flex flex-wrap items-center gap-sm mb-md">
             <span className="inline-block bg-surface-container-high text-secondary font-label-caps text-label-caps px-md py-xs rounded-full border border-outline-variant font-semibold">
-              CryptoBeacon Editorial Team
+              Ashir
             </span>
             <span className="inline-flex items-center gap-xs font-body-sm text-body-sm text-on-surface-variant">
               <Calendar className="w-4 h-4 text-secondary" />

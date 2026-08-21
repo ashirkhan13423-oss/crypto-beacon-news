@@ -10,13 +10,13 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Learn about the CryptoBeacon Editorial Team, our evergreen-first editorial standards, and our commitment to rigorous cryptocurrency research.",
+          "Learn about Ashir's evergreen-first editorial standards and commitment to rigorous cryptocurrency research.",
       },
       { property: "og:title", content: "About Us — CryptoBeacon" },
       {
         property: "og:description",
         content:
-          "Learn about the CryptoBeacon Editorial Team, our evergreen-first editorial standards, and our commitment to rigorous cryptocurrency research.",
+          "Learn about Ashir's evergreen-first editorial standards and commitment to rigorous cryptocurrency research.",
       },
       { property: "og:url", content: "https://www.cryptobeacon.site/about" },
       { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
@@ -53,7 +53,7 @@ function AboutPage() {
               <Link to="/author" className="text-secondary font-semibold hover:underline">
                 Ashir
               </Link>
-              , supported by a specialist cryptocurrency editorial team dedicated to objective digital
+              , maintained by a dedicated cryptocurrency researcher committed to objective digital
               asset education and security research:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-md my-md">
@@ -149,11 +149,11 @@ function AboutPage() {
             <div>
               <h2 className="font-headline-sm text-headline-sm text-primary mb-xs">Get in Touch</h2>
               <p className="text-body-md text-on-surface-variant">
-                Have a correction or a topic suggestion? Contact our editorial team.
+                Have a correction or a topic suggestion? Contact Ashir.
               </p>
             </div>
             <a
-              href="mailto:crypto.beacon.site@gmail.com"
+              href="mailto:contact@cryptobeacon.site"
               className="inline-flex items-center gap-xs bg-primary text-primary-foreground px-lg py-sm rounded-full font-label-lg font-medium hover:bg-primary/90 transition-colors"
             >
               <Mail style={{ fontSize: "20px" }} />

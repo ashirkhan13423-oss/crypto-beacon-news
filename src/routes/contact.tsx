@@ -7,7 +7,7 @@ import { useState } from "react";
 const URL = "https://www.cryptobeacon.site/contact";
 const TITLE = "Contact Us & Editorial Inquiries | CryptoBeacon";
 const DESC =
-  "Get in touch with the CryptoBeacon editorial team. Contact us for press inquiries, editorial corrections, security research submissions, or general feedback.";
+  "Get in touch with Ashir, the editor of CryptoBeacon. Contact us for press inquiries, editorial corrections, security research submissions, or general feedback.";
 
 const contactSchema = {
   "@context": "https://schema.org",
@@ -19,17 +19,17 @@ const contactSchema = {
     "@type": "Organization",
     name: "CryptoBeacon",
     url: "https://www.cryptobeacon.site",
-    email: "crypto.beacon.site@gmail.com",
+    email: "contact@cryptobeacon.site",
     contactPoint: [
       {
         "@type": "ContactPoint",
-        email: "crypto.beacon.site@gmail.com",
+        email: "contact@cryptobeacon.site",
         contactType: "editorial newsroom",
         availableLanguage: ["English"],
       },
       {
         "@type": "ContactPoint",
-        email: "crypto.beacon.site@gmail.com",
+        email: "contact@cryptobeacon.site",
         contactType: "security research",
         availableLanguage: ["English"],
       },
@@ -98,8 +98,8 @@ function ContactPage() {
             Contact CryptoBeacon
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-            Have a question, news tip, editorial correction, or security disclosure? Our editorial
-            team reviews every inquiry promptly.
+            Have a question, news tip, editorial correction, or security disclosure? Ashir
+            reviews every inquiry promptly.
           </p>
         </header>
 
@@ -117,10 +117,10 @@ function ContactPage() {
                 Press releases, news tips, and content suggestions.
               </p>
               <a
-                href="mailto:crypto.beacon.site@gmail.com"
+                href="mailto:contact@cryptobeacon.site"
                 className="font-body-md text-secondary font-medium hover:underline"
               >
-                crypto.beacon.site@gmail.com
+                contact@cryptobeacon.site
               </a>
             </div>
 
@@ -135,10 +135,10 @@ function ContactPage() {
                 Vulnerability disclosures and security topic requests.
               </p>
               <a
-                href="mailto:crypto.beacon.site@gmail.com"
+                href="mailto:contact@cryptobeacon.site"
                 className="font-body-md text-secondary font-medium hover:underline"
               >
-                crypto.beacon.site@gmail.com
+                contact@cryptobeacon.site
               </a>
             </div>
 
@@ -163,7 +163,7 @@ function ContactPage() {
                   Message Received
                 </h2>
                 <p className="font-body-lg text-body-lg text-on-surface-variant max-w-md">
-                  Thank you for reaching out to CryptoBeacon. A member of our editorial team will
+                  Thank you for reaching out to CryptoBeacon. Ashir will
                   review your message shortly.
                 </p>
                 <button

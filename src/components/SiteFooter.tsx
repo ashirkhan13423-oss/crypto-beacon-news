@@ -98,7 +98,7 @@ export function SiteFooter() {
             to="/author"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
-            Editorial Team
+            Author
           </Link>
           <Link
             to="/contact"

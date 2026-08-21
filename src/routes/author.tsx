@@ -37,7 +37,7 @@ function AuthorPage() {
             to="/about"
             className="inline-flex items-center gap-xs text-secondary font-medium hover:underline text-body-md"
           >
-            <ArrowLeft className="w-4 h-4" /> About Editorial Team
+            <ArrowLeft className="w-4 h-4" /> About
           </Link>
         </div>
 
@@ -91,11 +91,10 @@ function AuthorPage() {
               </h2>
               <ul className="space-y-sm text-body-md text-on-surface-variant list-disc pl-md">
                 <li>
-                  <strong>B.S. in Computer Science</strong> (With Specialization in Cryptography) —
-                  Stanford University
+                  <strong>Independent Cryptocurrency Researcher</strong>
                 </li>
                 <li>
-                  <strong>Certified Blockchain Security Professional (CBSP)</strong>
+                  <strong>Specialization in Protocol Security & Cryptography</strong>
                 </li>
                 <li>
                   Former Lead Security Auditor
@@ -135,9 +134,9 @@ function AuthorPage() {
               </p>
             </div>
             <a
-              href="mailto:crypto.beacon.site@gmail.com"
-              className="inline-flex items-center gap-xs px-md py-sm bg-primary text-on-primary font-medium rounded-lg hover:bg-primary-hover transition-colors"
-            >
+                href="mailto:contact@cryptobeacon.site"
+                className="inline-flex items-center gap-xs px-md py-sm bg-primary text-on-primary font-medium rounded-lg hover:bg-primary-hover transition-colors"
+              >
               <Mail className="w-4 h-4" /> Email Ashir
             </a>
           </section>

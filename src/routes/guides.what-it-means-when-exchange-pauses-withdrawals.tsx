@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { AdUnit } from "@/components/AdUnit";
-import hero from "@/assets/news-paused-withdrawals.svg";
+import hero from "@/assets/news-paused-withdrawals.jpg";
 import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/news/what-it-means-when-exchange-pauses-withdrawals";

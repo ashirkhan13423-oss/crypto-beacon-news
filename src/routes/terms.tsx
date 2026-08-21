@@ -233,7 +233,7 @@ function TermsPage() {
               </p>
             </div>
             <a
-              href="mailto:crypto.beacon.site@gmail.com"
+              href="mailto:contact@cryptobeacon.site"
               className="inline-flex items-center gap-xs bg-primary text-primary-foreground px-lg py-sm rounded-full font-label-lg font-medium hover:bg-primary/90 transition-colors"
             >
               <Scale style={{ fontSize: "20px" }} />
