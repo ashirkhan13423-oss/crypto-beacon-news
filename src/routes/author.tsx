@@ -7,7 +7,7 @@ import { Award, BookOpen, GraduationCap, ShieldCheck, Mail, ArrowLeft } from "lu
 export const Route = createFileRoute("/author")({
   head: () => ({
     meta: [
-      { title: "Ashir — Lead Editor & Senior Researcher – 12+ years in blockchain security, former senior protocol auditor at XYZ Labs — CryptoBeacon" },
+      { title: "Ashir — Lead Editor & Senior Researcher – 12+ years in blockchain security, former senior protocol auditor — CryptoBeacon" },
       {
         name: "description",
         content:
@@ -48,7 +48,7 @@ function AuthorPage() {
             className="w-28 h-28 rounded-full object-cover border-4 border-primary-container shadow-md shrink-0"
           />
           <div>
-            <span className="inline-block px-sm py-xs rounded-full bg-secondary-container text-secondary font-label-caps text-[11px] uppercase tracking-widest font-semibold mb-xs">Ashir — Lead Editor & Senior Researcher – 12+ years in blockchain security, former senior protocol auditor at XYZ Labs</span>
+            <span className="inline-block px-sm py-xs rounded-full bg-secondary-container text-secondary font-label-caps text-[11px] uppercase tracking-widest font-semibold mb-xs">Ashir — Lead Editor & Senior Researcher – 12+ years in blockchain security, former senior protocol auditor</span>
             <h1 className="font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-primary mb-xs leading-tight">
               Ashir
             </h1>
