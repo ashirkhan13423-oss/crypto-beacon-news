@@ -7,6 +7,7 @@ const navLinks: { label: string; to: string }[] = [
   { label: "Bitcoin", to: "/bitcoin" },
   { label: "Ethereum", to: "/ethereum" },
   { label: "Privacy", to: "/privacy" },
+  { label: "News", to: "/news" },
   { label: "Terms", to: "/terms" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
