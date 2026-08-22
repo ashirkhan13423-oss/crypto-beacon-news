@@ -280,6 +280,17 @@ function ArticlePage() {
           </div>
         </div>
 
+{/* Phishing Red Flags Framework */}
+<h2 id="redflags" className="font-headline-sm text-headline-sm text-primary mb-md">Phishing Red Flags Framework</h2>
+<p className="font-body-md text-body-md text-on-surface mb-sm">Key indicators that appear across most crypto phishing scams:</p>
+<ul className="list-disc pl-md space-y-xs ml-4">
+  <li>Urgent requests demanding immediate action.</li>
+  <li>Links to unknown or slightly misspelled domains.</li>
+  <li>Requests for your seed phrase, private key, or wallet password.</li>
+  <li>Prompt to connect your wallet via an unexpected extension or app.</li>
+  <li>Pressure to approve a transaction without proper review.</li>
+</ul>
+
         <aside className="my-xl p-lg rounded-lg border border-outline-variant bg-surface-container-low">
           <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">
             Table of Contents

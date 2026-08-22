@@ -353,6 +353,28 @@ function ArticlePage() {
           </li>
         </ul>
 
+{/* Routine vs. Warning Sign Framework */}
+<h2 id="routinevswarning" className="font-headline-sm text-headline-sm text-primary mb-md">Routine vs. Warning Sign Framework</h2>
+<table className="w-full border-collapse text-left font-body-md text-body-md">
+  <thead className="bg-[#0F9D58] text-white">
+    <tr>
+      <th className="p-md font-semibold">Routine Behavior</th>
+      <th className="p-md font-semibold">Warning Sign</th>
+    </tr>
+  </thead>
+  <tbody className="bg-white">
+    <tr>
+      <td className="p-md border border-outline-variant">Storing seed phrase digitally (notes app, screenshot)</td>
+      <td className="p-md border border-outline-variant">Any request to share seed phrase online or in messages</td>
+    </tr>
+    <tr>
+      <td className="p-md border border-outline-variant">Using a single backup copy</td>
+      <td className="p-md border border-outline-variant">No redundant backup or fireproof storage</td>
+    </tr>
+  </tbody>
+</table>
+
+
         <figure className="my-xl">
           <img
             src={seedPhishing}

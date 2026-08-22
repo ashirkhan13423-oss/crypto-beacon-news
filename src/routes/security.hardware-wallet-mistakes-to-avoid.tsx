@@ -231,7 +231,32 @@ function ArticlePage() {
           <strong>How to avoid it:</strong> Never sign a transaction you do not understand. Modern hardware wallets and companion apps are improving their ability to display transaction intent in human-readable terms. If the screen says "Approve unlimited token allowance" for a site you don't trust, reject the transaction.
         </P>
 
-        <H2 id="mistake-4">4. Entering the Seed Phrase into a Fake App</H2>
+        {/* Custodial vs. Non‑Custodial Framework */}
+<h2 id="custodial" className="font-headline-sm text-headline-sm text-primary mb-md">Custodial vs. Non‑Custodial Framework</h2>
+<table className="w-full border-collapse text-left font-body-md text-body-md">
+  <thead className="bg-[#0F9D58] text-white">
+    <tr>
+      <th className="p-md font-semibold">Custodial</th>
+      <th className="p-md font-semibold">Non‑Custodial</th>
+    </tr>
+  </thead>
+  <tbody className="bg-white">
+    <tr>
+      <td className="p-md border border-outline-variant">Private keys managed by a third‑party service</td>
+      <td className="p-md border border-outline-variant">You retain full control of private keys</td>
+    </tr>
+    <tr>
+      <td className="p-md border border-outline-variant">Convenient recovery options but trust required</td>
+      <td className="p-md border border-outline-variant">Higher responsibility; no central recovery</td>
+    </tr>
+    <tr>
+      <td className="p-md border border-outline-variant">Potential for service hacks or insolvency</td>
+      <td className="p-md border border-outline-variant">Security rests on your hardware and practices</td>
+    </tr>
+  </tbody>
+</table>
+
+<H2 id="mistake-4">4. Entering the Seed Phrase into a Fake App</H2>
         <P>
           When a hardware wallet requires a firmware update, you usually connect it to its official companion software (like Ledger Live or Trezor Suite). Scammers create highly sophisticated, fake versions of this software and upload them to the Google Play Store, Apple App Store, or promote them via Google Search Ads.
         </P>
