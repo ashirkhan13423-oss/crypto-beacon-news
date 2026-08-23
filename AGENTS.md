@@ -10,3 +10,22 @@
 > the editor, so keep the branch in a working state.
 
 <!-- LOVABLE:END -->
+
+## Publishing Checklist
+
+Before committing a new article or editing an existing one, run:
+
+```bash
+npm run check-links
+```
+
+This script (`scripts/check-links.js`) scans every `.tsx` source file for
+internal `<Link to="...">` paths and verifies each one matches a real route
+file in `src/routes/`. It exits with code **1** and prints the offending
+links if any are broken.
+
+**Rule:** Do not ship a commit that fails `check-links`. If a Related Reading
+link points to an article that doesn't exist yet, either:
+- create the target article in the same commit, or
+- remove the Related Reading link until the article is ready.
+

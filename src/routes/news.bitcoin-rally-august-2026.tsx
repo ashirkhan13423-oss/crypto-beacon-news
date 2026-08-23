@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AdUnit } from "@/components/AdUnit";
+import { Author } from "@/components/Author";
 import hero from "@/assets/news-bitcoin-rally.jpg";
 
 const URL = "https://www.cryptobeacon.site/news/bitcoin-rally-august-2026";
@@ -140,6 +141,8 @@ function ArticlePage() {
           Bitcoin Rallies Toward $77,000 — What's Driving the Move
         </h1>
 
+        <Author publishedDate={<time dateTime={PUBLISHED}>August 21, 2026</time>} readTime="5 min read" />
+
         {/* PROMINENT DATED BANNER */}
         <div className="mt-md mb-lg border-l-4 border-[#2563EB] bg-[#2563EB]/10 p-md rounded-r-md">
           <p className="font-headline-sm text-headline-sm text-primary font-bold">
@@ -210,7 +213,7 @@ function ArticlePage() {
         <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
           <li>
             <Link
-              to="/news/why-bitcoin-price-moves-more-than-stocks"
+              to="/guides/why-bitcoin-price-moves-more-than-stocks"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
               Why Does Bitcoin's Price Move More Than Traditional Assets?

@@ -5,7 +5,7 @@ import { Author } from "@/components/Author";
 import hero from "@/assets/news-blockchain-fork.png";
 import { Plus } from "lucide-react";
 
-const URL = "https://www.cryptobeacon.site/news/what-is-a-blockchain-fork";
+const URL = "https://www.cryptobeacon.site/guides/what-is-a-blockchain-fork";
 const TITLE = "What Is a Blockchain Fork? Explained Simply | CryptoBeacon";
 const DESC =
   "A plain-language explainer on what a blockchain fork is, the difference between hard and soft forks, and why cryptocurrencies sometimes split into two.";

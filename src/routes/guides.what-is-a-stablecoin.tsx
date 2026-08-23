@@ -351,10 +351,10 @@ function ArticlePage() {
               </h3>
             </Link>
             <Link
-              to="/news/what-it-means-when-exchange-pauses-withdrawals"
+              to="/guides/what-it-means-when-exchange-pauses-withdrawals"
               className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
             >
-              <span className="font-label-caps text-label-caps text-secondary">News</span>
+              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
               <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
                 When Exchanges Pause Withdrawals
               </h3>

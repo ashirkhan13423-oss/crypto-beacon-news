@@ -6,7 +6,7 @@ import { AdUnit } from "@/components/AdUnit";
 import hero from "@/assets/news-paused-withdrawals.jpg";
 import { Plus } from "lucide-react";
 
-const URL = "https://www.cryptobeacon.site/news/what-it-means-when-exchange-pauses-withdrawals";
+const URL = "https://www.cryptobeacon.site/guides/what-it-means-when-exchange-pauses-withdrawals";
 const TITLE = "What Does It Mean When an Exchange Pauses Withdrawals? | CryptoBeacon";
 const DESC =
   "Your crypto exchange paused withdrawals — is that normal or a red flag? A comprehensive guide to understanding exchange liquidity, routine maintenance, and warning signs of insolvency.";

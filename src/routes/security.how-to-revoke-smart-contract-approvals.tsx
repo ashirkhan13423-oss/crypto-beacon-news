@@ -227,10 +227,10 @@ function ArticlePage() {
 
         <h3 className="font-headline-sm text-headline-sm text-primary mt-lg mb-sm">1. Using Revoke.cash (Recommended)</h3>
         <P>
-          Revoke.cash is widely considered the industry standard tool for managing token approvals. It supports Ethereum and dozens of other EVM-compatible networks.
+          <a href="https://revoke.cash" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline font-medium">Revoke.cash</a> is widely considered the industry standard tool for managing token approvals. It supports Ethereum and dozens of other EVM-compatible networks.
         </P>
         <ul className="list-disc pl-lg space-y-sm font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
-          <li><strong>Navigate to Revoke.cash:</strong> Ensure you are on the correct URL (revoke.cash) to avoid phishing clones.</li>
+          <li><strong>Navigate to Revoke.cash:</strong> Ensure you are on the correct URL (<a href="https://revoke.cash" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">revoke.cash</a>) to avoid phishing clones.</li>
           <li><strong>Connect Your Wallet:</strong> Connect your MetaMask, Rabby, or WalletConnect-compatible wallet.</li>
           <li><strong>Review Your Allowances:</strong> The dashboard will display all active approvals across different networks. You can filter by token or sort by the date the approval was granted.</li>
           <li><strong>Click Revoke:</strong> Find the contract you want to revoke and click the "Revoke" button next to it.</li>
@@ -239,10 +239,10 @@ function ArticlePage() {
 
         <h3 className="font-headline-sm text-headline-sm text-primary mt-lg mb-sm">2. Using Block Explorers (e.g., Etherscan)</h3>
         <P>
-          Major block explorers like Etherscan have built-in token approval tools. This is often the safest route if you prefer to rely on core infrastructure.
+          Major block explorers like <a href="https://etherscan.io" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline font-medium">Etherscan</a> have built-in token approval tools. This is often the safest route if you prefer to rely on core infrastructure.
         </P>
         <ul className="list-disc pl-lg space-y-sm font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
-          <li><strong>Navigate to Etherscan's Token Approval Tool:</strong> Go to etherscan.io/tokenapprovalchecker.</li>
+          <li><strong>Navigate to Etherscan's Token Approval Tool:</strong> Go to <a href="https://etherscan.io/tokenapprovalchecker" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">etherscan.io/tokenapprovalchecker</a>.</li>
           <li><strong>Connect to Web3:</strong> Click "Connect to Web3" to link your wallet.</li>
           <li><strong>Review and Revoke:</strong> The interface works similarly to Revoke.cash. Find the specific token and contract, click "Revoke," and confirm the transaction in your wallet.</li>
         </ul>
@@ -251,7 +251,7 @@ function ArticlePage() {
         <div className="border-l-4 border-[#EA4335] bg-[#EA4335]/5 p-lg rounded-r-lg mb-md">
           <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
             <li><strong>Use Exact Approvals:</strong> Many modern wallets (like Rabby or updated versions of MetaMask) allow you to edit the approval amount before signing. Instead of accepting the default "infinite" amount, type in the exact amount you intend to trade.</li>
-            <li><strong>Regular Audits:</strong> Make it a habit to check Revoke.cash monthly. Revoke any allowances for dApps you no longer use or don't recognize.</li>
+            <li><strong>Regular Audits:</strong> Make it a habit to check <a href="https://revoke.cash" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Revoke.cash</a> monthly. Revoke any allowances for dApps you no longer use or don't recognize.</li>
             <li><strong>Compartmentalization:</strong> Use a separate "vault" wallet for long-term storage that never interacts with smart contracts. Use a distinct "hot" wallet for DeFi trading. This ensures your bulk holdings are never exposed to approval risks.</li>
             <li><strong>Read Before Signing:</strong> Always read the prompt in your wallet carefully. If a website asks for an approval when you were expecting a simple signature or a transfer, it is likely a scam.</li>
           </ul>

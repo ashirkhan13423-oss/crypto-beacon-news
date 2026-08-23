@@ -92,22 +92,22 @@ const ARTICLES = [
     title: "What Is a Blockchain Fork? Hard & Soft Forks Explained",
     description:
       "A beginner-friendly explainer on what a blockchain fork is, hard vs soft forks, and what happens to crypto currency prices during network splits.",
-    path: "/news/what-is-a-blockchain-fork",
-    category: "News",
+    path: "/guides/what-is-a-blockchain-fork",
+    category: "Guides",
   },
   {
     title: "Why Do Governments Regulate Cryptocurrency?",
     description:
       "An in-depth editorial guide on why governments regulate crypto, political policy shifts, SEC oversight, and MiCA.",
-    path: "/news/why-governments-regulate-cryptocurrency",
-    category: "News",
+    path: "/guides/why-governments-regulate-cryptocurrency",
+    category: "Guides",
   },
   {
     title: "What Does It Mean When an Exchange Pauses Withdrawals?",
     description:
       "Your crypto exchange paused withdrawals — is that normal or a red flag? A clear framework for telling routine maintenance from liquidity crises.",
-    path: "/news/what-it-means-when-exchange-pauses-withdrawals",
-    category: "News",
+    path: "/guides/what-it-means-when-exchange-pauses-withdrawals",
+    category: "Guides",
   },
   {
     title: "How to Avoid Crypto Phishing Scams",

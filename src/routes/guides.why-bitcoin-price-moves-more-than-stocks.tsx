@@ -6,7 +6,7 @@ import { AdUnit } from "@/components/AdUnit";
 import hero from "@/assets/news-bitcoin-volatility.svg";
 import { Plus, PieChart, Lock, Clock, Droplets, Building2 } from "lucide-react";
 
-const URL = "https://www.cryptobeacon.site/news/why-bitcoin-price-moves-more-than-stocks";
+const URL = "https://www.cryptobeacon.site/guides/why-bitcoin-price-moves-more-than-stocks";
 const TITLE = "Why Does Bitcoin's Price Move More Than Stocks? | CryptoBeacon";
 const DESC =
   "A plain-language look at the structural reasons Bitcoin's price swings more than traditional assets — no predictions, just the mechanics.";

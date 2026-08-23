@@ -7,17 +7,17 @@ import { Award, BookOpen, GraduationCap, ShieldCheck, Mail, ArrowLeft } from "lu
 export const Route = createFileRoute("/author")({
   head: () => ({
     meta: [
-      { title: "Ashir — Lead Editor & Senior Researcher – 12+ years in blockchain security, former senior protocol auditor — CryptoBeacon" },
+      { title: "Ashir — Crypto Self-Custody & Security Writer – CryptoBeacon" },
       {
         name: "description",
         content:
-          "Ashir is the senior cryptocurrency researcher and editor at CryptoBeacon, specializing in blockchain mechanics, self-custody systems, and protocol audits.",
+          "Ashir researches and writes about crypto self-custody and security at CryptoBeacon, helping readers understand how to store and protect their digital assets safely.",
       },
       { property: "og:title", content: "Ashir — CryptoBeacon" },
       {
         property: "og:description",
         content:
-          "Ashir is the senior cryptocurrency researcher and editor at CryptoBeacon, specializing in blockchain mechanics, self-custody systems, and protocol audits.",
+          "Ashir researches and writes about crypto self-custody and security at CryptoBeacon, helping readers understand how to store and protect their digital assets safely.",
       },
       { property: "og:url", content: "https://www.cryptobeacon.site/author" },
       { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
@@ -48,12 +48,12 @@ function AuthorPage() {
             className="w-28 h-28 rounded-full object-cover border-4 border-primary-container shadow-md shrink-0"
           />
           <div>
-            <span className="inline-block px-sm py-xs rounded-full bg-secondary-container text-secondary font-label-caps text-[11px] uppercase tracking-widest font-semibold mb-xs">Ashir — Lead Editor & Senior Researcher – 12+ years in blockchain security, former senior protocol auditor</span>
+            <span className="inline-block px-sm py-xs rounded-full bg-secondary-container text-secondary font-label-caps text-[11px] uppercase tracking-widest font-semibold mb-xs">Writer & Researcher — Crypto Self-Custody & Security</span>
             <h1 className="font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-primary mb-xs leading-tight">
               Ashir
             </h1>
             <p className="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
-              Specialist in Cryptographic Self-Custody & Blockchain Security
+              Writes about crypto self-custody, wallets, and security at CryptoBeacon
             </p>
           </div>
         </header>
@@ -64,21 +64,19 @@ function AuthorPage() {
               <BookOpen className="text-secondary" /> Biography
             </h2>
             <p>
-              Ashir is the Lead Editor and Senior Researcher at CryptoBeacon. He has spent
-              more than a decade studying digital privacy systems and decentralized cryptographic
-              networks. Ashir's research is focused primarily on the intersection of user security,
-              non-custodial wallets, and sovereign money principles.
+              Ashir is a writer and researcher at CryptoBeacon. He researches and writes about
+              crypto self-custody and security, with a focus on helping everyday users understand
+              how to safely store and manage their digital assets.
             </p>
             <p>
-              Before joining CryptoBeacon, Ashir served as a senior protocol security analyst, where he
-              conducted smart contract audits and evaluated consensus-level parameters for emerging Layer 1 and
-              Layer 2 blockchains. He has also served as a consultant for enterprise cryptocurrency custodians and
-              treasury management projects, designing robust multi-signature setups.
+              His work covers non-custodial wallets, key management practices, and the security
+              trade-offs involved in different custody approaches. He aims to translate technical
+              concepts into clear, practical guidance for readers at all experience levels.
             </p>
             <p>
-              Through his editorial work, Ashir is dedicated to converting complex cryptographic primitives
-              and macro market data into clean, transparent, and objective learning resources. He believes that
-              safe, robust self-custody is the most critical hurdle to widespread cryptocurrency adoption.
+              Ashir believes that accessible, honest education about self-custody is one of the most
+              important contributions a crypto publication can make — and that straightforward,
+              well-researched content serves readers far better than hype or speculation.
             </p>
           </section>
 
@@ -89,13 +87,13 @@ function AuthorPage() {
               </h2>
               <ul className="space-y-sm text-body-md text-on-surface-variant list-disc pl-md">
                 <li>
-                  <strong>Independent Cryptocurrency Researcher</strong>
+                  <strong>Cryptocurrency Researcher & Writer</strong>
                 </li>
                 <li>
-                  <strong>Specialization in Protocol Security & Cryptography</strong>
+                  Self-Custody & Wallet Security
                 </li>
                 <li>
-                  Former Lead Security Auditor
+                  Blockchain Fundamentals & Key Management
                 </li>
               </ul>
             </section>

@@ -38,6 +38,12 @@ export function SiteFooter() {
             Security
           </Link>
           <Link
+            to="/news"
+            className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
+          >
+            News
+          </Link>
+          <Link
             to="/about"
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
@@ -65,6 +71,12 @@ export function SiteFooter() {
             className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
           >
             Security &amp; Phishing
+          </Link>
+          <Link
+            to="/news"
+            className="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all"
+          >
+            News &amp; Updates
           </Link>
         </div>
         <div className="flex flex-col gap-sm">

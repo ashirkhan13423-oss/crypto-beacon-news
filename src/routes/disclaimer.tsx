@@ -137,6 +137,24 @@ function DisclaimerPage() {
               .
             </p>
           </section>
+
+          <section className="bg-surface-container-lowest p-lg md:p-xl rounded-2xl border border-outline-variant">
+            <h2 className="font-headline-md text-headline-md text-primary mb-md flex items-center gap-xs">
+              <Scale className="text-secondary w-6 h-6" />
+              5. Corrections &amp; Revision Log
+            </h2>
+            <p className="mb-md">
+              In accordance with our commitment to transparency and editorial integrity, we maintain a public log of all material corrections and updates made to our published articles.
+            </p>
+            <div className="space-y-sm">
+              <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant text-body-md">
+                <span className="font-semibold text-primary">August 24, 2026:</span>
+                <p className="mt-xs">
+                  Updated route links across multiple guide articles (including "Why Do Governments Regulate Cryptocurrency?" and "What Is a Blockchain Fork?") to resolve routing inconsistencies. Verified canonical tags and updated corresponding internal link structures.
+                </p>
+              </div>
+            </div>
+          </section>
         </article>
       </main>
       <SiteFooter />

@@ -236,7 +236,7 @@ const articles = [
     desc: "A beginner‑friendly guide to Proof‑of‑Work mining, block reward economics, mining pool dynamics, and difficulty adjustment algorithms demystified.",
   },
   {
-    to: "/news/what-it-means-when-exchange-pauses-withdrawals",
+    to: "/guides/what-it-means-when-exchange-pauses-withdrawals",
     image: pausedHero,
     alt: "What Does It Mean When an Exchange Pauses Withdrawals",
     tag: "News · Analysis",
@@ -244,7 +244,7 @@ const articles = [
     desc: "Analyzes exchange withdrawal pauses, distinguishing routine maintenance from liquidity crises with a diagnostic framework and real‑world examples.",
   },
   {
-    to: "/news/what-is-a-blockchain-fork",
+    to: "/guides/what-is-a-blockchain-fork",
     image: blockchainForkHero,
     alt: "What Is a Blockchain Fork",
     tag: "News · Technology",
@@ -268,7 +268,7 @@ const articles = [
     desc: "Step‑by‑step guide to Bitcoin transaction mechanics, common user pitfalls, fee estimation, address validation, and a pre‑flight safety checklist for secure transfers.",
   },
   {
-    to: "/news/why-governments-regulate-cryptocurrency",
+    to: "/guides/why-governments-regulate-cryptocurrency",
     image: regulationHero,
     alt: "Government regulatory oversight of cryptocurrency",
     tag: "News · Policy",

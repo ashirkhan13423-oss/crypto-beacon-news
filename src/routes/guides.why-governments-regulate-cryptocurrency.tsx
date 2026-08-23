@@ -14,7 +14,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-const URL = "https://www.cryptobeacon.site/news/why-governments-regulate-cryptocurrency";
+const URL = "https://www.cryptobeacon.site/guides/why-governments-regulate-cryptocurrency";
 const TITLE = "Why Do Governments Regulate Cryptocurrency? Full Guide | CryptoBeacon";
 const DESC =
   "An in-depth editorial guide on why governments regulate crypto, the major global legal frameworks (MiCA, SEC, FATF), and what regulations mean for retail investors.";
