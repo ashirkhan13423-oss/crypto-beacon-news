@@ -13,6 +13,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as NewsRouteImport } from './routes/news'
 import { Route as GuidesRouteImport } from './routes/guides'
 import { Route as EthereumRouteImport } from './routes/ethereum'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
@@ -22,6 +23,7 @@ import { Route as AuthorRouteImport } from './routes/author'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SecurityIndexRouteImport } from './routes/security.index'
+import { Route as NewsIndexRouteImport } from './routes/news.index'
 import { Route as GuidesIndexRouteImport } from './routes/guides.index'
 import { Route as EthereumIndexRouteImport } from './routes/ethereum.index'
 import { Route as BitcoinIndexRouteImport } from './routes/bitcoin.index'
@@ -31,6 +33,11 @@ import { Route as SecurityHowToRevokeSmartContractApprovalsRouteImport } from '.
 import { Route as SecurityHowToAvoidCryptoPhishingScamsRouteImport } from './routes/security.how-to-avoid-crypto-phishing-scams'
 import { Route as SecurityHardwareWalletMistakesToAvoidRouteImport } from './routes/security.hardware-wallet-mistakes-to-avoid'
 import { Route as SecurityDefiRisksExplainedRouteImport } from './routes/security.defi-risks-explained'
+import { Route as NewsWhyGovernmentsRegulateCryptocurrencyRouteImport } from './routes/news.why-governments-regulate-cryptocurrency'
+import { Route as NewsWhyBitcoinPriceMovesMoreThanStocksRouteImport } from './routes/news.why-bitcoin-price-moves-more-than-stocks'
+import { Route as NewsWhatItMeansWhenExchangePausesWithdrawalsRouteImport } from './routes/news.what-it-means-when-exchange-pauses-withdrawals'
+import { Route as NewsWhatIsABlockchainForkRouteImport } from './routes/news.what-is-a-blockchain-fork'
+import { Route as NewsBitcoinRallyAugust2026RouteImport } from './routes/news.bitcoin-rally-august-2026'
 import { Route as GuidesWhyGovernmentsRegulateCryptocurrencyRouteImport } from './routes/guides.why-governments-regulate-cryptocurrency'
 import { Route as GuidesWhyBitcoinPriceMovesMoreThanStocksRouteImport } from './routes/guides.why-bitcoin-price-moves-more-than-stocks'
 import { Route as GuidesWhatItMeansWhenExchangePausesWithdrawalsRouteImport } from './routes/guides.what-it-means-when-exchange-pauses-withdrawals'
@@ -72,6 +79,11 @@ const SearchRoute = SearchRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GuidesRoute = GuidesRouteImport.update({
@@ -118,6 +130,11 @@ const SecurityIndexRoute = SecurityIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => SecurityRoute,
+} as any)
+const NewsIndexRoute = NewsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => NewsRoute,
 } as any)
 const GuidesIndexRoute = GuidesIndexRouteImport.update({
   id: '/',
@@ -169,6 +186,36 @@ const SecurityDefiRisksExplainedRoute =
     id: '/defi-risks-explained',
     path: '/defi-risks-explained',
     getParentRoute: () => SecurityRoute,
+  } as any)
+const NewsWhyGovernmentsRegulateCryptocurrencyRoute =
+  NewsWhyGovernmentsRegulateCryptocurrencyRouteImport.update({
+    id: '/why-governments-regulate-cryptocurrency',
+    path: '/why-governments-regulate-cryptocurrency',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsWhyBitcoinPriceMovesMoreThanStocksRoute =
+  NewsWhyBitcoinPriceMovesMoreThanStocksRouteImport.update({
+    id: '/why-bitcoin-price-moves-more-than-stocks',
+    path: '/why-bitcoin-price-moves-more-than-stocks',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsWhatItMeansWhenExchangePausesWithdrawalsRoute =
+  NewsWhatItMeansWhenExchangePausesWithdrawalsRouteImport.update({
+    id: '/what-it-means-when-exchange-pauses-withdrawals',
+    path: '/what-it-means-when-exchange-pauses-withdrawals',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsWhatIsABlockchainForkRoute =
+  NewsWhatIsABlockchainForkRouteImport.update({
+    id: '/what-is-a-blockchain-fork',
+    path: '/what-is-a-blockchain-fork',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsBitcoinRallyAugust2026Route =
+  NewsBitcoinRallyAugust2026RouteImport.update({
+    id: '/bitcoin-rally-august-2026',
+    path: '/bitcoin-rally-august-2026',
+    getParentRoute: () => NewsRoute,
   } as any)
 const GuidesWhyGovernmentsRegulateCryptocurrencyRoute =
   GuidesWhyGovernmentsRegulateCryptocurrencyRouteImport.update({
@@ -311,6 +358,7 @@ export interface FileRoutesByFullPath {
   '/disclaimer': typeof DisclaimerRoute
   '/ethereum': typeof EthereumRouteWithChildren
   '/guides': typeof GuidesRouteWithChildren
+  '/news': typeof NewsRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/search': typeof SearchRoute
   '/security': typeof SecurityRouteWithChildren
@@ -337,6 +385,11 @@ export interface FileRoutesByFullPath {
   '/guides/what-it-means-when-exchange-pauses-withdrawals': typeof GuidesWhatItMeansWhenExchangePausesWithdrawalsRoute
   '/guides/why-bitcoin-price-moves-more-than-stocks': typeof GuidesWhyBitcoinPriceMovesMoreThanStocksRoute
   '/guides/why-governments-regulate-cryptocurrency': typeof GuidesWhyGovernmentsRegulateCryptocurrencyRoute
+  '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
+  '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
+  '/news/what-it-means-when-exchange-pauses-withdrawals': typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
+  '/news/why-bitcoin-price-moves-more-than-stocks': typeof NewsWhyBitcoinPriceMovesMoreThanStocksRoute
+  '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
   '/security/defi-risks-explained': typeof SecurityDefiRisksExplainedRoute
   '/security/hardware-wallet-mistakes-to-avoid': typeof SecurityHardwareWalletMistakesToAvoidRoute
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
@@ -346,6 +399,7 @@ export interface FileRoutesByFullPath {
   '/bitcoin/': typeof BitcoinIndexRoute
   '/ethereum/': typeof EthereumIndexRoute
   '/guides/': typeof GuidesIndexRoute
+  '/news/': typeof NewsIndexRoute
   '/security/': typeof SecurityIndexRoute
 }
 export interface FileRoutesByTo {
@@ -379,6 +433,11 @@ export interface FileRoutesByTo {
   '/guides/what-it-means-when-exchange-pauses-withdrawals': typeof GuidesWhatItMeansWhenExchangePausesWithdrawalsRoute
   '/guides/why-bitcoin-price-moves-more-than-stocks': typeof GuidesWhyBitcoinPriceMovesMoreThanStocksRoute
   '/guides/why-governments-regulate-cryptocurrency': typeof GuidesWhyGovernmentsRegulateCryptocurrencyRoute
+  '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
+  '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
+  '/news/what-it-means-when-exchange-pauses-withdrawals': typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
+  '/news/why-bitcoin-price-moves-more-than-stocks': typeof NewsWhyBitcoinPriceMovesMoreThanStocksRoute
+  '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
   '/security/defi-risks-explained': typeof SecurityDefiRisksExplainedRoute
   '/security/hardware-wallet-mistakes-to-avoid': typeof SecurityHardwareWalletMistakesToAvoidRoute
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
@@ -388,6 +447,7 @@ export interface FileRoutesByTo {
   '/bitcoin': typeof BitcoinIndexRoute
   '/ethereum': typeof EthereumIndexRoute
   '/guides': typeof GuidesIndexRoute
+  '/news': typeof NewsIndexRoute
   '/security': typeof SecurityIndexRoute
 }
 export interface FileRoutesById {
@@ -400,6 +460,7 @@ export interface FileRoutesById {
   '/disclaimer': typeof DisclaimerRoute
   '/ethereum': typeof EthereumRouteWithChildren
   '/guides': typeof GuidesRouteWithChildren
+  '/news': typeof NewsRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/search': typeof SearchRoute
   '/security': typeof SecurityRouteWithChildren
@@ -426,6 +487,11 @@ export interface FileRoutesById {
   '/guides/what-it-means-when-exchange-pauses-withdrawals': typeof GuidesWhatItMeansWhenExchangePausesWithdrawalsRoute
   '/guides/why-bitcoin-price-moves-more-than-stocks': typeof GuidesWhyBitcoinPriceMovesMoreThanStocksRoute
   '/guides/why-governments-regulate-cryptocurrency': typeof GuidesWhyGovernmentsRegulateCryptocurrencyRoute
+  '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
+  '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
+  '/news/what-it-means-when-exchange-pauses-withdrawals': typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
+  '/news/why-bitcoin-price-moves-more-than-stocks': typeof NewsWhyBitcoinPriceMovesMoreThanStocksRoute
+  '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
   '/security/defi-risks-explained': typeof SecurityDefiRisksExplainedRoute
   '/security/hardware-wallet-mistakes-to-avoid': typeof SecurityHardwareWalletMistakesToAvoidRoute
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
@@ -435,6 +501,7 @@ export interface FileRoutesById {
   '/bitcoin/': typeof BitcoinIndexRoute
   '/ethereum/': typeof EthereumIndexRoute
   '/guides/': typeof GuidesIndexRoute
+  '/news/': typeof NewsIndexRoute
   '/security/': typeof SecurityIndexRoute
 }
 export interface FileRouteTypes {
@@ -448,6 +515,7 @@ export interface FileRouteTypes {
     | '/disclaimer'
     | '/ethereum'
     | '/guides'
+    | '/news'
     | '/privacy'
     | '/search'
     | '/security'
@@ -474,6 +542,11 @@ export interface FileRouteTypes {
     | '/guides/what-it-means-when-exchange-pauses-withdrawals'
     | '/guides/why-bitcoin-price-moves-more-than-stocks'
     | '/guides/why-governments-regulate-cryptocurrency'
+    | '/news/bitcoin-rally-august-2026'
+    | '/news/what-is-a-blockchain-fork'
+    | '/news/what-it-means-when-exchange-pauses-withdrawals'
+    | '/news/why-bitcoin-price-moves-more-than-stocks'
+    | '/news/why-governments-regulate-cryptocurrency'
     | '/security/defi-risks-explained'
     | '/security/hardware-wallet-mistakes-to-avoid'
     | '/security/how-to-avoid-crypto-phishing-scams'
@@ -483,6 +556,7 @@ export interface FileRouteTypes {
     | '/bitcoin/'
     | '/ethereum/'
     | '/guides/'
+    | '/news/'
     | '/security/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -516,6 +590,11 @@ export interface FileRouteTypes {
     | '/guides/what-it-means-when-exchange-pauses-withdrawals'
     | '/guides/why-bitcoin-price-moves-more-than-stocks'
     | '/guides/why-governments-regulate-cryptocurrency'
+    | '/news/bitcoin-rally-august-2026'
+    | '/news/what-is-a-blockchain-fork'
+    | '/news/what-it-means-when-exchange-pauses-withdrawals'
+    | '/news/why-bitcoin-price-moves-more-than-stocks'
+    | '/news/why-governments-regulate-cryptocurrency'
     | '/security/defi-risks-explained'
     | '/security/hardware-wallet-mistakes-to-avoid'
     | '/security/how-to-avoid-crypto-phishing-scams'
@@ -525,6 +604,7 @@ export interface FileRouteTypes {
     | '/bitcoin'
     | '/ethereum'
     | '/guides'
+    | '/news'
     | '/security'
   id:
     | '__root__'
@@ -536,6 +616,7 @@ export interface FileRouteTypes {
     | '/disclaimer'
     | '/ethereum'
     | '/guides'
+    | '/news'
     | '/privacy'
     | '/search'
     | '/security'
@@ -562,6 +643,11 @@ export interface FileRouteTypes {
     | '/guides/what-it-means-when-exchange-pauses-withdrawals'
     | '/guides/why-bitcoin-price-moves-more-than-stocks'
     | '/guides/why-governments-regulate-cryptocurrency'
+    | '/news/bitcoin-rally-august-2026'
+    | '/news/what-is-a-blockchain-fork'
+    | '/news/what-it-means-when-exchange-pauses-withdrawals'
+    | '/news/why-bitcoin-price-moves-more-than-stocks'
+    | '/news/why-governments-regulate-cryptocurrency'
     | '/security/defi-risks-explained'
     | '/security/hardware-wallet-mistakes-to-avoid'
     | '/security/how-to-avoid-crypto-phishing-scams'
@@ -571,6 +657,7 @@ export interface FileRouteTypes {
     | '/bitcoin/'
     | '/ethereum/'
     | '/guides/'
+    | '/news/'
     | '/security/'
   fileRoutesById: FileRoutesById
 }
@@ -583,6 +670,7 @@ export interface RootRouteChildren {
   DisclaimerRoute: typeof DisclaimerRoute
   EthereumRoute: typeof EthereumRouteWithChildren
   GuidesRoute: typeof GuidesRouteWithChildren
+  NewsRoute: typeof NewsRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
   SearchRoute: typeof SearchRoute
   SecurityRoute: typeof SecurityRouteWithChildren
@@ -617,6 +705,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/guides': {
@@ -682,6 +777,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SecurityIndexRouteImport
       parentRoute: typeof SecurityRoute
     }
+    '/news/': {
+      id: '/news/'
+      path: '/'
+      fullPath: '/news/'
+      preLoaderRoute: typeof NewsIndexRouteImport
+      parentRoute: typeof NewsRoute
+    }
     '/guides/': {
       id: '/guides/'
       path: '/'
@@ -744,6 +846,41 @@ declare module '@tanstack/react-router' {
       fullPath: '/security/defi-risks-explained'
       preLoaderRoute: typeof SecurityDefiRisksExplainedRouteImport
       parentRoute: typeof SecurityRoute
+    }
+    '/news/why-governments-regulate-cryptocurrency': {
+      id: '/news/why-governments-regulate-cryptocurrency'
+      path: '/why-governments-regulate-cryptocurrency'
+      fullPath: '/news/why-governments-regulate-cryptocurrency'
+      preLoaderRoute: typeof NewsWhyGovernmentsRegulateCryptocurrencyRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/why-bitcoin-price-moves-more-than-stocks': {
+      id: '/news/why-bitcoin-price-moves-more-than-stocks'
+      path: '/why-bitcoin-price-moves-more-than-stocks'
+      fullPath: '/news/why-bitcoin-price-moves-more-than-stocks'
+      preLoaderRoute: typeof NewsWhyBitcoinPriceMovesMoreThanStocksRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/what-it-means-when-exchange-pauses-withdrawals': {
+      id: '/news/what-it-means-when-exchange-pauses-withdrawals'
+      path: '/what-it-means-when-exchange-pauses-withdrawals'
+      fullPath: '/news/what-it-means-when-exchange-pauses-withdrawals'
+      preLoaderRoute: typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/what-is-a-blockchain-fork': {
+      id: '/news/what-is-a-blockchain-fork'
+      path: '/what-is-a-blockchain-fork'
+      fullPath: '/news/what-is-a-blockchain-fork'
+      preLoaderRoute: typeof NewsWhatIsABlockchainForkRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/bitcoin-rally-august-2026': {
+      id: '/news/bitcoin-rally-august-2026'
+      path: '/bitcoin-rally-august-2026'
+      fullPath: '/news/bitcoin-rally-august-2026'
+      preLoaderRoute: typeof NewsBitcoinRallyAugust2026RouteImport
+      parentRoute: typeof NewsRoute
     }
     '/guides/why-governments-regulate-cryptocurrency': {
       id: '/guides/why-governments-regulate-cryptocurrency'
@@ -991,6 +1128,29 @@ const GuidesRouteChildren: GuidesRouteChildren = {
 const GuidesRouteWithChildren =
   GuidesRoute._addFileChildren(GuidesRouteChildren)
 
+interface NewsRouteChildren {
+  NewsBitcoinRallyAugust2026Route: typeof NewsBitcoinRallyAugust2026Route
+  NewsWhatIsABlockchainForkRoute: typeof NewsWhatIsABlockchainForkRoute
+  NewsWhatItMeansWhenExchangePausesWithdrawalsRoute: typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
+  NewsWhyBitcoinPriceMovesMoreThanStocksRoute: typeof NewsWhyBitcoinPriceMovesMoreThanStocksRoute
+  NewsWhyGovernmentsRegulateCryptocurrencyRoute: typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
+  NewsIndexRoute: typeof NewsIndexRoute
+}
+
+const NewsRouteChildren: NewsRouteChildren = {
+  NewsBitcoinRallyAugust2026Route: NewsBitcoinRallyAugust2026Route,
+  NewsWhatIsABlockchainForkRoute: NewsWhatIsABlockchainForkRoute,
+  NewsWhatItMeansWhenExchangePausesWithdrawalsRoute:
+    NewsWhatItMeansWhenExchangePausesWithdrawalsRoute,
+  NewsWhyBitcoinPriceMovesMoreThanStocksRoute:
+    NewsWhyBitcoinPriceMovesMoreThanStocksRoute,
+  NewsWhyGovernmentsRegulateCryptocurrencyRoute:
+    NewsWhyGovernmentsRegulateCryptocurrencyRoute,
+  NewsIndexRoute: NewsIndexRoute,
+}
+
+const NewsRouteWithChildren = NewsRoute._addFileChildren(NewsRouteChildren)
+
 interface SecurityRouteChildren {
   SecurityDefiRisksExplainedRoute: typeof SecurityDefiRisksExplainedRoute
   SecurityHardwareWalletMistakesToAvoidRoute: typeof SecurityHardwareWalletMistakesToAvoidRoute
@@ -1028,6 +1188,7 @@ const rootRouteChildren: RootRouteChildren = {
   DisclaimerRoute: DisclaimerRoute,
   EthereumRoute: EthereumRouteWithChildren,
   GuidesRoute: GuidesRouteWithChildren,
+  NewsRoute: NewsRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
   SearchRoute: SearchRoute,
   SecurityRoute: SecurityRouteWithChildren,
@@ -1036,3 +1197,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
