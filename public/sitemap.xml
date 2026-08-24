@@ -168,4 +168,40 @@
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/guides/how-to-set-up-metamask-step-by-step</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/bitcoin/coinbase-vs-kraken-vs-binance-exchange-comparison</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/news/ethereum-merge-two-years-later</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/security/what-to-do-if-your-crypto-wallet-is-hacked</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/ethereum/how-to-stake-eth-on-lido-vs-rocketpool</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/guides/crypto-portfolio-rebalancing-explained</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
