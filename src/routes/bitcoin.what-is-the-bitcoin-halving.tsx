@@ -269,6 +269,40 @@ function ArticlePage() {
           ))}
         </div>
 
+        <H2 id="sources">Sources</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://bitcoin.org/bitcoin.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Nakamoto, S. (2008). Bitcoin: A Peer-to-Peer Electronic Cash System.
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://en.bitcoin.it/wiki/Controlled_supply"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Bitcoin Wiki — Controlled Supply Schedule
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.lopp.net/bitcoin-information/vocabulary.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Lopp.net — Bitcoin Vocabulary & Miner Rewards Info
+            </a>
+          </li>
+        </ul>
+
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
@@ -278,6 +312,39 @@ function ArticlePage() {
             considered financial or investment advice. Past performance is not indicative of future results.
           </p>
         </div>
+
+        <section className="mt-xxl">
+          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
+            <Link
+              to="/bitcoin/what-is-bitcoin-mining"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                What Is Bitcoin Mining?
+              </h3>
+            </Link>
+            <Link
+              to="/bitcoin/what-is-a-bitcoin-wallet"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                What Is a Bitcoin Wallet?
+              </h3>
+            </Link>
+            <Link
+              to="/bitcoin/how-to-send-bitcoin-safely"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                How to Send Bitcoin Safely
+              </h3>
+            </Link>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>

@@ -49,7 +49,7 @@ function AboutPage() {
               <Users className="text-secondary" /> Who We Are
             </h2>
             <p className="mb-md">
-              CryptoBeacon is led by senior researcher and editor{" "}
+              CryptoBeacon is edited by{" "}
               <Link to="/author" className="text-secondary font-semibold hover:underline">
                 Ashir
               </Link>

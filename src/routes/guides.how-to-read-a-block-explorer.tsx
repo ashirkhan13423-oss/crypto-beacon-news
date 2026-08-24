@@ -340,6 +340,40 @@ function ArticlePage() {
           </p>
         </div>
 
+        <H2 id="sources">Sources</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://mempool.space"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Mempool.space — Bitcoin Mempool and Transaction Explorer
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://etherscan.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Etherscan — Ethereum Blockchain Explorer
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://developer.bitcoin.org/reference/rpc/getrawtransaction.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Bitcoin Developer Reference — Transaction Data and TXID Structure
+            </a>
+          </li>
+        </ul>
+
         <section className="mt-xxl">
           <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-md">

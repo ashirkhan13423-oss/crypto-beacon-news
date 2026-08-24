@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import authorAvatar from "@/assets/ashir.png";
-import { Award, BookOpen, GraduationCap, ShieldCheck, Mail, ArrowLeft } from "lucide-react";
+import { Award, BookOpen, GraduationCap, ShieldCheck, Mail, ArrowLeft, Twitter, Linkedin } from "lucide-react";
 
 export const Route = createFileRoute("/author")({
   head: () => ({
@@ -129,12 +129,30 @@ function AuthorPage() {
                 For research collaboration or editorial inquiries, you can reach out directly.
               </p>
             </div>
-            <a
+            <div className="flex flex-wrap gap-sm">
+              <a
                 href="mailto:contact@cryptobeacon.site"
                 className="inline-flex items-center gap-xs px-md py-sm bg-primary text-on-primary font-medium rounded-lg hover:bg-primary-hover transition-colors"
               >
-              <Mail className="w-4 h-4" /> Email Ashir
-            </a>
+                <Mail className="w-4 h-4" /> Email
+              </a>
+              <a
+                href="https://x.com/ashir_khan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-xs px-md py-sm bg-surface-container-high text-on-surface font-medium rounded-lg hover:bg-surface-container-highest transition-colors border border-outline-variant"
+              >
+                <Twitter className="w-4 h-4 text-secondary" /> X (Twitter)
+              </a>
+              <a
+                href="https://linkedin.com/in/ashir-khan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-xs px-md py-sm bg-surface-container-high text-on-surface font-medium rounded-lg hover:bg-surface-container-highest transition-colors border border-outline-variant"
+              >
+                <Linkedin className="w-4 h-4 text-secondary" /> LinkedIn
+              </a>
+            </div>
           </section>
         </article>
       </main>

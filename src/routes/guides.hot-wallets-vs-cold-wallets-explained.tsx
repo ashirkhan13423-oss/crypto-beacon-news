@@ -247,6 +247,40 @@ function ArticlePage() {
           ))}
         </div>
 
+        <H2 id="sources">Sources</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://bitcoin.org/en/choose-your-wallet"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Bitcoin.org — Choosing a Secure Wallet
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://ethereum.org/en/wallets/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Ethereum.org — Ethereum Wallets Guide
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.ledger.com/academy/hardwarewallet/what-is-a-hardware-wallet"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Ledger Academy — What Is a Hardware Wallet?
+            </a>
+          </li>
+        </ul>
+
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
@@ -256,6 +290,39 @@ function ArticlePage() {
             considered financial or investment advice.
           </p>
         </div>
+
+        <section className="mt-xxl">
+          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
+            <Link
+              to="/guides/not-your-keys-not-your-coins-meaning"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                Not Your Keys, Not Your Coins
+              </h3>
+            </Link>
+            <Link
+              to="/security/hardware-wallet-mistakes-to-avoid"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Security</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                Hardware Wallet Mistakes to Avoid
+              </h3>
+            </Link>
+            <Link
+              to="/security/how-to-revoke-smart-contract-approvals"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Security</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                How to Revoke Smart Contract Approvals
+              </h3>
+            </Link>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>

@@ -209,15 +209,37 @@ function ArticlePage() {
           </ul>
         </div>
 
-        <H2 id="further-reading">Further Reading</H2>
+        <H2 id="sources">Sources</H2>
         <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
           <li>
-            <Link
-              to="/guides/why-bitcoin-price-moves-more-than-stocks"
+            <a
+              href="https://www.coindesk.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              Why Does Bitcoin's Price Move More Than Traditional Assets?
-            </Link>
+              CoinDesk — Bitcoin Market Coverage, August 2026
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://cointelegraph.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              CoinTelegraph — Regulatory & Market News, August 2026
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.sec.gov/news/press-releases"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              U.S. SEC — Press Releases and Policy Announcements
+            </a>
           </li>
         </ul>
 
@@ -229,6 +251,39 @@ function ArticlePage() {
             This article is a factual, dated report on market events and is for informational purposes only. It is not financial or investment advice, and it does not predict future price movement. Figures reflect the date noted above and will not be updated after publication unless explicitly refreshed.
           </p>
         </div>
+
+        <section className="mt-xxl">
+          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
+            <Link
+              to="/guides/why-bitcoin-price-moves-more-than-stocks"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                Why Bitcoin's Price Moves More Than Stocks
+              </h3>
+            </Link>
+            <Link
+              to="/bitcoin/what-is-the-bitcoin-halving"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                What Is the Bitcoin Halving?
+              </h3>
+            </Link>
+            <Link
+              to="/news/why-governments-regulate-cryptocurrency"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">News</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                Why Governments Regulate Cryptocurrency
+              </h3>
+            </Link>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>

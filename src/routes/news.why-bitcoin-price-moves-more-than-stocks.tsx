@@ -1,4 +1,4 @@
-﻿import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
@@ -403,6 +403,39 @@ function ArticlePage() {
             price movement.
           </p>
         </div>
+
+        <section className="mt-xxl">
+          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
+            <Link
+              to="/bitcoin/what-is-the-bitcoin-halving"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                What Is the Bitcoin Halving?
+              </h3>
+            </Link>
+            <Link
+              to="/bitcoin/what-is-a-bitcoin-wallet"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                What Is a Bitcoin Wallet?
+              </h3>
+            </Link>
+            <Link
+              to="/guides/not-your-keys-not-your-coins-meaning"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                Not Your Keys, Not Your Coins
+              </h3>
+            </Link>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>

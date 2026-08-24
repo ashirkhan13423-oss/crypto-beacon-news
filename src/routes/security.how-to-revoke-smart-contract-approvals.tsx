@@ -272,6 +272,40 @@ function ArticlePage() {
           ))}
         </div>
 
+        <H2 id="sources">Sources</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://revoke.cash"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Revoke.cash — Token Approval Management Tool
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://eips.ethereum.org/EIPS/eip-20"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Ethereum EIP-20 — ERC-20 Token Standard and Approval Mechanism
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://consensys.io/blog/the-real-risks-of-token-approvals"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              ConsenSys — The Real Risks of Token Approvals in DeFi
+            </a>
+          </li>
+        </ul>
+
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
@@ -281,6 +315,39 @@ function ArticlePage() {
             considered financial or investment advice.
           </p>
         </div>
+
+        <section className="mt-xxl">
+          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
+            <Link
+              to="/security/hardware-wallet-mistakes-to-avoid"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Security</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                Hardware Wallet Mistakes to Avoid
+              </h3>
+            </Link>
+            <Link
+              to="/guides/hot-wallets-vs-cold-wallets-explained"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                Hot Wallets vs Cold Wallets Explained
+              </h3>
+            </Link>
+            <Link
+              to="/guides/not-your-keys-not-your-coins-meaning"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                Not Your Keys, Not Your Coins
+              </h3>
+            </Link>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>

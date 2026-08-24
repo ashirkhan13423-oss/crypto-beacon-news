@@ -391,6 +391,40 @@ function ArticlePage() {
           yourself on how to store and manage your new digital assets securely.
         </P>
 
+        <H2 id="sources">Sources</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://bitcoin.org/en/choose-your-wallet"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Bitcoin.org — How to Choose Your Bitcoin Wallet
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.sec.gov/oiea/investor-alerts-and-bulletins/ib_coindisclosures"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              US SEC — Investor Alert: Exercise Caution with Crypto Assets
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.ftc.gov/news-events/topics/consumer-finance/cryptocurrency"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Federal Trade Commission (FTC) — What To Know About Cryptocurrency
+            </a>
+          </li>
+        </ul>
+
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer

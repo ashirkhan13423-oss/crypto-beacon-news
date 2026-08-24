@@ -238,6 +238,73 @@ function ArticlePage() {
             </div>
           </section>
         </article>
+
+        <H2 id="sources">Sources</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://ethereum.org/en/developers/docs/scaling/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Ethereum.org — Scaling and Layer 2 Rollups
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://l2beat.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              L2BEAT — Analytics and Risk Assessment for Ethereum Layer 2
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://vitalik.eth.limo/general/2021/01/05/rollup.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Buterin, V. (2021). An Incomplete Guide to Rollups.
+            </a>
+          </li>
+        </ul>
+
+        <section className="mt-xxl">
+          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
+            <Link
+              to="/ethereum/what-are-gas-fees-how-to-save"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                What Are Ethereum Gas Fees?
+              </h3>
+            </Link>
+            <Link
+              to="/ethereum/what-is-a-smart-contract"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                What Is a Smart Contract?
+              </h3>
+            </Link>
+            <Link
+              to="/ethereum/what-is-ethereum-staking"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                What Is Ethereum Staking?
+              </h3>
+            </Link>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>

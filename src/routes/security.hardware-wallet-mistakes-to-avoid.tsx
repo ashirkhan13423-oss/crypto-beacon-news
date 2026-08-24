@@ -293,6 +293,40 @@ function ArticlePage() {
           ))}
         </div>
 
+        <H2 id="sources">Sources</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://www.ledger.com/academy/security/ledger-security-bulletins"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Ledger — Security Bulletins and Hardware Vulnerability Disclosures
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://trezor.io/support/a/safety-tips"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Trezor — Safety Tips and Seed Phrase Security
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.cisa.gov/topics/critical-infrastructure-security-and-resilience/cybersecurity-best-practices"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              CISA — Cybersecurity Best Practices for Individuals
+            </a>
+          </li>
+        </ul>
+
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
@@ -302,6 +336,39 @@ function ArticlePage() {
             considered financial or investment advice.
           </p>
         </div>
+
+        <section className="mt-xxl">
+          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
+            <Link
+              to="/guides/hot-wallets-vs-cold-wallets-explained"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                Hot Wallets vs Cold Wallets Explained
+              </h3>
+            </Link>
+            <Link
+              to="/security/how-to-revoke-smart-contract-approvals"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Security</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                How to Revoke Smart Contract Approvals
+              </h3>
+            </Link>
+            <Link
+              to="/guides/not-your-keys-not-your-coins-meaning"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                Not Your Keys, Not Your Coins
+              </h3>
+            </Link>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>
