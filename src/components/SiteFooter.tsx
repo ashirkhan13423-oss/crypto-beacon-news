@@ -3,8 +3,8 @@ import logoAsset from "@/assets/cryptobeacon-logo.png.asset.json";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-surface-container-low border-t border-outline-variant w-full mt-xxl">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-lg px-gutter py-xxl max-w-max_width mx-auto">
+    <footer className="bg-surface-container-low border-t border-outline-variant w-full">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-lg px-gutter md:px-margin py-xxl max-w-max_width mx-auto">
         <div className="col-span-1 md:col-span-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-md mb-lg pb-lg border-b border-outline-variant">
           <img
             src={logoAsset.url}

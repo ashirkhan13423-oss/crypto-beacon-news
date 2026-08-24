@@ -14,7 +14,7 @@ const navLinks: { label: string; to: string }[] = [
 export function SiteHeader() {
   return (
     <header className="bg-surface-bright border-b border-outline-variant sticky top-0 z-50 w-full">
-      <div className="flex justify-between items-center w-full px-gutter max-w-max_width mx-auto h-24">
+      <div className="flex justify-between items-center w-full px-gutter md:px-margin max-w-max_width mx-auto h-24">
         <Link to="/" className="flex items-center gap-md">
           <img alt="CryptoBeacon Logo" className="h-28 md:h-32 w-auto" src="/logo.png" height="128" fetchpriority="high" />
         </Link>

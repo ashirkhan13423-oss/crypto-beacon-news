@@ -336,12 +336,13 @@ function IndexPage() {
           <h2 className="font-headline-md text-headline-md text-primary mb-lg pb-xs border-b border-outline-variant">
             Explore Research Hubs
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-lg">
             <Link
               to="/bitcoin"
               className="p-lg rounded-2xl border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all flex flex-col justify-between"
             >
               <div>
+                <BarChart3 className="w-7 h-7 text-secondary mb-sm" aria-hidden="true" />
                 <span className="inline-block px-sm py-xs rounded-full bg-secondary-container text-secondary font-label-caps text-[11px] uppercase tracking-widest font-semibold mb-md">
                   Bitcoin Hub
                 </span>
@@ -362,6 +363,7 @@ function IndexPage() {
               className="p-lg rounded-2xl border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all flex flex-col justify-between"
             >
               <div>
+                <FileText className="w-7 h-7 text-secondary mb-sm" aria-hidden="true" />
                 <span className="inline-block px-sm py-xs rounded-full bg-secondary-container text-secondary font-label-caps text-[11px] uppercase tracking-widest font-semibold mb-md">
                   Ethereum Hub
                 </span>
@@ -382,6 +384,7 @@ function IndexPage() {
               className="p-lg rounded-2xl border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all flex flex-col justify-between"
             >
               <div>
+                <BookOpen className="w-7 h-7 text-secondary mb-sm" aria-hidden="true" />
                 <span className="inline-block px-sm py-xs rounded-full bg-secondary-container text-secondary font-label-caps text-[11px] uppercase tracking-widest font-semibold mb-md">
                   Guides Hub
                 </span>
@@ -402,6 +405,7 @@ function IndexPage() {
               className="p-lg rounded-2xl border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all flex flex-col justify-between"
             >
               <div>
+                <ShieldCheck className="w-7 h-7 text-secondary mb-sm" aria-hidden="true" />
                 <span className="inline-block px-sm py-xs rounded-full bg-secondary-container text-secondary font-label-caps text-[11px] uppercase tracking-widest font-semibold mb-md">
                   Security Hub
                 </span>
@@ -422,6 +426,7 @@ function IndexPage() {
               className="p-lg rounded-2xl border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all flex flex-col justify-between"
             >
               <div>
+                <ExternalLink className="w-7 h-7 text-secondary mb-sm" aria-hidden="true" />
                 <span className="inline-block px-sm py-xs rounded-full bg-secondary-container text-secondary font-label-caps text-[11px] uppercase tracking-widest font-semibold mb-md">
                   News Hub
                 </span>
