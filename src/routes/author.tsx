@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import authorAvatar from "@/assets/ashir.jpg";
+import authorAvatar from "@/assets/ashir.png";
 import { Award, BookOpen, GraduationCap, ShieldCheck, Mail, ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/author")({

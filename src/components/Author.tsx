@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import authorAvatar from "@/assets/ashir.jpg";
+import authorAvatar from "@/assets/ashir.png";
 
 interface AuthorProps {
   publishedDate: React.ReactNode;

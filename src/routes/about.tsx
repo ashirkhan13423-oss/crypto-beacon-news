@@ -141,7 +141,7 @@ function AboutPage() {
           <section className="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm mt-xl">
             <h2 className="font-headline-md text-headline-md text-primary mb-sm">Publisher Information</h2>
             <p className="text-body-md text-on-surface-variant mb-md">
-              CryptoBeacon is an independent educational publication operated by Ashir. We are based in Karachi, Pakistan.
+              CryptoBeacon is an independent educational publication operated by Ashir. We operate as a fully remote team.
             </p>
             <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Imagery</h3>
             <p className="text-body-md text-on-surface-variant">
