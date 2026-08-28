@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import hero from "@/assets/bitcoin-send-safely.jpg";
-import { ShieldCheck, Eye, RefreshCw, Key, Landmark, AlertTriangle } from "lucide-react";
+import { ShieldCheck, Eye, RefreshCw, Key, Landmark, AlertTriangle, CheckSquare } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/how-to-send-bitcoin-safely";
 const TITLE = "How to Send Bitcoin Safely (Beginner's Guide) | CryptoBeacon";

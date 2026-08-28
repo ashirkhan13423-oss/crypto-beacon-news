@@ -108,6 +108,17 @@ export const Route = createFileRoute("/ethereum/what-is-ethereum-staking")({
   component: ArticlePage,
 });
 
+function H2({ id, children }: { id: string; children: React.ReactNode }) {
+  return (
+    <h2
+      id={id}
+      className="scroll-mt-28 font-headline-md text-headline-md md:text-headline-lg text-primary mt-xxl mb-md"
+    >
+      {children}
+    </h2>
+  );
+}
+
 function ArticlePage() {
   return (
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
