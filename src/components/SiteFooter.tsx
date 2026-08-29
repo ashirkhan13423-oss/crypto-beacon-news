@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Twitter } from "lucide-react";
 import logoAsset from "@/assets/cryptobeacon-logo.png.asset.json";
 
 export function SiteFooter() {
@@ -11,9 +12,20 @@ export function SiteFooter() {
             alt="CryptoBeacon - Editorial Rigor and Financial Clarity"
             className="h-14 md:h-16 w-auto"
           />
-          <span className="font-body-md text-body-md text-on-surface">
-            © 2026 CryptoBeacon. Editorial Rigor. Financial Clarity.
-          </span>
+          <div className="flex items-center gap-md">
+            <span className="font-body-md text-body-md text-on-surface">
+              © 2026 CryptoBeacon. Editorial Rigor. Financial Clarity.
+            </span>
+            <a
+              href="https://x.com/crypto__beacon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-on-surface hover:text-secondary transition-colors"
+              aria-label="Follow us on X (Twitter)"
+            >
+              <Twitter size={20} />
+            </a>
+          </div>
         </div>
         <div className="flex flex-col gap-sm">
           <span className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">

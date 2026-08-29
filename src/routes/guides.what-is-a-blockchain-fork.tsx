@@ -81,7 +81,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 2,
       name: "Guides",
-      item: "https://www.cryptobeacon.site/news",
+      item: "https://www.cryptobeacon.site/guides",
     },
     {
       "@type": "ListItem",
@@ -103,7 +103,7 @@ export const Route = createFileRoute("/guides/what-is-a-blockchain-fork")({
       { property: "og:url", content: URL },
       { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "News" },
+      { property: "article:section", content: "Guides" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
@@ -154,7 +154,7 @@ function ArticlePage() {
             <li aria-hidden>/</li>
             <li>
               <Link to="/guides" className="hover:text-secondary">
-                News
+                Guides
               </Link>
             </li>
             <li aria-hidden>/</li>
@@ -162,8 +162,8 @@ function ArticlePage() {
           </ol>
         </nav>
 
-        <span className="inline-block px-sm py-xs rounded-full bg-[#0F9D58] text-white font-label-caps text-[11px] uppercase tracking-widest font-semibold">
-          News
+        <span className="inline-block px-sm py-xs rounded-full bg-[#2563EB] text-white font-label-caps text-[11px] uppercase tracking-widest font-semibold">
+          Guides
         </span>
 
         <h1 className="mt-md font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-primary leading-tight">

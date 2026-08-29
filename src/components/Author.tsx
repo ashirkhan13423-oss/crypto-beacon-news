@@ -28,7 +28,7 @@ export function Author({ publishedDate, readTime }: AuthorProps) {
           <span>{readTime}</span>
         </div>
         <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-          Ashir researches and writes about crypto self-custody and security at CryptoBeacon, helping readers understand how to safely store and manage their digital assets.
+          Ashir is an independent writer researching cryptocurrency security and self-custody, with a focus on translating technical concepts for everyday users.
         </p>
       </div>
     </div>

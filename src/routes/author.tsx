@@ -11,13 +11,13 @@ export const Route = createFileRoute("/author")({
       {
         name: "description",
         content:
-          "Ashir researches and writes about crypto self-custody and security at CryptoBeacon, helping readers understand how to store and protect their digital assets safely.",
+          "Ashir is an independent writer researching cryptocurrency security and self-custody, with a focus on translating technical concepts for everyday users.",
       },
       { property: "og:title", content: "Ashir — CryptoBeacon" },
       {
         property: "og:description",
         content:
-          "Ashir researches and writes about crypto self-custody and security at CryptoBeacon, helping readers understand how to store and protect their digital assets safely.",
+          "Ashir is an independent writer researching cryptocurrency security and self-custody, with a focus on translating technical concepts for everyday users.",
       },
       { property: "og:url", content: "https://www.cryptobeacon.site/author" },
       { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
@@ -64,19 +64,7 @@ function AuthorPage() {
               <BookOpen className="text-secondary" /> Biography
             </h2>
             <p>
-              Ashir is a writer and researcher at CryptoBeacon. He researches and writes about
-              crypto self-custody and security, with a focus on helping everyday users understand
-              how to safely store and manage their digital assets.
-            </p>
-            <p>
-              His work covers non-custodial wallets, key management practices, and the security
-              trade-offs involved in different custody approaches. He aims to translate technical
-              concepts into clear, practical guidance for readers at all experience levels.
-            </p>
-            <p>
-              Ashir believes that accessible, honest education about self-custody is one of the most
-              important contributions a crypto publication can make — and that straightforward,
-              well-researched content serves readers far better than hype or speculation.
+              Ashir is an independent writer researching cryptocurrency security and self-custody, with a focus on translating technical concepts for everyday users.
             </p>
           </section>
 

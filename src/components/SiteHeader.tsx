@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Search, Menu } from "lucide-react";
+import { Search, Menu, Twitter } from "lucide-react";
 
 const navLinks: { label: string; to: string }[] = [
   { label: "Guides", to: "/guides" },
@@ -34,6 +34,15 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="flex items-center gap-md text-primary">
+          <a
+            href="https://x.com/crypto__beacon"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow us on X (Twitter)"
+            className="cursor-pointer hover:text-secondary transition-all flex items-center justify-center mr-xs"
+          >
+            <Twitter size={20} />
+          </a>
           <Link
             to="/search"
             search={{ q: "" }}

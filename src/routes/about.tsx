@@ -49,12 +49,11 @@ function AboutPage() {
               <Users className="text-secondary" /> Who We Are
             </h2>
             <p className="mb-md">
-              CryptoBeacon is edited by{" "}
+              CryptoBeacon is edited and maintained by{" "}
               <Link to="/author" className="text-secondary font-semibold hover:underline">
                 Ashir
               </Link>
-              , maintained by a dedicated cryptocurrency researcher committed to objective digital
-              asset education and security research:
+              , an independent writer researching cryptocurrency security and self-custody, with a focus on translating technical concepts for everyday users:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-md my-md">
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
@@ -62,8 +61,8 @@ function AboutPage() {
                   Security Research
                 </h3>
                 <p className="text-body-md text-on-surface-variant">
-                  Our security team specializes in non-custodial wallet architecture, key management
-                  protocols, multi-sig security frameworks, and real-world threat analysis.
+                  Research focuses on non-custodial wallet architecture, key management
+                  protocols, multi-signature security frameworks, and real-world threat analysis.
                 </p>
               </div>
               <div className="p-md rounded-xl bg-surface-container-low border border-outline-variant">
@@ -71,14 +70,14 @@ function AboutPage() {
                   Market & Macro Analysis
                 </h3>
                 <p className="text-body-md text-on-surface-variant">
-                  Our research desk focuses on Bitcoin market structure, exchange reserve telemetry,
+                  Analysis covers Bitcoin market structure, exchange reserve telemetry,
                   DeFi dynamics, and global cryptocurrency regulation.
                 </p>
               </div>
             </div>
             <p>
-              In a space often driven by speculation and short-term narratives, our mission is to
-              provide clear, objective, and deeply researched educational content that empowers our
+              In a space often driven by speculation and short-term narratives, the mission is to
+              provide clear, objective, and deeply researched educational content that empowers
               readers to make informed decisions about digital asset security and market
               fundamentals.
             </p>
@@ -119,9 +118,9 @@ function AboutPage() {
               <ShieldCheck className="text-secondary" /> How Content is Researched
             </h2>
             <p className="mb-md">
-              Trust is our most important metric. To ensure accuracy and authority, our editorial
-              process mandates strict fact-checking against primary sources. When we write about a
-              protocol or security practice, our research involves:
+              Trust is the most important metric. To ensure accuracy and authority, the editorial
+              process mandates strict fact-checking against primary sources. When writing about a
+              protocol or security practice, research involves:
             </p>
             <ul className="list-disc pl-xl space-y-sm marker:text-secondary">
               <li>Direct review of official whitepapers and technical documentation.</li>
@@ -132,16 +131,16 @@ function AboutPage() {
               <li>Consultation with recognized security frameworks and cryptographic standards.</li>
             </ul>
             <p className="mt-md">
-              We do not publish unverified claims, nor do we accept paid promotions masquerading as
-              editorial content. If an article includes sponsored content or affiliate links, it
-              will be explicitly and prominently disclosed at the top of the page.
+              CryptoBeacon does not publish unverified claims, nor does it accept paid promotions
+              masquerading as editorial content. If an article includes sponsored content or
+              affiliate links, it will be explicitly and prominently disclosed at the top of the page.
             </p>
           </section>
 
           <section className="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm mt-xl">
             <h2 className="font-headline-md text-headline-md text-primary mb-sm">Publisher Information</h2>
             <p className="text-body-md text-on-surface-variant mb-md">
-              CryptoBeacon is an independent educational publication operated by Ashir. We operate as a fully remote team.
+              CryptoBeacon is an independent publication written and edited by Ashir, with an editorial process built around primary-source verification.
             </p>
             <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Imagery</h3>
             <p className="text-body-md text-on-surface-variant">

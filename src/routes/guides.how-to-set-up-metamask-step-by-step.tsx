@@ -12,7 +12,7 @@ const DESC =
   "A first-hand walkthrough of setting up MetaMask from scratch — installing the extension, securing your seed phrase, adding a network, and making your first transaction safely.";
 const PUBLISHED = "2026-08-25";
 
-const articleSchema = {
+const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   name: "How to Set Up MetaMask Step by Step",
@@ -27,6 +27,26 @@ const articleSchema = {
     { "@type": "HowToStep", name: "Add a Custom Network", position: 5 },
     { "@type": "HowToStep", name: "Fund Your Wallet & Test a Transfer", position: 6 },
   ],
+  author: {
+    "@type": "Person",
+    name: "Ashir",
+    url: "https://www.cryptobeacon.site/author",
+    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "CryptoBeacon",
+    logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" },
+  },
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "How to Set Up MetaMask: Step-by-Step Walkthrough (2026)",
+  description: DESC,
+  datePublished: PUBLISHED,
+  dateModified: PUBLISHED,
   author: {
     "@type": "Person",
     name: "Ashir",
@@ -77,6 +97,7 @@ export const Route = createFileRoute("/guides/how-to-set-up-metamask-step-by-ste
     links: [{ rel: "canonical", href: URL }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
+      { type: "application/ld+json", children: JSON.stringify(howToSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
     ],
   }),

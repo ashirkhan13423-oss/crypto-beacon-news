@@ -7,6 +7,7 @@ import { Network } from "lucide-react";
 import stakingHero from "@/assets/ethereum-staking-hero.png";
 import l2Hero from "@/assets/ethereum-layer-2-scaling.png";
 import gasFeesHero from "@/assets/ethereum-gas-fees.jpg";
+import defiHero from "@/assets/ethereum-defi-explainer.jpg";
 
 const collectionSchema = {
   "@context": "https://schema.org",
@@ -33,6 +34,11 @@ const collectionSchema = {
       "@type": "WebPage",
       name: "What Are Ethereum Gas Fees and How to Save on Them?",
       url: "https://www.cryptobeacon.site/ethereum/what-are-gas-fees-how-to-save",
+    },
+    {
+      "@type": "WebPage",
+      name: "What Is DeFi? Decentralized Finance Explained for Beginners",
+      url: "https://www.cryptobeacon.site/ethereum/what-is-defi-decentralized-finance",
     },
   ],
 };
@@ -186,6 +192,32 @@ function EthereumPage() {
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 An explainer on network congestion, how Gwei works, and practical strategies for minimizing fees using Layer 2s.
+              </p>
+            </div>
+          </Link>
+          <Link
+            to="/ethereum/what-is-defi-decentralized-finance"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={defiHero}
+                alt="Glowing Ethereum logo at the center of an interconnected DeFi protocol ecosystem"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Ethereum · Explainer
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                What Is DeFi? Decentralized Finance Explained for Beginners
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A plain-language introduction to decentralized finance (DeFi) — what it is, how lending protocols and DEXes work, and the real risks beginners should understand before participating.
               </p>
             </div>
           </Link>

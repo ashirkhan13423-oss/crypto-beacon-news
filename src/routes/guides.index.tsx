@@ -5,6 +5,8 @@ import nyknycHero from "@/assets/keys-coins-meaning.jpg";
 import exchangeHero from "@/assets/exchange-vs-wallet.png";
 import walletAddressHero from "@/assets/guides-wallet-address.png";
 import hotColdHero from "@/assets/hot-vs-cold-wallets.jpg";
+import privateKeyHero from "@/assets/guides-private-key.jpg";
+import dcaHero from "@/assets/guides-dca-explained.jpg";
 import { BookOpen } from "lucide-react";
 
 const collectionSchema = {
@@ -32,6 +34,16 @@ const collectionSchema = {
       "@type": "WebPage",
       name: "Hot Wallets vs. Cold Wallets: Which is Right for You?",
       url: "https://www.cryptobeacon.site/guides/hot-wallets-vs-cold-wallets-explained",
+    },
+    {
+      "@type": "WebPage",
+      name: "What Is a Private Key in Crypto? A Plain-Language Explainer",
+      url: "https://www.cryptobeacon.site/guides/what-is-a-private-key",
+    },
+    {
+      "@type": "WebPage",
+      name: "Dollar-Cost Averaging (DCA) in Crypto: What It Is and How It Works",
+      url: "https://www.cryptobeacon.site/guides/crypto-dollar-cost-averaging-explained",
     },
   ],
 };
@@ -186,6 +198,58 @@ function GuidesHub() {
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 Comparing internet-connected software wallets with offline hardware devices, focusing on the trade-offs.
+              </p>
+            </div>
+          </Link>
+          <Link
+            to="/guides/what-is-a-private-key"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden border-b border-outline-variant">
+              <img
+                src={privateKeyHero}
+                alt="Glowing golden digital key made of cryptographic symbols opening a dark vault"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Guides · Basics
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                What Is a Private Key in Crypto? A Plain-Language Explainer
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A straightforward explanation of what a cryptocurrency private key is, how it differs from a seed phrase and public address, and why whoever controls it controls the funds.
+              </p>
+            </div>
+          </Link>
+          <Link
+            to="/guides/crypto-dollar-cost-averaging-explained"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden border-b border-outline-variant">
+              <img
+                src={dcaHero}
+                alt="Glowing teal financial chart showing steady upward steps representing dollar-cost averaging in crypto"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Guides · Strategy
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Dollar-Cost Averaging (DCA) in Crypto: What It Is and How It Works
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A plain-language guide to Dollar-Cost Averaging (DCA) in crypto. Learn how this systematic investment strategy reduces volatility risk and removes emotion from buying Bitcoin and Ethereum.
               </p>
             </div>
           </Link>

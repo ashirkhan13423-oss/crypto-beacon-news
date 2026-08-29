@@ -5,6 +5,8 @@ import sendHero from "@/assets/bitcoin-send-safely.jpg";
 import walletHero from "@/assets/bitcoin-what-is-a-wallet.png";
 import miningHero from "@/assets/bitcoin-what-is-mining.png";
 import halvingHero from "@/assets/bitcoin-halving.jpg";
+import nodeHero from "@/assets/bitcoin-node-explainer.jpg";
+import lightningHero from "@/assets/bitcoin-lightning-network.jpg";
 import { Bitcoin } from "lucide-react";
 
 const collectionSchema = {
@@ -32,6 +34,16 @@ const collectionSchema = {
       "@type": "WebPage",
       name: "What is the Bitcoin Halving?",
       url: "https://www.cryptobeacon.site/bitcoin/what-is-the-bitcoin-halving",
+    },
+    {
+      "@type": "WebPage",
+      name: "What Is a Bitcoin Node and Why Does Running One Matter?",
+      url: "https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-node",
+    },
+    {
+      "@type": "WebPage",
+      name: "The Bitcoin Lightning Network Explained: Instant, Cheap Bitcoin Payments",
+      url: "https://www.cryptobeacon.site/bitcoin/bitcoin-lightning-network-explained",
     },
   ],
 };
@@ -190,6 +202,58 @@ function BitcoinPage() {
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 A clear, financial breakdown of Bitcoin's hard-capped supply and how the block subsidy halves every four years.
+              </p>
+            </div>
+          </Link>
+          <Link
+            to="/bitcoin/what-is-a-bitcoin-node"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={nodeHero}
+                alt="Glowing Bitcoin network node connected to multiple peer nodes"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Bitcoin · Architecture
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                What Is a Bitcoin Node and Why Does Running One Matter?
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A plain-language guide to Bitcoin full nodes — what they do, how they differ from miners, and why running your own node is the strongest form of self-sovereignty in the Bitcoin network.
+              </p>
+            </div>
+          </Link>
+          <Link
+            to="/bitcoin/bitcoin-lightning-network-explained"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={lightningHero}
+                alt="Glowing lightning bolt channels connecting two Bitcoin wallets"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Bitcoin · Scaling
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                The Bitcoin Lightning Network Explained: Instant, Cheap Bitcoin Payments
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                How the Bitcoin Lightning Network works — payment channels, routing, HTLCs, and the trade-offs compared to on-chain transactions — explained in plain language.
               </p>
             </div>
           </Link>
