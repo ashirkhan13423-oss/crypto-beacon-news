@@ -7,6 +7,8 @@ import miningHero from "@/assets/bitcoin-what-is-mining.png";
 import halvingHero from "@/assets/bitcoin-halving.jpg";
 import nodeHero from "@/assets/bitcoin-node-explainer.jpg";
 import lightningHero from "@/assets/bitcoin-lightning-network.jpg";
+import etfHero from "@/assets/bitcoin-etf-effects.jpg";
+import bondYieldsHero from "@/assets/bitcoin-bond-yields.jpg";
 import { Bitcoin } from "lucide-react";
 
 const collectionSchema = {
@@ -15,6 +17,16 @@ const collectionSchema = {
   name: "Bitcoin",
   url: "https://www.cryptobeacon.site/bitcoin",
   hasPart: [
+    {
+      "@type": "WebPage",
+      name: "How Do Bitcoin ETFs Actually Move the Price?",
+      url: "https://www.cryptobeacon.site/bitcoin/how-do-bitcoin-etfs-affect-price",
+    },
+    {
+      "@type": "WebPage",
+      name: "Why Do Falling Bond Yields Affect Bitcoin's Price?",
+      url: "https://www.cryptobeacon.site/bitcoin/why-do-bond-yields-affect-bitcoin-price",
+    },
     {
       "@type": "WebPage",
       name: "How to Send Bitcoin Safely",
@@ -98,6 +110,60 @@ function BitcoinPage() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+          <Link
+            to="/bitcoin/how-do-bitcoin-etfs-affect-price"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={etfHero}
+                alt="Illustration showing capital flowing into a secure spot Bitcoin ETF trust vault"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1600}
+                height={900}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Bitcoin · Mechanics
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                How Do Bitcoin ETFs Actually Move the Price?
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A mechanical explanation of spot ETF arbitrage, creation and redemption baskets, Authorized Participants, and their impact on physical spot markets.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            to="/bitcoin/why-do-bond-yields-affect-bitcoin-price"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={bondYieldsHero}
+                alt="Macroeconomic diagram showing falling bond yield charts and capital flow to Bitcoin"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1600}
+                height={900}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Bitcoin · Macro
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Why Do Falling Bond Yields Affect Bitcoin's Price?
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                Understand the opportunity cost relationship between risk-free government treasury yields and non-yielding assets like Bitcoin in a global liquidity system.
+              </p>
+            </div>
+          </Link>
+
           <Link
             to="/bitcoin/how-to-send-bitcoin-safely"
             className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"

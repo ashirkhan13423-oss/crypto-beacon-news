@@ -7,6 +7,8 @@ import walletAddressHero from "@/assets/guides-wallet-address.png";
 import hotColdHero from "@/assets/hot-vs-cold-wallets.jpg";
 import privateKeyHero from "@/assets/guides-private-key.jpg";
 import dcaHero from "@/assets/guides-dca-explained.jpg";
+import shortSqueezeHero from "@/assets/guides-short-squeeze.jpg";
+import readNewsHero from "@/assets/guides-read-news-no-hype.jpg";
 import { BookOpen } from "lucide-react";
 
 const collectionSchema = {
@@ -15,6 +17,16 @@ const collectionSchema = {
   name: "Crypto Guides",
   url: "https://www.cryptobeacon.site/guides",
   hasPart: [
+    {
+      "@type": "WebPage",
+      name: "What Is a Short Squeeze in Crypto? Mechanics Explained",
+      url: "https://www.cryptobeacon.site/guides/what-is-a-short-squeeze-crypto-explained",
+    },
+    {
+      "@type": "WebPage",
+      name: "How to Read Crypto Market News Without Getting Swept Up in Hype",
+      url: "https://www.cryptobeacon.site/guides/how-to-read-crypto-news-without-hype",
+    },
     {
       "@type": "WebPage",
       name: '"Not Your Keys, Not Your Coins" — What It Means',
@@ -95,6 +107,60 @@ function GuidesHub() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+          <Link
+            to="/guides/what-is-a-short-squeeze-crypto-explained"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={shortSqueezeHero}
+                alt="Illustration representing a Bitcoin short squeeze breakout"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1600}
+                height={900}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Guides · Mechanics
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                What Is a Short Squeeze in Crypto? Mechanics Explained
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A detailed breakdown of derivatives trading, margin requirements, short liquidation cascades, and why they cause explosive upward moves in crypto markets.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            to="/guides/how-to-read-crypto-news-without-hype"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={readNewsHero}
+                alt="Illustration showing a magnifying glass verifying charts and filtering news hype"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1600}
+                height={900}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Guides · Literacy
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                How to Read Crypto News Without Hype
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A media-literacy guide to identifying speculative price predictions, sponsored promotions, and FOMO, focusing instead on objective on-chain telemetry.
+              </p>
+            </div>
+          </Link>
+
           <Link
             to="/guides/not-your-keys-not-your-coins-meaning"
             className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"

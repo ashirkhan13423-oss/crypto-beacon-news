@@ -7,6 +7,7 @@ import forkHero from "@/assets/news-blockchain-fork.png";
 import pausesHero from "@/assets/news-paused-withdrawals.jpg";
 import volatilityHero from "@/assets/news-bitcoin-volatility.svg";
 import regulationHero from "@/assets/news-crypto-regulation.jpg";
+import clarityActHero from "@/assets/news-clarity-act.jpg";
 import { Newspaper } from "lucide-react";
 
 const collectionSchema = {
@@ -15,6 +16,11 @@ const collectionSchema = {
   name: "Crypto News",
   url: "https://www.cryptobeacon.site/news",
   hasPart: [
+    {
+      "@type": "WebPage",
+      name: "What Is the Clarity Act, and What Would It Actually Change?",
+      url: "https://www.cryptobeacon.site/news/what-is-the-clarity-act-crypto",
+    },
     {
       "@type": "WebPage",
       name: "Bitcoin Rallies Toward $77,000 — What's Driving the Move",
@@ -82,6 +88,33 @@ function NewsHub() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+          <Link
+            to="/news/what-is-the-clarity-act-crypto"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={clarityActHero}
+                alt="Illustration showing Capitol lines, balanced scales, and a regulatory gavel"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width={1600}
+                height={900}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                News · Regulation
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                What Is the Clarity Act, and What Would It Actually Change?
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                An objective, factual look at the proposed U.S. crypto bill, its securities vs. commodities classifications, stablecoin rules, and Senate status.
+              </p>
+            </div>
+          </Link>
+
           <Link
             to="/news/bitcoin-rally-august-2026"
             className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"

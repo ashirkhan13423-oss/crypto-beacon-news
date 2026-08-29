@@ -18,6 +18,11 @@ import halvingHero from "@/assets/bitcoin-halving.jpg";
 import gasFeesHero from "@/assets/ethereum-gas-fees.jpg";
 import hotColdHero from "@/assets/hot-vs-cold-wallets.jpg";
 import hwMistakesHero from "@/assets/hardware-wallet-mistakes.jpg";
+import shortSqueezeHero from "@/assets/guides-short-squeeze.jpg";
+import clarityActHero from "@/assets/news-clarity-act.jpg";
+import etfHero from "@/assets/bitcoin-etf-effects.jpg";
+import readNewsHero from "@/assets/guides-read-news-no-hype.jpg";
+import bondYieldsHero from "@/assets/bitcoin-bond-yields.jpg";
 import {
   ShieldCheck,
   BookOpen,
@@ -35,7 +40,7 @@ const TITLE = "Cryptocurrency: News, Prices & Meaning | CryptoBeacon";
 const DESC =
   "Your definitive guide on what cryptocurrency is. Get the latest cryptocurrency news, meaning, and cryptocurrency prices. Protect your assets today.";
 const PUBLISHED_DATE = "2026-01-15";
-const MODIFIED_DATE = "2026-08-06";
+const MODIFIED_DATE = "2026-08-30";
 
 const homepageSchema = {
   "@context": "https://schema.org",
@@ -163,6 +168,46 @@ export const Route = createFileRoute("/")({
 });
 
 const articles = [
+  {
+    to: "/guides/what-is-a-short-squeeze-crypto-explained",
+    image: shortSqueezeHero,
+    alt: "Illustration representing a Bitcoin short squeeze breakout",
+    tag: "Guides · Mechanics",
+    title: "What Is a Short Squeeze in Crypto? Mechanics Explained",
+    desc: "A detailed breakdown of derivatives trading, margin requirements, short liquidation cascades, and why they cause explosive upward moves in crypto markets.",
+  },
+  {
+    to: "/news/what-is-the-clarity-act-crypto",
+    image: clarityActHero,
+    alt: "Illustration showing Capitol lines, balanced scales, and a regulatory gavel",
+    tag: "News · Regulation",
+    title: "What Is the Clarity Act, and What Would It Actually Change?",
+    desc: "An objective, factual look at the proposed U.S. crypto bill, its securities vs. commodities classifications, stablecoin rules, and Senate status.",
+  },
+  {
+    to: "/bitcoin/how-do-bitcoin-etfs-affect-price",
+    image: etfHero,
+    alt: "Illustration showing capital flowing into a secure spot Bitcoin ETF trust vault",
+    tag: "Bitcoin · Mechanics",
+    title: "How Do Bitcoin ETFs Actually Move the Price?",
+    desc: "A mechanical explanation of spot ETF arbitrage, creation and redemption baskets, Authorized Participants, and their impact on physical spot markets.",
+  },
+  {
+    to: "/guides/how-to-read-crypto-news-without-hype",
+    image: readNewsHero,
+    alt: "Illustration showing a magnifying glass verifying charts and filtering news hype",
+    tag: "Guides · Literacy",
+    title: "How to Read Crypto Market News Without Getting Swept Up in Hype",
+    desc: "A media-literacy guide to identifying speculative price predictions, sponsored promotions, and FOMO, focusing instead on objective on-chain telemetry.",
+  },
+  {
+    to: "/bitcoin/why-do-bond-yields-affect-bitcoin-price",
+    image: bondYieldsHero,
+    alt: "Macroeconomic diagram showing falling bond yield charts and capital flow to Bitcoin",
+    tag: "Bitcoin · Macro",
+    title: "Why Do Falling Bond Yields Affect Bitcoin's Price?",
+    desc: "Understand the opportunity cost relationship between risk-free government treasury yields and non-yielding assets like Bitcoin in a global liquidity system.",
+  },
   {
     to: "/security/how-to-revoke-smart-contract-approvals",
     image: smartContractHero,

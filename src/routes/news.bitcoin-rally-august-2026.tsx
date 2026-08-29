@@ -180,13 +180,25 @@ function ArticlePage() {
         <H2 id="what-drove-the-move">What Drove the Move</H2>
         <ul className="list-disc pl-lg space-y-sm font-body-lg text-body-lg text-on-surface marker:text-secondary mb-lg">
           <li>
-            <strong>A policy push in Washington.</strong> President Trump publicly urged Congress to pass the Clarity Act, legislation that would define whether cryptocurrencies are regulated as securities or commodities. The bill remains stalled in the Senate with a procedural vote scheduled for September.
+            <strong>A policy push in Washington.</strong> President Trump publicly urged Congress to pass the{" "}
+            <Link to="/news/what-is-the-clarity-act-crypto" className="text-secondary hover:underline">
+              Clarity Act
+            </Link>
+            , legislation that would define whether cryptocurrencies are regulated as securities or commodities. The bill remains stalled in the Senate with a procedural vote scheduled for September.
           </li>
           <li>
-            <strong>A Treasury announcement affecting yields.</strong> The U.S. Treasury announced it would double long-term debt buybacks, which contributed to a decline in long-term Treasury yields — a shift that tends to make non-yielding assets like Bitcoin comparatively more attractive to some investors.
+            <strong>A Treasury announcement affecting yields.</strong> The U.S. Treasury announced it would double long-term debt buybacks, which contributed to a{" "}
+            <Link to="/bitcoin/why-do-bond-yields-affect-bitcoin-price" className="text-secondary hover:underline">
+              decline in long-term Treasury yields
+            </Link>{" "}
+            — a shift that tends to make non-yielding assets like Bitcoin comparatively more attractive to some investors.
           </li>
           <li>
-            <strong>A short squeeze.</strong> The combination of the Treasury announcement and regulatory optimism triggered a wave of short-position liquidations in Bitcoin futures, which can accelerate a price move once it starts, independent of new buying demand.
+            <strong>A {" "}
+            <Link to="/guides/what-is-a-short-squeeze-crypto-explained" className="text-secondary hover:underline">
+              short squeeze
+            </Link>
+            .</strong> The combination of the Treasury announcement and regulatory optimism triggered a wave of short-position liquidations in Bitcoin futures, which can accelerate a price move once it starts, independent of new buying demand.
           </li>
           <li>
             <strong>A proposed SEC framework.</strong> Earlier in the week, the SEC announced proposed rules providing a clearer framework for crypto companies to raise capital, which also contributed to positive sentiment.
