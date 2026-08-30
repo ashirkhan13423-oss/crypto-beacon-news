@@ -28,11 +28,11 @@ const faqs = [
   },
   {
     q: "Why did Ethereum ETFs see inflows while Bitcoin ETFs saw outflows?",
-    a: "The divergence suggests that at least some institutional capital was rotating within the crypto sector rather than exiting it entirely. Ethereum's current narratives — including staking yields and layer-2 ecosystem growth — may appeal to investors seeking different risk-return profiles. However, the single-session data is insufficient to confirm a sustained rotation; it is a signal worth monitoring, not a concluded trend.",
+    a: "The divergence suggests that at least some institutional capital was rotating within the crypto sector rather than exiting it entirely. Ethereum's current narratives â€” including staking yields and layer-2 ecosystem growth â€” may appeal to investors seeking different risk-return profiles. However, the single-session data is insufficient to confirm a sustained rotation; it is a signal worth monitoring, not a concluded trend.",
   },
   {
     q: "What is the opportunity cost argument against Bitcoin in a hawkish rate environment?",
-    a: "Bitcoin is a non-yielding asset — it pays no interest or dividends. When the Federal Reserve signals higher-for-longer interest rates, the yield available on safe government bonds rises. This increases the opportunity cost of holding Bitcoin (you give up more guaranteed return to hold it), which makes non-yielding assets comparatively less attractive to institutional allocators benchmarked against risk-free rates.",
+    a: "Bitcoin is a non-yielding asset â€” it pays no interest or dividends. When the Federal Reserve signals higher-for-longer interest rates, the yield available on safe government bonds rises. This increases the opportunity cost of holding Bitcoin (you give up more guaranteed return to hold it), which makes non-yielding assets comparatively less attractive to institutional allocators benchmarked against risk-free rates.",
   },
 ];
 
@@ -224,13 +224,13 @@ function ArticlePage() {
           />
           <figcaption className="text-center font-body-sm text-body-sm text-on-surface-variant py-sm px-md">
             Fed hawkishness met Bitcoin ETF outflows while Ethereum funds
-            continued to attract institutional capital — August 30, 2026.
+            continued to attract institutional capital â€” August 30, 2026.
           </figcaption>
         </figure>
 
         <P>
           For nine consecutive trading sessions, U.S. spot Bitcoin ETFs reported
-          net inflows — a sustained run that coincided with Bitcoin climbing from
+          net inflows â€” a sustained run that coincided with Bitcoin climbing from
           the low-$60,000s to the high-$70,000s in a matter of days. Then, on
           August 30, 2026, two things happened almost simultaneously: Federal
           Reserve Chair Kevin Warsh delivered a hawkish speech at Jackson Hole,
@@ -241,22 +241,22 @@ function ArticlePage() {
         </P>
         <P>
           This article does not call a market top. What it does is explain what
-          these three data points — a central bank signal, a shift in ETF flows
-          and a divergence between Bitcoin and Ethereum — mean for how investors
+          these three data points â€” a central bank signal, a shift in ETF flows
+          and a divergence between Bitcoin and Ethereum â€” mean for how investors
           should read the underlying structure of the rally.
         </P>
 
         <AdUnit />
 
         <H2 id="what-warsh-said">
-          What Kevin Warsh Said at Jackson Hole — and Why It Moved Markets
+          What Kevin Warsh Said at Jackson Hole â€” and Why It Moved Markets
         </H2>
         <P>
           Jackson Hole is the Federal Reserve's annual economic symposium in
           Wyoming, and it carries outsized market significance because Fed chairs
           have historically used the platform to preview major policy shifts.
           Kevin Warsh's August 30, 2026 speech was not a surprise in its
-          direction — it emphasised persistent inflation risks and reaffirmed the
+          direction â€” it emphasised persistent inflation risks and reaffirmed the
           Fed's commitment to its <strong>2% inflation objective</strong>.
         </P>
         <P>
@@ -276,7 +276,7 @@ function ArticlePage() {
 
         <div className="border-l-4 border-[#F7931A] bg-[#F7931A]/5 p-lg rounded-r-lg mb-md">
           <p className="font-headline-sm text-headline-sm text-primary font-bold">
-            August 30, 2026 — Key Data Points
+            August 30, 2026 â€” Key Data Points
           </p>
           <ul className="list-disc pl-lg space-y-xs font-body-md text-body-md text-on-surface mt-xs">
             <li>
@@ -299,7 +299,7 @@ function ArticlePage() {
         </div>
 
         <H2 id="etf-outflows-explained">
-          Why Bitcoin ETF Outflows Are a Meaningful Signal — but Not a Verdict
+          Why Bitcoin ETF Outflows Are a Meaningful Signal â€” but Not a Verdict
         </H2>
         <P>
           Understanding why ETF outflows move markets requires a brief look at
@@ -316,9 +316,9 @@ function ArticlePage() {
           That means ETF outflows translate directly into spot sell pressure.
         </P>
         <P>
-          After nine sessions of continuous inflows — reportedly totalling more
+          After nine sessions of continuous inflows â€” reportedly totalling more
           than <strong>$3 billion</strong> according to Bitcoin Magazine, citing
-          Farside data — the reversal carries weight. That multi-session inflow
+          Farside data â€” the reversal carries weight. That multi-session inflow
           run was itself cited as a key driver of Bitcoin's rally. Ending it
           removes a predictable and visible source of buying demand.
         </P>
@@ -336,7 +336,7 @@ function ArticlePage() {
         </H2>
         <P>
           The most analytically interesting data point from August 30 is not the
-          Bitcoin ETF outflow in isolation — it is the{" "}
+          Bitcoin ETF outflow in isolation â€” it is the{" "}
           <strong>
             simultaneous Ethereum ETF inflow of approximately $102.1 million
           </strong>
@@ -355,13 +355,13 @@ function ArticlePage() {
             because Ethereum's staking yield and layer-2 ecosystem provide a
             return profile that is less negatively affected by higher-for-longer
             rates. If this is the case, the total crypto market is not losing
-            institutional interest — it is reorganising it.
+            institutional interest â€” it is reorganising it.
           </li>
           <li>
             <strong>Independent buying on different narratives.</strong>{" "}
-            Ethereum's inflows may be driven by ETH-specific factors — upcoming
+            Ethereum's inflows may be driven by ETH-specific factors â€” upcoming
             protocol developments, staking yield comparisons, exchange listings
-            — that are unrelated to the Bitcoin/Fed dynamic. The two data points
+            â€” that are unrelated to the Bitcoin/Fed dynamic. The two data points
             would then be coincidental rather than causal.
           </li>
           <li>
@@ -383,7 +383,7 @@ function ArticlePage() {
         <AdUnit />
 
         <H2 id="macro-pressure-on-btc">
-          How a Hawkish Fed Creates Pressure on Bitcoin — and Why It Is Not the
+          How a Hawkish Fed Creates Pressure on Bitcoin â€” and Why It Is Not the
           Whole Story
         </H2>
         <P>
@@ -393,14 +393,14 @@ function ArticlePage() {
           against yield-bearing alternatives like government bonds and
           money-market funds. When the Federal Reserve signals that rates will
           remain elevated, the risk-free yield on safe assets rises. That
-          increases the opportunity cost of holding Bitcoin — you give up more
+          increases the opportunity cost of holding Bitcoin â€” you give up more
           guaranteed return to hold it.
         </P>
         <P>
           This relationship is real, but it is not deterministic. Bitcoin has
           previously rallied during periods of high interest rates when other
-          drivers — institutional adoption, regulatory clarity, halving-cycle
-          dynamics, or ETF flow momentum — were sufficiently strong to outweigh
+          drivers â€” institutional adoption, regulatory clarity, halving-cycle
+          dynamics, or ETF flow momentum â€” were sufficiently strong to outweigh
           the macro headwind. The bond-yield relationship matters more as a
           marginal influence than as a binary switch.
         </P>
@@ -427,7 +427,7 @@ function ArticlePage() {
             </li>
             <li>
               <strong>Risk-off event:</strong> Broad equity market decline
-              alongside crypto selling, with no ETH divergence — suggesting
+              alongside crypto selling, with no ETH divergence â€” suggesting
               macro exits rather than internal rotation.
             </li>
           </ul>
@@ -437,8 +437,8 @@ function ArticlePage() {
           The $6.4 Billion Options Expiry: Context, Not Cause
         </H2>
         <P>
-          Reports noted that a large Bitcoin options expiry — cited at
-          approximately <strong>$6.4 billion in notional value</strong> — was
+          Reports noted that a large Bitcoin options expiry â€” cited at
+          approximately <strong>$6.4 billion in notional value</strong> â€” was
           scheduled around this period. Options expiries can amplify short-term
           price volatility because dealers hedging their positions buy or sell
           the underlying asset as the expiry approaches, a phenomenon known as
@@ -469,7 +469,7 @@ function ArticlePage() {
           <li>
             <strong>ETF flow data is now a leading indicator worth tracking
             daily.</strong> The nine-session inflow streak was not a coincidence
-            — it corresponded with a specific period of rising institutional
+            â€” it corresponded with a specific period of rising institutional
             demand. Monitoring whether it resumes is more informative than
             watching the price alone.
           </li>
@@ -488,7 +488,7 @@ function ArticlePage() {
             </strong>{" "}
             If Ethereum ETF inflows persist while Bitcoin funds stagnate, it
             would represent a meaningful shift in how institutions are allocating
-            within the digital-asset space — with implications for relative
+            within the digital-asset space â€” with implications for relative
             price performance and portfolio construction.
           </li>
         </ul>
@@ -508,7 +508,7 @@ function ArticlePage() {
             </li>
             <li>
               U.S. spot Ethereum ETFs recorded approximately $102.1 million in
-              net inflows on the same day — a divergence that raises the
+              net inflows on the same day â€” a divergence that raises the
               possibility of institutional rotation rather than a full crypto
               market exit.
             </li>
@@ -556,7 +556,7 @@ function ArticlePage() {
               rel="noopener noreferrer"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              Axios — Coverage of Kevin Warsh's Jackson Hole Address, August
+              Axios â€” Coverage of Kevin Warsh's Jackson Hole Address, August
               2026
             </a>
           </li>
@@ -567,7 +567,7 @@ function ArticlePage() {
               rel="noopener noreferrer"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              CryptoRank — Bitcoin Market Response to Jackson Hole Speech,
+              CryptoRank â€” Bitcoin Market Response to Jackson Hole Speech,
               August 30, 2026
             </a>
           </li>
@@ -578,7 +578,7 @@ function ArticlePage() {
               rel="noopener noreferrer"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              Crypto.news — Bitcoin ETF Outflows Report, August 30, 2026
+              Crypto.news â€” Bitcoin ETF Outflows Report, August 30, 2026
             </a>
           </li>
           <li>
@@ -588,7 +588,7 @@ function ArticlePage() {
               rel="noopener noreferrer"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              Binance News — ETF Flow Summary Citing Farside Data, August 30,
+              Binance News â€” ETF Flow Summary Citing Farside Data, August 30,
               2026
             </a>
           </li>
@@ -599,7 +599,7 @@ function ArticlePage() {
               rel="noopener noreferrer"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              Bitcoin Magazine — ETF-Driven Rally and Subsequent Pullback
+              Bitcoin Magazine â€” ETF-Driven Rally and Subsequent Pullback
               Analysis, August 2026
             </a>
           </li>
@@ -610,7 +610,7 @@ function ArticlePage() {
               rel="noopener noreferrer"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              Farside Investors — Bitcoin ETF Flow Tracker
+              Farside Investors â€” Bitcoin ETF Flow Tracker
             </a>
           </li>
         </ul>
