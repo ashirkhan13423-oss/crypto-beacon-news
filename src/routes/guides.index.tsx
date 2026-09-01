@@ -19,6 +19,11 @@ const collectionSchema = {
   hasPart: [
     {
       "@type": "WebPage",
+      name: "Cryptocurrency Regulation Hub: Complete Guide",
+      url: "https://www.cryptobeacon.site/guides/crypto-regulation-hub",
+    },
+    {
+      "@type": "WebPage",
       name: "What Is a Short Squeeze in Crypto? Mechanics Explained",
       url: "https://www.cryptobeacon.site/guides/what-is-a-short-squeeze-crypto-explained",
     },
@@ -107,6 +112,33 @@ function GuidesHub() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+          <Link
+            to="/guides/crypto-regulation-hub"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden border-b border-outline-variant">
+              <img
+                src={readNewsHero}
+                alt="Illustration showing a magnifying glass verifying charts and filtering news hype"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width={1600}
+                height={900}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Guides · Hub
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Cryptocurrency Regulation Hub: Complete Guide
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                The definitive cryptocurrency regulation hub — how crypto regulation works globally, KYC and AML explained, exchange licensing, and crypto taxes.
+              </p>
+            </div>
+          </Link>
+
           <Link
             to="/guides/what-is-a-short-squeeze-crypto-explained"
             className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"

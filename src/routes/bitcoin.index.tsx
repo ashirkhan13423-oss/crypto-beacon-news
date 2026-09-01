@@ -19,6 +19,11 @@ const collectionSchema = {
   hasPart: [
     {
       "@type": "WebPage",
+      name: "Bitcoin Wallets: Complete Beginner's Guide",
+      url: "https://www.cryptobeacon.site/bitcoin/bitcoin-wallets-complete-guide",
+    },
+    {
+      "@type": "WebPage",
       name: "How Do Bitcoin ETFs Actually Move the Price?",
       url: "https://www.cryptobeacon.site/bitcoin/how-do-bitcoin-etfs-affect-price",
     },
@@ -110,6 +115,33 @@ function BitcoinPage() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+          <Link
+            to="/bitcoin/bitcoin-wallets-complete-guide"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={walletHero}
+                alt="Illustration contrasting a hot software wallet and a cold hardware wallet"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1024}
+                height={1024}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Bitcoin · Hub
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Bitcoin Wallets: Complete Beginner's Guide
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                Everything you need to know about Bitcoin wallets — hot vs cold, seed phrases, private keys, and how to choose the right one for self-custody.
+              </p>
+            </div>
+          </Link>
+
           <Link
             to="/bitcoin/how-do-bitcoin-etfs-affect-price"
             className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"

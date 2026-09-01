@@ -17,6 +17,11 @@ const collectionSchema = {
   hasPart: [
     {
       "@type": "WebPage",
+      name: "Ethereum: Complete Beginner's Guide",
+      url: "https://www.cryptobeacon.site/ethereum/ethereum-complete-beginners-guide",
+    },
+    {
+      "@type": "WebPage",
       name: "Can You Send Bitcoin to an Ethereum Address? What Actually Happens",
       url: "https://www.cryptobeacon.site/ethereum/can-you-send-bitcoin-to-an-ethereum-address",
     },
@@ -85,6 +90,33 @@ function EthereumPage() {
           </p>
         </header>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+          <Link
+            to="/ethereum/ethereum-complete-beginners-guide"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={defiHero}
+                alt="Glowing Ethereum logo at the center of an interconnected DeFi protocol ecosystem"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Ethereum · Hub
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Ethereum: Complete Beginner's Guide
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                The ultimate guide to understanding Ethereum — how smart contracts work, the shift to Proof of Stake, Layer 2 scaling, and the DeFi ecosystem.
+              </p>
+            </div>
+          </Link>
+
           <Link
             to="/ethereum/can-you-send-bitcoin-to-an-ethereum-address"
             className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"

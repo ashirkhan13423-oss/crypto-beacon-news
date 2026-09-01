@@ -15,6 +15,11 @@ const collectionSchema = {
   hasPart: [
     {
       "@type": "WebPage",
+      name: "Crypto Security Hub",
+      url: "https://www.cryptobeacon.site/security/crypto-security-hub",
+    },
+    {
+      "@type": "WebPage",
       name: "How to Store Your Crypto Seed Phrase Safely",
       url: "https://www.cryptobeacon.site/security/how-to-store-crypto-seed-phrase-safely",
     },
@@ -80,6 +85,33 @@ function SecurityPage() {
           </p>
         </header>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+          <Link
+            to="/security/crypto-security-hub"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={seedVault}
+                alt="Illustration of a secure vault representing safe crypto seed phrase storage"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Security · Hub
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Crypto Security Hub
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                The ultimate hub for cryptocurrency security — protecting your seed phrases, avoiding phishing scams, securing exchange accounts, and verifying transactions.
+              </p>
+            </div>
+          </Link>
+
           <Link
             to="/security/how-to-store-crypto-seed-phrase-safely"
             className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
