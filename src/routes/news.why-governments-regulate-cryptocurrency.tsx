@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
@@ -151,7 +151,7 @@ function ArticlePage() {
           </ol>
         </nav>
         <span className="inline-block px-sm py-xs rounded-full bg-[#0F9D58] text-white font-label-caps text-[11px] uppercase tracking-widest font-semibold">News</span>
-        <h1 className="mt-md font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-primary leading-tight">Why Do Governments Regulate Cryptocurrency? Global Frameworks &amp; User Impact</h1>
+        <h1 className="mt-md font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-primary leading-tight">Why Do Governments Regulate Cryptocurrency? Global Frameworks & User Impact</h1>
         <Author publishedDate={<time dateTime={PUBLISHED}>August 15, 2026</time>} readTime="8 min read" />
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]"><img fetchpriority="high" src={hero} alt="Illustration representing government regulatory oversight of cryptocurrency" width={1536} height={896} className="w-full h-auto" /></figure>
         <P>Cryptocurrency was engineered to function permissionlessly — operating across borderless, peer-to-peer computer networks without relying on commercial banks or central governments. Yet over the past decade, financial authorities worldwide have passed an unprecedented array of laws, licensing requirements, and compliance standards governing digital assets.</P>
@@ -185,7 +185,7 @@ function ArticlePage() {
             <P>The EU implemented the Markets in Crypto-Assets (MiCA) framework, providing a single, comprehensive regulatory standard across all 27 member states. MiCA establishes clear licensing rules for Crypto Asset Service Providers (CASPs), mandates 1:1 liquid reserve backing for fiat-backed stablecoins, and enforces strict disclosure standards for token issuers.</P>
           </div>
           <div className="p-lg rounded-xl border border-outline-variant bg-surface-container-lowest">
-            <h3 className="font-headline-sm text-headline-sm text-primary mb-xs flex items-center gap-xs"><Building2 className="w-5 h-5 text-secondary" /> United States — Agency Oversight (SEC &amp; CFTC)</h3>
+            <h3 className="font-headline-sm text-headline-sm text-primary mb-xs flex items-center gap-xs"><Building2 className="w-5 h-5 text-secondary" /> United States — Agency Oversight (SEC & CFTC)</h3>
             <P>In contrast to the EU's tailored legislation, the United States has largely relied on existing 20th-century financial statutes. The Securities and Exchange Commission (SEC) applies the Howey Test to determine whether specific tokens constitute unregistered securities, while the Commodity Futures Trading Commission (CFTC) oversees digital commodities like Bitcoin and Ethereum futures.</P>
           </div>
           <div className="p-lg rounded-xl border border-outline-variant bg-surface-container-lowest">
@@ -244,14 +244,14 @@ function ArticlePage() {
             </details>
           ))}
         </div>
-        <H2 id="sources">7. Primary Sources &amp; References</H2>
+        <H2 id="sources">7. Primary Sources & References</H2>
         <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
           <li><a href="https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets.html" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]">Financial Action Task Force (FATF) — Guidance for Virtual Assets and VASPs</a></li>
           <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32023R1114" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]">European Parliament — Regulation (EU) 2023/1114 on Markets in Crypto-Assets (MiCA)</a></li>
           <li><a href="https://www.sec.gov/investor/pubs/regsecurities.htm" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]">U.S. Securities and Exchange Commission (SEC) — Framework for Digital Asset Investment Contracts</a></li>
         </ul>
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
-          <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">Financial &amp; Legal Disclaimer</h3>
+          <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">Financial & Legal Disclaimer</h3>
           <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">This article is for educational and informational purposes only and does not constitute legal, tax, or financial advice. Regulatory policies vary significantly by jurisdiction and change frequently. Consult a qualified legal or tax professional for your specific circumstances.</p>
         </div>
 
@@ -292,3 +292,4 @@ function ArticlePage() {
     </div>
   );
 }
+

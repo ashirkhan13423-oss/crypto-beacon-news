@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
@@ -151,7 +151,7 @@ function ArticlePage() {
         </span>
 
         <h1 className="mt-md font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-primary leading-tight">
-          What Is Ethereum Staking? Proof-of-Stake &amp; Yield Mechanics Explained
+          What Is Ethereum Staking? Proof-of-Stake & Yield Mechanics Explained
         </h1>
 
         <Author
@@ -356,4 +356,5 @@ function ArticlePage() {
     </div>
   );
 }
+
 

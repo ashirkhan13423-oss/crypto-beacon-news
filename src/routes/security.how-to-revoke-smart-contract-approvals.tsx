@@ -286,6 +286,16 @@ function ArticlePage() {
           </li>
           <li>
             <a
+              href="https://etherscan.io/tokenapprovalchecker"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Etherscan — Token Approval Checker
+            </a>
+          </li>
+          <li>
+            <a
               href="https://eips.ethereum.org/EIPS/eip-20"
               target="_blank"
               rel="noopener noreferrer"

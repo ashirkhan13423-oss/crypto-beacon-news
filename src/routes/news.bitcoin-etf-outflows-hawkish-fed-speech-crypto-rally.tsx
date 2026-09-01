@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AdUnit } from "@/components/AdUnit";
@@ -182,7 +182,7 @@ function ArticlePage() {
             </li>
             <li aria-hidden>/</li>
             <li className="text-primary text-ellipsis overflow-hidden whitespace-nowrap">
-              Bitcoin ETF Outflows &amp; Fed Speech
+              Bitcoin ETF Outflows & Fed Speech
             </li>
           </ol>
         </nav>
@@ -675,3 +675,4 @@ function ArticlePage() {
     </div>
   );
 }
+

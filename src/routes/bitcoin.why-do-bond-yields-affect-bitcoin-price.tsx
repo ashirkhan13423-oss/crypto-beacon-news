@@ -242,6 +242,40 @@ function ArticlePage() {
           If interest rates are cut, fiat currencies tend to lose purchasing power over time relative to scarce, hard assets. Because Bitcoin has an immutable, hard-capped supply of 21 million coins (as detailed in our halving coverage), investors view it as a structural hedge against monetary expansion. When falling yields signal upcoming interest rate cuts, demand for fixed-supply hedges increases.
         </P>
 
+        <H2 id="faq">Frequently Asked Questions</H2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
+          {faqs.map((f) => (
+            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low">
+              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">{f.q}</h3>
+              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
+            </div>
+          ))}
+        </div>
+
+        <H2 id="sources">Sources</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://www.federalreserve.gov/monetarypolicy.htm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              US Federal Reserve — Monetary Policy
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.investopedia.com/terms/o/opportunitycost.asp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Investopedia — Opportunity Cost
+            </a>
+          </li>
+        </ul>
+
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Macroeconomic Disclaimer

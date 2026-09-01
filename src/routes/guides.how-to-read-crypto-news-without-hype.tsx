@@ -226,6 +226,40 @@ function ArticlePage() {
           This telemetry represents factual, verifiable activity on the blockchain, providing a solid anchor away from speculative trading chatter.
         </P>
 
+        <H2 id="faq">Frequently Asked Questions</H2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
+          {faqs.map((f) => (
+            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low">
+              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">{f.q}</h3>
+              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
+            </div>
+          ))}
+        </div>
+
+        <H2 id="sources">Sources</H2>
+        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
+          <li>
+            <a
+              href="https://www.reuters.com/technology/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Reuters — Technology News
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.coindesk.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              CoinDesk — Crypto Market News
+            </a>
+          </li>
+        </ul>
+
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Editorial Integrity Statement

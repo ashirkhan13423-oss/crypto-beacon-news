@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
@@ -143,7 +143,7 @@ function ArticlePage() {
               <ChevronRight className="w-3 h-3" />
             </li>
             <li className="text-primary font-medium truncate">
-              Ethereum Layer 2 Scaling &amp; Rollups
+              Ethereum Layer 2 Scaling & Rollups
             </li>
           </ol>
         </nav>
@@ -153,7 +153,7 @@ function ArticlePage() {
         </span>
 
         <h1 className="mt-md font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-primary leading-tight">
-          Ethereum Layer 2 Scaling &amp; Rollups Explained
+          Ethereum Layer 2 Scaling & Rollups Explained
         </h1>
 
         <Author
@@ -222,7 +222,7 @@ function ArticlePage() {
 
           <section className="bg-surface-container-low p-lg rounded-xl border border-outline-variant">
             <h2 className="font-headline-md text-headline-md text-primary mb-md">
-              Proto-Danksharding (EIP-4844) &amp; Fee Reduction
+              Proto-Danksharding (EIP-4844) & Fee Reduction
             </h2>
             <p className="text-body-md mb-sm">
               EIP-4844 introduced specialized data containers called <strong>blobs</strong> to
@@ -321,4 +321,5 @@ function ArticlePage() {
     </div>
   );
 }
+
 

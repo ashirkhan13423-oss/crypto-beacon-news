@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
@@ -202,11 +202,11 @@ function ArticlePage() {
         </nav>
 
         <span className="inline-block px-sm py-xs rounded-full bg-[#0F9D58] text-white font-label-caps text-[11px] uppercase tracking-widest font-semibold">
-          Policy &amp; Legal Analysis
+          Policy & Legal Analysis
         </span>
 
         <h1 className="mt-md font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-primary leading-tight">
-          Why Do Governments Regulate Cryptocurrency? Global Frameworks &amp; User Impact
+          Why Do Governments Regulate Cryptocurrency? Global Frameworks & User Impact
         </h1>
 
         <Author
@@ -331,7 +331,7 @@ function ArticlePage() {
           <div className="p-lg rounded-xl border border-outline-variant bg-surface-container-lowest">
             <h3 className="font-headline-sm text-headline-sm text-primary mb-xs flex items-center gap-xs">
               <Building2 className="w-5 h-5 text-secondary" />
-              United States — Agency Oversight (SEC &amp; CFTC)
+              United States — Agency Oversight (SEC & CFTC)
             </h3>
             <P>
               In contrast to the EU's tailored legislation, the United States has largely relied on
@@ -358,7 +358,7 @@ function ArticlePage() {
           <div className="p-lg rounded-xl border border-secondary/30 bg-secondary/5">
             <h3 className="font-headline-sm text-headline-sm text-primary mb-xs flex items-center gap-xs">
               <Gavel className="w-5 h-5 text-secondary" />
-              Executive Policy &amp; Political Shift: Presidential Crypto Policy
+              Executive Policy & Political Shift: Presidential Crypto Policy
             </h3>
             <P>
               Political candidates and executive administrations have placed digital assets at the
@@ -487,7 +487,7 @@ function ArticlePage() {
           ))}
         </div>
 
-        <H2 id="sources">7. Primary Sources &amp; References</H2>
+        <H2 id="sources">7. Primary Sources & References</H2>
         <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
           <li>
             <a
@@ -524,7 +524,7 @@ function ArticlePage() {
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
-            Financial &amp; Legal Disclaimer
+            Financial & Legal Disclaimer
           </h3>
           <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
             This article is for educational and informational purposes only and does not constitute
@@ -571,5 +571,6 @@ function ArticlePage() {
     </div>
   );
 }
+
 
 
