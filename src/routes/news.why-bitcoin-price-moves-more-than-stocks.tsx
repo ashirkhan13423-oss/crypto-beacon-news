@@ -408,6 +408,15 @@ function ArticlePage() {
           <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
             <Link
+              to="/bitcoin/how-do-bitcoin-etfs-affect-price"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                How Do Bitcoin ETFs Actually Affect the Price?
+              </h3>
+            </Link>
+            <Link
               to="/bitcoin/what-is-the-bitcoin-halving"
               className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
             >
@@ -423,15 +432,6 @@ function ArticlePage() {
               <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
               <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
                 What Is a Bitcoin Wallet?
-              </h3>
-            </Link>
-            <Link
-              to="/guides/not-your-keys-not-your-coins-meaning"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Not Your Keys, Not Your Coins
               </h3>
             </Link>
           </div>
