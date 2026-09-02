@@ -178,7 +178,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high"
+            fetchPriority="high"
             src={hero}
             alt="Macroeconomic diagram showing falling bond yield charts on the left and capital flows leading to a rising Bitcoin chart on the right"
             width={1536}

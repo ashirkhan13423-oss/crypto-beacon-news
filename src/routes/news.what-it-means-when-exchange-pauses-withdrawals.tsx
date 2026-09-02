@@ -9,13 +9,13 @@ import { Plus } from "lucide-react";
 const URL = "https://www.cryptobeacon.site/news/what-it-means-when-exchange-pauses-withdrawals";
 const TITLE = "What Does It Mean When an Exchange Pauses Withdrawals? | CryptoBeacon";
 const DESC =
-  "Your crypto exchange paused withdrawals â€” is that normal or a red flag? A comprehensive guide to understanding exchange liquidity, routine maintenance, and warning signs of insolvency.";
+  "Your crypto exchange paused withdrawals — is that normal or a red flag? A comprehensive guide to understanding exchange liquidity, routine maintenance, and warning signs of insolvency.";
 const PUBLISHED = "2026-08-04";
 
 const faqs: { q: string; a: string }[] = [
   {
     q: "Is a withdrawal pause always a bad sign?",
-    a: "No â€” most are routine, short, asset-specific, and clearly explained. The combination of platform-wide scope, extended duration, and vague communication is what should raise concern, not a pause alone.",
+    a: "No — most are routine, short, asset-specific, and clearly explained. The combination of platform-wide scope, extended duration, and vague communication is what should raise concern, not a pause alone.",
   },
   {
     q: "What should I do if my exchange withdrawal is frozen?",
@@ -23,7 +23,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Does a withdrawal pause affect crypto in my personal wallet?",
-    a: "No â€” a withdrawal pause is a custodial platform issue. Crypto held in a wallet where you control the private keys is entirely unaffected by any exchange's operational status.",
+    a: "No — a withdrawal pause is a custodial platform issue. Crypto held in a wallet where you control the private keys is entirely unaffected by any exchange's operational status.",
   },
 ];
 
@@ -177,7 +177,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high" src={hero}
+            fetchPriority="high" src={hero}
             alt="Illustration representing a paused crypto withdrawal process"
             width={1536}
             height={896}
@@ -186,8 +186,8 @@ function ArticlePage() {
         </figure>
 
         <P>
-          Seeing a withdrawal button greyed out â€” or a banner saying withdrawals are "temporarily
-          paused" â€” is unsettling the first time it happens. After all, one of the core promises
+          Seeing a withdrawal button greyed out — or a banner saying withdrawals are "temporarily
+          paused" — is unsettling the first time it happens. After all, one of the core promises
           of cryptocurrency is uninterrupted, permissionless access to value. When a centralized
           platform stands in the way of that access, it naturally triggers anxiety. Most of the time,
           it's routine. Occasionally, it's a genuine warning sign. The difference matters, and it's
@@ -312,7 +312,7 @@ function ArticlePage() {
         </div>
 
         <P>
-          No single signal proves anything on its own â€” it's the combination and duration that
+          No single signal proves anything on its own — it's the combination and duration that
           matters most. A platform that is transparent, provides a clear timeline, and only pauses
           a single asset due to a network upgrade is behaving responsibly. A platform that halts
           all withdrawals indefinitely while its executives post vague assurances on social media
@@ -338,7 +338,7 @@ function ArticlePage() {
             very different situation than an unexplained, all-assets freeze.
           </li>
           <li>
-            <strong>Give it a reasonable, defined window before assuming the worst</strong> â€” most
+            <strong>Give it a reasonable, defined window before assuming the worst</strong> — most
             pauses genuinely resolve within the announced timeframe. Network upgrades, for instance,
             often require several hours to ensure network stability before exchanges re-enable transfers.
           </li>
@@ -374,7 +374,7 @@ function ArticlePage() {
           >
             private keys
           </Link>
-          , is entirely unaffected by any individual platform's operational issues â€” for better or
+          , is entirely unaffected by any individual platform's operational issues — for better or
           worse, that's the trade-off self-custody involves.
         </P>
 
@@ -382,7 +382,7 @@ function ArticlePage() {
         <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
           <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
             <li>
-              Most withdrawal pauses are routine â€” asset-specific, short, and clearly explained.
+              Most withdrawal pauses are routine — asset-specific, short, and clearly explained.
             </li>
             <li>
               The warning signs to watch for are scope (platform-wide), duration (extended or
@@ -393,7 +393,7 @@ function ArticlePage() {
               media speculation in the moment.
             </li>
             <li>
-              This scenario only affects custodial holdings â€” it's a direct, practical illustration
+              This scenario only affects custodial holdings — it's a direct, practical illustration
               of why the exchange-vs-wallet custody decision matters.
             </li>
           </ul>
@@ -425,7 +425,7 @@ function ArticlePage() {
               rel="noopener noreferrer"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              U.S. SEC â€” Investor Alert: Bitcoin and Other Virtual Currency-Related Investments
+              U.S. SEC — Investor Alert: Bitcoin and Other Virtual Currency-Related Investments
             </a>
           </li>
           <li>
@@ -435,7 +435,7 @@ function ArticlePage() {
               rel="noopener noreferrer"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              FTC â€” What to Know About Cryptocurrency and Scams
+              FTC — What to Know About Cryptocurrency and Scams
             </a>
           </li>
           <li>
@@ -445,7 +445,7 @@ function ArticlePage() {
               rel="noopener noreferrer"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              CFTC â€” Customer Advisory: Understand the Risks of Virtual Currency Trading
+              CFTC — Customer Advisory: Understand the Risks of Virtual Currency Trading
             </a>
           </li>
         </ul>
@@ -456,7 +456,7 @@ function ArticlePage() {
           </h3>
           <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
             This article is for informational and educational purposes only and does not reference
-            any specific company, platform, or incident. It isn't financial advice â€” always consult
+            any specific company, platform, or incident. It isn't financial advice — always consult
             a platform's official communications for guidance on your specific situation.
           </p>
         </div>

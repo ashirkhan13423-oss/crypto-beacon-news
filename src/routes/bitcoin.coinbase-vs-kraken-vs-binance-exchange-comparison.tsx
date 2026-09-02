@@ -288,7 +288,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high"
+            fetchPriority="high"
             src={hero}
             alt="Three smartphone screens showing abstract crypto trading interfaces on a dark surface with blue and orange lighting"
             width={1536}

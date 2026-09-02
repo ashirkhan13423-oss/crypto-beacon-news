@@ -52,6 +52,7 @@ import { Route as NewsWhatItMeansWhenExchangePausesWithdrawalsRouteImport } from
 import { Route as NewsWhatIsTheClarityActCryptoRouteImport } from './routes/news.what-is-the-clarity-act-crypto'
 import { Route as NewsWhatIsABlockchainForkRouteImport } from './routes/news.what-is-a-blockchain-fork'
 import { Route as NewsEthereumMergeTwoYearsLaterRouteImport } from './routes/news.ethereum-merge-two-years-later'
+import { Route as NewsBitcoinSeptemberRallyMacroTestRouteImport } from './routes/news.bitcoin-september-rally-macro-test'
 import { Route as NewsBitcoinRallyAugust2026RouteImport } from './routes/news.bitcoin-rally-august-2026'
 import { Route as NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRouteImport } from './routes/news.bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
 import { Route as GuidesWhyGovernmentsRegulateCryptocurrencyRouteImport } from './routes/guides.why-governments-regulate-cryptocurrency'
@@ -352,6 +353,12 @@ const NewsEthereumMergeTwoYearsLaterRoute =
   NewsEthereumMergeTwoYearsLaterRouteImport.update({
     id: '/ethereum-merge-two-years-later',
     path: '/ethereum-merge-two-years-later',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsBitcoinSeptemberRallyMacroTestRoute =
+  NewsBitcoinSeptemberRallyMacroTestRouteImport.update({
+    id: '/bitcoin-september-rally-macro-test',
+    path: '/bitcoin-september-rally-macro-test',
     getParentRoute: () => NewsRoute,
   } as any)
 const NewsBitcoinRallyAugust2026Route =
@@ -792,6 +799,7 @@ export interface FileRoutesByFullPath {
   '/guides/why-governments-regulate-cryptocurrency': typeof GuidesWhyGovernmentsRegulateCryptocurrencyRoute
   '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally': typeof NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute
   '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
+  '/news/bitcoin-september-rally-macro-test': typeof NewsBitcoinSeptemberRallyMacroTestRoute
   '/news/ethereum-merge-two-years-later': typeof NewsEthereumMergeTwoYearsLaterRoute
   '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
@@ -893,6 +901,7 @@ export interface FileRoutesByTo {
   '/guides/why-governments-regulate-cryptocurrency': typeof GuidesWhyGovernmentsRegulateCryptocurrencyRoute
   '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally': typeof NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute
   '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
+  '/news/bitcoin-september-rally-macro-test': typeof NewsBitcoinSeptemberRallyMacroTestRoute
   '/news/ethereum-merge-two-years-later': typeof NewsEthereumMergeTwoYearsLaterRoute
   '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
@@ -1000,6 +1009,7 @@ export interface FileRoutesById {
   '/guides/why-governments-regulate-cryptocurrency': typeof GuidesWhyGovernmentsRegulateCryptocurrencyRoute
   '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally': typeof NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute
   '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
+  '/news/bitcoin-september-rally-macro-test': typeof NewsBitcoinSeptemberRallyMacroTestRoute
   '/news/ethereum-merge-two-years-later': typeof NewsEthereumMergeTwoYearsLaterRoute
   '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
@@ -1108,6 +1118,7 @@ export interface FileRouteTypes {
     | '/guides/why-governments-regulate-cryptocurrency'
     | '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
     | '/news/bitcoin-rally-august-2026'
+    | '/news/bitcoin-september-rally-macro-test'
     | '/news/ethereum-merge-two-years-later'
     | '/news/what-is-a-blockchain-fork'
     | '/news/what-is-the-clarity-act-crypto'
@@ -1209,6 +1220,7 @@ export interface FileRouteTypes {
     | '/guides/why-governments-regulate-cryptocurrency'
     | '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
     | '/news/bitcoin-rally-august-2026'
+    | '/news/bitcoin-september-rally-macro-test'
     | '/news/ethereum-merge-two-years-later'
     | '/news/what-is-a-blockchain-fork'
     | '/news/what-is-the-clarity-act-crypto'
@@ -1315,6 +1327,7 @@ export interface FileRouteTypes {
     | '/guides/why-governments-regulate-cryptocurrency'
     | '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
     | '/news/bitcoin-rally-august-2026'
+    | '/news/bitcoin-september-rally-macro-test'
     | '/news/ethereum-merge-two-years-later'
     | '/news/what-is-a-blockchain-fork'
     | '/news/what-is-the-clarity-act-crypto'
@@ -1664,6 +1677,13 @@ declare module '@tanstack/react-router' {
       path: '/ethereum-merge-two-years-later'
       fullPath: '/news/ethereum-merge-two-years-later'
       preLoaderRoute: typeof NewsEthereumMergeTwoYearsLaterRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/bitcoin-september-rally-macro-test': {
+      id: '/news/bitcoin-september-rally-macro-test'
+      path: '/bitcoin-september-rally-macro-test'
+      fullPath: '/news/bitcoin-september-rally-macro-test'
+      preLoaderRoute: typeof NewsBitcoinSeptemberRallyMacroTestRouteImport
       parentRoute: typeof NewsRoute
     }
     '/news/bitcoin-rally-august-2026': {
@@ -2285,6 +2305,7 @@ const GuidesRouteWithChildren =
 interface NewsRouteChildren {
   NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute: typeof NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute
   NewsBitcoinRallyAugust2026Route: typeof NewsBitcoinRallyAugust2026Route
+  NewsBitcoinSeptemberRallyMacroTestRoute: typeof NewsBitcoinSeptemberRallyMacroTestRoute
   NewsEthereumMergeTwoYearsLaterRoute: typeof NewsEthereumMergeTwoYearsLaterRoute
   NewsWhatIsABlockchainForkRoute: typeof NewsWhatIsABlockchainForkRoute
   NewsWhatIsTheClarityActCryptoRoute: typeof NewsWhatIsTheClarityActCryptoRoute
@@ -2298,6 +2319,8 @@ const NewsRouteChildren: NewsRouteChildren = {
   NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute:
     NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute,
   NewsBitcoinRallyAugust2026Route: NewsBitcoinRallyAugust2026Route,
+  NewsBitcoinSeptemberRallyMacroTestRoute:
+    NewsBitcoinSeptemberRallyMacroTestRoute,
   NewsEthereumMergeTwoYearsLaterRoute: NewsEthereumMergeTwoYearsLaterRoute,
   NewsWhatIsABlockchainForkRoute: NewsWhatIsABlockchainForkRoute,
   NewsWhatIsTheClarityActCryptoRoute: NewsWhatIsTheClarityActCryptoRoute,
@@ -2391,13 +2414,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

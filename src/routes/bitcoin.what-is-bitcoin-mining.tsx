@@ -247,7 +247,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high" src={hero}
+            fetchPriority="high" src={hero}
             alt="Abstract illustration of Bitcoin mining with glowing coins and computational nodes"
             width={1024}
             height={1024}

@@ -215,7 +215,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high"
+            fetchPriority="high"
             src={hero}
             alt="Illustration showing the Federal Reserve seal with downward red arrows on the left, a Bitcoin chart with a dip in the centre, and Ethereum with upward green arrows on the right, representing ETF flow divergence on August 30 2026"
             width={1536}

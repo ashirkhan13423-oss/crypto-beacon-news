@@ -195,7 +195,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high"
+            fetchPriority="high"
             src={hero}
             alt="Ethereum diamond logo merging with a proof-of-stake network symbol against a dark space background"
             width={1536}

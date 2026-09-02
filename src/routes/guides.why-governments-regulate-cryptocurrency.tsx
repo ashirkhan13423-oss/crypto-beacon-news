@@ -216,7 +216,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high" src={hero}
+            fetchPriority="high" src={hero}
             alt="Illustration representing government regulatory oversight of cryptocurrency"
             width={1536}
             height={896}

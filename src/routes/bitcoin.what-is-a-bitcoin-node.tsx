@@ -181,7 +181,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high"
+            fetchPriority="high"
             src={hero}
             alt="Glowing Bitcoin network node connected to multiple peer nodes via luminous network lines"
             width={1536}

@@ -251,7 +251,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high" src={hero}
+            fetchPriority="high" src={hero}
             alt="Illustration representing crypto self-custody and private key ownership"
             width={1600}
             height={900}

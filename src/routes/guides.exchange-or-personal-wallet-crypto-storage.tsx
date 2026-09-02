@@ -181,7 +181,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high" src={hero}
+            fetchPriority="high" src={hero}
             alt="Illustration representing the choice between exchange storage and personal wallet custody"
             width={1600}
             height={900}

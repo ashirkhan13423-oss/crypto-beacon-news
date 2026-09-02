@@ -177,7 +177,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high" src={hero}
+            fetchPriority="high" src={hero}
             alt="Abstract digital illustration representing a glowing digital wallet next to a solid disconnected metallic vault"
             width={1536}
             height={896}

@@ -178,7 +178,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high"
+            fetchPriority="high"
             src={hero}
             alt="Illustration showing a green breakout candle and liquidation events representing a crypto short squeeze"
             width={1536}

@@ -233,7 +233,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high"
+            fetchPriority="high"
             src={hero}
             alt="Abstract balance scale with glowing Bitcoin and Ethereum coins on each side, surrounded by portfolio pie-chart rings on a dark navy background"
             width={1536}

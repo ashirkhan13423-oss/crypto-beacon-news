@@ -186,7 +186,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high"
+            fetchPriority="high"
             src={hero}
             alt="Glowing MetaMask fox logo surrounded by Ethereum blockchain network nodes on a dark purple-teal background"
             width={1536}

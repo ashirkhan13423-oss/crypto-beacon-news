@@ -181,7 +181,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high"
+            fetchPriority="high"
             src={hero}
             alt="Glowing teal financial chart showing steady upward steps representing dollar-cost averaging in crypto"
             width={1536}

@@ -1,4 +1,4 @@
-﻿import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
@@ -22,7 +22,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Is a blockchain fork a sign something has gone wrong?",
-    a: "Not necessarily â€” many forks are planned, well-supported upgrades. Contentious forks do reflect a real disagreement, but that's different from a technical failure.",
+    a: "Not necessarily — many forks are planned, well-supported upgrades. Contentious forks do reflect a real disagreement, but that's different from a technical failure.",
   },
 ];
 
@@ -177,7 +177,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high" src={hero}
+            fetchPriority="high" src={hero}
             alt="Abstract illustration representing a blockchain splitting into two separate paths"
             width={1536}
             height={896}
@@ -186,8 +186,8 @@ function ArticlePage() {
         </figure>
 
         <P>
-          If you've ever noticed two cryptocurrencies with confusingly similar names â€” Bitcoin and
-          Bitcoin Cash, Ethereum and Ethereum Classic â€” you've encountered the result of a
+          If you've ever noticed two cryptocurrencies with confusingly similar names — Bitcoin and
+          Bitcoin Cash, Ethereum and Ethereum Classic — you've encountered the result of a
           blockchain fork. This guide explains what a fork actually is, why they happen, and what it
           means when one occurs.
         </P>
@@ -333,22 +333,22 @@ function ArticlePage() {
           If you hold the original asset in a wallet where you control the private keys at the
           moment of a contentious hard fork, you generally end up with a balance on both resulting
           chains, since the transaction history is shared up to the split point. Accessing the new
-          chain's balance typically requires wallet software that specifically supports it â€” it
+          chain's balance typically requires wallet software that specifically supports it — it
           doesn't happen automatically inside every wallet.
         </P>
         <P>
           If your coins are held on an exchange at the time of a fork, whether you receive the new
-          asset depends entirely on that platform's individual policy â€” some list and credit new
+          asset depends entirely on that platform's individual policy — some list and credit new
           fork assets, others don't.
         </P>
 
         <H2 id="is-a-fork-good-or-bad">Is a Fork Good or Bad?</H2>
         <P>
-          Neither, inherently â€” a fork is simply a mechanism for change, and its outcome depends
+          Neither, inherently — a fork is simply a mechanism for change, and its outcome depends
           entirely on the specific situation. A well-supported planned upgrade is usually a routine,
           low-drama event. A contentious split reflects a genuine disagreement within a community
           and can fragment attention, developer effort, and network security across two smaller
-          chains instead of one larger one. Neither outcome is guaranteed in advance â€” evaluating a
+          chains instead of one larger one. Neither outcome is guaranteed in advance — evaluating a
           specific fork means looking at the situation on its own terms.
         </P>
 
@@ -356,7 +356,7 @@ function ArticlePage() {
         <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
           <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
             <li>
-              A fork happens when a blockchain's rule set changes â€” either compatibly (soft fork) or
+              A fork happens when a blockchain's rule set changes — either compatibly (soft fork) or
               incompatibly (hard fork).
             </li>
             <li>
@@ -368,7 +368,7 @@ function ArticlePage() {
               balance on both chains, though accessing it may require specific wallet support.
             </li>
             <li>
-              A fork's outcome â€” whether it strengthens or fragments a project â€” depends on the
+              A fork's outcome — whether it strengthens or fragments a project — depends on the
               specific case, not the mechanism itself.
             </li>
           </ul>
@@ -398,7 +398,7 @@ function ArticlePage() {
               rel="noopener noreferrer"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              Bitcoin Wiki â€” Fork (hard forks, soft forks, and chain splits explained)
+              Bitcoin Wiki — Fork (hard forks, soft forks, and chain splits explained)
             </a>
           </li>
           <li>
@@ -408,7 +408,7 @@ function ArticlePage() {
               rel="noopener noreferrer"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              Ethereum.org â€” Consensus Mechanisms (how a network agrees on rules and upgrades)
+              Ethereum.org — Consensus Mechanisms (how a network agrees on rules and upgrades)
             </a>
           </li>
           <li>
@@ -418,7 +418,7 @@ function ArticlePage() {
               rel="noopener noreferrer"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              Bitcoin.org â€” Frequently Asked Questions (protocol upgrades and network rules)
+              Bitcoin.org — Frequently Asked Questions (protocol upgrades and network rules)
             </a>
           </li>
         </ul>
@@ -435,11 +435,34 @@ function ArticlePage() {
 
         <section className="mt-xxl">
           <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          {/* Related content module left empty as per spec "leave the related-content module ready to populate" */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <div className="p-lg rounded-lg border border-dashed border-outline-variant flex items-center justify-center text-on-surface-variant font-label-caps text-center min-h-[120px]">
-              Related content goes here
-            </div>
+            <Link
+              to="/guides/how-to-read-a-block-explorer"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                How to Read a Block Explorer
+              </h3>
+            </Link>
+            <Link
+              to="/bitcoin/what-is-bitcoin-mining"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                What Is Bitcoin Mining?
+              </h3>
+            </Link>
+            <Link
+              to="/ethereum/proof-of-stake-explained"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                Proof of Stake Explained
+              </h3>
+            </Link>
           </div>
         </section>
       </main>

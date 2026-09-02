@@ -2,8 +2,8 @@ import { Link } from "@tanstack/react-router";
 import authorAvatar from "@/assets/ashir.png";
 
 interface AuthorProps {
-  publishedDate: React.ReactNode;
-  readTime: string;
+  publishedDate?: React.ReactNode;
+  readTime?: string;
 }
 
 export function Author({ publishedDate, readTime }: AuthorProps) {
@@ -22,10 +22,18 @@ export function Author({ publishedDate, readTime }: AuthorProps) {
               Ashir
             </Link>
           </span>
-          <span aria-hidden>·</span>
-          {publishedDate}
-          <span aria-hidden>·</span>
-          <span>{readTime}</span>
+          {publishedDate && (
+            <>
+              <span aria-hidden>·</span>
+              {publishedDate}
+            </>
+          )}
+          {readTime && (
+            <>
+              <span aria-hidden>·</span>
+              <span>{readTime}</span>
+            </>
+          )}
         </div>
         <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
           Ashir is an independent writer researching cryptocurrency security and self-custody, with a focus on translating technical concepts for everyday users.

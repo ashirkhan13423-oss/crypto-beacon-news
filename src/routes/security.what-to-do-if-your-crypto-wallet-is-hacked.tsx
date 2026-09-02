@@ -235,7 +235,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high"
+            fetchPriority="high"
             src={hero}
             alt="Cracked digital security shield with red warning glow and broken blockchain wallet icon"
             width={1536}

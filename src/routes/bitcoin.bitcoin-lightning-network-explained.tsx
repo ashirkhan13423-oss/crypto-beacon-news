@@ -182,7 +182,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high"
+            fetchPriority="high"
             src={hero}
             alt="Glowing lightning bolt channels connecting two Bitcoin wallets across a dark network grid"
             width={1536}

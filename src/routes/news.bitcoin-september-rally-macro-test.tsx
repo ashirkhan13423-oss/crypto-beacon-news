@@ -233,7 +233,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high"
+            fetchPriority="high"
             src={hero}
             alt="Illustration showing Bitcoin squeezed between rising oil prices on the left and climbing Treasury yields on the right, with the Federal Reserve building in the background and a Bitcoin price chart showing resilience around $77K"
             width={1536}

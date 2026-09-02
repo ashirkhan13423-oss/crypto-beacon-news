@@ -9,7 +9,7 @@ import { Plus, PieChart, Lock, Clock, Droplets, Building2 } from "lucide-react";
 const URL = "https://www.cryptobeacon.site/news/why-bitcoin-price-moves-more-than-stocks";
 const TITLE = "Why Does Bitcoin's Price Move More Than Stocks? | CryptoBeacon";
 const DESC =
-  "A plain-language look at the structural reasons Bitcoin's price swings more than traditional assets â€” no predictions, just the mechanics.";
+  "A plain-language look at the structural reasons Bitcoin's price swings more than traditional assets — no predictions, just the mechanics.";
 const PUBLISHED = "2026-08-12";
 
 const faqs: { q: string; a: string }[] = [
@@ -23,7 +23,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Does Bitcoin's fixed supply cause price swings?",
-    a: "It's a contributing structural factor â€” because supply can't adjust to meet sudden shifts in demand the way many traditional assets can, that adjustment tends to show up in price instead.",
+    a: "It's a contributing structural factor — because supply can't adjust to meet sudden shifts in demand the way many traditional assets can, that adjustment tends to show up in price instead.",
   },
 ];
 
@@ -206,7 +206,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high" src={hero}
+            fetchPriority="high" src={hero}
             alt="Illustration representing Bitcoin's price movement compared to traditional markets"
             width={1536}
             height={896}
@@ -216,9 +216,9 @@ function ArticlePage() {
 
         <P>
           Bitcoin's price is known for moving further and faster than stocks, bonds, or major
-          currencies. This isn't random â€” it comes down to a handful of structural differences
+          currencies. This isn't random — it comes down to a handful of structural differences
           between Bitcoin's market and the markets you're used to seeing in traditional finance.
-          This article looks at the mechanics, not the direction â€” it won't predict where price is
+          This article looks at the mechanics, not the direction — it won't predict where price is
           headed, only explain why it tends to move the way it does.
         </P>
         <P>This article is educational. It isn't financial advice.</P>
@@ -252,7 +252,7 @@ function ArticlePage() {
         </P>
         <P>
           In smaller markets, a given amount of buying or selling activity moves the price more than 
-          the same activity would in a much larger, deeper market â€” simply because there's less on 
+          the same activity would in a much larger, deeper market — simply because there's less on 
           the other side of the trade to absorb it. A multi-billion dollar trade in U.S. Treasuries 
           barely registers as a blip on a chart; a trade of the same size in Bitcoin can swing the 
           price by several percentage points.
@@ -307,8 +307,8 @@ function ArticlePage() {
 
         <H2 id="infrastructure">A Market Still Establishing Its Infrastructure</H2>
         <P>
-          Traditional finance has spent decades building the infrastructure â€” clearing systems,
-          circuit breakers, market makers, and institutional prime brokerages â€” that helps absorb shocks 
+          Traditional finance has spent decades building the infrastructure — clearing systems,
+          circuit breakers, market makers, and institutional prime brokerages — that helps absorb shocks 
           and reduce erratic price behavior. For instance, if a stock drops 10% in minutes, traditional 
           exchanges will halt trading to let the market cool down. 
         </P>
@@ -363,7 +363,7 @@ function ArticlePage() {
 
         <H2 id="conclusion">Conclusion</H2>
         <P>
-          Bitcoin's price behavior isn't mysterious â€” it's a direct consequence of market structure:
+          Bitcoin's price behavior isn't mysterious — it's a direct consequence of market structure:
           size, supply mechanics, trading hours, liquidity, and infrastructure maturity.
           Understanding these mechanics doesn't tell you where the price is headed, but it does
           explain why it tends to move the way it does.
@@ -378,7 +378,7 @@ function ArticlePage() {
               rel="noopener noreferrer"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              U.S. SEC â€” Investor Alert: Bitcoin and Other Virtual Currency-Related Investments
+              U.S. SEC — Investor Alert: Bitcoin and Other Virtual Currency-Related Investments
             </a>
           </li>
           <li>
@@ -388,7 +388,7 @@ function ArticlePage() {
               rel="noopener noreferrer"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              U.S. SEC Investor.gov â€” Understanding Market Risk and Volatility
+              U.S. SEC Investor.gov — Understanding Market Risk and Volatility
             </a>
           </li>
         </ul>

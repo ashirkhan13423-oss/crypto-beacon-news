@@ -177,7 +177,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high" src={hero}
+            fetchPriority="high" src={hero}
             alt="Abstract dark mode digital illustration representing glowing data packets flowing through a network with a meter showing cost"
             width={1536}
             height={896}

@@ -161,7 +161,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high" src={hero}
+            fetchPriority="high" src={hero}
             alt="3D Ethereum emblem surrounded by proof-of-stake validator node mesh"
             width={1600}
             height={900}

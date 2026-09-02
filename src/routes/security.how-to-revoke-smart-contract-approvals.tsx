@@ -170,14 +170,11 @@ function ArticlePage() {
           How to Revoke Smart Contract Approvals and Protect Your Crypto
         </h1>
 
-        <Author
-          publishedDate={<time dateTime={PUBLISHED}>August 20, 2026</time>}
-          readTime="8 min read"
-        />
+        <Author />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high" src={hero}
+            fetchPriority="high" src={hero}
             alt="Abstract dark mode digital illustration representing a glowing lock mechanism signifying revoking access"
             width={1536}
             height={896}

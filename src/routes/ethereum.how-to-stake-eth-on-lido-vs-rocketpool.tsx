@@ -124,7 +124,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high"
+            fetchPriority="high"
             src={hero}
             alt="Two glowing liquid-staking protocol nodes connected by Ethereum blockchain lines on a deep blue and purple background"
             width={1536}

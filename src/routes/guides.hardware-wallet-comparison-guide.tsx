@@ -206,7 +206,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high" src={hero}
+            fetchPriority="high" src={hero}
             alt="Various physical crypto hardware wallets on a sleek dark surface"
             width={1600}
             height={896}

@@ -177,7 +177,7 @@ function ArticlePage() {
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
-            fetchpriority="high" src={hero}
+            fetchPriority="high" src={hero}
             alt="Abstract illustration representing a blockchain splitting into two separate paths"
             width={1536}
             height={896}
@@ -435,11 +435,34 @@ function ArticlePage() {
 
         <section className="mt-xxl">
           <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          {/* Related content module left empty as per spec "leave the related-content module ready to populate" */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <div className="p-lg rounded-lg border border-dashed border-outline-variant flex items-center justify-center text-on-surface-variant font-label-caps text-center min-h-[120px]">
-              Related content goes here
-            </div>
+            <Link
+              to="/guides/how-to-read-a-block-explorer"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                How to Read a Block Explorer
+              </h3>
+            </Link>
+            <Link
+              to="/bitcoin/what-is-bitcoin-mining"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                What Is Bitcoin Mining?
+              </h3>
+            </Link>
+            <Link
+              to="/ethereum/proof-of-stake-explained"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                Proof of Stake Explained
+              </h3>
+            </Link>
           </div>
         </section>
       </main>
