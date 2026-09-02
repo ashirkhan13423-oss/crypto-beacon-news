@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import macroTestHero from "@/assets/news-btc-september-macro-test.jpg";
 import rallyHero from "@/assets/news-bitcoin-rally.jpg";
 import ethMergeHero from "@/assets/ethereum-merge-two-years.jpg";
 import forkHero from "@/assets/news-blockchain-fork.png";
@@ -16,6 +17,11 @@ const collectionSchema = {
   name: "Crypto News",
   url: "https://www.cryptobeacon.site/news",
   hasPart: [
+    {
+      "@type": "WebPage",
+      name: "Bitcoin's September Rally Faces a New Macro Test: Oil, Yields and the Fed",
+      url: "https://www.cryptobeacon.site/news/bitcoin-september-rally-macro-test",
+    },
     {
       "@type": "WebPage",
       name: "What Is the Clarity Act, and What Would It Actually Change?",
@@ -88,6 +94,33 @@ function NewsHub() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+          <Link
+            to="/news/bitcoin-september-rally-macro-test"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={macroTestHero}
+                alt="Illustration showing Bitcoin squeezed between rising oil prices and climbing Treasury yields with the Federal Reserve building in the background"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width={1600}
+                height={900}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                News · Macro Analysis
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Bitcoin's September Rally Faces a New Macro Test: Oil, Yields and the Fed
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                Brent crude near $96, the 10-year yield approaching 4.8%, and a 68% chance of a September Fed rate hike are pressuring Bitcoin. Here is the full transmission chain.
+              </p>
+            </div>
+          </Link>
+
           <Link
             to="/news/what-is-the-clarity-act-crypto"
             className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
