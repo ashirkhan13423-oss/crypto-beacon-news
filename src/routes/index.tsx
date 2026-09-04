@@ -54,6 +54,7 @@ import hero_84 from "@/assets/security-verify-transaction.jpg";
 import hero_88 from "@/assets/hacked-wallet-emergency.jpg";
 
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import {
@@ -65,6 +66,8 @@ import {
   FileText,
   BarChart3,
   HelpCircle,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { SITE_URL } from "../lib/site-config";
 
@@ -214,7 +217,7 @@ const articles = [
     image: hero_1,
     alt: "Glowing lightning bolt channels connecting two Bitcoin wallets across a dark network grid",
     tag: "Bitcoin · Article",
-    title: "",
+    title: "The Bitcoin Lightning Network Explained: Instant, Cheap Bitcoin Payments",
     desc: "How the Bitcoin Lightning Network works — payment channels, routing, HTLCs, and the trade-offs compared to on-chain transactions — explained in plain language.",
   },
   {
@@ -254,7 +257,7 @@ const articles = [
     image: hero_6,
     alt: "Illustration representing money flowing into a fund that then purchases Bitcoin",
     tag: "Bitcoin · Article",
-    title: "",
+    title: "How Do Bitcoin ETFs Actually Affect the Price?",
     desc: "A plain-language look at the mechanism behind Bitcoin ETF inflows and outflows — and why more money entering a fund doesn't always mean the price goes straight up.",
   },
   {
@@ -574,8 +577,8 @@ const articles = [
     image: hero_46,
     alt: "Illustration representing crypto self-custody and private key ownership",
     tag: "Guides · Article",
-    title: "",
-    desc: "",
+    title: '"Not Your Keys, Not Your Coins" — What It Actually Means',
+    desc: 'A plain-language explainer on what "not your keys, not your coins" means, why it matters, and how to tell if you actually control your crypto.',
   },
   {
     to: "/guides/stablecoin-regulation-explained",
@@ -598,7 +601,7 @@ const articles = [
     image: hero_49,
     alt: "Illustration of a cryptographic blockchain wallet address with QR code and network nodes",
     tag: "Guides · Article",
-    title: "",
+    title: "What Is a Crypto Wallet Address? How It Works and How to Use It Safely",
     desc: "A plain-language guide to what a crypto wallet address is, how it's created, why it's safe to share, and the common mistakes that lead to lost funds.",
   },
   {
@@ -678,7 +681,7 @@ const articles = [
     image: hero_59,
     alt: "Illustration showing the Federal Reserve seal with downward red arrows on the left, a Bitcoin chart with a dip in the centre, and Ethereum with upward green arrows on the right, representing ETF flow divergence on August 30 2026",
     tag: "News · Article",
-    title: "",
+    title: "Bitcoin's Rally Meets Its First Institutional Stress Test",
     desc: "Bitcoin ETF outflows ended a nine-session inflow streak after Kevin Warsh's hawkish Jackson Hole speech. Here is what the Fed, ETF flows and Ethereum's divergence reveal about the rally's foundations.",
   },
   {
@@ -702,7 +705,7 @@ const articles = [
     image: hero_62,
     alt: "Illustration showing Bitcoin squeezed between rising oil prices on the left and climbing Treasury yields on the right, with the Federal Reserve building in the background and a Bitcoin price chart showing resilience around $77K",
     tag: "News · Article",
-    title: "",
+    title: "Bitcoin's September Rally Faces a New Macro Test: Oil, Yields and the Fed",
     desc: "Brent crude near $96, the U.S. 10-year yield approaching 4.8%, and a 68% chance of a September Fed rate hike are pressuring Bitcoin toward $77K–$78K. Here is the full transmission chain and why Friday's jobs report could be the next catalyst.",
   },
   {
@@ -915,8 +918,51 @@ const articles = [
   },
 ];
 
+const ARTICLES_PER_PAGE = 12;
+const CATEGORIES = ["All", "Bitcoin", "Ethereum", "Guides", "News", "Security"] as const;
+
+function getCategoryFromTag(tag: string): string {
+  const cat = tag.split(" · ")[0];
+  return cat;
+}
 
 function IndexPage() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [activeCategory, setActiveCategory] = useState<string>("All");
+
+  const filteredArticles = activeCategory === "All"
+    ? articles
+    : articles.filter((a) => getCategoryFromTag(a.tag) === activeCategory);
+
+  const totalPages = Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE);
+  const startIndex = (currentPage - 1) * ARTICLES_PER_PAGE;
+  const endIndex = startIndex + ARTICLES_PER_PAGE;
+  const paginatedArticles = filteredArticles.slice(startIndex, endIndex);
+
+  const handleCategoryChange = (cat: string) => {
+    setActiveCategory(cat);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    const el = document.getElementById("article-archive");
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  // Build page number array with ellipsis
+  const getPageNumbers = (): (number | "...")[] => {
+    if (totalPages <= 7) return Array.from({ length: totalPages }, (_, i) => i + 1);
+    const pages: (number | "...")[] = [1];
+    if (currentPage > 3) pages.push("...");
+    const start = Math.max(2, currentPage - 1);
+    const end = Math.min(totalPages - 1, currentPage + 1);
+    for (let i = start; i <= end; i++) pages.push(i);
+    if (currentPage < totalPages - 2) pages.push("...");
+    if (!pages.includes(totalPages)) pages.push(totalPages);
+    return pages;
+  };
+
   return (
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
@@ -1060,17 +1106,39 @@ function IndexPage() {
         </section>
 
         {/* Latest Intelligence Grid Section */}
-        <section>
-          <div className="flex items-center justify-between border-b border-primary pb-sm mb-lg">
+        <section id="article-archive">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-primary pb-sm mb-lg gap-sm">
             <h2 className="font-headline-md text-headline-md text-primary">
               Latest Intelligence &amp; Editorial Analysis
             </h2>
             <span className="font-body-md text-on-surface-variant">
-              Showing All {articles.length} Articles
+              Showing {startIndex + 1}–{Math.min(endIndex, filteredArticles.length)} of {filteredArticles.length} Articles
             </span>
           </div>
+
+          {/* Category Filter Buttons */}
+          <div className="flex flex-wrap gap-sm mb-lg">
+            {CATEGORIES.map((cat) => {
+              const count = cat === "All" ? articles.length : articles.filter((a) => getCategoryFromTag(a.tag) === cat).length;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => handleCategoryChange(cat)}
+                  className={`px-md py-xs rounded-full font-label-caps text-label-caps font-semibold border transition-all ${
+                    activeCategory === cat
+                      ? "bg-secondary text-on-secondary border-secondary"
+                      : "bg-surface-container-lowest text-on-surface-variant border-outline-variant hover:border-secondary hover:text-secondary"
+                  }`}
+                >
+                  {cat} ({count})
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Article Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            {articles.map((a) => (
+            {paginatedArticles.map((a) => (
               <Link
                 key={a.to}
                 to={a.to}
@@ -1100,6 +1168,51 @@ function IndexPage() {
               </Link>
             ))}
           </div>
+
+          {/* Pagination Controls */}
+          {totalPages > 1 && (
+            <nav aria-label="Article pagination" className="flex items-center justify-center gap-xs mt-xl">
+              <button
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                aria-label="Previous page"
+                className="p-sm rounded-lg border border-outline-variant bg-surface-container-lowest hover:border-secondary hover:text-secondary disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+
+              {getPageNumbers().map((page, idx) =>
+                page === "..." ? (
+                  <span key={`ellipsis-${idx}`} className="px-sm py-xs text-on-surface-variant font-body-md">
+                    …
+                  </span>
+                ) : (
+                  <button
+                    key={page}
+                    onClick={() => handlePageChange(page)}
+                    aria-label={`Go to page ${page}`}
+                    aria-current={currentPage === page ? "page" : undefined}
+                    className={`min-w-[40px] h-[40px] rounded-lg font-body-md font-semibold border transition-all ${
+                      currentPage === page
+                        ? "bg-secondary text-on-secondary border-secondary"
+                        : "bg-surface-container-lowest text-on-surface-variant border-outline-variant hover:border-secondary hover:text-secondary"
+                    }`}
+                  >
+                    {page}
+                  </button>
+                ),
+              )}
+
+              <button
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                aria-label="Next page"
+                className="p-sm rounded-lg border border-outline-variant bg-surface-container-lowest hover:border-secondary hover:text-secondary disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </nav>
+          )}
         </section>
       </main>
       <SiteFooter />
