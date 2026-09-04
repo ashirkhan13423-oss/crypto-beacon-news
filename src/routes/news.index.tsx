@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import scHero from "@/assets/news-standard-chartered-uae.jpg";
 import macroTestHero from "@/assets/news-btc-september-macro-test.jpg";
 import rallyHero from "@/assets/news-bitcoin-rally.jpg";
 import ethMergeHero from "@/assets/ethereum-merge-two-years.jpg";
@@ -17,6 +18,11 @@ const collectionSchema = {
   name: "Crypto News",
   url: "https://www.cryptobeacon.site/news",
   hasPart: [
+    {
+      "@type": "WebPage",
+      name: "Standard Chartered Launches Bitcoin and Ether Spot Trading for UAE Institutions",
+      url: "https://www.cryptobeacon.site/news/standard-chartered-uae-institutional-bitcoin-ether-trading",
+    },
     {
       "@type": "WebPage",
       name: "Bitcoin's September Rally Faces a New Macro Test: Oil, Yields and the Fed",
@@ -94,6 +100,33 @@ function NewsHub() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+          <Link
+            to="/news/standard-chartered-uae-institutional-bitcoin-ether-trading"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={scHero}
+                alt="Abstract illustration of a modern bank building blending into a digital network, representing traditional finance adopting crypto"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width={1600}
+                height={900}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                News · Institutional Crypto
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Standard Chartered Launches Bitcoin and Ether Spot Trading for UAE Institutions
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                Standard Chartered has launched deliverable spot trading for Bitcoin and Ether for institutional clients in the UAE. Explore how this move bridges traditional finance and crypto.
+              </p>
+            </div>
+          </Link>
+
           <Link
             to="/news/bitcoin-september-rally-macro-test"
             className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
