@@ -237,15 +237,7 @@ function ArticlePage() {
           </ul>
         </div>
 
-        <H2 id="faq">Frequently Asked Questions</H2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
-          {faqs.map((f) => (
-            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low">
-              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">{f.q}</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-            </div>
-          ))}
-        </div>
+
 
         <H2 id="sources">Sources</H2>
         <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">

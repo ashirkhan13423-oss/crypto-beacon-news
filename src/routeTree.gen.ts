@@ -51,9 +51,11 @@ import { Route as NewsWhyBitcoinPriceMovesMoreThanStocksRouteImport } from './ro
 import { Route as NewsWhatItMeansWhenExchangePausesWithdrawalsRouteImport } from './routes/news.what-it-means-when-exchange-pauses-withdrawals'
 import { Route as NewsWhatIsTheClarityActCryptoRouteImport } from './routes/news.what-is-the-clarity-act-crypto'
 import { Route as NewsWhatIsABlockchainForkRouteImport } from './routes/news.what-is-a-blockchain-fork'
+import { Route as NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport } from './routes/news.standard-chartered-uae-institutional-bitcoin-ether-trading'
 import { Route as NewsEthereumMergeTwoYearsLaterRouteImport } from './routes/news.ethereum-merge-two-years-later'
 import { Route as NewsBitcoinSeptemberRallyMacroTestRouteImport } from './routes/news.bitcoin-september-rally-macro-test'
 import { Route as NewsBitcoinRallyAugust2026RouteImport } from './routes/news.bitcoin-rally-august-2026'
+import { Route as NewsBitcoinFedRateHikeJobsReportSeptember2026RouteImport } from './routes/news.bitcoin-fed-rate-hike-jobs-report-september-2026'
 import { Route as NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRouteImport } from './routes/news.bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
 import { Route as GuidesWhyGovernmentsRegulateCryptocurrencyRouteImport } from './routes/guides.why-governments-regulate-cryptocurrency'
 import { Route as GuidesWhyCryptoRegulationMattersRouteImport } from './routes/guides.why-crypto-regulation-matters'
@@ -349,6 +351,12 @@ const NewsWhatIsABlockchainForkRoute =
     path: '/what-is-a-blockchain-fork',
     getParentRoute: () => NewsRoute,
   } as any)
+const NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute =
+  NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport.update({
+    id: '/standard-chartered-uae-institutional-bitcoin-ether-trading',
+    path: '/standard-chartered-uae-institutional-bitcoin-ether-trading',
+    getParentRoute: () => NewsRoute,
+  } as any)
 const NewsEthereumMergeTwoYearsLaterRoute =
   NewsEthereumMergeTwoYearsLaterRouteImport.update({
     id: '/ethereum-merge-two-years-later',
@@ -365,6 +373,12 @@ const NewsBitcoinRallyAugust2026Route =
   NewsBitcoinRallyAugust2026RouteImport.update({
     id: '/bitcoin-rally-august-2026',
     path: '/bitcoin-rally-august-2026',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsBitcoinFedRateHikeJobsReportSeptember2026Route =
+  NewsBitcoinFedRateHikeJobsReportSeptember2026RouteImport.update({
+    id: '/bitcoin-fed-rate-hike-jobs-report-september-2026',
+    path: '/bitcoin-fed-rate-hike-jobs-report-september-2026',
     getParentRoute: () => NewsRoute,
   } as any)
 const NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute =
@@ -798,9 +812,11 @@ export interface FileRoutesByFullPath {
   '/guides/why-crypto-regulation-matters': typeof GuidesWhyCryptoRegulationMattersRoute
   '/guides/why-governments-regulate-cryptocurrency': typeof GuidesWhyGovernmentsRegulateCryptocurrencyRoute
   '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally': typeof NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute
+  '/news/bitcoin-fed-rate-hike-jobs-report-september-2026': typeof NewsBitcoinFedRateHikeJobsReportSeptember2026Route
   '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
   '/news/bitcoin-september-rally-macro-test': typeof NewsBitcoinSeptemberRallyMacroTestRoute
   '/news/ethereum-merge-two-years-later': typeof NewsEthereumMergeTwoYearsLaterRoute
+  '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
   '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
   '/news/what-it-means-when-exchange-pauses-withdrawals': typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
@@ -900,9 +916,11 @@ export interface FileRoutesByTo {
   '/guides/why-crypto-regulation-matters': typeof GuidesWhyCryptoRegulationMattersRoute
   '/guides/why-governments-regulate-cryptocurrency': typeof GuidesWhyGovernmentsRegulateCryptocurrencyRoute
   '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally': typeof NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute
+  '/news/bitcoin-fed-rate-hike-jobs-report-september-2026': typeof NewsBitcoinFedRateHikeJobsReportSeptember2026Route
   '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
   '/news/bitcoin-september-rally-macro-test': typeof NewsBitcoinSeptemberRallyMacroTestRoute
   '/news/ethereum-merge-two-years-later': typeof NewsEthereumMergeTwoYearsLaterRoute
+  '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
   '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
   '/news/what-it-means-when-exchange-pauses-withdrawals': typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
@@ -1008,9 +1026,11 @@ export interface FileRoutesById {
   '/guides/why-crypto-regulation-matters': typeof GuidesWhyCryptoRegulationMattersRoute
   '/guides/why-governments-regulate-cryptocurrency': typeof GuidesWhyGovernmentsRegulateCryptocurrencyRoute
   '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally': typeof NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute
+  '/news/bitcoin-fed-rate-hike-jobs-report-september-2026': typeof NewsBitcoinFedRateHikeJobsReportSeptember2026Route
   '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
   '/news/bitcoin-september-rally-macro-test': typeof NewsBitcoinSeptemberRallyMacroTestRoute
   '/news/ethereum-merge-two-years-later': typeof NewsEthereumMergeTwoYearsLaterRoute
+  '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
   '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
   '/news/what-it-means-when-exchange-pauses-withdrawals': typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
@@ -1117,9 +1137,11 @@ export interface FileRouteTypes {
     | '/guides/why-crypto-regulation-matters'
     | '/guides/why-governments-regulate-cryptocurrency'
     | '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
+    | '/news/bitcoin-fed-rate-hike-jobs-report-september-2026'
     | '/news/bitcoin-rally-august-2026'
     | '/news/bitcoin-september-rally-macro-test'
     | '/news/ethereum-merge-two-years-later'
+    | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
     | '/news/what-is-a-blockchain-fork'
     | '/news/what-is-the-clarity-act-crypto'
     | '/news/what-it-means-when-exchange-pauses-withdrawals'
@@ -1219,9 +1241,11 @@ export interface FileRouteTypes {
     | '/guides/why-crypto-regulation-matters'
     | '/guides/why-governments-regulate-cryptocurrency'
     | '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
+    | '/news/bitcoin-fed-rate-hike-jobs-report-september-2026'
     | '/news/bitcoin-rally-august-2026'
     | '/news/bitcoin-september-rally-macro-test'
     | '/news/ethereum-merge-two-years-later'
+    | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
     | '/news/what-is-a-blockchain-fork'
     | '/news/what-is-the-clarity-act-crypto'
     | '/news/what-it-means-when-exchange-pauses-withdrawals'
@@ -1326,9 +1350,11 @@ export interface FileRouteTypes {
     | '/guides/why-crypto-regulation-matters'
     | '/guides/why-governments-regulate-cryptocurrency'
     | '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
+    | '/news/bitcoin-fed-rate-hike-jobs-report-september-2026'
     | '/news/bitcoin-rally-august-2026'
     | '/news/bitcoin-september-rally-macro-test'
     | '/news/ethereum-merge-two-years-later'
+    | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
     | '/news/what-is-a-blockchain-fork'
     | '/news/what-is-the-clarity-act-crypto'
     | '/news/what-it-means-when-exchange-pauses-withdrawals'
@@ -1672,6 +1698,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsWhatIsABlockchainForkRouteImport
       parentRoute: typeof NewsRoute
     }
+    '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': {
+      id: '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
+      path: '/standard-chartered-uae-institutional-bitcoin-ether-trading'
+      fullPath: '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
+      preLoaderRoute: typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport
+      parentRoute: typeof NewsRoute
+    }
     '/news/ethereum-merge-two-years-later': {
       id: '/news/ethereum-merge-two-years-later'
       path: '/ethereum-merge-two-years-later'
@@ -1691,6 +1724,13 @@ declare module '@tanstack/react-router' {
       path: '/bitcoin-rally-august-2026'
       fullPath: '/news/bitcoin-rally-august-2026'
       preLoaderRoute: typeof NewsBitcoinRallyAugust2026RouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/bitcoin-fed-rate-hike-jobs-report-september-2026': {
+      id: '/news/bitcoin-fed-rate-hike-jobs-report-september-2026'
+      path: '/bitcoin-fed-rate-hike-jobs-report-september-2026'
+      fullPath: '/news/bitcoin-fed-rate-hike-jobs-report-september-2026'
+      preLoaderRoute: typeof NewsBitcoinFedRateHikeJobsReportSeptember2026RouteImport
       parentRoute: typeof NewsRoute
     }
     '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally': {
@@ -2304,9 +2344,11 @@ const GuidesRouteWithChildren =
 
 interface NewsRouteChildren {
   NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute: typeof NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute
+  NewsBitcoinFedRateHikeJobsReportSeptember2026Route: typeof NewsBitcoinFedRateHikeJobsReportSeptember2026Route
   NewsBitcoinRallyAugust2026Route: typeof NewsBitcoinRallyAugust2026Route
   NewsBitcoinSeptemberRallyMacroTestRoute: typeof NewsBitcoinSeptemberRallyMacroTestRoute
   NewsEthereumMergeTwoYearsLaterRoute: typeof NewsEthereumMergeTwoYearsLaterRoute
+  NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute: typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
   NewsWhatIsABlockchainForkRoute: typeof NewsWhatIsABlockchainForkRoute
   NewsWhatIsTheClarityActCryptoRoute: typeof NewsWhatIsTheClarityActCryptoRoute
   NewsWhatItMeansWhenExchangePausesWithdrawalsRoute: typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
@@ -2318,10 +2360,14 @@ interface NewsRouteChildren {
 const NewsRouteChildren: NewsRouteChildren = {
   NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute:
     NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute,
+  NewsBitcoinFedRateHikeJobsReportSeptember2026Route:
+    NewsBitcoinFedRateHikeJobsReportSeptember2026Route,
   NewsBitcoinRallyAugust2026Route: NewsBitcoinRallyAugust2026Route,
   NewsBitcoinSeptemberRallyMacroTestRoute:
     NewsBitcoinSeptemberRallyMacroTestRoute,
   NewsEthereumMergeTwoYearsLaterRoute: NewsEthereumMergeTwoYearsLaterRoute,
+  NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute:
+    NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute,
   NewsWhatIsABlockchainForkRoute: NewsWhatIsABlockchainForkRoute,
   NewsWhatIsTheClarityActCryptoRoute: NewsWhatIsTheClarityActCryptoRoute,
   NewsWhatItMeansWhenExchangePausesWithdrawalsRoute:

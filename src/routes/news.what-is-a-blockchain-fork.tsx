@@ -437,12 +437,21 @@ function ArticlePage() {
           <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
             <Link
-              to="/guides/how-to-read-a-block-explorer"
+              to="/bitcoin/what-is-a-bitcoin-node"
               className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
             >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
+              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
               <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                How to Read a Block Explorer
+                What Is a Bitcoin Node?
+              </h3>
+            </Link>
+            <Link
+              to="/ethereum/ethereum-vs-bitcoin"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                Ethereum vs Bitcoin
               </h3>
             </Link>
             <Link
@@ -452,15 +461,6 @@ function ArticlePage() {
               <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
               <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
                 What Is Bitcoin Mining?
-              </h3>
-            </Link>
-            <Link
-              to="/ethereum/proof-of-stake-explained"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Proof of Stake Explained
               </h3>
             </Link>
           </div>
