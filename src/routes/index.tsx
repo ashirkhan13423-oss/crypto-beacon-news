@@ -39,11 +39,7 @@ import hero_61 from "@/assets/news-bitcoin-rally.jpg";
 import hero_62 from "@/assets/news-btc-september-macro-test.jpg";
 import hero_63 from "@/assets/ethereum-merge-two-years.jpg";
 import hero_64 from "@/assets/news-standard-chartered-uae.jpg";
-import hero_65 from "@/assets/news-blockchain-fork.png";
 import hero_66 from "@/assets/news-clarity-act.jpg";
-import hero_67 from "@/assets/news-paused-withdrawals.jpg";
-import hero_68 from "@/assets/news-bitcoin-volatility.svg";
-import hero_69 from "@/assets/news-crypto-regulation.jpg";
 import hero_73 from "@/assets/defi-risks.jpg";
 import hero_77 from "@/assets/hardware-wallet-mistakes.jpg";
 import hero_79 from "@/assets/phishing-padlock.jpg";
@@ -725,8 +721,8 @@ const articles = [
     desc: "Standard Chartered has launched deliverable spot trading for Bitcoin and Ether for institutional clients in the UAE. Explore how this move bridges traditional finance and crypto.",
   },
   {
-    to: "/news/what-is-a-blockchain-fork",
-    image: hero_65,
+    to: "/guides/what-is-a-blockchain-fork",
+    image: hero_48,
     alt: "Abstract illustration representing a blockchain splitting into two separate paths",
     tag: "Guides · Article",
     title: "What Is a Blockchain Fork? Explained Simply",
@@ -741,26 +737,26 @@ const articles = [
     desc: "What is the Clarity Act crypto: a factual explanation of the proposed U.S. bill, securities vs commodities classifications, and legislative status.",
   },
   {
-    to: "/news/what-it-means-when-exchange-pauses-withdrawals",
-    image: hero_67,
+    to: "/guides/what-it-means-when-exchange-pauses-withdrawals",
+    image: hero_55,
     alt: "Illustration representing a paused crypto withdrawal process",
     tag: "Guides · Article",
     title: "What Does It Mean When an Exchange Pauses Withdrawals?",
     desc: "Your crypto exchange paused withdrawals — is that normal or a red flag? A comprehensive guide to understanding exchange liquidity, routine maintenance, and warning signs of insolvency.",
   },
   {
-    to: "/news/why-bitcoin-price-moves-more-than-stocks",
-    image: hero_68,
+    to: "/guides/why-bitcoin-price-moves-more-than-stocks",
+    image: hero_56,
     alt: "Illustration representing Bitcoin's price movement compared to traditional markets",
     tag: "Guides · Article",
     title: "Why Does Bitcoin's Price Move More Than Stocks?",
     desc: "A plain-language look at the structural reasons Bitcoin's price swings more than traditional assets — no predictions, just the mechanics.",
   },
   {
-    to: "/news/why-governments-regulate-cryptocurrency",
-    image: hero_69,
+    to: "/guides/why-governments-regulate-cryptocurrency",
+    image: hero_58,
     alt: "Illustration representing government regulatory oversight of cryptocurrency",
-    tag: "News · Article",
+    tag: "Guides · Article",
     title: "Why Do Governments Regulate Cryptocurrency? Full Guide",
     desc: "An in-depth editorial guide on why governments regulate crypto, the major global legal frameworks (MiCA, SEC, FATF), and what regulations mean for retail investors.",
   },

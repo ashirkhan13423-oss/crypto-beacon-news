@@ -440,7 +440,7 @@ function ArticlePage() {
           <em>only</em> factor at play on any single day. Short-term price moves
           are shaped by many forces at once (broader{" "}
           <Link
-            to="/news/why-bitcoin-price-moves-more-than-stocks"
+            to="/guides/why-bitcoin-price-moves-more-than-stocks"
             className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
           >
             market sentiment
@@ -533,7 +533,7 @@ function ArticlePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
             <Link
-              to="/news/why-bitcoin-price-moves-more-than-stocks"
+              to="/guides/why-bitcoin-price-moves-more-than-stocks"
               className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
             >
               <span className="font-label-caps text-label-caps text-secondary">
