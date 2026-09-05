@@ -60,7 +60,7 @@ const collectionSchema = {
   ],
 };
 
-export const Route = createFileRoute("/news/")({\
+export const Route = createFileRoute("/news/")({
   head: () => ({
     meta: [
       { title: "Crypto News — CryptoBeacon" },

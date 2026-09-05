@@ -46,12 +46,9 @@ import { Route as SecurityDefiRisksExplainedRouteImport } from './routes/securit
 import { Route as SecurityCryptoWalletDrainerScamsExplainedRouteImport } from './routes/security.crypto-wallet-drainer-scams-explained'
 import { Route as SecurityCryptoSecurityHubRouteImport } from './routes/security.crypto-security-hub'
 import { Route as SecurityCommonCryptoScamsRouteImport } from './routes/security.common-crypto-scams'
-import { Route as NewsWhyGovernmentsRegulateCryptocurrencyRouteImport } from './routes/news.why-governments-regulate-cryptocurrency'
-import { Route as NewsWhyBitcoinPriceMovesMoreThanStocksRouteImport } from './routes/news.why-bitcoin-price-moves-more-than-stocks'
-import { Route as NewsWhatItMeansWhenExchangePausesWithdrawalsRouteImport } from './routes/news.what-it-means-when-exchange-pauses-withdrawals'
 import { Route as NewsWhatIsTheClarityActCryptoRouteImport } from './routes/news.what-is-the-clarity-act-crypto'
-import { Route as NewsWhatIsABlockchainForkRouteImport } from './routes/news.what-is-a-blockchain-fork'
 import { Route as NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport } from './routes/news.standard-chartered-uae-institutional-bitcoin-ether-trading'
+import { Route as NewsNotebooklmReview2026GeminiNotebookAiResearchToolRouteImport } from './routes/news.notebooklm-review-2026-gemini-notebook-ai-research-tool'
 import { Route as NewsEthereumMergeTwoYearsLaterRouteImport } from './routes/news.ethereum-merge-two-years-later'
 import { Route as NewsBitcoinSeptemberRallyMacroTestRouteImport } from './routes/news.bitcoin-september-rally-macro-test'
 import { Route as NewsBitcoinRallyAugust2026RouteImport } from './routes/news.bitcoin-rally-august-2026'
@@ -321,40 +318,22 @@ const SecurityCommonCryptoScamsRoute =
     path: '/common-crypto-scams',
     getParentRoute: () => SecurityRoute,
   } as any)
-const NewsWhyGovernmentsRegulateCryptocurrencyRoute =
-  NewsWhyGovernmentsRegulateCryptocurrencyRouteImport.update({
-    id: '/why-governments-regulate-cryptocurrency',
-    path: '/why-governments-regulate-cryptocurrency',
-    getParentRoute: () => NewsRoute,
-  } as any)
-const NewsWhyBitcoinPriceMovesMoreThanStocksRoute =
-  NewsWhyBitcoinPriceMovesMoreThanStocksRouteImport.update({
-    id: '/why-bitcoin-price-moves-more-than-stocks',
-    path: '/why-bitcoin-price-moves-more-than-stocks',
-    getParentRoute: () => NewsRoute,
-  } as any)
-const NewsWhatItMeansWhenExchangePausesWithdrawalsRoute =
-  NewsWhatItMeansWhenExchangePausesWithdrawalsRouteImport.update({
-    id: '/what-it-means-when-exchange-pauses-withdrawals',
-    path: '/what-it-means-when-exchange-pauses-withdrawals',
-    getParentRoute: () => NewsRoute,
-  } as any)
 const NewsWhatIsTheClarityActCryptoRoute =
   NewsWhatIsTheClarityActCryptoRouteImport.update({
     id: '/what-is-the-clarity-act-crypto',
     path: '/what-is-the-clarity-act-crypto',
     getParentRoute: () => NewsRoute,
   } as any)
-const NewsWhatIsABlockchainForkRoute =
-  NewsWhatIsABlockchainForkRouteImport.update({
-    id: '/what-is-a-blockchain-fork',
-    path: '/what-is-a-blockchain-fork',
-    getParentRoute: () => NewsRoute,
-  } as any)
 const NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute =
   NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport.update({
     id: '/standard-chartered-uae-institutional-bitcoin-ether-trading',
     path: '/standard-chartered-uae-institutional-bitcoin-ether-trading',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsNotebooklmReview2026GeminiNotebookAiResearchToolRoute =
+  NewsNotebooklmReview2026GeminiNotebookAiResearchToolRouteImport.update({
+    id: '/notebooklm-review-2026-gemini-notebook-ai-research-tool',
+    path: '/notebooklm-review-2026-gemini-notebook-ai-research-tool',
     getParentRoute: () => NewsRoute,
   } as any)
 const NewsEthereumMergeTwoYearsLaterRoute =
@@ -816,12 +795,9 @@ export interface FileRoutesByFullPath {
   '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
   '/news/bitcoin-september-rally-macro-test': typeof NewsBitcoinSeptemberRallyMacroTestRoute
   '/news/ethereum-merge-two-years-later': typeof NewsEthereumMergeTwoYearsLaterRoute
+  '/news/notebooklm-review-2026-gemini-notebook-ai-research-tool': typeof NewsNotebooklmReview2026GeminiNotebookAiResearchToolRoute
   '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
-  '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
-  '/news/what-it-means-when-exchange-pauses-withdrawals': typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
-  '/news/why-bitcoin-price-moves-more-than-stocks': typeof NewsWhyBitcoinPriceMovesMoreThanStocksRoute
-  '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
   '/security/common-crypto-scams': typeof SecurityCommonCryptoScamsRoute
   '/security/crypto-security-hub': typeof SecurityCryptoSecurityHubRoute
   '/security/crypto-wallet-drainer-scams-explained': typeof SecurityCryptoWalletDrainerScamsExplainedRoute
@@ -920,12 +896,9 @@ export interface FileRoutesByTo {
   '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
   '/news/bitcoin-september-rally-macro-test': typeof NewsBitcoinSeptemberRallyMacroTestRoute
   '/news/ethereum-merge-two-years-later': typeof NewsEthereumMergeTwoYearsLaterRoute
+  '/news/notebooklm-review-2026-gemini-notebook-ai-research-tool': typeof NewsNotebooklmReview2026GeminiNotebookAiResearchToolRoute
   '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
-  '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
-  '/news/what-it-means-when-exchange-pauses-withdrawals': typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
-  '/news/why-bitcoin-price-moves-more-than-stocks': typeof NewsWhyBitcoinPriceMovesMoreThanStocksRoute
-  '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
   '/security/common-crypto-scams': typeof SecurityCommonCryptoScamsRoute
   '/security/crypto-security-hub': typeof SecurityCryptoSecurityHubRoute
   '/security/crypto-wallet-drainer-scams-explained': typeof SecurityCryptoWalletDrainerScamsExplainedRoute
@@ -1030,12 +1003,9 @@ export interface FileRoutesById {
   '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
   '/news/bitcoin-september-rally-macro-test': typeof NewsBitcoinSeptemberRallyMacroTestRoute
   '/news/ethereum-merge-two-years-later': typeof NewsEthereumMergeTwoYearsLaterRoute
+  '/news/notebooklm-review-2026-gemini-notebook-ai-research-tool': typeof NewsNotebooklmReview2026GeminiNotebookAiResearchToolRoute
   '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
-  '/news/what-is-a-blockchain-fork': typeof NewsWhatIsABlockchainForkRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
-  '/news/what-it-means-when-exchange-pauses-withdrawals': typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
-  '/news/why-bitcoin-price-moves-more-than-stocks': typeof NewsWhyBitcoinPriceMovesMoreThanStocksRoute
-  '/news/why-governments-regulate-cryptocurrency': typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
   '/security/common-crypto-scams': typeof SecurityCommonCryptoScamsRoute
   '/security/crypto-security-hub': typeof SecurityCryptoSecurityHubRoute
   '/security/crypto-wallet-drainer-scams-explained': typeof SecurityCryptoWalletDrainerScamsExplainedRoute
@@ -1141,12 +1111,9 @@ export interface FileRouteTypes {
     | '/news/bitcoin-rally-august-2026'
     | '/news/bitcoin-september-rally-macro-test'
     | '/news/ethereum-merge-two-years-later'
+    | '/news/notebooklm-review-2026-gemini-notebook-ai-research-tool'
     | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
-    | '/news/what-is-a-blockchain-fork'
     | '/news/what-is-the-clarity-act-crypto'
-    | '/news/what-it-means-when-exchange-pauses-withdrawals'
-    | '/news/why-bitcoin-price-moves-more-than-stocks'
-    | '/news/why-governments-regulate-cryptocurrency'
     | '/security/common-crypto-scams'
     | '/security/crypto-security-hub'
     | '/security/crypto-wallet-drainer-scams-explained'
@@ -1245,12 +1212,9 @@ export interface FileRouteTypes {
     | '/news/bitcoin-rally-august-2026'
     | '/news/bitcoin-september-rally-macro-test'
     | '/news/ethereum-merge-two-years-later'
+    | '/news/notebooklm-review-2026-gemini-notebook-ai-research-tool'
     | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
-    | '/news/what-is-a-blockchain-fork'
     | '/news/what-is-the-clarity-act-crypto'
-    | '/news/what-it-means-when-exchange-pauses-withdrawals'
-    | '/news/why-bitcoin-price-moves-more-than-stocks'
-    | '/news/why-governments-regulate-cryptocurrency'
     | '/security/common-crypto-scams'
     | '/security/crypto-security-hub'
     | '/security/crypto-wallet-drainer-scams-explained'
@@ -1354,12 +1318,9 @@ export interface FileRouteTypes {
     | '/news/bitcoin-rally-august-2026'
     | '/news/bitcoin-september-rally-macro-test'
     | '/news/ethereum-merge-two-years-later'
+    | '/news/notebooklm-review-2026-gemini-notebook-ai-research-tool'
     | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
-    | '/news/what-is-a-blockchain-fork'
     | '/news/what-is-the-clarity-act-crypto'
-    | '/news/what-it-means-when-exchange-pauses-withdrawals'
-    | '/news/why-bitcoin-price-moves-more-than-stocks'
-    | '/news/why-governments-regulate-cryptocurrency'
     | '/security/common-crypto-scams'
     | '/security/crypto-security-hub'
     | '/security/crypto-wallet-drainer-scams-explained'
@@ -1663,27 +1624,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SecurityCommonCryptoScamsRouteImport
       parentRoute: typeof SecurityRoute
     }
-    '/news/why-governments-regulate-cryptocurrency': {
-      id: '/news/why-governments-regulate-cryptocurrency'
-      path: '/why-governments-regulate-cryptocurrency'
-      fullPath: '/news/why-governments-regulate-cryptocurrency'
-      preLoaderRoute: typeof NewsWhyGovernmentsRegulateCryptocurrencyRouteImport
-      parentRoute: typeof NewsRoute
-    }
-    '/news/why-bitcoin-price-moves-more-than-stocks': {
-      id: '/news/why-bitcoin-price-moves-more-than-stocks'
-      path: '/why-bitcoin-price-moves-more-than-stocks'
-      fullPath: '/news/why-bitcoin-price-moves-more-than-stocks'
-      preLoaderRoute: typeof NewsWhyBitcoinPriceMovesMoreThanStocksRouteImport
-      parentRoute: typeof NewsRoute
-    }
-    '/news/what-it-means-when-exchange-pauses-withdrawals': {
-      id: '/news/what-it-means-when-exchange-pauses-withdrawals'
-      path: '/what-it-means-when-exchange-pauses-withdrawals'
-      fullPath: '/news/what-it-means-when-exchange-pauses-withdrawals'
-      preLoaderRoute: typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRouteImport
-      parentRoute: typeof NewsRoute
-    }
     '/news/what-is-the-clarity-act-crypto': {
       id: '/news/what-is-the-clarity-act-crypto'
       path: '/what-is-the-clarity-act-crypto'
@@ -1691,18 +1631,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsWhatIsTheClarityActCryptoRouteImport
       parentRoute: typeof NewsRoute
     }
-    '/news/what-is-a-blockchain-fork': {
-      id: '/news/what-is-a-blockchain-fork'
-      path: '/what-is-a-blockchain-fork'
-      fullPath: '/news/what-is-a-blockchain-fork'
-      preLoaderRoute: typeof NewsWhatIsABlockchainForkRouteImport
-      parentRoute: typeof NewsRoute
-    }
     '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': {
       id: '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
       path: '/standard-chartered-uae-institutional-bitcoin-ether-trading'
       fullPath: '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
       preLoaderRoute: typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/notebooklm-review-2026-gemini-notebook-ai-research-tool': {
+      id: '/news/notebooklm-review-2026-gemini-notebook-ai-research-tool'
+      path: '/notebooklm-review-2026-gemini-notebook-ai-research-tool'
+      fullPath: '/news/notebooklm-review-2026-gemini-notebook-ai-research-tool'
+      preLoaderRoute: typeof NewsNotebooklmReview2026GeminiNotebookAiResearchToolRouteImport
       parentRoute: typeof NewsRoute
     }
     '/news/ethereum-merge-two-years-later': {
@@ -2348,12 +2288,9 @@ interface NewsRouteChildren {
   NewsBitcoinRallyAugust2026Route: typeof NewsBitcoinRallyAugust2026Route
   NewsBitcoinSeptemberRallyMacroTestRoute: typeof NewsBitcoinSeptemberRallyMacroTestRoute
   NewsEthereumMergeTwoYearsLaterRoute: typeof NewsEthereumMergeTwoYearsLaterRoute
+  NewsNotebooklmReview2026GeminiNotebookAiResearchToolRoute: typeof NewsNotebooklmReview2026GeminiNotebookAiResearchToolRoute
   NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute: typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
-  NewsWhatIsABlockchainForkRoute: typeof NewsWhatIsABlockchainForkRoute
   NewsWhatIsTheClarityActCryptoRoute: typeof NewsWhatIsTheClarityActCryptoRoute
-  NewsWhatItMeansWhenExchangePausesWithdrawalsRoute: typeof NewsWhatItMeansWhenExchangePausesWithdrawalsRoute
-  NewsWhyBitcoinPriceMovesMoreThanStocksRoute: typeof NewsWhyBitcoinPriceMovesMoreThanStocksRoute
-  NewsWhyGovernmentsRegulateCryptocurrencyRoute: typeof NewsWhyGovernmentsRegulateCryptocurrencyRoute
   NewsIndexRoute: typeof NewsIndexRoute
 }
 
@@ -2366,16 +2303,11 @@ const NewsRouteChildren: NewsRouteChildren = {
   NewsBitcoinSeptemberRallyMacroTestRoute:
     NewsBitcoinSeptemberRallyMacroTestRoute,
   NewsEthereumMergeTwoYearsLaterRoute: NewsEthereumMergeTwoYearsLaterRoute,
+  NewsNotebooklmReview2026GeminiNotebookAiResearchToolRoute:
+    NewsNotebooklmReview2026GeminiNotebookAiResearchToolRoute,
   NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute:
     NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute,
-  NewsWhatIsABlockchainForkRoute: NewsWhatIsABlockchainForkRoute,
   NewsWhatIsTheClarityActCryptoRoute: NewsWhatIsTheClarityActCryptoRoute,
-  NewsWhatItMeansWhenExchangePausesWithdrawalsRoute:
-    NewsWhatItMeansWhenExchangePausesWithdrawalsRoute,
-  NewsWhyBitcoinPriceMovesMoreThanStocksRoute:
-    NewsWhyBitcoinPriceMovesMoreThanStocksRoute,
-  NewsWhyGovernmentsRegulateCryptocurrencyRoute:
-    NewsWhyGovernmentsRegulateCryptocurrencyRoute,
   NewsIndexRoute: NewsIndexRoute,
 }
 
@@ -2460,3 +2392,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
