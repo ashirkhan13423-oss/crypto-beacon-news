@@ -8,6 +8,7 @@ import macroTestHero from "@/assets/news-btc-september-macro-test.jpg";
 import rallyHero from "@/assets/news-bitcoin-rally.jpg";
 import ethMergeHero from "@/assets/ethereum-merge-two-years.jpg";
 import clarityActHero from "@/assets/news-clarity-act.jpg";
+import jobsEtfHero from "@/assets/news-btc-jobs-report-etf.jpg";
 import { Newspaper } from "lucide-react";
 
 const collectionSchema = {
@@ -50,6 +51,11 @@ const collectionSchema = {
       "@type": "WebPage",
       name: "The Ethereum Merge: Two Years Later — What Actually Changed",
       url: "https://www.cryptobeacon.site/news/ethereum-merge-two-years-later",
+    },
+    {
+      "@type": "WebPage",
+      name: "Bitcoin Reclaims $81,000 After U.S. Jobs Report as ETF Inflows Surge",
+      url: "https://www.cryptobeacon.site/news/bitcoin-jobs-report-etf-inflows-september-2026",
     },
   ],
 };
@@ -273,6 +279,33 @@ function NewsHub() {
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 A factual retrospective on the Ethereum Merge at its two-year mark (September 2024): what the upgrade delivered, what it didn't, and what the data shows now.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            to="/news/bitcoin-jobs-report-etf-inflows-september-2026"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={jobsEtfHero}
+                alt="A cinematic, modern editorial illustration representing Bitcoin, global markets, the US Federal reserve building, jobs data, and upward surging financial charts"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width={1600}
+                height={900}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                News · Macro
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Bitcoin Reclaims $81,000 After U.S. Jobs Report as ETF Inflows Surge
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                How the August 2026 U.S. jobs report and Federal Reserve rate-hike repricing fueled a Bitcoin rally above $81,000 and $731M in spot ETF inflows.
               </p>
             </div>
           </Link>
