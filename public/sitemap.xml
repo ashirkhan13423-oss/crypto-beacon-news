@@ -294,4 +294,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/news/bitcoin-jobs-report-september-2026-fed-rate-risk</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>

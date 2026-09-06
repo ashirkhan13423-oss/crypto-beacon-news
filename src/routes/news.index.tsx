@@ -9,6 +9,7 @@ import rallyHero from "@/assets/news-bitcoin-rally.jpg";
 import ethMergeHero from "@/assets/ethereum-merge-two-years.jpg";
 import clarityActHero from "@/assets/news-clarity-act.jpg";
 import jobsEtfHero from "@/assets/news-btc-jobs-report-etf.jpg";
+import fedInflationHero from "@/assets/news-bitcoin-fed-inflation-etf-sept2026.jpg";
 import { Newspaper } from "lucide-react";
 
 const collectionSchema = {
@@ -56,6 +57,11 @@ const collectionSchema = {
       "@type": "WebPage",
       name: "Bitcoin Reclaims $81,000 After U.S. Jobs Report as ETF Inflows Surge",
       url: "https://www.cryptobeacon.site/news/bitcoin-jobs-report-etf-inflows-september-2026",
+    },
+    {
+      "@type": "WebPage",
+      name: "Bitcoin Rises After August Jobs Report as Markets Reprice September Fed Risk",
+      url: "https://www.cryptobeacon.site/news/bitcoin-jobs-report-september-2026-fed-rate-risk",
     },
   ],
 };
@@ -306,6 +312,33 @@ function NewsHub() {
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 How the August 2026 U.S. jobs report and Federal Reserve rate-hike repricing fueled a Bitcoin rally above $81,000 and $731M in spot ETF inflows.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            to="/news/bitcoin-jobs-report-september-2026-fed-rate-risk"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={fedInflationHero}
+                alt="Cinematic editorial illustration showing Bitcoin above the Federal Reserve building, a payroll jobs report, CPI inflation gauge, and ETF institutional flow arrows"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width={1600}
+                height={900}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                News · Macro Analysis
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Bitcoin Rises After August Jobs Report as Markets Reprice September Fed Risk
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                The full transmission chain from payrolls to rate expectations, what the $731M ETF inflow really signals, and why the September CPI is the real test.
               </p>
             </div>
           </Link>
