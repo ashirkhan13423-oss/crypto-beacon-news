@@ -37,19 +37,34 @@ const organizationSchema = {
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
+      <div className="max-w-lg text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Looks like this page has moved</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          The page you're looking for doesn't exist or has been moved. Try searching or browse our popular topics below.
         </p>
-        <div className="mt-6">
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             Go home
           </Link>
+          <Link
+            to="/search"
+            search={{ q: "" }}
+            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+          >
+            Search
+          </Link>
+        </div>
+        <div className="mt-8 flex flex-wrap justify-center gap-2 text-xs">
+          <Link to="/bitcoin" className="rounded-full border px-3 py-1 text-muted-foreground hover:border-primary hover:text-foreground transition-colors">Bitcoin</Link>
+          <Link to="/ethereum" className="rounded-full border px-3 py-1 text-muted-foreground hover:border-primary hover:text-foreground transition-colors">Ethereum</Link>
+          <Link to="/security" className="rounded-full border px-3 py-1 text-muted-foreground hover:border-primary hover:text-foreground transition-colors">Security</Link>
+          <Link to="/guides" className="rounded-full border px-3 py-1 text-muted-foreground hover:border-primary hover:text-foreground transition-colors">Guides</Link>
+          <Link to="/news" className="rounded-full border px-3 py-1 text-muted-foreground hover:border-primary hover:text-foreground transition-colors">News</Link>
+          <Link to="/glossary" className="rounded-full border px-3 py-1 text-muted-foreground hover:border-primary hover:text-foreground transition-colors">Glossary</Link>
         </div>
       </div>
     </div>

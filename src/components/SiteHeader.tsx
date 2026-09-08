@@ -2,13 +2,17 @@ import { Link } from "@tanstack/react-router";
 import { Search, Menu, Twitter } from "lucide-react";
 
 const navLinks: { label: string; to: string }[] = [
-  { label: "Guides", to: "/guides" },
-  { label: "Security", to: "/security" },
+  { label: "Learn", to: "/learn" },
   { label: "Bitcoin", to: "/bitcoin" },
   { label: "Ethereum", to: "/ethereum" },
+  { label: "Security", to: "/security" },
+  { label: "Guides", to: "/guides" },
+  { label: "Taxes", to: "/taxes" },
+  { label: "Altcoins", to: "/altcoins" },
+  { label: "DeFi", to: "/defi" },
+  { label: "ETFs", to: "/etfs" },
   { label: "News", to: "/news" },
-  { label: "About", to: "/about" },
-  { label: "Contact", to: "/contact" },
+  { label: "Glossary", to: "/glossary" },
 ];
 
 export function SiteHeader() {
@@ -16,7 +20,7 @@ export function SiteHeader() {
     <header className="bg-surface-bright border-b border-outline-variant sticky top-0 z-50 w-full">
       <div className="flex justify-between items-center w-full px-gutter md:px-margin max-w-max_width mx-auto h-24">
         <Link to="/" className="flex items-center gap-md">
-          <img alt="CryptoBeacon Logo" className="h-28 md:h-32 w-auto" src="/logo.png" height="128" fetchpriority="high" />
+          <img alt="CryptoBeacon Logo" className="h-28 md:h-32 w-auto" src="/logo.png" height="128" fetchPriority="high" />
         </Link>
         <nav className="hidden md:flex items-center gap-lg">
           {navLinks.map((l) => (

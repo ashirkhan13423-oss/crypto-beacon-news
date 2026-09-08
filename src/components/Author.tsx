@@ -11,7 +11,7 @@ export function Author({ publishedDate, readTime }: AuthorProps) {
     <div className="mt-md mb-lg flex flex-col sm:flex-row items-start sm:items-center gap-md p-md bg-surface-container-low border border-outline-variant rounded-xl max-w-3xl">
       <img
         src={authorAvatar}
-        alt="Ashir"
+        alt="Ashir Khan"
         className="w-14 h-14 rounded-full object-cover border-2 border-primary-container shrink-0"
       />
       <div className="space-y-xs">
@@ -19,7 +19,7 @@ export function Author({ publishedDate, readTime }: AuthorProps) {
           <span>
             By{" "}
             <Link to="/author" className="text-secondary font-medium hover:underline">
-              Ashir
+              Ashir Khan
             </Link>
           </span>
           {publishedDate && (
@@ -36,7 +36,7 @@ export function Author({ publishedDate, readTime }: AuthorProps) {
           )}
         </div>
         <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-          Ashir is an independent writer researching cryptocurrency security and self-custody, with a focus on translating technical concepts for everyday users.
+          Ashir Khan is an independent writer researching cryptocurrency security and self-custody, with a focus on translating technical concepts for everyday users.
         </p>
       </div>
     </div>
