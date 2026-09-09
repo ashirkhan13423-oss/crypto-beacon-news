@@ -9,226 +9,132 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as AffiliateDisclosureRouteImport } from './routes/affiliate-disclosure'
-import { Route as AltcoinsRouteImport } from './routes/altcoins'
-import { Route as AuthorRouteImport } from './routes/author'
-import { Route as BitcoinRouteImport } from './routes/bitcoin'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CorrectionsRouteImport } from './routes/corrections'
-import { Route as DefiRouteImport } from './routes/defi'
-import { Route as DisclaimerRouteImport } from './routes/disclaimer'
-import { Route as EditorialPolicyRouteImport } from './routes/editorial-policy'
-import { Route as EtfsRouteImport } from './routes/etfs'
-import { Route as EthereumRouteImport } from './routes/ethereum'
-import { Route as GlossaryRouteImport } from './routes/glossary'
-import { Route as GuidesRouteImport } from './routes/guides'
-import { Route as LearnRouteImport } from './routes/learn'
-import { Route as NewsRouteImport } from './routes/news'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as SearchRouteImport } from './routes/search'
-import { Route as SecurityRouteImport } from './routes/security'
-import { Route as TaxesRouteImport } from './routes/taxes'
 import { Route as TermsRouteImport } from './routes/terms'
-import { Route as AltcoinsIndexRouteImport } from './routes/altcoins.index'
-import { Route as BitcoinIndexRouteImport } from './routes/bitcoin.index'
-import { Route as BitcoinBitcoinAddressVsWalletAddressRouteImport } from './routes/bitcoin.bitcoin-address-vs-wallet-address'
-import { Route as BitcoinBitcoinLightningNetworkExplainedRouteImport } from './routes/bitcoin.bitcoin-lightning-network-explained'
-import { Route as BitcoinBitcoinWalletsCompleteGuideRouteImport } from './routes/bitcoin.bitcoin-wallets-complete-guide'
-import { Route as BitcoinCoinbaseVsKrakenVsBinanceExchangeComparisonRouteImport } from './routes/bitcoin.coinbase-vs-kraken-vs-binance-exchange-comparison'
-import { Route as BitcoinCommonBitcoinWalletScamsRouteImport } from './routes/bitcoin.common-bitcoin-wallet-scams'
-import { Route as BitcoinHowBitcoinWalletsWorkRouteImport } from './routes/bitcoin.how-bitcoin-wallets-work'
-import { Route as BitcoinHowDoBitcoinEtfsAffectPriceRouteImport } from './routes/bitcoin.how-do-bitcoin-etfs-affect-price'
-import { Route as BitcoinHowToBuyYourFirstBitcoinSafelyRouteImport } from './routes/bitcoin.how-to-buy-your-first-bitcoin-safely'
-import { Route as BitcoinHowToSendBitcoinSafelyRouteImport } from './routes/bitcoin.how-to-send-bitcoin-safely'
-import { Route as BitcoinWhatHappensIfYouLoseYourSeedPhraseRouteImport } from './routes/bitcoin.what-happens-if-you-lose-your-seed-phrase'
-import { Route as BitcoinWhatIsABitcoinNodeRouteImport } from './routes/bitcoin.what-is-a-bitcoin-node'
-import { Route as BitcoinWhatIsABitcoinSeedPhraseRouteImport } from './routes/bitcoin.what-is-a-bitcoin-seed-phrase'
-import { Route as BitcoinWhatIsABitcoinWalletRouteImport } from './routes/bitcoin.what-is-a-bitcoin-wallet'
-import { Route as BitcoinWhatIsBitcoinMiningRouteImport } from './routes/bitcoin.what-is-bitcoin-mining'
-import { Route as BitcoinWhatIsTheBitcoinHalvingRouteImport } from './routes/bitcoin.what-is-the-bitcoin-halving'
-import { Route as BitcoinWhyDoBondYieldsAffectBitcoinPriceRouteImport } from './routes/bitcoin.why-do-bond-yields-affect-bitcoin-price'
-import { Route as DefiIndexRouteImport } from './routes/defi.index'
-import { Route as EtfsIndexRouteImport } from './routes/etfs.index'
-import { Route as EthereumIndexRouteImport } from './routes/ethereum.index'
-import { Route as EthereumCanYouSendBitcoinToAnEthereumAddressRouteImport } from './routes/ethereum.can-you-send-bitcoin-to-an-ethereum-address'
-import { Route as EthereumEthereumCompleteBeginnersGuideRouteImport } from './routes/ethereum.ethereum-complete-beginners-guide'
-import { Route as EthereumEthereumLayer2ScalingRollupsExplainedRouteImport } from './routes/ethereum.ethereum-layer-2-scaling-rollups-explained'
-import { Route as EthereumEthereumTransactionFeesExplainedRouteImport } from './routes/ethereum.ethereum-transaction-fees-explained'
-import { Route as EthereumEthereumValidatorsExplainedRouteImport } from './routes/ethereum.ethereum-validators-explained'
-import { Route as EthereumEthereumVsBitcoinRouteImport } from './routes/ethereum.ethereum-vs-bitcoin'
-import { Route as EthereumEthereumWalletsExplainedRouteImport } from './routes/ethereum.ethereum-wallets-explained'
-import { Route as EthereumHowEthereumWorksRouteImport } from './routes/ethereum.how-ethereum-works'
-import { Route as EthereumHowToStakeEthOnLidoVsRocketpoolRouteImport } from './routes/ethereum.how-to-stake-eth-on-lido-vs-rocketpool'
-import { Route as EthereumProofOfStakeExplainedRouteImport } from './routes/ethereum.proof-of-stake-explained'
-import { Route as EthereumWhatAreGasFeesHowToSaveRouteImport } from './routes/ethereum.what-are-gas-fees-how-to-save'
-import { Route as EthereumWhatIsASmartContractRouteImport } from './routes/ethereum.what-is-a-smart-contract'
-import { Route as EthereumWhatIsDefiDecentralizedFinanceRouteImport } from './routes/ethereum.what-is-defi-decentralized-finance'
-import { Route as EthereumWhatIsEthereumRouteImport } from './routes/ethereum.what-is-ethereum'
-import { Route as EthereumWhatIsEthereumStakingRouteImport } from './routes/ethereum.what-is-ethereum-staking'
-import { Route as GlossaryIndexRouteImport } from './routes/glossary.index'
-import { Route as GuidesIndexRouteImport } from './routes/guides.index'
-import { Route as GuidesCryptoDollarCostAveragingExplainedRouteImport } from './routes/guides.crypto-dollar-cost-averaging-explained'
-import { Route as GuidesCryptoPortfolioRebalancingExplainedRouteImport } from './routes/guides.crypto-portfolio-rebalancing-explained'
-import { Route as GuidesCryptoRegulationExplainedForBeginnersRouteImport } from './routes/guides.crypto-regulation-explained-for-beginners'
-import { Route as GuidesCryptoRegulationHubRouteImport } from './routes/guides.crypto-regulation-hub'
-import { Route as GuidesCryptoRegulationVsCryptocurrencyBanRouteImport } from './routes/guides.crypto-regulation-vs-cryptocurrency-ban'
-import { Route as GuidesCryptoTaxBasicsForBeginnersRouteImport } from './routes/guides.crypto-tax-basics-for-beginners'
-import { Route as GuidesCryptocurrencyTaxesExplainedRouteImport } from './routes/guides.cryptocurrency-taxes-explained'
-import { Route as GuidesExchangeOrPersonalWalletCryptoStorageRouteImport } from './routes/guides.exchange-or-personal-wallet-crypto-storage'
-import { Route as GuidesHardwareWalletComparisonGuideRouteImport } from './routes/guides.hardware-wallet-comparison-guide'
-import { Route as GuidesHotWalletsVsColdWalletsExplainedRouteImport } from './routes/guides.hot-wallets-vs-cold-wallets-explained'
-import { Route as GuidesHowCryptoExchangesAreRegulatedRouteImport } from './routes/guides.how-crypto-exchanges-are-regulated'
-import { Route as GuidesHowCryptocurrencyRegulationWorksRouteImport } from './routes/guides.how-cryptocurrency-regulation-works'
-import { Route as GuidesHowToReadABlockExplorerRouteImport } from './routes/guides.how-to-read-a-block-explorer'
-import { Route as GuidesHowToReadCryptoNewsWithoutHypeRouteImport } from './routes/guides.how-to-read-crypto-news-without-hype'
-import { Route as GuidesHowToSetUpMetamaskStepByStepRouteImport } from './routes/guides.how-to-set-up-metamask-step-by-step'
-import { Route as GuidesNotYourKeysNotYourCoinsMeaningRouteImport } from './routes/guides.not-your-keys-not-your-coins-meaning'
-import { Route as GuidesStablecoinRegulationExplainedRouteImport } from './routes/guides.stablecoin-regulation-explained'
-import { Route as GuidesWhatIsABlockchainForkRouteImport } from './routes/guides.what-is-a-blockchain-fork'
-import { Route as GuidesWhatIsACryptoWalletAddressRouteImport } from './routes/guides.what-is-a-crypto-wallet-address'
-import { Route as GuidesWhatIsAPrivateKeyRouteImport } from './routes/guides.what-is-a-private-key'
-import { Route as GuidesWhatIsAShortSqueezeCryptoExplainedRouteImport } from './routes/guides.what-is-a-short-squeeze-crypto-explained'
-import { Route as GuidesWhatIsAStablecoinRouteImport } from './routes/guides.what-is-a-stablecoin'
-import { Route as GuidesWhatIsAmlInCryptoRouteImport } from './routes/guides.what-is-aml-in-crypto'
-import { Route as GuidesWhatIsKycInCryptocurrencyRouteImport } from './routes/guides.what-is-kyc-in-cryptocurrency'
-import { Route as GuidesWhatItMeansWhenExchangePausesWithdrawalsRouteImport } from './routes/guides.what-it-means-when-exchange-pauses-withdrawals'
-import { Route as GuidesWhyBitcoinPriceMovesMoreThanStocksRouteImport } from './routes/guides.why-bitcoin-price-moves-more-than-stocks'
-import { Route as GuidesWhyCryptoRegulationMattersRouteImport } from './routes/guides.why-crypto-regulation-matters'
-import { Route as GuidesWhyGovernmentsRegulateCryptocurrencyRouteImport } from './routes/guides.why-governments-regulate-cryptocurrency'
-import { Route as LearnIndexRouteImport } from './routes/learn.index'
-import { Route as NewsIndexRouteImport } from './routes/news.index'
-import { Route as NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRouteImport } from './routes/news.bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
-import { Route as NewsBitcoinFedRateHikeJobsReportSeptember2026RouteImport } from './routes/news.bitcoin-fed-rate-hike-jobs-report-september-2026'
-import { Route as NewsBitcoinJobsReportEtfInflowsSeptember2026RouteImport } from './routes/news.bitcoin-jobs-report-etf-inflows-september-2026'
-import { Route as NewsBitcoinJobsReportSeptember2026FedRateRiskRouteImport } from './routes/news.bitcoin-jobs-report-september-2026-fed-rate-risk'
-import { Route as NewsBitcoinRallyAugust2026RouteImport } from './routes/news.bitcoin-rally-august-2026'
-import { Route as NewsBitcoinSeptemberRallyMacroTestRouteImport } from './routes/news.bitcoin-september-rally-macro-test'
-import { Route as NewsEthereumMergeTwoYearsLaterRouteImport } from './routes/news.ethereum-merge-two-years-later'
-import { Route as NewsLiquidNetworkHack4000BtcWithdrawalRouteImport } from './routes/news.liquid-network-hack-4000-btc-withdrawal'
-import { Route as NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport } from './routes/news.standard-chartered-uae-institutional-bitcoin-ether-trading'
-import { Route as NewsWhatIsTheClarityActCryptoRouteImport } from './routes/news.what-is-the-clarity-act-crypto'
-import { Route as SecurityIndexRouteImport } from './routes/security.index'
-import { Route as SecurityCommonCryptoScamsRouteImport } from './routes/security.common-crypto-scams'
-import { Route as SecurityCryptoSecurityHubRouteImport } from './routes/security.crypto-security-hub'
-import { Route as SecurityCryptoWalletDrainerScamsExplainedRouteImport } from './routes/security.crypto-wallet-drainer-scams-explained'
-import { Route as SecurityDefiRisksExplainedRouteImport } from './routes/security.defi-risks-explained'
-import { Route as SecurityExchangeAccountSecurityRouteImport } from './routes/security.exchange-account-security'
-import { Route as SecurityFakeAirdropScamsExplainedRouteImport } from './routes/security.fake-airdrop-scams-explained'
-import { Route as SecurityFakeWalletAppsExplainedRouteImport } from './routes/security.fake-wallet-apps-explained'
-import { Route as SecurityHardwareWalletMistakesToAvoidRouteImport } from './routes/security.hardware-wallet-mistakes-to-avoid'
-import { Route as SecurityHowCryptoPhishingScamsWorkRouteImport } from './routes/security.how-crypto-phishing-scams-work'
-import { Route as SecurityHowToAvoidCryptoPhishingScamsRouteImport } from './routes/security.how-to-avoid-crypto-phishing-scams'
-import { Route as SecurityHowToIdentifyAFakeCryptoWebsiteRouteImport } from './routes/security.how-to-identify-a-fake-crypto-website'
-import { Route as SecurityHowToRevokeSmartContractApprovalsRouteImport } from './routes/security.how-to-revoke-smart-contract-approvals'
-import { Route as SecurityHowToSpotARugPullRouteImport } from './routes/security.how-to-spot-a-rug-pull'
-import { Route as SecurityHowToStoreCryptoSeedPhraseSafelyRouteImport } from './routes/security.how-to-store-crypto-seed-phrase-safely'
-import { Route as SecurityHowToVerifyACryptoTransactionRouteImport } from './routes/security.how-to-verify-a-crypto-transaction'
-import { Route as SecurityPrivateKeyVsSeedPhraseRouteImport } from './routes/security.private-key-vs-seed-phrase'
-import { Route as SecurityTwoFactorAuthenticationForCryptoRouteImport } from './routes/security.two-factor-authentication-for-crypto'
-import { Route as SecurityWhatIsASeedPhraseRouteImport } from './routes/security.what-is-a-seed-phrase'
-import { Route as SecurityWhatToDoIfYourCryptoWalletIsHackedRouteImport } from './routes/security.what-to-do-if-your-crypto-wallet-is-hacked'
+import { Route as TaxesRouteImport } from './routes/taxes'
+import { Route as SecurityRouteImport } from './routes/security'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as NewsRouteImport } from './routes/news'
+import { Route as LearnRouteImport } from './routes/learn'
+import { Route as GuidesRouteImport } from './routes/guides'
+import { Route as GlossaryRouteImport } from './routes/glossary'
+import { Route as EthereumRouteImport } from './routes/ethereum'
+import { Route as EtfsRouteImport } from './routes/etfs'
+import { Route as EditorialPolicyRouteImport } from './routes/editorial-policy'
+import { Route as DisclaimerRouteImport } from './routes/disclaimer'
+import { Route as DefiRouteImport } from './routes/defi'
+import { Route as CorrectionsRouteImport } from './routes/corrections'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BitcoinRouteImport } from './routes/bitcoin'
+import { Route as AuthorRouteImport } from './routes/author'
+import { Route as AltcoinsRouteImport } from './routes/altcoins'
+import { Route as AffiliateDisclosureRouteImport } from './routes/affiliate-disclosure'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as TaxesIndexRouteImport } from './routes/taxes.index'
+import { Route as SecurityIndexRouteImport } from './routes/security.index'
+import { Route as NewsIndexRouteImport } from './routes/news.index'
+import { Route as LearnIndexRouteImport } from './routes/learn.index'
+import { Route as GuidesIndexRouteImport } from './routes/guides.index'
+import { Route as GlossaryIndexRouteImport } from './routes/glossary.index'
+import { Route as EthereumIndexRouteImport } from './routes/ethereum.index'
+import { Route as EtfsIndexRouteImport } from './routes/etfs.index'
+import { Route as DefiIndexRouteImport } from './routes/defi.index'
+import { Route as BitcoinIndexRouteImport } from './routes/bitcoin.index'
+import { Route as AltcoinsIndexRouteImport } from './routes/altcoins.index'
+import { Route as SecurityWhatToDoIfYourCryptoWalletIsHackedRouteImport } from './routes/security.what-to-do-if-your-crypto-wallet-is-hacked'
+import { Route as SecurityWhatIsASeedPhraseRouteImport } from './routes/security.what-is-a-seed-phrase'
+import { Route as SecurityTwoFactorAuthenticationForCryptoRouteImport } from './routes/security.two-factor-authentication-for-crypto'
+import { Route as SecurityPrivateKeyVsSeedPhraseRouteImport } from './routes/security.private-key-vs-seed-phrase'
+import { Route as SecurityHowToVerifyACryptoTransactionRouteImport } from './routes/security.how-to-verify-a-crypto-transaction'
+import { Route as SecurityHowToStoreCryptoSeedPhraseSafelyRouteImport } from './routes/security.how-to-store-crypto-seed-phrase-safely'
+import { Route as SecurityHowToSpotARugPullRouteImport } from './routes/security.how-to-spot-a-rug-pull'
+import { Route as SecurityHowToRevokeSmartContractApprovalsRouteImport } from './routes/security.how-to-revoke-smart-contract-approvals'
+import { Route as SecurityHowToIdentifyAFakeCryptoWebsiteRouteImport } from './routes/security.how-to-identify-a-fake-crypto-website'
+import { Route as SecurityHowToAvoidCryptoPhishingScamsRouteImport } from './routes/security.how-to-avoid-crypto-phishing-scams'
+import { Route as SecurityHowCryptoPhishingScamsWorkRouteImport } from './routes/security.how-crypto-phishing-scams-work'
+import { Route as SecurityHardwareWalletMistakesToAvoidRouteImport } from './routes/security.hardware-wallet-mistakes-to-avoid'
+import { Route as SecurityFakeWalletAppsExplainedRouteImport } from './routes/security.fake-wallet-apps-explained'
+import { Route as SecurityFakeAirdropScamsExplainedRouteImport } from './routes/security.fake-airdrop-scams-explained'
+import { Route as SecurityExchangeAccountSecurityRouteImport } from './routes/security.exchange-account-security'
+import { Route as SecurityDefiRisksExplainedRouteImport } from './routes/security.defi-risks-explained'
+import { Route as SecurityCryptoWalletDrainerScamsExplainedRouteImport } from './routes/security.crypto-wallet-drainer-scams-explained'
+import { Route as SecurityCryptoSecurityHubRouteImport } from './routes/security.crypto-security-hub'
+import { Route as SecurityCommonCryptoScamsRouteImport } from './routes/security.common-crypto-scams'
+import { Route as NewsWhatIsTheClarityActCryptoRouteImport } from './routes/news.what-is-the-clarity-act-crypto'
+import { Route as NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport } from './routes/news.standard-chartered-uae-institutional-bitcoin-ether-trading'
+import { Route as NewsLiquidNetworkHack4000BtcWithdrawalRouteImport } from './routes/news.liquid-network-hack-4000-btc-withdrawal'
+import { Route as NewsLiquidNetwork3400BtcReturned320MillionIncidentRouteImport } from './routes/news.liquid-network-3400-btc-returned-320-million-incident'
+import { Route as NewsEthereumMergeTwoYearsLaterRouteImport } from './routes/news.ethereum-merge-two-years-later'
+import { Route as NewsBitcoinSeptemberRallyMacroTestRouteImport } from './routes/news.bitcoin-september-rally-macro-test'
+import { Route as NewsBitcoinRallyAugust2026RouteImport } from './routes/news.bitcoin-rally-august-2026'
+import { Route as NewsBitcoinJobsReportSeptember2026FedRateRiskRouteImport } from './routes/news.bitcoin-jobs-report-september-2026-fed-rate-risk'
+import { Route as NewsBitcoinJobsReportEtfInflowsSeptember2026RouteImport } from './routes/news.bitcoin-jobs-report-etf-inflows-september-2026'
+import { Route as NewsBitcoinFedRateHikeJobsReportSeptember2026RouteImport } from './routes/news.bitcoin-fed-rate-hike-jobs-report-september-2026'
+import { Route as NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRouteImport } from './routes/news.bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
+import { Route as GuidesWhyGovernmentsRegulateCryptocurrencyRouteImport } from './routes/guides.why-governments-regulate-cryptocurrency'
+import { Route as GuidesWhyCryptoRegulationMattersRouteImport } from './routes/guides.why-crypto-regulation-matters'
+import { Route as GuidesWhyBitcoinPriceMovesMoreThanStocksRouteImport } from './routes/guides.why-bitcoin-price-moves-more-than-stocks'
+import { Route as GuidesWhatItMeansWhenExchangePausesWithdrawalsRouteImport } from './routes/guides.what-it-means-when-exchange-pauses-withdrawals'
+import { Route as GuidesWhatIsKycInCryptocurrencyRouteImport } from './routes/guides.what-is-kyc-in-cryptocurrency'
+import { Route as GuidesWhatIsAmlInCryptoRouteImport } from './routes/guides.what-is-aml-in-crypto'
+import { Route as GuidesWhatIsAStablecoinRouteImport } from './routes/guides.what-is-a-stablecoin'
+import { Route as GuidesWhatIsAShortSqueezeCryptoExplainedRouteImport } from './routes/guides.what-is-a-short-squeeze-crypto-explained'
+import { Route as GuidesWhatIsAPrivateKeyRouteImport } from './routes/guides.what-is-a-private-key'
+import { Route as GuidesWhatIsACryptoWalletAddressRouteImport } from './routes/guides.what-is-a-crypto-wallet-address'
+import { Route as GuidesWhatIsABlockchainForkRouteImport } from './routes/guides.what-is-a-blockchain-fork'
+import { Route as GuidesStablecoinRegulationExplainedRouteImport } from './routes/guides.stablecoin-regulation-explained'
+import { Route as GuidesNotYourKeysNotYourCoinsMeaningRouteImport } from './routes/guides.not-your-keys-not-your-coins-meaning'
+import { Route as GuidesHowToSetUpMetamaskStepByStepRouteImport } from './routes/guides.how-to-set-up-metamask-step-by-step'
+import { Route as GuidesHowToReadCryptoNewsWithoutHypeRouteImport } from './routes/guides.how-to-read-crypto-news-without-hype'
+import { Route as GuidesHowToReadABlockExplorerRouteImport } from './routes/guides.how-to-read-a-block-explorer'
+import { Route as GuidesHowCryptocurrencyRegulationWorksRouteImport } from './routes/guides.how-cryptocurrency-regulation-works'
+import { Route as GuidesHowCryptoExchangesAreRegulatedRouteImport } from './routes/guides.how-crypto-exchanges-are-regulated'
+import { Route as GuidesHotWalletsVsColdWalletsExplainedRouteImport } from './routes/guides.hot-wallets-vs-cold-wallets-explained'
+import { Route as GuidesHardwareWalletComparisonGuideRouteImport } from './routes/guides.hardware-wallet-comparison-guide'
+import { Route as GuidesExchangeOrPersonalWalletCryptoStorageRouteImport } from './routes/guides.exchange-or-personal-wallet-crypto-storage'
+import { Route as GuidesCryptocurrencyTaxesExplainedRouteImport } from './routes/guides.cryptocurrency-taxes-explained'
+import { Route as GuidesCryptoTaxBasicsForBeginnersRouteImport } from './routes/guides.crypto-tax-basics-for-beginners'
+import { Route as GuidesCryptoRegulationVsCryptocurrencyBanRouteImport } from './routes/guides.crypto-regulation-vs-cryptocurrency-ban'
+import { Route as GuidesCryptoRegulationHubRouteImport } from './routes/guides.crypto-regulation-hub'
+import { Route as GuidesCryptoRegulationExplainedForBeginnersRouteImport } from './routes/guides.crypto-regulation-explained-for-beginners'
+import { Route as GuidesCryptoPortfolioRebalancingExplainedRouteImport } from './routes/guides.crypto-portfolio-rebalancing-explained'
+import { Route as GuidesCryptoDollarCostAveragingExplainedRouteImport } from './routes/guides.crypto-dollar-cost-averaging-explained'
+import { Route as EthereumWhatIsEthereumStakingRouteImport } from './routes/ethereum.what-is-ethereum-staking'
+import { Route as EthereumWhatIsEthereumRouteImport } from './routes/ethereum.what-is-ethereum'
+import { Route as EthereumWhatIsDefiDecentralizedFinanceRouteImport } from './routes/ethereum.what-is-defi-decentralized-finance'
+import { Route as EthereumWhatIsASmartContractRouteImport } from './routes/ethereum.what-is-a-smart-contract'
+import { Route as EthereumWhatAreGasFeesHowToSaveRouteImport } from './routes/ethereum.what-are-gas-fees-how-to-save'
+import { Route as EthereumProofOfStakeExplainedRouteImport } from './routes/ethereum.proof-of-stake-explained'
+import { Route as EthereumHowToStakeEthOnLidoVsRocketpoolRouteImport } from './routes/ethereum.how-to-stake-eth-on-lido-vs-rocketpool'
+import { Route as EthereumHowEthereumWorksRouteImport } from './routes/ethereum.how-ethereum-works'
+import { Route as EthereumEthereumWalletsExplainedRouteImport } from './routes/ethereum.ethereum-wallets-explained'
+import { Route as EthereumEthereumVsBitcoinRouteImport } from './routes/ethereum.ethereum-vs-bitcoin'
+import { Route as EthereumEthereumValidatorsExplainedRouteImport } from './routes/ethereum.ethereum-validators-explained'
+import { Route as EthereumEthereumTransactionFeesExplainedRouteImport } from './routes/ethereum.ethereum-transaction-fees-explained'
+import { Route as EthereumEthereumLayer2ScalingRollupsExplainedRouteImport } from './routes/ethereum.ethereum-layer-2-scaling-rollups-explained'
+import { Route as EthereumEthereumCompleteBeginnersGuideRouteImport } from './routes/ethereum.ethereum-complete-beginners-guide'
+import { Route as EthereumCanYouSendBitcoinToAnEthereumAddressRouteImport } from './routes/ethereum.can-you-send-bitcoin-to-an-ethereum-address'
+import { Route as BitcoinWhyDoBondYieldsAffectBitcoinPriceRouteImport } from './routes/bitcoin.why-do-bond-yields-affect-bitcoin-price'
+import { Route as BitcoinWhatIsTheBitcoinHalvingRouteImport } from './routes/bitcoin.what-is-the-bitcoin-halving'
+import { Route as BitcoinWhatIsBitcoinMiningRouteImport } from './routes/bitcoin.what-is-bitcoin-mining'
+import { Route as BitcoinWhatIsABitcoinWalletRouteImport } from './routes/bitcoin.what-is-a-bitcoin-wallet'
+import { Route as BitcoinWhatIsABitcoinSeedPhraseRouteImport } from './routes/bitcoin.what-is-a-bitcoin-seed-phrase'
+import { Route as BitcoinWhatIsABitcoinNodeRouteImport } from './routes/bitcoin.what-is-a-bitcoin-node'
+import { Route as BitcoinWhatHappensIfYouLoseYourSeedPhraseRouteImport } from './routes/bitcoin.what-happens-if-you-lose-your-seed-phrase'
+import { Route as BitcoinHowToSendBitcoinSafelyRouteImport } from './routes/bitcoin.how-to-send-bitcoin-safely'
+import { Route as BitcoinHowToBuyYourFirstBitcoinSafelyRouteImport } from './routes/bitcoin.how-to-buy-your-first-bitcoin-safely'
+import { Route as BitcoinHowDoBitcoinEtfsAffectPriceRouteImport } from './routes/bitcoin.how-do-bitcoin-etfs-affect-price'
+import { Route as BitcoinHowBitcoinWalletsWorkRouteImport } from './routes/bitcoin.how-bitcoin-wallets-work'
+import { Route as BitcoinCommonBitcoinWalletScamsRouteImport } from './routes/bitcoin.common-bitcoin-wallet-scams'
+import { Route as BitcoinCoinbaseVsKrakenVsBinanceExchangeComparisonRouteImport } from './routes/bitcoin.coinbase-vs-kraken-vs-binance-exchange-comparison'
+import { Route as BitcoinBitcoinWalletsCompleteGuideRouteImport } from './routes/bitcoin.bitcoin-wallets-complete-guide'
+import { Route as BitcoinBitcoinLightningNetworkExplainedRouteImport } from './routes/bitcoin.bitcoin-lightning-network-explained'
+import { Route as BitcoinBitcoinAddressVsWalletAddressRouteImport } from './routes/bitcoin.bitcoin-address-vs-wallet-address'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AffiliateDisclosureRoute = AffiliateDisclosureRouteImport.update({
-  id: '/affiliate-disclosure',
-  path: '/affiliate-disclosure',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AltcoinsRoute = AltcoinsRouteImport.update({
-  id: '/altcoins',
-  path: '/altcoins',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AuthorRoute = AuthorRouteImport.update({
-  id: '/author',
-  path: '/author',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BitcoinRoute = BitcoinRouteImport.update({
-  id: '/bitcoin',
-  path: '/bitcoin',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CorrectionsRoute = CorrectionsRouteImport.update({
-  id: '/corrections',
-  path: '/corrections',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DefiRoute = DefiRouteImport.update({
-  id: '/defi',
-  path: '/defi',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DisclaimerRoute = DisclaimerRouteImport.update({
-  id: '/disclaimer',
-  path: '/disclaimer',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EditorialPolicyRoute = EditorialPolicyRouteImport.update({
-  id: '/editorial-policy',
-  path: '/editorial-policy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EtfsRoute = EtfsRouteImport.update({
-  id: '/etfs',
-  path: '/etfs',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EthereumRoute = EthereumRouteImport.update({
-  id: '/ethereum',
-  path: '/ethereum',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GlossaryRoute = GlossaryRouteImport.update({
-  id: '/glossary',
-  path: '/glossary',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GuidesRoute = GuidesRouteImport.update({
-  id: '/guides',
-  path: '/guides',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LearnRoute = LearnRouteImport.update({
-  id: '/learn',
-  path: '/learn',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewsRoute = NewsRouteImport.update({
-  id: '/news',
-  path: '/news',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SearchRoute = SearchRouteImport.update({
-  id: '/search',
-  path: '/search',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SecurityRoute = SecurityRouteImport.update({
-  id: '/security',
-  path: '/security',
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TaxesRoute = TaxesRouteImport.update({
@@ -236,571 +142,165 @@ const TaxesRoute = TaxesRouteImport.update({
   path: '/taxes',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
+const SecurityRoute = SecurityRouteImport.update({
+  id: '/security',
+  path: '/security',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AltcoinsIndexRoute = AltcoinsIndexRouteImport.update({
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearnRoute = LearnRouteImport.update({
+  id: '/learn',
+  path: '/learn',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuidesRoute = GuidesRouteImport.update({
+  id: '/guides',
+  path: '/guides',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlossaryRoute = GlossaryRouteImport.update({
+  id: '/glossary',
+  path: '/glossary',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EthereumRoute = EthereumRouteImport.update({
+  id: '/ethereum',
+  path: '/ethereum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtfsRoute = EtfsRouteImport.update({
+  id: '/etfs',
+  path: '/etfs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EditorialPolicyRoute = EditorialPolicyRouteImport.update({
+  id: '/editorial-policy',
+  path: '/editorial-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisclaimerRoute = DisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DefiRoute = DefiRouteImport.update({
+  id: '/defi',
+  path: '/defi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CorrectionsRoute = CorrectionsRouteImport.update({
+  id: '/corrections',
+  path: '/corrections',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BitcoinRoute = BitcoinRouteImport.update({
+  id: '/bitcoin',
+  path: '/bitcoin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthorRoute = AuthorRouteImport.update({
+  id: '/author',
+  path: '/author',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AltcoinsRoute = AltcoinsRouteImport.update({
+  id: '/altcoins',
+  path: '/altcoins',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AffiliateDisclosureRoute = AffiliateDisclosureRouteImport.update({
+  id: '/affiliate-disclosure',
+  path: '/affiliate-disclosure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => AltcoinsRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-const BitcoinIndexRoute = BitcoinIndexRouteImport.update({
+const TaxesIndexRoute = TaxesIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => BitcoinRoute,
+  getParentRoute: () => TaxesRoute,
 } as any)
-const BitcoinBitcoinAddressVsWalletAddressRoute =
-  BitcoinBitcoinAddressVsWalletAddressRouteImport.update({
-    id: '/bitcoin-address-vs-wallet-address',
-    path: '/bitcoin-address-vs-wallet-address',
-    getParentRoute: () => BitcoinRoute,
-  } as any)
-const BitcoinBitcoinLightningNetworkExplainedRoute =
-  BitcoinBitcoinLightningNetworkExplainedRouteImport.update({
-    id: '/bitcoin-lightning-network-explained',
-    path: '/bitcoin-lightning-network-explained',
-    getParentRoute: () => BitcoinRoute,
-  } as any)
-const BitcoinBitcoinWalletsCompleteGuideRoute =
-  BitcoinBitcoinWalletsCompleteGuideRouteImport.update({
-    id: '/bitcoin-wallets-complete-guide',
-    path: '/bitcoin-wallets-complete-guide',
-    getParentRoute: () => BitcoinRoute,
-  } as any)
-const BitcoinCoinbaseVsKrakenVsBinanceExchangeComparisonRoute =
-  BitcoinCoinbaseVsKrakenVsBinanceExchangeComparisonRouteImport.update({
-    id: '/coinbase-vs-kraken-vs-binance-exchange-comparison',
-    path: '/coinbase-vs-kraken-vs-binance-exchange-comparison',
-    getParentRoute: () => BitcoinRoute,
-  } as any)
-const BitcoinCommonBitcoinWalletScamsRoute =
-  BitcoinCommonBitcoinWalletScamsRouteImport.update({
-    id: '/common-bitcoin-wallet-scams',
-    path: '/common-bitcoin-wallet-scams',
-    getParentRoute: () => BitcoinRoute,
-  } as any)
-const BitcoinHowBitcoinWalletsWorkRoute =
-  BitcoinHowBitcoinWalletsWorkRouteImport.update({
-    id: '/how-bitcoin-wallets-work',
-    path: '/how-bitcoin-wallets-work',
-    getParentRoute: () => BitcoinRoute,
-  } as any)
-const BitcoinHowDoBitcoinEtfsAffectPriceRoute =
-  BitcoinHowDoBitcoinEtfsAffectPriceRouteImport.update({
-    id: '/how-do-bitcoin-etfs-affect-price',
-    path: '/how-do-bitcoin-etfs-affect-price',
-    getParentRoute: () => BitcoinRoute,
-  } as any)
-const BitcoinHowToBuyYourFirstBitcoinSafelyRoute =
-  BitcoinHowToBuyYourFirstBitcoinSafelyRouteImport.update({
-    id: '/how-to-buy-your-first-bitcoin-safely',
-    path: '/how-to-buy-your-first-bitcoin-safely',
-    getParentRoute: () => BitcoinRoute,
-  } as any)
-const BitcoinHowToSendBitcoinSafelyRoute =
-  BitcoinHowToSendBitcoinSafelyRouteImport.update({
-    id: '/how-to-send-bitcoin-safely',
-    path: '/how-to-send-bitcoin-safely',
-    getParentRoute: () => BitcoinRoute,
-  } as any)
-const BitcoinWhatHappensIfYouLoseYourSeedPhraseRoute =
-  BitcoinWhatHappensIfYouLoseYourSeedPhraseRouteImport.update({
-    id: '/what-happens-if-you-lose-your-seed-phrase',
-    path: '/what-happens-if-you-lose-your-seed-phrase',
-    getParentRoute: () => BitcoinRoute,
-  } as any)
-const BitcoinWhatIsABitcoinNodeRoute =
-  BitcoinWhatIsABitcoinNodeRouteImport.update({
-    id: '/what-is-a-bitcoin-node',
-    path: '/what-is-a-bitcoin-node',
-    getParentRoute: () => BitcoinRoute,
-  } as any)
-const BitcoinWhatIsABitcoinSeedPhraseRoute =
-  BitcoinWhatIsABitcoinSeedPhraseRouteImport.update({
-    id: '/what-is-a-bitcoin-seed-phrase',
-    path: '/what-is-a-bitcoin-seed-phrase',
-    getParentRoute: () => BitcoinRoute,
-  } as any)
-const BitcoinWhatIsABitcoinWalletRoute =
-  BitcoinWhatIsABitcoinWalletRouteImport.update({
-    id: '/what-is-a-bitcoin-wallet',
-    path: '/what-is-a-bitcoin-wallet',
-    getParentRoute: () => BitcoinRoute,
-  } as any)
-const BitcoinWhatIsBitcoinMiningRoute =
-  BitcoinWhatIsBitcoinMiningRouteImport.update({
-    id: '/what-is-bitcoin-mining',
-    path: '/what-is-bitcoin-mining',
-    getParentRoute: () => BitcoinRoute,
-  } as any)
-const BitcoinWhatIsTheBitcoinHalvingRoute =
-  BitcoinWhatIsTheBitcoinHalvingRouteImport.update({
-    id: '/what-is-the-bitcoin-halving',
-    path: '/what-is-the-bitcoin-halving',
-    getParentRoute: () => BitcoinRoute,
-  } as any)
-const BitcoinWhyDoBondYieldsAffectBitcoinPriceRoute =
-  BitcoinWhyDoBondYieldsAffectBitcoinPriceRouteImport.update({
-    id: '/why-do-bond-yields-affect-bitcoin-price',
-    path: '/why-do-bond-yields-affect-bitcoin-price',
-    getParentRoute: () => BitcoinRoute,
-  } as any)
-const DefiIndexRoute = DefiIndexRouteImport.update({
+const SecurityIndexRoute = SecurityIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => DefiRoute,
-} as any)
-const EtfsIndexRoute = EtfsIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => EtfsRoute,
-} as any)
-const EthereumIndexRoute = EthereumIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => EthereumRoute,
-} as any)
-const EthereumCanYouSendBitcoinToAnEthereumAddressRoute =
-  EthereumCanYouSendBitcoinToAnEthereumAddressRouteImport.update({
-    id: '/can-you-send-bitcoin-to-an-ethereum-address',
-    path: '/can-you-send-bitcoin-to-an-ethereum-address',
-    getParentRoute: () => EthereumRoute,
-  } as any)
-const EthereumEthereumCompleteBeginnersGuideRoute =
-  EthereumEthereumCompleteBeginnersGuideRouteImport.update({
-    id: '/ethereum-complete-beginners-guide',
-    path: '/ethereum-complete-beginners-guide',
-    getParentRoute: () => EthereumRoute,
-  } as any)
-const EthereumEthereumLayer2ScalingRollupsExplainedRoute =
-  EthereumEthereumLayer2ScalingRollupsExplainedRouteImport.update({
-    id: '/ethereum-layer-2-scaling-rollups-explained',
-    path: '/ethereum-layer-2-scaling-rollups-explained',
-    getParentRoute: () => EthereumRoute,
-  } as any)
-const EthereumEthereumTransactionFeesExplainedRoute =
-  EthereumEthereumTransactionFeesExplainedRouteImport.update({
-    id: '/ethereum-transaction-fees-explained',
-    path: '/ethereum-transaction-fees-explained',
-    getParentRoute: () => EthereumRoute,
-  } as any)
-const EthereumEthereumValidatorsExplainedRoute =
-  EthereumEthereumValidatorsExplainedRouteImport.update({
-    id: '/ethereum-validators-explained',
-    path: '/ethereum-validators-explained',
-    getParentRoute: () => EthereumRoute,
-  } as any)
-const EthereumEthereumVsBitcoinRoute =
-  EthereumEthereumVsBitcoinRouteImport.update({
-    id: '/ethereum-vs-bitcoin',
-    path: '/ethereum-vs-bitcoin',
-    getParentRoute: () => EthereumRoute,
-  } as any)
-const EthereumEthereumWalletsExplainedRoute =
-  EthereumEthereumWalletsExplainedRouteImport.update({
-    id: '/ethereum-wallets-explained',
-    path: '/ethereum-wallets-explained',
-    getParentRoute: () => EthereumRoute,
-  } as any)
-const EthereumHowEthereumWorksRoute =
-  EthereumHowEthereumWorksRouteImport.update({
-    id: '/how-ethereum-works',
-    path: '/how-ethereum-works',
-    getParentRoute: () => EthereumRoute,
-  } as any)
-const EthereumHowToStakeEthOnLidoVsRocketpoolRoute =
-  EthereumHowToStakeEthOnLidoVsRocketpoolRouteImport.update({
-    id: '/how-to-stake-eth-on-lido-vs-rocketpool',
-    path: '/how-to-stake-eth-on-lido-vs-rocketpool',
-    getParentRoute: () => EthereumRoute,
-  } as any)
-const EthereumProofOfStakeExplainedRoute =
-  EthereumProofOfStakeExplainedRouteImport.update({
-    id: '/proof-of-stake-explained',
-    path: '/proof-of-stake-explained',
-    getParentRoute: () => EthereumRoute,
-  } as any)
-const EthereumWhatAreGasFeesHowToSaveRoute =
-  EthereumWhatAreGasFeesHowToSaveRouteImport.update({
-    id: '/what-are-gas-fees-how-to-save',
-    path: '/what-are-gas-fees-how-to-save',
-    getParentRoute: () => EthereumRoute,
-  } as any)
-const EthereumWhatIsASmartContractRoute =
-  EthereumWhatIsASmartContractRouteImport.update({
-    id: '/what-is-a-smart-contract',
-    path: '/what-is-a-smart-contract',
-    getParentRoute: () => EthereumRoute,
-  } as any)
-const EthereumWhatIsDefiDecentralizedFinanceRoute =
-  EthereumWhatIsDefiDecentralizedFinanceRouteImport.update({
-    id: '/what-is-defi-decentralized-finance',
-    path: '/what-is-defi-decentralized-finance',
-    getParentRoute: () => EthereumRoute,
-  } as any)
-const EthereumWhatIsEthereumRoute = EthereumWhatIsEthereumRouteImport.update({
-  id: '/what-is-ethereum',
-  path: '/what-is-ethereum',
-  getParentRoute: () => EthereumRoute,
-} as any)
-const EthereumWhatIsEthereumStakingRoute =
-  EthereumWhatIsEthereumStakingRouteImport.update({
-    id: '/what-is-ethereum-staking',
-    path: '/what-is-ethereum-staking',
-    getParentRoute: () => EthereumRoute,
-  } as any)
-const GlossaryIndexRoute = GlossaryIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => GlossaryRoute,
-} as any)
-const GuidesIndexRoute = GuidesIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => GuidesRoute,
-} as any)
-const GuidesCryptoDollarCostAveragingExplainedRoute =
-  GuidesCryptoDollarCostAveragingExplainedRouteImport.update({
-    id: '/crypto-dollar-cost-averaging-explained',
-    path: '/crypto-dollar-cost-averaging-explained',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesCryptoPortfolioRebalancingExplainedRoute =
-  GuidesCryptoPortfolioRebalancingExplainedRouteImport.update({
-    id: '/crypto-portfolio-rebalancing-explained',
-    path: '/crypto-portfolio-rebalancing-explained',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesCryptoRegulationExplainedForBeginnersRoute =
-  GuidesCryptoRegulationExplainedForBeginnersRouteImport.update({
-    id: '/crypto-regulation-explained-for-beginners',
-    path: '/crypto-regulation-explained-for-beginners',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesCryptoRegulationHubRoute =
-  GuidesCryptoRegulationHubRouteImport.update({
-    id: '/crypto-regulation-hub',
-    path: '/crypto-regulation-hub',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesCryptoRegulationVsCryptocurrencyBanRoute =
-  GuidesCryptoRegulationVsCryptocurrencyBanRouteImport.update({
-    id: '/crypto-regulation-vs-cryptocurrency-ban',
-    path: '/crypto-regulation-vs-cryptocurrency-ban',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesCryptoTaxBasicsForBeginnersRoute =
-  GuidesCryptoTaxBasicsForBeginnersRouteImport.update({
-    id: '/crypto-tax-basics-for-beginners',
-    path: '/crypto-tax-basics-for-beginners',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesCryptocurrencyTaxesExplainedRoute =
-  GuidesCryptocurrencyTaxesExplainedRouteImport.update({
-    id: '/cryptocurrency-taxes-explained',
-    path: '/cryptocurrency-taxes-explained',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesExchangeOrPersonalWalletCryptoStorageRoute =
-  GuidesExchangeOrPersonalWalletCryptoStorageRouteImport.update({
-    id: '/exchange-or-personal-wallet-crypto-storage',
-    path: '/exchange-or-personal-wallet-crypto-storage',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesHardwareWalletComparisonGuideRoute =
-  GuidesHardwareWalletComparisonGuideRouteImport.update({
-    id: '/hardware-wallet-comparison-guide',
-    path: '/hardware-wallet-comparison-guide',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesHotWalletsVsColdWalletsExplainedRoute =
-  GuidesHotWalletsVsColdWalletsExplainedRouteImport.update({
-    id: '/hot-wallets-vs-cold-wallets-explained',
-    path: '/hot-wallets-vs-cold-wallets-explained',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesHowCryptoExchangesAreRegulatedRoute =
-  GuidesHowCryptoExchangesAreRegulatedRouteImport.update({
-    id: '/how-crypto-exchanges-are-regulated',
-    path: '/how-crypto-exchanges-are-regulated',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesHowCryptocurrencyRegulationWorksRoute =
-  GuidesHowCryptocurrencyRegulationWorksRouteImport.update({
-    id: '/how-cryptocurrency-regulation-works',
-    path: '/how-cryptocurrency-regulation-works',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesHowToReadABlockExplorerRoute =
-  GuidesHowToReadABlockExplorerRouteImport.update({
-    id: '/how-to-read-a-block-explorer',
-    path: '/how-to-read-a-block-explorer',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesHowToReadCryptoNewsWithoutHypeRoute =
-  GuidesHowToReadCryptoNewsWithoutHypeRouteImport.update({
-    id: '/how-to-read-crypto-news-without-hype',
-    path: '/how-to-read-crypto-news-without-hype',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesHowToSetUpMetamaskStepByStepRoute =
-  GuidesHowToSetUpMetamaskStepByStepRouteImport.update({
-    id: '/how-to-set-up-metamask-step-by-step',
-    path: '/how-to-set-up-metamask-step-by-step',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesNotYourKeysNotYourCoinsMeaningRoute =
-  GuidesNotYourKeysNotYourCoinsMeaningRouteImport.update({
-    id: '/not-your-keys-not-your-coins-meaning',
-    path: '/not-your-keys-not-your-coins-meaning',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesStablecoinRegulationExplainedRoute =
-  GuidesStablecoinRegulationExplainedRouteImport.update({
-    id: '/stablecoin-regulation-explained',
-    path: '/stablecoin-regulation-explained',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesWhatIsABlockchainForkRoute =
-  GuidesWhatIsABlockchainForkRouteImport.update({
-    id: '/what-is-a-blockchain-fork',
-    path: '/what-is-a-blockchain-fork',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesWhatIsACryptoWalletAddressRoute =
-  GuidesWhatIsACryptoWalletAddressRouteImport.update({
-    id: '/what-is-a-crypto-wallet-address',
-    path: '/what-is-a-crypto-wallet-address',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesWhatIsAPrivateKeyRoute = GuidesWhatIsAPrivateKeyRouteImport.update({
-  id: '/what-is-a-private-key',
-  path: '/what-is-a-private-key',
-  getParentRoute: () => GuidesRoute,
-} as any)
-const GuidesWhatIsAShortSqueezeCryptoExplainedRoute =
-  GuidesWhatIsAShortSqueezeCryptoExplainedRouteImport.update({
-    id: '/what-is-a-short-squeeze-crypto-explained',
-    path: '/what-is-a-short-squeeze-crypto-explained',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesWhatIsAStablecoinRoute = GuidesWhatIsAStablecoinRouteImport.update({
-  id: '/what-is-a-stablecoin',
-  path: '/what-is-a-stablecoin',
-  getParentRoute: () => GuidesRoute,
-} as any)
-const GuidesWhatIsAmlInCryptoRoute = GuidesWhatIsAmlInCryptoRouteImport.update({
-  id: '/what-is-aml-in-crypto',
-  path: '/what-is-aml-in-crypto',
-  getParentRoute: () => GuidesRoute,
-} as any)
-const GuidesWhatIsKycInCryptocurrencyRoute =
-  GuidesWhatIsKycInCryptocurrencyRouteImport.update({
-    id: '/what-is-kyc-in-cryptocurrency',
-    path: '/what-is-kyc-in-cryptocurrency',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesWhatItMeansWhenExchangePausesWithdrawalsRoute =
-  GuidesWhatItMeansWhenExchangePausesWithdrawalsRouteImport.update({
-    id: '/what-it-means-when-exchange-pauses-withdrawals',
-    path: '/what-it-means-when-exchange-pauses-withdrawals',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesWhyBitcoinPriceMovesMoreThanStocksRoute =
-  GuidesWhyBitcoinPriceMovesMoreThanStocksRouteImport.update({
-    id: '/why-bitcoin-price-moves-more-than-stocks',
-    path: '/why-bitcoin-price-moves-more-than-stocks',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesWhyCryptoRegulationMattersRoute =
-  GuidesWhyCryptoRegulationMattersRouteImport.update({
-    id: '/why-crypto-regulation-matters',
-    path: '/why-crypto-regulation-matters',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const GuidesWhyGovernmentsRegulateCryptocurrencyRoute =
-  GuidesWhyGovernmentsRegulateCryptocurrencyRouteImport.update({
-    id: '/why-governments-regulate-cryptocurrency',
-    path: '/why-governments-regulate-cryptocurrency',
-    getParentRoute: () => GuidesRoute,
-  } as any)
-const LearnIndexRoute = LearnIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => LearnRoute,
+  getParentRoute: () => SecurityRoute,
 } as any)
 const NewsIndexRoute = NewsIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => NewsRoute,
 } as any)
-const NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute =
-  NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRouteImport.update({
-    id: '/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally',
-    path: '/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally',
-    getParentRoute: () => NewsRoute,
-  } as any)
-const NewsBitcoinFedRateHikeJobsReportSeptember2026Route =
-  NewsBitcoinFedRateHikeJobsReportSeptember2026RouteImport.update({
-    id: '/bitcoin-fed-rate-hike-jobs-report-september-2026',
-    path: '/bitcoin-fed-rate-hike-jobs-report-september-2026',
-    getParentRoute: () => NewsRoute,
-  } as any)
-const NewsBitcoinJobsReportEtfInflowsSeptember2026Route =
-  NewsBitcoinJobsReportEtfInflowsSeptember2026RouteImport.update({
-    id: '/bitcoin-jobs-report-etf-inflows-september-2026',
-    path: '/bitcoin-jobs-report-etf-inflows-september-2026',
-    getParentRoute: () => NewsRoute,
-  } as any)
-const NewsBitcoinJobsReportSeptember2026FedRateRiskRoute =
-  NewsBitcoinJobsReportSeptember2026FedRateRiskRouteImport.update({
-    id: '/bitcoin-jobs-report-september-2026-fed-rate-risk',
-    path: '/bitcoin-jobs-report-september-2026-fed-rate-risk',
-    getParentRoute: () => NewsRoute,
-  } as any)
-const NewsBitcoinRallyAugust2026Route =
-  NewsBitcoinRallyAugust2026RouteImport.update({
-    id: '/bitcoin-rally-august-2026',
-    path: '/bitcoin-rally-august-2026',
-    getParentRoute: () => NewsRoute,
-  } as any)
-const NewsBitcoinSeptemberRallyMacroTestRoute =
-  NewsBitcoinSeptemberRallyMacroTestRouteImport.update({
-    id: '/bitcoin-september-rally-macro-test',
-    path: '/bitcoin-september-rally-macro-test',
-    getParentRoute: () => NewsRoute,
-  } as any)
-const NewsEthereumMergeTwoYearsLaterRoute =
-  NewsEthereumMergeTwoYearsLaterRouteImport.update({
-    id: '/ethereum-merge-two-years-later',
-    path: '/ethereum-merge-two-years-later',
-    getParentRoute: () => NewsRoute,
-  } as any)
-const NewsLiquidNetworkHack4000BtcWithdrawalRoute =
-  NewsLiquidNetworkHack4000BtcWithdrawalRouteImport.update({
-    id: '/liquid-network-hack-4000-btc-withdrawal',
-    path: '/liquid-network-hack-4000-btc-withdrawal',
-    getParentRoute: () => NewsRoute,
-  } as any)
-const NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute =
-  NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport.update({
-    id: '/standard-chartered-uae-institutional-bitcoin-ether-trading',
-    path: '/standard-chartered-uae-institutional-bitcoin-ether-trading',
-    getParentRoute: () => NewsRoute,
-  } as any)
-const NewsWhatIsTheClarityActCryptoRoute =
-  NewsWhatIsTheClarityActCryptoRouteImport.update({
-    id: '/what-is-the-clarity-act-crypto',
-    path: '/what-is-the-clarity-act-crypto',
-    getParentRoute: () => NewsRoute,
-  } as any)
-const SecurityIndexRoute = SecurityIndexRouteImport.update({
+const LearnIndexRoute = LearnIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => SecurityRoute,
+  getParentRoute: () => LearnRoute,
 } as any)
-const SecurityCommonCryptoScamsRoute =
-  SecurityCommonCryptoScamsRouteImport.update({
-    id: '/common-crypto-scams',
-    path: '/common-crypto-scams',
-    getParentRoute: () => SecurityRoute,
-  } as any)
-const SecurityCryptoSecurityHubRoute =
-  SecurityCryptoSecurityHubRouteImport.update({
-    id: '/crypto-security-hub',
-    path: '/crypto-security-hub',
-    getParentRoute: () => SecurityRoute,
-  } as any)
-const SecurityCryptoWalletDrainerScamsExplainedRoute =
-  SecurityCryptoWalletDrainerScamsExplainedRouteImport.update({
-    id: '/crypto-wallet-drainer-scams-explained',
-    path: '/crypto-wallet-drainer-scams-explained',
-    getParentRoute: () => SecurityRoute,
-  } as any)
-const SecurityDefiRisksExplainedRoute =
-  SecurityDefiRisksExplainedRouteImport.update({
-    id: '/defi-risks-explained',
-    path: '/defi-risks-explained',
-    getParentRoute: () => SecurityRoute,
-  } as any)
-const SecurityExchangeAccountSecurityRoute =
-  SecurityExchangeAccountSecurityRouteImport.update({
-    id: '/exchange-account-security',
-    path: '/exchange-account-security',
-    getParentRoute: () => SecurityRoute,
-  } as any)
-const SecurityFakeAirdropScamsExplainedRoute =
-  SecurityFakeAirdropScamsExplainedRouteImport.update({
-    id: '/fake-airdrop-scams-explained',
-    path: '/fake-airdrop-scams-explained',
-    getParentRoute: () => SecurityRoute,
-  } as any)
-const SecurityFakeWalletAppsExplainedRoute =
-  SecurityFakeWalletAppsExplainedRouteImport.update({
-    id: '/fake-wallet-apps-explained',
-    path: '/fake-wallet-apps-explained',
-    getParentRoute: () => SecurityRoute,
-  } as any)
-const SecurityHardwareWalletMistakesToAvoidRoute =
-  SecurityHardwareWalletMistakesToAvoidRouteImport.update({
-    id: '/hardware-wallet-mistakes-to-avoid',
-    path: '/hardware-wallet-mistakes-to-avoid',
-    getParentRoute: () => SecurityRoute,
-  } as any)
-const SecurityHowCryptoPhishingScamsWorkRoute =
-  SecurityHowCryptoPhishingScamsWorkRouteImport.update({
-    id: '/how-crypto-phishing-scams-work',
-    path: '/how-crypto-phishing-scams-work',
-    getParentRoute: () => SecurityRoute,
-  } as any)
-const SecurityHowToAvoidCryptoPhishingScamsRoute =
-  SecurityHowToAvoidCryptoPhishingScamsRouteImport.update({
-    id: '/how-to-avoid-crypto-phishing-scams',
-    path: '/how-to-avoid-crypto-phishing-scams',
-    getParentRoute: () => SecurityRoute,
-  } as any)
-const SecurityHowToIdentifyAFakeCryptoWebsiteRoute =
-  SecurityHowToIdentifyAFakeCryptoWebsiteRouteImport.update({
-    id: '/how-to-identify-a-fake-crypto-website',
-    path: '/how-to-identify-a-fake-crypto-website',
-    getParentRoute: () => SecurityRoute,
-  } as any)
-const SecurityHowToRevokeSmartContractApprovalsRoute =
-  SecurityHowToRevokeSmartContractApprovalsRouteImport.update({
-    id: '/how-to-revoke-smart-contract-approvals',
-    path: '/how-to-revoke-smart-contract-approvals',
-    getParentRoute: () => SecurityRoute,
-  } as any)
-const SecurityHowToSpotARugPullRoute =
-  SecurityHowToSpotARugPullRouteImport.update({
-    id: '/how-to-spot-a-rug-pull',
-    path: '/how-to-spot-a-rug-pull',
-    getParentRoute: () => SecurityRoute,
-  } as any)
-const SecurityHowToStoreCryptoSeedPhraseSafelyRoute =
-  SecurityHowToStoreCryptoSeedPhraseSafelyRouteImport.update({
-    id: '/how-to-store-crypto-seed-phrase-safely',
-    path: '/how-to-store-crypto-seed-phrase-safely',
-    getParentRoute: () => SecurityRoute,
-  } as any)
-const SecurityHowToVerifyACryptoTransactionRoute =
-  SecurityHowToVerifyACryptoTransactionRouteImport.update({
-    id: '/how-to-verify-a-crypto-transaction',
-    path: '/how-to-verify-a-crypto-transaction',
-    getParentRoute: () => SecurityRoute,
-  } as any)
-const SecurityPrivateKeyVsSeedPhraseRoute =
-  SecurityPrivateKeyVsSeedPhraseRouteImport.update({
-    id: '/private-key-vs-seed-phrase',
-    path: '/private-key-vs-seed-phrase',
-    getParentRoute: () => SecurityRoute,
-  } as any)
-const SecurityTwoFactorAuthenticationForCryptoRoute =
-  SecurityTwoFactorAuthenticationForCryptoRouteImport.update({
-    id: '/two-factor-authentication-for-crypto',
-    path: '/two-factor-authentication-for-crypto',
+const GuidesIndexRoute = GuidesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => GuidesRoute,
+} as any)
+const GlossaryIndexRoute = GlossaryIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => GlossaryRoute,
+} as any)
+const EthereumIndexRoute = EthereumIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EthereumRoute,
+} as any)
+const EtfsIndexRoute = EtfsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EtfsRoute,
+} as any)
+const DefiIndexRoute = DefiIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DefiRoute,
+} as any)
+const BitcoinIndexRoute = BitcoinIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BitcoinRoute,
+} as any)
+const AltcoinsIndexRoute = AltcoinsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AltcoinsRoute,
+} as any)
+const SecurityWhatToDoIfYourCryptoWalletIsHackedRoute =
+  SecurityWhatToDoIfYourCryptoWalletIsHackedRouteImport.update({
+    id: '/what-to-do-if-your-crypto-wallet-is-hacked',
+    path: '/what-to-do-if-your-crypto-wallet-is-hacked',
     getParentRoute: () => SecurityRoute,
   } as any)
 const SecurityWhatIsASeedPhraseRoute =
@@ -809,17 +309,524 @@ const SecurityWhatIsASeedPhraseRoute =
     path: '/what-is-a-seed-phrase',
     getParentRoute: () => SecurityRoute,
   } as any)
-const SecurityWhatToDoIfYourCryptoWalletIsHackedRoute =
-  SecurityWhatToDoIfYourCryptoWalletIsHackedRouteImport.update({
-    id: '/what-to-do-if-your-crypto-wallet-is-hacked',
-    path: '/what-to-do-if-your-crypto-wallet-is-hacked',
+const SecurityTwoFactorAuthenticationForCryptoRoute =
+  SecurityTwoFactorAuthenticationForCryptoRouteImport.update({
+    id: '/two-factor-authentication-for-crypto',
+    path: '/two-factor-authentication-for-crypto',
     getParentRoute: () => SecurityRoute,
   } as any)
-const TaxesIndexRoute = TaxesIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => TaxesRoute,
+const SecurityPrivateKeyVsSeedPhraseRoute =
+  SecurityPrivateKeyVsSeedPhraseRouteImport.update({
+    id: '/private-key-vs-seed-phrase',
+    path: '/private-key-vs-seed-phrase',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityHowToVerifyACryptoTransactionRoute =
+  SecurityHowToVerifyACryptoTransactionRouteImport.update({
+    id: '/how-to-verify-a-crypto-transaction',
+    path: '/how-to-verify-a-crypto-transaction',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityHowToStoreCryptoSeedPhraseSafelyRoute =
+  SecurityHowToStoreCryptoSeedPhraseSafelyRouteImport.update({
+    id: '/how-to-store-crypto-seed-phrase-safely',
+    path: '/how-to-store-crypto-seed-phrase-safely',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityHowToSpotARugPullRoute =
+  SecurityHowToSpotARugPullRouteImport.update({
+    id: '/how-to-spot-a-rug-pull',
+    path: '/how-to-spot-a-rug-pull',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityHowToRevokeSmartContractApprovalsRoute =
+  SecurityHowToRevokeSmartContractApprovalsRouteImport.update({
+    id: '/how-to-revoke-smart-contract-approvals',
+    path: '/how-to-revoke-smart-contract-approvals',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityHowToIdentifyAFakeCryptoWebsiteRoute =
+  SecurityHowToIdentifyAFakeCryptoWebsiteRouteImport.update({
+    id: '/how-to-identify-a-fake-crypto-website',
+    path: '/how-to-identify-a-fake-crypto-website',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityHowToAvoidCryptoPhishingScamsRoute =
+  SecurityHowToAvoidCryptoPhishingScamsRouteImport.update({
+    id: '/how-to-avoid-crypto-phishing-scams',
+    path: '/how-to-avoid-crypto-phishing-scams',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityHowCryptoPhishingScamsWorkRoute =
+  SecurityHowCryptoPhishingScamsWorkRouteImport.update({
+    id: '/how-crypto-phishing-scams-work',
+    path: '/how-crypto-phishing-scams-work',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityHardwareWalletMistakesToAvoidRoute =
+  SecurityHardwareWalletMistakesToAvoidRouteImport.update({
+    id: '/hardware-wallet-mistakes-to-avoid',
+    path: '/hardware-wallet-mistakes-to-avoid',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityFakeWalletAppsExplainedRoute =
+  SecurityFakeWalletAppsExplainedRouteImport.update({
+    id: '/fake-wallet-apps-explained',
+    path: '/fake-wallet-apps-explained',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityFakeAirdropScamsExplainedRoute =
+  SecurityFakeAirdropScamsExplainedRouteImport.update({
+    id: '/fake-airdrop-scams-explained',
+    path: '/fake-airdrop-scams-explained',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityExchangeAccountSecurityRoute =
+  SecurityExchangeAccountSecurityRouteImport.update({
+    id: '/exchange-account-security',
+    path: '/exchange-account-security',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityDefiRisksExplainedRoute =
+  SecurityDefiRisksExplainedRouteImport.update({
+    id: '/defi-risks-explained',
+    path: '/defi-risks-explained',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityCryptoWalletDrainerScamsExplainedRoute =
+  SecurityCryptoWalletDrainerScamsExplainedRouteImport.update({
+    id: '/crypto-wallet-drainer-scams-explained',
+    path: '/crypto-wallet-drainer-scams-explained',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityCryptoSecurityHubRoute =
+  SecurityCryptoSecurityHubRouteImport.update({
+    id: '/crypto-security-hub',
+    path: '/crypto-security-hub',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityCommonCryptoScamsRoute =
+  SecurityCommonCryptoScamsRouteImport.update({
+    id: '/common-crypto-scams',
+    path: '/common-crypto-scams',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const NewsWhatIsTheClarityActCryptoRoute =
+  NewsWhatIsTheClarityActCryptoRouteImport.update({
+    id: '/what-is-the-clarity-act-crypto',
+    path: '/what-is-the-clarity-act-crypto',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute =
+  NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport.update({
+    id: '/standard-chartered-uae-institutional-bitcoin-ether-trading',
+    path: '/standard-chartered-uae-institutional-bitcoin-ether-trading',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsLiquidNetworkHack4000BtcWithdrawalRoute =
+  NewsLiquidNetworkHack4000BtcWithdrawalRouteImport.update({
+    id: '/liquid-network-hack-4000-btc-withdrawal',
+    path: '/liquid-network-hack-4000-btc-withdrawal',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute =
+  NewsLiquidNetwork3400BtcReturned320MillionIncidentRouteImport.update({
+    id: '/liquid-network-3400-btc-returned-320-million-incident',
+    path: '/liquid-network-3400-btc-returned-320-million-incident',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsEthereumMergeTwoYearsLaterRoute =
+  NewsEthereumMergeTwoYearsLaterRouteImport.update({
+    id: '/ethereum-merge-two-years-later',
+    path: '/ethereum-merge-two-years-later',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsBitcoinSeptemberRallyMacroTestRoute =
+  NewsBitcoinSeptemberRallyMacroTestRouteImport.update({
+    id: '/bitcoin-september-rally-macro-test',
+    path: '/bitcoin-september-rally-macro-test',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsBitcoinRallyAugust2026Route =
+  NewsBitcoinRallyAugust2026RouteImport.update({
+    id: '/bitcoin-rally-august-2026',
+    path: '/bitcoin-rally-august-2026',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsBitcoinJobsReportSeptember2026FedRateRiskRoute =
+  NewsBitcoinJobsReportSeptember2026FedRateRiskRouteImport.update({
+    id: '/bitcoin-jobs-report-september-2026-fed-rate-risk',
+    path: '/bitcoin-jobs-report-september-2026-fed-rate-risk',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsBitcoinJobsReportEtfInflowsSeptember2026Route =
+  NewsBitcoinJobsReportEtfInflowsSeptember2026RouteImport.update({
+    id: '/bitcoin-jobs-report-etf-inflows-september-2026',
+    path: '/bitcoin-jobs-report-etf-inflows-september-2026',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsBitcoinFedRateHikeJobsReportSeptember2026Route =
+  NewsBitcoinFedRateHikeJobsReportSeptember2026RouteImport.update({
+    id: '/bitcoin-fed-rate-hike-jobs-report-september-2026',
+    path: '/bitcoin-fed-rate-hike-jobs-report-september-2026',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute =
+  NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRouteImport.update({
+    id: '/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally',
+    path: '/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const GuidesWhyGovernmentsRegulateCryptocurrencyRoute =
+  GuidesWhyGovernmentsRegulateCryptocurrencyRouteImport.update({
+    id: '/why-governments-regulate-cryptocurrency',
+    path: '/why-governments-regulate-cryptocurrency',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesWhyCryptoRegulationMattersRoute =
+  GuidesWhyCryptoRegulationMattersRouteImport.update({
+    id: '/why-crypto-regulation-matters',
+    path: '/why-crypto-regulation-matters',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesWhyBitcoinPriceMovesMoreThanStocksRoute =
+  GuidesWhyBitcoinPriceMovesMoreThanStocksRouteImport.update({
+    id: '/why-bitcoin-price-moves-more-than-stocks',
+    path: '/why-bitcoin-price-moves-more-than-stocks',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesWhatItMeansWhenExchangePausesWithdrawalsRoute =
+  GuidesWhatItMeansWhenExchangePausesWithdrawalsRouteImport.update({
+    id: '/what-it-means-when-exchange-pauses-withdrawals',
+    path: '/what-it-means-when-exchange-pauses-withdrawals',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesWhatIsKycInCryptocurrencyRoute =
+  GuidesWhatIsKycInCryptocurrencyRouteImport.update({
+    id: '/what-is-kyc-in-cryptocurrency',
+    path: '/what-is-kyc-in-cryptocurrency',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesWhatIsAmlInCryptoRoute = GuidesWhatIsAmlInCryptoRouteImport.update({
+  id: '/what-is-aml-in-crypto',
+  path: '/what-is-aml-in-crypto',
+  getParentRoute: () => GuidesRoute,
 } as any)
+const GuidesWhatIsAStablecoinRoute = GuidesWhatIsAStablecoinRouteImport.update({
+  id: '/what-is-a-stablecoin',
+  path: '/what-is-a-stablecoin',
+  getParentRoute: () => GuidesRoute,
+} as any)
+const GuidesWhatIsAShortSqueezeCryptoExplainedRoute =
+  GuidesWhatIsAShortSqueezeCryptoExplainedRouteImport.update({
+    id: '/what-is-a-short-squeeze-crypto-explained',
+    path: '/what-is-a-short-squeeze-crypto-explained',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesWhatIsAPrivateKeyRoute = GuidesWhatIsAPrivateKeyRouteImport.update({
+  id: '/what-is-a-private-key',
+  path: '/what-is-a-private-key',
+  getParentRoute: () => GuidesRoute,
+} as any)
+const GuidesWhatIsACryptoWalletAddressRoute =
+  GuidesWhatIsACryptoWalletAddressRouteImport.update({
+    id: '/what-is-a-crypto-wallet-address',
+    path: '/what-is-a-crypto-wallet-address',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesWhatIsABlockchainForkRoute =
+  GuidesWhatIsABlockchainForkRouteImport.update({
+    id: '/what-is-a-blockchain-fork',
+    path: '/what-is-a-blockchain-fork',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesStablecoinRegulationExplainedRoute =
+  GuidesStablecoinRegulationExplainedRouteImport.update({
+    id: '/stablecoin-regulation-explained',
+    path: '/stablecoin-regulation-explained',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesNotYourKeysNotYourCoinsMeaningRoute =
+  GuidesNotYourKeysNotYourCoinsMeaningRouteImport.update({
+    id: '/not-your-keys-not-your-coins-meaning',
+    path: '/not-your-keys-not-your-coins-meaning',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesHowToSetUpMetamaskStepByStepRoute =
+  GuidesHowToSetUpMetamaskStepByStepRouteImport.update({
+    id: '/how-to-set-up-metamask-step-by-step',
+    path: '/how-to-set-up-metamask-step-by-step',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesHowToReadCryptoNewsWithoutHypeRoute =
+  GuidesHowToReadCryptoNewsWithoutHypeRouteImport.update({
+    id: '/how-to-read-crypto-news-without-hype',
+    path: '/how-to-read-crypto-news-without-hype',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesHowToReadABlockExplorerRoute =
+  GuidesHowToReadABlockExplorerRouteImport.update({
+    id: '/how-to-read-a-block-explorer',
+    path: '/how-to-read-a-block-explorer',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesHowCryptocurrencyRegulationWorksRoute =
+  GuidesHowCryptocurrencyRegulationWorksRouteImport.update({
+    id: '/how-cryptocurrency-regulation-works',
+    path: '/how-cryptocurrency-regulation-works',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesHowCryptoExchangesAreRegulatedRoute =
+  GuidesHowCryptoExchangesAreRegulatedRouteImport.update({
+    id: '/how-crypto-exchanges-are-regulated',
+    path: '/how-crypto-exchanges-are-regulated',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesHotWalletsVsColdWalletsExplainedRoute =
+  GuidesHotWalletsVsColdWalletsExplainedRouteImport.update({
+    id: '/hot-wallets-vs-cold-wallets-explained',
+    path: '/hot-wallets-vs-cold-wallets-explained',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesHardwareWalletComparisonGuideRoute =
+  GuidesHardwareWalletComparisonGuideRouteImport.update({
+    id: '/hardware-wallet-comparison-guide',
+    path: '/hardware-wallet-comparison-guide',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesExchangeOrPersonalWalletCryptoStorageRoute =
+  GuidesExchangeOrPersonalWalletCryptoStorageRouteImport.update({
+    id: '/exchange-or-personal-wallet-crypto-storage',
+    path: '/exchange-or-personal-wallet-crypto-storage',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesCryptocurrencyTaxesExplainedRoute =
+  GuidesCryptocurrencyTaxesExplainedRouteImport.update({
+    id: '/cryptocurrency-taxes-explained',
+    path: '/cryptocurrency-taxes-explained',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesCryptoTaxBasicsForBeginnersRoute =
+  GuidesCryptoTaxBasicsForBeginnersRouteImport.update({
+    id: '/crypto-tax-basics-for-beginners',
+    path: '/crypto-tax-basics-for-beginners',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesCryptoRegulationVsCryptocurrencyBanRoute =
+  GuidesCryptoRegulationVsCryptocurrencyBanRouteImport.update({
+    id: '/crypto-regulation-vs-cryptocurrency-ban',
+    path: '/crypto-regulation-vs-cryptocurrency-ban',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesCryptoRegulationHubRoute =
+  GuidesCryptoRegulationHubRouteImport.update({
+    id: '/crypto-regulation-hub',
+    path: '/crypto-regulation-hub',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesCryptoRegulationExplainedForBeginnersRoute =
+  GuidesCryptoRegulationExplainedForBeginnersRouteImport.update({
+    id: '/crypto-regulation-explained-for-beginners',
+    path: '/crypto-regulation-explained-for-beginners',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesCryptoPortfolioRebalancingExplainedRoute =
+  GuidesCryptoPortfolioRebalancingExplainedRouteImport.update({
+    id: '/crypto-portfolio-rebalancing-explained',
+    path: '/crypto-portfolio-rebalancing-explained',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const GuidesCryptoDollarCostAveragingExplainedRoute =
+  GuidesCryptoDollarCostAveragingExplainedRouteImport.update({
+    id: '/crypto-dollar-cost-averaging-explained',
+    path: '/crypto-dollar-cost-averaging-explained',
+    getParentRoute: () => GuidesRoute,
+  } as any)
+const EthereumWhatIsEthereumStakingRoute =
+  EthereumWhatIsEthereumStakingRouteImport.update({
+    id: '/what-is-ethereum-staking',
+    path: '/what-is-ethereum-staking',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumWhatIsEthereumRoute = EthereumWhatIsEthereumRouteImport.update({
+  id: '/what-is-ethereum',
+  path: '/what-is-ethereum',
+  getParentRoute: () => EthereumRoute,
+} as any)
+const EthereumWhatIsDefiDecentralizedFinanceRoute =
+  EthereumWhatIsDefiDecentralizedFinanceRouteImport.update({
+    id: '/what-is-defi-decentralized-finance',
+    path: '/what-is-defi-decentralized-finance',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumWhatIsASmartContractRoute =
+  EthereumWhatIsASmartContractRouteImport.update({
+    id: '/what-is-a-smart-contract',
+    path: '/what-is-a-smart-contract',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumWhatAreGasFeesHowToSaveRoute =
+  EthereumWhatAreGasFeesHowToSaveRouteImport.update({
+    id: '/what-are-gas-fees-how-to-save',
+    path: '/what-are-gas-fees-how-to-save',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumProofOfStakeExplainedRoute =
+  EthereumProofOfStakeExplainedRouteImport.update({
+    id: '/proof-of-stake-explained',
+    path: '/proof-of-stake-explained',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumHowToStakeEthOnLidoVsRocketpoolRoute =
+  EthereumHowToStakeEthOnLidoVsRocketpoolRouteImport.update({
+    id: '/how-to-stake-eth-on-lido-vs-rocketpool',
+    path: '/how-to-stake-eth-on-lido-vs-rocketpool',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumHowEthereumWorksRoute =
+  EthereumHowEthereumWorksRouteImport.update({
+    id: '/how-ethereum-works',
+    path: '/how-ethereum-works',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumEthereumWalletsExplainedRoute =
+  EthereumEthereumWalletsExplainedRouteImport.update({
+    id: '/ethereum-wallets-explained',
+    path: '/ethereum-wallets-explained',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumEthereumVsBitcoinRoute =
+  EthereumEthereumVsBitcoinRouteImport.update({
+    id: '/ethereum-vs-bitcoin',
+    path: '/ethereum-vs-bitcoin',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumEthereumValidatorsExplainedRoute =
+  EthereumEthereumValidatorsExplainedRouteImport.update({
+    id: '/ethereum-validators-explained',
+    path: '/ethereum-validators-explained',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumEthereumTransactionFeesExplainedRoute =
+  EthereumEthereumTransactionFeesExplainedRouteImport.update({
+    id: '/ethereum-transaction-fees-explained',
+    path: '/ethereum-transaction-fees-explained',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumEthereumLayer2ScalingRollupsExplainedRoute =
+  EthereumEthereumLayer2ScalingRollupsExplainedRouteImport.update({
+    id: '/ethereum-layer-2-scaling-rollups-explained',
+    path: '/ethereum-layer-2-scaling-rollups-explained',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumEthereumCompleteBeginnersGuideRoute =
+  EthereumEthereumCompleteBeginnersGuideRouteImport.update({
+    id: '/ethereum-complete-beginners-guide',
+    path: '/ethereum-complete-beginners-guide',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumCanYouSendBitcoinToAnEthereumAddressRoute =
+  EthereumCanYouSendBitcoinToAnEthereumAddressRouteImport.update({
+    id: '/can-you-send-bitcoin-to-an-ethereum-address',
+    path: '/can-you-send-bitcoin-to-an-ethereum-address',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const BitcoinWhyDoBondYieldsAffectBitcoinPriceRoute =
+  BitcoinWhyDoBondYieldsAffectBitcoinPriceRouteImport.update({
+    id: '/why-do-bond-yields-affect-bitcoin-price',
+    path: '/why-do-bond-yields-affect-bitcoin-price',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
+const BitcoinWhatIsTheBitcoinHalvingRoute =
+  BitcoinWhatIsTheBitcoinHalvingRouteImport.update({
+    id: '/what-is-the-bitcoin-halving',
+    path: '/what-is-the-bitcoin-halving',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
+const BitcoinWhatIsBitcoinMiningRoute =
+  BitcoinWhatIsBitcoinMiningRouteImport.update({
+    id: '/what-is-bitcoin-mining',
+    path: '/what-is-bitcoin-mining',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
+const BitcoinWhatIsABitcoinWalletRoute =
+  BitcoinWhatIsABitcoinWalletRouteImport.update({
+    id: '/what-is-a-bitcoin-wallet',
+    path: '/what-is-a-bitcoin-wallet',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
+const BitcoinWhatIsABitcoinSeedPhraseRoute =
+  BitcoinWhatIsABitcoinSeedPhraseRouteImport.update({
+    id: '/what-is-a-bitcoin-seed-phrase',
+    path: '/what-is-a-bitcoin-seed-phrase',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
+const BitcoinWhatIsABitcoinNodeRoute =
+  BitcoinWhatIsABitcoinNodeRouteImport.update({
+    id: '/what-is-a-bitcoin-node',
+    path: '/what-is-a-bitcoin-node',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
+const BitcoinWhatHappensIfYouLoseYourSeedPhraseRoute =
+  BitcoinWhatHappensIfYouLoseYourSeedPhraseRouteImport.update({
+    id: '/what-happens-if-you-lose-your-seed-phrase',
+    path: '/what-happens-if-you-lose-your-seed-phrase',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
+const BitcoinHowToSendBitcoinSafelyRoute =
+  BitcoinHowToSendBitcoinSafelyRouteImport.update({
+    id: '/how-to-send-bitcoin-safely',
+    path: '/how-to-send-bitcoin-safely',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
+const BitcoinHowToBuyYourFirstBitcoinSafelyRoute =
+  BitcoinHowToBuyYourFirstBitcoinSafelyRouteImport.update({
+    id: '/how-to-buy-your-first-bitcoin-safely',
+    path: '/how-to-buy-your-first-bitcoin-safely',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
+const BitcoinHowDoBitcoinEtfsAffectPriceRoute =
+  BitcoinHowDoBitcoinEtfsAffectPriceRouteImport.update({
+    id: '/how-do-bitcoin-etfs-affect-price',
+    path: '/how-do-bitcoin-etfs-affect-price',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
+const BitcoinHowBitcoinWalletsWorkRoute =
+  BitcoinHowBitcoinWalletsWorkRouteImport.update({
+    id: '/how-bitcoin-wallets-work',
+    path: '/how-bitcoin-wallets-work',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
+const BitcoinCommonBitcoinWalletScamsRoute =
+  BitcoinCommonBitcoinWalletScamsRouteImport.update({
+    id: '/common-bitcoin-wallet-scams',
+    path: '/common-bitcoin-wallet-scams',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
+const BitcoinCoinbaseVsKrakenVsBinanceExchangeComparisonRoute =
+  BitcoinCoinbaseVsKrakenVsBinanceExchangeComparisonRouteImport.update({
+    id: '/coinbase-vs-kraken-vs-binance-exchange-comparison',
+    path: '/coinbase-vs-kraken-vs-binance-exchange-comparison',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
+const BitcoinBitcoinWalletsCompleteGuideRoute =
+  BitcoinBitcoinWalletsCompleteGuideRouteImport.update({
+    id: '/bitcoin-wallets-complete-guide',
+    path: '/bitcoin-wallets-complete-guide',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
+const BitcoinBitcoinLightningNetworkExplainedRoute =
+  BitcoinBitcoinLightningNetworkExplainedRouteImport.update({
+    id: '/bitcoin-lightning-network-explained',
+    path: '/bitcoin-lightning-network-explained',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
+const BitcoinBitcoinAddressVsWalletAddressRoute =
+  BitcoinBitcoinAddressVsWalletAddressRouteImport.update({
+    id: '/bitcoin-address-vs-wallet-address',
+    path: '/bitcoin-address-vs-wallet-address',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -910,6 +917,7 @@ export interface FileRoutesByFullPath {
   '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
   '/news/bitcoin-september-rally-macro-test': typeof NewsBitcoinSeptemberRallyMacroTestRoute
   '/news/ethereum-merge-two-years-later': typeof NewsEthereumMergeTwoYearsLaterRoute
+  '/news/liquid-network-3400-btc-returned-320-million-incident': typeof NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute
   '/news/liquid-network-hack-4000-btc-withdrawal': typeof NewsLiquidNetworkHack4000BtcWithdrawalRoute
   '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
@@ -1022,6 +1030,7 @@ export interface FileRoutesByTo {
   '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
   '/news/bitcoin-september-rally-macro-test': typeof NewsBitcoinSeptemberRallyMacroTestRoute
   '/news/ethereum-merge-two-years-later': typeof NewsEthereumMergeTwoYearsLaterRoute
+  '/news/liquid-network-3400-btc-returned-320-million-incident': typeof NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute
   '/news/liquid-network-hack-4000-btc-withdrawal': typeof NewsLiquidNetworkHack4000BtcWithdrawalRoute
   '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
@@ -1146,6 +1155,7 @@ export interface FileRoutesById {
   '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
   '/news/bitcoin-september-rally-macro-test': typeof NewsBitcoinSeptemberRallyMacroTestRoute
   '/news/ethereum-merge-two-years-later': typeof NewsEthereumMergeTwoYearsLaterRoute
+  '/news/liquid-network-3400-btc-returned-320-million-incident': typeof NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute
   '/news/liquid-network-hack-4000-btc-withdrawal': typeof NewsLiquidNetworkHack4000BtcWithdrawalRoute
   '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
@@ -1271,6 +1281,7 @@ export interface FileRouteTypes {
     | '/news/bitcoin-rally-august-2026'
     | '/news/bitcoin-september-rally-macro-test'
     | '/news/ethereum-merge-two-years-later'
+    | '/news/liquid-network-3400-btc-returned-320-million-incident'
     | '/news/liquid-network-hack-4000-btc-withdrawal'
     | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
     | '/news/what-is-the-clarity-act-crypto'
@@ -1383,6 +1394,7 @@ export interface FileRouteTypes {
     | '/news/bitcoin-rally-august-2026'
     | '/news/bitcoin-september-rally-macro-test'
     | '/news/ethereum-merge-two-years-later'
+    | '/news/liquid-network-3400-btc-returned-320-million-incident'
     | '/news/liquid-network-hack-4000-btc-withdrawal'
     | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
     | '/news/what-is-the-clarity-act-crypto'
@@ -1506,6 +1518,7 @@ export interface FileRouteTypes {
     | '/news/bitcoin-rally-august-2026'
     | '/news/bitcoin-september-rally-macro-test'
     | '/news/ethereum-merge-two-years-later'
+    | '/news/liquid-network-3400-btc-returned-320-million-incident'
     | '/news/liquid-network-hack-4000-btc-withdrawal'
     | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
     | '/news/what-is-the-clarity-act-crypto'
@@ -1568,144 +1581,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/affiliate-disclosure': {
-      id: '/affiliate-disclosure'
-      path: '/affiliate-disclosure'
-      fullPath: '/affiliate-disclosure'
-      preLoaderRoute: typeof AffiliateDisclosureRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/altcoins': {
-      id: '/altcoins'
-      path: '/altcoins'
-      fullPath: '/altcoins'
-      preLoaderRoute: typeof AltcoinsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/author': {
-      id: '/author'
-      path: '/author'
-      fullPath: '/author'
-      preLoaderRoute: typeof AuthorRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/bitcoin': {
-      id: '/bitcoin'
-      path: '/bitcoin'
-      fullPath: '/bitcoin'
-      preLoaderRoute: typeof BitcoinRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/corrections': {
-      id: '/corrections'
-      path: '/corrections'
-      fullPath: '/corrections'
-      preLoaderRoute: typeof CorrectionsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/defi': {
-      id: '/defi'
-      path: '/defi'
-      fullPath: '/defi'
-      preLoaderRoute: typeof DefiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/disclaimer': {
-      id: '/disclaimer'
-      path: '/disclaimer'
-      fullPath: '/disclaimer'
-      preLoaderRoute: typeof DisclaimerRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/editorial-policy': {
-      id: '/editorial-policy'
-      path: '/editorial-policy'
-      fullPath: '/editorial-policy'
-      preLoaderRoute: typeof EditorialPolicyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etfs': {
-      id: '/etfs'
-      path: '/etfs'
-      fullPath: '/etfs'
-      preLoaderRoute: typeof EtfsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ethereum': {
-      id: '/ethereum'
-      path: '/ethereum'
-      fullPath: '/ethereum'
-      preLoaderRoute: typeof EthereumRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/glossary': {
-      id: '/glossary'
-      path: '/glossary'
-      fullPath: '/glossary'
-      preLoaderRoute: typeof GlossaryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/guides': {
-      id: '/guides'
-      path: '/guides'
-      fullPath: '/guides'
-      preLoaderRoute: typeof GuidesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/learn': {
-      id: '/learn'
-      path: '/learn'
-      fullPath: '/learn'
-      preLoaderRoute: typeof LearnRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/news': {
-      id: '/news'
-      path: '/news'
-      fullPath: '/news'
-      preLoaderRoute: typeof NewsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/search': {
-      id: '/search'
-      path: '/search'
-      fullPath: '/search'
-      preLoaderRoute: typeof SearchRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/security': {
-      id: '/security'
-      path: '/security'
-      fullPath: '/security'
-      preLoaderRoute: typeof SecurityRouteImport
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/taxes': {
@@ -1715,558 +1595,152 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TaxesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
+    '/security': {
+      id: '/security'
+      path: '/security'
+      fullPath: '/security'
+      preLoaderRoute: typeof SecurityRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/altcoins/': {
-      id: '/altcoins/'
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learn': {
+      id: '/learn'
+      path: '/learn'
+      fullPath: '/learn'
+      preLoaderRoute: typeof LearnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides': {
+      id: '/guides'
+      path: '/guides'
+      fullPath: '/guides'
+      preLoaderRoute: typeof GuidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glossary': {
+      id: '/glossary'
+      path: '/glossary'
+      fullPath: '/glossary'
+      preLoaderRoute: typeof GlossaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ethereum': {
+      id: '/ethereum'
+      path: '/ethereum'
+      fullPath: '/ethereum'
+      preLoaderRoute: typeof EthereumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etfs': {
+      id: '/etfs'
+      path: '/etfs'
+      fullPath: '/etfs'
+      preLoaderRoute: typeof EtfsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/editorial-policy': {
+      id: '/editorial-policy'
+      path: '/editorial-policy'
+      fullPath: '/editorial-policy'
+      preLoaderRoute: typeof EditorialPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disclaimer': {
+      id: '/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/disclaimer'
+      preLoaderRoute: typeof DisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/defi': {
+      id: '/defi'
+      path: '/defi'
+      fullPath: '/defi'
+      preLoaderRoute: typeof DefiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/corrections': {
+      id: '/corrections'
+      path: '/corrections'
+      fullPath: '/corrections'
+      preLoaderRoute: typeof CorrectionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bitcoin': {
+      id: '/bitcoin'
+      path: '/bitcoin'
+      fullPath: '/bitcoin'
+      preLoaderRoute: typeof BitcoinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/author': {
+      id: '/author'
+      path: '/author'
+      fullPath: '/author'
+      preLoaderRoute: typeof AuthorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/altcoins': {
+      id: '/altcoins'
+      path: '/altcoins'
+      fullPath: '/altcoins'
+      preLoaderRoute: typeof AltcoinsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/affiliate-disclosure': {
+      id: '/affiliate-disclosure'
+      path: '/affiliate-disclosure'
+      fullPath: '/affiliate-disclosure'
+      preLoaderRoute: typeof AffiliateDisclosureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
       path: '/'
-      fullPath: '/altcoins/'
-      preLoaderRoute: typeof AltcoinsIndexRouteImport
-      parentRoute: typeof AltcoinsRoute
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/bitcoin/': {
-      id: '/bitcoin/'
+    '/taxes/': {
+      id: '/taxes/'
       path: '/'
-      fullPath: '/bitcoin/'
-      preLoaderRoute: typeof BitcoinIndexRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/bitcoin/bitcoin-address-vs-wallet-address': {
-      id: '/bitcoin/bitcoin-address-vs-wallet-address'
-      path: '/bitcoin-address-vs-wallet-address'
-      fullPath: '/bitcoin/bitcoin-address-vs-wallet-address'
-      preLoaderRoute: typeof BitcoinBitcoinAddressVsWalletAddressRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/bitcoin/bitcoin-lightning-network-explained': {
-      id: '/bitcoin/bitcoin-lightning-network-explained'
-      path: '/bitcoin-lightning-network-explained'
-      fullPath: '/bitcoin/bitcoin-lightning-network-explained'
-      preLoaderRoute: typeof BitcoinBitcoinLightningNetworkExplainedRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/bitcoin/bitcoin-wallets-complete-guide': {
-      id: '/bitcoin/bitcoin-wallets-complete-guide'
-      path: '/bitcoin-wallets-complete-guide'
-      fullPath: '/bitcoin/bitcoin-wallets-complete-guide'
-      preLoaderRoute: typeof BitcoinBitcoinWalletsCompleteGuideRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/bitcoin/coinbase-vs-kraken-vs-binance-exchange-comparison': {
-      id: '/bitcoin/coinbase-vs-kraken-vs-binance-exchange-comparison'
-      path: '/coinbase-vs-kraken-vs-binance-exchange-comparison'
-      fullPath: '/bitcoin/coinbase-vs-kraken-vs-binance-exchange-comparison'
-      preLoaderRoute: typeof BitcoinCoinbaseVsKrakenVsBinanceExchangeComparisonRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/bitcoin/common-bitcoin-wallet-scams': {
-      id: '/bitcoin/common-bitcoin-wallet-scams'
-      path: '/common-bitcoin-wallet-scams'
-      fullPath: '/bitcoin/common-bitcoin-wallet-scams'
-      preLoaderRoute: typeof BitcoinCommonBitcoinWalletScamsRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/bitcoin/how-bitcoin-wallets-work': {
-      id: '/bitcoin/how-bitcoin-wallets-work'
-      path: '/how-bitcoin-wallets-work'
-      fullPath: '/bitcoin/how-bitcoin-wallets-work'
-      preLoaderRoute: typeof BitcoinHowBitcoinWalletsWorkRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/bitcoin/how-do-bitcoin-etfs-affect-price': {
-      id: '/bitcoin/how-do-bitcoin-etfs-affect-price'
-      path: '/how-do-bitcoin-etfs-affect-price'
-      fullPath: '/bitcoin/how-do-bitcoin-etfs-affect-price'
-      preLoaderRoute: typeof BitcoinHowDoBitcoinEtfsAffectPriceRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/bitcoin/how-to-buy-your-first-bitcoin-safely': {
-      id: '/bitcoin/how-to-buy-your-first-bitcoin-safely'
-      path: '/how-to-buy-your-first-bitcoin-safely'
-      fullPath: '/bitcoin/how-to-buy-your-first-bitcoin-safely'
-      preLoaderRoute: typeof BitcoinHowToBuyYourFirstBitcoinSafelyRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/bitcoin/how-to-send-bitcoin-safely': {
-      id: '/bitcoin/how-to-send-bitcoin-safely'
-      path: '/how-to-send-bitcoin-safely'
-      fullPath: '/bitcoin/how-to-send-bitcoin-safely'
-      preLoaderRoute: typeof BitcoinHowToSendBitcoinSafelyRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/bitcoin/what-happens-if-you-lose-your-seed-phrase': {
-      id: '/bitcoin/what-happens-if-you-lose-your-seed-phrase'
-      path: '/what-happens-if-you-lose-your-seed-phrase'
-      fullPath: '/bitcoin/what-happens-if-you-lose-your-seed-phrase'
-      preLoaderRoute: typeof BitcoinWhatHappensIfYouLoseYourSeedPhraseRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/bitcoin/what-is-a-bitcoin-node': {
-      id: '/bitcoin/what-is-a-bitcoin-node'
-      path: '/what-is-a-bitcoin-node'
-      fullPath: '/bitcoin/what-is-a-bitcoin-node'
-      preLoaderRoute: typeof BitcoinWhatIsABitcoinNodeRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/bitcoin/what-is-a-bitcoin-seed-phrase': {
-      id: '/bitcoin/what-is-a-bitcoin-seed-phrase'
-      path: '/what-is-a-bitcoin-seed-phrase'
-      fullPath: '/bitcoin/what-is-a-bitcoin-seed-phrase'
-      preLoaderRoute: typeof BitcoinWhatIsABitcoinSeedPhraseRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/bitcoin/what-is-a-bitcoin-wallet': {
-      id: '/bitcoin/what-is-a-bitcoin-wallet'
-      path: '/what-is-a-bitcoin-wallet'
-      fullPath: '/bitcoin/what-is-a-bitcoin-wallet'
-      preLoaderRoute: typeof BitcoinWhatIsABitcoinWalletRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/bitcoin/what-is-bitcoin-mining': {
-      id: '/bitcoin/what-is-bitcoin-mining'
-      path: '/what-is-bitcoin-mining'
-      fullPath: '/bitcoin/what-is-bitcoin-mining'
-      preLoaderRoute: typeof BitcoinWhatIsBitcoinMiningRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/bitcoin/what-is-the-bitcoin-halving': {
-      id: '/bitcoin/what-is-the-bitcoin-halving'
-      path: '/what-is-the-bitcoin-halving'
-      fullPath: '/bitcoin/what-is-the-bitcoin-halving'
-      preLoaderRoute: typeof BitcoinWhatIsTheBitcoinHalvingRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/bitcoin/why-do-bond-yields-affect-bitcoin-price': {
-      id: '/bitcoin/why-do-bond-yields-affect-bitcoin-price'
-      path: '/why-do-bond-yields-affect-bitcoin-price'
-      fullPath: '/bitcoin/why-do-bond-yields-affect-bitcoin-price'
-      preLoaderRoute: typeof BitcoinWhyDoBondYieldsAffectBitcoinPriceRouteImport
-      parentRoute: typeof BitcoinRoute
-    }
-    '/defi/': {
-      id: '/defi/'
-      path: '/'
-      fullPath: '/defi/'
-      preLoaderRoute: typeof DefiIndexRouteImport
-      parentRoute: typeof DefiRoute
-    }
-    '/etfs/': {
-      id: '/etfs/'
-      path: '/'
-      fullPath: '/etfs/'
-      preLoaderRoute: typeof EtfsIndexRouteImport
-      parentRoute: typeof EtfsRoute
-    }
-    '/ethereum/': {
-      id: '/ethereum/'
-      path: '/'
-      fullPath: '/ethereum/'
-      preLoaderRoute: typeof EthereumIndexRouteImport
-      parentRoute: typeof EthereumRoute
-    }
-    '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': {
-      id: '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
-      path: '/can-you-send-bitcoin-to-an-ethereum-address'
-      fullPath: '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
-      preLoaderRoute: typeof EthereumCanYouSendBitcoinToAnEthereumAddressRouteImport
-      parentRoute: typeof EthereumRoute
-    }
-    '/ethereum/ethereum-complete-beginners-guide': {
-      id: '/ethereum/ethereum-complete-beginners-guide'
-      path: '/ethereum-complete-beginners-guide'
-      fullPath: '/ethereum/ethereum-complete-beginners-guide'
-      preLoaderRoute: typeof EthereumEthereumCompleteBeginnersGuideRouteImport
-      parentRoute: typeof EthereumRoute
-    }
-    '/ethereum/ethereum-layer-2-scaling-rollups-explained': {
-      id: '/ethereum/ethereum-layer-2-scaling-rollups-explained'
-      path: '/ethereum-layer-2-scaling-rollups-explained'
-      fullPath: '/ethereum/ethereum-layer-2-scaling-rollups-explained'
-      preLoaderRoute: typeof EthereumEthereumLayer2ScalingRollupsExplainedRouteImport
-      parentRoute: typeof EthereumRoute
-    }
-    '/ethereum/ethereum-transaction-fees-explained': {
-      id: '/ethereum/ethereum-transaction-fees-explained'
-      path: '/ethereum-transaction-fees-explained'
-      fullPath: '/ethereum/ethereum-transaction-fees-explained'
-      preLoaderRoute: typeof EthereumEthereumTransactionFeesExplainedRouteImport
-      parentRoute: typeof EthereumRoute
-    }
-    '/ethereum/ethereum-validators-explained': {
-      id: '/ethereum/ethereum-validators-explained'
-      path: '/ethereum-validators-explained'
-      fullPath: '/ethereum/ethereum-validators-explained'
-      preLoaderRoute: typeof EthereumEthereumValidatorsExplainedRouteImport
-      parentRoute: typeof EthereumRoute
-    }
-    '/ethereum/ethereum-vs-bitcoin': {
-      id: '/ethereum/ethereum-vs-bitcoin'
-      path: '/ethereum-vs-bitcoin'
-      fullPath: '/ethereum/ethereum-vs-bitcoin'
-      preLoaderRoute: typeof EthereumEthereumVsBitcoinRouteImport
-      parentRoute: typeof EthereumRoute
-    }
-    '/ethereum/ethereum-wallets-explained': {
-      id: '/ethereum/ethereum-wallets-explained'
-      path: '/ethereum-wallets-explained'
-      fullPath: '/ethereum/ethereum-wallets-explained'
-      preLoaderRoute: typeof EthereumEthereumWalletsExplainedRouteImport
-      parentRoute: typeof EthereumRoute
-    }
-    '/ethereum/how-ethereum-works': {
-      id: '/ethereum/how-ethereum-works'
-      path: '/how-ethereum-works'
-      fullPath: '/ethereum/how-ethereum-works'
-      preLoaderRoute: typeof EthereumHowEthereumWorksRouteImport
-      parentRoute: typeof EthereumRoute
-    }
-    '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool': {
-      id: '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool'
-      path: '/how-to-stake-eth-on-lido-vs-rocketpool'
-      fullPath: '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool'
-      preLoaderRoute: typeof EthereumHowToStakeEthOnLidoVsRocketpoolRouteImport
-      parentRoute: typeof EthereumRoute
-    }
-    '/ethereum/proof-of-stake-explained': {
-      id: '/ethereum/proof-of-stake-explained'
-      path: '/proof-of-stake-explained'
-      fullPath: '/ethereum/proof-of-stake-explained'
-      preLoaderRoute: typeof EthereumProofOfStakeExplainedRouteImport
-      parentRoute: typeof EthereumRoute
-    }
-    '/ethereum/what-are-gas-fees-how-to-save': {
-      id: '/ethereum/what-are-gas-fees-how-to-save'
-      path: '/what-are-gas-fees-how-to-save'
-      fullPath: '/ethereum/what-are-gas-fees-how-to-save'
-      preLoaderRoute: typeof EthereumWhatAreGasFeesHowToSaveRouteImport
-      parentRoute: typeof EthereumRoute
-    }
-    '/ethereum/what-is-a-smart-contract': {
-      id: '/ethereum/what-is-a-smart-contract'
-      path: '/what-is-a-smart-contract'
-      fullPath: '/ethereum/what-is-a-smart-contract'
-      preLoaderRoute: typeof EthereumWhatIsASmartContractRouteImport
-      parentRoute: typeof EthereumRoute
-    }
-    '/ethereum/what-is-defi-decentralized-finance': {
-      id: '/ethereum/what-is-defi-decentralized-finance'
-      path: '/what-is-defi-decentralized-finance'
-      fullPath: '/ethereum/what-is-defi-decentralized-finance'
-      preLoaderRoute: typeof EthereumWhatIsDefiDecentralizedFinanceRouteImport
-      parentRoute: typeof EthereumRoute
-    }
-    '/ethereum/what-is-ethereum': {
-      id: '/ethereum/what-is-ethereum'
-      path: '/what-is-ethereum'
-      fullPath: '/ethereum/what-is-ethereum'
-      preLoaderRoute: typeof EthereumWhatIsEthereumRouteImport
-      parentRoute: typeof EthereumRoute
-    }
-    '/ethereum/what-is-ethereum-staking': {
-      id: '/ethereum/what-is-ethereum-staking'
-      path: '/what-is-ethereum-staking'
-      fullPath: '/ethereum/what-is-ethereum-staking'
-      preLoaderRoute: typeof EthereumWhatIsEthereumStakingRouteImport
-      parentRoute: typeof EthereumRoute
-    }
-    '/glossary/': {
-      id: '/glossary/'
-      path: '/'
-      fullPath: '/glossary/'
-      preLoaderRoute: typeof GlossaryIndexRouteImport
-      parentRoute: typeof GlossaryRoute
-    }
-    '/guides/': {
-      id: '/guides/'
-      path: '/'
-      fullPath: '/guides/'
-      preLoaderRoute: typeof GuidesIndexRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/crypto-dollar-cost-averaging-explained': {
-      id: '/guides/crypto-dollar-cost-averaging-explained'
-      path: '/crypto-dollar-cost-averaging-explained'
-      fullPath: '/guides/crypto-dollar-cost-averaging-explained'
-      preLoaderRoute: typeof GuidesCryptoDollarCostAveragingExplainedRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/crypto-portfolio-rebalancing-explained': {
-      id: '/guides/crypto-portfolio-rebalancing-explained'
-      path: '/crypto-portfolio-rebalancing-explained'
-      fullPath: '/guides/crypto-portfolio-rebalancing-explained'
-      preLoaderRoute: typeof GuidesCryptoPortfolioRebalancingExplainedRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/crypto-regulation-explained-for-beginners': {
-      id: '/guides/crypto-regulation-explained-for-beginners'
-      path: '/crypto-regulation-explained-for-beginners'
-      fullPath: '/guides/crypto-regulation-explained-for-beginners'
-      preLoaderRoute: typeof GuidesCryptoRegulationExplainedForBeginnersRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/crypto-regulation-hub': {
-      id: '/guides/crypto-regulation-hub'
-      path: '/crypto-regulation-hub'
-      fullPath: '/guides/crypto-regulation-hub'
-      preLoaderRoute: typeof GuidesCryptoRegulationHubRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/crypto-regulation-vs-cryptocurrency-ban': {
-      id: '/guides/crypto-regulation-vs-cryptocurrency-ban'
-      path: '/crypto-regulation-vs-cryptocurrency-ban'
-      fullPath: '/guides/crypto-regulation-vs-cryptocurrency-ban'
-      preLoaderRoute: typeof GuidesCryptoRegulationVsCryptocurrencyBanRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/crypto-tax-basics-for-beginners': {
-      id: '/guides/crypto-tax-basics-for-beginners'
-      path: '/crypto-tax-basics-for-beginners'
-      fullPath: '/guides/crypto-tax-basics-for-beginners'
-      preLoaderRoute: typeof GuidesCryptoTaxBasicsForBeginnersRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/cryptocurrency-taxes-explained': {
-      id: '/guides/cryptocurrency-taxes-explained'
-      path: '/cryptocurrency-taxes-explained'
-      fullPath: '/guides/cryptocurrency-taxes-explained'
-      preLoaderRoute: typeof GuidesCryptocurrencyTaxesExplainedRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/exchange-or-personal-wallet-crypto-storage': {
-      id: '/guides/exchange-or-personal-wallet-crypto-storage'
-      path: '/exchange-or-personal-wallet-crypto-storage'
-      fullPath: '/guides/exchange-or-personal-wallet-crypto-storage'
-      preLoaderRoute: typeof GuidesExchangeOrPersonalWalletCryptoStorageRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/hardware-wallet-comparison-guide': {
-      id: '/guides/hardware-wallet-comparison-guide'
-      path: '/hardware-wallet-comparison-guide'
-      fullPath: '/guides/hardware-wallet-comparison-guide'
-      preLoaderRoute: typeof GuidesHardwareWalletComparisonGuideRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/hot-wallets-vs-cold-wallets-explained': {
-      id: '/guides/hot-wallets-vs-cold-wallets-explained'
-      path: '/hot-wallets-vs-cold-wallets-explained'
-      fullPath: '/guides/hot-wallets-vs-cold-wallets-explained'
-      preLoaderRoute: typeof GuidesHotWalletsVsColdWalletsExplainedRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/how-crypto-exchanges-are-regulated': {
-      id: '/guides/how-crypto-exchanges-are-regulated'
-      path: '/how-crypto-exchanges-are-regulated'
-      fullPath: '/guides/how-crypto-exchanges-are-regulated'
-      preLoaderRoute: typeof GuidesHowCryptoExchangesAreRegulatedRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/how-cryptocurrency-regulation-works': {
-      id: '/guides/how-cryptocurrency-regulation-works'
-      path: '/how-cryptocurrency-regulation-works'
-      fullPath: '/guides/how-cryptocurrency-regulation-works'
-      preLoaderRoute: typeof GuidesHowCryptocurrencyRegulationWorksRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/how-to-read-a-block-explorer': {
-      id: '/guides/how-to-read-a-block-explorer'
-      path: '/how-to-read-a-block-explorer'
-      fullPath: '/guides/how-to-read-a-block-explorer'
-      preLoaderRoute: typeof GuidesHowToReadABlockExplorerRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/how-to-read-crypto-news-without-hype': {
-      id: '/guides/how-to-read-crypto-news-without-hype'
-      path: '/how-to-read-crypto-news-without-hype'
-      fullPath: '/guides/how-to-read-crypto-news-without-hype'
-      preLoaderRoute: typeof GuidesHowToReadCryptoNewsWithoutHypeRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/how-to-set-up-metamask-step-by-step': {
-      id: '/guides/how-to-set-up-metamask-step-by-step'
-      path: '/how-to-set-up-metamask-step-by-step'
-      fullPath: '/guides/how-to-set-up-metamask-step-by-step'
-      preLoaderRoute: typeof GuidesHowToSetUpMetamaskStepByStepRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/not-your-keys-not-your-coins-meaning': {
-      id: '/guides/not-your-keys-not-your-coins-meaning'
-      path: '/not-your-keys-not-your-coins-meaning'
-      fullPath: '/guides/not-your-keys-not-your-coins-meaning'
-      preLoaderRoute: typeof GuidesNotYourKeysNotYourCoinsMeaningRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/stablecoin-regulation-explained': {
-      id: '/guides/stablecoin-regulation-explained'
-      path: '/stablecoin-regulation-explained'
-      fullPath: '/guides/stablecoin-regulation-explained'
-      preLoaderRoute: typeof GuidesStablecoinRegulationExplainedRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/what-is-a-blockchain-fork': {
-      id: '/guides/what-is-a-blockchain-fork'
-      path: '/what-is-a-blockchain-fork'
-      fullPath: '/guides/what-is-a-blockchain-fork'
-      preLoaderRoute: typeof GuidesWhatIsABlockchainForkRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/what-is-a-crypto-wallet-address': {
-      id: '/guides/what-is-a-crypto-wallet-address'
-      path: '/what-is-a-crypto-wallet-address'
-      fullPath: '/guides/what-is-a-crypto-wallet-address'
-      preLoaderRoute: typeof GuidesWhatIsACryptoWalletAddressRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/what-is-a-private-key': {
-      id: '/guides/what-is-a-private-key'
-      path: '/what-is-a-private-key'
-      fullPath: '/guides/what-is-a-private-key'
-      preLoaderRoute: typeof GuidesWhatIsAPrivateKeyRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/what-is-a-short-squeeze-crypto-explained': {
-      id: '/guides/what-is-a-short-squeeze-crypto-explained'
-      path: '/what-is-a-short-squeeze-crypto-explained'
-      fullPath: '/guides/what-is-a-short-squeeze-crypto-explained'
-      preLoaderRoute: typeof GuidesWhatIsAShortSqueezeCryptoExplainedRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/what-is-a-stablecoin': {
-      id: '/guides/what-is-a-stablecoin'
-      path: '/what-is-a-stablecoin'
-      fullPath: '/guides/what-is-a-stablecoin'
-      preLoaderRoute: typeof GuidesWhatIsAStablecoinRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/what-is-aml-in-crypto': {
-      id: '/guides/what-is-aml-in-crypto'
-      path: '/what-is-aml-in-crypto'
-      fullPath: '/guides/what-is-aml-in-crypto'
-      preLoaderRoute: typeof GuidesWhatIsAmlInCryptoRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/what-is-kyc-in-cryptocurrency': {
-      id: '/guides/what-is-kyc-in-cryptocurrency'
-      path: '/what-is-kyc-in-cryptocurrency'
-      fullPath: '/guides/what-is-kyc-in-cryptocurrency'
-      preLoaderRoute: typeof GuidesWhatIsKycInCryptocurrencyRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/what-it-means-when-exchange-pauses-withdrawals': {
-      id: '/guides/what-it-means-when-exchange-pauses-withdrawals'
-      path: '/what-it-means-when-exchange-pauses-withdrawals'
-      fullPath: '/guides/what-it-means-when-exchange-pauses-withdrawals'
-      preLoaderRoute: typeof GuidesWhatItMeansWhenExchangePausesWithdrawalsRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/why-bitcoin-price-moves-more-than-stocks': {
-      id: '/guides/why-bitcoin-price-moves-more-than-stocks'
-      path: '/why-bitcoin-price-moves-more-than-stocks'
-      fullPath: '/guides/why-bitcoin-price-moves-more-than-stocks'
-      preLoaderRoute: typeof GuidesWhyBitcoinPriceMovesMoreThanStocksRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/why-crypto-regulation-matters': {
-      id: '/guides/why-crypto-regulation-matters'
-      path: '/why-crypto-regulation-matters'
-      fullPath: '/guides/why-crypto-regulation-matters'
-      preLoaderRoute: typeof GuidesWhyCryptoRegulationMattersRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/guides/why-governments-regulate-cryptocurrency': {
-      id: '/guides/why-governments-regulate-cryptocurrency'
-      path: '/why-governments-regulate-cryptocurrency'
-      fullPath: '/guides/why-governments-regulate-cryptocurrency'
-      preLoaderRoute: typeof GuidesWhyGovernmentsRegulateCryptocurrencyRouteImport
-      parentRoute: typeof GuidesRoute
-    }
-    '/learn/': {
-      id: '/learn/'
-      path: '/'
-      fullPath: '/learn/'
-      preLoaderRoute: typeof LearnIndexRouteImport
-      parentRoute: typeof LearnRoute
-    }
-    '/news/': {
-      id: '/news/'
-      path: '/'
-      fullPath: '/news/'
-      preLoaderRoute: typeof NewsIndexRouteImport
-      parentRoute: typeof NewsRoute
-    }
-    '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally': {
-      id: '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
-      path: '/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
-      fullPath: '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
-      preLoaderRoute: typeof NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRouteImport
-      parentRoute: typeof NewsRoute
-    }
-    '/news/bitcoin-fed-rate-hike-jobs-report-september-2026': {
-      id: '/news/bitcoin-fed-rate-hike-jobs-report-september-2026'
-      path: '/bitcoin-fed-rate-hike-jobs-report-september-2026'
-      fullPath: '/news/bitcoin-fed-rate-hike-jobs-report-september-2026'
-      preLoaderRoute: typeof NewsBitcoinFedRateHikeJobsReportSeptember2026RouteImport
-      parentRoute: typeof NewsRoute
-    }
-    '/news/bitcoin-jobs-report-etf-inflows-september-2026': {
-      id: '/news/bitcoin-jobs-report-etf-inflows-september-2026'
-      path: '/bitcoin-jobs-report-etf-inflows-september-2026'
-      fullPath: '/news/bitcoin-jobs-report-etf-inflows-september-2026'
-      preLoaderRoute: typeof NewsBitcoinJobsReportEtfInflowsSeptember2026RouteImport
-      parentRoute: typeof NewsRoute
-    }
-    '/news/bitcoin-jobs-report-september-2026-fed-rate-risk': {
-      id: '/news/bitcoin-jobs-report-september-2026-fed-rate-risk'
-      path: '/bitcoin-jobs-report-september-2026-fed-rate-risk'
-      fullPath: '/news/bitcoin-jobs-report-september-2026-fed-rate-risk'
-      preLoaderRoute: typeof NewsBitcoinJobsReportSeptember2026FedRateRiskRouteImport
-      parentRoute: typeof NewsRoute
-    }
-    '/news/bitcoin-rally-august-2026': {
-      id: '/news/bitcoin-rally-august-2026'
-      path: '/bitcoin-rally-august-2026'
-      fullPath: '/news/bitcoin-rally-august-2026'
-      preLoaderRoute: typeof NewsBitcoinRallyAugust2026RouteImport
-      parentRoute: typeof NewsRoute
-    }
-    '/news/bitcoin-september-rally-macro-test': {
-      id: '/news/bitcoin-september-rally-macro-test'
-      path: '/bitcoin-september-rally-macro-test'
-      fullPath: '/news/bitcoin-september-rally-macro-test'
-      preLoaderRoute: typeof NewsBitcoinSeptemberRallyMacroTestRouteImport
-      parentRoute: typeof NewsRoute
-    }
-    '/news/ethereum-merge-two-years-later': {
-      id: '/news/ethereum-merge-two-years-later'
-      path: '/ethereum-merge-two-years-later'
-      fullPath: '/news/ethereum-merge-two-years-later'
-      preLoaderRoute: typeof NewsEthereumMergeTwoYearsLaterRouteImport
-      parentRoute: typeof NewsRoute
-    }
-    '/news/liquid-network-hack-4000-btc-withdrawal': {
-      id: '/news/liquid-network-hack-4000-btc-withdrawal'
-      path: '/liquid-network-hack-4000-btc-withdrawal'
-      fullPath: '/news/liquid-network-hack-4000-btc-withdrawal'
-      preLoaderRoute: typeof NewsLiquidNetworkHack4000BtcWithdrawalRouteImport
-      parentRoute: typeof NewsRoute
-    }
-    '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': {
-      id: '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
-      path: '/standard-chartered-uae-institutional-bitcoin-ether-trading'
-      fullPath: '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
-      preLoaderRoute: typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport
-      parentRoute: typeof NewsRoute
-    }
-    '/news/what-is-the-clarity-act-crypto': {
-      id: '/news/what-is-the-clarity-act-crypto'
-      path: '/what-is-the-clarity-act-crypto'
-      fullPath: '/news/what-is-the-clarity-act-crypto'
-      preLoaderRoute: typeof NewsWhatIsTheClarityActCryptoRouteImport
-      parentRoute: typeof NewsRoute
+      fullPath: '/taxes/'
+      preLoaderRoute: typeof TaxesIndexRouteImport
+      parentRoute: typeof TaxesRoute
     }
     '/security/': {
       id: '/security/'
@@ -2275,123 +1749,74 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SecurityIndexRouteImport
       parentRoute: typeof SecurityRoute
     }
-    '/security/common-crypto-scams': {
-      id: '/security/common-crypto-scams'
-      path: '/common-crypto-scams'
-      fullPath: '/security/common-crypto-scams'
-      preLoaderRoute: typeof SecurityCommonCryptoScamsRouteImport
-      parentRoute: typeof SecurityRoute
+    '/news/': {
+      id: '/news/'
+      path: '/'
+      fullPath: '/news/'
+      preLoaderRoute: typeof NewsIndexRouteImport
+      parentRoute: typeof NewsRoute
     }
-    '/security/crypto-security-hub': {
-      id: '/security/crypto-security-hub'
-      path: '/crypto-security-hub'
-      fullPath: '/security/crypto-security-hub'
-      preLoaderRoute: typeof SecurityCryptoSecurityHubRouteImport
-      parentRoute: typeof SecurityRoute
+    '/learn/': {
+      id: '/learn/'
+      path: '/'
+      fullPath: '/learn/'
+      preLoaderRoute: typeof LearnIndexRouteImport
+      parentRoute: typeof LearnRoute
     }
-    '/security/crypto-wallet-drainer-scams-explained': {
-      id: '/security/crypto-wallet-drainer-scams-explained'
-      path: '/crypto-wallet-drainer-scams-explained'
-      fullPath: '/security/crypto-wallet-drainer-scams-explained'
-      preLoaderRoute: typeof SecurityCryptoWalletDrainerScamsExplainedRouteImport
-      parentRoute: typeof SecurityRoute
+    '/guides/': {
+      id: '/guides/'
+      path: '/'
+      fullPath: '/guides/'
+      preLoaderRoute: typeof GuidesIndexRouteImport
+      parentRoute: typeof GuidesRoute
     }
-    '/security/defi-risks-explained': {
-      id: '/security/defi-risks-explained'
-      path: '/defi-risks-explained'
-      fullPath: '/security/defi-risks-explained'
-      preLoaderRoute: typeof SecurityDefiRisksExplainedRouteImport
-      parentRoute: typeof SecurityRoute
+    '/glossary/': {
+      id: '/glossary/'
+      path: '/'
+      fullPath: '/glossary/'
+      preLoaderRoute: typeof GlossaryIndexRouteImport
+      parentRoute: typeof GlossaryRoute
     }
-    '/security/exchange-account-security': {
-      id: '/security/exchange-account-security'
-      path: '/exchange-account-security'
-      fullPath: '/security/exchange-account-security'
-      preLoaderRoute: typeof SecurityExchangeAccountSecurityRouteImport
-      parentRoute: typeof SecurityRoute
+    '/ethereum/': {
+      id: '/ethereum/'
+      path: '/'
+      fullPath: '/ethereum/'
+      preLoaderRoute: typeof EthereumIndexRouteImport
+      parentRoute: typeof EthereumRoute
     }
-    '/security/fake-airdrop-scams-explained': {
-      id: '/security/fake-airdrop-scams-explained'
-      path: '/fake-airdrop-scams-explained'
-      fullPath: '/security/fake-airdrop-scams-explained'
-      preLoaderRoute: typeof SecurityFakeAirdropScamsExplainedRouteImport
-      parentRoute: typeof SecurityRoute
+    '/etfs/': {
+      id: '/etfs/'
+      path: '/'
+      fullPath: '/etfs/'
+      preLoaderRoute: typeof EtfsIndexRouteImport
+      parentRoute: typeof EtfsRoute
     }
-    '/security/fake-wallet-apps-explained': {
-      id: '/security/fake-wallet-apps-explained'
-      path: '/fake-wallet-apps-explained'
-      fullPath: '/security/fake-wallet-apps-explained'
-      preLoaderRoute: typeof SecurityFakeWalletAppsExplainedRouteImport
-      parentRoute: typeof SecurityRoute
+    '/defi/': {
+      id: '/defi/'
+      path: '/'
+      fullPath: '/defi/'
+      preLoaderRoute: typeof DefiIndexRouteImport
+      parentRoute: typeof DefiRoute
     }
-    '/security/hardware-wallet-mistakes-to-avoid': {
-      id: '/security/hardware-wallet-mistakes-to-avoid'
-      path: '/hardware-wallet-mistakes-to-avoid'
-      fullPath: '/security/hardware-wallet-mistakes-to-avoid'
-      preLoaderRoute: typeof SecurityHardwareWalletMistakesToAvoidRouteImport
-      parentRoute: typeof SecurityRoute
+    '/bitcoin/': {
+      id: '/bitcoin/'
+      path: '/'
+      fullPath: '/bitcoin/'
+      preLoaderRoute: typeof BitcoinIndexRouteImport
+      parentRoute: typeof BitcoinRoute
     }
-    '/security/how-crypto-phishing-scams-work': {
-      id: '/security/how-crypto-phishing-scams-work'
-      path: '/how-crypto-phishing-scams-work'
-      fullPath: '/security/how-crypto-phishing-scams-work'
-      preLoaderRoute: typeof SecurityHowCryptoPhishingScamsWorkRouteImport
-      parentRoute: typeof SecurityRoute
+    '/altcoins/': {
+      id: '/altcoins/'
+      path: '/'
+      fullPath: '/altcoins/'
+      preLoaderRoute: typeof AltcoinsIndexRouteImport
+      parentRoute: typeof AltcoinsRoute
     }
-    '/security/how-to-avoid-crypto-phishing-scams': {
-      id: '/security/how-to-avoid-crypto-phishing-scams'
-      path: '/how-to-avoid-crypto-phishing-scams'
-      fullPath: '/security/how-to-avoid-crypto-phishing-scams'
-      preLoaderRoute: typeof SecurityHowToAvoidCryptoPhishingScamsRouteImport
-      parentRoute: typeof SecurityRoute
-    }
-    '/security/how-to-identify-a-fake-crypto-website': {
-      id: '/security/how-to-identify-a-fake-crypto-website'
-      path: '/how-to-identify-a-fake-crypto-website'
-      fullPath: '/security/how-to-identify-a-fake-crypto-website'
-      preLoaderRoute: typeof SecurityHowToIdentifyAFakeCryptoWebsiteRouteImport
-      parentRoute: typeof SecurityRoute
-    }
-    '/security/how-to-revoke-smart-contract-approvals': {
-      id: '/security/how-to-revoke-smart-contract-approvals'
-      path: '/how-to-revoke-smart-contract-approvals'
-      fullPath: '/security/how-to-revoke-smart-contract-approvals'
-      preLoaderRoute: typeof SecurityHowToRevokeSmartContractApprovalsRouteImport
-      parentRoute: typeof SecurityRoute
-    }
-    '/security/how-to-spot-a-rug-pull': {
-      id: '/security/how-to-spot-a-rug-pull'
-      path: '/how-to-spot-a-rug-pull'
-      fullPath: '/security/how-to-spot-a-rug-pull'
-      preLoaderRoute: typeof SecurityHowToSpotARugPullRouteImport
-      parentRoute: typeof SecurityRoute
-    }
-    '/security/how-to-store-crypto-seed-phrase-safely': {
-      id: '/security/how-to-store-crypto-seed-phrase-safely'
-      path: '/how-to-store-crypto-seed-phrase-safely'
-      fullPath: '/security/how-to-store-crypto-seed-phrase-safely'
-      preLoaderRoute: typeof SecurityHowToStoreCryptoSeedPhraseSafelyRouteImport
-      parentRoute: typeof SecurityRoute
-    }
-    '/security/how-to-verify-a-crypto-transaction': {
-      id: '/security/how-to-verify-a-crypto-transaction'
-      path: '/how-to-verify-a-crypto-transaction'
-      fullPath: '/security/how-to-verify-a-crypto-transaction'
-      preLoaderRoute: typeof SecurityHowToVerifyACryptoTransactionRouteImport
-      parentRoute: typeof SecurityRoute
-    }
-    '/security/private-key-vs-seed-phrase': {
-      id: '/security/private-key-vs-seed-phrase'
-      path: '/private-key-vs-seed-phrase'
-      fullPath: '/security/private-key-vs-seed-phrase'
-      preLoaderRoute: typeof SecurityPrivateKeyVsSeedPhraseRouteImport
-      parentRoute: typeof SecurityRoute
-    }
-    '/security/two-factor-authentication-for-crypto': {
-      id: '/security/two-factor-authentication-for-crypto'
-      path: '/two-factor-authentication-for-crypto'
-      fullPath: '/security/two-factor-authentication-for-crypto'
-      preLoaderRoute: typeof SecurityTwoFactorAuthenticationForCryptoRouteImport
+    '/security/what-to-do-if-your-crypto-wallet-is-hacked': {
+      id: '/security/what-to-do-if-your-crypto-wallet-is-hacked'
+      path: '/what-to-do-if-your-crypto-wallet-is-hacked'
+      fullPath: '/security/what-to-do-if-your-crypto-wallet-is-hacked'
+      preLoaderRoute: typeof SecurityWhatToDoIfYourCryptoWalletIsHackedRouteImport
       parentRoute: typeof SecurityRoute
     }
     '/security/what-is-a-seed-phrase': {
@@ -2401,19 +1826,614 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SecurityWhatIsASeedPhraseRouteImport
       parentRoute: typeof SecurityRoute
     }
-    '/security/what-to-do-if-your-crypto-wallet-is-hacked': {
-      id: '/security/what-to-do-if-your-crypto-wallet-is-hacked'
-      path: '/what-to-do-if-your-crypto-wallet-is-hacked'
-      fullPath: '/security/what-to-do-if-your-crypto-wallet-is-hacked'
-      preLoaderRoute: typeof SecurityWhatToDoIfYourCryptoWalletIsHackedRouteImport
+    '/security/two-factor-authentication-for-crypto': {
+      id: '/security/two-factor-authentication-for-crypto'
+      path: '/two-factor-authentication-for-crypto'
+      fullPath: '/security/two-factor-authentication-for-crypto'
+      preLoaderRoute: typeof SecurityTwoFactorAuthenticationForCryptoRouteImport
       parentRoute: typeof SecurityRoute
     }
-    '/taxes/': {
-      id: '/taxes/'
-      path: '/'
-      fullPath: '/taxes/'
-      preLoaderRoute: typeof TaxesIndexRouteImport
-      parentRoute: typeof TaxesRoute
+    '/security/private-key-vs-seed-phrase': {
+      id: '/security/private-key-vs-seed-phrase'
+      path: '/private-key-vs-seed-phrase'
+      fullPath: '/security/private-key-vs-seed-phrase'
+      preLoaderRoute: typeof SecurityPrivateKeyVsSeedPhraseRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/how-to-verify-a-crypto-transaction': {
+      id: '/security/how-to-verify-a-crypto-transaction'
+      path: '/how-to-verify-a-crypto-transaction'
+      fullPath: '/security/how-to-verify-a-crypto-transaction'
+      preLoaderRoute: typeof SecurityHowToVerifyACryptoTransactionRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/how-to-store-crypto-seed-phrase-safely': {
+      id: '/security/how-to-store-crypto-seed-phrase-safely'
+      path: '/how-to-store-crypto-seed-phrase-safely'
+      fullPath: '/security/how-to-store-crypto-seed-phrase-safely'
+      preLoaderRoute: typeof SecurityHowToStoreCryptoSeedPhraseSafelyRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/how-to-spot-a-rug-pull': {
+      id: '/security/how-to-spot-a-rug-pull'
+      path: '/how-to-spot-a-rug-pull'
+      fullPath: '/security/how-to-spot-a-rug-pull'
+      preLoaderRoute: typeof SecurityHowToSpotARugPullRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/how-to-revoke-smart-contract-approvals': {
+      id: '/security/how-to-revoke-smart-contract-approvals'
+      path: '/how-to-revoke-smart-contract-approvals'
+      fullPath: '/security/how-to-revoke-smart-contract-approvals'
+      preLoaderRoute: typeof SecurityHowToRevokeSmartContractApprovalsRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/how-to-identify-a-fake-crypto-website': {
+      id: '/security/how-to-identify-a-fake-crypto-website'
+      path: '/how-to-identify-a-fake-crypto-website'
+      fullPath: '/security/how-to-identify-a-fake-crypto-website'
+      preLoaderRoute: typeof SecurityHowToIdentifyAFakeCryptoWebsiteRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/how-to-avoid-crypto-phishing-scams': {
+      id: '/security/how-to-avoid-crypto-phishing-scams'
+      path: '/how-to-avoid-crypto-phishing-scams'
+      fullPath: '/security/how-to-avoid-crypto-phishing-scams'
+      preLoaderRoute: typeof SecurityHowToAvoidCryptoPhishingScamsRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/how-crypto-phishing-scams-work': {
+      id: '/security/how-crypto-phishing-scams-work'
+      path: '/how-crypto-phishing-scams-work'
+      fullPath: '/security/how-crypto-phishing-scams-work'
+      preLoaderRoute: typeof SecurityHowCryptoPhishingScamsWorkRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/hardware-wallet-mistakes-to-avoid': {
+      id: '/security/hardware-wallet-mistakes-to-avoid'
+      path: '/hardware-wallet-mistakes-to-avoid'
+      fullPath: '/security/hardware-wallet-mistakes-to-avoid'
+      preLoaderRoute: typeof SecurityHardwareWalletMistakesToAvoidRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/fake-wallet-apps-explained': {
+      id: '/security/fake-wallet-apps-explained'
+      path: '/fake-wallet-apps-explained'
+      fullPath: '/security/fake-wallet-apps-explained'
+      preLoaderRoute: typeof SecurityFakeWalletAppsExplainedRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/fake-airdrop-scams-explained': {
+      id: '/security/fake-airdrop-scams-explained'
+      path: '/fake-airdrop-scams-explained'
+      fullPath: '/security/fake-airdrop-scams-explained'
+      preLoaderRoute: typeof SecurityFakeAirdropScamsExplainedRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/exchange-account-security': {
+      id: '/security/exchange-account-security'
+      path: '/exchange-account-security'
+      fullPath: '/security/exchange-account-security'
+      preLoaderRoute: typeof SecurityExchangeAccountSecurityRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/defi-risks-explained': {
+      id: '/security/defi-risks-explained'
+      path: '/defi-risks-explained'
+      fullPath: '/security/defi-risks-explained'
+      preLoaderRoute: typeof SecurityDefiRisksExplainedRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/crypto-wallet-drainer-scams-explained': {
+      id: '/security/crypto-wallet-drainer-scams-explained'
+      path: '/crypto-wallet-drainer-scams-explained'
+      fullPath: '/security/crypto-wallet-drainer-scams-explained'
+      preLoaderRoute: typeof SecurityCryptoWalletDrainerScamsExplainedRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/crypto-security-hub': {
+      id: '/security/crypto-security-hub'
+      path: '/crypto-security-hub'
+      fullPath: '/security/crypto-security-hub'
+      preLoaderRoute: typeof SecurityCryptoSecurityHubRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/common-crypto-scams': {
+      id: '/security/common-crypto-scams'
+      path: '/common-crypto-scams'
+      fullPath: '/security/common-crypto-scams'
+      preLoaderRoute: typeof SecurityCommonCryptoScamsRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/news/what-is-the-clarity-act-crypto': {
+      id: '/news/what-is-the-clarity-act-crypto'
+      path: '/what-is-the-clarity-act-crypto'
+      fullPath: '/news/what-is-the-clarity-act-crypto'
+      preLoaderRoute: typeof NewsWhatIsTheClarityActCryptoRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': {
+      id: '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
+      path: '/standard-chartered-uae-institutional-bitcoin-ether-trading'
+      fullPath: '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
+      preLoaderRoute: typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/liquid-network-hack-4000-btc-withdrawal': {
+      id: '/news/liquid-network-hack-4000-btc-withdrawal'
+      path: '/liquid-network-hack-4000-btc-withdrawal'
+      fullPath: '/news/liquid-network-hack-4000-btc-withdrawal'
+      preLoaderRoute: typeof NewsLiquidNetworkHack4000BtcWithdrawalRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/liquid-network-3400-btc-returned-320-million-incident': {
+      id: '/news/liquid-network-3400-btc-returned-320-million-incident'
+      path: '/liquid-network-3400-btc-returned-320-million-incident'
+      fullPath: '/news/liquid-network-3400-btc-returned-320-million-incident'
+      preLoaderRoute: typeof NewsLiquidNetwork3400BtcReturned320MillionIncidentRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/ethereum-merge-two-years-later': {
+      id: '/news/ethereum-merge-two-years-later'
+      path: '/ethereum-merge-two-years-later'
+      fullPath: '/news/ethereum-merge-two-years-later'
+      preLoaderRoute: typeof NewsEthereumMergeTwoYearsLaterRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/bitcoin-september-rally-macro-test': {
+      id: '/news/bitcoin-september-rally-macro-test'
+      path: '/bitcoin-september-rally-macro-test'
+      fullPath: '/news/bitcoin-september-rally-macro-test'
+      preLoaderRoute: typeof NewsBitcoinSeptemberRallyMacroTestRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/bitcoin-rally-august-2026': {
+      id: '/news/bitcoin-rally-august-2026'
+      path: '/bitcoin-rally-august-2026'
+      fullPath: '/news/bitcoin-rally-august-2026'
+      preLoaderRoute: typeof NewsBitcoinRallyAugust2026RouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/bitcoin-jobs-report-september-2026-fed-rate-risk': {
+      id: '/news/bitcoin-jobs-report-september-2026-fed-rate-risk'
+      path: '/bitcoin-jobs-report-september-2026-fed-rate-risk'
+      fullPath: '/news/bitcoin-jobs-report-september-2026-fed-rate-risk'
+      preLoaderRoute: typeof NewsBitcoinJobsReportSeptember2026FedRateRiskRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/bitcoin-jobs-report-etf-inflows-september-2026': {
+      id: '/news/bitcoin-jobs-report-etf-inflows-september-2026'
+      path: '/bitcoin-jobs-report-etf-inflows-september-2026'
+      fullPath: '/news/bitcoin-jobs-report-etf-inflows-september-2026'
+      preLoaderRoute: typeof NewsBitcoinJobsReportEtfInflowsSeptember2026RouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/bitcoin-fed-rate-hike-jobs-report-september-2026': {
+      id: '/news/bitcoin-fed-rate-hike-jobs-report-september-2026'
+      path: '/bitcoin-fed-rate-hike-jobs-report-september-2026'
+      fullPath: '/news/bitcoin-fed-rate-hike-jobs-report-september-2026'
+      preLoaderRoute: typeof NewsBitcoinFedRateHikeJobsReportSeptember2026RouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally': {
+      id: '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
+      path: '/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
+      fullPath: '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
+      preLoaderRoute: typeof NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/guides/why-governments-regulate-cryptocurrency': {
+      id: '/guides/why-governments-regulate-cryptocurrency'
+      path: '/why-governments-regulate-cryptocurrency'
+      fullPath: '/guides/why-governments-regulate-cryptocurrency'
+      preLoaderRoute: typeof GuidesWhyGovernmentsRegulateCryptocurrencyRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/why-crypto-regulation-matters': {
+      id: '/guides/why-crypto-regulation-matters'
+      path: '/why-crypto-regulation-matters'
+      fullPath: '/guides/why-crypto-regulation-matters'
+      preLoaderRoute: typeof GuidesWhyCryptoRegulationMattersRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/why-bitcoin-price-moves-more-than-stocks': {
+      id: '/guides/why-bitcoin-price-moves-more-than-stocks'
+      path: '/why-bitcoin-price-moves-more-than-stocks'
+      fullPath: '/guides/why-bitcoin-price-moves-more-than-stocks'
+      preLoaderRoute: typeof GuidesWhyBitcoinPriceMovesMoreThanStocksRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/what-it-means-when-exchange-pauses-withdrawals': {
+      id: '/guides/what-it-means-when-exchange-pauses-withdrawals'
+      path: '/what-it-means-when-exchange-pauses-withdrawals'
+      fullPath: '/guides/what-it-means-when-exchange-pauses-withdrawals'
+      preLoaderRoute: typeof GuidesWhatItMeansWhenExchangePausesWithdrawalsRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/what-is-kyc-in-cryptocurrency': {
+      id: '/guides/what-is-kyc-in-cryptocurrency'
+      path: '/what-is-kyc-in-cryptocurrency'
+      fullPath: '/guides/what-is-kyc-in-cryptocurrency'
+      preLoaderRoute: typeof GuidesWhatIsKycInCryptocurrencyRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/what-is-aml-in-crypto': {
+      id: '/guides/what-is-aml-in-crypto'
+      path: '/what-is-aml-in-crypto'
+      fullPath: '/guides/what-is-aml-in-crypto'
+      preLoaderRoute: typeof GuidesWhatIsAmlInCryptoRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/what-is-a-stablecoin': {
+      id: '/guides/what-is-a-stablecoin'
+      path: '/what-is-a-stablecoin'
+      fullPath: '/guides/what-is-a-stablecoin'
+      preLoaderRoute: typeof GuidesWhatIsAStablecoinRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/what-is-a-short-squeeze-crypto-explained': {
+      id: '/guides/what-is-a-short-squeeze-crypto-explained'
+      path: '/what-is-a-short-squeeze-crypto-explained'
+      fullPath: '/guides/what-is-a-short-squeeze-crypto-explained'
+      preLoaderRoute: typeof GuidesWhatIsAShortSqueezeCryptoExplainedRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/what-is-a-private-key': {
+      id: '/guides/what-is-a-private-key'
+      path: '/what-is-a-private-key'
+      fullPath: '/guides/what-is-a-private-key'
+      preLoaderRoute: typeof GuidesWhatIsAPrivateKeyRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/what-is-a-crypto-wallet-address': {
+      id: '/guides/what-is-a-crypto-wallet-address'
+      path: '/what-is-a-crypto-wallet-address'
+      fullPath: '/guides/what-is-a-crypto-wallet-address'
+      preLoaderRoute: typeof GuidesWhatIsACryptoWalletAddressRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/what-is-a-blockchain-fork': {
+      id: '/guides/what-is-a-blockchain-fork'
+      path: '/what-is-a-blockchain-fork'
+      fullPath: '/guides/what-is-a-blockchain-fork'
+      preLoaderRoute: typeof GuidesWhatIsABlockchainForkRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/stablecoin-regulation-explained': {
+      id: '/guides/stablecoin-regulation-explained'
+      path: '/stablecoin-regulation-explained'
+      fullPath: '/guides/stablecoin-regulation-explained'
+      preLoaderRoute: typeof GuidesStablecoinRegulationExplainedRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/not-your-keys-not-your-coins-meaning': {
+      id: '/guides/not-your-keys-not-your-coins-meaning'
+      path: '/not-your-keys-not-your-coins-meaning'
+      fullPath: '/guides/not-your-keys-not-your-coins-meaning'
+      preLoaderRoute: typeof GuidesNotYourKeysNotYourCoinsMeaningRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/how-to-set-up-metamask-step-by-step': {
+      id: '/guides/how-to-set-up-metamask-step-by-step'
+      path: '/how-to-set-up-metamask-step-by-step'
+      fullPath: '/guides/how-to-set-up-metamask-step-by-step'
+      preLoaderRoute: typeof GuidesHowToSetUpMetamaskStepByStepRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/how-to-read-crypto-news-without-hype': {
+      id: '/guides/how-to-read-crypto-news-without-hype'
+      path: '/how-to-read-crypto-news-without-hype'
+      fullPath: '/guides/how-to-read-crypto-news-without-hype'
+      preLoaderRoute: typeof GuidesHowToReadCryptoNewsWithoutHypeRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/how-to-read-a-block-explorer': {
+      id: '/guides/how-to-read-a-block-explorer'
+      path: '/how-to-read-a-block-explorer'
+      fullPath: '/guides/how-to-read-a-block-explorer'
+      preLoaderRoute: typeof GuidesHowToReadABlockExplorerRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/how-cryptocurrency-regulation-works': {
+      id: '/guides/how-cryptocurrency-regulation-works'
+      path: '/how-cryptocurrency-regulation-works'
+      fullPath: '/guides/how-cryptocurrency-regulation-works'
+      preLoaderRoute: typeof GuidesHowCryptocurrencyRegulationWorksRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/how-crypto-exchanges-are-regulated': {
+      id: '/guides/how-crypto-exchanges-are-regulated'
+      path: '/how-crypto-exchanges-are-regulated'
+      fullPath: '/guides/how-crypto-exchanges-are-regulated'
+      preLoaderRoute: typeof GuidesHowCryptoExchangesAreRegulatedRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/hot-wallets-vs-cold-wallets-explained': {
+      id: '/guides/hot-wallets-vs-cold-wallets-explained'
+      path: '/hot-wallets-vs-cold-wallets-explained'
+      fullPath: '/guides/hot-wallets-vs-cold-wallets-explained'
+      preLoaderRoute: typeof GuidesHotWalletsVsColdWalletsExplainedRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/hardware-wallet-comparison-guide': {
+      id: '/guides/hardware-wallet-comparison-guide'
+      path: '/hardware-wallet-comparison-guide'
+      fullPath: '/guides/hardware-wallet-comparison-guide'
+      preLoaderRoute: typeof GuidesHardwareWalletComparisonGuideRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/exchange-or-personal-wallet-crypto-storage': {
+      id: '/guides/exchange-or-personal-wallet-crypto-storage'
+      path: '/exchange-or-personal-wallet-crypto-storage'
+      fullPath: '/guides/exchange-or-personal-wallet-crypto-storage'
+      preLoaderRoute: typeof GuidesExchangeOrPersonalWalletCryptoStorageRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/cryptocurrency-taxes-explained': {
+      id: '/guides/cryptocurrency-taxes-explained'
+      path: '/cryptocurrency-taxes-explained'
+      fullPath: '/guides/cryptocurrency-taxes-explained'
+      preLoaderRoute: typeof GuidesCryptocurrencyTaxesExplainedRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/crypto-tax-basics-for-beginners': {
+      id: '/guides/crypto-tax-basics-for-beginners'
+      path: '/crypto-tax-basics-for-beginners'
+      fullPath: '/guides/crypto-tax-basics-for-beginners'
+      preLoaderRoute: typeof GuidesCryptoTaxBasicsForBeginnersRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/crypto-regulation-vs-cryptocurrency-ban': {
+      id: '/guides/crypto-regulation-vs-cryptocurrency-ban'
+      path: '/crypto-regulation-vs-cryptocurrency-ban'
+      fullPath: '/guides/crypto-regulation-vs-cryptocurrency-ban'
+      preLoaderRoute: typeof GuidesCryptoRegulationVsCryptocurrencyBanRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/crypto-regulation-hub': {
+      id: '/guides/crypto-regulation-hub'
+      path: '/crypto-regulation-hub'
+      fullPath: '/guides/crypto-regulation-hub'
+      preLoaderRoute: typeof GuidesCryptoRegulationHubRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/crypto-regulation-explained-for-beginners': {
+      id: '/guides/crypto-regulation-explained-for-beginners'
+      path: '/crypto-regulation-explained-for-beginners'
+      fullPath: '/guides/crypto-regulation-explained-for-beginners'
+      preLoaderRoute: typeof GuidesCryptoRegulationExplainedForBeginnersRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/crypto-portfolio-rebalancing-explained': {
+      id: '/guides/crypto-portfolio-rebalancing-explained'
+      path: '/crypto-portfolio-rebalancing-explained'
+      fullPath: '/guides/crypto-portfolio-rebalancing-explained'
+      preLoaderRoute: typeof GuidesCryptoPortfolioRebalancingExplainedRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/crypto-dollar-cost-averaging-explained': {
+      id: '/guides/crypto-dollar-cost-averaging-explained'
+      path: '/crypto-dollar-cost-averaging-explained'
+      fullPath: '/guides/crypto-dollar-cost-averaging-explained'
+      preLoaderRoute: typeof GuidesCryptoDollarCostAveragingExplainedRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/ethereum/what-is-ethereum-staking': {
+      id: '/ethereum/what-is-ethereum-staking'
+      path: '/what-is-ethereum-staking'
+      fullPath: '/ethereum/what-is-ethereum-staking'
+      preLoaderRoute: typeof EthereumWhatIsEthereumStakingRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/what-is-ethereum': {
+      id: '/ethereum/what-is-ethereum'
+      path: '/what-is-ethereum'
+      fullPath: '/ethereum/what-is-ethereum'
+      preLoaderRoute: typeof EthereumWhatIsEthereumRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/what-is-defi-decentralized-finance': {
+      id: '/ethereum/what-is-defi-decentralized-finance'
+      path: '/what-is-defi-decentralized-finance'
+      fullPath: '/ethereum/what-is-defi-decentralized-finance'
+      preLoaderRoute: typeof EthereumWhatIsDefiDecentralizedFinanceRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/what-is-a-smart-contract': {
+      id: '/ethereum/what-is-a-smart-contract'
+      path: '/what-is-a-smart-contract'
+      fullPath: '/ethereum/what-is-a-smart-contract'
+      preLoaderRoute: typeof EthereumWhatIsASmartContractRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/what-are-gas-fees-how-to-save': {
+      id: '/ethereum/what-are-gas-fees-how-to-save'
+      path: '/what-are-gas-fees-how-to-save'
+      fullPath: '/ethereum/what-are-gas-fees-how-to-save'
+      preLoaderRoute: typeof EthereumWhatAreGasFeesHowToSaveRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/proof-of-stake-explained': {
+      id: '/ethereum/proof-of-stake-explained'
+      path: '/proof-of-stake-explained'
+      fullPath: '/ethereum/proof-of-stake-explained'
+      preLoaderRoute: typeof EthereumProofOfStakeExplainedRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool': {
+      id: '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool'
+      path: '/how-to-stake-eth-on-lido-vs-rocketpool'
+      fullPath: '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool'
+      preLoaderRoute: typeof EthereumHowToStakeEthOnLidoVsRocketpoolRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/how-ethereum-works': {
+      id: '/ethereum/how-ethereum-works'
+      path: '/how-ethereum-works'
+      fullPath: '/ethereum/how-ethereum-works'
+      preLoaderRoute: typeof EthereumHowEthereumWorksRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/ethereum-wallets-explained': {
+      id: '/ethereum/ethereum-wallets-explained'
+      path: '/ethereum-wallets-explained'
+      fullPath: '/ethereum/ethereum-wallets-explained'
+      preLoaderRoute: typeof EthereumEthereumWalletsExplainedRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/ethereum-vs-bitcoin': {
+      id: '/ethereum/ethereum-vs-bitcoin'
+      path: '/ethereum-vs-bitcoin'
+      fullPath: '/ethereum/ethereum-vs-bitcoin'
+      preLoaderRoute: typeof EthereumEthereumVsBitcoinRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/ethereum-validators-explained': {
+      id: '/ethereum/ethereum-validators-explained'
+      path: '/ethereum-validators-explained'
+      fullPath: '/ethereum/ethereum-validators-explained'
+      preLoaderRoute: typeof EthereumEthereumValidatorsExplainedRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/ethereum-transaction-fees-explained': {
+      id: '/ethereum/ethereum-transaction-fees-explained'
+      path: '/ethereum-transaction-fees-explained'
+      fullPath: '/ethereum/ethereum-transaction-fees-explained'
+      preLoaderRoute: typeof EthereumEthereumTransactionFeesExplainedRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/ethereum-layer-2-scaling-rollups-explained': {
+      id: '/ethereum/ethereum-layer-2-scaling-rollups-explained'
+      path: '/ethereum-layer-2-scaling-rollups-explained'
+      fullPath: '/ethereum/ethereum-layer-2-scaling-rollups-explained'
+      preLoaderRoute: typeof EthereumEthereumLayer2ScalingRollupsExplainedRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/ethereum-complete-beginners-guide': {
+      id: '/ethereum/ethereum-complete-beginners-guide'
+      path: '/ethereum-complete-beginners-guide'
+      fullPath: '/ethereum/ethereum-complete-beginners-guide'
+      preLoaderRoute: typeof EthereumEthereumCompleteBeginnersGuideRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': {
+      id: '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
+      path: '/can-you-send-bitcoin-to-an-ethereum-address'
+      fullPath: '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
+      preLoaderRoute: typeof EthereumCanYouSendBitcoinToAnEthereumAddressRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/bitcoin/why-do-bond-yields-affect-bitcoin-price': {
+      id: '/bitcoin/why-do-bond-yields-affect-bitcoin-price'
+      path: '/why-do-bond-yields-affect-bitcoin-price'
+      fullPath: '/bitcoin/why-do-bond-yields-affect-bitcoin-price'
+      preLoaderRoute: typeof BitcoinWhyDoBondYieldsAffectBitcoinPriceRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
+    '/bitcoin/what-is-the-bitcoin-halving': {
+      id: '/bitcoin/what-is-the-bitcoin-halving'
+      path: '/what-is-the-bitcoin-halving'
+      fullPath: '/bitcoin/what-is-the-bitcoin-halving'
+      preLoaderRoute: typeof BitcoinWhatIsTheBitcoinHalvingRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
+    '/bitcoin/what-is-bitcoin-mining': {
+      id: '/bitcoin/what-is-bitcoin-mining'
+      path: '/what-is-bitcoin-mining'
+      fullPath: '/bitcoin/what-is-bitcoin-mining'
+      preLoaderRoute: typeof BitcoinWhatIsBitcoinMiningRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
+    '/bitcoin/what-is-a-bitcoin-wallet': {
+      id: '/bitcoin/what-is-a-bitcoin-wallet'
+      path: '/what-is-a-bitcoin-wallet'
+      fullPath: '/bitcoin/what-is-a-bitcoin-wallet'
+      preLoaderRoute: typeof BitcoinWhatIsABitcoinWalletRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
+    '/bitcoin/what-is-a-bitcoin-seed-phrase': {
+      id: '/bitcoin/what-is-a-bitcoin-seed-phrase'
+      path: '/what-is-a-bitcoin-seed-phrase'
+      fullPath: '/bitcoin/what-is-a-bitcoin-seed-phrase'
+      preLoaderRoute: typeof BitcoinWhatIsABitcoinSeedPhraseRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
+    '/bitcoin/what-is-a-bitcoin-node': {
+      id: '/bitcoin/what-is-a-bitcoin-node'
+      path: '/what-is-a-bitcoin-node'
+      fullPath: '/bitcoin/what-is-a-bitcoin-node'
+      preLoaderRoute: typeof BitcoinWhatIsABitcoinNodeRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
+    '/bitcoin/what-happens-if-you-lose-your-seed-phrase': {
+      id: '/bitcoin/what-happens-if-you-lose-your-seed-phrase'
+      path: '/what-happens-if-you-lose-your-seed-phrase'
+      fullPath: '/bitcoin/what-happens-if-you-lose-your-seed-phrase'
+      preLoaderRoute: typeof BitcoinWhatHappensIfYouLoseYourSeedPhraseRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
+    '/bitcoin/how-to-send-bitcoin-safely': {
+      id: '/bitcoin/how-to-send-bitcoin-safely'
+      path: '/how-to-send-bitcoin-safely'
+      fullPath: '/bitcoin/how-to-send-bitcoin-safely'
+      preLoaderRoute: typeof BitcoinHowToSendBitcoinSafelyRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
+    '/bitcoin/how-to-buy-your-first-bitcoin-safely': {
+      id: '/bitcoin/how-to-buy-your-first-bitcoin-safely'
+      path: '/how-to-buy-your-first-bitcoin-safely'
+      fullPath: '/bitcoin/how-to-buy-your-first-bitcoin-safely'
+      preLoaderRoute: typeof BitcoinHowToBuyYourFirstBitcoinSafelyRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
+    '/bitcoin/how-do-bitcoin-etfs-affect-price': {
+      id: '/bitcoin/how-do-bitcoin-etfs-affect-price'
+      path: '/how-do-bitcoin-etfs-affect-price'
+      fullPath: '/bitcoin/how-do-bitcoin-etfs-affect-price'
+      preLoaderRoute: typeof BitcoinHowDoBitcoinEtfsAffectPriceRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
+    '/bitcoin/how-bitcoin-wallets-work': {
+      id: '/bitcoin/how-bitcoin-wallets-work'
+      path: '/how-bitcoin-wallets-work'
+      fullPath: '/bitcoin/how-bitcoin-wallets-work'
+      preLoaderRoute: typeof BitcoinHowBitcoinWalletsWorkRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
+    '/bitcoin/common-bitcoin-wallet-scams': {
+      id: '/bitcoin/common-bitcoin-wallet-scams'
+      path: '/common-bitcoin-wallet-scams'
+      fullPath: '/bitcoin/common-bitcoin-wallet-scams'
+      preLoaderRoute: typeof BitcoinCommonBitcoinWalletScamsRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
+    '/bitcoin/coinbase-vs-kraken-vs-binance-exchange-comparison': {
+      id: '/bitcoin/coinbase-vs-kraken-vs-binance-exchange-comparison'
+      path: '/coinbase-vs-kraken-vs-binance-exchange-comparison'
+      fullPath: '/bitcoin/coinbase-vs-kraken-vs-binance-exchange-comparison'
+      preLoaderRoute: typeof BitcoinCoinbaseVsKrakenVsBinanceExchangeComparisonRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
+    '/bitcoin/bitcoin-wallets-complete-guide': {
+      id: '/bitcoin/bitcoin-wallets-complete-guide'
+      path: '/bitcoin-wallets-complete-guide'
+      fullPath: '/bitcoin/bitcoin-wallets-complete-guide'
+      preLoaderRoute: typeof BitcoinBitcoinWalletsCompleteGuideRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
+    '/bitcoin/bitcoin-lightning-network-explained': {
+      id: '/bitcoin/bitcoin-lightning-network-explained'
+      path: '/bitcoin-lightning-network-explained'
+      fullPath: '/bitcoin/bitcoin-lightning-network-explained'
+      preLoaderRoute: typeof BitcoinBitcoinLightningNetworkExplainedRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
+    '/bitcoin/bitcoin-address-vs-wallet-address': {
+      id: '/bitcoin/bitcoin-address-vs-wallet-address'
+      path: '/bitcoin-address-vs-wallet-address'
+      fullPath: '/bitcoin/bitcoin-address-vs-wallet-address'
+      preLoaderRoute: typeof BitcoinBitcoinAddressVsWalletAddressRouteImport
+      parentRoute: typeof BitcoinRoute
     }
   }
 }
@@ -2666,6 +2686,7 @@ interface NewsRouteChildren {
   NewsBitcoinRallyAugust2026Route: typeof NewsBitcoinRallyAugust2026Route
   NewsBitcoinSeptemberRallyMacroTestRoute: typeof NewsBitcoinSeptemberRallyMacroTestRoute
   NewsEthereumMergeTwoYearsLaterRoute: typeof NewsEthereumMergeTwoYearsLaterRoute
+  NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute: typeof NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute
   NewsLiquidNetworkHack4000BtcWithdrawalRoute: typeof NewsLiquidNetworkHack4000BtcWithdrawalRoute
   NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute: typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
   NewsWhatIsTheClarityActCryptoRoute: typeof NewsWhatIsTheClarityActCryptoRoute
@@ -2685,6 +2706,8 @@ const NewsRouteChildren: NewsRouteChildren = {
   NewsBitcoinSeptemberRallyMacroTestRoute:
     NewsBitcoinSeptemberRallyMacroTestRoute,
   NewsEthereumMergeTwoYearsLaterRoute: NewsEthereumMergeTwoYearsLaterRoute,
+  NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute:
+    NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute,
   NewsLiquidNetworkHack4000BtcWithdrawalRoute:
     NewsLiquidNetworkHack4000BtcWithdrawalRoute,
   NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute:
