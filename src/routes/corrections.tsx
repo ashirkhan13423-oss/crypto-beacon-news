@@ -15,6 +15,7 @@ export const Route = createFileRoute("/corrections")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:url", content: URL },
+      { property: "article:published_time", content: "2026-08-06" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [
@@ -47,8 +48,8 @@ function CorrectionsPage() {
             <h2 className="font-headline-lg text-headline-lg text-primary mb-md mt-xl">How to Report an Error</h2>
             <p>
               If you believe any article on CryptoBeacon contains a factual error, please contact our editorial team at{" "}
-              <a href="mailto:corrections@cryptobeacon.site" className="text-secondary hover:underline">
-                corrections@cryptobeacon.site
+              <a href="mailto:crypto.beacon.site@gmail.com" className="text-secondary hover:underline">
+                crypto.beacon.site@gmail.com
               </a>{" "}
               or use our <a href="/contact" className="text-secondary hover:underline">contact page</a>. Please include:
             </p>

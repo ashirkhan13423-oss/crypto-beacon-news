@@ -1140,15 +1140,23 @@ function IndexPage() {
                 to={a.to}
                 className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all flex flex-col"
               >
-                <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden border-b border-outline-variant">
-                  <img
-                    src={a.image}
-                    alt={a.alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    width={1600}
-                    height={900}
-                  />
+                <div className="aspect-[16/9] bg-[#0A0B0D] flex items-center justify-center overflow-hidden border-b border-outline-variant">
+                  {a.image ? (
+                    <img
+                      src={a.image}
+                      alt={a.alt}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      width={1600}
+                      height={900}
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-surface-container-low group-hover:bg-surface-container transition-colors duration-500">
+                      <span className="font-display-lg text-4xl text-on-surface-variant opacity-20 font-bold uppercase tracking-widest">
+                        {a.tag.split(" · ")[0]}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <div className="p-lg flex flex-col flex-grow">
                   <span className="font-label-caps text-label-caps text-secondary font-semibold mb-xs">

@@ -64,7 +64,10 @@ function AuthorPage() {
               <BookOpen className="text-secondary" /> Biography
             </h2>
             <p>
-              Ashir is an independent writer researching cryptocurrency security and self-custody, with a focus on translating technical concepts for everyday users.
+              Ashir is an independent writer and researcher dedicated to the fields of cryptocurrency security, decentralized finance, and self-custody solutions. With a passion for demystifying complex blockchain technologies, Ashir focuses on translating highly technical concepts into accessible, actionable guidance for everyday users.
+            </p>
+            <p>
+              Over the years, Ashir has closely monitored the evolution of the cryptocurrency ecosystem, witnessing both its incredible innovations and its significant pitfalls. This firsthand experience has shaped a writing philosophy that prioritizes security-first thinking, encouraging readers to take absolute control of their digital assets while safely navigating the risks associated with modern Web3 environments.
             </p>
           </section>
 
@@ -103,10 +106,11 @@ function AuthorPage() {
             <h2 className="font-headline-md text-headline-md text-primary mb-md flex items-center gap-sm">
               <ShieldCheck className="text-secondary" /> Editorial Commitment
             </h2>
+            <p className="text-body-md text-on-surface-variant mb-md">
+              Every guide, tutorial, and analysis published under Ashir's oversight strictly follows CryptoBeacon's evergreen-first editorial policy. This means our material is fundamentally focused on core blockchain properties, verifiable security practices, and long-term technological implications rather than short-term market speculation or token price hype.
+            </p>
             <p className="text-body-md text-on-surface-variant">
-              Every guide and analysis published under Ashir's oversight follows CryptoBeacon's
-              evergreen-first policy. This means our material is focused on core blockchain properties
-              and verified security practices rather than short-term market speculation.
+              We believe that true empowerment in the digital asset space comes from deep understanding, not blindly following trends. Readers can expect thorough, evidence-based reporting designed to build a strong foundation of knowledge, empowering them to make their own informed decisions.
             </p>
           </section>
 
@@ -119,7 +123,7 @@ function AuthorPage() {
             </div>
             <div className="flex flex-wrap gap-sm">
               <a
-                href="mailto:contact@cryptobeacon.site"
+                href="mailto:crypto.beacon.site@gmail.com"
                 className="inline-flex items-center gap-xs px-md py-sm bg-primary text-on-primary font-medium rounded-lg hover:bg-primary-hover transition-colors"
               >
                 <Mail className="w-4 h-4" /> Email

@@ -6,6 +6,7 @@ import phishingHero from "@/assets/phishing-padlock.jpg";
 import smartContractHero from "@/assets/security-smart-contract-approvals.jpg";
 import hwMistakesHero from "@/assets/hardware-wallet-mistakes.jpg";
 import verifyTxHero from "@/assets/security-verify-transaction.jpg";
+import hackedHero from "@/assets/hacked-wallet-emergency.jpg";
 
 const collectionSchema = {
   "@context": "https://schema.org",
@@ -22,6 +23,11 @@ const collectionSchema = {
       "@type": "WebPage",
       name: "How to Store Your Crypto Seed Phrase Safely",
       url: "https://www.cryptobeacon.site/security/how-to-store-crypto-seed-phrase-safely",
+    },
+    {
+      "@type": "WebPage",
+      name: "What to Do If Your Crypto Wallet Is Hacked: Emergency Action Guide",
+      url: "https://www.cryptobeacon.site/security/what-to-do-if-your-crypto-wallet-is-hacked",
     },
     {
       "@type": "WebPage",
@@ -63,6 +69,7 @@ export const Route = createFileRoute("/security/")({
       },
       { property: "og:url", content: "https://www.cryptobeacon.site/security" },
       { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
+      { property: "article:published_time", content: "2026-08-06" },
     ],
     links: [{ rel: "canonical", href: "https://www.cryptobeacon.site/security" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
@@ -241,6 +248,32 @@ function SecurityPage() {
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 A practical guide to checking the status of any crypto transaction. Learn how to read a transaction ID, understand block confirmations, and know when a payment is truly final.
+              </p>
+            </div>
+          </Link>
+          <Link
+            to="/security/what-to-do-if-your-crypto-wallet-is-hacked"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={hackedHero}
+                alt="Cracked digital security shield with red warning glow and broken blockchain wallet icon"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Security · Article
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                What to Do If Your Crypto Wallet Is Hacked: Emergency Action Guide
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                If your crypto wallet has been compromised, every second counts. This emergency guide covers exactly what to do — in order — from the moment you realize something is wrong.
               </p>
             </div>
           </Link>

@@ -15,6 +15,7 @@ export const Route = createFileRoute("/learn/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:url", content: URL },
+      { property: "article:published_time", content: "2026-08-06" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [
@@ -34,12 +35,18 @@ function LearnHub() {
       <main className="flex-grow w-full max-w-6xl mx-auto px-gutter py-xl">
         <Breadcrumbs items={[{ label: "Learn Crypto" }]} />
         
-        <div className="mb-xxl max-w-3xl">
+        <div className="mb-xxl max-w-3xl space-y-md">
           <h1 className="font-display-lg text-display-lg text-primary mb-md">
             Learn Crypto: The Basics
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant">
-            Start your journey here. Understand cryptocurrency, blockchain technology, and the fundamentals of digital asset security through clear, evidence-based guides.
+            Start your journey here. Understand cryptocurrency, blockchain technology, and the fundamentals of digital asset security through clear, evidence-based guides. Our mission at CryptoBeacon is to provide accessible, non-technical explanations of complex concepts.
+          </p>
+          <p className="font-body-lg text-body-lg text-on-surface-variant">
+            Whether you are exploring Bitcoin for the first time or looking to dive deeper into smart contracts and decentralized finance (DeFi), our comprehensive curriculum is designed to help you navigate the crypto landscape with confidence. We emphasize self-custody and personal responsibility as core tenets of digital asset ownership.
+          </p>
+          <p className="font-body-lg text-body-lg text-on-surface-variant">
+            Take your time reading through these fundamental modules. It is highly recommended to understand how private keys, public addresses, and network transactions operate before making any significant commitments. Education is your strongest defense against scams and costly mistakes in the rapidly evolving world of blockchain.
           </p>
         </div>
 

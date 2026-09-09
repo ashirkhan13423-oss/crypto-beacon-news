@@ -36,6 +36,7 @@ export const Route = createFileRoute("/glossary/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:url", content: URL },
+      { property: "article:published_time", content: "2026-08-06" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

@@ -8,6 +8,7 @@ import stakingHero from "@/assets/ethereum-staking-hero.png";
 import l2Hero from "@/assets/ethereum-layer-2-scaling.png";
 import gasFeesHero from "@/assets/ethereum-gas-fees.jpg";
 import defiHero from "@/assets/ethereum-defi-explainer.jpg";
+import lidoRocketHero from "@/assets/eth-staking-lido-vs-rocketpool.jpg";
 
 const collectionSchema = {
   "@context": "https://schema.org",
@@ -19,6 +20,11 @@ const collectionSchema = {
       "@type": "WebPage",
       name: "Ethereum: Complete Beginner's Guide",
       url: "https://www.cryptobeacon.site/ethereum/ethereum-complete-beginners-guide",
+    },
+    {
+      "@type": "WebPage",
+      name: "Staking ETH: Lido vs Rocket Pool — A Tested Comparison (2026)",
+      url: "https://www.cryptobeacon.site/ethereum/how-to-stake-eth-on-lido-vs-rocketpool",
     },
     {
       "@type": "WebPage",
@@ -65,6 +71,7 @@ export const Route = createFileRoute("/ethereum/")({
       },
       { property: "og:url", content: "https://www.cryptobeacon.site/ethereum" },
       { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
+      { property: "article:published_time", content: "2026-08-06" },
     ],
     links: [{ rel: "canonical", href: "https://www.cryptobeacon.site/ethereum" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
@@ -253,6 +260,33 @@ function EthereumPage() {
               </p>
             </div>
           </Link>
+          <Link
+            to="/ethereum/how-to-stake-eth-on-lido-vs-rocketpool"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={lidoRocketHero}
+                alt="Two glowing liquid-staking protocol nodes connected by Ethereum blockchain lines on a deep blue and purple background"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1536}
+                height={896}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Ethereum · Article
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Staking ETH: Lido vs Rocket Pool — A Tested Comparison (2026)
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A hands-on comparison of Lido and Rocket Pool for liquid ETH staking in 2026 — covering yield, smart contract risk, decentralization, and minimum stake requirements.
+              </p>
+            </div>
+          </Link>
+
         </div>
       </main>
       <SiteFooter />

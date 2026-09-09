@@ -10,6 +10,25 @@ const DESC =
   "How to read crypto news without hype: a media literacy guide for identifying speculation, filtering out FOMO, and focusing on primary data.";
 const PUBLISHED = "2026-08-30";
 
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "How can I tell if a crypto article is sponsored?",
+    a: "Look for labels such as 'Sponsored,' 'PR,' or 'Guest Post,' usually near the top or bottom of the article. If the piece promotes a specific low-cap token without any risk disclosure, it is very likely paid content.",
+  },
+  {
+    q: "Are price predictions in crypto news reliable?",
+    a: "No. Price predictions are opinions, not facts. Even when they come from well-known analysts or AI models, they are based on assumptions that can change at any moment. Treat all forecasts with healthy skepticism.",
+  },
+  {
+    q: "What is the best way to verify a crypto news story?",
+    a: "Trace the claim back to a primary source such as a regulatory filing, an on-chain transaction on a block explorer, or a project's official GitHub repository. If the article does not link to any primary documents, treat the claim as unverified.",
+  },
+  {
+    q: "Why do crypto news headlines use words like 'explode' or 'crash'?",
+    a: "Sensational language is designed to provoke an emotional reaction—fear or excitement—that drives clicks. Responsible reporting relies on measured, factual language rather than hyperbole.",
+  },
+];
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",

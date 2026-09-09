@@ -40,27 +40,27 @@ function AffiliateDisclosurePage() {
 
         <div className="space-y-lg font-body-lg text-body-lg text-on-surface leading-relaxed">
           <p>
-            CryptoBeacon may include links to products, services, or platforms that participate in affiliate programs. When you click on certain links and make a purchase or sign up, CryptoBeacon may receive a small commission at no additional cost to you.
+            CryptoBeacon may include links to specific products, services, or hardware platforms that participate in affiliate programs. When you click on these qualifying links and make a purchase or sign up for a service, CryptoBeacon may receive a small commission. It is important to note that this comes at absolutely no additional cost to you, and in some cases, these links may even provide you with a discount or sign-up bonus.
           </p>
 
           <section>
             <h2 className="font-headline-lg text-headline-lg text-primary mb-md mt-xl">Editorial Independence</h2>
             <p>
-              Affiliate relationships do not influence our editorial decisions. Our reviews, comparisons, and recommendations are based entirely on independent research and analysis. We never accept payment to favorably cover any project, exchange, or product.
+              Our foremost commitment is to our readers. Affiliate relationships strictly do not influence our editorial decisions, scoring systems, or feature placements. Our reviews, hardware comparisons, and security recommendations are based entirely on independent research, hands-on testing, and objective analysis by our team. We maintain a strict firewall between our editorial content and monetization strategies. We never accept direct payment or tokens to favorably cover any project, centralized exchange, or software product. If a service does not meet our security standards, it will not be recommended, regardless of any potential affiliate partnership.
             </p>
           </section>
 
           <section>
             <h2 className="font-headline-lg text-headline-lg text-primary mb-md mt-xl">How We Disclose Affiliate Links</h2>
             <p>
-              Articles that contain affiliate links include a disclosure notice near the top of the article. We believe in full transparency, and readers should always know when a link may generate a commission.
+              Transparency is a core value at CryptoBeacon. Any article or guide that contains affiliate links will include a clear and conspicuous disclosure notice near the top of the page, well before any links appear. We believe that our readers should always be fully informed when a link they interact with may generate a commission for the site.
             </p>
           </section>
 
           <section>
             <h2 className="font-headline-lg text-headline-lg text-primary mb-md mt-xl">Why We Use Affiliate Links</h2>
             <p>
-              Affiliate revenue helps support the operational costs of running CryptoBeacon, allowing us to continue producing free educational content. This revenue stream does not compromise the independence or accuracy of our editorial work.
+              Operating an independent educational platform requires significant resources, including server hosting, security audits, and countless hours of research. Affiliate revenue is one of the primary ways we help support these operational costs without resorting to intrusive display advertising or erecting paywalls. This revenue stream enables us to continue producing high-quality, free educational content for the global cryptocurrency community while preserving the integrity and accuracy of our editorial work.
             </p>
           </section>
         </div>

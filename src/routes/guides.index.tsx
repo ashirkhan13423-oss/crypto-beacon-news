@@ -82,6 +82,7 @@ export const Route = createFileRoute("/guides/")({
       },
       { property: "og:url", content: "https://www.cryptobeacon.site/guides" },
       { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
+      { property: "article:published_time", content: "2026-08-06" },
     ],
     links: [{ rel: "canonical", href: "https://www.cryptobeacon.site/guides" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],

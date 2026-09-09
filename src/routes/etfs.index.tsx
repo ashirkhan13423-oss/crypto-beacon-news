@@ -15,6 +15,7 @@ export const Route = createFileRoute("/etfs/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:url", content: URL },
+      { property: "article:published_time", content: "2026-08-06" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [
@@ -34,12 +35,18 @@ function EtfsHub() {
       <main className="flex-grow w-full max-w-6xl mx-auto px-gutter py-xl">
         <Breadcrumbs items={[{ label: "ETFs & Institutional" }]} />
 
-        <div className="mb-xxl max-w-3xl">
+        <div className="mb-xxl max-w-3xl space-y-md">
           <h1 className="font-display-lg text-display-lg text-primary mb-md">
             Crypto ETFs & Institutional Investment
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant mb-md">
-            Exchange-traded funds (ETFs) have become one of the most important access points for institutional capital entering the crypto market. We cover how they work, what drives flows, and what they mean for everyday investors — without framing them as guaranteed investments.
+          <p className="font-body-lg text-body-lg text-on-surface-variant">
+            Exchange-traded funds (ETFs) have become one of the most important access points for institutional capital entering the cryptocurrency market. A crypto ETF allows investors to gain exposure to digital assets like Bitcoin or Ethereum through a traditional brokerage account, without needing to manage private keys, seed phrases, or interact with a cryptocurrency exchange directly.
+          </p>
+          <p className="font-body-lg text-body-lg text-on-surface-variant">
+            The approval of spot Bitcoin ETFs in January 2024 marked a watershed moment for institutional adoption. These products track the actual price of Bitcoin by holding real BTC in custody, as opposed to earlier futures-based ETFs that only tracked derivative contracts. Since their launch, spot Bitcoin ETFs have attracted tens of billions of dollars in net inflows, fundamentally changing the demand dynamics of the market.
+          </p>
+          <p className="font-body-lg text-body-lg text-on-surface-variant">
+            We cover how these products work mechanically—from the creation and redemption process to what drives daily inflow and outflow numbers—and what they mean for everyday investors. It is important to understand that ETF approval does not eliminate the inherent volatility or risks of the underlying asset. Our coverage focuses on factual market mechanics rather than price speculation or investment advice.
           </p>
         </div>
 

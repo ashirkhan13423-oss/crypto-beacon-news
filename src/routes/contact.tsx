@@ -19,17 +19,17 @@ const contactSchema = {
     "@type": "Organization",
     name: "CryptoBeacon",
     url: "https://www.cryptobeacon.site",
-    email: "contact@cryptobeacon.site",
+    email: "crypto.beacon.site@gmail.com",
     contactPoint: [
       {
         "@type": "ContactPoint",
-        email: "contact@cryptobeacon.site",
+        email: "crypto.beacon.site@gmail.com",
         contactType: "editorial newsroom",
         availableLanguage: ["English"],
       },
       {
         "@type": "ContactPoint",
-        email: "contact@cryptobeacon.site",
+        email: "crypto.beacon.site@gmail.com",
         contactType: "security research",
         availableLanguage: ["English"],
       },
@@ -97,10 +97,14 @@ function ContactPage() {
           <h1 className="font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-primary mb-sm leading-tight">
             Contact CryptoBeacon
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-            Have a question, news tip, editorial correction, or security disclosure? Ashir
-            reviews every inquiry promptly.
-          </p>
+          <div className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl space-y-md">
+            <p>
+              Have a question, news tip, editorial correction, or security disclosure? CryptoBeacon is committed to transparency and open communication with our readers. Ashir and our editorial team review every inquiry promptly to ensure we maintain our high standards of reporting and accuracy.
+            </p>
+            <p>
+              Whether you are looking to report a breaking story in the cryptocurrency market, suggest an important correction to one of our articles, or discuss a potential content partnership, we are here to help. Please refer to our specialized contact methods below or use our contact form to ensure your message reaches the appropriate desk as quickly as possible.
+            </p>
+          </div>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-xl">
@@ -111,16 +115,16 @@ function ContactPage() {
                 <Mail className="w-5 h-5" />
               </div>
               <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">
-                Editorial Inquiries
+                Editorial & Press Inquiries
               </h3>
               <p className="font-body-md text-body-md text-on-surface-variant mb-sm">
-                Press releases, news tips, and content suggestions.
+                For press releases, exclusive news tips, content suggestions, or interview requests, please contact our editorial desk. We carefully evaluate all submissions for relevance, accuracy, and value to our audience.
               </p>
               <a
-                href="mailto:contact@cryptobeacon.site"
+                href="mailto:crypto.beacon.site@gmail.com"
                 className="font-body-md text-secondary font-medium hover:underline"
               >
-                contact@cryptobeacon.site
+                crypto.beacon.site@gmail.com
               </a>
             </div>
 
@@ -129,28 +133,34 @@ function ContactPage() {
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">
-                Security Research
+                Security & Vulnerability Research
               </h3>
               <p className="font-body-md text-body-md text-on-surface-variant mb-sm">
-                Vulnerability disclosures and security topic requests.
+                If you have discovered a vulnerability, a new phishing scam, or an urgent security threat in the crypto ecosystem, please share your findings. We prioritize these disclosures to help protect the broader community.
               </p>
               <a
-                href="mailto:contact@cryptobeacon.site"
+                href="mailto:crypto.beacon.site@gmail.com"
                 className="font-body-md text-secondary font-medium hover:underline"
               >
-                contact@cryptobeacon.site
+                crypto.beacon.site@gmail.com
               </a>
             </div>
 
             <div className="p-lg rounded-xl border border-outline-variant bg-surface-container-low">
               <div className="flex items-center gap-xs text-on-surface-variant font-body-sm text-body-sm mb-xs">
                 <Clock className="w-4 h-4 text-secondary" />
-                <span>Response Time</span>
+                <span className="font-semibold">Response Time & Hours</span>
               </div>
-              <p className="font-body-sm text-body-sm text-on-surface-variant">
-                We aim to respond to all editorial and press inquiries within 24 to 48 business
-                hours.
+              <p className="font-body-sm text-body-sm text-on-surface-variant mb-sm">
+                We aim to respond to all editorial and press inquiries within 24 to 48 business hours. Our core operating hours are Monday through Friday, 9:00 AM to 5:00 PM (EST).
               </p>
+              <div className="border-t border-outline-variant pt-sm mt-sm">
+                <p className="font-body-sm text-body-sm text-on-surface-variant">
+                  <strong>CryptoBeacon News</strong><br/>
+                  crypto.beacon.site@gmail.com<br/>
+                  Online Only Publication
+                </p>
+              </div>
             </div>
           </div>
 
