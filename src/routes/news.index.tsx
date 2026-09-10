@@ -10,6 +10,7 @@ import ethMergeHero from "@/assets/ethereum-merge-two-years.jpg";
 import clarityActHero from "@/assets/news-clarity-act.jpg";
 import jobsEtfHero from "@/assets/news-btc-jobs-report-etf.jpg";
 import fedInflationHero from "@/assets/news-bitcoin-fed-inflation-etf-sept2026.jpg";
+import oilHero from "@/assets/news-oil-btc-impact.jpg";
 import { Newspaper } from "lucide-react";
 
 const collectionSchema = {
@@ -18,6 +19,11 @@ const collectionSchema = {
   name: "Crypto News",
   url: "https://www.cryptobeacon.site/news",
   hasPart: [
+    {
+      "@type": "WebPage",
+      name: "Oil Above $100 Ahead of U.S. CPI: What It Means for Bitcoin and Crypto",
+      url: "https://www.cryptobeacon.site/news/oil-above-100-bitcoin-crypto-cpi-impact",
+    },
     {
       "@type": "WebPage",
       name: "September Fed Rate-Hike Bets Rise: What Oil, Yields and Jobs Data Mean for Bitcoin",
@@ -100,6 +106,33 @@ function NewsHub() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+          <Link
+            to="/news/oil-above-100-bitcoin-crypto-cpi-impact"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img
+                src={oilHero}
+                alt="Conceptual 3D illustration showing a sleek, modern barrel of oil and a glowing orange Bitcoin symbol."
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width={1600}
+                height={900}
+              />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                News · Macro
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Oil Above $100 Ahead of U.S. CPI: What It Means for Bitcoin and Crypto
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                Brent crude remains above $100 after Middle East escalation, raising a new inflation and rate-risk threat for Bitcoin and broader crypto markets ahead of key U.S. CPI data.
+              </p>
+            </div>
+          </Link>
+
           <Link
             to="/news/bitcoin-fed-rate-hike-jobs-report-september-2026"
             className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
