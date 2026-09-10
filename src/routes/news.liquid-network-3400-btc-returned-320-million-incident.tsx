@@ -260,15 +260,7 @@ function ArticlePage() {
         <section className="mt-xxl">
           <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/news/liquid-network-hack-4000-btc-withdrawal"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">News</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Liquid Network Halts After $320 Million Bitcoin Withdrawal
-              </h3>
-            </Link>
+
             <Link
               to="/bitcoin/bitcoin-lightning-network-explained"
               className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"

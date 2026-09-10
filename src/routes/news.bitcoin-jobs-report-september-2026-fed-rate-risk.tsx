@@ -811,17 +811,7 @@ function ArticlePage() {
                 Why Do Bond Yields Affect Bitcoin Price?
               </h3>
             </Link>
-            <Link
-              to="/news/bitcoin-jobs-report-etf-inflows-september-2026"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">
-                News
-              </span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Bitcoin Reclaims $81,000 After U.S. Jobs Report
-              </h3>
-            </Link>
+
           </div>
         </section>
       </main>
