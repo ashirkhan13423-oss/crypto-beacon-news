@@ -48,6 +48,7 @@ import hero_82 from "@/assets/spot-rug-pull.jpg";
 import hero_83 from "@/assets/seed-phrase-vault.jpg";
 import hero_84 from "@/assets/security-verify-transaction.jpg";
 import hero_88 from "@/assets/hacked-wallet-emergency.jpg";
+import hero_trezor from "@/assets/trezor-phishing-breach.jpg";
 
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
@@ -679,6 +680,14 @@ const articles = [
     tag: "News · Article",
     title: "Bitcoin's Rally Meets Its First Institutional Stress Test",
     desc: "Bitcoin ETF outflows ended a nine-session inflow streak after Kevin Warsh's hawkish Jackson Hole speech. Here is what the Fed, ETF flows and Ethereum's divergence reveal about the rally's foundations.",
+  },
+  {
+    to: "/news/trezor-brevo-phishing-email-breach-2026",
+    image: hero_trezor,
+    alt: "A digital illustration of a compromised email warning, with a hardware wallet symbol and a phishing hook, in a modern, dark mode, high-tech crypto aesthetic",
+    tag: "News · Article",
+    title: "Trezor Email Breach Sends Fake Wallet Alert to 347,000 Users: What to Do",
+    desc: "A compromised third-party email provider sent fake Trezor security alerts to 347,000 users. Learn how this phishing attack happened and how to protect your seed phrase.",
   },
   {
     to: "/news/bitcoin-rally-august-2026",

@@ -8,6 +8,7 @@ import rallyHero from "@/assets/news-bitcoin-rally.jpg";
 import ethMergeHero from "@/assets/ethereum-merge-two-years.jpg";
 import clarityActHero from "@/assets/news-clarity-act.jpg";
 import oilHero from "@/assets/news-oil-btc-impact.jpg";
+import trezorHero from "@/assets/trezor-phishing-breach.jpg";
 import { Newspaper } from "lucide-react";
 
 const collectionSchema = {
@@ -16,6 +17,11 @@ const collectionSchema = {
   name: "Crypto News",
   url: "https://www.cryptobeacon.site/news",
   hasPart: [
+    {
+      "@type": "WebPage",
+      name: "Trezor Email Breach Sends Fake Wallet Alert to 347,000 Users: What to Do",
+      url: "https://www.cryptobeacon.site/news/trezor-brevo-phishing-email-breach-2026",
+    },
     {
       "@type": "WebPage",
       name: "Oil Above $100 Ahead of U.S. CPI: What It Means for Bitcoin and Crypto",
@@ -117,6 +123,22 @@ function NewsHub() {
             Objective reporting on cryptocurrency developments that have meaningful relevance to readers, supported by named and verifiable sources. We do not cover every price movement — stories are selected when a development adds useful context beyond the price change itself.
           </p>
         </header>
+
+        <section className="mb-xxl">
+          <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
+            Security & Breaches
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+            <NewsCard
+              to="/news/trezor-brevo-phishing-email-breach-2026"
+              image={trezorHero}
+              alt="A digital illustration of a compromised email warning, with a hardware wallet symbol and a phishing hook, in a modern, dark mode, high-tech crypto aesthetic"
+              tag="News · Security"
+              title="Trezor Email Breach Sends Fake Wallet Alert to 347,000 Users: What to Do"
+              desc="A compromised third-party email provider sent fake Trezor security alerts to 347,000 users. Learn how this phishing attack happened and how to protect your seed phrase."
+            />
+          </div>
+        </section>
 
         <section className="mb-xxl">
           <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
