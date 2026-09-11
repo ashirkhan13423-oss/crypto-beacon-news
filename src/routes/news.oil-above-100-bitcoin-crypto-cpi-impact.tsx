@@ -448,17 +448,7 @@ function ArticlePage() {
                 Bitcoin's September Rally Faces a New Macro Test
               </h3>
             </Link>
-            <Link
-              to="/news/bitcoin-fed-rate-hike-jobs-report-september-2026"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">
-                News
-              </span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Bitcoin vs The Fed Rate Hike Decision
-              </h3>
-            </Link>
+
           </div>
         </section>
       </main>

@@ -15,7 +15,6 @@ export const Route = createFileRoute("/editorial-policy")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:url", content: URL },
-      { property: "article:published_time", content: "2026-08-06" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [
@@ -41,8 +40,18 @@ function EditorialPolicyPage() {
 
         <div className="space-y-lg text-body-lg text-on-surface leading-relaxed">
           <p>
-            At CryptoBeacon, our primary mission is to provide clear, evidence-based, and highly accurate educational content regarding cryptocurrency, blockchain technology, and digital asset security. We prioritize trust and transparency above all else.
+            At CryptoBeacon, our primary mission is to provide clear, evidence-based, and accurate coverage of cryptocurrency, blockchain technology, and digital asset security. We prioritize trust and transparency above all else.
           </p>
+
+          <section>
+            <h2 className="font-headline-lg text-headline-lg text-primary mb-md mt-xl">Content Types</h2>
+            <p className="mb-sm">CryptoBeacon publishes three types of content, each with different standards:</p>
+            <ul className="list-disc pl-lg space-y-md">
+              <li><strong>Evergreen educational guides:</strong> Foundational explainers, security guides, and protocol deep-dives written to remain accurate and useful over time. These form the majority of our content.</li>
+              <li><strong>Verified news reporting:</strong> Timely articles covering developments that have meaningful relevance to readers and can be supported by reliable, named sources. Each news article carries a publication date and a disclosure of its data timestamp.</li>
+              <li><strong>Explanatory analysis:</strong> Interpretive pieces that go beyond the facts to explain context or implications. Speculative conclusions are labeled as such. These do not constitute financial advice.</li>
+            </ul>
+          </section>
 
           <section>
             <h2 className="font-headline-lg text-headline-lg text-primary mb-md mt-xl">Our Editorial Principles</h2>

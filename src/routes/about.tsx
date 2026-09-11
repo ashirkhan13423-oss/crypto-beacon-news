@@ -10,13 +10,13 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Learn about Ashir's evergreen-first editorial standards and commitment to rigorous cryptocurrency research.",
+          "Learn about CryptoBeacon's editorial standards — source-verified news reporting, evergreen educational guides, and explanatory analysis without hype or financial advice.",
       },
       { property: "og:title", content: "About Us — CryptoBeacon" },
       {
         property: "og:description",
         content:
-          "Learn about Ashir's evergreen-first editorial standards and commitment to rigorous cryptocurrency research.",
+          "Learn about CryptoBeacon's editorial standards — source-verified news reporting, evergreen educational guides, and explanatory analysis without hype or financial advice.",
       },
       { property: "og:url", content: "https://www.cryptobeacon.site/about" },
       { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
@@ -77,9 +77,9 @@ function AboutPage() {
             </div>
             <p>
               In a space often driven by speculation and short-term narratives, the mission is to
-              provide clear, objective, and deeply researched educational content that empowers
-              readers to make informed decisions about digital asset security and market
-              fundamentals.
+              provide clear, objective, and well-sourced coverage — from foundational educational guides to
+              verified news reporting — that helps readers understand digital asset security and market
+              fundamentals without hype or financial advice.
             </p>
           </section>
 
@@ -101,13 +101,14 @@ function AboutPage() {
               </div>
               <div className="bg-surface-container-low p-md rounded-xl border border-outline-variant">
                 <h3 className="font-headline-sm text-headline-sm text-primary mb-sm">
-                  Evergreen-First Focus
+                  Substance Over Volume
                 </h3>
                 <p className="text-body-md">
-                  Instead of chasing fleeting price action, daily market gossip, or unverified
-                  rumors, we focus on "evergreen" content. We prioritize foundational guides,
-                  security best practices, and architectural deep-dives that will remain relevant
-                  and useful to readers for years to come.
+                  The majority of CryptoBeacon's content is evergreen — foundational guides,
+                  security best practices, and architectural deep-dives that remain relevant for
+                  years. Timely news is published when a development has meaningful relevance to
+                  readers and can be supported by reliable, named sources. We do not chase daily
+                  price action, unverified rumours, or market commentary for its own sake.
                 </p>
               </div>
             </div>

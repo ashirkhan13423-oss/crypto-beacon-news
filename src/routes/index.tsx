@@ -681,14 +681,6 @@ const articles = [
     desc: "Bitcoin ETF outflows ended a nine-session inflow streak after Kevin Warsh's hawkish Jackson Hole speech. Here is what the Fed, ETF flows and Ethereum's divergence reveal about the rally's foundations.",
   },
   {
-    to: "/news/bitcoin-fed-rate-hike-jobs-report-september-2026",
-    image: hero_60,
-    alt: "Abstract illustration representing Bitcoin, global markets, oil, and interest rates interconnected with macro pressure",
-    tag: "News · Article",
-    title: "September Fed Rate-Hike Bets Rise: What Oil, Yields and Jobs Data Mean for Bitcoin",
-    desc: "Why Friday's jobs report matters more for Bitcoin than the latest geopolitical headline. A complete guide to the macro transmission chain affecting crypto in September 2026.",
-  },
-  {
     to: "/news/bitcoin-rally-august-2026",
     image: hero_61,
     alt: "Illustration representing a Bitcoin price chart showing a recent upward move",

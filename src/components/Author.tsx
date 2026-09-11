@@ -36,7 +36,7 @@ export function Author({ publishedDate, readTime }: AuthorProps) {
           )}
         </div>
         <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-          Ashir Khan is an independent writer researching cryptocurrency security and self-custody, with a focus on translating technical concepts for everyday users.
+          Ashir Khan writes about cryptocurrency security, self-custody, macro market analysis, and regulatory policy at CryptoBeacon.
         </p>
       </div>
     </div>
