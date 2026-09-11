@@ -15,6 +15,7 @@ const collectionSchema = {
   url: URL,
   description: DESC,
   hasPart: [
+    { "@type": "WebPage", name: "What Is an Altcoin?", url: "https://www.cryptobeacon.site/altcoins/what-is-an-altcoin" },
     { "@type": "WebPage", name: "What is a Stablecoin?", url: "https://www.cryptobeacon.site/guides/what-is-a-stablecoin" },
     { "@type": "WebPage", name: "Stablecoin Regulation Explained", url: "https://www.cryptobeacon.site/guides/stablecoin-regulation-explained" },
     { "@type": "WebPage", name: "What Is a Blockchain Fork?", url: "https://www.cryptobeacon.site/guides/what-is-a-blockchain-fork" },
@@ -71,6 +72,20 @@ function AltcoinsHub() {
             "Altcoin" covers every cryptocurrency other than Bitcoin. CryptoBeacon's current coverage in this section focuses on the mechanics that apply broadly across the altcoin market: how stablecoins work and how they're regulated, what happens when a blockchain forks into two competing chains, how short squeezes and leverage affect smaller-cap tokens, and the specific risks — including rug pulls — that are more common in altcoin markets than in Bitcoin or Ethereum. Guides on specific networks (Solana, XRP, Avalanche) are planned for a future update.
           </p>
         </div>
+
+        <section className="mb-xxl">
+          <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
+            Getting Started
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+            <Card
+              to="/altcoins/what-is-an-altcoin"
+              tag="Altcoins · Explainer"
+              title="What Is an Altcoin? The Complete Guide"
+              desc="A complete guide to altcoins: understand smart contract platforms, stablecoins, utility tokens, and meme coins."
+            />
+          </div>
+        </section>
 
         <section className="mb-xxl">
           <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
