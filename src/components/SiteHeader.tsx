@@ -8,6 +8,11 @@ const navLinks: { label: string; to: string }[] = [
   { label: "News", to: "/news" },
   { label: "Ethereum", to: "/ethereum" },
   { label: "Altcoins", to: "/altcoins" },
+  { label: "Learn", to: "/learn" },
+  { label: "Taxes", to: "/taxes" },
+  { label: "DeFi", to: "/defi" },
+  { label: "ETFs", to: "/etfs" },
+  { label: "Glossary", to: "/glossary" },
 ];
 
 export function SiteHeader() {
