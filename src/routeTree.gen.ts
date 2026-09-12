@@ -44,11 +44,13 @@ import { Route as BitcoinIndexRouteImport } from './routes/bitcoin.index'
 import { Route as AltcoinsIndexRouteImport } from './routes/altcoins.index'
 import { Route as SecurityWhatToDoIfYourCryptoWalletIsHackedRouteImport } from './routes/security.what-to-do-if-your-crypto-wallet-is-hacked'
 import { Route as SecurityWhatIsASeedPhraseRouteImport } from './routes/security.what-is-a-seed-phrase'
+import { Route as SecurityWhatIsACryptoAtmAreTheySafeRouteImport } from './routes/security.what-is-a-crypto-atm-are-they-safe'
 import { Route as SecurityTwoFactorAuthenticationForCryptoRouteImport } from './routes/security.two-factor-authentication-for-crypto'
 import { Route as SecurityPrivateKeyVsSeedPhraseRouteImport } from './routes/security.private-key-vs-seed-phrase'
 import { Route as SecurityHowToVerifyACryptoTransactionRouteImport } from './routes/security.how-to-verify-a-crypto-transaction'
 import { Route as SecurityHowToStoreCryptoSeedPhraseSafelyRouteImport } from './routes/security.how-to-store-crypto-seed-phrase-safely'
 import { Route as SecurityHowToSpotARugPullRouteImport } from './routes/security.how-to-spot-a-rug-pull'
+import { Route as SecurityHowToSpotAFakeCryptoWalletAppRouteImport } from './routes/security.how-to-spot-a-fake-crypto-wallet-app'
 import { Route as SecurityHowToRevokeSmartContractApprovalsRouteImport } from './routes/security.how-to-revoke-smart-contract-approvals'
 import { Route as SecurityHowToIdentifyAFakeCryptoWebsiteRouteImport } from './routes/security.how-to-identify-a-fake-crypto-website'
 import { Route as SecurityHowToAvoidCryptoPhishingScamsRouteImport } from './routes/security.how-to-avoid-crypto-phishing-scams'
@@ -61,16 +63,18 @@ import { Route as SecurityDefiRisksExplainedRouteImport } from './routes/securit
 import { Route as SecurityCryptoWalletDrainerScamsExplainedRouteImport } from './routes/security.crypto-wallet-drainer-scams-explained'
 import { Route as SecurityCryptoSecurityHubRouteImport } from './routes/security.crypto-security-hub'
 import { Route as SecurityCommonCryptoScamsRouteImport } from './routes/security.common-crypto-scams'
+import { Route as NewsWhyAreCryptoAtmsEverywhereRouteImport } from './routes/news.why-are-crypto-atms-everywhere'
 import { Route as NewsWhatIsTheClarityActCryptoRouteImport } from './routes/news.what-is-the-clarity-act-crypto'
+import { Route as NewsWhatIsOnChainTradingVsExchangeRouteImport } from './routes/news.what-is-on-chain-trading-vs-exchange'
+import { Route as NewsTrezorBrevoPhishingEmailBreach2026RouteImport } from './routes/news.trezor-brevo-phishing-email-breach-2026'
 import { Route as NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport } from './routes/news.standard-chartered-uae-institutional-bitcoin-ether-trading'
+import { Route as NewsOilAbove100BitcoinCryptoCpiImpactRouteImport } from './routes/news.oil-above-100-bitcoin-crypto-cpi-impact'
 import { Route as NewsLiquidNetworkHack4000BtcWithdrawalRouteImport } from './routes/news.liquid-network-hack-4000-btc-withdrawal'
 import { Route as NewsLiquidNetwork3400BtcReturned320MillionIncidentRouteImport } from './routes/news.liquid-network-3400-btc-returned-320-million-incident'
 import { Route as NewsEthereumMergeTwoYearsLaterRouteImport } from './routes/news.ethereum-merge-two-years-later'
 import { Route as NewsBitcoinSeptemberRallyMacroTestRouteImport } from './routes/news.bitcoin-september-rally-macro-test'
 import { Route as NewsBitcoinRallyAugust2026RouteImport } from './routes/news.bitcoin-rally-august-2026'
-import { Route as NewsBitcoinJobsReportSeptember2026FedRateRiskRouteImport } from './routes/news.bitcoin-jobs-report-september-2026-fed-rate-risk'
 import { Route as NewsBitcoinJobsReportEtfInflowsSeptember2026RouteImport } from './routes/news.bitcoin-jobs-report-etf-inflows-september-2026'
-import { Route as NewsBitcoinFedRateHikeJobsReportSeptember2026RouteImport } from './routes/news.bitcoin-fed-rate-hike-jobs-report-september-2026'
 import { Route as NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRouteImport } from './routes/news.bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
 import { Route as GuidesWhyGovernmentsRegulateCryptocurrencyRouteImport } from './routes/guides.why-governments-regulate-cryptocurrency'
 import { Route as GuidesWhyCryptoRegulationMattersRouteImport } from './routes/guides.why-crypto-regulation-matters'
@@ -79,6 +83,7 @@ import { Route as GuidesWhatItMeansWhenExchangePausesWithdrawalsRouteImport } fr
 import { Route as GuidesWhatIsKycInCryptocurrencyRouteImport } from './routes/guides.what-is-kyc-in-cryptocurrency'
 import { Route as GuidesWhatIsAmlInCryptoRouteImport } from './routes/guides.what-is-aml-in-crypto'
 import { Route as GuidesWhatIsAStablecoinRouteImport } from './routes/guides.what-is-a-stablecoin'
+import { Route as GuidesWhatIsASmartContractExplainedRouteImport } from './routes/guides.what-is-a-smart-contract-explained'
 import { Route as GuidesWhatIsAShortSqueezeCryptoExplainedRouteImport } from './routes/guides.what-is-a-short-squeeze-crypto-explained'
 import { Route as GuidesWhatIsAPrivateKeyRouteImport } from './routes/guides.what-is-a-private-key'
 import { Route as GuidesWhatIsACryptoWalletAddressRouteImport } from './routes/guides.what-is-a-crypto-wallet-address'
@@ -100,14 +105,17 @@ import { Route as GuidesCryptoRegulationHubRouteImport } from './routes/guides.c
 import { Route as GuidesCryptoRegulationExplainedForBeginnersRouteImport } from './routes/guides.crypto-regulation-explained-for-beginners'
 import { Route as GuidesCryptoPortfolioRebalancingExplainedRouteImport } from './routes/guides.crypto-portfolio-rebalancing-explained'
 import { Route as GuidesCryptoDollarCostAveragingExplainedRouteImport } from './routes/guides.crypto-dollar-cost-averaging-explained'
+import { Route as GuidesCoinVsTokenDifferenceRouteImport } from './routes/guides.coin-vs-token-difference'
 import { Route as EthereumWhatIsEthereumStakingRouteImport } from './routes/ethereum.what-is-ethereum-staking'
 import { Route as EthereumWhatIsEthereumRouteImport } from './routes/ethereum.what-is-ethereum'
 import { Route as EthereumWhatIsDefiDecentralizedFinanceRouteImport } from './routes/ethereum.what-is-defi-decentralized-finance'
+import { Route as EthereumWhatIsAnErc20TokenRouteImport } from './routes/ethereum.what-is-an-erc-20-token'
 import { Route as EthereumWhatIsASmartContractRouteImport } from './routes/ethereum.what-is-a-smart-contract'
 import { Route as EthereumWhatAreGasFeesHowToSaveRouteImport } from './routes/ethereum.what-are-gas-fees-how-to-save'
 import { Route as EthereumProofOfStakeExplainedRouteImport } from './routes/ethereum.proof-of-stake-explained'
 import { Route as EthereumHowToStakeEthOnLidoVsRocketpoolRouteImport } from './routes/ethereum.how-to-stake-eth-on-lido-vs-rocketpool'
 import { Route as EthereumHowEthereumWorksRouteImport } from './routes/ethereum.how-ethereum-works'
+import { Route as EthereumHowDoesEthereumStakingWorkRouteImport } from './routes/ethereum.how-does-ethereum-staking-work'
 import { Route as EthereumEthereumWalletsExplainedRouteImport } from './routes/ethereum.ethereum-wallets-explained'
 import { Route as EthereumEthereumVsBitcoinRouteImport } from './routes/ethereum.ethereum-vs-bitcoin'
 import { Route as EthereumEthereumValidatorsExplainedRouteImport } from './routes/ethereum.ethereum-validators-explained'
@@ -116,6 +124,7 @@ import { Route as EthereumEthereumLayer2ScalingRollupsExplainedRouteImport } fro
 import { Route as EthereumEthereumCompleteBeginnersGuideRouteImport } from './routes/ethereum.ethereum-complete-beginners-guide'
 import { Route as EthereumCanYouSendBitcoinToAnEthereumAddressRouteImport } from './routes/ethereum.can-you-send-bitcoin-to-an-ethereum-address'
 import { Route as BitcoinWhyDoBondYieldsAffectBitcoinPriceRouteImport } from './routes/bitcoin.why-do-bond-yields-affect-bitcoin-price'
+import { Route as BitcoinWhyBitcoinMiningUsesSoMuchEnergyRouteImport } from './routes/bitcoin.why-bitcoin-mining-uses-so-much-energy'
 import { Route as BitcoinWhatIsTheBitcoinHalvingRouteImport } from './routes/bitcoin.what-is-the-bitcoin-halving'
 import { Route as BitcoinWhatIsBitcoinMiningRouteImport } from './routes/bitcoin.what-is-bitcoin-mining'
 import { Route as BitcoinWhatIsABitcoinWalletRouteImport } from './routes/bitcoin.what-is-a-bitcoin-wallet'
@@ -124,6 +133,7 @@ import { Route as BitcoinWhatIsABitcoinNodeRouteImport } from './routes/bitcoin.
 import { Route as BitcoinWhatHappensIfYouLoseYourSeedPhraseRouteImport } from './routes/bitcoin.what-happens-if-you-lose-your-seed-phrase'
 import { Route as BitcoinHowToSendBitcoinSafelyRouteImport } from './routes/bitcoin.how-to-send-bitcoin-safely'
 import { Route as BitcoinHowToBuyYourFirstBitcoinSafelyRouteImport } from './routes/bitcoin.how-to-buy-your-first-bitcoin-safely'
+import { Route as BitcoinHowDoesBitcoinHalvingWorkRouteImport } from './routes/bitcoin.how-does-bitcoin-halving-work'
 import { Route as BitcoinHowDoBitcoinEtfsAffectPriceRouteImport } from './routes/bitcoin.how-do-bitcoin-etfs-affect-price'
 import { Route as BitcoinHowBitcoinWalletsWorkRouteImport } from './routes/bitcoin.how-bitcoin-wallets-work'
 import { Route as BitcoinCommonBitcoinWalletScamsRouteImport } from './routes/bitcoin.common-bitcoin-wallet-scams'
@@ -131,6 +141,9 @@ import { Route as BitcoinCoinbaseVsKrakenVsBinanceExchangeComparisonRouteImport 
 import { Route as BitcoinBitcoinWalletsCompleteGuideRouteImport } from './routes/bitcoin.bitcoin-wallets-complete-guide'
 import { Route as BitcoinBitcoinLightningNetworkExplainedRouteImport } from './routes/bitcoin.bitcoin-lightning-network-explained'
 import { Route as BitcoinBitcoinAddressVsWalletAddressRouteImport } from './routes/bitcoin.bitcoin-address-vs-wallet-address'
+import { Route as AltcoinsWhyDoMemeCoinsHaveValueRouteImport } from './routes/altcoins.why-do-meme-coins-have-value'
+import { Route as AltcoinsWhatIsAnAltcoinRouteImport } from './routes/altcoins.what-is-an-altcoin'
+import { Route as AltcoinsWhatIsAnAiCryptoTokenRouteImport } from './routes/altcoins.what-is-an-ai-crypto-token'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -309,6 +322,12 @@ const SecurityWhatIsASeedPhraseRoute =
     path: '/what-is-a-seed-phrase',
     getParentRoute: () => SecurityRoute,
   } as any)
+const SecurityWhatIsACryptoAtmAreTheySafeRoute =
+  SecurityWhatIsACryptoAtmAreTheySafeRouteImport.update({
+    id: '/what-is-a-crypto-atm-are-they-safe',
+    path: '/what-is-a-crypto-atm-are-they-safe',
+    getParentRoute: () => SecurityRoute,
+  } as any)
 const SecurityTwoFactorAuthenticationForCryptoRoute =
   SecurityTwoFactorAuthenticationForCryptoRouteImport.update({
     id: '/two-factor-authentication-for-crypto',
@@ -337,6 +356,12 @@ const SecurityHowToSpotARugPullRoute =
   SecurityHowToSpotARugPullRouteImport.update({
     id: '/how-to-spot-a-rug-pull',
     path: '/how-to-spot-a-rug-pull',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityHowToSpotAFakeCryptoWalletAppRoute =
+  SecurityHowToSpotAFakeCryptoWalletAppRouteImport.update({
+    id: '/how-to-spot-a-fake-crypto-wallet-app',
+    path: '/how-to-spot-a-fake-crypto-wallet-app',
     getParentRoute: () => SecurityRoute,
   } as any)
 const SecurityHowToRevokeSmartContractApprovalsRoute =
@@ -411,16 +436,40 @@ const SecurityCommonCryptoScamsRoute =
     path: '/common-crypto-scams',
     getParentRoute: () => SecurityRoute,
   } as any)
+const NewsWhyAreCryptoAtmsEverywhereRoute =
+  NewsWhyAreCryptoAtmsEverywhereRouteImport.update({
+    id: '/why-are-crypto-atms-everywhere',
+    path: '/why-are-crypto-atms-everywhere',
+    getParentRoute: () => NewsRoute,
+  } as any)
 const NewsWhatIsTheClarityActCryptoRoute =
   NewsWhatIsTheClarityActCryptoRouteImport.update({
     id: '/what-is-the-clarity-act-crypto',
     path: '/what-is-the-clarity-act-crypto',
     getParentRoute: () => NewsRoute,
   } as any)
+const NewsWhatIsOnChainTradingVsExchangeRoute =
+  NewsWhatIsOnChainTradingVsExchangeRouteImport.update({
+    id: '/what-is-on-chain-trading-vs-exchange',
+    path: '/what-is-on-chain-trading-vs-exchange',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsTrezorBrevoPhishingEmailBreach2026Route =
+  NewsTrezorBrevoPhishingEmailBreach2026RouteImport.update({
+    id: '/trezor-brevo-phishing-email-breach-2026',
+    path: '/trezor-brevo-phishing-email-breach-2026',
+    getParentRoute: () => NewsRoute,
+  } as any)
 const NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute =
   NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport.update({
     id: '/standard-chartered-uae-institutional-bitcoin-ether-trading',
     path: '/standard-chartered-uae-institutional-bitcoin-ether-trading',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsOilAbove100BitcoinCryptoCpiImpactRoute =
+  NewsOilAbove100BitcoinCryptoCpiImpactRouteImport.update({
+    id: '/oil-above-100-bitcoin-crypto-cpi-impact',
+    path: '/oil-above-100-bitcoin-crypto-cpi-impact',
     getParentRoute: () => NewsRoute,
   } as any)
 const NewsLiquidNetworkHack4000BtcWithdrawalRoute =
@@ -453,22 +502,10 @@ const NewsBitcoinRallyAugust2026Route =
     path: '/bitcoin-rally-august-2026',
     getParentRoute: () => NewsRoute,
   } as any)
-const NewsBitcoinJobsReportSeptember2026FedRateRiskRoute =
-  NewsBitcoinJobsReportSeptember2026FedRateRiskRouteImport.update({
-    id: '/bitcoin-jobs-report-september-2026-fed-rate-risk',
-    path: '/bitcoin-jobs-report-september-2026-fed-rate-risk',
-    getParentRoute: () => NewsRoute,
-  } as any)
 const NewsBitcoinJobsReportEtfInflowsSeptember2026Route =
   NewsBitcoinJobsReportEtfInflowsSeptember2026RouteImport.update({
     id: '/bitcoin-jobs-report-etf-inflows-september-2026',
     path: '/bitcoin-jobs-report-etf-inflows-september-2026',
-    getParentRoute: () => NewsRoute,
-  } as any)
-const NewsBitcoinFedRateHikeJobsReportSeptember2026Route =
-  NewsBitcoinFedRateHikeJobsReportSeptember2026RouteImport.update({
-    id: '/bitcoin-fed-rate-hike-jobs-report-september-2026',
-    path: '/bitcoin-fed-rate-hike-jobs-report-september-2026',
     getParentRoute: () => NewsRoute,
   } as any)
 const NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute =
@@ -517,6 +554,12 @@ const GuidesWhatIsAStablecoinRoute = GuidesWhatIsAStablecoinRouteImport.update({
   path: '/what-is-a-stablecoin',
   getParentRoute: () => GuidesRoute,
 } as any)
+const GuidesWhatIsASmartContractExplainedRoute =
+  GuidesWhatIsASmartContractExplainedRouteImport.update({
+    id: '/what-is-a-smart-contract-explained',
+    path: '/what-is-a-smart-contract-explained',
+    getParentRoute: () => GuidesRoute,
+  } as any)
 const GuidesWhatIsAShortSqueezeCryptoExplainedRoute =
   GuidesWhatIsAShortSqueezeCryptoExplainedRouteImport.update({
     id: '/what-is-a-short-squeeze-crypto-explained',
@@ -642,6 +685,12 @@ const GuidesCryptoDollarCostAveragingExplainedRoute =
     path: '/crypto-dollar-cost-averaging-explained',
     getParentRoute: () => GuidesRoute,
   } as any)
+const GuidesCoinVsTokenDifferenceRoute =
+  GuidesCoinVsTokenDifferenceRouteImport.update({
+    id: '/coin-vs-token-difference',
+    path: '/coin-vs-token-difference',
+    getParentRoute: () => GuidesRoute,
+  } as any)
 const EthereumWhatIsEthereumStakingRoute =
   EthereumWhatIsEthereumStakingRouteImport.update({
     id: '/what-is-ethereum-staking',
@@ -657,6 +706,12 @@ const EthereumWhatIsDefiDecentralizedFinanceRoute =
   EthereumWhatIsDefiDecentralizedFinanceRouteImport.update({
     id: '/what-is-defi-decentralized-finance',
     path: '/what-is-defi-decentralized-finance',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumWhatIsAnErc20TokenRoute =
+  EthereumWhatIsAnErc20TokenRouteImport.update({
+    id: '/what-is-an-erc-20-token',
+    path: '/what-is-an-erc-20-token',
     getParentRoute: () => EthereumRoute,
   } as any)
 const EthereumWhatIsASmartContractRoute =
@@ -687,6 +742,12 @@ const EthereumHowEthereumWorksRoute =
   EthereumHowEthereumWorksRouteImport.update({
     id: '/how-ethereum-works',
     path: '/how-ethereum-works',
+    getParentRoute: () => EthereumRoute,
+  } as any)
+const EthereumHowDoesEthereumStakingWorkRoute =
+  EthereumHowDoesEthereumStakingWorkRouteImport.update({
+    id: '/how-does-ethereum-staking-work',
+    path: '/how-does-ethereum-staking-work',
     getParentRoute: () => EthereumRoute,
   } as any)
 const EthereumEthereumWalletsExplainedRoute =
@@ -737,6 +798,12 @@ const BitcoinWhyDoBondYieldsAffectBitcoinPriceRoute =
     path: '/why-do-bond-yields-affect-bitcoin-price',
     getParentRoute: () => BitcoinRoute,
   } as any)
+const BitcoinWhyBitcoinMiningUsesSoMuchEnergyRoute =
+  BitcoinWhyBitcoinMiningUsesSoMuchEnergyRouteImport.update({
+    id: '/why-bitcoin-mining-uses-so-much-energy',
+    path: '/why-bitcoin-mining-uses-so-much-energy',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
 const BitcoinWhatIsTheBitcoinHalvingRoute =
   BitcoinWhatIsTheBitcoinHalvingRouteImport.update({
     id: '/what-is-the-bitcoin-halving',
@@ -785,6 +852,12 @@ const BitcoinHowToBuyYourFirstBitcoinSafelyRoute =
     path: '/how-to-buy-your-first-bitcoin-safely',
     getParentRoute: () => BitcoinRoute,
   } as any)
+const BitcoinHowDoesBitcoinHalvingWorkRoute =
+  BitcoinHowDoesBitcoinHalvingWorkRouteImport.update({
+    id: '/how-does-bitcoin-halving-work',
+    path: '/how-does-bitcoin-halving-work',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
 const BitcoinHowDoBitcoinEtfsAffectPriceRoute =
   BitcoinHowDoBitcoinEtfsAffectPriceRouteImport.update({
     id: '/how-do-bitcoin-etfs-affect-price',
@@ -827,6 +900,23 @@ const BitcoinBitcoinAddressVsWalletAddressRoute =
     path: '/bitcoin-address-vs-wallet-address',
     getParentRoute: () => BitcoinRoute,
   } as any)
+const AltcoinsWhyDoMemeCoinsHaveValueRoute =
+  AltcoinsWhyDoMemeCoinsHaveValueRouteImport.update({
+    id: '/why-do-meme-coins-have-value',
+    path: '/why-do-meme-coins-have-value',
+    getParentRoute: () => AltcoinsRoute,
+  } as any)
+const AltcoinsWhatIsAnAltcoinRoute = AltcoinsWhatIsAnAltcoinRouteImport.update({
+  id: '/what-is-an-altcoin',
+  path: '/what-is-an-altcoin',
+  getParentRoute: () => AltcoinsRoute,
+} as any)
+const AltcoinsWhatIsAnAiCryptoTokenRoute =
+  AltcoinsWhatIsAnAiCryptoTokenRouteImport.update({
+    id: '/what-is-an-ai-crypto-token',
+    path: '/what-is-an-ai-crypto-token',
+    getParentRoute: () => AltcoinsRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -851,6 +941,9 @@ export interface FileRoutesByFullPath {
   '/security': typeof SecurityRouteWithChildren
   '/taxes': typeof TaxesRouteWithChildren
   '/terms': typeof TermsRoute
+  '/altcoins/what-is-an-ai-crypto-token': typeof AltcoinsWhatIsAnAiCryptoTokenRoute
+  '/altcoins/what-is-an-altcoin': typeof AltcoinsWhatIsAnAltcoinRoute
+  '/altcoins/why-do-meme-coins-have-value': typeof AltcoinsWhyDoMemeCoinsHaveValueRoute
   '/bitcoin/bitcoin-address-vs-wallet-address': typeof BitcoinBitcoinAddressVsWalletAddressRoute
   '/bitcoin/bitcoin-lightning-network-explained': typeof BitcoinBitcoinLightningNetworkExplainedRoute
   '/bitcoin/bitcoin-wallets-complete-guide': typeof BitcoinBitcoinWalletsCompleteGuideRoute
@@ -858,6 +951,7 @@ export interface FileRoutesByFullPath {
   '/bitcoin/common-bitcoin-wallet-scams': typeof BitcoinCommonBitcoinWalletScamsRoute
   '/bitcoin/how-bitcoin-wallets-work': typeof BitcoinHowBitcoinWalletsWorkRoute
   '/bitcoin/how-do-bitcoin-etfs-affect-price': typeof BitcoinHowDoBitcoinEtfsAffectPriceRoute
+  '/bitcoin/how-does-bitcoin-halving-work': typeof BitcoinHowDoesBitcoinHalvingWorkRoute
   '/bitcoin/how-to-buy-your-first-bitcoin-safely': typeof BitcoinHowToBuyYourFirstBitcoinSafelyRoute
   '/bitcoin/how-to-send-bitcoin-safely': typeof BitcoinHowToSendBitcoinSafelyRoute
   '/bitcoin/what-happens-if-you-lose-your-seed-phrase': typeof BitcoinWhatHappensIfYouLoseYourSeedPhraseRoute
@@ -866,6 +960,7 @@ export interface FileRoutesByFullPath {
   '/bitcoin/what-is-a-bitcoin-wallet': typeof BitcoinWhatIsABitcoinWalletRoute
   '/bitcoin/what-is-bitcoin-mining': typeof BitcoinWhatIsBitcoinMiningRoute
   '/bitcoin/what-is-the-bitcoin-halving': typeof BitcoinWhatIsTheBitcoinHalvingRoute
+  '/bitcoin/why-bitcoin-mining-uses-so-much-energy': typeof BitcoinWhyBitcoinMiningUsesSoMuchEnergyRoute
   '/bitcoin/why-do-bond-yields-affect-bitcoin-price': typeof BitcoinWhyDoBondYieldsAffectBitcoinPriceRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
   '/ethereum/ethereum-complete-beginners-guide': typeof EthereumEthereumCompleteBeginnersGuideRoute
@@ -874,14 +969,17 @@ export interface FileRoutesByFullPath {
   '/ethereum/ethereum-validators-explained': typeof EthereumEthereumValidatorsExplainedRoute
   '/ethereum/ethereum-vs-bitcoin': typeof EthereumEthereumVsBitcoinRoute
   '/ethereum/ethereum-wallets-explained': typeof EthereumEthereumWalletsExplainedRoute
+  '/ethereum/how-does-ethereum-staking-work': typeof EthereumHowDoesEthereumStakingWorkRoute
   '/ethereum/how-ethereum-works': typeof EthereumHowEthereumWorksRoute
   '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool': typeof EthereumHowToStakeEthOnLidoVsRocketpoolRoute
   '/ethereum/proof-of-stake-explained': typeof EthereumProofOfStakeExplainedRoute
   '/ethereum/what-are-gas-fees-how-to-save': typeof EthereumWhatAreGasFeesHowToSaveRoute
   '/ethereum/what-is-a-smart-contract': typeof EthereumWhatIsASmartContractRoute
+  '/ethereum/what-is-an-erc-20-token': typeof EthereumWhatIsAnErc20TokenRoute
   '/ethereum/what-is-defi-decentralized-finance': typeof EthereumWhatIsDefiDecentralizedFinanceRoute
   '/ethereum/what-is-ethereum': typeof EthereumWhatIsEthereumRoute
   '/ethereum/what-is-ethereum-staking': typeof EthereumWhatIsEthereumStakingRoute
+  '/guides/coin-vs-token-difference': typeof GuidesCoinVsTokenDifferenceRoute
   '/guides/crypto-dollar-cost-averaging-explained': typeof GuidesCryptoDollarCostAveragingExplainedRoute
   '/guides/crypto-portfolio-rebalancing-explained': typeof GuidesCryptoPortfolioRebalancingExplainedRoute
   '/guides/crypto-regulation-explained-for-beginners': typeof GuidesCryptoRegulationExplainedForBeginnersRoute
@@ -903,6 +1001,7 @@ export interface FileRoutesByFullPath {
   '/guides/what-is-a-crypto-wallet-address': typeof GuidesWhatIsACryptoWalletAddressRoute
   '/guides/what-is-a-private-key': typeof GuidesWhatIsAPrivateKeyRoute
   '/guides/what-is-a-short-squeeze-crypto-explained': typeof GuidesWhatIsAShortSqueezeCryptoExplainedRoute
+  '/guides/what-is-a-smart-contract-explained': typeof GuidesWhatIsASmartContractExplainedRoute
   '/guides/what-is-a-stablecoin': typeof GuidesWhatIsAStablecoinRoute
   '/guides/what-is-aml-in-crypto': typeof GuidesWhatIsAmlInCryptoRoute
   '/guides/what-is-kyc-in-cryptocurrency': typeof GuidesWhatIsKycInCryptocurrencyRoute
@@ -911,16 +1010,18 @@ export interface FileRoutesByFullPath {
   '/guides/why-crypto-regulation-matters': typeof GuidesWhyCryptoRegulationMattersRoute
   '/guides/why-governments-regulate-cryptocurrency': typeof GuidesWhyGovernmentsRegulateCryptocurrencyRoute
   '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally': typeof NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute
-  '/news/bitcoin-fed-rate-hike-jobs-report-september-2026': typeof NewsBitcoinFedRateHikeJobsReportSeptember2026Route
   '/news/bitcoin-jobs-report-etf-inflows-september-2026': typeof NewsBitcoinJobsReportEtfInflowsSeptember2026Route
-  '/news/bitcoin-jobs-report-september-2026-fed-rate-risk': typeof NewsBitcoinJobsReportSeptember2026FedRateRiskRoute
   '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
   '/news/bitcoin-september-rally-macro-test': typeof NewsBitcoinSeptemberRallyMacroTestRoute
   '/news/ethereum-merge-two-years-later': typeof NewsEthereumMergeTwoYearsLaterRoute
   '/news/liquid-network-3400-btc-returned-320-million-incident': typeof NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute
   '/news/liquid-network-hack-4000-btc-withdrawal': typeof NewsLiquidNetworkHack4000BtcWithdrawalRoute
+  '/news/oil-above-100-bitcoin-crypto-cpi-impact': typeof NewsOilAbove100BitcoinCryptoCpiImpactRoute
   '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
+  '/news/trezor-brevo-phishing-email-breach-2026': typeof NewsTrezorBrevoPhishingEmailBreach2026Route
+  '/news/what-is-on-chain-trading-vs-exchange': typeof NewsWhatIsOnChainTradingVsExchangeRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
+  '/news/why-are-crypto-atms-everywhere': typeof NewsWhyAreCryptoAtmsEverywhereRoute
   '/security/common-crypto-scams': typeof SecurityCommonCryptoScamsRoute
   '/security/crypto-security-hub': typeof SecurityCryptoSecurityHubRoute
   '/security/crypto-wallet-drainer-scams-explained': typeof SecurityCryptoWalletDrainerScamsExplainedRoute
@@ -933,11 +1034,13 @@ export interface FileRoutesByFullPath {
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
   '/security/how-to-identify-a-fake-crypto-website': typeof SecurityHowToIdentifyAFakeCryptoWebsiteRoute
   '/security/how-to-revoke-smart-contract-approvals': typeof SecurityHowToRevokeSmartContractApprovalsRoute
+  '/security/how-to-spot-a-fake-crypto-wallet-app': typeof SecurityHowToSpotAFakeCryptoWalletAppRoute
   '/security/how-to-spot-a-rug-pull': typeof SecurityHowToSpotARugPullRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
   '/security/how-to-verify-a-crypto-transaction': typeof SecurityHowToVerifyACryptoTransactionRoute
   '/security/private-key-vs-seed-phrase': typeof SecurityPrivateKeyVsSeedPhraseRoute
   '/security/two-factor-authentication-for-crypto': typeof SecurityTwoFactorAuthenticationForCryptoRoute
+  '/security/what-is-a-crypto-atm-are-they-safe': typeof SecurityWhatIsACryptoAtmAreTheySafeRoute
   '/security/what-is-a-seed-phrase': typeof SecurityWhatIsASeedPhraseRoute
   '/security/what-to-do-if-your-crypto-wallet-is-hacked': typeof SecurityWhatToDoIfYourCryptoWalletIsHackedRoute
   '/altcoins/': typeof AltcoinsIndexRoute
@@ -964,6 +1067,9 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/search': typeof SearchRoute
   '/terms': typeof TermsRoute
+  '/altcoins/what-is-an-ai-crypto-token': typeof AltcoinsWhatIsAnAiCryptoTokenRoute
+  '/altcoins/what-is-an-altcoin': typeof AltcoinsWhatIsAnAltcoinRoute
+  '/altcoins/why-do-meme-coins-have-value': typeof AltcoinsWhyDoMemeCoinsHaveValueRoute
   '/bitcoin/bitcoin-address-vs-wallet-address': typeof BitcoinBitcoinAddressVsWalletAddressRoute
   '/bitcoin/bitcoin-lightning-network-explained': typeof BitcoinBitcoinLightningNetworkExplainedRoute
   '/bitcoin/bitcoin-wallets-complete-guide': typeof BitcoinBitcoinWalletsCompleteGuideRoute
@@ -971,6 +1077,7 @@ export interface FileRoutesByTo {
   '/bitcoin/common-bitcoin-wallet-scams': typeof BitcoinCommonBitcoinWalletScamsRoute
   '/bitcoin/how-bitcoin-wallets-work': typeof BitcoinHowBitcoinWalletsWorkRoute
   '/bitcoin/how-do-bitcoin-etfs-affect-price': typeof BitcoinHowDoBitcoinEtfsAffectPriceRoute
+  '/bitcoin/how-does-bitcoin-halving-work': typeof BitcoinHowDoesBitcoinHalvingWorkRoute
   '/bitcoin/how-to-buy-your-first-bitcoin-safely': typeof BitcoinHowToBuyYourFirstBitcoinSafelyRoute
   '/bitcoin/how-to-send-bitcoin-safely': typeof BitcoinHowToSendBitcoinSafelyRoute
   '/bitcoin/what-happens-if-you-lose-your-seed-phrase': typeof BitcoinWhatHappensIfYouLoseYourSeedPhraseRoute
@@ -979,6 +1086,7 @@ export interface FileRoutesByTo {
   '/bitcoin/what-is-a-bitcoin-wallet': typeof BitcoinWhatIsABitcoinWalletRoute
   '/bitcoin/what-is-bitcoin-mining': typeof BitcoinWhatIsBitcoinMiningRoute
   '/bitcoin/what-is-the-bitcoin-halving': typeof BitcoinWhatIsTheBitcoinHalvingRoute
+  '/bitcoin/why-bitcoin-mining-uses-so-much-energy': typeof BitcoinWhyBitcoinMiningUsesSoMuchEnergyRoute
   '/bitcoin/why-do-bond-yields-affect-bitcoin-price': typeof BitcoinWhyDoBondYieldsAffectBitcoinPriceRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
   '/ethereum/ethereum-complete-beginners-guide': typeof EthereumEthereumCompleteBeginnersGuideRoute
@@ -987,14 +1095,17 @@ export interface FileRoutesByTo {
   '/ethereum/ethereum-validators-explained': typeof EthereumEthereumValidatorsExplainedRoute
   '/ethereum/ethereum-vs-bitcoin': typeof EthereumEthereumVsBitcoinRoute
   '/ethereum/ethereum-wallets-explained': typeof EthereumEthereumWalletsExplainedRoute
+  '/ethereum/how-does-ethereum-staking-work': typeof EthereumHowDoesEthereumStakingWorkRoute
   '/ethereum/how-ethereum-works': typeof EthereumHowEthereumWorksRoute
   '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool': typeof EthereumHowToStakeEthOnLidoVsRocketpoolRoute
   '/ethereum/proof-of-stake-explained': typeof EthereumProofOfStakeExplainedRoute
   '/ethereum/what-are-gas-fees-how-to-save': typeof EthereumWhatAreGasFeesHowToSaveRoute
   '/ethereum/what-is-a-smart-contract': typeof EthereumWhatIsASmartContractRoute
+  '/ethereum/what-is-an-erc-20-token': typeof EthereumWhatIsAnErc20TokenRoute
   '/ethereum/what-is-defi-decentralized-finance': typeof EthereumWhatIsDefiDecentralizedFinanceRoute
   '/ethereum/what-is-ethereum': typeof EthereumWhatIsEthereumRoute
   '/ethereum/what-is-ethereum-staking': typeof EthereumWhatIsEthereumStakingRoute
+  '/guides/coin-vs-token-difference': typeof GuidesCoinVsTokenDifferenceRoute
   '/guides/crypto-dollar-cost-averaging-explained': typeof GuidesCryptoDollarCostAveragingExplainedRoute
   '/guides/crypto-portfolio-rebalancing-explained': typeof GuidesCryptoPortfolioRebalancingExplainedRoute
   '/guides/crypto-regulation-explained-for-beginners': typeof GuidesCryptoRegulationExplainedForBeginnersRoute
@@ -1016,6 +1127,7 @@ export interface FileRoutesByTo {
   '/guides/what-is-a-crypto-wallet-address': typeof GuidesWhatIsACryptoWalletAddressRoute
   '/guides/what-is-a-private-key': typeof GuidesWhatIsAPrivateKeyRoute
   '/guides/what-is-a-short-squeeze-crypto-explained': typeof GuidesWhatIsAShortSqueezeCryptoExplainedRoute
+  '/guides/what-is-a-smart-contract-explained': typeof GuidesWhatIsASmartContractExplainedRoute
   '/guides/what-is-a-stablecoin': typeof GuidesWhatIsAStablecoinRoute
   '/guides/what-is-aml-in-crypto': typeof GuidesWhatIsAmlInCryptoRoute
   '/guides/what-is-kyc-in-cryptocurrency': typeof GuidesWhatIsKycInCryptocurrencyRoute
@@ -1024,16 +1136,18 @@ export interface FileRoutesByTo {
   '/guides/why-crypto-regulation-matters': typeof GuidesWhyCryptoRegulationMattersRoute
   '/guides/why-governments-regulate-cryptocurrency': typeof GuidesWhyGovernmentsRegulateCryptocurrencyRoute
   '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally': typeof NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute
-  '/news/bitcoin-fed-rate-hike-jobs-report-september-2026': typeof NewsBitcoinFedRateHikeJobsReportSeptember2026Route
   '/news/bitcoin-jobs-report-etf-inflows-september-2026': typeof NewsBitcoinJobsReportEtfInflowsSeptember2026Route
-  '/news/bitcoin-jobs-report-september-2026-fed-rate-risk': typeof NewsBitcoinJobsReportSeptember2026FedRateRiskRoute
   '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
   '/news/bitcoin-september-rally-macro-test': typeof NewsBitcoinSeptemberRallyMacroTestRoute
   '/news/ethereum-merge-two-years-later': typeof NewsEthereumMergeTwoYearsLaterRoute
   '/news/liquid-network-3400-btc-returned-320-million-incident': typeof NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute
   '/news/liquid-network-hack-4000-btc-withdrawal': typeof NewsLiquidNetworkHack4000BtcWithdrawalRoute
+  '/news/oil-above-100-bitcoin-crypto-cpi-impact': typeof NewsOilAbove100BitcoinCryptoCpiImpactRoute
   '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
+  '/news/trezor-brevo-phishing-email-breach-2026': typeof NewsTrezorBrevoPhishingEmailBreach2026Route
+  '/news/what-is-on-chain-trading-vs-exchange': typeof NewsWhatIsOnChainTradingVsExchangeRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
+  '/news/why-are-crypto-atms-everywhere': typeof NewsWhyAreCryptoAtmsEverywhereRoute
   '/security/common-crypto-scams': typeof SecurityCommonCryptoScamsRoute
   '/security/crypto-security-hub': typeof SecurityCryptoSecurityHubRoute
   '/security/crypto-wallet-drainer-scams-explained': typeof SecurityCryptoWalletDrainerScamsExplainedRoute
@@ -1046,11 +1160,13 @@ export interface FileRoutesByTo {
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
   '/security/how-to-identify-a-fake-crypto-website': typeof SecurityHowToIdentifyAFakeCryptoWebsiteRoute
   '/security/how-to-revoke-smart-contract-approvals': typeof SecurityHowToRevokeSmartContractApprovalsRoute
+  '/security/how-to-spot-a-fake-crypto-wallet-app': typeof SecurityHowToSpotAFakeCryptoWalletAppRoute
   '/security/how-to-spot-a-rug-pull': typeof SecurityHowToSpotARugPullRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
   '/security/how-to-verify-a-crypto-transaction': typeof SecurityHowToVerifyACryptoTransactionRoute
   '/security/private-key-vs-seed-phrase': typeof SecurityPrivateKeyVsSeedPhraseRoute
   '/security/two-factor-authentication-for-crypto': typeof SecurityTwoFactorAuthenticationForCryptoRoute
+  '/security/what-is-a-crypto-atm-are-they-safe': typeof SecurityWhatIsACryptoAtmAreTheySafeRoute
   '/security/what-is-a-seed-phrase': typeof SecurityWhatIsASeedPhraseRoute
   '/security/what-to-do-if-your-crypto-wallet-is-hacked': typeof SecurityWhatToDoIfYourCryptoWalletIsHackedRoute
   '/altcoins': typeof AltcoinsIndexRoute
@@ -1089,6 +1205,9 @@ export interface FileRoutesById {
   '/security': typeof SecurityRouteWithChildren
   '/taxes': typeof TaxesRouteWithChildren
   '/terms': typeof TermsRoute
+  '/altcoins/what-is-an-ai-crypto-token': typeof AltcoinsWhatIsAnAiCryptoTokenRoute
+  '/altcoins/what-is-an-altcoin': typeof AltcoinsWhatIsAnAltcoinRoute
+  '/altcoins/why-do-meme-coins-have-value': typeof AltcoinsWhyDoMemeCoinsHaveValueRoute
   '/bitcoin/bitcoin-address-vs-wallet-address': typeof BitcoinBitcoinAddressVsWalletAddressRoute
   '/bitcoin/bitcoin-lightning-network-explained': typeof BitcoinBitcoinLightningNetworkExplainedRoute
   '/bitcoin/bitcoin-wallets-complete-guide': typeof BitcoinBitcoinWalletsCompleteGuideRoute
@@ -1096,6 +1215,7 @@ export interface FileRoutesById {
   '/bitcoin/common-bitcoin-wallet-scams': typeof BitcoinCommonBitcoinWalletScamsRoute
   '/bitcoin/how-bitcoin-wallets-work': typeof BitcoinHowBitcoinWalletsWorkRoute
   '/bitcoin/how-do-bitcoin-etfs-affect-price': typeof BitcoinHowDoBitcoinEtfsAffectPriceRoute
+  '/bitcoin/how-does-bitcoin-halving-work': typeof BitcoinHowDoesBitcoinHalvingWorkRoute
   '/bitcoin/how-to-buy-your-first-bitcoin-safely': typeof BitcoinHowToBuyYourFirstBitcoinSafelyRoute
   '/bitcoin/how-to-send-bitcoin-safely': typeof BitcoinHowToSendBitcoinSafelyRoute
   '/bitcoin/what-happens-if-you-lose-your-seed-phrase': typeof BitcoinWhatHappensIfYouLoseYourSeedPhraseRoute
@@ -1104,6 +1224,7 @@ export interface FileRoutesById {
   '/bitcoin/what-is-a-bitcoin-wallet': typeof BitcoinWhatIsABitcoinWalletRoute
   '/bitcoin/what-is-bitcoin-mining': typeof BitcoinWhatIsBitcoinMiningRoute
   '/bitcoin/what-is-the-bitcoin-halving': typeof BitcoinWhatIsTheBitcoinHalvingRoute
+  '/bitcoin/why-bitcoin-mining-uses-so-much-energy': typeof BitcoinWhyBitcoinMiningUsesSoMuchEnergyRoute
   '/bitcoin/why-do-bond-yields-affect-bitcoin-price': typeof BitcoinWhyDoBondYieldsAffectBitcoinPriceRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
   '/ethereum/ethereum-complete-beginners-guide': typeof EthereumEthereumCompleteBeginnersGuideRoute
@@ -1112,14 +1233,17 @@ export interface FileRoutesById {
   '/ethereum/ethereum-validators-explained': typeof EthereumEthereumValidatorsExplainedRoute
   '/ethereum/ethereum-vs-bitcoin': typeof EthereumEthereumVsBitcoinRoute
   '/ethereum/ethereum-wallets-explained': typeof EthereumEthereumWalletsExplainedRoute
+  '/ethereum/how-does-ethereum-staking-work': typeof EthereumHowDoesEthereumStakingWorkRoute
   '/ethereum/how-ethereum-works': typeof EthereumHowEthereumWorksRoute
   '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool': typeof EthereumHowToStakeEthOnLidoVsRocketpoolRoute
   '/ethereum/proof-of-stake-explained': typeof EthereumProofOfStakeExplainedRoute
   '/ethereum/what-are-gas-fees-how-to-save': typeof EthereumWhatAreGasFeesHowToSaveRoute
   '/ethereum/what-is-a-smart-contract': typeof EthereumWhatIsASmartContractRoute
+  '/ethereum/what-is-an-erc-20-token': typeof EthereumWhatIsAnErc20TokenRoute
   '/ethereum/what-is-defi-decentralized-finance': typeof EthereumWhatIsDefiDecentralizedFinanceRoute
   '/ethereum/what-is-ethereum': typeof EthereumWhatIsEthereumRoute
   '/ethereum/what-is-ethereum-staking': typeof EthereumWhatIsEthereumStakingRoute
+  '/guides/coin-vs-token-difference': typeof GuidesCoinVsTokenDifferenceRoute
   '/guides/crypto-dollar-cost-averaging-explained': typeof GuidesCryptoDollarCostAveragingExplainedRoute
   '/guides/crypto-portfolio-rebalancing-explained': typeof GuidesCryptoPortfolioRebalancingExplainedRoute
   '/guides/crypto-regulation-explained-for-beginners': typeof GuidesCryptoRegulationExplainedForBeginnersRoute
@@ -1141,6 +1265,7 @@ export interface FileRoutesById {
   '/guides/what-is-a-crypto-wallet-address': typeof GuidesWhatIsACryptoWalletAddressRoute
   '/guides/what-is-a-private-key': typeof GuidesWhatIsAPrivateKeyRoute
   '/guides/what-is-a-short-squeeze-crypto-explained': typeof GuidesWhatIsAShortSqueezeCryptoExplainedRoute
+  '/guides/what-is-a-smart-contract-explained': typeof GuidesWhatIsASmartContractExplainedRoute
   '/guides/what-is-a-stablecoin': typeof GuidesWhatIsAStablecoinRoute
   '/guides/what-is-aml-in-crypto': typeof GuidesWhatIsAmlInCryptoRoute
   '/guides/what-is-kyc-in-cryptocurrency': typeof GuidesWhatIsKycInCryptocurrencyRoute
@@ -1149,16 +1274,18 @@ export interface FileRoutesById {
   '/guides/why-crypto-regulation-matters': typeof GuidesWhyCryptoRegulationMattersRoute
   '/guides/why-governments-regulate-cryptocurrency': typeof GuidesWhyGovernmentsRegulateCryptocurrencyRoute
   '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally': typeof NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute
-  '/news/bitcoin-fed-rate-hike-jobs-report-september-2026': typeof NewsBitcoinFedRateHikeJobsReportSeptember2026Route
   '/news/bitcoin-jobs-report-etf-inflows-september-2026': typeof NewsBitcoinJobsReportEtfInflowsSeptember2026Route
-  '/news/bitcoin-jobs-report-september-2026-fed-rate-risk': typeof NewsBitcoinJobsReportSeptember2026FedRateRiskRoute
   '/news/bitcoin-rally-august-2026': typeof NewsBitcoinRallyAugust2026Route
   '/news/bitcoin-september-rally-macro-test': typeof NewsBitcoinSeptemberRallyMacroTestRoute
   '/news/ethereum-merge-two-years-later': typeof NewsEthereumMergeTwoYearsLaterRoute
   '/news/liquid-network-3400-btc-returned-320-million-incident': typeof NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute
   '/news/liquid-network-hack-4000-btc-withdrawal': typeof NewsLiquidNetworkHack4000BtcWithdrawalRoute
+  '/news/oil-above-100-bitcoin-crypto-cpi-impact': typeof NewsOilAbove100BitcoinCryptoCpiImpactRoute
   '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
+  '/news/trezor-brevo-phishing-email-breach-2026': typeof NewsTrezorBrevoPhishingEmailBreach2026Route
+  '/news/what-is-on-chain-trading-vs-exchange': typeof NewsWhatIsOnChainTradingVsExchangeRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
+  '/news/why-are-crypto-atms-everywhere': typeof NewsWhyAreCryptoAtmsEverywhereRoute
   '/security/common-crypto-scams': typeof SecurityCommonCryptoScamsRoute
   '/security/crypto-security-hub': typeof SecurityCryptoSecurityHubRoute
   '/security/crypto-wallet-drainer-scams-explained': typeof SecurityCryptoWalletDrainerScamsExplainedRoute
@@ -1171,11 +1298,13 @@ export interface FileRoutesById {
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
   '/security/how-to-identify-a-fake-crypto-website': typeof SecurityHowToIdentifyAFakeCryptoWebsiteRoute
   '/security/how-to-revoke-smart-contract-approvals': typeof SecurityHowToRevokeSmartContractApprovalsRoute
+  '/security/how-to-spot-a-fake-crypto-wallet-app': typeof SecurityHowToSpotAFakeCryptoWalletAppRoute
   '/security/how-to-spot-a-rug-pull': typeof SecurityHowToSpotARugPullRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
   '/security/how-to-verify-a-crypto-transaction': typeof SecurityHowToVerifyACryptoTransactionRoute
   '/security/private-key-vs-seed-phrase': typeof SecurityPrivateKeyVsSeedPhraseRoute
   '/security/two-factor-authentication-for-crypto': typeof SecurityTwoFactorAuthenticationForCryptoRoute
+  '/security/what-is-a-crypto-atm-are-they-safe': typeof SecurityWhatIsACryptoAtmAreTheySafeRoute
   '/security/what-is-a-seed-phrase': typeof SecurityWhatIsASeedPhraseRoute
   '/security/what-to-do-if-your-crypto-wallet-is-hacked': typeof SecurityWhatToDoIfYourCryptoWalletIsHackedRoute
   '/altcoins/': typeof AltcoinsIndexRoute
@@ -1215,6 +1344,9 @@ export interface FileRouteTypes {
     | '/security'
     | '/taxes'
     | '/terms'
+    | '/altcoins/what-is-an-ai-crypto-token'
+    | '/altcoins/what-is-an-altcoin'
+    | '/altcoins/why-do-meme-coins-have-value'
     | '/bitcoin/bitcoin-address-vs-wallet-address'
     | '/bitcoin/bitcoin-lightning-network-explained'
     | '/bitcoin/bitcoin-wallets-complete-guide'
@@ -1222,6 +1354,7 @@ export interface FileRouteTypes {
     | '/bitcoin/common-bitcoin-wallet-scams'
     | '/bitcoin/how-bitcoin-wallets-work'
     | '/bitcoin/how-do-bitcoin-etfs-affect-price'
+    | '/bitcoin/how-does-bitcoin-halving-work'
     | '/bitcoin/how-to-buy-your-first-bitcoin-safely'
     | '/bitcoin/how-to-send-bitcoin-safely'
     | '/bitcoin/what-happens-if-you-lose-your-seed-phrase'
@@ -1230,6 +1363,7 @@ export interface FileRouteTypes {
     | '/bitcoin/what-is-a-bitcoin-wallet'
     | '/bitcoin/what-is-bitcoin-mining'
     | '/bitcoin/what-is-the-bitcoin-halving'
+    | '/bitcoin/why-bitcoin-mining-uses-so-much-energy'
     | '/bitcoin/why-do-bond-yields-affect-bitcoin-price'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
     | '/ethereum/ethereum-complete-beginners-guide'
@@ -1238,14 +1372,17 @@ export interface FileRouteTypes {
     | '/ethereum/ethereum-validators-explained'
     | '/ethereum/ethereum-vs-bitcoin'
     | '/ethereum/ethereum-wallets-explained'
+    | '/ethereum/how-does-ethereum-staking-work'
     | '/ethereum/how-ethereum-works'
     | '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool'
     | '/ethereum/proof-of-stake-explained'
     | '/ethereum/what-are-gas-fees-how-to-save'
     | '/ethereum/what-is-a-smart-contract'
+    | '/ethereum/what-is-an-erc-20-token'
     | '/ethereum/what-is-defi-decentralized-finance'
     | '/ethereum/what-is-ethereum'
     | '/ethereum/what-is-ethereum-staking'
+    | '/guides/coin-vs-token-difference'
     | '/guides/crypto-dollar-cost-averaging-explained'
     | '/guides/crypto-portfolio-rebalancing-explained'
     | '/guides/crypto-regulation-explained-for-beginners'
@@ -1267,6 +1404,7 @@ export interface FileRouteTypes {
     | '/guides/what-is-a-crypto-wallet-address'
     | '/guides/what-is-a-private-key'
     | '/guides/what-is-a-short-squeeze-crypto-explained'
+    | '/guides/what-is-a-smart-contract-explained'
     | '/guides/what-is-a-stablecoin'
     | '/guides/what-is-aml-in-crypto'
     | '/guides/what-is-kyc-in-cryptocurrency'
@@ -1275,16 +1413,18 @@ export interface FileRouteTypes {
     | '/guides/why-crypto-regulation-matters'
     | '/guides/why-governments-regulate-cryptocurrency'
     | '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
-    | '/news/bitcoin-fed-rate-hike-jobs-report-september-2026'
     | '/news/bitcoin-jobs-report-etf-inflows-september-2026'
-    | '/news/bitcoin-jobs-report-september-2026-fed-rate-risk'
     | '/news/bitcoin-rally-august-2026'
     | '/news/bitcoin-september-rally-macro-test'
     | '/news/ethereum-merge-two-years-later'
     | '/news/liquid-network-3400-btc-returned-320-million-incident'
     | '/news/liquid-network-hack-4000-btc-withdrawal'
+    | '/news/oil-above-100-bitcoin-crypto-cpi-impact'
     | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
+    | '/news/trezor-brevo-phishing-email-breach-2026'
+    | '/news/what-is-on-chain-trading-vs-exchange'
     | '/news/what-is-the-clarity-act-crypto'
+    | '/news/why-are-crypto-atms-everywhere'
     | '/security/common-crypto-scams'
     | '/security/crypto-security-hub'
     | '/security/crypto-wallet-drainer-scams-explained'
@@ -1297,11 +1437,13 @@ export interface FileRouteTypes {
     | '/security/how-to-avoid-crypto-phishing-scams'
     | '/security/how-to-identify-a-fake-crypto-website'
     | '/security/how-to-revoke-smart-contract-approvals'
+    | '/security/how-to-spot-a-fake-crypto-wallet-app'
     | '/security/how-to-spot-a-rug-pull'
     | '/security/how-to-store-crypto-seed-phrase-safely'
     | '/security/how-to-verify-a-crypto-transaction'
     | '/security/private-key-vs-seed-phrase'
     | '/security/two-factor-authentication-for-crypto'
+    | '/security/what-is-a-crypto-atm-are-they-safe'
     | '/security/what-is-a-seed-phrase'
     | '/security/what-to-do-if-your-crypto-wallet-is-hacked'
     | '/altcoins/'
@@ -1328,6 +1470,9 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/search'
     | '/terms'
+    | '/altcoins/what-is-an-ai-crypto-token'
+    | '/altcoins/what-is-an-altcoin'
+    | '/altcoins/why-do-meme-coins-have-value'
     | '/bitcoin/bitcoin-address-vs-wallet-address'
     | '/bitcoin/bitcoin-lightning-network-explained'
     | '/bitcoin/bitcoin-wallets-complete-guide'
@@ -1335,6 +1480,7 @@ export interface FileRouteTypes {
     | '/bitcoin/common-bitcoin-wallet-scams'
     | '/bitcoin/how-bitcoin-wallets-work'
     | '/bitcoin/how-do-bitcoin-etfs-affect-price'
+    | '/bitcoin/how-does-bitcoin-halving-work'
     | '/bitcoin/how-to-buy-your-first-bitcoin-safely'
     | '/bitcoin/how-to-send-bitcoin-safely'
     | '/bitcoin/what-happens-if-you-lose-your-seed-phrase'
@@ -1343,6 +1489,7 @@ export interface FileRouteTypes {
     | '/bitcoin/what-is-a-bitcoin-wallet'
     | '/bitcoin/what-is-bitcoin-mining'
     | '/bitcoin/what-is-the-bitcoin-halving'
+    | '/bitcoin/why-bitcoin-mining-uses-so-much-energy'
     | '/bitcoin/why-do-bond-yields-affect-bitcoin-price'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
     | '/ethereum/ethereum-complete-beginners-guide'
@@ -1351,14 +1498,17 @@ export interface FileRouteTypes {
     | '/ethereum/ethereum-validators-explained'
     | '/ethereum/ethereum-vs-bitcoin'
     | '/ethereum/ethereum-wallets-explained'
+    | '/ethereum/how-does-ethereum-staking-work'
     | '/ethereum/how-ethereum-works'
     | '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool'
     | '/ethereum/proof-of-stake-explained'
     | '/ethereum/what-are-gas-fees-how-to-save'
     | '/ethereum/what-is-a-smart-contract'
+    | '/ethereum/what-is-an-erc-20-token'
     | '/ethereum/what-is-defi-decentralized-finance'
     | '/ethereum/what-is-ethereum'
     | '/ethereum/what-is-ethereum-staking'
+    | '/guides/coin-vs-token-difference'
     | '/guides/crypto-dollar-cost-averaging-explained'
     | '/guides/crypto-portfolio-rebalancing-explained'
     | '/guides/crypto-regulation-explained-for-beginners'
@@ -1380,6 +1530,7 @@ export interface FileRouteTypes {
     | '/guides/what-is-a-crypto-wallet-address'
     | '/guides/what-is-a-private-key'
     | '/guides/what-is-a-short-squeeze-crypto-explained'
+    | '/guides/what-is-a-smart-contract-explained'
     | '/guides/what-is-a-stablecoin'
     | '/guides/what-is-aml-in-crypto'
     | '/guides/what-is-kyc-in-cryptocurrency'
@@ -1388,16 +1539,18 @@ export interface FileRouteTypes {
     | '/guides/why-crypto-regulation-matters'
     | '/guides/why-governments-regulate-cryptocurrency'
     | '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
-    | '/news/bitcoin-fed-rate-hike-jobs-report-september-2026'
     | '/news/bitcoin-jobs-report-etf-inflows-september-2026'
-    | '/news/bitcoin-jobs-report-september-2026-fed-rate-risk'
     | '/news/bitcoin-rally-august-2026'
     | '/news/bitcoin-september-rally-macro-test'
     | '/news/ethereum-merge-two-years-later'
     | '/news/liquid-network-3400-btc-returned-320-million-incident'
     | '/news/liquid-network-hack-4000-btc-withdrawal'
+    | '/news/oil-above-100-bitcoin-crypto-cpi-impact'
     | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
+    | '/news/trezor-brevo-phishing-email-breach-2026'
+    | '/news/what-is-on-chain-trading-vs-exchange'
     | '/news/what-is-the-clarity-act-crypto'
+    | '/news/why-are-crypto-atms-everywhere'
     | '/security/common-crypto-scams'
     | '/security/crypto-security-hub'
     | '/security/crypto-wallet-drainer-scams-explained'
@@ -1410,11 +1563,13 @@ export interface FileRouteTypes {
     | '/security/how-to-avoid-crypto-phishing-scams'
     | '/security/how-to-identify-a-fake-crypto-website'
     | '/security/how-to-revoke-smart-contract-approvals'
+    | '/security/how-to-spot-a-fake-crypto-wallet-app'
     | '/security/how-to-spot-a-rug-pull'
     | '/security/how-to-store-crypto-seed-phrase-safely'
     | '/security/how-to-verify-a-crypto-transaction'
     | '/security/private-key-vs-seed-phrase'
     | '/security/two-factor-authentication-for-crypto'
+    | '/security/what-is-a-crypto-atm-are-they-safe'
     | '/security/what-is-a-seed-phrase'
     | '/security/what-to-do-if-your-crypto-wallet-is-hacked'
     | '/altcoins'
@@ -1452,6 +1607,9 @@ export interface FileRouteTypes {
     | '/security'
     | '/taxes'
     | '/terms'
+    | '/altcoins/what-is-an-ai-crypto-token'
+    | '/altcoins/what-is-an-altcoin'
+    | '/altcoins/why-do-meme-coins-have-value'
     | '/bitcoin/bitcoin-address-vs-wallet-address'
     | '/bitcoin/bitcoin-lightning-network-explained'
     | '/bitcoin/bitcoin-wallets-complete-guide'
@@ -1459,6 +1617,7 @@ export interface FileRouteTypes {
     | '/bitcoin/common-bitcoin-wallet-scams'
     | '/bitcoin/how-bitcoin-wallets-work'
     | '/bitcoin/how-do-bitcoin-etfs-affect-price'
+    | '/bitcoin/how-does-bitcoin-halving-work'
     | '/bitcoin/how-to-buy-your-first-bitcoin-safely'
     | '/bitcoin/how-to-send-bitcoin-safely'
     | '/bitcoin/what-happens-if-you-lose-your-seed-phrase'
@@ -1467,6 +1626,7 @@ export interface FileRouteTypes {
     | '/bitcoin/what-is-a-bitcoin-wallet'
     | '/bitcoin/what-is-bitcoin-mining'
     | '/bitcoin/what-is-the-bitcoin-halving'
+    | '/bitcoin/why-bitcoin-mining-uses-so-much-energy'
     | '/bitcoin/why-do-bond-yields-affect-bitcoin-price'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
     | '/ethereum/ethereum-complete-beginners-guide'
@@ -1475,14 +1635,17 @@ export interface FileRouteTypes {
     | '/ethereum/ethereum-validators-explained'
     | '/ethereum/ethereum-vs-bitcoin'
     | '/ethereum/ethereum-wallets-explained'
+    | '/ethereum/how-does-ethereum-staking-work'
     | '/ethereum/how-ethereum-works'
     | '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool'
     | '/ethereum/proof-of-stake-explained'
     | '/ethereum/what-are-gas-fees-how-to-save'
     | '/ethereum/what-is-a-smart-contract'
+    | '/ethereum/what-is-an-erc-20-token'
     | '/ethereum/what-is-defi-decentralized-finance'
     | '/ethereum/what-is-ethereum'
     | '/ethereum/what-is-ethereum-staking'
+    | '/guides/coin-vs-token-difference'
     | '/guides/crypto-dollar-cost-averaging-explained'
     | '/guides/crypto-portfolio-rebalancing-explained'
     | '/guides/crypto-regulation-explained-for-beginners'
@@ -1504,6 +1667,7 @@ export interface FileRouteTypes {
     | '/guides/what-is-a-crypto-wallet-address'
     | '/guides/what-is-a-private-key'
     | '/guides/what-is-a-short-squeeze-crypto-explained'
+    | '/guides/what-is-a-smart-contract-explained'
     | '/guides/what-is-a-stablecoin'
     | '/guides/what-is-aml-in-crypto'
     | '/guides/what-is-kyc-in-cryptocurrency'
@@ -1512,16 +1676,18 @@ export interface FileRouteTypes {
     | '/guides/why-crypto-regulation-matters'
     | '/guides/why-governments-regulate-cryptocurrency'
     | '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally'
-    | '/news/bitcoin-fed-rate-hike-jobs-report-september-2026'
     | '/news/bitcoin-jobs-report-etf-inflows-september-2026'
-    | '/news/bitcoin-jobs-report-september-2026-fed-rate-risk'
     | '/news/bitcoin-rally-august-2026'
     | '/news/bitcoin-september-rally-macro-test'
     | '/news/ethereum-merge-two-years-later'
     | '/news/liquid-network-3400-btc-returned-320-million-incident'
     | '/news/liquid-network-hack-4000-btc-withdrawal'
+    | '/news/oil-above-100-bitcoin-crypto-cpi-impact'
     | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
+    | '/news/trezor-brevo-phishing-email-breach-2026'
+    | '/news/what-is-on-chain-trading-vs-exchange'
     | '/news/what-is-the-clarity-act-crypto'
+    | '/news/why-are-crypto-atms-everywhere'
     | '/security/common-crypto-scams'
     | '/security/crypto-security-hub'
     | '/security/crypto-wallet-drainer-scams-explained'
@@ -1534,11 +1700,13 @@ export interface FileRouteTypes {
     | '/security/how-to-avoid-crypto-phishing-scams'
     | '/security/how-to-identify-a-fake-crypto-website'
     | '/security/how-to-revoke-smart-contract-approvals'
+    | '/security/how-to-spot-a-fake-crypto-wallet-app'
     | '/security/how-to-spot-a-rug-pull'
     | '/security/how-to-store-crypto-seed-phrase-safely'
     | '/security/how-to-verify-a-crypto-transaction'
     | '/security/private-key-vs-seed-phrase'
     | '/security/two-factor-authentication-for-crypto'
+    | '/security/what-is-a-crypto-atm-are-they-safe'
     | '/security/what-is-a-seed-phrase'
     | '/security/what-to-do-if-your-crypto-wallet-is-hacked'
     | '/altcoins/'
@@ -1826,6 +1994,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SecurityWhatIsASeedPhraseRouteImport
       parentRoute: typeof SecurityRoute
     }
+    '/security/what-is-a-crypto-atm-are-they-safe': {
+      id: '/security/what-is-a-crypto-atm-are-they-safe'
+      path: '/what-is-a-crypto-atm-are-they-safe'
+      fullPath: '/security/what-is-a-crypto-atm-are-they-safe'
+      preLoaderRoute: typeof SecurityWhatIsACryptoAtmAreTheySafeRouteImport
+      parentRoute: typeof SecurityRoute
+    }
     '/security/two-factor-authentication-for-crypto': {
       id: '/security/two-factor-authentication-for-crypto'
       path: '/two-factor-authentication-for-crypto'
@@ -1859,6 +2034,13 @@ declare module '@tanstack/react-router' {
       path: '/how-to-spot-a-rug-pull'
       fullPath: '/security/how-to-spot-a-rug-pull'
       preLoaderRoute: typeof SecurityHowToSpotARugPullRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/how-to-spot-a-fake-crypto-wallet-app': {
+      id: '/security/how-to-spot-a-fake-crypto-wallet-app'
+      path: '/how-to-spot-a-fake-crypto-wallet-app'
+      fullPath: '/security/how-to-spot-a-fake-crypto-wallet-app'
+      preLoaderRoute: typeof SecurityHowToSpotAFakeCryptoWalletAppRouteImport
       parentRoute: typeof SecurityRoute
     }
     '/security/how-to-revoke-smart-contract-approvals': {
@@ -1945,6 +2127,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SecurityCommonCryptoScamsRouteImport
       parentRoute: typeof SecurityRoute
     }
+    '/news/why-are-crypto-atms-everywhere': {
+      id: '/news/why-are-crypto-atms-everywhere'
+      path: '/why-are-crypto-atms-everywhere'
+      fullPath: '/news/why-are-crypto-atms-everywhere'
+      preLoaderRoute: typeof NewsWhyAreCryptoAtmsEverywhereRouteImport
+      parentRoute: typeof NewsRoute
+    }
     '/news/what-is-the-clarity-act-crypto': {
       id: '/news/what-is-the-clarity-act-crypto'
       path: '/what-is-the-clarity-act-crypto'
@@ -1952,11 +2141,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsWhatIsTheClarityActCryptoRouteImport
       parentRoute: typeof NewsRoute
     }
+    '/news/what-is-on-chain-trading-vs-exchange': {
+      id: '/news/what-is-on-chain-trading-vs-exchange'
+      path: '/what-is-on-chain-trading-vs-exchange'
+      fullPath: '/news/what-is-on-chain-trading-vs-exchange'
+      preLoaderRoute: typeof NewsWhatIsOnChainTradingVsExchangeRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/trezor-brevo-phishing-email-breach-2026': {
+      id: '/news/trezor-brevo-phishing-email-breach-2026'
+      path: '/trezor-brevo-phishing-email-breach-2026'
+      fullPath: '/news/trezor-brevo-phishing-email-breach-2026'
+      preLoaderRoute: typeof NewsTrezorBrevoPhishingEmailBreach2026RouteImport
+      parentRoute: typeof NewsRoute
+    }
     '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': {
       id: '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
       path: '/standard-chartered-uae-institutional-bitcoin-ether-trading'
       fullPath: '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
       preLoaderRoute: typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/oil-above-100-bitcoin-crypto-cpi-impact': {
+      id: '/news/oil-above-100-bitcoin-crypto-cpi-impact'
+      path: '/oil-above-100-bitcoin-crypto-cpi-impact'
+      fullPath: '/news/oil-above-100-bitcoin-crypto-cpi-impact'
+      preLoaderRoute: typeof NewsOilAbove100BitcoinCryptoCpiImpactRouteImport
       parentRoute: typeof NewsRoute
     }
     '/news/liquid-network-hack-4000-btc-withdrawal': {
@@ -1994,25 +2204,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsBitcoinRallyAugust2026RouteImport
       parentRoute: typeof NewsRoute
     }
-    '/news/bitcoin-jobs-report-september-2026-fed-rate-risk': {
-      id: '/news/bitcoin-jobs-report-september-2026-fed-rate-risk'
-      path: '/bitcoin-jobs-report-september-2026-fed-rate-risk'
-      fullPath: '/news/bitcoin-jobs-report-september-2026-fed-rate-risk'
-      preLoaderRoute: typeof NewsBitcoinJobsReportSeptember2026FedRateRiskRouteImport
-      parentRoute: typeof NewsRoute
-    }
     '/news/bitcoin-jobs-report-etf-inflows-september-2026': {
       id: '/news/bitcoin-jobs-report-etf-inflows-september-2026'
       path: '/bitcoin-jobs-report-etf-inflows-september-2026'
       fullPath: '/news/bitcoin-jobs-report-etf-inflows-september-2026'
       preLoaderRoute: typeof NewsBitcoinJobsReportEtfInflowsSeptember2026RouteImport
-      parentRoute: typeof NewsRoute
-    }
-    '/news/bitcoin-fed-rate-hike-jobs-report-september-2026': {
-      id: '/news/bitcoin-fed-rate-hike-jobs-report-september-2026'
-      path: '/bitcoin-fed-rate-hike-jobs-report-september-2026'
-      fullPath: '/news/bitcoin-fed-rate-hike-jobs-report-september-2026'
-      preLoaderRoute: typeof NewsBitcoinFedRateHikeJobsReportSeptember2026RouteImport
       parentRoute: typeof NewsRoute
     }
     '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally': {
@@ -2069,6 +2265,13 @@ declare module '@tanstack/react-router' {
       path: '/what-is-a-stablecoin'
       fullPath: '/guides/what-is-a-stablecoin'
       preLoaderRoute: typeof GuidesWhatIsAStablecoinRouteImport
+      parentRoute: typeof GuidesRoute
+    }
+    '/guides/what-is-a-smart-contract-explained': {
+      id: '/guides/what-is-a-smart-contract-explained'
+      path: '/what-is-a-smart-contract-explained'
+      fullPath: '/guides/what-is-a-smart-contract-explained'
+      preLoaderRoute: typeof GuidesWhatIsASmartContractExplainedRouteImport
       parentRoute: typeof GuidesRoute
     }
     '/guides/what-is-a-short-squeeze-crypto-explained': {
@@ -2218,6 +2421,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuidesCryptoDollarCostAveragingExplainedRouteImport
       parentRoute: typeof GuidesRoute
     }
+    '/guides/coin-vs-token-difference': {
+      id: '/guides/coin-vs-token-difference'
+      path: '/coin-vs-token-difference'
+      fullPath: '/guides/coin-vs-token-difference'
+      preLoaderRoute: typeof GuidesCoinVsTokenDifferenceRouteImport
+      parentRoute: typeof GuidesRoute
+    }
     '/ethereum/what-is-ethereum-staking': {
       id: '/ethereum/what-is-ethereum-staking'
       path: '/what-is-ethereum-staking'
@@ -2237,6 +2447,13 @@ declare module '@tanstack/react-router' {
       path: '/what-is-defi-decentralized-finance'
       fullPath: '/ethereum/what-is-defi-decentralized-finance'
       preLoaderRoute: typeof EthereumWhatIsDefiDecentralizedFinanceRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/what-is-an-erc-20-token': {
+      id: '/ethereum/what-is-an-erc-20-token'
+      path: '/what-is-an-erc-20-token'
+      fullPath: '/ethereum/what-is-an-erc-20-token'
+      preLoaderRoute: typeof EthereumWhatIsAnErc20TokenRouteImport
       parentRoute: typeof EthereumRoute
     }
     '/ethereum/what-is-a-smart-contract': {
@@ -2272,6 +2489,13 @@ declare module '@tanstack/react-router' {
       path: '/how-ethereum-works'
       fullPath: '/ethereum/how-ethereum-works'
       preLoaderRoute: typeof EthereumHowEthereumWorksRouteImport
+      parentRoute: typeof EthereumRoute
+    }
+    '/ethereum/how-does-ethereum-staking-work': {
+      id: '/ethereum/how-does-ethereum-staking-work'
+      path: '/how-does-ethereum-staking-work'
+      fullPath: '/ethereum/how-does-ethereum-staking-work'
+      preLoaderRoute: typeof EthereumHowDoesEthereumStakingWorkRouteImport
       parentRoute: typeof EthereumRoute
     }
     '/ethereum/ethereum-wallets-explained': {
@@ -2330,6 +2554,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BitcoinWhyDoBondYieldsAffectBitcoinPriceRouteImport
       parentRoute: typeof BitcoinRoute
     }
+    '/bitcoin/why-bitcoin-mining-uses-so-much-energy': {
+      id: '/bitcoin/why-bitcoin-mining-uses-so-much-energy'
+      path: '/why-bitcoin-mining-uses-so-much-energy'
+      fullPath: '/bitcoin/why-bitcoin-mining-uses-so-much-energy'
+      preLoaderRoute: typeof BitcoinWhyBitcoinMiningUsesSoMuchEnergyRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
     '/bitcoin/what-is-the-bitcoin-halving': {
       id: '/bitcoin/what-is-the-bitcoin-halving'
       path: '/what-is-the-bitcoin-halving'
@@ -2386,6 +2617,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BitcoinHowToBuyYourFirstBitcoinSafelyRouteImport
       parentRoute: typeof BitcoinRoute
     }
+    '/bitcoin/how-does-bitcoin-halving-work': {
+      id: '/bitcoin/how-does-bitcoin-halving-work'
+      path: '/how-does-bitcoin-halving-work'
+      fullPath: '/bitcoin/how-does-bitcoin-halving-work'
+      preLoaderRoute: typeof BitcoinHowDoesBitcoinHalvingWorkRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
     '/bitcoin/how-do-bitcoin-etfs-affect-price': {
       id: '/bitcoin/how-do-bitcoin-etfs-affect-price'
       path: '/how-do-bitcoin-etfs-affect-price'
@@ -2435,14 +2673,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BitcoinBitcoinAddressVsWalletAddressRouteImport
       parentRoute: typeof BitcoinRoute
     }
+    '/altcoins/why-do-meme-coins-have-value': {
+      id: '/altcoins/why-do-meme-coins-have-value'
+      path: '/why-do-meme-coins-have-value'
+      fullPath: '/altcoins/why-do-meme-coins-have-value'
+      preLoaderRoute: typeof AltcoinsWhyDoMemeCoinsHaveValueRouteImport
+      parentRoute: typeof AltcoinsRoute
+    }
+    '/altcoins/what-is-an-altcoin': {
+      id: '/altcoins/what-is-an-altcoin'
+      path: '/what-is-an-altcoin'
+      fullPath: '/altcoins/what-is-an-altcoin'
+      preLoaderRoute: typeof AltcoinsWhatIsAnAltcoinRouteImport
+      parentRoute: typeof AltcoinsRoute
+    }
+    '/altcoins/what-is-an-ai-crypto-token': {
+      id: '/altcoins/what-is-an-ai-crypto-token'
+      path: '/what-is-an-ai-crypto-token'
+      fullPath: '/altcoins/what-is-an-ai-crypto-token'
+      preLoaderRoute: typeof AltcoinsWhatIsAnAiCryptoTokenRouteImport
+      parentRoute: typeof AltcoinsRoute
+    }
   }
 }
 
 interface AltcoinsRouteChildren {
+  AltcoinsWhatIsAnAiCryptoTokenRoute: typeof AltcoinsWhatIsAnAiCryptoTokenRoute
+  AltcoinsWhatIsAnAltcoinRoute: typeof AltcoinsWhatIsAnAltcoinRoute
+  AltcoinsWhyDoMemeCoinsHaveValueRoute: typeof AltcoinsWhyDoMemeCoinsHaveValueRoute
   AltcoinsIndexRoute: typeof AltcoinsIndexRoute
 }
 
 const AltcoinsRouteChildren: AltcoinsRouteChildren = {
+  AltcoinsWhatIsAnAiCryptoTokenRoute: AltcoinsWhatIsAnAiCryptoTokenRoute,
+  AltcoinsWhatIsAnAltcoinRoute: AltcoinsWhatIsAnAltcoinRoute,
+  AltcoinsWhyDoMemeCoinsHaveValueRoute: AltcoinsWhyDoMemeCoinsHaveValueRoute,
   AltcoinsIndexRoute: AltcoinsIndexRoute,
 }
 
@@ -2458,6 +2723,7 @@ interface BitcoinRouteChildren {
   BitcoinCommonBitcoinWalletScamsRoute: typeof BitcoinCommonBitcoinWalletScamsRoute
   BitcoinHowBitcoinWalletsWorkRoute: typeof BitcoinHowBitcoinWalletsWorkRoute
   BitcoinHowDoBitcoinEtfsAffectPriceRoute: typeof BitcoinHowDoBitcoinEtfsAffectPriceRoute
+  BitcoinHowDoesBitcoinHalvingWorkRoute: typeof BitcoinHowDoesBitcoinHalvingWorkRoute
   BitcoinHowToBuyYourFirstBitcoinSafelyRoute: typeof BitcoinHowToBuyYourFirstBitcoinSafelyRoute
   BitcoinHowToSendBitcoinSafelyRoute: typeof BitcoinHowToSendBitcoinSafelyRoute
   BitcoinWhatHappensIfYouLoseYourSeedPhraseRoute: typeof BitcoinWhatHappensIfYouLoseYourSeedPhraseRoute
@@ -2466,6 +2732,7 @@ interface BitcoinRouteChildren {
   BitcoinWhatIsABitcoinWalletRoute: typeof BitcoinWhatIsABitcoinWalletRoute
   BitcoinWhatIsBitcoinMiningRoute: typeof BitcoinWhatIsBitcoinMiningRoute
   BitcoinWhatIsTheBitcoinHalvingRoute: typeof BitcoinWhatIsTheBitcoinHalvingRoute
+  BitcoinWhyBitcoinMiningUsesSoMuchEnergyRoute: typeof BitcoinWhyBitcoinMiningUsesSoMuchEnergyRoute
   BitcoinWhyDoBondYieldsAffectBitcoinPriceRoute: typeof BitcoinWhyDoBondYieldsAffectBitcoinPriceRoute
   BitcoinIndexRoute: typeof BitcoinIndexRoute
 }
@@ -2483,6 +2750,7 @@ const BitcoinRouteChildren: BitcoinRouteChildren = {
   BitcoinHowBitcoinWalletsWorkRoute: BitcoinHowBitcoinWalletsWorkRoute,
   BitcoinHowDoBitcoinEtfsAffectPriceRoute:
     BitcoinHowDoBitcoinEtfsAffectPriceRoute,
+  BitcoinHowDoesBitcoinHalvingWorkRoute: BitcoinHowDoesBitcoinHalvingWorkRoute,
   BitcoinHowToBuyYourFirstBitcoinSafelyRoute:
     BitcoinHowToBuyYourFirstBitcoinSafelyRoute,
   BitcoinHowToSendBitcoinSafelyRoute: BitcoinHowToSendBitcoinSafelyRoute,
@@ -2493,6 +2761,8 @@ const BitcoinRouteChildren: BitcoinRouteChildren = {
   BitcoinWhatIsABitcoinWalletRoute: BitcoinWhatIsABitcoinWalletRoute,
   BitcoinWhatIsBitcoinMiningRoute: BitcoinWhatIsBitcoinMiningRoute,
   BitcoinWhatIsTheBitcoinHalvingRoute: BitcoinWhatIsTheBitcoinHalvingRoute,
+  BitcoinWhyBitcoinMiningUsesSoMuchEnergyRoute:
+    BitcoinWhyBitcoinMiningUsesSoMuchEnergyRoute,
   BitcoinWhyDoBondYieldsAffectBitcoinPriceRoute:
     BitcoinWhyDoBondYieldsAffectBitcoinPriceRoute,
   BitcoinIndexRoute: BitcoinIndexRoute,
@@ -2529,11 +2799,13 @@ interface EthereumRouteChildren {
   EthereumEthereumValidatorsExplainedRoute: typeof EthereumEthereumValidatorsExplainedRoute
   EthereumEthereumVsBitcoinRoute: typeof EthereumEthereumVsBitcoinRoute
   EthereumEthereumWalletsExplainedRoute: typeof EthereumEthereumWalletsExplainedRoute
+  EthereumHowDoesEthereumStakingWorkRoute: typeof EthereumHowDoesEthereumStakingWorkRoute
   EthereumHowEthereumWorksRoute: typeof EthereumHowEthereumWorksRoute
   EthereumHowToStakeEthOnLidoVsRocketpoolRoute: typeof EthereumHowToStakeEthOnLidoVsRocketpoolRoute
   EthereumProofOfStakeExplainedRoute: typeof EthereumProofOfStakeExplainedRoute
   EthereumWhatAreGasFeesHowToSaveRoute: typeof EthereumWhatAreGasFeesHowToSaveRoute
   EthereumWhatIsASmartContractRoute: typeof EthereumWhatIsASmartContractRoute
+  EthereumWhatIsAnErc20TokenRoute: typeof EthereumWhatIsAnErc20TokenRoute
   EthereumWhatIsDefiDecentralizedFinanceRoute: typeof EthereumWhatIsDefiDecentralizedFinanceRoute
   EthereumWhatIsEthereumRoute: typeof EthereumWhatIsEthereumRoute
   EthereumWhatIsEthereumStakingRoute: typeof EthereumWhatIsEthereumStakingRoute
@@ -2553,12 +2825,15 @@ const EthereumRouteChildren: EthereumRouteChildren = {
     EthereumEthereumValidatorsExplainedRoute,
   EthereumEthereumVsBitcoinRoute: EthereumEthereumVsBitcoinRoute,
   EthereumEthereumWalletsExplainedRoute: EthereumEthereumWalletsExplainedRoute,
+  EthereumHowDoesEthereumStakingWorkRoute:
+    EthereumHowDoesEthereumStakingWorkRoute,
   EthereumHowEthereumWorksRoute: EthereumHowEthereumWorksRoute,
   EthereumHowToStakeEthOnLidoVsRocketpoolRoute:
     EthereumHowToStakeEthOnLidoVsRocketpoolRoute,
   EthereumProofOfStakeExplainedRoute: EthereumProofOfStakeExplainedRoute,
   EthereumWhatAreGasFeesHowToSaveRoute: EthereumWhatAreGasFeesHowToSaveRoute,
   EthereumWhatIsASmartContractRoute: EthereumWhatIsASmartContractRoute,
+  EthereumWhatIsAnErc20TokenRoute: EthereumWhatIsAnErc20TokenRoute,
   EthereumWhatIsDefiDecentralizedFinanceRoute:
     EthereumWhatIsDefiDecentralizedFinanceRoute,
   EthereumWhatIsEthereumRoute: EthereumWhatIsEthereumRoute,
@@ -2583,6 +2858,7 @@ const GlossaryRouteWithChildren = GlossaryRoute._addFileChildren(
 )
 
 interface GuidesRouteChildren {
+  GuidesCoinVsTokenDifferenceRoute: typeof GuidesCoinVsTokenDifferenceRoute
   GuidesCryptoDollarCostAveragingExplainedRoute: typeof GuidesCryptoDollarCostAveragingExplainedRoute
   GuidesCryptoPortfolioRebalancingExplainedRoute: typeof GuidesCryptoPortfolioRebalancingExplainedRoute
   GuidesCryptoRegulationExplainedForBeginnersRoute: typeof GuidesCryptoRegulationExplainedForBeginnersRoute
@@ -2604,6 +2880,7 @@ interface GuidesRouteChildren {
   GuidesWhatIsACryptoWalletAddressRoute: typeof GuidesWhatIsACryptoWalletAddressRoute
   GuidesWhatIsAPrivateKeyRoute: typeof GuidesWhatIsAPrivateKeyRoute
   GuidesWhatIsAShortSqueezeCryptoExplainedRoute: typeof GuidesWhatIsAShortSqueezeCryptoExplainedRoute
+  GuidesWhatIsASmartContractExplainedRoute: typeof GuidesWhatIsASmartContractExplainedRoute
   GuidesWhatIsAStablecoinRoute: typeof GuidesWhatIsAStablecoinRoute
   GuidesWhatIsAmlInCryptoRoute: typeof GuidesWhatIsAmlInCryptoRoute
   GuidesWhatIsKycInCryptocurrencyRoute: typeof GuidesWhatIsKycInCryptocurrencyRoute
@@ -2615,6 +2892,7 @@ interface GuidesRouteChildren {
 }
 
 const GuidesRouteChildren: GuidesRouteChildren = {
+  GuidesCoinVsTokenDifferenceRoute: GuidesCoinVsTokenDifferenceRoute,
   GuidesCryptoDollarCostAveragingExplainedRoute:
     GuidesCryptoDollarCostAveragingExplainedRoute,
   GuidesCryptoPortfolioRebalancingExplainedRoute:
@@ -2652,6 +2930,8 @@ const GuidesRouteChildren: GuidesRouteChildren = {
   GuidesWhatIsAPrivateKeyRoute: GuidesWhatIsAPrivateKeyRoute,
   GuidesWhatIsAShortSqueezeCryptoExplainedRoute:
     GuidesWhatIsAShortSqueezeCryptoExplainedRoute,
+  GuidesWhatIsASmartContractExplainedRoute:
+    GuidesWhatIsASmartContractExplainedRoute,
   GuidesWhatIsAStablecoinRoute: GuidesWhatIsAStablecoinRoute,
   GuidesWhatIsAmlInCryptoRoute: GuidesWhatIsAmlInCryptoRoute,
   GuidesWhatIsKycInCryptocurrencyRoute: GuidesWhatIsKycInCryptocurrencyRoute,
@@ -2680,28 +2960,26 @@ const LearnRouteWithChildren = LearnRoute._addFileChildren(LearnRouteChildren)
 
 interface NewsRouteChildren {
   NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute: typeof NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute
-  NewsBitcoinFedRateHikeJobsReportSeptember2026Route: typeof NewsBitcoinFedRateHikeJobsReportSeptember2026Route
   NewsBitcoinJobsReportEtfInflowsSeptember2026Route: typeof NewsBitcoinJobsReportEtfInflowsSeptember2026Route
-  NewsBitcoinJobsReportSeptember2026FedRateRiskRoute: typeof NewsBitcoinJobsReportSeptember2026FedRateRiskRoute
   NewsBitcoinRallyAugust2026Route: typeof NewsBitcoinRallyAugust2026Route
   NewsBitcoinSeptemberRallyMacroTestRoute: typeof NewsBitcoinSeptemberRallyMacroTestRoute
   NewsEthereumMergeTwoYearsLaterRoute: typeof NewsEthereumMergeTwoYearsLaterRoute
   NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute: typeof NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute
   NewsLiquidNetworkHack4000BtcWithdrawalRoute: typeof NewsLiquidNetworkHack4000BtcWithdrawalRoute
+  NewsOilAbove100BitcoinCryptoCpiImpactRoute: typeof NewsOilAbove100BitcoinCryptoCpiImpactRoute
   NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute: typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
+  NewsTrezorBrevoPhishingEmailBreach2026Route: typeof NewsTrezorBrevoPhishingEmailBreach2026Route
+  NewsWhatIsOnChainTradingVsExchangeRoute: typeof NewsWhatIsOnChainTradingVsExchangeRoute
   NewsWhatIsTheClarityActCryptoRoute: typeof NewsWhatIsTheClarityActCryptoRoute
+  NewsWhyAreCryptoAtmsEverywhereRoute: typeof NewsWhyAreCryptoAtmsEverywhereRoute
   NewsIndexRoute: typeof NewsIndexRoute
 }
 
 const NewsRouteChildren: NewsRouteChildren = {
   NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute:
     NewsBitcoinEtfOutflowsHawkishFedSpeechCryptoRallyRoute,
-  NewsBitcoinFedRateHikeJobsReportSeptember2026Route:
-    NewsBitcoinFedRateHikeJobsReportSeptember2026Route,
   NewsBitcoinJobsReportEtfInflowsSeptember2026Route:
     NewsBitcoinJobsReportEtfInflowsSeptember2026Route,
-  NewsBitcoinJobsReportSeptember2026FedRateRiskRoute:
-    NewsBitcoinJobsReportSeptember2026FedRateRiskRoute,
   NewsBitcoinRallyAugust2026Route: NewsBitcoinRallyAugust2026Route,
   NewsBitcoinSeptemberRallyMacroTestRoute:
     NewsBitcoinSeptemberRallyMacroTestRoute,
@@ -2710,9 +2988,16 @@ const NewsRouteChildren: NewsRouteChildren = {
     NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute,
   NewsLiquidNetworkHack4000BtcWithdrawalRoute:
     NewsLiquidNetworkHack4000BtcWithdrawalRoute,
+  NewsOilAbove100BitcoinCryptoCpiImpactRoute:
+    NewsOilAbove100BitcoinCryptoCpiImpactRoute,
   NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute:
     NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute,
+  NewsTrezorBrevoPhishingEmailBreach2026Route:
+    NewsTrezorBrevoPhishingEmailBreach2026Route,
+  NewsWhatIsOnChainTradingVsExchangeRoute:
+    NewsWhatIsOnChainTradingVsExchangeRoute,
   NewsWhatIsTheClarityActCryptoRoute: NewsWhatIsTheClarityActCryptoRoute,
+  NewsWhyAreCryptoAtmsEverywhereRoute: NewsWhyAreCryptoAtmsEverywhereRoute,
   NewsIndexRoute: NewsIndexRoute,
 }
 
@@ -2731,11 +3016,13 @@ interface SecurityRouteChildren {
   SecurityHowToAvoidCryptoPhishingScamsRoute: typeof SecurityHowToAvoidCryptoPhishingScamsRoute
   SecurityHowToIdentifyAFakeCryptoWebsiteRoute: typeof SecurityHowToIdentifyAFakeCryptoWebsiteRoute
   SecurityHowToRevokeSmartContractApprovalsRoute: typeof SecurityHowToRevokeSmartContractApprovalsRoute
+  SecurityHowToSpotAFakeCryptoWalletAppRoute: typeof SecurityHowToSpotAFakeCryptoWalletAppRoute
   SecurityHowToSpotARugPullRoute: typeof SecurityHowToSpotARugPullRoute
   SecurityHowToStoreCryptoSeedPhraseSafelyRoute: typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
   SecurityHowToVerifyACryptoTransactionRoute: typeof SecurityHowToVerifyACryptoTransactionRoute
   SecurityPrivateKeyVsSeedPhraseRoute: typeof SecurityPrivateKeyVsSeedPhraseRoute
   SecurityTwoFactorAuthenticationForCryptoRoute: typeof SecurityTwoFactorAuthenticationForCryptoRoute
+  SecurityWhatIsACryptoAtmAreTheySafeRoute: typeof SecurityWhatIsACryptoAtmAreTheySafeRoute
   SecurityWhatIsASeedPhraseRoute: typeof SecurityWhatIsASeedPhraseRoute
   SecurityWhatToDoIfYourCryptoWalletIsHackedRoute: typeof SecurityWhatToDoIfYourCryptoWalletIsHackedRoute
   SecurityIndexRoute: typeof SecurityIndexRoute
@@ -2761,6 +3048,8 @@ const SecurityRouteChildren: SecurityRouteChildren = {
     SecurityHowToIdentifyAFakeCryptoWebsiteRoute,
   SecurityHowToRevokeSmartContractApprovalsRoute:
     SecurityHowToRevokeSmartContractApprovalsRoute,
+  SecurityHowToSpotAFakeCryptoWalletAppRoute:
+    SecurityHowToSpotAFakeCryptoWalletAppRoute,
   SecurityHowToSpotARugPullRoute: SecurityHowToSpotARugPullRoute,
   SecurityHowToStoreCryptoSeedPhraseSafelyRoute:
     SecurityHowToStoreCryptoSeedPhraseSafelyRoute,
@@ -2769,6 +3058,8 @@ const SecurityRouteChildren: SecurityRouteChildren = {
   SecurityPrivateKeyVsSeedPhraseRoute: SecurityPrivateKeyVsSeedPhraseRoute,
   SecurityTwoFactorAuthenticationForCryptoRoute:
     SecurityTwoFactorAuthenticationForCryptoRoute,
+  SecurityWhatIsACryptoAtmAreTheySafeRoute:
+    SecurityWhatIsACryptoAtmAreTheySafeRoute,
   SecurityWhatIsASeedPhraseRoute: SecurityWhatIsASeedPhraseRoute,
   SecurityWhatToDoIfYourCryptoWalletIsHackedRoute:
     SecurityWhatToDoIfYourCryptoWalletIsHackedRoute,
@@ -2816,3 +3107,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

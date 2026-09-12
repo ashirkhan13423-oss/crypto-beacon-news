@@ -21,6 +21,16 @@ const collectionSchema = {
     { "@type": "WebPage", name: "What Is a Blockchain Fork?", url: "https://www.cryptobeacon.site/guides/what-is-a-blockchain-fork" },
     { "@type": "WebPage", name: "What Is a Short Squeeze in Crypto?", url: "https://www.cryptobeacon.site/guides/what-is-a-short-squeeze-crypto-explained" },
     { "@type": "WebPage", name: "How to Spot a Rug Pull", url: "https://www.cryptobeacon.site/security/how-to-spot-a-rug-pull" },
+    {
+      "@type": "WebPage",
+      name: "What is an AI Crypto Token?",
+      url: "https://www.cryptobeacon.site/altcoins/what-is-an-ai-crypto-token",
+    },
+    {
+      "@type": "WebPage",
+      name: "Why Do Meme Coins Have Value?",
+      url: "https://www.cryptobeacon.site/altcoins/why-do-meme-coins-have-value",
+    },
   ],
 };
 

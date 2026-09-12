@@ -8,6 +8,9 @@ import hwMistakesHero from "@/assets/hardware-wallet-mistakes.jpg";
 import verifyTxHero from "@/assets/security-verify-transaction.jpg";
 import hackedHero from "@/assets/hacked-wallet-emergency.jpg";
 
+import hero_atm from "@/assets/security-crypto-atm.jpg";
+import hero_fakewallet from "@/assets/security-fake-wallet-app.jpg";
+
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -48,6 +51,16 @@ const collectionSchema = {
       "@type": "WebPage",
       name: "How to Verify a Crypto Transaction Using a Block Explorer",
       url: "https://www.cryptobeacon.site/security/how-to-verify-a-crypto-transaction",
+    },
+    {
+      "@type": "WebPage",
+      name: "Are Crypto ATMs Safe? Scams and Risks Explained",
+      url: "https://www.cryptobeacon.site/security/what-is-a-crypto-atm-are-they-safe",
+    },
+    {
+      "@type": "WebPage",
+      name: "How to Spot a Fake Crypto Wallet App Before It Steals Your Funds",
+      url: "https://www.cryptobeacon.site/security/how-to-spot-a-fake-crypto-wallet-app",
     },
   ],
 };
@@ -274,6 +287,46 @@ function SecurityPage() {
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 If your crypto wallet has been compromised, every second counts. This emergency guide covers exactly what to do — in order — from the moment you realize something is wrong.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            to="/security/what-is-a-crypto-atm-are-they-safe"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img src={hero_atm} alt="" className="w-full h-full object-cover" loading="lazy" width={1536} height={896} />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Security · Article
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Are Crypto ATMs Safe? Scams and Risks Explained
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                Crypto ATMs offer convenience but come with massive fees and significant risks. Learn how they work and the common scams targeting users.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            to="/security/how-to-spot-a-fake-crypto-wallet-app"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img src={hero_fakewallet} alt="" className="w-full h-full object-cover" loading="lazy" width={1536} height={896} />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Security · Article
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                How to Spot a Fake Crypto Wallet App Before It Steals Your Funds
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                Learn the red flags that distinguish fake crypto wallet apps from legitimate ones: developer mismatches, suspicious permissions, review patterns, and more.
               </p>
             </div>
           </Link>

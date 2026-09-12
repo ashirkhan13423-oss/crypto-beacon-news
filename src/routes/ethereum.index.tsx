@@ -51,6 +51,16 @@ const collectionSchema = {
       name: "What Is DeFi? Decentralized Finance Explained for Beginners",
       url: "https://www.cryptobeacon.site/ethereum/what-is-defi-decentralized-finance",
     },
+    {
+      "@type": "WebPage",
+      name: "What is an ERC-20 Token?",
+      url: "https://www.cryptobeacon.site/ethereum/what-is-an-erc-20-token",
+    },
+    {
+      "@type": "WebPage",
+      name: "How Does Ethereum Staking Work?",
+      url: "https://www.cryptobeacon.site/ethereum/how-does-ethereum-staking-work",
+    },
   ],
 };
 
@@ -287,6 +297,46 @@ function EthereumPage() {
             </div>
           </Link>
 
+
+          <Link
+            to="/ethereum/what-is-an-erc-20-token"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img src="/placeholder-ethereum-erc20-token.png" alt="" className="w-full h-full object-cover" loading="lazy" width={1536} height={896} />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Ethereum · Article
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                What Is an ERC-20 Token? The Standard That Built DeFi
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A plain-language guide to the ERC-20 token standard, how it revolutionized cryptocurrency creation on Ethereum, and why it remains the foundation of decentralized finance.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            to="/ethereum/how-does-ethereum-staking-work"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img src="/placeholder-ethereum-staking-mechanism.png" alt="" className="w-full h-full object-cover" loading="lazy" width={1536} height={896} />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Ethereum · Article
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                How Does Ethereum Staking Work? Proof of Stake Explained
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A plain-language guide to how Ethereum's Proof of Stake consensus works, what validators do, and how staking yield is generated without mining hardware.
+              </p>
+            </div>
+          </Link>
         </div>
       </main>
       <SiteFooter />

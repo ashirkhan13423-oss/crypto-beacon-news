@@ -11,6 +11,9 @@ import etfHero from "@/assets/bitcoin-etf-effects.jpg";
 import bondYieldsHero from "@/assets/bitcoin-bond-yields.jpg";
 import { Bitcoin } from "lucide-react";
 
+import hero_miningenergy from "@/assets/bitcoin-mining-energy.jpg";
+import hero_halvingmech from "@/assets/bitcoin-halving-mechanism.jpg";
+
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -61,6 +64,16 @@ const collectionSchema = {
       "@type": "WebPage",
       name: "The Bitcoin Lightning Network Explained: Instant, Cheap Bitcoin Payments",
       url: "https://www.cryptobeacon.site/bitcoin/bitcoin-lightning-network-explained",
+    },
+    {
+      "@type": "WebPage",
+      name: "Why Bitcoin Mining Uses So Much Energy: The Proof of Work Mechanism",
+      url: "https://www.cryptobeacon.site/bitcoin/why-bitcoin-mining-uses-so-much-energy",
+    },
+    {
+      "@type": "WebPage",
+      name: "How Does Bitcoin Halving Work? The Protocol Mechanism Explained",
+      url: "https://www.cryptobeacon.site/bitcoin/how-does-bitcoin-halving-work",
     },
   ],
 };
@@ -353,6 +366,46 @@ function BitcoinPage() {
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 How the Bitcoin Lightning Network works — payment channels, routing, HTLCs, and the trade-offs compared to on-chain transactions — explained in plain language.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            to="/bitcoin/why-bitcoin-mining-uses-so-much-energy"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img src={hero_miningenergy} alt="" className="w-full h-full object-cover" loading="lazy" width={1536} height={896} />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Bitcoin · Article
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Why Bitcoin Mining Uses So Much Energy: The Proof of Work Mechanism
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                An objective look at the mechanics of Bitcoin mining, why it requires massive energy consumption, and the debate surrounding its environmental impact.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            to="/bitcoin/how-does-bitcoin-halving-work"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img src={hero_halvingmech} alt="" className="w-full h-full object-cover" loading="lazy" width={1536} height={896} />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Bitcoin · Article
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                How Does Bitcoin Halving Work? The Protocol Mechanism Explained
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A detailed technical explanation of the Bitcoin halving mechanism, how it controls supply issuance, and why it is programmed into the protocol.
               </p>
             </div>
           </Link>

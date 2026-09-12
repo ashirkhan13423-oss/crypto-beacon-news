@@ -62,6 +62,16 @@ const collectionSchema = {
       name: "Dollar-Cost Averaging (DCA) in Crypto: What It Is and How It Works",
       url: "https://www.cryptobeacon.site/guides/crypto-dollar-cost-averaging-explained",
     },
+    {
+      "@type": "WebPage",
+      name: "What is a Smart Contract? Explained Simply",
+      url: "https://www.cryptobeacon.site/guides/what-is-a-smart-contract-explained",
+    },
+    {
+      "@type": "WebPage",
+      name: "The Difference Between a Coin and a Token",
+      url: "https://www.cryptobeacon.site/guides/coin-vs-token-difference",
+    },
   ],
 };
 
@@ -349,6 +359,46 @@ function GuidesHub() {
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 A plain-language guide to Dollar-Cost Averaging (DCA) in crypto. Learn how this systematic investment strategy reduces volatility risk and removes emotion from buying Bitcoin and Ethereum.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            to="/guides/what-is-a-smart-contract-explained"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img src="/placeholder-guides-smart-contract.png" alt="" className="w-full h-full object-cover" loading="lazy" width={1536} height={896} />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Guides · Article
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                What Is a Smart Contract? The Vending Machine Analogy
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A plain-language guide to understanding smart contracts, how automated blockchain agreements work, and why they are foundational to decentralized finance.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            to="/guides/coin-vs-token-difference"
+            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
+          >
+            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
+              <img src="/placeholder-guides-coin-vs-token.png" alt="" className="w-full h-full object-cover" loading="lazy" width={1536} height={896} />
+            </div>
+            <div className="p-lg">
+              <span className="font-label-caps text-label-caps text-secondary font-semibold">
+                Guides · Article
+              </span>
+              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
+                Coin vs. Token: What Is the Actual Difference?
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                A clear explanation of the difference between cryptocurrency coins and tokens, how they function on different network layers, and why the distinction matters.
               </p>
             </div>
           </Link>

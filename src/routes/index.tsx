@@ -49,6 +49,10 @@ import hero_83 from "@/assets/seed-phrase-vault.jpg";
 import hero_84 from "@/assets/security-verify-transaction.jpg";
 import hero_88 from "@/assets/hacked-wallet-emergency.jpg";
 import hero_trezor from "@/assets/trezor-phishing-breach.jpg";
+import hero_atm from "@/assets/security-crypto-atm.jpg";
+import hero_fakewallet from "@/assets/security-fake-wallet-app.jpg";
+import hero_miningenergy from "@/assets/bitcoin-mining-energy.jpg";
+import hero_halvingmech from "@/assets/bitcoin-halving-mechanism.jpg";
 
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
@@ -201,6 +205,102 @@ export const Route = createFileRoute("/")({
 });
 
 const articles = [
+  {
+    to: "/security/what-is-a-crypto-atm-are-they-safe",
+    image: hero_atm,
+    alt: "",
+    tag: "Security · Article",
+    title: "Are Crypto ATMs Safe? Scams and Risks Explained",
+    desc: "Crypto ATMs offer convenience but come with massive fees and significant risks. Learn how they work and the common scams targeting users.",
+  },
+  {
+    to: "/security/how-to-spot-a-fake-crypto-wallet-app",
+    image: hero_fakewallet,
+    alt: "",
+    tag: "Security · Article",
+    title: "How to Spot a Fake Crypto Wallet App Before It Steals Your Funds",
+    desc: "Learn the red flags that distinguish fake crypto wallet apps from legitimate ones: developer mismatches, suspicious permissions, review patterns, and more.",
+  },
+  {
+    to: "/bitcoin/why-bitcoin-mining-uses-so-much-energy",
+    image: hero_miningenergy,
+    alt: "",
+    tag: "Bitcoin · Article",
+    title: "Why Bitcoin Mining Uses So Much Energy: The Proof of Work Mechanism",
+    desc: "An objective look at the mechanics of Bitcoin mining, why it requires massive energy consumption, and the debate surrounding its environmental impact.",
+  },
+  {
+    to: "/bitcoin/how-does-bitcoin-halving-work",
+    image: hero_halvingmech,
+    alt: "",
+    tag: "Bitcoin · Article",
+    title: "How Does Bitcoin Halving Work? The Protocol Mechanism Explained",
+    desc: "A detailed technical explanation of the Bitcoin halving mechanism, how it controls supply issuance, and why it is programmed into the protocol.",
+  },
+  {
+    to: "/guides/what-is-a-smart-contract-explained",
+    image: undefined,
+    alt: "",
+    tag: "Guides · Article",
+    title: "What Is a Smart Contract? The Vending Machine Analogy",
+    desc: "A plain-language guide to understanding smart contracts, how automated blockchain agreements work, and why they are foundational to decentralized finance.",
+  },
+  {
+    to: "/guides/coin-vs-token-difference",
+    image: undefined,
+    alt: "",
+    tag: "Guides · Article",
+    title: "Coin vs. Token: What Is the Actual Difference?",
+    desc: "A clear explanation of the difference between cryptocurrency coins and tokens, how they function on different network layers, and why the distinction matters.",
+  },
+  {
+    to: "/news/why-are-crypto-atms-everywhere",
+    image: undefined,
+    alt: "",
+    tag: "News · Article",
+    title: "Why Are Crypto ATMs Suddenly Everywhere?",
+    desc: "A look at the economics driving the rapid expansion of cryptocurrency ATMs in gas stations and convenience stores, and the regulatory backlash they are facing.",
+  },
+  {
+    to: "/news/what-is-on-chain-trading-vs-exchange",
+    image: undefined,
+    alt: "",
+    tag: "News · Article",
+    title: "What Is On-Chain Trading vs. Exchange Trading?",
+    desc: "A breakdown of the differences between executing trades directly on a blockchain (DeFi) versus using a centralized cryptocurrency exchange.",
+  },
+  {
+    to: "/ethereum/what-is-an-erc-20-token",
+    image: undefined,
+    alt: "",
+    tag: "Ethereum · Article",
+    title: "What Is an ERC-20 Token? The Standard That Built DeFi",
+    desc: "A plain-language guide to the ERC-20 token standard, how it revolutionized cryptocurrency creation on Ethereum, and why it remains the foundation of decentralized finance.",
+  },
+  {
+    to: "/ethereum/how-does-ethereum-staking-work",
+    image: undefined,
+    alt: "",
+    tag: "Ethereum · Article",
+    title: "How Does Ethereum Staking Work? Proof of Stake Explained",
+    desc: "A plain-language guide to how Ethereum's Proof of Stake consensus works, what validators do, and how staking yield is generated without mining hardware.",
+  },
+  {
+    to: "/altcoins/what-is-an-ai-crypto-token",
+    image: undefined,
+    alt: "",
+    tag: "Altcoins · Article",
+    title: "What Is an AI Crypto Token? Mechanics and Hype Explained",
+    desc: "An objective explanation of what AI crypto tokens are, how they attempt to blend blockchain with artificial intelligence, and how to separate the technology from the hype.",
+  },
+  {
+    to: "/altcoins/why-do-meme-coins-have-value",
+    image: undefined,
+    alt: "",
+    tag: "Altcoins · Article",
+    title: "Why Do Meme Coins Have Value? The Economics of Attention",
+    desc: "An analytical look at meme coins, explaining how community attention, liquidity, and social momentum temporarily create financial value out of internet jokes.",
+  },
   {
     to: "/bitcoin/bitcoin-address-vs-wallet-address",
     image: undefined,

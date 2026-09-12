@@ -57,6 +57,16 @@ const collectionSchema = {
       name: "The Ethereum Merge: Two Years Later — What Actually Changed",
       url: "https://www.cryptobeacon.site/news/ethereum-merge-two-years-later",
     },
+    {
+      "@type": "WebPage",
+      name: "Why Are Crypto ATMs Everywhere?",
+      url: "https://www.cryptobeacon.site/news/why-are-crypto-atms-everywhere",
+    },
+    {
+      "@type": "WebPage",
+      name: "On-Chain Trading vs Exchange Trading",
+      url: "https://www.cryptobeacon.site/news/what-is-on-chain-trading-vs-exchange",
+    },
   ],
 };
 

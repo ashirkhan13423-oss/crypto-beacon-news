@@ -313,12 +313,39 @@ function ArticlePage() {
           <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
             <Link
-              to="/guides/what-is-a-blockchain-fork"
+              to="/guides/coin-vs-token-difference"
               className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
             >
               <span className="font-label-caps text-label-caps text-secondary">Guides</span>
               <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What Is a Blockchain Fork?
+                Coin vs Token
+              </h3>
+            </Link>
+            <Link
+              to="/altcoins/what-is-an-ai-crypto-token"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Altcoins</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                What is an AI Crypto Token?
+              </h3>
+            </Link>
+            <Link
+              to="/altcoins/why-do-meme-coins-have-value"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Altcoins</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                Why Do Meme Coins Have Value?
+              </h3>
+            </Link>
+            <Link
+              to="/ethereum/what-is-an-erc-20-token"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                What is an ERC-20 Token?
               </h3>
             </Link>
             <Link
