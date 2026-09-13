@@ -53,6 +53,7 @@ import hero_atm from "@/assets/security-crypto-atm.jpg";
 import hero_fakewallet from "@/assets/security-fake-wallet-app.jpg";
 import hero_miningenergy from "@/assets/bitcoin-mining-energy.jpg";
 import hero_halvingmech from "@/assets/bitcoin-halving-mechanism.jpg";
+import hero_symbiosis from "@/assets/symbiosis-bridge-exploit-hero.jpg";
 
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
@@ -205,6 +206,14 @@ export const Route = createFileRoute("/")({
 });
 
 const articles = [
+  {
+    to: "/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint",
+    image: hero_symbiosis,
+    alt: "Futuristic glowing bridge connecting blockchain networks with a red alert indicating a breach",
+    tag: "News · Article",
+    title: "Symbiosis Bitcoin Bridge Exploit Mints Unbacked syBTC: What Users Should Check",
+    desc: "The Symbiosis cross-chain protocol suspended its Bitcoin route after an exploit in its BridgeV2 logic allowed an attacker to mint unbacked synthetic Bitcoin (syBTC). Find out what happened and what users should check.",
+  },
   {
     to: "/security/what-is-a-crypto-atm-are-they-safe",
     image: hero_atm,
