@@ -6,8 +6,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/how-bitcoin-wallets-work";
 const TITLE = "How Bitcoin Wallets Work: Private Keys, Addresses & Signing | CryptoBeacon";
-const DESC =
-  "A plain-language technical guide to how Bitcoin wallets actually work — private keys, public keys, wallet addresses, HD wallets, and transaction signing explained from first principles.";
+const DESC = "A plain-language technical guide to how Bitcoin wallets actually work — private keys, public keys, wallet addresses, HD wallets, and transaction signing expl...";
 const PUBLISHED = "2026-09-01";
 
 const faqs: { q: string; a: string }[] = [
@@ -92,7 +91,8 @@ export const Route = createFileRoute("/bitcoin/how-bitcoin-wallets-work")({
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/how-bitcoin-wallets-work" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

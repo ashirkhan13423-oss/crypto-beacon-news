@@ -131,6 +131,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { property: "og:image", content: `${SITE_URL}/og-image.png` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:url", content: `${SITE_URL}/` },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "CryptoBeacon | Crypto News, Guides & Security" },
       {
@@ -142,7 +145,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "icon", href: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📰</text></svg>", type: "image/svg+xml" },
 
       {
         rel: "stylesheet",
@@ -163,6 +166,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { type: "application/ld+json", children: JSON.stringify(websiteSchema) },
       { type: "application/ld+json", children: JSON.stringify(organizationSchema) },
+      {
+        children: `if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost') { window.location.href = window.location.href.replace('http:', 'https:'); }`,
+      },
     ],
   }),
   shellComponent: RootShell,

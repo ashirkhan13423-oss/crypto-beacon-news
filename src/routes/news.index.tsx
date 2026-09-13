@@ -86,7 +86,8 @@ export const Route = createFileRoute("/news/")({
       { property: "og:url", content: "https://www.cryptobeacon.site/news" },
       { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: "https://www.cryptobeacon.site/news" }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/news" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
   }),
   component: NewsHub,

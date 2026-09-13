@@ -6,8 +6,7 @@ import { Plus, AlertTriangle } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-seed-phrase";
 const TITLE = "What Is a Bitcoin Seed Phrase? BIP-39 Explained | CryptoBeacon";
-const DESC =
-  "A Bitcoin seed phrase is the 12 or 24 words that back up your entire wallet. Learn what seed phrases are, how BIP-39 works, 12 vs 24 words, and why losing yours means losing your Bitcoin.";
+const DESC = "A Bitcoin seed phrase is the 12 or 24 words that back up your entire wallet. Learn what seed phrases are, how BIP-39 works, 12 vs 24 words, and why losing yo...";
 const PUBLISHED = "2026-09-01";
 
 const faqs: { q: string; a: string }[] = [
@@ -96,7 +95,8 @@ export const Route = createFileRoute("/bitcoin/what-is-a-bitcoin-seed-phrase")({
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-seed-phrase" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

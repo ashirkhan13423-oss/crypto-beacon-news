@@ -37,7 +37,8 @@ export const Route = createFileRoute("/defi/")({
       { property: "og:url", content: URL },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/defi" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(collectionSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchemaFromItems([{ label: "DeFi" }])) },

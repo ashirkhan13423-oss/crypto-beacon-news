@@ -159,3 +159,88 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ═══ RESPONSIVE FIXES ═══ */
+
+/* Prevent horizontal overflow on all screen sizes */
+html, body {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Make all images responsive by default */
+img, video, svg, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive tables: horizontal scroll wrapper */
+table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Responsive iframes (YouTube embeds, etc.) */
+iframe {
+  max-width: 100%;
+}
+
+/* Responsive code blocks */
+pre, code {
+  overflow-x: auto;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Prevent long URLs or strings from breaking layout */
+a, p, li, td, th, span, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Minimum tap target size for mobile */
+@media (max-width: 768px) {
+  a, button, [role="button"], summary {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Tighter padding on mobile */
+  main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Stack grids on mobile */
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 1024px) {
+  /* Ensure max-width containers don't overflow */
+  .max-w-4xl, .max-w-5xl, .max-w-6xl, .max-w-7xl {
+    max-width: 100%;
+  }
+}
+
+/* Print styles for articles */
+@media print {
+  nav, footer, header, .ad-unit, [role="navigation"] {
+    display: none !important;
+  }
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+}

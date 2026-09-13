@@ -21,7 +21,8 @@ export const Route = createFileRoute("/privacy")({
       { property: "og:url", content: "https://www.cryptobeacon.site/privacy" },
       { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: "https://www.cryptobeacon.site/privacy" }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/privacy" }],
   }),
   component: PrivacyPage,
 });

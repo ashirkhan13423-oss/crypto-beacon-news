@@ -6,8 +6,7 @@ import { Plus, AlertTriangle } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/what-happens-if-you-lose-your-seed-phrase";
 const TITLE = "What Happens If You Lose Your Bitcoin Seed Phrase? | CryptoBeacon";
-const DESC =
-  "Losing your Bitcoin seed phrase with no other backup means permanent, irrecoverable loss of access to your funds. Understand why, what limited options exist, and how to prevent it.";
+const DESC = "Losing your Bitcoin seed phrase with no other backup means permanent, irrecoverable loss of access to your funds. Understand why, what limited options exist,...";
 const PUBLISHED = "2026-09-01";
 
 const faqs: { q: string; a: string }[] = [
@@ -92,7 +91,8 @@ export const Route = createFileRoute("/bitcoin/what-happens-if-you-lose-your-see
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/what-happens-if-you-lose-your-seed-phrase" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

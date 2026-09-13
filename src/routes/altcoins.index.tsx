@@ -44,7 +44,8 @@ export const Route = createFileRoute("/altcoins/")({
       { property: "og:url", content: URL },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/altcoins" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(collectionSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchemaFromItems([{ label: "Altcoins" }])) },

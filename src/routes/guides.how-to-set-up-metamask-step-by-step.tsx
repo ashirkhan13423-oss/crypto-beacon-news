@@ -8,8 +8,7 @@ import { CheckCircle, AlertTriangle, Info, ShieldCheck } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/guides/how-to-set-up-metamask-step-by-step";
 const TITLE = "How to Set Up MetaMask: Step-by-Step Walkthrough (2026) | CryptoBeacon";
-const DESC =
-  "A first-hand walkthrough of setting up MetaMask from scratch — installing the extension, securing your seed phrase, adding a network, and making your first transaction safely.";
+const DESC = "A first-hand walkthrough of setting up MetaMask from scratch — installing the extension, securing your seed phrase, adding a network, and making your first t...";
 const PUBLISHED = "2026-08-25";
 
 const howToSchema = {
@@ -94,7 +93,8 @@ export const Route = createFileRoute("/guides/how-to-set-up-metamask-step-by-ste
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/how-to-set-up-metamask-step-by-step" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(howToSchema) },

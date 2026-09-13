@@ -14,8 +14,7 @@ import {
 
 const AUTHOR_URL = "https://www.cryptobeacon.site/author";
 const TITLE = "Ashir Khan — Writer & Researcher at CryptoBeacon";
-const DESC =
-  "Ashir Khan writes and researches cryptocurrency security, self-custody, macro analysis, and regulatory policy at CryptoBeacon, translating technical concepts into clear, source-verified reporting.";
+const DESC = "Ashir Khan writes and researches cryptocurrency security, self-custody, macro analysis, and regulatory policy at CryptoBeacon, translating technical concepts...";
 
 const personSchema = {
   "@context": "https://schema.org",
@@ -65,7 +64,8 @@ export const Route = createFileRoute("/author")({
       { property: "og:url", content: AUTHOR_URL },
       { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: AUTHOR_URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/author" },{ rel: "canonical", href: AUTHOR_URL }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(personSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },

@@ -9,8 +9,7 @@ const URL =
   "https://www.cryptobeacon.site/news/oil-above-100-bitcoin-crypto-cpi-impact";
 const TITLE =
   "Oil Above $100 Ahead of U.S. CPI: What It Means for Bitcoin and Crypto | CryptoBeacon";
-const DESC =
-  "Brent crude remains above $100 after Middle East escalation, raising a new inflation and rate-risk threat for Bitcoin and broader crypto markets ahead of key U.S. CPI data.";
+const DESC = "Brent crude remains above $100 after Middle East escalation, raising a new inflation and rate-risk threat for Bitcoin and broader crypto markets ahead of key...";
 const PUBLISHED = "2026-09-10";
 
 const faqs = [
@@ -122,7 +121,8 @@ export const Route = createFileRoute(
         content: `https://www.cryptobeacon.site${hero}`,
       },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/news/oil-above-100-bitcoin-crypto-cpi-impact" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

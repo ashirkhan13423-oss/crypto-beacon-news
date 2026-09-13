@@ -194,7 +194,8 @@ export const Route = createFileRoute("/")({
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: `${SITE_URL}/og-image.png` },
     ],
-    links: [{ rel: "canonical", href: PAGE_URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/" }],
     scripts: [
       {
         type: "application/ld+json",

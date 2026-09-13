@@ -66,7 +66,8 @@ export const Route = createFileRoute("/ethereum/ethereum-complete-beginners-guid
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/ethereum/ethereum-complete-beginners-guide" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },

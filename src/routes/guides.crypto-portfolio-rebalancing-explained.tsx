@@ -9,8 +9,7 @@ import { ChevronDown } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/guides/crypto-portfolio-rebalancing-explained";
 const TITLE = "Crypto Portfolio Rebalancing Explained (With Worked Example) | CryptoBeacon";
-const DESC =
-  "What crypto portfolio rebalancing is, when to do it, and how — with a realistic worked example showing exactly how the math works and what taxes to watch out for.";
+const DESC = "What crypto portfolio rebalancing is, when to do it, and how — with a realistic worked example showing exactly how the math works and what taxes to watch out...";
 const PUBLISHED = "2026-08-25";
 
 const articleSchema = {
@@ -106,7 +105,8 @@ export const Route = createFileRoute("/guides/crypto-portfolio-rebalancing-expla
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/crypto-portfolio-rebalancing-explained" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

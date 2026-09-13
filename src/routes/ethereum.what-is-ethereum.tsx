@@ -6,8 +6,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/ethereum/what-is-ethereum";
 const TITLE = "What Is Ethereum? A Plain-Language Introduction | CryptoBeacon";
-const DESC =
-  "What is Ethereum? A clear, beginner-friendly explanation of what Ethereum is, how it differs from Bitcoin, what the EVM is, and why it became the foundation for DeFi, NFTs, and Web3.";
+const DESC = "What is Ethereum? A clear, beginner-friendly explanation of what Ethereum is, how it differs from Bitcoin, what the EVM is, and why it became the foundation ...";
 const PUBLISHED = "2026-09-01";
 
 const faqs: { q: string; a: string }[] = [
@@ -61,7 +60,8 @@ export const Route = createFileRoute("/ethereum/what-is-ethereum")({
       { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Ethereum" },
       { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/ethereum/what-is-ethereum" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

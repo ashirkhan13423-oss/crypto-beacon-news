@@ -5,8 +5,7 @@ import { Breadcrumbs, breadcrumbSchemaFromItems } from "@/components/Breadcrumbs
 
 const URL = "https://www.cryptobeacon.site/etfs";
 const TITLE = "Crypto ETFs & Institutional Investment | CryptoBeacon";
-const DESC =
-  "Understand how spot Bitcoin and Ethereum ETFs work mechanically, what drives daily inflow and outflow numbers, and how institutional adoption is changing crypto market structure.";
+const DESC = "Understand how spot Bitcoin and Ethereum ETFs work mechanically, what drives daily inflow and outflow numbers, and how institutional adoption is changing cry...";
 
 const collectionSchema = {
   "@context": "https://schema.org",
@@ -33,7 +32,8 @@ export const Route = createFileRoute("/etfs/")({
       { property: "og:url", content: URL },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/etfs" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(collectionSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchemaFromItems([{ label: "ETFs & Institutional" }])) },

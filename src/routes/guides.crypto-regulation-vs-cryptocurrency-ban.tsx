@@ -6,8 +6,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/guides/crypto-regulation-vs-cryptocurrency-ban";
 const TITLE = "Crypto Regulation vs Crypto Ban: Understanding the Difference | CryptoBeacon";
-const DESC =
-  "What is the difference between regulating cryptocurrency and banning it? A look at how countries choose their approach, why bans often fail, and why regulation is the dominant global strategy.";
+const DESC = "What is the difference between regulating cryptocurrency and banning it? A look at how countries choose their approach, why bans often fail, and why regulati...";
 const PUBLISHED = "2026-09-01";
 
 const faqs: { q: string; a: string }[] = [
@@ -60,7 +59,8 @@ export const Route = createFileRoute("/guides/crypto-regulation-vs-cryptocurrenc
       { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Guides" },
       { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/crypto-regulation-vs-cryptocurrency-ban" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

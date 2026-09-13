@@ -6,8 +6,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/ethereum/ethereum-validators-explained";
 const TITLE = "Ethereum Validators Explained: Requirements, Duties & Risks | CryptoBeacon";
-const DESC =
-  "What is an Ethereum validator? Learn about the 32 ETH requirement, validator duties (proposing and attesting), the validator lifecycle, slashing risks, and what happens when validators go offline.";
+const DESC = "What is an Ethereum validator? Learn about the 32 ETH requirement, validator duties (proposing and attesting), the validator lifecycle, slashing risks, and w...";
 const PUBLISHED = "2026-09-01";
 
 const faqs: { q: string; a: string }[] = [
@@ -61,7 +60,8 @@ export const Route = createFileRoute("/ethereum/ethereum-validators-explained")(
       { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Ethereum" },
       { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/ethereum/ethereum-validators-explained" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

@@ -19,7 +19,8 @@ export const Route = createFileRoute("/disclaimer")({
       { property: "og:url", content: URL },
       { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/disclaimer" }],
   }),
   component: DisclaimerPage,
 });

@@ -6,7 +6,7 @@ import hero from "@/assets/news-standard-chartered-uae.jpg";
 
 const URL = "https://www.cryptobeacon.site/news/standard-chartered-uae-institutional-bitcoin-ether-trading";
 const TITLE = "Standard Chartered Launches Bitcoin and Ether Spot Trading for UAE Institutions | CryptoBeacon";
-const DESC = "Standard Chartered has launched deliverable spot trading for Bitcoin and Ether for institutional clients in the UAE. Explore how this move bridges traditional finance and crypto.";
+const DESC = "Standard Chartered has launched deliverable spot trading for Bitcoin and Ether for institutional clients in the UAE. Explore how this move bridges traditiona...";
 const PUBLISHED = "2026-09-04";
 
 const articleSchema = {
@@ -82,7 +82,8 @@ export const Route = createFileRoute("/news/standard-chartered-uae-institutional
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: `https://www.cryptobeacon.site${hero}` },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/news/standard-chartered-uae-institutional-bitcoin-ether-trading" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },

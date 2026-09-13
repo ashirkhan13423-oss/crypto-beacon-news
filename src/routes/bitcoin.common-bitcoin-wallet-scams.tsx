@@ -6,8 +6,7 @@ import { Plus, AlertTriangle } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/common-bitcoin-wallet-scams";
 const TITLE = "Common Bitcoin Wallet Scams: How to Spot and Avoid Them | CryptoBeacon";
-const DESC =
-  "Fake wallet apps, clipboard hijackers, seed phrase phishing, and supply chain attacks on hardware wallets — the most common Bitcoin wallet scams explained with red flags to watch for.";
+const DESC = "Fake wallet apps, clipboard hijackers, seed phrase phishing, and supply chain attacks on hardware wallets — the most common Bitcoin wallet scams explained wi...";
 const PUBLISHED = "2026-09-01";
 
 const faqs: { q: string; a: string }[] = [
@@ -92,7 +91,8 @@ export const Route = createFileRoute("/bitcoin/common-bitcoin-wallet-scams")({
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/common-bitcoin-wallet-scams" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

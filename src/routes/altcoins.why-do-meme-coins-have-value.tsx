@@ -103,7 +103,8 @@ export const Route = createFileRoute("/altcoins/why-do-meme-coins-have-value")({
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/altcoins/why-do-meme-coins-have-value" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

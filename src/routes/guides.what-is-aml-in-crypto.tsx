@@ -6,8 +6,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/guides/what-is-aml-in-crypto";
 const TITLE = "What Is AML in Crypto? Anti-Money Laundering Rules Explained | CryptoBeacon";
-const DESC =
-  "What is AML (Anti-Money Laundering) in cryptocurrency? An explanation of the FATF travel rule, transaction monitoring, suspicious activity reports (SARs), and how exchanges trace illicit funds.";
+const DESC = "What is AML (Anti-Money Laundering) in cryptocurrency? An explanation of the FATF travel rule, transaction monitoring, suspicious activity reports (SARs), an...";
 const PUBLISHED = "2026-09-01";
 
 const faqs: { q: string; a: string }[] = [
@@ -60,7 +59,8 @@ export const Route = createFileRoute("/guides/what-is-aml-in-crypto")({
       { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Guides" },
       { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/what-is-aml-in-crypto" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

@@ -17,7 +17,8 @@ export const Route = createFileRoute("/learn/")({
       { property: "og:url", content: URL },
       { property: "article:published_time", content: "2026-08-06" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/learn" }],
     scripts: [
       {
         type: "application/ld+json",

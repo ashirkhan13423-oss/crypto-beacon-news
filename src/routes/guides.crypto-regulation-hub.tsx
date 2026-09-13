@@ -6,8 +6,7 @@ import { Scale, Globe, FileText, Shield, Building2, DollarSign, AlertTriangle, B
 
 const URL = "https://www.cryptobeacon.site/guides/crypto-regulation-hub";
 const TITLE = "Cryptocurrency Regulation Hub: Complete Guide | CryptoBeacon";
-const DESC =
-  "The definitive cryptocurrency regulation hub — how crypto regulation works globally, KYC and AML explained, stablecoin laws, exchange licensing, crypto taxes, and why regulation matters for investors.";
+const DESC = "The definitive cryptocurrency regulation hub — how crypto regulation works globally, KYC and AML explained, stablecoin laws, exchange licensing, crypto taxes...";
 const PUBLISHED = "2026-09-01";
 
 const articleSchema = {
@@ -59,7 +58,8 @@ export const Route = createFileRoute("/guides/crypto-regulation-hub")({
       { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Guides" },
       { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/crypto-regulation-hub" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },

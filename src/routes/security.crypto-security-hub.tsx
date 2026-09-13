@@ -6,8 +6,7 @@ import { Shield, AlertTriangle, Lock, Eye, Key, Smartphone, Globe, UserX, Wifi }
 
 const URL = "https://www.cryptobeacon.site/security/crypto-security-hub";
 const TITLE = "Crypto Security Hub: Complete Guide to Protecting Your Assets | CryptoBeacon";
-const DESC =
-  "The definitive crypto security hub — phishing scams, wallet drainers, fake apps, seed phrase storage, private keys, 2FA, exchange security, and everything you need to protect your cryptocurrency.";
+const DESC = "The definitive crypto security hub — phishing scams, wallet drainers, fake apps, seed phrase storage, private keys, 2FA, exchange security, and everything yo...";
 const PUBLISHED = "2026-09-01";
 
 const articleSchema = {
@@ -61,7 +60,8 @@ export const Route = createFileRoute("/security/crypto-security-hub")({
       { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Security" },
       { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/security/crypto-security-hub" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },

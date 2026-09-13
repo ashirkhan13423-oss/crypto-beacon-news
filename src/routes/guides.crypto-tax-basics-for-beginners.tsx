@@ -8,8 +8,7 @@ import { ShieldCheck, Receipt } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/guides/crypto-tax-basics-for-beginners";
 const TITLE = "Crypto Tax Basics for Beginners: What You Need to Know | CryptoBeacon";
-const DESC =
-  "A simplified guide to understanding cryptocurrency taxation, covering capital gains, taxable events, and why trading one crypto for another triggers a tax liability.";
+const DESC = "A simplified guide to understanding cryptocurrency taxation, covering capital gains, taxable events, and why trading one crypto for another triggers a tax li...";
 const PUBLISHED = "2026-08-20";
 
 const faqs: { q: string; a: string }[] = [
@@ -114,7 +113,8 @@ export const Route = createFileRoute("/guides/crypto-tax-basics-for-beginners")(
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/crypto-tax-basics-for-beginners" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

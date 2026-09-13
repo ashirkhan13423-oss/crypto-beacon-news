@@ -83,7 +83,8 @@ export const Route = createFileRoute("/news/what-is-the-clarity-act-crypto")({
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/news/what-is-the-clarity-act-crypto" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },

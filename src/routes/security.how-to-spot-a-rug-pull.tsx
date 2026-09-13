@@ -7,8 +7,7 @@ import hero from "@/assets/spot-rug-pull.jpg";
 
 const URL = "https://www.cryptobeacon.site/security/how-to-spot-a-rug-pull";
 const TITLE = "How to Spot a Crypto Rug Pull: Red Flags to Watch For | CryptoBeacon";
-const DESC =
-  "Learn how to identify malicious cryptocurrency projects before they steal your funds. A guide to spotting liquidity drainers, hidden mint functions, and deceptive marketing.";
+const DESC = "Learn how to identify malicious cryptocurrency projects before they steal your funds. A guide to spotting liquidity drainers, hidden mint functions, and dece...";
 const PUBLISHED = "2026-08-20";
 
 const faqs: { q: string; a: string }[] = [
@@ -113,7 +112,8 @@ export const Route = createFileRoute("/security/how-to-spot-a-rug-pull")({
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/security/how-to-spot-a-rug-pull" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

@@ -67,6 +67,7 @@ import { Route as NewsWhyAreCryptoAtmsEverywhereRouteImport } from './routes/new
 import { Route as NewsWhatIsTheClarityActCryptoRouteImport } from './routes/news.what-is-the-clarity-act-crypto'
 import { Route as NewsWhatIsOnChainTradingVsExchangeRouteImport } from './routes/news.what-is-on-chain-trading-vs-exchange'
 import { Route as NewsTrezorBrevoPhishingEmailBreach2026RouteImport } from './routes/news.trezor-brevo-phishing-email-breach-2026'
+import { Route as NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRouteImport } from './routes/news.symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint'
 import { Route as NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport } from './routes/news.standard-chartered-uae-institutional-bitcoin-ether-trading'
 import { Route as NewsOilAbove100BitcoinCryptoCpiImpactRouteImport } from './routes/news.oil-above-100-bitcoin-crypto-cpi-impact'
 import { Route as NewsLiquidNetworkHack4000BtcWithdrawalRouteImport } from './routes/news.liquid-network-hack-4000-btc-withdrawal'
@@ -458,6 +459,12 @@ const NewsTrezorBrevoPhishingEmailBreach2026Route =
   NewsTrezorBrevoPhishingEmailBreach2026RouteImport.update({
     id: '/trezor-brevo-phishing-email-breach-2026',
     path: '/trezor-brevo-phishing-email-breach-2026',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRoute =
+  NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRouteImport.update({
+    id: '/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint',
+    path: '/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint',
     getParentRoute: () => NewsRoute,
   } as any)
 const NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute =
@@ -1018,6 +1025,7 @@ export interface FileRoutesByFullPath {
   '/news/liquid-network-hack-4000-btc-withdrawal': typeof NewsLiquidNetworkHack4000BtcWithdrawalRoute
   '/news/oil-above-100-bitcoin-crypto-cpi-impact': typeof NewsOilAbove100BitcoinCryptoCpiImpactRoute
   '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
+  '/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint': typeof NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRoute
   '/news/trezor-brevo-phishing-email-breach-2026': typeof NewsTrezorBrevoPhishingEmailBreach2026Route
   '/news/what-is-on-chain-trading-vs-exchange': typeof NewsWhatIsOnChainTradingVsExchangeRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
@@ -1144,6 +1152,7 @@ export interface FileRoutesByTo {
   '/news/liquid-network-hack-4000-btc-withdrawal': typeof NewsLiquidNetworkHack4000BtcWithdrawalRoute
   '/news/oil-above-100-bitcoin-crypto-cpi-impact': typeof NewsOilAbove100BitcoinCryptoCpiImpactRoute
   '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
+  '/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint': typeof NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRoute
   '/news/trezor-brevo-phishing-email-breach-2026': typeof NewsTrezorBrevoPhishingEmailBreach2026Route
   '/news/what-is-on-chain-trading-vs-exchange': typeof NewsWhatIsOnChainTradingVsExchangeRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
@@ -1282,6 +1291,7 @@ export interface FileRoutesById {
   '/news/liquid-network-hack-4000-btc-withdrawal': typeof NewsLiquidNetworkHack4000BtcWithdrawalRoute
   '/news/oil-above-100-bitcoin-crypto-cpi-impact': typeof NewsOilAbove100BitcoinCryptoCpiImpactRoute
   '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
+  '/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint': typeof NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRoute
   '/news/trezor-brevo-phishing-email-breach-2026': typeof NewsTrezorBrevoPhishingEmailBreach2026Route
   '/news/what-is-on-chain-trading-vs-exchange': typeof NewsWhatIsOnChainTradingVsExchangeRoute
   '/news/what-is-the-clarity-act-crypto': typeof NewsWhatIsTheClarityActCryptoRoute
@@ -1421,6 +1431,7 @@ export interface FileRouteTypes {
     | '/news/liquid-network-hack-4000-btc-withdrawal'
     | '/news/oil-above-100-bitcoin-crypto-cpi-impact'
     | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
+    | '/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint'
     | '/news/trezor-brevo-phishing-email-breach-2026'
     | '/news/what-is-on-chain-trading-vs-exchange'
     | '/news/what-is-the-clarity-act-crypto'
@@ -1547,6 +1558,7 @@ export interface FileRouteTypes {
     | '/news/liquid-network-hack-4000-btc-withdrawal'
     | '/news/oil-above-100-bitcoin-crypto-cpi-impact'
     | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
+    | '/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint'
     | '/news/trezor-brevo-phishing-email-breach-2026'
     | '/news/what-is-on-chain-trading-vs-exchange'
     | '/news/what-is-the-clarity-act-crypto'
@@ -1684,6 +1696,7 @@ export interface FileRouteTypes {
     | '/news/liquid-network-hack-4000-btc-withdrawal'
     | '/news/oil-above-100-bitcoin-crypto-cpi-impact'
     | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
+    | '/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint'
     | '/news/trezor-brevo-phishing-email-breach-2026'
     | '/news/what-is-on-chain-trading-vs-exchange'
     | '/news/what-is-the-clarity-act-crypto'
@@ -2153,6 +2166,13 @@ declare module '@tanstack/react-router' {
       path: '/trezor-brevo-phishing-email-breach-2026'
       fullPath: '/news/trezor-brevo-phishing-email-breach-2026'
       preLoaderRoute: typeof NewsTrezorBrevoPhishingEmailBreach2026RouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint': {
+      id: '/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint'
+      path: '/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint'
+      fullPath: '/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint'
+      preLoaderRoute: typeof NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRouteImport
       parentRoute: typeof NewsRoute
     }
     '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': {
@@ -2968,6 +2988,7 @@ interface NewsRouteChildren {
   NewsLiquidNetworkHack4000BtcWithdrawalRoute: typeof NewsLiquidNetworkHack4000BtcWithdrawalRoute
   NewsOilAbove100BitcoinCryptoCpiImpactRoute: typeof NewsOilAbove100BitcoinCryptoCpiImpactRoute
   NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute: typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
+  NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRoute: typeof NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRoute
   NewsTrezorBrevoPhishingEmailBreach2026Route: typeof NewsTrezorBrevoPhishingEmailBreach2026Route
   NewsWhatIsOnChainTradingVsExchangeRoute: typeof NewsWhatIsOnChainTradingVsExchangeRoute
   NewsWhatIsTheClarityActCryptoRoute: typeof NewsWhatIsTheClarityActCryptoRoute
@@ -2992,6 +3013,8 @@ const NewsRouteChildren: NewsRouteChildren = {
     NewsOilAbove100BitcoinCryptoCpiImpactRoute,
   NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute:
     NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute,
+  NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRoute:
+    NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRoute,
   NewsTrezorBrevoPhishingEmailBreach2026Route:
     NewsTrezorBrevoPhishingEmailBreach2026Route,
   NewsWhatIsOnChainTradingVsExchangeRoute:

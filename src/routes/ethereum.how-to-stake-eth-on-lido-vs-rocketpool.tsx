@@ -8,8 +8,7 @@ import { Check, X, Info } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/ethereum/how-to-stake-eth-on-lido-vs-rocketpool";
 const TITLE = "Staking ETH: Lido vs Rocket Pool — A Tested Comparison (2026) | CryptoBeacon";
-const DESC =
-  "A hands-on comparison of Lido and Rocket Pool for liquid ETH staking in 2026 — covering yield, smart contract risk, decentralization, and minimum stake requirements.";
+const DESC = "A hands-on comparison of Lido and Rocket Pool for liquid ETH staking in 2026 — covering yield, smart contract risk, decentralization, and minimum stake requi...";
 const PUBLISHED = "2026-08-25";
 
 const articleSchema = {
@@ -66,7 +65,8 @@ export const Route = createFileRoute("/ethereum/how-to-stake-eth-on-lido-vs-rock
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/ethereum/how-to-stake-eth-on-lido-vs-rocketpool" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },

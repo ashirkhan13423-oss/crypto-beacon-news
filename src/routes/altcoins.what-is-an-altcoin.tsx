@@ -10,8 +10,7 @@ const hero = "/placeholder-altcoin-hero.png";
 
 const URL = "https://www.cryptobeacon.site/altcoins/what-is-an-altcoin";
 const TITLE = "What Is an Altcoin? The Complete Guide to Cryptocurrency Alternatives | CryptoBeacon";
-const DESC =
-  "A complete guide to altcoins: understand smart contract platforms, stablecoins, utility tokens, and meme coins. Learn what makes an altcoin different from Bitcoin.";
+const DESC = "A complete guide to altcoins: understand smart contract platforms, stablecoins, utility tokens, and meme coins. Learn what makes an altcoin different from Bi...";
 const PUBLISHED = "2026-09-12";
 
 const faqs: { q: string; a: string }[] = [
@@ -111,7 +110,8 @@ export const Route = createFileRoute("/altcoins/what-is-an-altcoin")({
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/altcoins/what-is-an-altcoin" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

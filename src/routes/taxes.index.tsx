@@ -5,8 +5,7 @@ import { Breadcrumbs, breadcrumbSchemaFromItems } from "@/components/Breadcrumbs
 
 const URL = "https://www.cryptobeacon.site/taxes";
 const TITLE = "Crypto Taxes — Capital Gains, Income & Reporting | CryptoBeacon";
-const DESC =
-  "Educational guides on cryptocurrency taxation — capital gains events, staking income, cost-basis tracking, and how different jurisdictions classify digital assets.";
+const DESC = "Educational guides on cryptocurrency taxation — capital gains events, staking income, cost-basis tracking, and how different jurisdictions classify digital a...";
 
 const collectionSchema = {
   "@context": "https://schema.org",
@@ -34,7 +33,8 @@ export const Route = createFileRoute("/taxes/")({
       { property: "og:url", content: URL },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/taxes" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(collectionSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchemaFromItems([{ label: "Crypto Taxes" }])) },

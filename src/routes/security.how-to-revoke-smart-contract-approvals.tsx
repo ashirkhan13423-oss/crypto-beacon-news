@@ -7,8 +7,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/security/how-to-revoke-smart-contract-approvals";
 const TITLE = "How to Revoke Smart Contract Approvals | CryptoBeacon";
-const DESC =
-  "A comprehensive guide on what smart contract approvals (token allowances) are, why they can be dangerous, and how to revoke them to secure your crypto portfolio.";
+const DESC = "A comprehensive guide on what smart contract approvals (token allowances) are, why they can be dangerous, and how to revoke them to secure your crypto portfo...";
 const PUBLISHED = "2026-08-20";
 
 const faqs: { q: string; a: string }[] = [
@@ -109,7 +108,8 @@ export const Route = createFileRoute("/security/how-to-revoke-smart-contract-app
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/security/how-to-revoke-smart-contract-approvals" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

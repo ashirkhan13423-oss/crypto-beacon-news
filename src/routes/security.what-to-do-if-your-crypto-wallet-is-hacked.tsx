@@ -8,8 +8,7 @@ import { Zap, Clock, FileText, AlertTriangle } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/security/what-to-do-if-your-crypto-wallet-is-hacked";
 const TITLE = "What to Do If Your Crypto Wallet Is Hacked: Emergency Action Guide | CryptoBeacon";
-const DESC =
-  "If your crypto wallet has been compromised, every second counts. This emergency guide covers exactly what to do — in order — from the moment you realize something is wrong.";
+const DESC = "If your crypto wallet has been compromised, every second counts. This emergency guide covers exactly what to do — in order — from the moment you realize some...";
 const PUBLISHED = "2026-08-25";
 
 const articleSchema = {
@@ -66,7 +65,8 @@ export const Route = createFileRoute("/security/what-to-do-if-your-crypto-wallet
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/security/what-to-do-if-your-crypto-wallet-is-hacked" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },

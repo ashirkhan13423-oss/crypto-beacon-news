@@ -10,7 +10,7 @@ const URL =
 const TITLE =
   "Bitcoin's September Rally Faces a New Macro Test: Oil, Yields and the Fed | CryptoBeacon";
 const DESC =
-  "Brent crude near $96, the U.S. 10-year yield approaching 4.8%, and a 68% chance of a September Fed rate hike are pressuring Bitcoin toward $77K–$78K. Here is the full transmission chain and why Friday's jobs report could be the next catalyst.";
+  "Brent crude near $96, the U.S. 10-year yield approaching 4.8%, and a 68% chance of a September Fed rate hike are pressuring Bitcoin toward $77K–$78K...";
 const PUBLISHED = "2026-09-02";
 
 const faqs = [
@@ -131,7 +131,8 @@ export const Route = createFileRoute(
         content: "https://www.cryptobeacon.site/og-image.png",
       },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/news/bitcoin-september-rally-macro-test" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

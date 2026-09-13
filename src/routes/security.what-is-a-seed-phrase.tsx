@@ -6,8 +6,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/security/what-is-a-seed-phrase";
 const TITLE = "What Is a Seed Phrase? Security Guide for Crypto Users | CryptoBeacon";
-const DESC =
-  "A security-focused guide to seed phrases — why they are the highest-value target in crypto, how attackers try to steal them, and the threat model every self-custody user should understand.";
+const DESC = "A security-focused guide to seed phrases — why they are the highest-value target in crypto, how attackers try to steal them, and the threat model every self-...";
 const PUBLISHED = "2026-09-01";
 
 const faqs: { q: string; a: string }[] = [
@@ -60,7 +59,8 @@ export const Route = createFileRoute("/security/what-is-a-seed-phrase")({
       { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Security" },
       { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/security/what-is-a-seed-phrase" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

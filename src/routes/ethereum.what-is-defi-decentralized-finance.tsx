@@ -7,8 +7,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/ethereum/what-is-defi-decentralized-finance";
 const TITLE = "What Is DeFi? Decentralized Finance Explained for Beginners | CryptoBeacon";
-const DESC =
-  "A plain-language introduction to decentralized finance (DeFi) — what it is, how lending protocols and DEXes work, and the real risks beginners should understand before participating.";
+const DESC = "A plain-language introduction to decentralized finance (DeFi) — what it is, how lending protocols and DEXes work, and the real risks beginners should underst...";
 const PUBLISHED = "2026-08-29";
 
 const faqs: { q: string; a: string }[] = [
@@ -113,7 +112,8 @@ export const Route = createFileRoute("/ethereum/what-is-defi-decentralized-finan
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/ethereum/what-is-defi-decentralized-finance" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

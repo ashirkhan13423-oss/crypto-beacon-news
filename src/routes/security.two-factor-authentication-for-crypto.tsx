@@ -6,8 +6,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/security/two-factor-authentication-for-crypto";
 const TITLE = "Two-Factor Authentication for Crypto: SMS vs TOTP vs Hardware Keys | CryptoBeacon";
-const DESC =
-  "A complete guide to two-factor authentication for cryptocurrency accounts — SMS vs TOTP apps vs hardware security keys, the risks of each method, and how to set up the most secure option.";
+const DESC = "A complete guide to two-factor authentication for cryptocurrency accounts — SMS vs TOTP apps vs hardware security keys, the risks of each method, and how to ...";
 const PUBLISHED = "2026-09-01";
 
 const faqs: { q: string; a: string }[] = [
@@ -60,7 +59,8 @@ export const Route = createFileRoute("/security/two-factor-authentication-for-cr
       { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Security" },
       { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/security/two-factor-authentication-for-crypto" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

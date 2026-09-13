@@ -6,8 +6,7 @@ import { Plus, AlertTriangle } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/security/how-crypto-phishing-scams-work";
 const TITLE = "How Crypto Phishing Scams Work: Attack Types Explained | CryptoBeacon";
-const DESC =
-  "A technical breakdown of how crypto phishing scams work — DNS hijacking, fake dApps, approval phishing, spear phishing, and browser extension attacks — with how to defend against each.";
+const DESC = "A technical breakdown of how crypto phishing scams work — DNS hijacking, fake dApps, approval phishing, spear phishing, and browser extension attacks — with ...";
 const PUBLISHED = "2026-09-01";
 
 const faqs: { q: string; a: string }[] = [
@@ -60,7 +59,8 @@ export const Route = createFileRoute("/security/how-crypto-phishing-scams-work")
       { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Security" },
       { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/security/how-crypto-phishing-scams-work" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

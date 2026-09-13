@@ -6,8 +6,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/security/fake-wallet-apps-explained";
 const TITLE = "Fake Crypto Wallet Apps: How to Spot Them Before You Download | CryptoBeacon";
-const DESC =
-  "How fake cryptocurrency wallet apps work, how they appear in app stores alongside legitimate wallets, and exactly how to verify you are downloading a genuine wallet application.";
+const DESC = "How fake cryptocurrency wallet apps work, how they appear in app stores alongside legitimate wallets, and exactly how to verify you are downloading a genuine...";
 const PUBLISHED = "2026-09-01";
 
 const faqs: { q: string; a: string }[] = [
@@ -60,7 +59,8 @@ export const Route = createFileRoute("/security/fake-wallet-apps-explained")({
       { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Security" },
       { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/security/fake-wallet-apps-explained" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

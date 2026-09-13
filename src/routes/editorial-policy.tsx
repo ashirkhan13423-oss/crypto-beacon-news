@@ -16,7 +16,8 @@ export const Route = createFileRoute("/editorial-policy")({
       { property: "og:description", content: DESC },
       { property: "og:url", content: URL },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/editorial-policy" }],
     scripts: [
       {
         type: "application/ld+json",

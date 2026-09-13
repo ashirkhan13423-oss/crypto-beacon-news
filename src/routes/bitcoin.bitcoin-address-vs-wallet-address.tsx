@@ -6,8 +6,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/bitcoin-address-vs-wallet-address";
 const TITLE = "Bitcoin Address vs Wallet Address: What's the Difference? | CryptoBeacon";
-const DESC =
-  "Are a Bitcoin address and a wallet address the same thing? Learn how Bitcoin addresses are generated, the types of addresses (Legacy, SegWit, Taproot), address reuse risks, and how change addresses work.";
+const DESC = "Are a Bitcoin address and a wallet address the same thing? Learn how Bitcoin addresses are generated, the types of addresses (Legacy, SegWit, Taproot), addre...";
 const PUBLISHED = "2026-09-01";
 
 const faqs: { q: string; a: string }[] = [
@@ -96,7 +95,8 @@ export const Route = createFileRoute("/bitcoin/bitcoin-address-vs-wallet-address
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/bitcoin-address-vs-wallet-address" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

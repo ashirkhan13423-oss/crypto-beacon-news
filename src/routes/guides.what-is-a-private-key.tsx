@@ -7,8 +7,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/guides/what-is-a-private-key";
 const TITLE = "What Is a Private Key in Crypto? A Plain-Language Explainer | CryptoBeacon";
-const DESC =
-  "A straightforward explanation of what a cryptocurrency private key is, how it differs from a seed phrase and public address, and why whoever controls it controls the funds.";
+const DESC = "A straightforward explanation of what a cryptocurrency private key is, how it differs from a seed phrase and public address, and why whoever controls it cont...";
 const PUBLISHED = "2026-08-29";
 
 const faqs: { q: string; a: string }[] = [
@@ -113,7 +112,8 @@ export const Route = createFileRoute("/guides/what-is-a-private-key")({
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/what-is-a-private-key" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

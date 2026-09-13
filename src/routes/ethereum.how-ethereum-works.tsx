@@ -6,8 +6,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/ethereum/how-ethereum-works";
 const TITLE = "How Ethereum Works: EVM, Accounts, Transactions & Consensus | CryptoBeacon";
-const DESC =
-  "A technical yet accessible explanation of how Ethereum works — the EVM, account types, transaction lifecycle, Proof-of-Stake consensus, and block production explained clearly.";
+const DESC = "A technical yet accessible explanation of how Ethereum works — the EVM, account types, transaction lifecycle, Proof-of-Stake consensus, and block production ...";
 const PUBLISHED = "2026-09-01";
 
 const faqs: { q: string; a: string }[] = [
@@ -60,7 +59,8 @@ export const Route = createFileRoute("/ethereum/how-ethereum-works")({
       { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Ethereum" },
       { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/ethereum/how-ethereum-works" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

@@ -6,8 +6,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/guides/what-is-kyc-in-cryptocurrency";
 const TITLE = "What Is KYC in Cryptocurrency? Requirements & Why It Matters | CryptoBeacon";
-const DESC =
-  "What is KYC (Know Your Customer) in crypto? Learn why cryptocurrency exchanges require ID verification, what documents are needed, and the privacy implications for users.";
+const DESC = "What is KYC (Know Your Customer) in crypto? Learn why cryptocurrency exchanges require ID verification, what documents are needed, and the privacy implicatio...";
 const PUBLISHED = "2026-09-01";
 
 const faqs: { q: string; a: string }[] = [
@@ -60,7 +59,8 @@ export const Route = createFileRoute("/guides/what-is-kyc-in-cryptocurrency")({
       { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Guides" },
       { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/what-is-kyc-in-cryptocurrency" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

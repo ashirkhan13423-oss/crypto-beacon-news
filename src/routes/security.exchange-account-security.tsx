@@ -6,8 +6,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/security/exchange-account-security";
 const TITLE = "Exchange Account Security: Protect Your Crypto on Centralised Exchanges | CryptoBeacon";
-const DESC =
-  "How to properly secure a cryptocurrency exchange account — strong passwords, withdrawal whitelists, 2FA, API key security, phishing-resistant authentication, and what to do if you're compromised.";
+const DESC = "How to properly secure a cryptocurrency exchange account — strong passwords, withdrawal whitelists, 2FA, API key security, phishing-resistant authentication...";
 const PUBLISHED = "2026-09-01";
 
 const faqs: { q: string; a: string }[] = [
@@ -60,7 +59,8 @@ export const Route = createFileRoute("/security/exchange-account-security")({
       { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Security" },
       { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/security/exchange-account-security" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

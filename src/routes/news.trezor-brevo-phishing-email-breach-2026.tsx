@@ -8,8 +8,7 @@ import hardwareWalletFirewall from "@/assets/hardware-wallet-firewall.jpg";
 
 const URL = "https://www.cryptobeacon.site/news/trezor-brevo-phishing-email-breach-2026";
 const TITLE = "Trezor Email Breach Sends Fake Wallet Alert to 347,000 Users: What to Do | CryptoBeacon";
-const DESC =
-  "A compromised third-party email provider sent fake Trezor security alerts to 347,000 users. Learn how this phishing attack happened and how to protect your seed phrase.";
+const DESC = "A compromised third-party email provider sent fake Trezor security alerts to 347,000 users. Learn how this phishing attack happened and how to protect your s...";
 const PUBLISHED = "2026-09-12";
 
 const articleSchema = {
@@ -82,7 +81,8 @@ export const Route = createFileRoute("/news/trezor-brevo-phishing-email-breach-2
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: `https://www.cryptobeacon.site${hero}` },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/news/trezor-brevo-phishing-email-breach-2026" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },

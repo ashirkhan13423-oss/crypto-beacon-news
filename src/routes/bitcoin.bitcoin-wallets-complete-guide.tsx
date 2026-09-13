@@ -6,8 +6,7 @@ import { Shield, Key, Smartphone, HardDrive, BookOpen, AlertTriangle, Lock, Wall
 
 const URL = "https://www.cryptobeacon.site/bitcoin/bitcoin-wallets-complete-guide";
 const TITLE = "Bitcoin Wallets: Complete Beginner's Guide | CryptoBeacon";
-const DESC =
-  "Everything you need to know about Bitcoin wallets — how they work, types of wallets, seed phrases, private keys, security, and common scams. The definitive self-custody hub.";
+const DESC = "Everything you need to know about Bitcoin wallets — how they work, types of wallets, seed phrases, private keys, security, and common scams. The definitive s...";
 const PUBLISHED = "2026-09-01";
 
 const articleSchema = {
@@ -153,7 +152,8 @@ export const Route = createFileRoute("/bitcoin/bitcoin-wallets-complete-guide")(
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/bitcoin-wallets-complete-guide" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },

@@ -8,8 +8,7 @@ import { Check, X, Star } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/coinbase-vs-kraken-vs-binance-exchange-comparison";
 const TITLE = "Coinbase vs Kraken vs Binance: Which Crypto Exchange Is Right for You? | CryptoBeacon";
-const DESC =
-  "A first-hand comparison of Coinbase, Kraken, and Binance across fees, security, coin support, and ease of use — helping you choose the right exchange for your needs.";
+const DESC = "A first-hand comparison of Coinbase, Kraken, and Binance across fees, security, coin support, and ease of use — helping you choose the right exchange for you...";
 const PUBLISHED = "2026-08-25";
 
 const articleSchema = {
@@ -66,7 +65,8 @@ export const Route = createFileRoute("/bitcoin/coinbase-vs-kraken-vs-binance-exc
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/coinbase-vs-kraken-vs-binance-exchange-comparison" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },

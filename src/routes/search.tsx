@@ -16,9 +16,9 @@ export const Route = createFileRoute("/search")({
         content:
           "Search CryptoBeacon's articles and guides on Bitcoin, Ethereum, wallets, self-custody, and crypto security.",
       },
-      { name: "robots", content: "noindex, follow" },
       { property: "og:url", content: "https://www.cryptobeacon.site/search" },
     ],
+    links: [{ rel: "canonical", href: "https://www.cryptobeacon.site/search" }],
   }),
   component: SearchPage,
 });

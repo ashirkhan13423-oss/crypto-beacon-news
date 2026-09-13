@@ -7,8 +7,7 @@ import hero from "@/assets/liquid-network-3400-btc-returned.jpg";
 
 const URL = "https://www.cryptobeacon.site/news/liquid-network-3400-btc-returned-320-million-incident";
 const TITLE = "Liquid Network Recovers 3,400 BTC After $320 Million Incident—What Happens Next? | CryptoBeacon";
-const DESC =
-  "The Liquid Network sidechain reportedly recovered 3,400 BTC after a massive $320 million withdrawal from its federation wallet. But the crisis is far from over. Here is what you need to know about the Elements bug and sidechain security risks.";
+const DESC = "The Liquid Network sidechain reportedly recovered 3,400 BTC after a massive $320 million withdrawal from its federation wallet. But the crisis is far from ov...";
 const PUBLISHED = "2026-09-09";
 
 const articleSchema = {
@@ -81,7 +80,8 @@ export const Route = createFileRoute("/news/liquid-network-3400-btc-returned-320
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: `https://www.cryptobeacon.site${hero}` },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/news/liquid-network-3400-btc-returned-320-million-incident" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },

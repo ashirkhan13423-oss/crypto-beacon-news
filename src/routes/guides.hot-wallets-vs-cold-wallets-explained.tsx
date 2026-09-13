@@ -7,8 +7,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/guides/hot-wallets-vs-cold-wallets-explained";
 const TITLE = "Hot Wallets vs. Cold Wallets: Which is Right for You? | CryptoBeacon";
-const DESC =
-  "Comparing internet-connected software wallets with offline hardware devices, focusing on the trade-offs between daily convenience and institutional-grade security.";
+const DESC = "Comparing internet-connected software wallets with offline hardware devices, focusing on the trade-offs between daily convenience and institutional-grade sec...";
 const PUBLISHED = "2026-08-20";
 
 const faqs: { q: string; a: string }[] = [
@@ -109,7 +108,8 @@ export const Route = createFileRoute("/guides/hot-wallets-vs-cold-wallets-explai
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/hot-wallets-vs-cold-wallets-explained" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

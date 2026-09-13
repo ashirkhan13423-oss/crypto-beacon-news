@@ -8,8 +8,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/guides/what-it-means-when-exchange-pauses-withdrawals";
 const TITLE = "What Does It Mean When an Exchange Pauses Withdrawals? | CryptoBeacon";
-const DESC =
-  "Your crypto exchange paused withdrawals — is that normal or a red flag? A comprehensive guide to understanding exchange liquidity, routine maintenance, and warning signs of insolvency.";
+const DESC = "Your crypto exchange paused withdrawals — is that normal or a red flag? A comprehensive guide to understanding exchange liquidity, routine maintenance, and w...";
 const PUBLISHED = "2026-08-04";
 
 const faqs: { q: string; a: string }[] = [
@@ -109,7 +108,8 @@ export const Route = createFileRoute("/guides/what-it-means-when-exchange-pauses
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/what-it-means-when-exchange-pauses-withdrawals" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

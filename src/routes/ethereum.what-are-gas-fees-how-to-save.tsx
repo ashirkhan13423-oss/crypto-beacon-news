@@ -7,8 +7,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/ethereum/what-are-gas-fees-how-to-save";
 const TITLE = "What Are Ethereum Gas Fees and How to Save on Them? | CryptoBeacon";
-const DESC =
-  "An explainer on how network congestion drives up transaction costs on Ethereum, how Gwei works, and practical strategies for minimizing fees using Layer 2 networks.";
+const DESC = "An explainer on how network congestion drives up transaction costs on Ethereum, how Gwei works, and practical strategies for minimizing fees using Layer 2 ne...";
 const PUBLISHED = "2026-08-20";
 
 const faqs: { q: string; a: string }[] = [
@@ -109,7 +108,8 @@ export const Route = createFileRoute("/ethereum/what-are-gas-fees-how-to-save")(
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/ethereum/what-are-gas-fees-how-to-save" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

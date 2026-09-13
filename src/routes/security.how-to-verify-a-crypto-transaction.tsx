@@ -7,8 +7,7 @@ import { Plus } from "lucide-react";
 
 const URL = "https://www.cryptobeacon.site/security/how-to-verify-a-crypto-transaction";
 const TITLE = "How to Verify a Crypto Transaction Using a Block Explorer | CryptoBeacon";
-const DESC =
-  "A practical guide to checking the status of any crypto transaction. Learn how to read a transaction ID, understand block confirmations, and know when a payment is truly final.";
+const DESC = "A practical guide to checking the status of any crypto transaction. Learn how to read a transaction ID, understand block confirmations, and know when a payme...";
 const PUBLISHED = "2026-08-29";
 
 const faqs: { q: string; a: string }[] = [
@@ -113,7 +112,8 @@ export const Route = createFileRoute("/security/how-to-verify-a-crypto-transacti
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/security/how-to-verify-a-crypto-transaction" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },

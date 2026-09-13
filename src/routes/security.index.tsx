@@ -84,7 +84,8 @@ export const Route = createFileRoute("/security/")({
       { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
       { property: "article:published_time", content: "2026-08-06" },
     ],
-    links: [{ rel: "canonical", href: "https://www.cryptobeacon.site/security" }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/security" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
   }),
   component: SecurityPage,

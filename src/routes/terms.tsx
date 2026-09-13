@@ -21,7 +21,8 @@ export const Route = createFileRoute("/terms")({
       { property: "og:url", content: "https://www.cryptobeacon.site/terms" },
       { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: "https://www.cryptobeacon.site/terms" }],
+    links: [
+      { rel: "canonical", href: "https://www.cryptobeacon.site/terms" }],
   }),
   component: TermsPage,
 });
