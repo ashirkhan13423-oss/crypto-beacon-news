@@ -9,6 +9,7 @@ import ethMergeHero from "@/assets/ethereum-merge-two-years.jpg";
 import clarityActHero from "@/assets/news-clarity-act.jpg";
 import oilHero from "@/assets/news-oil-btc-impact.jpg";
 import trezorHero from "@/assets/trezor-phishing-breach.jpg";
+import symbiosisHero from "@/assets/symbiosis-bridge-exploit-hero.jpg";
 import { Newspaper } from "lucide-react";
 
 const collectionSchema = {
@@ -17,6 +18,11 @@ const collectionSchema = {
   name: "Crypto News",
   url: "https://www.cryptobeacon.site/news",
   hasPart: [
+    {
+      "@type": "WebPage",
+      name: "Symbiosis Bitcoin Bridge Exploit Mints Unbacked syBTC: What Users Should Check",
+      url: "https://www.cryptobeacon.site/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint",
+    },
     {
       "@type": "WebPage",
       name: "Trezor Email Breach Sends Fake Wallet Alert to 347,000 Users: What to Do",
@@ -139,6 +145,14 @@ function NewsHub() {
             Security & Breaches
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+            <NewsCard
+              to="/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint"
+              image={symbiosisHero}
+              alt="Futuristic glowing bridge connecting blockchain networks with a red alert indicating a breach"
+              tag="News · Security"
+              title="Symbiosis Bitcoin Bridge Exploit Mints Unbacked syBTC: What Users Should Check"
+              desc="The Symbiosis cross-chain protocol suspended its Bitcoin route after an exploit in its BridgeV2 logic allowed an attacker to mint unbacked synthetic Bitcoin (syBTC). Find out what happened and what users should check."
+            />
             <NewsCard
               to="/news/trezor-brevo-phishing-email-breach-2026"
               image={trezorHero}
