@@ -1,4 +1,4 @@
-﻿import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AdUnit } from "@/components/AdUnit";
@@ -202,17 +202,9 @@ function ArticlePage() {
           readTime="7 min read"
         />
 
-        <div className="mt-md mb-lg border-l-4 border-[#2563EB] bg-[#2563EB]/10 p-md rounded-r-md">
-          <p className="font-headline-sm text-headline-sm text-primary font-bold">
-            Last updated: August 30, 2026.
-          </p>
-          <p className="font-body-md text-body-md text-on-surface-variant mt-xs">
-            This is a dated market snapshot reflecting events on or around
-            August 30, 2026. Figures and ETF data cited below are drawn from
-            reports available at publication time and will age quickly. This
-            article does not predict future price movement.
-          </p>
-        </div>
+        <p className="italic text-on-surface-variant mb-lg font-body-sm mt-md">
+          Market conditions as of August 30, 2026. This is a dated market snapshot.
+        </p>
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -494,57 +486,36 @@ function ArticlePage() {
           </li>
         </ul>
 
-        <H2 id="key-takeaways">Key Takeaways</H2>
+        <H2 id="flows-summary">Flows Summary</H2>
         <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
           <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface marker:text-secondary">
             <li>
-              Kevin Warsh's hawkish Jackson Hole speech on August 30, 2026
-              reduced expectations for near-term Fed rate cuts, triggering a
-              risk-off move in Bitcoin and broader markets.
-            </li>
-            <li>
               U.S. spot Bitcoin ETFs recorded approximately $201.9 million in
-              net outflows, ending nine consecutive sessions of inflows that had
-              contributed to Bitcoin's rally.
+              net outflows on August 30, 2026.
             </li>
             <li>
               U.S. spot Ethereum ETFs recorded approximately $102.1 million in
-              net inflows on the same day — a divergence that raises the
-              possibility of institutional rotation rather than a full crypto
-              market exit.
+              net inflows on the same day.
             </li>
             <li>
               A single session of outflows is not evidence of a trend reversal;
               the key signal to watch is whether flows recover or deteriorate
               over the next five to ten sessions.
             </li>
-            <li>
-              The $6.4 billion options expiry may have amplified session
-              volatility but is unlikely to be the primary driver of the
-              directional move.
-            </li>
           </ul>
         </div>
 
-        <H2 id="faq">Frequently Asked Questions</H2>
-        <div className="space-y-md mb-xxl">
+        <H2 id="market-analyst-qa">Market Analyst Q&A</H2>
+        <div className="space-y-lg mb-xxl">
           {faqs.map((faq, i) => (
-            <details
-              key={i}
-              className="group border border-outline-variant rounded-lg overflow-hidden"
-            >
-              <summary className="flex items-center justify-between p-lg cursor-pointer list-none font-headline-sm text-headline-sm text-primary hover:bg-surface-container-low transition-colors">
-                <span>{faq.q}</span>
-                <span className="ml-md text-secondary group-open:rotate-180 transition-transform duration-200 flex-shrink-0">
-                  ?
-                </span>
-              </summary>
-              <div className="px-lg pb-lg pt-sm border-t border-outline-variant bg-surface-container-low">
-                <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                  {faq.a}
-                </p>
-              </div>
-            </details>
+            <div key={i} className="mb-md">
+              <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">
+                {faq.q}
+              </h3>
+              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                {faq.a}
+              </p>
+            </div>
           ))}
         </div>
 
@@ -616,18 +587,9 @@ function ArticlePage() {
           </li>
         </ul>
 
-        <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
-          <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
-            Financial Disclaimer
-          </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is a factual, dated report on market events published
-            on August 30, 2026. It is for informational purposes only and does
-            not constitute financial or investment advice. ETF flow figures are
-            sourced from third-party reports and have not been independently
-            verified from primary issuer dashboards. Past flow patterns do not
-            guarantee future price performance. Do not make investment decisions
-            based solely on this article.
+        <div className="mt-xl text-center">
+          <p className="font-body-sm text-on-surface-variant">
+            <em>Disclaimer: This article is a factual report published on August 30, 2026, for informational purposes only. It is not financial advice. ETF flow figures are sourced from third-party reports.</em>
           </p>
         </div>
 

@@ -219,18 +219,9 @@ function ArticlePage() {
           readTime="9 min read"
         />
 
-        {/* PROMINENT DATED BANNER */}
-        <div className="mt-md mb-lg border-l-4 border-[#2563EB] bg-[#2563EB]/10 p-md rounded-r-md">
-          <p className="font-headline-sm text-headline-sm text-primary font-bold">
-            Last updated: September 2, 2026.
-          </p>
-          <p className="font-body-md text-body-md text-on-surface-variant mt-xs">
-            This is a dated market snapshot reflecting conditions around
-            September 1–2, 2026. Prices, yields, and rate expectations cited
-            below are point-in-time data and will age quickly. This article does
-            not predict future price movement.
-          </p>
-        </div>
+        <p className="italic text-on-surface-variant mb-lg font-body-sm mt-md">
+          Market conditions as of September 2, 2026. This is a dated market snapshot.
+        </p>
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -268,71 +259,24 @@ function ArticlePage() {
 
         <AdUnit />
 
-        {/* ─── SECTION 1: THE TRANSMISSION CHAIN ─── */}
-        <H2 id="transmission-chain">
-          The Macro Transmission Chain: From Oil Barrels to Your Bitcoin
-          Portfolio
+        {/* ─── SECTION 1: THE MACRO FORCES ─── */}
+        <H2 id="macro-forces">
+          The Macro Forces Weighing on Bitcoin
         </H2>
         <P>
           Geopolitical events rarely affect Bitcoin directly. Instead, they
-          trigger a cascading sequence of macro repricing. Here is the chain
-          CryptoBeacon is tracking in early September 2026:
+          trigger a cascading sequence of macro repricing. CryptoBeacon is tracking
+          three primary forces in early September 2026 that are increasing the
+          opportunity cost of holding non-yielding assets:
         </P>
-
-        <div className="border-l-4 border-[#F7931A] bg-[#F7931A]/5 p-lg rounded-r-lg mb-lg">
-          <div className="space-y-sm font-body-lg text-body-lg text-on-surface">
-            <div className="flex items-center gap-sm">
-              <span className="text-2xl">🛢️</span>
-              <span>
-                <strong>Higher oil prices</strong> — Brent crude at $95–$96/bbl
-              </span>
-            </div>
-            <div className="pl-lg text-secondary font-bold">↓</div>
-            <div className="flex items-center gap-sm">
-              <span className="text-2xl">🔥</span>
-              <span>
-                <strong>Higher inflation risk</strong> — energy costs feed
-                through to CPI
-              </span>
-            </div>
-            <div className="pl-lg text-secondary font-bold">↓</div>
-            <div className="flex items-center gap-sm">
-              <span className="text-2xl">🏦</span>
-              <span>
-                <strong>Higher rate-hike expectations</strong> — September hike
-                probability at ~68%
-              </span>
-            </div>
-            <div className="pl-lg text-secondary font-bold">↓</div>
-            <div className="flex items-center gap-sm">
-              <span className="text-2xl">📈</span>
-              <span>
-                <strong>Higher Treasury yields</strong> — 10-year approaching
-                4.8%
-              </span>
-            </div>
-            <div className="pl-lg text-secondary font-bold">↓</div>
-            <div className="flex items-center gap-sm">
-              <span className="text-2xl">💵</span>
-              <span>
-                <strong>Stronger U.S. dollar</strong> — DXY rises on
-                yield-differential advantage
-              </span>
-            </div>
-            <div className="pl-lg text-secondary font-bold">↓</div>
-            <div className="flex items-center gap-sm">
-              <span className="text-2xl">⚠️</span>
-              <span>
-                <strong>Tougher conditions for risk assets</strong> — including
-                Bitcoin and crypto
-              </span>
-            </div>
-          </div>
-        </div>
+        <ul className="list-disc pl-lg space-y-xs font-body-lg text-body-lg text-on-surface mb-lg marker:text-secondary">
+          <li><strong>Rising Inflation Expectations:</strong> Energy costs are feeding through to CPI forecasts.</li>
+          <li><strong>Hawkish Rate-Hike Repricing:</strong> A September hike probability has jumped to ~68%.</li>
+          <li><strong>Climbing Treasury Yields:</strong> The 10-year yield is approaching 4.8%, strengthening the U.S. dollar.</li>
+        </ul>
 
         <P>
-          Each link in this chain amplifies the one before it. The war or
-          geopolitical event itself is not the direct driver of Bitcoin's
+          The war or geopolitical event itself is not the direct driver of Bitcoin's
           price — the <strong>macro repricing</strong> is. Understanding this
           distinction is critical for anyone trying to assess whether the current
           pullback is a structural threat or a temporary headwind.
@@ -602,38 +546,10 @@ function ArticlePage() {
           </li>
         </ul>
 
-        {/* ─── KEY TAKEAWAYS ─── */}
-        <H2 id="key-takeaways">Key Takeaways</H2>
-        <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
-          <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface marker:text-secondary">
-            <li>
-              Bitcoin's September pullback toward $77K–$78K is driven by a
-              macro transmission chain: oil → inflation → rate-hike
-              expectations → yields → stronger dollar → risk-asset
-              pressure.
-            </li>
-            <li>
-              Brent crude near $96, the 10-year yield approaching 4.8%, and a
-              68% September rate-hike probability represent a
-              meaningfully deteriorated macro environment compared to August.
-            </li>
-            <li>
-              Bitcoin has shown resilience by holding much of its August rally
-              gains, but the true test arrives with Friday's U.S. jobs
-              report.
-            </li>
-            <li>
-              A strong jobs report could reinforce tighter policy and push
-              Bitcoin lower; a weak report could ease pressure and provide
-              breathing room.
-            </li>
-            <li>
-              The right question is not whether Bitcoin will crash but whether
-              it can hold the $75K–$77K support zone while macro headwinds
-              persist.
-            </li>
-          </ul>
-        </div>
+        <H2 id="conclusion">Concluding Thoughts</H2>
+        <P>
+          Ultimately, the question isn't whether Bitcoin will crash, but whether it can hold the $75K–$77K support zone while these macro headwinds persist. A strong jobs report could reinforce tighter policy and push Bitcoin lower, while a weak report could provide breathing room.
+        </P>
 
         {/* ─── FAQ SECTION ─── */}
         <H2 id="faq">Frequently Asked Questions</H2>
@@ -724,19 +640,9 @@ function ArticlePage() {
           </li>
         </ul>
 
-        {/* ─── DISCLAIMER ─── */}
-        <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
-          <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
-            Financial Disclaimer
-          </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is a factual, dated report on market conditions
-            published on September 2, 2026. It is for informational purposes
-            only and does not constitute financial or investment advice. Prices,
-            yields, and rate-hike probabilities are point-in-time data drawn
-            from third-party sources and may have changed by the time you read
-            this. Past price behaviour does not guarantee future performance.
-            Do not make investment decisions based solely on this article.
+        <div className="mt-xl text-center">
+          <p className="font-body-sm text-on-surface-variant">
+            <em>Disclaimer: This article is a factual report published on September 2, 2026, for informational purposes only. It is not financial advice.</em>
           </p>
         </div>
 

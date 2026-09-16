@@ -206,14 +206,9 @@ function ArticlePage() {
           readTime="7 min read"
         />
 
-        <div className="mt-md mb-lg border-l-4 border-[#2563EB] bg-[#2563EB]/10 p-md rounded-r-md">
-          <p className="font-headline-sm text-headline-sm text-primary font-bold">
-            Last updated: September 10, 2026.
-          </p>
-          <p className="font-body-md text-body-md text-on-surface-variant mt-xs">
-            This report reflects market conditions and geopolitical developments as of September 10, 2026. Macroeconomic indicators such as oil prices and Treasury yields are point-in-time metrics subject to rapid change.
-          </p>
-        </div>
+        <p className="italic text-on-surface-variant mb-lg font-body-sm mt-md">
+          Market conditions as of September 10, 2026. Macroeconomic indicators are point-in-time metrics subject to rapid change.
+        </p>
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -319,26 +314,10 @@ function ArticlePage() {
           Moreover, Bitcoin's long-term value proposition as a non-sovereign hedge against systemic fiat debasement remains intact. For some institutional allocators, sustained geopolitical instability combined with structural government deficits actually reinforces the long-term bullish case for digital scarcity, even if the short-term price action is turbulent.
         </P>
 
-        <H2 id="key-takeaways">Key Takeaways</H2>
-        <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
-          <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface marker:text-secondary">
-            <li>
-              Brent crude has pushed past $100 per barrel due to escalating tensions in the Middle East and threats to shipping routes.
-            </li>
-            <li>
-              The primary risk to Bitcoin is indirect: higher oil prices increase inflation expectations, which may force the Fed to maintain higher interest rates.
-            </li>
-            <li>
-              Rising Treasury yields increase the opportunity cost of holding non-yielding assets, directly pressuring cryptocurrency valuations.
-            </li>
-            <li>
-              Upcoming U.S. CPI and PPI data releases are critical near-term catalysts that will dictate market direction.
-            </li>
-            <li>
-              While short-term volatility and pressure on leveraged positions are likely, softer core inflation data or geopolitical de-escalation could rapidly reverse this bearish sentiment.
-            </li>
-          </ul>
-        </div>
+        <H2 id="conclusion">Concluding Thoughts</H2>
+        <P>
+          Ultimately, Brent crude pushing past $100 per barrel is an indirect threat to Bitcoin—it increases inflation expectations, which may force the Fed to maintain higher interest rates, thereby raising Treasury yields and the opportunity cost of holding crypto. Investors should closely monitor upcoming CPI and PPI releases, as softer core inflation data could rapidly reverse this bearish sentiment.
+        </P>
 
         <H2 id="faq">Frequently Asked Questions</H2>
         <div className="space-y-md mb-xxl">
@@ -406,18 +385,9 @@ function ArticlePage() {
           </li>
         </ul>
 
-        <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
-          <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
-            Financial Disclaimer
-          </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is a factual, dated report on market conditions
-            published on September 10, 2026. It is for informational purposes
-            only and does not constitute financial or investment advice. Prices,
-            yields, and macroeconomic conditions are point-in-time data drawn
-            from third-party sources and may have changed by the time you read
-            this. Past price behaviour does not guarantee future performance.
-            Do not make investment decisions based solely on this article.
+        <div className="mt-xl text-center">
+          <p className="font-body-sm text-on-surface-variant">
+            <em>Disclaimer: This article is a factual report published on September 10, 2026, for informational purposes only. It is not financial advice.</em>
           </p>
         </div>
 

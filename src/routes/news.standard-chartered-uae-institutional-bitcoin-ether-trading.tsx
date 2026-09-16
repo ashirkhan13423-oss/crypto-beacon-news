@@ -226,15 +226,10 @@ function ArticlePage() {
           This could also trigger a domino effect, prompting other global banks to roll out similar spot trading services to remain competitive.
         </P>
 
-        <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md mt-xl">
-          <H3>Key Takeaways</H3>
-          <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface">
-            <li>Standard Chartered launched institutional spot trading for Bitcoin and Ether in the UAE on Sept. 3, 2026.</li>
-            <li>The service offers deliverable spot assets, integrated into existing electronic trading and FX channels.</li>
-            <li>This demonstrates a shift toward offering crypto through traditional, regulated bank infrastructure rather than isolated specialist platforms.</li>
-            <li>The UAE continues to solidify its position as a leading jurisdiction for institutional digital assets.</li>
-          </ul>
-        </div>
+        <H2 id="conclusion">Looking Ahead</H2>
+        <P>
+          Standard Chartered's rollout of institutional spot trading in the UAE is a clear signal that the gap between traditional banking and digital assets is closing. By offering deliverable spot assets through existing electronic trading channels, the bank is setting a precedent that others may soon follow, further solidifying the UAE's position as a leading jurisdiction for institutional crypto services.
+        </P>
 
         <H2 id="sources">Sources</H2>
         <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
@@ -249,13 +244,9 @@ function ArticlePage() {
           </li>
         </ul>
 
-        <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
-          <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
-            Financial Disclaimer
-          </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice.
+        <div className="mt-xl text-center">
+          <p className="font-body-sm text-on-surface-variant">
+            <em>Disclaimer: This article is for informational purposes only and is not financial advice.</em>
           </p>
         </div>
 

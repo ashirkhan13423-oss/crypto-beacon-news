@@ -1,0 +1,157 @@
+# CryptoBeacon Content Audit
+
+## CRITICAL (Must Fix)
+
+## NEEDS REVIEW
+- https://www.cryptobeacon.site/altcoins
+  - Thin content: 97 words
+- https://www.cryptobeacon.site/altcoins/what-is-an-ai-crypto-token
+  - Published in suspected Sept 12 batch
+- https://www.cryptobeacon.site/altcoins/what-is-an-altcoin
+  - Published in suspected Sept 12 batch
+- https://www.cryptobeacon.site/altcoins/why-do-meme-coins-have-value
+  - Published in suspected Sept 12 batch
+- https://www.cryptobeacon.site/bitcoin/common-bitcoin-wallet-scams
+  - Thin content: 208 words
+- https://www.cryptobeacon.site/bitcoin/how-does-bitcoin-halving-work
+  - Published in suspected Sept 12 batch
+- https://www.cryptobeacon.site/bitcoin/why-bitcoin-mining-uses-so-much-energy
+  - Published in suspected Sept 12 batch
+- https://www.cryptobeacon.site/corrections
+  - Thin content: 191 words
+- https://www.cryptobeacon.site/defi
+  - Thin content: 80 words
+- https://www.cryptobeacon.site/etfs
+  - Thin content: 109 words
+- https://www.cryptobeacon.site/ethereum/ethereum-complete-beginners-guide
+  - Thin content: 155 words
+- https://www.cryptobeacon.site/ethereum/ethereum-layer-2-scaling-rollups-explained
+  - Thin content: 290 words
+- https://www.cryptobeacon.site/ethereum/how-does-ethereum-staking-work
+  - Published in suspected Sept 12 batch
+- https://www.cryptobeacon.site/ethereum/what-is-an-erc-20-token
+  - Published in suspected Sept 12 batch
+- https://www.cryptobeacon.site/glossary
+  - Thin content: 88 words
+- https://www.cryptobeacon.site/guides/coin-vs-token-difference
+  - Thin article content: 363 words
+  - Published in suspected Sept 12 batch
+- https://www.cryptobeacon.site/guides/crypto-regulation-hub
+  - Thin article content: 166 words
+- https://www.cryptobeacon.site/guides/crypto-regulation-vs-cryptocurrency-ban
+  - Thin article content: 391 words
+- https://www.cryptobeacon.site/guides/cryptocurrency-taxes-explained
+  - Thin article content: 397 words
+- https://www.cryptobeacon.site/guides/how-cryptocurrency-regulation-works
+  - Thin article content: 348 words
+- https://www.cryptobeacon.site/guides/what-is-a-smart-contract-explained
+  - Thin article content: 352 words
+  - Published in suspected Sept 12 batch
+- https://www.cryptobeacon.site/learn
+  - Thin content: 186 words
+- https://www.cryptobeacon.site/news/bitcoin-rally-august-2026
+  - Thin article content: 354 words
+- https://www.cryptobeacon.site/news/trezor-brevo-phishing-email-breach-2026
+  - Published in suspected Sept 12 batch
+- https://www.cryptobeacon.site/news/what-is-on-chain-trading-vs-exchange
+  - Thin article content: 359 words
+  - Published in suspected Sept 12 batch
+- https://www.cryptobeacon.site/news/why-are-crypto-atms-everywhere
+  - Thin article content: 389 words
+  - Published in suspected Sept 12 batch
+- https://www.cryptobeacon.site/security/common-crypto-scams
+  - Thin content: 138 words
+- https://www.cryptobeacon.site/security/crypto-security-hub
+  - Thin content: 124 words
+- https://www.cryptobeacon.site/security/exchange-account-security
+  - Thin content: 141 words
+- https://www.cryptobeacon.site/security/how-crypto-phishing-scams-work
+  - Thin content: 186 words
+- https://www.cryptobeacon.site/security/how-to-identify-a-fake-crypto-website
+  - Thin content: 156 words
+- https://www.cryptobeacon.site/security/how-to-spot-a-fake-crypto-wallet-app
+  - Published in suspected Sept 12 batch
+- https://www.cryptobeacon.site/security/two-factor-authentication-for-crypto
+  - Thin content: 145 words
+- https://www.cryptobeacon.site/security/what-is-a-crypto-atm-are-they-safe
+  - Published in suspected Sept 12 batch
+- https://www.cryptobeacon.site/taxes
+  - Thin content: 124 words
+
+## CLEAN (76 articles)
+- https://www.cryptobeacon.site/affiliate-disclosure
+- https://www.cryptobeacon.site/bitcoin/bitcoin-address-vs-wallet-address
+- https://www.cryptobeacon.site/bitcoin/bitcoin-lightning-network-explained
+- https://www.cryptobeacon.site/bitcoin/bitcoin-wallets-complete-guide
+- https://www.cryptobeacon.site/bitcoin/coinbase-vs-kraken-vs-binance-exchange-comparison
+- https://www.cryptobeacon.site/bitcoin/how-bitcoin-wallets-work
+- https://www.cryptobeacon.site/bitcoin/how-to-buy-your-first-bitcoin-safely
+- https://www.cryptobeacon.site/bitcoin/how-to-send-bitcoin-safely
+- https://www.cryptobeacon.site/bitcoin/what-happens-if-you-lose-your-seed-phrase
+- https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-node
+- https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-seed-phrase
+- https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-wallet
+- https://www.cryptobeacon.site/bitcoin/what-is-bitcoin-mining
+- https://www.cryptobeacon.site/bitcoin/what-is-the-bitcoin-halving
+- https://www.cryptobeacon.site/bitcoin/why-do-bond-yields-affect-bitcoin-price
+- https://www.cryptobeacon.site/contact
+- https://www.cryptobeacon.site/disclaimer
+- https://www.cryptobeacon.site/editorial-policy
+- https://www.cryptobeacon.site/ethereum/can-you-send-bitcoin-to-an-ethereum-address
+- https://www.cryptobeacon.site/ethereum/ethereum-transaction-fees-explained
+- https://www.cryptobeacon.site/ethereum/ethereum-validators-explained
+- https://www.cryptobeacon.site/ethereum/ethereum-vs-bitcoin
+- https://www.cryptobeacon.site/ethereum/ethereum-wallets-explained
+- https://www.cryptobeacon.site/ethereum/how-ethereum-works
+- https://www.cryptobeacon.site/ethereum/how-to-stake-eth-on-lido-vs-rocketpool
+- https://www.cryptobeacon.site/ethereum/proof-of-stake-explained
+- https://www.cryptobeacon.site/ethereum/what-are-gas-fees-how-to-save
+- https://www.cryptobeacon.site/ethereum/what-is-a-smart-contract
+- https://www.cryptobeacon.site/ethereum/what-is-defi-decentralized-finance
+- https://www.cryptobeacon.site/ethereum/what-is-ethereum-staking
+- https://www.cryptobeacon.site/ethereum/what-is-ethereum
+- https://www.cryptobeacon.site/guides/crypto-dollar-cost-averaging-explained
+- https://www.cryptobeacon.site/guides/crypto-portfolio-rebalancing-explained
+- https://www.cryptobeacon.site/guides/crypto-regulation-explained-for-beginners
+- https://www.cryptobeacon.site/guides/crypto-tax-basics-for-beginners
+- https://www.cryptobeacon.site/guides/exchange-or-personal-wallet-crypto-storage
+- https://www.cryptobeacon.site/guides/hardware-wallet-comparison-guide
+- https://www.cryptobeacon.site/guides/hot-wallets-vs-cold-wallets-explained
+- https://www.cryptobeacon.site/guides/how-crypto-exchanges-are-regulated
+- https://www.cryptobeacon.site/guides/how-to-read-a-block-explorer
+- https://www.cryptobeacon.site/guides/how-to-read-crypto-news-without-hype
+- https://www.cryptobeacon.site/guides/how-to-set-up-metamask-step-by-step
+- https://www.cryptobeacon.site/guides/not-your-keys-not-your-coins-meaning
+- https://www.cryptobeacon.site/guides/stablecoin-regulation-explained
+- https://www.cryptobeacon.site/guides/what-is-a-blockchain-fork
+- https://www.cryptobeacon.site/guides/what-is-a-crypto-wallet-address
+- https://www.cryptobeacon.site/guides/what-is-a-private-key
+- https://www.cryptobeacon.site/guides/what-is-a-short-squeeze-crypto-explained
+- https://www.cryptobeacon.site/guides/what-is-a-stablecoin
+- https://www.cryptobeacon.site/guides/what-is-aml-in-crypto
+- https://www.cryptobeacon.site/guides/what-is-kyc-in-cryptocurrency
+- https://www.cryptobeacon.site/guides/what-it-means-when-exchange-pauses-withdrawals
+- https://www.cryptobeacon.site/guides/why-bitcoin-price-moves-more-than-stocks
+- https://www.cryptobeacon.site/guides/why-crypto-regulation-matters
+- https://www.cryptobeacon.site/guides/why-governments-regulate-cryptocurrency
+- https://www.cryptobeacon.site/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally
+- https://www.cryptobeacon.site/news/bitcoin-september-rally-macro-test
+- https://www.cryptobeacon.site/news/ethereum-merge-two-years-later
+- https://www.cryptobeacon.site/news/liquid-network-3400-btc-returned-320-million-incident
+- https://www.cryptobeacon.site/news/oil-above-100-bitcoin-crypto-cpi-impact
+- https://www.cryptobeacon.site/news/standard-chartered-uae-institutional-bitcoin-ether-trading
+- https://www.cryptobeacon.site/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint
+- https://www.cryptobeacon.site/news/what-is-the-clarity-act-crypto
+- https://www.cryptobeacon.site/security/crypto-wallet-drainer-scams-explained
+- https://www.cryptobeacon.site/security/defi-risks-explained
+- https://www.cryptobeacon.site/security/fake-airdrop-scams-explained
+- https://www.cryptobeacon.site/security/fake-wallet-apps-explained
+- https://www.cryptobeacon.site/security/hardware-wallet-mistakes-to-avoid
+- https://www.cryptobeacon.site/security/how-to-avoid-crypto-phishing-scams
+- https://www.cryptobeacon.site/security/how-to-revoke-smart-contract-approvals
+- https://www.cryptobeacon.site/security/how-to-spot-a-rug-pull
+- https://www.cryptobeacon.site/security/how-to-store-crypto-seed-phrase-safely
+- https://www.cryptobeacon.site/security/how-to-verify-a-crypto-transaction
+- https://www.cryptobeacon.site/security/private-key-vs-seed-phrase
+- https://www.cryptobeacon.site/security/what-is-a-seed-phrase
+- https://www.cryptobeacon.site/security/what-to-do-if-your-crypto-wallet-is-hacked

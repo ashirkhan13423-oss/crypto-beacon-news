@@ -144,15 +144,9 @@ function ArticlePage() {
 
         <Author publishedDate={<time dateTime={PUBLISHED}>August 21, 2026</time>} readTime="5 min read" />
 
-        {/* PROMINENT DATED BANNER */}
-        <div className="mt-md mb-lg border-l-4 border-[#2563EB] bg-[#2563EB]/10 p-md rounded-r-md">
-          <p className="font-headline-sm text-headline-sm text-primary font-bold">
-            Last updated: August 21, 2026.
-          </p>
-          <p className="font-body-md text-body-md text-on-surface-variant mt-xs">
-            This is a dated market snapshot, not evergreen content — figures below reflect this specific week and will age quickly.
-          </p>
-        </div>
+        <p className="italic text-on-surface-variant mb-lg font-body-sm mt-md">
+          Market conditions as of August 21, 2026. This is a dated market snapshot.
+        </p>
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -208,19 +202,7 @@ function ArticlePage() {
 
         <AdUnit />
 
-        <H2 id="what-this-article-isnt-saying">What This Article Isn't Saying</H2>
-        <P>
-          This piece reports what happened and the stated reasons behind it — it does not predict where Bitcoin's price goes from here, and it deliberately excludes the price targets and forecasts currently circulating elsewhere. Short-term price moves, including this one, don't reliably indicate future direction.
-        </P>
 
-        <H2 id="key-takeaways">Key Takeaways</H2>
-        <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
-          <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface marker:text-secondary">
-            <li>Bitcoin rose from the low-$60,000s to above $76,000 over the week of August 18–21, 2026.</li>
-            <li>The move coincided with a political push for crypto-specific legislation, a Treasury announcement affecting bond yields, a short squeeze in futures markets, and a proposed SEC framework.</li>
-            <li>This is a snapshot of a specific week, not a forecast — treat any price target you see elsewhere with appropriate skepticism.</li>
-          </ul>
-        </div>
 
         <H2 id="sources">Sources</H2>
         <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
@@ -256,12 +238,9 @@ function ArticlePage() {
           </li>
         </ul>
 
-        <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
-          <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
-            Financial Disclaimer
-          </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is a factual, dated report on market events and is for informational purposes only. It is not financial or investment advice, and it does not predict future price movement. Figures reflect the date noted above and will not be updated after publication unless explicitly refreshed.
+        <div className="mt-xl text-center">
+          <p className="font-body-sm text-on-surface-variant">
+            <em>Disclaimer: This article is a factual report published on August 21, 2026, for informational purposes only. It is not financial advice.</em>
           </p>
         </div>
 
