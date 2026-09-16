@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/news-btc-september-macro-test.jpg";
 
@@ -257,7 +256,6 @@ function ArticlePage() {
           further downside.
         </P>
 
-        <AdUnit />
 
         {/* ─── SECTION 1: THE MACRO FORCES ─── */}
         <H2 id="macro-forces">
@@ -309,7 +307,6 @@ function ArticlePage() {
           tighten further.
         </P>
 
-        <AdUnit />
 
         {/* ─── SECTION 3: YIELDS & THE FED ─── */}
         <H2 id="yields-and-fed">
@@ -424,7 +421,6 @@ function ArticlePage() {
           why Friday's jobs report is so important.
         </P>
 
-        <AdUnit />
 
         {/* ─── SECTION 5: JOBS REPORT ─── */}
         <H2 id="jobs-report-catalyst">

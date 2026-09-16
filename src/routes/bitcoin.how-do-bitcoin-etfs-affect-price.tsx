@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import { AdUnit } from "@/components/AdUnit";
 import hero from "@/assets/bitcoin-etf-effects.jpg";
 import { Plus } from "lucide-react";
 
@@ -324,15 +323,6 @@ function ArticlePage() {
         </P>
 
         {/* Ad Unit #1 — below intro */}
-        <p
-          className="text-[10px] font-label-caps text-on-surface-variant uppercase tracking-widest text-center mt-xl mb-xs"
-          aria-label="Advertisement label"
-        >
-          Advertisement
-        </p>
-        <div className="mb-xl">
-          <AdUnit />
-        </div>
 
         <H2 id="what-spot-etf-holds">What a Spot Bitcoin ETF Actually Holds</H2>
         <P>
@@ -387,15 +377,6 @@ function ArticlePage() {
         <CreationRedemptionDiagram />
 
         {/* Ad Unit #2 — after diagram */}
-        <p
-          className="text-[10px] font-label-caps text-on-surface-variant uppercase tracking-widest text-center mt-xl mb-xs"
-          aria-label="Advertisement label"
-        >
-          Advertisement
-        </p>
-        <div className="mb-xl">
-          <AdUnit />
-        </div>
 
         <H2 id="why-inflows-dont-always-push">
           Why Inflows Don't Always Push Price Up Immediately
@@ -477,15 +458,6 @@ function ArticlePage() {
         </div>
 
         {/* Ad Unit #3 — after Key Takeaways, before FAQ */}
-        <p
-          className="text-[10px] font-label-caps text-on-surface-variant uppercase tracking-widest text-center mt-xl mb-xs"
-          aria-label="Advertisement label"
-        >
-          Advertisement
-        </p>
-        <div className="mb-xl">
-          <AdUnit />
-        </div>
 
         {/* FAQ — accordion */}
         <H2 id="faq">Frequently Asked Questions</H2>

@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/defi-risks.jpg";
 import { TriangleAlert } from "lucide-react";
@@ -245,7 +244,6 @@ function ArticlePage() {
           It is called "impermanent" because if the prices return to the exact ratio they were at when you deposited, the loss vanishes. But in the highly volatile crypto market, that rarely happens.
         </P>
 
-        <AdUnit />
 
         <H2 id="admin-keys">3. Centralization and Admin Keys</H2>
         <P>

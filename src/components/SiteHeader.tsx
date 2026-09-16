@@ -19,25 +19,39 @@ export function SiteHeader() {
   return (
     <header className="bg-surface-bright border-b border-outline-variant sticky top-0 z-50 w-full">
       <div className="flex justify-between items-center w-full px-gutter md:px-margin max-w-max_width mx-auto h-24">
-        <Link to="/" className="flex items-center gap-md">
-          <img alt="CryptoBeacon Logo" className="h-28 md:h-32 w-auto" src="/logo.png" height="128" fetchPriority="high" />
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-md shrink-0">
+          <img
+            alt="CryptoBeacon Logo"
+            className="h-28 md:h-32 w-auto"
+            src="/logo.png"
+            height="128"
+            fetchPriority="high"
+          />
         </Link>
-        <nav className="hidden md:flex items-center gap-lg">
+
+        {/* Primary nav — all 11 links, scrollable at mid-widths */}
+        <nav
+          aria-label="Primary navigation"
+          className="hidden md:flex items-center gap-x-sm lg:gap-x-md overflow-x-auto scrollbar-none min-w-0 flex-1 mx-md lg:mx-lg"
+        >
           {navLinks.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-all"
+              className="shrink-0 font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-all whitespace-nowrap"
               activeProps={{
                 className:
-                  "font-label-caps text-label-caps text-primary border-b-2 border-secondary font-bold pb-1 hover:text-secondary transition-all",
+                  "shrink-0 font-label-caps text-label-caps text-primary border-b-2 border-secondary font-bold pb-1 hover:text-secondary transition-all whitespace-nowrap",
               }}
             >
               {l.label}
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-md text-primary">
+
+        {/* Right-side actions */}
+        <div className="flex items-center gap-md text-primary shrink-0">
           <a
             href="https://x.com/crypto__beacon"
             target="_blank"

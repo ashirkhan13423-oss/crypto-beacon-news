@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/bitcoin-what-is-a-wallet.png";
 import { Plus, Wifi, WifiOff, Building2 } from "lucide-react";
@@ -271,7 +270,6 @@ function ArticlePage() {
           matters — it's a direct description of how wallet ownership actually works.
         </P>
 
-        <AdUnit />
 
         <H2 id="wallet-types">2. Three Types of Bitcoin Wallet</H2>
         <P>
@@ -355,7 +353,6 @@ function ArticlePage() {
           .
         </P>
 
-        <AdUnit />
 
         <H2 id="faq">Frequently Asked Questions</H2>
         <div className="space-y-md mb-xl">

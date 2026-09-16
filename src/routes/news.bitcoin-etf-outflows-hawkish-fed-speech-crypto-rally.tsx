@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/news-bitcoin-etf-fed-stress-test.jpg";
 
@@ -239,7 +238,6 @@ function ArticlePage() {
           should read the underlying structure of the rally.
         </P>
 
-        <AdUnit />
 
         <H2 id="what-warsh-said">
           What Kevin Warsh Said at Jackson Hole — and Why It Moved Markets
@@ -373,7 +371,6 @@ function ArticlePage() {
           multiple sessions, the rotation thesis gains traction.
         </P>
 
-        <AdUnit />
 
         <H2 id="macro-pressure-on-btc">
           How a Hawkish Fed Creates Pressure on Bitcoin — and Why It Is Not the

@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/crypto-portfolio-rebalancing.jpg";
 import { useState } from "react";
@@ -250,7 +249,6 @@ function ArticlePage() {
         </P>
         <P><em>This article is educational and not financial advice. Tax laws vary by jurisdiction — consult a professional.</em></P>
 
-        <AdUnit />
 
         <H2 id="why-rebalance">Why Bother Rebalancing?</H2>
         <P>
@@ -316,7 +314,6 @@ function ArticlePage() {
           <p className="font-body-md text-body-md text-on-surface"><strong>Tax note:</strong> Selling $1,250 of Bitcoin in this example is a taxable event in most jurisdictions. If your cost basis for those coins was $800 (a $450 gain), you owe capital gains tax on $450. This is why some investors prefer cash-flow rebalancing — buying only underweight assets with new money rather than selling overweight ones.</p>
         </div>
 
-        <AdUnit />
 
         <H2 id="faq">Frequently Asked Questions</H2>
         <div className="space-y-sm my-lg" itemScope itemType="https://schema.org/FAQPage">

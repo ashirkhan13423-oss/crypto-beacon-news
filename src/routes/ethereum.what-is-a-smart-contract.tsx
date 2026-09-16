@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/smart-contract.jpg";
 import { FileCode2 } from "lucide-react";
@@ -287,7 +286,6 @@ function ArticlePage() {
           <li><strong>NFTs:</strong> Non-Fungible Tokens are simply smart contracts that prove ownership of a specific digital asset, guaranteeing scarcity and tracking royalty payments automatically on secondary sales.</li>
         </ul>
 
-        <AdUnit />
 
         <H2 id="vulnerabilities">3. The Problem with "Code is Law"</H2>
         <P>

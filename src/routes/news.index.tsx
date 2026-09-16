@@ -1,4 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { ArticleGrid } from "@/components/ArticleGrid";
+import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import etfFedHero from "@/assets/news-bitcoin-etf-fed-stress-test.jpg";
@@ -76,7 +78,9 @@ const collectionSchema = {
   ],
 };
 
-export const Route = createFileRoute("/news/")({
+const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) });
+
+export const Route = createFileRoute("/news/")({ validateSearch: searchSchema,
   head: () => ({
     meta: [
       { title: "Crypto News — CryptoBeacon" },
@@ -145,114 +149,7 @@ function NewsHub() {
           <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
             Security & Breaches
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            <NewsCard
-              to="/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint"
-              image={symbiosisHero}
-              alt="Futuristic glowing bridge connecting blockchain networks with a red alert indicating a breach"
-              tag="News · Security"
-              title="Symbiosis Bitcoin Bridge Exploit Mints Unbacked syBTC: What Users Should Check"
-              desc="The Symbiosis cross-chain protocol suspended its Bitcoin route after an exploit in its BridgeV2 logic allowed an attacker to mint unbacked synthetic Bitcoin (syBTC). Find out what happened and what users should check."
-            />
-            <NewsCard
-              to="/news/trezor-brevo-phishing-email-breach-2026"
-              image={trezorHero}
-              alt="A digital illustration of a compromised email warning, with a hardware wallet symbol and a phishing hook, in a modern, dark mode, high-tech crypto aesthetic"
-              tag="News · Security"
-              title="Trezor Email Breach Sends Fake Wallet Alert to 347,000 Users: What to Do"
-              desc="A compromised third-party email provider sent fake Trezor security alerts to 347,000 users. Learn how this phishing attack happened and how to protect your seed phrase."
-            />
-          </div>
-        </section>
-
-        <section className="mb-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
-            Markets & Macro
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            <NewsCard
-              to="/news/oil-above-100-bitcoin-crypto-cpi-impact"
-              image={oilHero}
-              alt="Conceptual 3D illustration showing a sleek, modern barrel of oil and a glowing orange Bitcoin symbol."
-              tag="News · Macro"
-              title="Oil Above $100 Ahead of U.S. CPI: What It Means for Bitcoin and Crypto"
-              desc="Brent crude remains above $100 after Middle East escalation, raising a new inflation and rate-risk threat for Bitcoin and broader crypto markets ahead of key U.S. CPI data."
-            />
-            <NewsCard
-              to="/news/bitcoin-september-rally-macro-test"
-              image={macroTestHero}
-              alt="Illustration showing Bitcoin squeezed between rising oil prices and climbing Treasury yields with the Federal Reserve building in the background"
-              tag="News · Macro Analysis"
-              title="Bitcoin's September Rally Faces a New Macro Test: Oil, Yields and the Fed"
-              desc="Brent crude near $96, the 10-year yield approaching 4.8%, and a 68% chance of a September Fed rate hike are pressuring Bitcoin. Here is the full transmission chain."
-            />
-            <NewsCard
-              to="/news/bitcoin-rally-august-2026"
-              image={rallyHero}
-              alt="Illustration representing a Bitcoin price chart showing a recent upward move"
-              tag="News · Market Update"
-              title="Bitcoin Rallies Toward $77,000 — What's Driving the Move"
-              desc="Bitcoin climbed sharply the week of August 18–21, 2026. Here's a factual, dated look at what happened and why."
-            />
-          </div>
-        </section>
-
-        <section className="mb-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
-            ETFs & Institutional
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            <NewsCard
-              to="/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally"
-              image={etfFedHero}
-              alt="Illustration showing the Federal Reserve seal with downward red arrows, a Bitcoin chart with a dip, and Ethereum with upward green arrows"
-              tag="News · ETF & Fed"
-              title="Bitcoin ETF Outflows and Hawkish Fed Speech: Is the Crypto Rally Losing Momentum?"
-              desc="Bitcoin ETF outflows ended a nine-session inflow streak after Kevin Warsh's hawkish Jackson Hole speech. Here is what the Fed, ETF flows and Ethereum's divergence reveal about the rally's foundations."
-            />
-            <NewsCard
-              to="/news/standard-chartered-uae-institutional-bitcoin-ether-trading"
-              image={scHero}
-              alt="Abstract illustration of a modern bank building blending into a digital network, representing traditional finance adopting crypto"
-              tag="News · Institutional Crypto"
-              title="Standard Chartered Launches Bitcoin and Ether Spot Trading for UAE Institutions"
-              desc="Standard Chartered has launched deliverable spot trading for Bitcoin and Ether for institutional clients in the UAE. Explore how this move bridges traditional finance and crypto."
-            />
-          </div>
-        </section>
-
-        <section className="mb-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
-            Regulation & Policy
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            <NewsCard
-              to="/news/what-is-the-clarity-act-crypto"
-              image={clarityActHero}
-              alt="Illustration showing Capitol lines, balanced scales, and a regulatory gavel"
-              tag="News · Regulation"
-              title="What Is the Clarity Act, and What Would It Actually Change?"
-              desc="An objective, factual look at the proposed U.S. crypto bill, its securities vs. commodities classifications, stablecoin rules, and Senate status."
-            />
-          </div>
-        </section>
-
-        <section className="mb-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
-            Ethereum & Network
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            <NewsCard
-              to="/news/ethereum-merge-two-years-later"
-              image={ethMergeHero}
-              alt="Illustration representing the Ethereum Merge"
-              tag="News · Analysis"
-              title="The Ethereum Merge: Two Years Later — What Actually Changed"
-              desc="A factual retrospective on the Ethereum Merge at its two-year mark (September 2024): what the upgrade delivered, what it didn't, and what the data shows now."
-            />
-          </div>
-        </section>
-
+          <ArticleGrid category="News" currentPage={page} />
       </main>
       <SiteFooter />
     </div>

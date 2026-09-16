@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/metamask-setup-guide.jpg";
 import { CheckCircle, AlertTriangle, Info, ShieldCheck } from "lucide-react";
@@ -216,7 +215,6 @@ function ArticlePage() {
           </ol>
         </div>
 
-        <AdUnit />
 
         <Step number={1} title="Install the Official Extension">
           <P>
@@ -266,7 +264,6 @@ function ArticlePage() {
           </Callout>
         </Step>
 
-        <AdUnit />
 
         <Step number={5} title="Add a Custom Network (Optional)">
           <P>

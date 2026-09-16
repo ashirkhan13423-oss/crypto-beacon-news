@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/bitcoin-buy-safely.jpg";
 import { ShieldCheck, Plus } from "lucide-react";
@@ -315,7 +314,6 @@ function ArticlePage() {
           financial world.
         </P>
         
-        <AdUnit />
 
         <H2 id="step-4">Step 4: Fund Your Account</H2>
         <P>

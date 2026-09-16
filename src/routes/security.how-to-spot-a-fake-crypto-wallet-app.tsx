@@ -4,7 +4,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import hero from "@/assets/security-fake-wallet-app.jpg";
 import { Plus } from "lucide-react";
-import { AdUnit } from "@/components/AdUnit";
 
 const URL = "https://www.cryptobeacon.site/security/how-to-spot-a-fake-crypto-wallet-app";
 const TITLE = "How to Spot a Fake Crypto Wallet App | CryptoBeacon";
@@ -184,8 +183,6 @@ function ArticlePage() {
           />
         </figure>
         
-        <div className="text-center text-xs text-gray-400 mb-4">Advertisement</div>
-        <AdUnit />
 
 <P>As cryptocurrency adoption grows, so does the sophistication of scammers targeting new users. One of the most devastating attacks in the space is the use of malicious software disguised as legitimate applications. Knowing <strong>how to spot a fake crypto wallet app</strong> is an essential skill that can save you from losing your entire portfolio.</P>
 
@@ -210,8 +207,6 @@ function ArticlePage() {
           </ul>
         </div>
 
-        <div className="text-center text-xs text-gray-400 mb-4">Advertisement</div>
-        <AdUnit />
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
@@ -228,8 +223,6 @@ function ArticlePage() {
           ))}
         </div>
         
-        <div className="text-center text-xs text-gray-400 mb-4 mt-8">Advertisement</div>
-        <AdUnit />
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">

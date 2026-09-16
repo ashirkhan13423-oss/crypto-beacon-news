@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/news-bitcoin-rally.jpg";
 
@@ -165,7 +164,6 @@ function ArticlePage() {
           This article reports on events as they occurred and is not financial advice. It does not predict future price movement.
         </P>
 
-        <AdUnit />
 
         <H2 id="what-happened">What Happened</H2>
         <P>
@@ -200,7 +198,6 @@ function ArticlePage() {
           </li>
         </ul>
 
-        <AdUnit />
 
 
 

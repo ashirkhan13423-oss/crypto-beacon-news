@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/eth-staking-lido-vs-rocketpool.jpg";
 import { Check, X, Info } from "lucide-react";
@@ -141,7 +140,6 @@ function ArticlePage() {
         </P>
         <P><em>This article is educational and not financial advice. Staking involves smart contract risk and ETH price risk.</em></P>
 
-        <AdUnit />
 
         {/* Side-by-side data table */}
         <H2 id="comparison-table">Head-to-Head Comparison</H2>
@@ -247,7 +245,6 @@ function ArticlePage() {
           </p>
         </div>
 
-        <AdUnit />
 
         <H2 id="verdict">Which Should You Use?</H2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-lg my-lg">

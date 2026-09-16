@@ -1,4 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { ArticleGrid } from "@/components/ArticleGrid";
+import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Breadcrumbs, breadcrumbSchemaFromItems } from "@/components/Breadcrumbs";
@@ -34,7 +36,9 @@ const collectionSchema = {
   ],
 };
 
-export const Route = createFileRoute("/altcoins/")({
+const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) });
+
+export const Route = createFileRoute("/altcoins/")({ validateSearch: searchSchema,
   head: () => ({
     meta: [
       { title: TITLE },
@@ -88,69 +92,7 @@ function AltcoinsHub() {
           <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
             Getting Started
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            <Card
-              to="/altcoins/what-is-an-altcoin"
-              tag="Altcoins · Explainer"
-              title="What Is an Altcoin? The Complete Guide"
-              desc="A complete guide to altcoins: understand smart contract platforms, stablecoins, utility tokens, and meme coins."
-            />
-          </div>
-        </section>
-
-        <section className="mb-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
-            Stablecoins
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            <Card
-              to="/guides/what-is-a-stablecoin"
-              tag="Guides · Explainer"
-              title="What is a Stablecoin? The Bridge Between Crypto and Fiat"
-              desc="How USDC, USDT, and DAI maintain their dollar peg — covering fiat-backed, crypto-collateralized, and algorithmic models, and why each carries different risks."
-            />
-            <Card
-              to="/guides/stablecoin-regulation-explained"
-              tag="Guides · Regulation"
-              title="Stablecoin Regulation Explained: Rules, Reserves & MiCA"
-              desc="Reserve requirements, issuer licensing under MiCA, U.S. stablecoin bills, and why regulators treat stablecoins as a systemic risk worth monitoring."
-            />
-          </div>
-        </section>
-
-        <section className="mb-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
-            Altcoin Mechanics
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            <Card
-              to="/guides/what-is-a-blockchain-fork"
-              tag="Guides · Explainer"
-              title="What Is a Blockchain Fork? Explained Simply"
-              desc="How hard and soft forks work, why they happen, and how they have produced well-known alternative chains — directly relevant to understanding altcoin origins."
-            />
-            <Card
-              to="/guides/what-is-a-short-squeeze-crypto-explained"
-              tag="Guides · Explainer"
-              title="What Is a Short Squeeze in Crypto? Mechanics Explained"
-              desc="Short squeezes are especially pronounced in lower-liquidity altcoins. This guide covers how leveraged positions, margin calls, and liquidation cascades produce rapid price spikes."
-            />
-          </div>
-        </section>
-
-        <section className="mb-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
-            Altcoin Risks
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            <Card
-              to="/security/how-to-spot-a-rug-pull"
-              tag="Security · Guide"
-              title="How to Spot a Rug Pull Before It Happens"
-              desc="Warning signs that a project is designed to steal liquidity — anonymous teams, unaudited contracts, honeypot mechanics, and artificial social pressure. Disproportionately common in the altcoin space."
-            />
-          </div>
-        </section>
+          <ArticleGrid category="Altcoins" currentPage={page} />
       </main>
       <SiteFooter />
     </div>

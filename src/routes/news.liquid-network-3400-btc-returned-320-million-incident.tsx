@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/liquid-network-3400-btc-returned.jpg";
 
@@ -170,7 +169,6 @@ function ArticlePage() {
           The initial incident on September 6 sent shockwaves through the market when about 4,000 BTC were extracted from Liquid's federation wallet, leading to an immediate halt of transactions, bridge activity, and LBTC withdrawals on major exchanges. This partial recovery does not mean the crisis is over; instead, it raises critical questions about Bitcoin sidechain security, the underlying technical vulnerabilities, and how users evaluate the safety of wrapped Bitcoin products.
         </P>
 
-        <AdUnit />
 
         <H2 id="the-recovery-and-outstanding-funds">The Recovery: What is Confirmed vs. Reported</H2>
         <P>
@@ -196,7 +194,6 @@ function ArticlePage() {
           Users should continue to treat these details as reported pending a direct, official confirmation and post-mortem from Liquid or Blockstream.
         </P>
 
-        <AdUnit />
 
         <H2 id="sidechain-risk-is-not-bitcoin-risk">Sidechain Risk Is Not Bitcoin Risk</H2>
         <P>

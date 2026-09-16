@@ -1,4 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { ArticleGrid } from "@/components/ArticleGrid";
+import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Breadcrumbs, breadcrumbSchemaFromItems } from "@/components/Breadcrumbs";
@@ -23,7 +25,9 @@ const collectionSchema = {
   ],
 };
 
-export const Route = createFileRoute("/taxes/")({
+const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) });
+
+export const Route = createFileRoute("/taxes/")({ validateSearch: searchSchema,
   head: () => ({
     meta: [
       { title: TITLE },
@@ -82,61 +86,7 @@ function TaxesHub() {
           <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
             Tax Basics
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            <Card
-              to="/guides/crypto-tax-basics-for-beginners"
-              tag="Guides · Beginner"
-              title="Crypto Tax Basics for Beginners"
-              desc="What counts as a taxable event, how capital gains apply to crypto trading, and why trading one cryptocurrency for another triggers a tax liability — covered in plain language."
-            />
-            <Card
-              to="/guides/cryptocurrency-taxes-explained"
-              tag="Guides · Explainer"
-              title="Cryptocurrency Taxes Explained: Capital Gains, Income & Reporting"
-              desc="How capital gains apply to crypto, how staking and airdrop income is typically treated, and what records you need to track your crypto for tax reporting."
-            />
-          </div>
-        </section>
-
-        <section className="mb-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
-            Tax Implications of Common Strategies
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            <Card
-              to="/guides/crypto-portfolio-rebalancing-explained"
-              tag="Guides · Strategy"
-              title="Crypto Portfolio Rebalancing Explained"
-              desc="Rebalancing your portfolio by selling one asset and buying another triggers capital gains events. This guide walks through the mechanics and the tax math with a worked example."
-            />
-            <Card
-              to="/guides/what-is-a-short-squeeze-crypto-explained"
-              tag="Guides · Explainer"
-              title="What Is a Short Squeeze in Crypto?"
-              desc="Understanding how leveraged positions, margin requirements, and liquidation cascades work — and why each closure event can trigger a capital gains or loss."
-            />
-          </div>
-        </section>
-
-        <section className="mb-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
-            Regulation & Reporting Context
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            <Card
-              to="/guides/stablecoin-regulation-explained"
-              tag="Guides · Regulation"
-              title="Stablecoin Regulation Explained: Rules, Reserves & MiCA"
-              desc="How stablecoins are regulated globally, including reserve requirements, issuer licensing, and MiCA's stablecoin rules — relevant context for stablecoin tax treatment."
-            />
-            <Card
-              to="/news/what-is-the-clarity-act-crypto"
-              tag="News · Regulation"
-              title="What Is the Clarity Act, and What Would It Actually Change?"
-              desc="The proposed U.S. bill that would classify most cryptocurrencies as commodities, with direct implications for how crypto trades and staking income are reported to the IRS."
-            />
-          </div>
-        </section>
+          <ArticleGrid category="Taxes" currentPage={page} />
       </main>
       <SiteFooter />
     </div>

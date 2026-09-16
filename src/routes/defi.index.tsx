@@ -1,4 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { ArticleGrid } from "@/components/ArticleGrid";
+import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Breadcrumbs, breadcrumbSchemaFromItems } from "@/components/Breadcrumbs";
@@ -27,7 +29,9 @@ const collectionSchema = {
   ],
 };
 
-export const Route = createFileRoute("/defi/")({
+const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) });
+
+export const Route = createFileRoute("/defi/")({ validateSearch: searchSchema,
   head: () => ({
     meta: [
       { title: TITLE },
@@ -81,87 +85,7 @@ function DefiHub() {
           <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
             Foundations
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            <Card
-              to="/ethereum/what-is-defi-decentralized-finance"
-              tag="Ethereum · Guide"
-              title="What Is DeFi? Decentralized Finance Explained"
-              desc="A plain-language introduction to decentralized finance — what it is, how lending protocols and DEXes work, and the real risks beginners should understand before participating."
-            />
-            <Card
-              to="/ethereum/what-is-a-smart-contract"
-              tag="Ethereum · Guide"
-              title="What is a Smart Contract? How Blockchain Code Works"
-              desc="A beginner-friendly explanation of smart contracts, the self-executing code that powers DeFi, NFTs, and the Ethereum network."
-            />
-            <Card
-              to="/ethereum/ethereum-layer-2-scaling-rollups-explained"
-              tag="Ethereum · Guide"
-              title="Ethereum Layer 2 Scaling & Rollups Explained"
-              desc="How rollups compress transactions off-chain and settle them on Ethereum, dramatically reducing gas fees for DeFi users."
-            />
-          </div>
-        </section>
-
-        <section className="mb-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
-            Yield & Staking
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            <Card
-              to="/ethereum/what-is-ethereum-staking"
-              tag="Ethereum · Guide"
-              title="What Is Ethereum Staking? Proof-of-Stake & Yield Explained"
-              desc="How Ethereum Proof-of-Stake works, what staking yield represents, the difference between solo nodes and liquid staking, and key risks."
-            />
-            <Card
-              to="/ethereum/how-to-stake-eth-on-lido-vs-rocketpool"
-              tag="Ethereum · Comparison"
-              title="Staking ETH: Lido vs Rocket Pool — A Tested Comparison"
-              desc="A hands-on comparison covering yield, smart contract risk, decentralization, and minimum stake requirements for the two dominant liquid staking protocols."
-            />
-          </div>
-        </section>
-
-        <section className="mb-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
-            Getting Started
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            <Card
-              to="/guides/how-to-set-up-metamask-step-by-step"
-              tag="Guides · Walkthrough"
-              title="How to Set Up MetaMask: Step-by-Step (2026)"
-              desc="Installing MetaMask, securing your seed phrase, adding a network, and making your first transaction safely — the entry point for most DeFi activity."
-            />
-          </div>
-        </section>
-
-        <section className="mb-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-lg border-b border-outline-variant pb-xs">
-            Risks & Security
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-            <Card
-              to="/security/defi-risks-explained"
-              tag="Security · Guide"
-              title="DeFi Risks Explained: Smart Contracts, Rug Pulls & Impermanent Loss"
-              desc="A stark look at the hidden dangers of DeFi — smart contract vulnerabilities, impermanent loss in liquidity pools, oracle manipulation, and governance exploits."
-            />
-            <Card
-              to="/security/how-to-revoke-smart-contract-approvals"
-              tag="Security · Guide"
-              title="How to Revoke Smart Contract Approvals"
-              desc="Every DeFi interaction grants token spending permissions to a contract. Learn how to audit and revoke those approvals before they become a liability."
-            />
-            <Card
-              to="/security/how-to-spot-a-rug-pull"
-              tag="Security · Guide"
-              title="How to Spot a Rug Pull Before It Happens"
-              desc="The warning signs that a DeFi project is set up to steal liquidity — anonymous teams, unaudited contracts, honeypot mechanics, and social pressure tactics."
-            />
-          </div>
-        </section>
+          <ArticleGrid category="DeFi" currentPage={page} />
       </main>
       <SiteFooter />
     </div>

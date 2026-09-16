@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/trezor-phishing-breach.jpg";
 import hardwareWalletFirewall from "@/assets/hardware-wallet-firewall.jpg";
@@ -171,7 +170,6 @@ function ArticlePage() {
           The email campaign weaponized the trust users place in Trezor by deploying a fake "Critical Security Alert." The message urged recipients to take immediate action regarding a supposed "STM32 Entropy Vulnerability." The goal was to trick users into downloading a malicious application that would prompt them for their sensitive 12, 18, or 24-word backup phrases. Despite the rapid response by Trezor to suspend the compromised Brevo account and neutralize the associated phishing domains, the incident represents a severe supply-chain breach. It serves as a stark warning to the crypto community: an email can successfully pass traditional authentication checks (like SPF, DKIM, and DMARC) and still be a malicious threat if the sender's account at a trusted third-party vendor has been compromised.
         </P>
 
-        <AdUnit />
 
         <H2 id="what-happened">What Exactly Happened During the Breach?</H2>
         <P>
@@ -217,7 +215,6 @@ function ArticlePage() {
           <li><strong>Verify Updates Manually:</strong> Always verify firmware and software updates directly through the official Trezor Suite app or by manually typing <code>trezor.io</code> into your browser. Never trust an update link sent via email.</li>
         </ul>
 
-        <AdUnit />
 
         <H2 id="the-bigger-picture">The Bigger Picture: Supply-Chain Risks in Crypto</H2>
         <P>

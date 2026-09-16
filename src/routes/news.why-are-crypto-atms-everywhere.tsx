@@ -4,7 +4,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import hero from "@/assets/news-crypto-atms-everywhere.jpg";
 import { Plus } from "lucide-react";
-import { AdUnit } from "@/components/AdUnit";
 
 const URL = "https://www.cryptobeacon.site/news/why-are-crypto-atms-everywhere";
 const TITLE = "Why Are Crypto ATMs Everywhere? | CryptoBeacon";
@@ -184,8 +183,6 @@ function ArticlePage() {
           />
         </figure>
         
-        <div className="text-center text-xs text-gray-400 mb-4">Advertisement</div>
-        <AdUnit />
 
 <P>If you've walked into a gas station, a convenience store, or a local mall recently, you might have noticed a glowing, futuristic-looking kiosk sitting next to the traditional ATM. These are Crypto ATMs, and their numbers have exploded over the past few years. But <strong>why are Crypto ATMs everywhere</strong>, and who is actually using them?</P>
 
@@ -210,8 +207,6 @@ function ArticlePage() {
           </ul>
         </div>
 
-        <div className="text-center text-xs text-gray-400 mb-4">Advertisement</div>
-        <AdUnit />
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
@@ -228,8 +223,6 @@ function ArticlePage() {
           ))}
         </div>
         
-        <div className="text-center text-xs text-gray-400 mb-4 mt-8">Advertisement</div>
-        <AdUnit />
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">

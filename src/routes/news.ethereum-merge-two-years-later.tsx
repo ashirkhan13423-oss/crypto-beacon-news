@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/ethereum-merge-two-years.jpg";
 import { Check, X } from "lucide-react";
@@ -209,7 +208,6 @@ function ArticlePage() {
           On September 15, 2022, Ethereum stopped mining. In the space of one block, the world's second-largest blockchain switched from proof-of-work (PoW) to proof-of-stake (PoS) in a live transition watched by hundreds of thousands of developers and investors. The Merge had been in development for seven years. It worked on the first try. Now, two years later, it's worth looking at the data rather than the narrative.
         </P>
 
-        <AdUnit />
 
         <H2 id="what-it-promised">What the Merge Promised</H2>
         <P>
@@ -245,7 +243,6 @@ function ArticlePage() {
           </div>
         </div>
 
-        <AdUnit />
 
         <H2 id="by-the-numbers">By the Numbers (August 2026)</H2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-md my-xl">

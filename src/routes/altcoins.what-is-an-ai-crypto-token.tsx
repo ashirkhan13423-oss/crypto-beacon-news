@@ -4,7 +4,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import hero from "@/assets/altcoins-ai-crypto-token.jpg";
 import { Plus } from "lucide-react";
-import { AdUnit } from "@/components/AdUnit";
 
 const URL = "https://www.cryptobeacon.site/altcoins/what-is-an-ai-crypto-token";
 const TITLE = "What is an AI Crypto Token? | CryptoBeacon";
@@ -184,8 +183,6 @@ function ArticlePage() {
           />
         </figure>
         
-        <div className="text-center text-xs text-gray-400 mb-4">Advertisement</div>
-        <AdUnit />
 
 <P>Artificial Intelligence (AI) and blockchain are two of the most disruptive technologies of our time. An <strong>AI crypto token</strong> is a digital asset that powers projects sitting at the intersection of these fields. These tokens are used within decentralized networks that offer AI-related services, such as machine learning model training, decentralized GPU rendering, or AI-driven trading algorithms.</P>
 
@@ -208,8 +205,6 @@ function ArticlePage() {
           </ul>
         </div>
 
-        <div className="text-center text-xs text-gray-400 mb-4">Advertisement</div>
-        <AdUnit />
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
@@ -226,8 +221,6 @@ function ArticlePage() {
           ))}
         </div>
         
-        <div className="text-center text-xs text-gray-400 mb-4 mt-8">Advertisement</div>
-        <AdUnit />
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">

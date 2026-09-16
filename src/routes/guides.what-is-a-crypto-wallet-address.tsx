@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import { AdUnit } from "@/components/AdUnit";
 import hero from "@/assets/guides-wallet-address.png";
 import { Plus, Copy, QrCode, ShieldCheck } from "lucide-react";
 
@@ -274,7 +273,6 @@ function ArticlePage() {
           addresses as you need, any time, without anyone's permission.
         </P>
 
-        <AdUnit />
 
         <H2 id="how-created">2. How an Address Is Created</H2>
         <P>
@@ -378,7 +376,6 @@ function ArticlePage() {
           </div>
         </div>
 
-        <AdUnit />
 
         <H2 id="faq">Frequently Asked Questions</H2>
         <div className="space-y-md mb-xl">

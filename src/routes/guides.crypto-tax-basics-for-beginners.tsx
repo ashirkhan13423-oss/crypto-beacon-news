@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/crypto-tax-basics.jpg";
 import { ShieldCheck, Receipt } from "lucide-react";
@@ -285,7 +284,6 @@ function ArticlePage() {
           <li><strong>Buying goods or services with crypto:</strong> If you use Bitcoin to buy a cup of coffee (or a car), you are technically selling that fraction of a Bitcoin. If it appreciated since you bought it, you owe capital gains tax on the transaction, no matter how small.</li>
         </ul>
 
-        <AdUnit />
 
         <H2 id="non-taxable">3. What is NOT a Taxable Event?</H2>
         <P>

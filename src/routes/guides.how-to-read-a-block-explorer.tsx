@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/read-block-explorer.jpg";
 import { Search } from "lucide-react";
@@ -285,7 +284,6 @@ function ArticlePage() {
           </li>
         </ul>
 
-        <AdUnit />
 
         <H2 id="popular">4. Popular Block Explorers by Network</H2>
         <P>

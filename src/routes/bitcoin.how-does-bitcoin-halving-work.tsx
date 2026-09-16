@@ -4,7 +4,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import hero from "@/assets/bitcoin-halving-mechanism.jpg";
 import { Plus } from "lucide-react";
-import { AdUnit } from "@/components/AdUnit";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/how-does-bitcoin-halving-work";
 const TITLE = "How Does Bitcoin Halving Work? | CryptoBeacon";
@@ -188,8 +187,6 @@ function ArticlePage() {
           />
         </figure>
         
-        <div className="text-center text-xs text-gray-400 mb-4">Advertisement</div>
-        <AdUnit />
 
         
 
@@ -221,7 +218,6 @@ function ArticlePage() {
           </table>
         </div>
 
-        <AdUnit />
 
         <H2 id="why-it-matters">Why the Halving Matters for Bitcoin's Value</H2>
         <P>The halving directly reduces the rate at which new Bitcoin enters circulation — the so-called <strong>issuance rate</strong> or <strong>inflation rate</strong>. After the 2024 halving, roughly 450 BTC are mined per day (down from 900 pre-halving). If demand remains constant or grows while new supply is cut in half, basic economics suggests upward price pressure.</P>
@@ -245,7 +241,6 @@ function ArticlePage() {
         <P>One widespread myth is that halvings automatically trigger immediate price jumps. In reality, the market often "prices in" the halving months in advance since the date is roughly predictable. The actual event itself can even produce a "sell the news" dip. The supply-demand effects play out over months, not days.</P>
         <P>Another misconception is that halvings are risky for the network's security. While some less efficient miners do go offline, Bitcoin's <Link to="/bitcoin/what-is-bitcoin-mining" className="text-secondary hover:underline">difficulty adjustment mechanism</Link> ensures the network rebalances within roughly two weeks. The hashrate typically recovers and surpasses pre-halving levels within a few months.</P>
 
-        <AdUnit />
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
@@ -262,8 +257,6 @@ function ArticlePage() {
           ))}
         </div>
         
-        <div className="text-center text-xs text-gray-400 mb-4 mt-8">Advertisement</div>
-        <AdUnit />
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">

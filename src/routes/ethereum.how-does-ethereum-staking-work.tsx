@@ -4,7 +4,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import hero from "@/assets/ethereum-staking-mechanism.jpg";
 import { Plus } from "lucide-react";
-import { AdUnit } from "@/components/AdUnit";
 
 const URL = "https://www.cryptobeacon.site/ethereum/how-does-ethereum-staking-work";
 const TITLE = "How Does Ethereum Staking Work? | CryptoBeacon";
@@ -184,8 +183,6 @@ function ArticlePage() {
           />
         </figure>
         
-        <div className="text-center text-xs text-gray-400 mb-4">Advertisement</div>
-        <AdUnit />
 
 <P>In 2022, Ethereum executed "The Merge," transitioning the network from a highly energy-intensive Proof-of-Work (PoW) system to a much more efficient Proof-of-Stake (PoS) consensus mechanism. Instead of relying on miners with powerful graphics cards, Ethereum now relies on "validators" who lock up their own capital to secure the network. This process is known as <strong>Ethereum staking</strong>.</P>
 
@@ -208,8 +205,6 @@ function ArticlePage() {
           </ul>
         </div>
 
-        <div className="text-center text-xs text-gray-400 mb-4">Advertisement</div>
-        <AdUnit />
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
@@ -226,8 +221,6 @@ function ArticlePage() {
           ))}
         </div>
         
-        <div className="text-center text-xs text-gray-400 mb-4 mt-8">Advertisement</div>
-        <AdUnit />
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">

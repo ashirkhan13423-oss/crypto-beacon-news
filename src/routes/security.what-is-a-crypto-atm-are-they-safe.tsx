@@ -4,7 +4,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import hero from "@/assets/security-crypto-atm.jpg";
 import { Plus } from "lucide-react";
-import { AdUnit } from "@/components/AdUnit";
 
 const URL = "https://www.cryptobeacon.site/security/what-is-a-crypto-atm-are-they-safe";
 const TITLE = "What is a Crypto ATM and Are They Safe? | CryptoBeacon";
@@ -184,8 +183,6 @@ function ArticlePage() {
           />
         </figure>
         
-        <div className="text-center text-xs text-gray-400 mb-4">Advertisement</div>
-        <AdUnit />
 
 <P>Crypto ATMs are springing up in convenience stores and malls worldwide, providing a quick way to convert cash into Bitcoin. While they offer unparalleled convenience for the underbanked, many users wonder: <strong>What is a crypto ATM, and are they actually safe to use?</strong></P>
 
@@ -210,8 +207,6 @@ function ArticlePage() {
           </ul>
         </div>
 
-        <div className="text-center text-xs text-gray-400 mb-4">Advertisement</div>
-        <AdUnit />
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
@@ -228,8 +223,6 @@ function ArticlePage() {
           ))}
         </div>
         
-        <div className="text-center text-xs text-gray-400 mb-4 mt-8">Advertisement</div>
-        <AdUnit />
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">

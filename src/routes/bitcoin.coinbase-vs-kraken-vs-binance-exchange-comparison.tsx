@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/exchange-comparison.jpg";
 import { Check, X, Star } from "lucide-react";
@@ -304,7 +303,6 @@ function ArticlePage() {
           This comparison focuses on the dimensions that actually affect your money: fees, security track record, regulatory standing, and what each exchange is uniquely good at. It is not financial advice.
         </P>
 
-        <AdUnit />
 
         {/* Quick Comparison Table */}
         <div className="my-xl rounded-xl border border-outline-variant bg-surface-container-lowest overflow-hidden">
@@ -363,7 +361,6 @@ function ArticlePage() {
           <ExchangeCard key={ex.name} ex={ex} />
         ))}
 
-        <AdUnit />
 
         <H2 id="verdict">The Verdict: How to Choose</H2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-md my-lg">

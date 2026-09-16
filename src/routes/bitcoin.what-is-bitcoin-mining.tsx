@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/bitcoin-what-is-mining.png";
 import { Plus } from "lucide-react";
@@ -327,7 +326,6 @@ function ArticlePage() {
           prohibitively expensive in practice.
         </P>
 
-        <AdUnit />
 
         <H2 id="difficulty-supply">3. Difficulty Adjustment and Fixed Supply</H2>
         <P>

@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/hardware-wallet-comparison.jpg";
 import { Check, X, ShieldAlert } from "lucide-react";
@@ -277,7 +276,6 @@ function ArticlePage() {
           closed-box security models.
         </P>
         
-        <AdUnit />
 
         <H2 id="coldcard">Coldcard: The Bitcoin Maximalist's Choice</H2>
         <P>

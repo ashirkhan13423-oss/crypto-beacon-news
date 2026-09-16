@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/hacked-wallet-emergency.jpg";
 import { Zap, Clock, FileText, AlertTriangle } from "lucide-react";
@@ -253,7 +252,6 @@ function ArticlePage() {
 
         <P><em>This article is for educational purposes only and is not legal or financial advice.</em></P>
 
-        <AdUnit />
 
         <h2 className="scroll-mt-28 font-headline-md text-headline-md md:text-headline-lg text-primary mt-xxl mb-md" id="action-tiers">
           Emergency Action Plan — By Urgency
@@ -263,7 +261,6 @@ function ArticlePage() {
         <ActionTier tier="24h" actions={within24hActions} />
         <ActionTier tier="after" actions={afterActions} />
 
-        <AdUnit />
 
         <h2 className="scroll-mt-28 font-headline-md text-headline-md md:text-headline-lg text-primary mt-xxl mb-md" id="can-i-recover">
           Can I Recover Stolen Crypto?

@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/news-oil-btc-impact.jpg";
 
@@ -231,7 +230,6 @@ function ArticlePage() {
           While the headlines focus on the geopolitical drama and maritime security, the immediate threat to Bitcoin and altcoins is far more systemic. The spike in energy prices arrives just days before the release of crucial U.S. producer-price and consumer-price indices. For crypto investors, this oil shock threatens to ignite a new wave of inflation fears, complicate the Federal Reserve's monetary policy, and fundamentally alter global liquidity conditions.
         </P>
 
-        <AdUnit />
 
         <H2 id="the-transmission-chain">
           The Transmission Chain: How an Oil Shock Hits Crypto
@@ -283,7 +281,6 @@ function ArticlePage() {
           Treasury yields have already been hovering at elevated levels, and the U.S. Treasury recently conducted a $6 billion buyback operation in long-dated bonds, highlighting the sensitivity in the fixed-income sector. If inflation expectations harden, bond yields will likely push higher. A climbing 10-year Treasury yield is historically a massive headwind for Bitcoin, as it fundamentally increases the opportunity cost of holding non-yielding speculative assets.
         </P>
 
-        <AdUnit />
 
         <H2 id="impact-on-bitcoin-altcoins">
           Immediate Market Impact: Volatility and Leverage

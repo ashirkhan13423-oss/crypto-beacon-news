@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.cryptobeacon.site/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.cryptobeacon.site/about</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -42,16 +37,6 @@
   </url>
   <url>
     <loc>https://www.cryptobeacon.site/author</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.cryptobeacon.site/bitcoin</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.cryptobeacon.site/bitcoin</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -102,6 +87,16 @@
   </url>
   <url>
     <loc>https://www.cryptobeacon.site/bitcoin/how-to-send-bitcoin-safely</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/bitcoin</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/bitcoin</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -186,16 +181,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.cryptobeacon.site/ethereum</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.cryptobeacon.site/ethereum</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.cryptobeacon.site/ethereum/can-you-send-bitcoin-to-an-ethereum-address</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -246,7 +231,17 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.cryptobeacon.site/ethereum</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.cryptobeacon.site/ethereum/proof-of-stake-explained</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/ethereum</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -271,17 +266,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.cryptobeacon.site/ethereum/what-is-ethereum</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.cryptobeacon.site/ethereum/what-is-ethereum-staking</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.cryptobeacon.site/glossary</loc>
+    <loc>https://www.cryptobeacon.site/ethereum/what-is-ethereum</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -291,12 +281,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.cryptobeacon.site/guides</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.cryptobeacon.site/guides</loc>
+    <loc>https://www.cryptobeacon.site/glossary</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -381,12 +366,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.cryptobeacon.site/guides</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.cryptobeacon.site/guides/not-your-keys-not-your-coins-meaning</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cryptobeacon.site/guides/stablecoin-regulation-explained</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/guides</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -451,7 +446,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.cryptobeacon.site/learn</loc>
+    <loc>https://www.cryptobeacon.site</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -461,12 +456,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.cryptobeacon.site/news</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.cryptobeacon.site/news</loc>
+    <loc>https://www.cryptobeacon.site/learn</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -492,6 +482,11 @@
   </url>
   <url>
     <loc>https://www.cryptobeacon.site/news/ethereum-merge-two-years-later</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/news</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -526,6 +521,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.cryptobeacon.site/news</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.cryptobeacon.site/news/what-is-on-chain-trading-vs-exchange</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -547,16 +547,6 @@
   </url>
   <url>
     <loc>https://www.cryptobeacon.site/search</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.cryptobeacon.site/security</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.cryptobeacon.site/security</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -641,7 +631,17 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.cryptobeacon.site/security</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.cryptobeacon.site/security/private-key-vs-seed-phrase</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/security</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

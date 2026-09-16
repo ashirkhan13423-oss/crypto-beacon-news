@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import { AdUnit } from "@/components/AdUnit";
 import hero from "@/assets/news-bitcoin-volatility.svg";
 import { Plus, PieChart, Lock, Clock, Droplets, Building2 } from "lucide-react";
 
@@ -241,7 +240,6 @@ function ArticlePage() {
         </div>
 
         {/* Ad Unit #1: After intro */}
-        <AdUnit />
 
         <H2 id="smaller-younger-market">A Smaller, Younger Market</H2>
         <P>
@@ -304,7 +302,6 @@ function ArticlePage() {
         </P>
 
         {/* Ad Unit #2: After "Thinner Liquidity Than It Appears" */}
-        <AdUnit />
 
         <H2 id="infrastructure">A Market Still Establishing Its Infrastructure</H2>
         <P>
@@ -345,7 +342,6 @@ function ArticlePage() {
         </div>
 
         {/* Ad Unit #3: After "Key Takeaways" */}
-        <AdUnit />
 
         <H2 id="faq">Frequently Asked Questions</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">

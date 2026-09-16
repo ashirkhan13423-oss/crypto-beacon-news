@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import { AdUnit } from "@/components/AdUnit";
 import hero from "@/assets/news-paused-withdrawals.jpg";
 import { Plus } from "lucide-react";
 
@@ -206,7 +205,6 @@ function ArticlePage() {
           isn't financial advice, but rather a framework for evaluating platform risk.
         </P>
 
-        <AdUnit />
 
         <H2 id="why-happens">Why Withdrawal Pauses Happen</H2>
         <P>
@@ -319,7 +317,6 @@ function ArticlePage() {
           is displaying classic signs of a liquidity crisis.
         </P>
 
-        <AdUnit />
 
         <H2 id="what-to-do">What to Do If You See a Withdrawal Pause</H2>
         <P>
@@ -399,7 +396,6 @@ function ArticlePage() {
           </ul>
         </div>
 
-        <AdUnit />
 
         <H2 id="faq">Frequently Asked Questions</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">

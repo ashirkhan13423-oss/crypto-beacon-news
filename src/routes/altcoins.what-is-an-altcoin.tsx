@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import { Cpu, DollarSign, Settings, Zap } from "lucide-react";
 
@@ -215,9 +214,6 @@ function ArticlePage() {
           Bitcoin's design or target entirely different use cases.
         </P>
 
-        <div className="my-xl">
-          <AdUnit />
-        </div>
 
         <H2 id="why-do-we-need-altcoins">1. Why Do We Need Altcoins?</H2>
         <P>
@@ -269,9 +265,6 @@ function ArticlePage() {
           ))}
         </div>
 
-        <div className="my-xl">
-          <AdUnit />
-        </div>
 
         <H2 id="key-takeaways">3. Key Takeaways</H2>
         <div className="pl-lg border-l-4 border-[#0F9D58] bg-surface-container-low p-md rounded-r-lg my-lg">
@@ -283,9 +276,6 @@ function ArticlePage() {
           </ul>
         </div>
 
-        <div className="my-xl">
-          <AdUnit />
-        </div>
 
         <H2 id="faq">Frequently Asked Questions</H2>
         <div className="space-y-md mb-xl">

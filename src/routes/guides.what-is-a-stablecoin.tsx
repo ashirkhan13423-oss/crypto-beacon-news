@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/what-is-stablecoin.jpg";
 
@@ -259,7 +258,6 @@ function ArticlePage() {
           entirely on stablecoins, using them for lending, borrowing, and yield generation.
         </P>
 
-        <AdUnit />
 
         <H2 id="risks">3. The Risks of Stablecoins</H2>
         <P>

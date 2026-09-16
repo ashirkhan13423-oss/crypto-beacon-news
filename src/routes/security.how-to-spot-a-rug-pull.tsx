@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AdUnit } from "@/components/AdUnit";
 import { Author } from "@/components/Author";
 import hero from "@/assets/spot-rug-pull.jpg";
 
@@ -249,7 +248,6 @@ function ArticlePage() {
           the supply.
         </P>
 
-        <AdUnit />
 
         <H2 id="honeypots">3. The Sneakiest Scam: The Honeypot</H2>
         <P>

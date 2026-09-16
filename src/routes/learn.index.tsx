@@ -1,4 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { ArticleGrid } from "@/components/ArticleGrid";
+import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Breadcrumbs, breadcrumbSchemaFromItems } from "@/components/Breadcrumbs";
@@ -7,7 +9,9 @@ const URL = "https://www.cryptobeacon.site/learn";
 const TITLE = "Learn Crypto — Cryptocurrency & Blockchain Basics | CryptoBeacon";
 const DESC = "The primary educational entry point for beginners to understand cryptocurrency, blockchain technology, digital asset security, and self-custody.";
 
-export const Route = createFileRoute("/learn/")({
+const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) });
+
+export const Route = createFileRoute("/learn/")({ validateSearch: searchSchema,
   head: () => ({
     meta: [
       { title: TITLE },

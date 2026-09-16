@@ -1,81 +1,23 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import nyknycHero from "@/assets/keys-coins-meaning.jpg";
-import exchangeHero from "@/assets/exchange-vs-wallet.png";
-import walletAddressHero from "@/assets/guides-wallet-address.png";
-import hotColdHero from "@/assets/hot-vs-cold-wallets.jpg";
-import privateKeyHero from "@/assets/guides-private-key.jpg";
-import dcaHero from "@/assets/guides-dca-explained.jpg";
-import shortSqueezeHero from "@/assets/guides-short-squeeze.jpg";
-import readNewsHero from "@/assets/guides-read-news-no-hype.jpg";
+import { ArticleGrid } from "@/components/ArticleGrid";
 import { BookOpen } from "lucide-react";
+import { z } from "zod";
 
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "Crypto Guides",
   url: "https://www.cryptobeacon.site/guides",
-  hasPart: [
-    {
-      "@type": "WebPage",
-      name: "Cryptocurrency Regulation Hub: Complete Guide",
-      url: "https://www.cryptobeacon.site/guides/crypto-regulation-hub",
-    },
-    {
-      "@type": "WebPage",
-      name: "What Is a Short Squeeze in Crypto? Mechanics Explained",
-      url: "https://www.cryptobeacon.site/guides/what-is-a-short-squeeze-crypto-explained",
-    },
-    {
-      "@type": "WebPage",
-      name: "How to Read Crypto Market News Without Getting Swept Up in Hype",
-      url: "https://www.cryptobeacon.site/guides/how-to-read-crypto-news-without-hype",
-    },
-    {
-      "@type": "WebPage",
-      name: '"Not Your Keys, Not Your Coins" — What It Means',
-      url: "https://www.cryptobeacon.site/guides/not-your-keys-not-your-coins-meaning",
-    },
-    {
-      "@type": "WebPage",
-      name: "Should You Keep Your Crypto on an Exchange or Move It to Your Own Wallet?",
-      url: "https://www.cryptobeacon.site/guides/exchange-or-personal-wallet-crypto-storage",
-    },
-    {
-      "@type": "WebPage",
-      name: "What Is a Crypto Wallet Address? How It Works and How to Use It Safely",
-      url: "https://www.cryptobeacon.site/guides/what-is-a-crypto-wallet-address",
-    },
-    {
-      "@type": "WebPage",
-      name: "Hot Wallets vs. Cold Wallets: Which is Right for You?",
-      url: "https://www.cryptobeacon.site/guides/hot-wallets-vs-cold-wallets-explained",
-    },
-    {
-      "@type": "WebPage",
-      name: "What Is a Private Key in Crypto? A Plain-Language Explainer",
-      url: "https://www.cryptobeacon.site/guides/what-is-a-private-key",
-    },
-    {
-      "@type": "WebPage",
-      name: "Dollar-Cost Averaging (DCA) in Crypto: What It Is and How It Works",
-      url: "https://www.cryptobeacon.site/guides/crypto-dollar-cost-averaging-explained",
-    },
-    {
-      "@type": "WebPage",
-      name: "What is a Smart Contract? Explained Simply",
-      url: "https://www.cryptobeacon.site/guides/what-is-a-smart-contract-explained",
-    },
-    {
-      "@type": "WebPage",
-      name: "The Difference Between a Coin and a Token",
-      url: "https://www.cryptobeacon.site/guides/coin-vs-token-difference",
-    },
-  ],
 };
 
+const guidesSearchSchema = z.object({
+  page: z.number().catch(1).optional().default(1),
+});
+
 export const Route = createFileRoute("/guides/")({
+  validateSearch: guidesSearchSchema,
   head: () => ({
     meta: [
       { title: "Crypto Currency Guides & Explanations — CryptoBeacon" },
@@ -95,13 +37,16 @@ export const Route = createFileRoute("/guides/")({
       { property: "article:published_time", content: "2026-08-06" },
     ],
     links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides" }],
+      { rel: "canonical", href: "https://www.cryptobeacon.site/guides" }
+    ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
   }),
   component: GuidesHub,
 });
 
 function GuidesHub() {
+  const { page } = Route.useSearch();
+
   return (
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
@@ -123,287 +68,7 @@ function GuidesHub() {
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-          <Link
-            to="/guides/crypto-regulation-hub"
-            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-          >
-            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden border-b border-outline-variant">
-              <img
-                src={readNewsHero}
-                alt="Illustration showing a magnifying glass verifying charts and filtering news hype"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-                width={1600}
-                height={900}
-              />
-            </div>
-            <div className="p-lg">
-              <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                Guides · Hub
-              </span>
-              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                Cryptocurrency Regulation Hub: Complete Guide
-              </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant">
-                The definitive cryptocurrency regulation hub — how crypto regulation works globally, KYC and AML explained, exchange licensing, and crypto taxes.
-              </p>
-            </div>
-          </Link>
-
-          <Link
-            to="/guides/what-is-a-short-squeeze-crypto-explained"
-            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-          >
-            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
-              <img
-                src={shortSqueezeHero}
-                alt="Illustration representing a Bitcoin short squeeze breakout"
-                className="w-full h-full object-cover"
-                loading="lazy"
-                width={1600}
-                height={900}
-              />
-            </div>
-            <div className="p-lg">
-              <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                Guides · Mechanics
-              </span>
-              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                What Is a Short Squeeze in Crypto? Mechanics Explained
-              </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant">
-                A detailed breakdown of derivatives trading, margin requirements, short liquidation cascades, and why they cause explosive upward moves in crypto markets.
-              </p>
-            </div>
-          </Link>
-
-          <Link
-            to="/guides/how-to-read-crypto-news-without-hype"
-            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-          >
-            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
-              <img
-                src={readNewsHero}
-                alt="Illustration showing a magnifying glass verifying charts and filtering news hype"
-                className="w-full h-full object-cover"
-                loading="lazy"
-                width={1600}
-                height={900}
-              />
-            </div>
-            <div className="p-lg">
-              <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                Guides · Literacy
-              </span>
-              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                How to Read Crypto News Without Hype
-              </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant">
-                A media-literacy guide to identifying speculative price predictions, sponsored promotions, and FOMO, focusing instead on objective on-chain telemetry.
-              </p>
-            </div>
-          </Link>
-
-          <Link
-            to="/guides/not-your-keys-not-your-coins-meaning"
-            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-          >
-            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
-              <img
-                src={nyknycHero}
-                alt="Illustration representing crypto self-custody and private key ownership"
-                className="w-full h-full object-cover"
-                loading="lazy"
-                width={1600}
-                height={900}
-              />
-            </div>
-            <div className="p-lg">
-              <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                Guides · Concept
-              </span>
-              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                "Not Your Keys, Not Your Coins" — What It Actually Means
-              </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant">
-                A plain-language explainer on what the phrase means, why it matters, and how to tell
-                if you actually control your crypto.
-              </p>
-            </div>
-          </Link>
-          <Link
-            to="/guides/exchange-or-personal-wallet-crypto-storage"
-            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-          >
-            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
-              <img
-                src={exchangeHero}
-                alt="Illustration representing the choice between exchange storage and personal wallet custody"
-                className="w-full h-full object-cover"
-                loading="lazy"
-                width={1600}
-                height={900}
-              />
-            </div>
-            <div className="p-lg">
-              <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                Guides · Custody
-              </span>
-              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                Exchange vs. Personal Wallet: How to Store Crypto
-              </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant">
-                A clear, neutral decision framework based on how you actually use your crypto.
-              </p>
-            </div>
-          </Link>
-          <Link
-            to="/guides/what-is-a-crypto-wallet-address"
-            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-          >
-            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden border-b border-outline-variant">
-              <img
-                src={walletAddressHero}
-                alt="Illustration representing a digital crypto wallet address"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-                width={1600}
-                height={896}
-              />
-            </div>
-            <div className="p-lg">
-              <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                Guides · Security
-              </span>
-              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                What Is a Crypto Wallet Address?
-              </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant">
-                How public keys and wallet addresses work, how to share them safely, and how to
-                verify address formats across blockchains.
-              </p>
-            </div>
-          </Link>
-          <Link
-            to="/guides/hot-wallets-vs-cold-wallets-explained"
-            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-          >
-            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden border-b border-outline-variant">
-              <img
-                src={hotColdHero}
-                alt="Digital wallet connected to network lines contrasted with a metallic vault"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-                width={1536}
-                height={896}
-              />
-            </div>
-            <div className="p-lg">
-              <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                Guides · Storage
-              </span>
-              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                Hot Wallets vs. Cold Wallets: Which is Right for You?
-              </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant">
-                Comparing internet-connected software wallets with offline hardware devices, focusing on the trade-offs.
-              </p>
-            </div>
-          </Link>
-          <Link
-            to="/guides/what-is-a-private-key"
-            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-          >
-            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden border-b border-outline-variant">
-              <img
-                src={privateKeyHero}
-                alt="Glowing golden digital key made of cryptographic symbols opening a dark vault"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-                width={1536}
-                height={896}
-              />
-            </div>
-            <div className="p-lg">
-              <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                Guides · Basics
-              </span>
-              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                What Is a Private Key in Crypto? A Plain-Language Explainer
-              </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant">
-                A straightforward explanation of what a cryptocurrency private key is, how it differs from a seed phrase and public address, and why whoever controls it controls the funds.
-              </p>
-            </div>
-          </Link>
-          <Link
-            to="/guides/crypto-dollar-cost-averaging-explained"
-            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-          >
-            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden border-b border-outline-variant">
-              <img
-                src={dcaHero}
-                alt="Glowing teal financial chart showing steady upward steps representing dollar-cost averaging in crypto"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-                width={1536}
-                height={896}
-              />
-            </div>
-            <div className="p-lg">
-              <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                Guides · Strategy
-              </span>
-              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                Dollar-Cost Averaging (DCA) in Crypto: What It Is and How It Works
-              </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant">
-                A plain-language guide to Dollar-Cost Averaging (DCA) in crypto. Learn how this systematic investment strategy reduces volatility risk and removes emotion from buying Bitcoin and Ethereum.
-              </p>
-            </div>
-          </Link>
-
-          <Link
-            to="/guides/what-is-a-smart-contract-explained"
-            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-          >
-            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
-              <img src="/placeholder-guides-smart-contract.png" alt="" className="w-full h-full object-cover" loading="lazy" width={1536} height={896} />
-            </div>
-            <div className="p-lg">
-              <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                Guides · Article
-              </span>
-              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                What Is a Smart Contract? The Vending Machine Analogy
-              </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant">
-                A plain-language guide to understanding smart contracts, how automated blockchain agreements work, and why they are foundational to decentralized finance.
-              </p>
-            </div>
-          </Link>
-
-          <Link
-            to="/guides/coin-vs-token-difference"
-            className="group block rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-all"
-          >
-            <div className="aspect-[16/9] bg-[#0A0B0D] overflow-hidden">
-              <img src="/placeholder-guides-coin-vs-token.png" alt="" className="w-full h-full object-cover" loading="lazy" width={1536} height={896} />
-            </div>
-            <div className="p-lg">
-              <span className="font-label-caps text-label-caps text-secondary font-semibold">
-                Guides · Article
-              </span>
-              <h2 className="font-headline-sm text-headline-sm text-primary mt-sm mb-sm group-hover:underline decoration-secondary">
-                Coin vs. Token: What Is the Actual Difference?
-              </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant">
-                A clear explanation of the difference between cryptocurrency coins and tokens, how they function on different network layers, and why the distinction matters.
-              </p>
-            </div>
-          </Link>
-        </div>
+        <ArticleGrid category="Guides" currentPage={page} />
       </main>
       <SiteFooter />
     </div>
