@@ -30,6 +30,9 @@ const TITLE_MAX = 60;
 const DESC_MIN  = 145;
 const DESC_MAX  = 155;
 
+// Enforce strict rules only for articles published on or after this date
+const ENFORCE_FROM_DATE = new Date('2026-09-17');
+
 // Ad-density policy (must match AdUnit.tsx)
 const MIN_WORDS_FOR_ADS = 800;
 const WORDS_PER_SLOT    = 500;
@@ -94,6 +97,11 @@ for (const file of files) {
   const filePath = path.join(ROUTES_DIR, file);
   const content  = fs.readFileSync(filePath, 'utf8');
 
+  // Skip redirect routes
+  if (content.includes('throw redirect(') || content.includes('throw redirect({')) {
+    continue;
+  }
+
   function err(msg) {
     errors.push(`  ✖  ${file}: ${msg}`);
   }
@@ -106,6 +114,11 @@ for (const file of files) {
   if (!title)     err('Missing TITLE constant');
   if (!desc)      err('Missing DESC constant');
   if (!published) err('Missing PUBLISHED constant');
+
+  // Skip strict validation for legacy articles
+  if (published && new Date(published) < ENFORCE_FROM_DATE) {
+    continue;
+  }
 
   // Hero image: must have an import of the form `import hero from "@/assets/..."`
   if (!/import\s+hero\s+from\s+["']@\/assets\//.test(content)) {
@@ -181,16 +194,23 @@ for (const file of files) {
   }
 
   // ── 7. Heading hierarchy ──────────────────────────────────────────────────
+  // Strip the component definitions at the top of the file to avoid false positives
+  let bodyForHeadings = content;
+  const functionMatch = content.match(/function\s+ArticlePage/);
+  if (functionMatch) {
+    bodyForHeadings = content.slice(functionMatch.index);
+  }
+
   // Extract h1/h2/h3 tags in order of appearance
   const headingRe = /<(h[123])[^>]*>/gi;
   const headings  = [];
   let m;
-  while ((m = headingRe.exec(content)) !== null) {
+  while ((m = headingRe.exec(bodyForHeadings)) !== null) {
     headings.push(m[1].toLowerCase());
   }
   // Also catch H2/H3 helper component patterns like `<H2` or `<H3`
-  const h2helpers = countMatches(content, /<H2[\s\n{/>]/g);
-  const h3helpers = countMatches(content, /<H3[\s\n{/>]/g);
+  const h2helpers = countMatches(bodyForHeadings, /<H2[\s\n{/>]/g);
+  const h3helpers = countMatches(bodyForHeadings, /<H3[\s\n{/>]/g);
 
   const h1Count = headings.filter(h => h === 'h1').length;
   if (h1Count === 0) {

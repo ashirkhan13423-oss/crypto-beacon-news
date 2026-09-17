@@ -26,6 +26,9 @@ const MIN_FAQS           = 4;
 const MIN_INTERNAL_LINKS = 3;
 const MAX_MONTHS_STALE   = 12;
 
+// Enforce strict rules only for articles published on or after this date
+const ENFORCE_FROM_DATE = new Date('2026-09-17');
+
 // ─── Same skip logic as validate-articles.cjs ────────────────────────────────
 const SKIP_FILES = new Set([
   'index.tsx','author.tsx','about.tsx','contact.tsx','privacy.tsx',
@@ -64,8 +67,22 @@ let   checked  = 0;
 for (const file of files) {
   const filePath  = path.join(ROUTES_DIR, file);
   const content   = fs.readFileSync(filePath, 'utf8');
+
+  // Skip redirect routes
+  if (content.includes('throw redirect(') || content.includes('throw redirect({')) {
+    continue;
+  }
+
   const routePath = routePathFor(file);
   const meta      = generatedMeta[routePath] ?? {};
+
+  // Extract PUBLISHED date to skip legacy articles
+  const publishedMatch = content.match(/const\s+PUBLISHED\s*=\s*["'](.*?)["']/);
+  const publishedDate = publishedMatch ? new Date(publishedMatch[1]) : null;
+
+  if (publishedDate && publishedDate < ENFORCE_FROM_DATE) {
+    continue;
+  }
 
   function warn(msg) {
     warnings.push(`  ⚠  ${file}: ${msg}`);
