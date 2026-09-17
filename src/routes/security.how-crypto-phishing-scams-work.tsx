@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { buildMetadata } from "@/lib/metadata";
 import { buildBreadcrumbSchema, buildArticleSchema, buildFAQSchema } from "@/lib/schema/builders";

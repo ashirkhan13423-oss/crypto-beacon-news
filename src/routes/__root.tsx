@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { buildMetadata } from "@/lib/metadata";
 import {
