@@ -115,6 +115,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ...buildMetadata({ title: "CryptoBeacon", description: "Independent cryptocurrency research...", url: "https://www.cryptobeacon.site", type: 'website', path: '/' }),
     
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
       // Preconnect to all external origins — eliminates connection latency
       { rel: "preconnect", href: "https://www.googletagmanager.com" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -127,6 +129,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
     ],
     scripts: [
+      { src: "https://cdn.tailwindcss.com?plugins=forms,container-queries" },
+      { children: twConfig },
       { src: "https://www.googletagmanager.com/gtag/js?id=G-VY7EVVG1WL", async: true, defer: true },
       {
         children:
