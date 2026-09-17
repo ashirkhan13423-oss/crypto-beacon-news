@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { buildMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema } from "@/lib/schema/builders";
 import { ArticleGrid } from "@/components/ArticleGrid";
 import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -14,6 +15,10 @@ import oilHero from "@/assets/news-oil-btc-impact.webp";
 import trezorHero from "@/assets/trezor-phishing-breach.webp";
 import symbiosisHero from "@/assets/symbiosis-bridge-exploit-hero.webp";
 import { Newspaper } from "lucide-react";
+
+const TITLE = "Crypto News — CryptoBeacon";
+const DESC = "Latest crypto news, macroeconomic impacts, institutional adoption, and regulatory updates.";
+const URL = "https://www.cryptobeacon.site/news";
 
 
 const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) });

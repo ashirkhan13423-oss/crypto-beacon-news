@@ -1,10 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { buildMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema } from "@/lib/schema/builders";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ArticleGrid } from "@/components/ArticleGrid";
 import { BookOpen } from "lucide-react";
 import { z } from "zod";
+
+const TITLE = "Crypto Currency Guides & Explanations — CryptoBeacon";
+const DESC = "Comprehensive guides on what crypto currency is, the true crypto currency meaning behind self-custody, wallet management, and securing your crypto currencies.";
+const URL = "https://www.cryptobeacon.site/guides";
 
 
 const guidesSearchSchema = z.object({

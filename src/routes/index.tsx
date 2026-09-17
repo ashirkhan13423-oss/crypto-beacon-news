@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import hero_1 from "@/assets/bitcoin-lightning-network.webp";
 import hero_3 from "@/assets/exchange-comparison.webp";
 import hero_6 from "@/assets/bitcoin-etf-effects.webp";

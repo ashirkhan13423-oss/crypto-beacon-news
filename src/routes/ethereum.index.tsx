@@ -1,11 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { buildMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema } from "@/lib/schema/builders";
 import { ArticleGrid } from "@/components/ArticleGrid";
 import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroImage from "@/assets/ethereum-address-mismatch.webp";
 import { Network } from "lucide-react";
+
+const TITLE = "Ethereum Hub — CryptoBeacon";
+const DESC = "Deep coverage of Ethereum: rollups, staking economics, EIPs, and the roadmap toward institutional-grade scalability.";
+const URL = "https://www.cryptobeacon.site/ethereum";
 
 import stakingHero from "@/assets/ethereum-staking-hero.webp";
 import l2Hero from "@/assets/ethereum-layer-2-scaling.webp";

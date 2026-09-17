@@ -4,6 +4,10 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { RefreshCw, FileEdit, Cpu, Mail } from "lucide-react";
 
+const TITLE = "Privacy Policy — CryptoBeacon";
+const DESC = "How CryptoBeacon collects, uses, and protects your information, including cookies, analytics, and advertising practices.";
+const URL = "https://www.cryptobeacon.site/privacy";
+
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     ...buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/privacy", type: 'website', path: '/privacy' }),

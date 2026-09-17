@@ -4,6 +4,10 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { RefreshCw, AlertTriangle, Ban, Gavel, Scissors, Scale } from "lucide-react";
 
+const TITLE = "Terms of Service — CryptoBeacon";
+const DESC = "The terms and conditions governing your use of CryptoBeacon, including intellectual property, disclaimers, and limitation of liability.";
+const URL = "https://www.cryptobeacon.site/terms";
+
 export const Route = createFileRoute("/terms")({
   head: () => ({
     ...buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/terms", type: 'website', path: '/terms' }),

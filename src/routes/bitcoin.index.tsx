@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { buildMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema } from "@/lib/schema/builders";
 import { ArticleGrid } from "@/components/ArticleGrid";
 import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -13,6 +14,10 @@ import lightningHero from "@/assets/bitcoin-lightning-network.webp";
 import etfHero from "@/assets/bitcoin-etf-effects.webp";
 import bondYieldsHero from "@/assets/bitcoin-bond-yields.webp";
 import { Bitcoin } from "lucide-react";
+
+const TITLE = "Bitcoin (BTC): Benchmark Crypto Currency Architecture & Analysis — CryptoBeacon";
+const DESC = "Definitive Bitcoin analysis: global crypto currency macro factors, network difficulty, halving mechanics, and transaction security.";
+const URL = "https://www.cryptobeacon.site/bitcoin";
 
 import hero_miningenergy from "@/assets/bitcoin-mining-energy.webp";
 import hero_halvingmech from "@/assets/bitcoin-halving-mechanism.webp";

@@ -1,8 +1,13 @@
+import { Link } from "@tanstack/react-router";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Users, BookOpen, ShieldCheck, Mail } from "lucide-react";
+
+const TITLE = "About Us — CryptoBeacon";
+const DESC = "Learn about CryptoBeacon's editorial standards — source-verified news reporting, evergreen educational guides, and explanatory analysis without hype or financial advice.";
+const URL = "https://www.cryptobeacon.site/about";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

@@ -1,5 +1,7 @@
+import { Link } from "@tanstack/react-router";
 ﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { buildMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema, buildArticleSchema, buildFAQSchema } from "@/lib/schema/builders";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";

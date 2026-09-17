@@ -1,4 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+
+import { buildBreadcrumbSchema } from "@/lib/schema/builders";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArticleGrid } from "@/components/ArticleGrid";
 import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
