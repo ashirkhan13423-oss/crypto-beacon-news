@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "node scripts/generate-metadata.cjs && node scripts/check-metadata.cjs && npm run check-duplicates && vite build",
+    "build": "node scripts/generate-metadata.cjs && node scripts/lint-content.cjs && node scripts/validate-articles.cjs && node scripts/check-metadata.cjs && npm run check-duplicates && vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
