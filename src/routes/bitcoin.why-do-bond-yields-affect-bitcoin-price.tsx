@@ -1,15 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/bitcoin-bond-yields.jpg";
+import hero from "@/assets/bitcoin-bond-yields.webp";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/why-do-bond-yields-affect-bitcoin-price";
 const TITLE = "Why Do Falling Bond Yields Affect Bitcoin's Price? | CryptoBeacon";
 const DESC =
   "Why do bond yields affect bitcoin price: a macroeconomic look at treasury yields, opportunity cost, risk-free returns, and capital flows to digital assets.";
 const PUBLISHED = "2026-08-30";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs = [
   {
     q: "What is a bond yield?",
@@ -25,95 +32,21 @@ const faqs = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Why Do Falling Bond Yields Affect Bitcoin's Price?",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "why do bond yields affect bitcoin price, treasury yields bitcoin relationship, risk free rate crypto, opportunity cost non yielding assets, macroeconomic liquidity crypto, bond buyback bitcoin",
-  articleSection: "Bitcoin",
-  wordCount: 1200,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Bitcoin",
-      item: "https://www.cryptobeacon.site/bitcoin",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Bond yields and price",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/bitcoin/why-do-bond-yields-affect-bitcoin-price")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Bitcoin" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/why-do-bond-yields-affect-bitcoin-price" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/bitcoin/why-do-bond-yields-affect-bitcoin-price', publishedTime: PUBLISHED, section: 'Bitcoin' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Why Do Falling Bond Yields Affect Bitcoin's Price? | CryptoBeacon", description: "Why do bond yields affect bitcoin price: a macroeconomic look at treasury yields, opportunity cost, risk-free returns, and capital flows to digital assets.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-30", dateModified: "2026-08-30", url: "https://www.cryptobeacon.site/bitcoin/why-do-bond-yields-affect-bitcoin-price", section: "Bitcoin", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Bitcoin", item: "https://www.cryptobeacon.site/bitcoin" },
+        { name: "Why Do Falling Bond Yields Affect Bitcoin's Price? | CryptoBeacon", item: "https://www.cryptobeacon.site/bitcoin/why-do-bond-yields-affect-bitcoin-price" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -141,6 +74,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -174,7 +108,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 30, 2026</time>}
-          readTime="6 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -192,7 +126,7 @@ function ArticlePage() {
           To beginners, the relationship between traditional macroeconomic indicators and decentralized cryptocurrencies can seem disconnected. A common source of confusion is the bond market: why would an announcement regarding U.S. Treasury debt buybacks or a decline in government bond yields cause Bitcoin’s price to rally?
         </P>
         <P>
-          The connection is not driven by the technology of the blockchain itself, but by global capital structures and investor risk allocation. To explain <strong>why do bond yields affect bitcoin price</strong>, we must explore the concept of risk-free returns, opportunity cost, and asset yield comparisons.
+          The connection is not driven by the technology of the <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> itself, but by global capital structures and investor risk allocation. To explain <strong>why do bond yields affect bitcoin price</strong>, we must explore the concept of risk-free returns, opportunity cost, and asset yield comparisons.
         </P>
 
         <H2 id="risk-free-rate">The Baseline: U.S. Treasuries as the 'Risk-Free' Rate</H2>
@@ -240,17 +174,12 @@ function ArticlePage() {
           Finally, yields often fall when markets expect central banks to cut interest rates in response to slowing economic growth or inflation.
         </P>
         <P>
-          If interest rates are cut, fiat currencies tend to lose purchasing power over time relative to scarce, hard assets. Because Bitcoin has an immutable, hard-capped supply of 21 million coins (as detailed in our halving coverage), investors view it as a structural hedge against monetary expansion. When falling yields signal upcoming interest rate cuts, demand for fixed-supply hedges increases.
+          If interest rates are cut, fiat currencies tend to lose purchasing power over time relative to scarce, hard assets. Because Bitcoin has an immutable, hard-capped supply of 21 million coins (as detailed in our <Link to="/glossary#halving" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Halving">halving</Link> coverage), investors view it as a structural hedge against monetary expansion. When falling yields signal upcoming interest rate cuts, demand for fixed-supply hedges increases.
         </P>
 
         <H2 id="faq">Frequently Asked Questions</H2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
-          {faqs.map((f) => (
-            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low">
-              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">{f.q}</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-            </div>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="sources">Sources</H2>
@@ -286,30 +215,9 @@ function ArticlePage() {
           </p>
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
-            <Link
-              to="/bitcoin/what-is-bitcoin-mining"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What Is Bitcoin Mining?
-              </h3>
-            </Link>
-            <Link
-              to="/news/bitcoin-rally-august-2026"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">News</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Bitcoin Rallies Toward $77,000 (Aug 2026)
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

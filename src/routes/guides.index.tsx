@@ -1,16 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ArticleGrid } from "@/components/ArticleGrid";
 import { BookOpen } from "lucide-react";
 import { z } from "zod";
 
-const collectionSchema = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: "Crypto Guides",
-  url: "https://www.cryptobeacon.site/guides",
-};
 
 const guidesSearchSchema = z.object({
   page: z.number().catch(1).optional().default(1),
@@ -19,27 +14,22 @@ const guidesSearchSchema = z.object({
 export const Route = createFileRoute("/guides/")({
   validateSearch: guidesSearchSchema,
   head: () => ({
-    meta: [
-      { title: "Crypto Currency Guides & Explanations — CryptoBeacon" },
-      {
-        name: "description",
-        content:
-          "Comprehensive guides on what crypto currency is, the true crypto currency meaning behind self-custody, wallet management, and securing your crypto currencies.",
-      },
-      { property: "og:title", content: "Crypto Currency Guides & Explanations — CryptoBeacon" },
-      {
-        property: "og:description",
-        content:
-          "Comprehensive guides on what crypto currency is, the true crypto currency meaning, and how to store major crypto currencies safely.",
-      },
-      { property: "og:url", content: "https://www.cryptobeacon.site/guides" },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: "2026-08-06" },
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/index', publishedTime: undefined, section: 'Guides' }),
+    
+    
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Crypto Currency Guides & Explanations — CryptoBeacon", item: "https://www.cryptobeacon.site/guides" }
+      ])) },
+      { type: "application/ld+json", children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": TITLE,
+        "description": DESC,
+        "url": URL
+      }) }
     ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides" }
-    ],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
   }),
   component: GuidesHub,
 });

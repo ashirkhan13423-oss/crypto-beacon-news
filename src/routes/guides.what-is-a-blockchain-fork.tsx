@@ -1,16 +1,24 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/news-blockchain-fork.png";
+import hero from "@/assets/news-blockchain-fork.webp";
 import { Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/guides/what-is-a-blockchain-fork";
 const TITLE = "What Is a Blockchain Fork? Explained Simply | CryptoBeacon";
 const DESC =
   "A plain-language explainer on what a blockchain fork is, the difference between hard and soft forks, and why cryptocurrencies sometimes split into two.";
 const PUBLISHED = "2026-08-15";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "What's the difference between a hard fork and a soft fork?",
@@ -26,95 +34,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: "What Is a Blockchain Fork? Why Cryptocurrencies Sometimes Split in Two",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: "2026-08-15",
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "what is a blockchain fork, hard fork vs soft fork explained, why do cryptocurrencies split, what happens in a crypto fork, hard fork, soft fork, consensus rules, chain split, node, protocol upgrade",
-  articleSection: "Guides",
-  wordCount: 1200,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Guides",
-      item: "https://www.cryptobeacon.site/guides",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "What Is a Blockchain Fork?",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/guides/what-is-a-blockchain-fork")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Guides" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/what-is-a-blockchain-fork" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/what-is-a-blockchain-fork', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is a Blockchain Fork? Explained Simply | CryptoBeacon", description: "A plain-language explainer on what a blockchain fork is, the difference between hard and soft forks, and why cryptocurrencies sometimes split into two.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-15", dateModified: "2026-08-15", url: "https://www.cryptobeacon.site/guides/what-is-a-blockchain-fork", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Guides", item: "https://www.cryptobeacon.site/guides" },
+        { name: "What Is a Blockchain Fork? Explained Simply | CryptoBeacon", item: "https://www.cryptobeacon.site/guides/what-is-a-blockchain-fork" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -142,6 +77,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -173,7 +109,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 15, 2026</time>}
-          readTime="7 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -189,7 +125,7 @@ function ArticlePage() {
         <P>
           If you've ever noticed two cryptocurrencies with confusingly similar names — Bitcoin and
           Bitcoin Cash, Ethereum and Ethereum Classic — you've encountered the result of a
-          blockchain fork. This guide explains what a fork actually is, why they happen, and what it
+          <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> fork. This guide explains what a fork actually is, why they happen, and what it
           means when one occurs.
         </P>
         <P>
@@ -200,7 +136,7 @@ function ArticlePage() {
         <P>
           A blockchain is essentially a distributed ledger governed by a shared set of rules (the protocol) 
           that every participant's software follows to agree on what counts as a valid transaction. Because 
-          there is no central server dictating these rules, every participant (node) must run compatible 
+          there is no central server dictating these rules, every participant (<Link to="/glossary#node" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Node">node</Link>) must run compatible 
           software to stay in sync.
         </P>
         <P>
@@ -331,7 +267,7 @@ function ArticlePage() {
 
         <H2 id="what-happens-to-your-coins">What Happens to Your Coins in a Fork</H2>
         <P>
-          If you hold the original asset in a wallet where you control the private keys at the
+          If you hold the original asset in a <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> where you control the <Link to="/glossary#private-key" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Private Key">private keys</Link> at the
           moment of a contentious hard fork, you generally end up with a balance on both resulting
           chains, since the transaction history is shared up to the split point. Accessing the new
           chain's balance typically requires wallet software that specifically supports it — it
@@ -377,17 +313,7 @@ function ArticlePage() {
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
-          {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="sources">Sources</H2>
@@ -428,45 +354,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/bitcoin/what-is-a-bitcoin-node"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What Is a Bitcoin Node?
-              </h3>
-            </Link>
-            <Link
-              to="/ethereum/ethereum-vs-bitcoin"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Ethereum vs Bitcoin
-              </h3>
-            </Link>
-            <Link
-              to="/bitcoin/what-is-bitcoin-mining"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What Is Bitcoin Mining?
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

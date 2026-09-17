@@ -1,16 +1,24 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/smart-contract.jpg";
+import hero from "@/assets/smart-contract.webp";
 import { FileCode2 } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/ethereum/what-is-a-smart-contract";
 const TITLE = "What is a Smart Contract? How Blockchain Code Works | CryptoBeacon";
 const DESC =
   "A beginner-friendly explanation of smart contracts, the self-executing code that powers decentralized finance (DeFi), NFTs, and the Ethereum network.";
 const PUBLISHED = "2026-08-20";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "Are smart contracts legally binding?",
@@ -30,95 +38,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: TITLE,
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "what is a smart contract, how do smart contracts work, ethereum smart contracts, solidity basics, crypto defi code",
-  articleSection: "Ethereum",
-  wordCount: 1400,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Ethereum",
-      item: "https://www.cryptobeacon.site/ethereum",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "What is a Smart Contract?",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/ethereum/what-is-a-smart-contract")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Ethereum" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/ethereum/what-is-a-smart-contract" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/ethereum/what-is-a-smart-contract', publishedTime: PUBLISHED, section: 'Ethereum' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What is a Smart Contract? How Blockchain Code Works | CryptoBeacon", description: "A beginner-friendly explanation of smart contracts, the self-executing code that powers decentralized finance (DeFi), NFTs, and the Ethereum network.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-20", dateModified: "2026-08-20", url: "https://www.cryptobeacon.site/ethereum/what-is-a-smart-contract", section: "Ethereum", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Ethereum", item: "https://www.cryptobeacon.site/ethereum" },
+        { name: "What is a Smart Contract? How Blockchain Code Works | CryptoBeacon", item: "https://www.cryptobeacon.site/ethereum/what-is-a-smart-contract" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -146,6 +81,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -177,7 +113,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 20, 2026</time>}
-          readTime="8 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -193,16 +129,16 @@ function ArticlePage() {
         <P>
           If Bitcoin is a decentralized calculator that only tracks who sent money to whom, Ethereum
           is a decentralized smartphone that can run applications. The technology that makes these
-          applications possible is the "smart contract."
+          applications possible is the "<Link to="/glossary#smart-contract" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Smart Contract">smart contract</Link>."
         </P>
         <P>
           Coined by computer scientist Nick Szabo in the 1990s, a smart contract is simply a piece of
-          code running on a blockchain. It acts as a digital vending machine: if you input the correct
+          code running on a <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link>. It acts as a digital vending machine: if you input the correct
           funds and meet the pre-programmed conditions, it automatically outputs the expected result,
           without requiring a middleman to oversee the transaction.
         </P>
         <P>
-          My first "aha!" moment with smart contracts happened when I took out a loan on a DeFi platform. Instead of filling out paperwork and waiting days for bank approval, the smart contract verified my collateral and instantly deposited the loan into my wallet in seconds.
+          My first "aha!" moment with smart contracts happened when I took out a loan on a <Link to="/glossary#defi" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: DeFi">DeFi</Link> platform. Instead of filling out paperwork and waiting days for bank approval, the smart contract verified my collateral and instantly deposited the loan into my <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> in seconds.
         </P>
 
         {/* Layout A: Executive Summary Top Card */}
@@ -271,7 +207,7 @@ function ArticlePage() {
           and no middleman takes a significant cut.
         </P>
         <P>
-          This execution is powered by network nodes. Every computer on the Ethereum network runs this code 
+          This execution is powered by network <Link to="/glossary#node" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Node">nodes</Link>. Every computer on the Ethereum network runs this code 
           to verify the outcome, ensuring that no single server can manipulate the result.
         </P>
 
@@ -303,16 +239,7 @@ function ArticlePage() {
         <H2 id="faq">4. Frequently Asked Questions</H2>
         {/* Layout A: 2-column Grid FAQ */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
-          {faqs.map((f) => (
-            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low flex flex-col">
-              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">
-                {f.q}
-              </h3>
-              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </div>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="conclusion">Conclusion</H2>
@@ -351,45 +278,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Educational Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only. Interacting with smart
-            contracts carries the risk of total loss of funds.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/ethereum/ethereum-layer-2-scaling-rollups-explained"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Layer 2 Rollups Explained
-              </h3>
-            </Link>
-            <Link
-              to="/ethereum/can-you-send-bitcoin-to-an-ethereum-address"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Send BTC to an ETH Address?
-              </h3>
-            </Link>
-            <Link
-              to="/security/defi-risks-explained"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                DeFi Risks Explained
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

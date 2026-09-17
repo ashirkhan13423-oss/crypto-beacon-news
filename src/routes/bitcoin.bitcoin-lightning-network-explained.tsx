@@ -1,9 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/bitcoin-lightning-network.jpg";
+import hero from "@/assets/bitcoin-lightning-network.webp";
 import { Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+
 
 const URL = "https://www.cryptobeacon.site/bitcoin/bitcoin-lightning-network-explained";
 const TITLE =
@@ -31,96 +34,15 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "The Bitcoin Lightning Network Explained: Instant, Cheap Bitcoin Payments",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "bitcoin lightning network, lightning payments, payment channels, HTLC, bitcoin scaling, instant bitcoin, lightning node",
-  articleSection: "Bitcoin",
-  wordCount: 1500,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Bitcoin",
-      item: "https://www.cryptobeacon.site/bitcoin",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Lightning Network Explained",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/bitcoin/bitcoin-lightning-network-explained")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Bitcoin" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/bitcoin-lightning-network-explained" }],
-    scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
-    ],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/bitcoin/bitcoin-lightning-network-explained', publishedTime: PUBLISHED, section: 'Bitcoin' }),
+    
+    
+    scripts: [],
   }),
   component: ArticlePage,
 });
@@ -147,6 +69,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -178,7 +101,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 29, 2026</time>}
-          readTime="7 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -193,9 +116,9 @@ function ArticlePage() {
         </figure>
 
         <P>
-          Bitcoin's base layer — the blockchain — processes roughly 7 transactions per second
+          Bitcoin's base layer — the <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> — processes roughly 7 transactions per second
           globally. For a payment network aspiring to serve billions of people, that is a bottleneck.
-          The <strong>Lightning Network</strong> is Bitcoin's primary solution: a second-layer
+          The <strong><Link to="/glossary#lightning-network" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Lightning Network">Lightning Network</Link></strong> is Bitcoin's primary solution: a second-layer
           protocol that enables near-instant, low-fee payments without touching the blockchain for
           every transaction.
         </P>
@@ -206,7 +129,7 @@ function ArticlePage() {
         <H2 id="the-problem">Why Bitcoin Needs a Second Layer</H2>
         <P>
           Every on-chain Bitcoin transaction must be broadcast to the entire network, included in a
-          block by a miner, and then confirmed by thousands of full nodes worldwide. This process
+          block by a miner, and then confirmed by thousands of full <Link to="/glossary#node" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Node">nodes</Link> worldwide. This process
           takes 10 minutes on average for the first confirmation (more for higher security), and
           each block has limited space — meaning demand drives fees up during congestion.
         </P>
@@ -291,7 +214,7 @@ function ArticlePage() {
 
         <H2 id="how-to-use">How to Use Lightning Today</H2>
         <P>
-          You don't need to run a Lightning node to use the network. Non-custodial mobile wallets
+          You don't need to run a Lightning node to use the network. Non-custodial mobile <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallets</Link>
           like <strong>Phoenix</strong> (by ACINQ) and <strong>Breez</strong> handle channel
           management automatically. Custodial options like{" "}
           <strong>Wallet of Satoshi</strong> are the simplest entry point but involve third-party
@@ -356,10 +279,7 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice.
-          </p>
+          <Disclaimer />
         </div>
 
         <section className="mt-xxl">
@@ -394,7 +314,8 @@ function ArticlePage() {
             </Link>
           </div>
         </section>
-      </main>
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

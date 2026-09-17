@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Mail, MessageSquare, ShieldCheck, Send, Clock, CheckCircle2 } from "lucide-react";
@@ -39,21 +40,10 @@ const contactSchema = {
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/contact" }],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(contactSchema) }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/contact", type: 'website', path: '/contact' }),
+    
+    
+    scripts: [],
   }),
   component: ContactPage,
 });
@@ -76,6 +66,7 @@ function ContactPage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -277,7 +268,8 @@ function ContactPage() {
             )}
           </div>
         </div>
-      </main>
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

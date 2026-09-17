@@ -1,15 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Plus } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/ethereum/proof-of-stake-explained";
 const TITLE = "Proof of Stake Explained: How Ethereum's Consensus Works | CryptoBeacon";
 const DESC =
   "How does Ethereum's Proof of Stake work? This guide explains validators, staking, finality, slashing, and how PoS replaced Proof of Work mining in The Merge.";
 const PUBLISHED = "2026-09-01";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   { q: "What is Proof of Stake?", a: "Proof of Stake (PoS) is a consensus mechanism where validators are chosen to create new blocks based on the amount of cryptocurrency they have locked up (staked) as collateral, rather than computational work. It replaced Proof of Work mining in Ethereum's 'The Merge' in September 2022." },
   { q: "How does PoS prevent attacks?", a: "Validators risk losing their staked ETH through slashing if they behave dishonestly. Attacking the network would require controlling a large fraction of staked ETH, which is enormously expensive to acquire. If an attack were detected, the attacker's stake would be slashed, making the attack financially self-destructive." },
@@ -18,55 +25,22 @@ const faqs: { q: string; a: string }[] = [
   { q: "What is the difference between PoS and DPoS?", a: "Delegated Proof of Stake (DPoS) uses token holder votes to elect a small number of block producers, which is faster but more centralised. Ethereum's PoS allows any validator meeting the 32 ETH threshold to participate directly, with no delegation required." },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Proof of Stake Explained: How Ethereum's Consensus Works",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "proof of stake explained, ethereum proof of stake, PoS vs PoW, ethereum consensus mechanism, validator staking ethereum, slashing ethereum, the merge ethereum",
-  articleSection: "Ethereum",
-  wordCount: 900,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Ethereum", item: "https://www.cryptobeacon.site/ethereum" },
-    { "@type": "ListItem", position: 3, name: "Proof of Stake Explained", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/ethereum/proof-of-stake-explained")({
   head: () => ({
-    meta: [
-      { title: TITLE }, { name: "description", content: DESC },
-      { property: "og:title", content: TITLE }, { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" }, { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Ethereum" },
-      { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/ethereum/proof-of-stake-explained" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/ethereum/proof-of-stake-explained', publishedTime: PUBLISHED, section: 'Ethereum' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Proof of Stake Explained: How Ethereum's Consensus Works | CryptoBeacon", description: "How does Ethereum's Proof of Stake work? This guide explains validators, staking, finality, slashing, and how PoS replaced Proof of Work mining in The Merge.", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/proof-of-stake-explained", section: "Ethereum", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Ethereum", item: "https://www.cryptobeacon.site/ethereum" },
+        { name: "Proof of Stake Explained: How Ethereum's Consensus Works | CryptoBeacon", item: "https://www.cryptobeacon.site/ethereum/proof-of-stake-explained" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -84,6 +58,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -100,12 +75,15 @@ function ArticlePage() {
           Proof of Stake Explained
         </h1>
         <p className="font-body-lg text-body-lg text-on-surface-variant mb-xl">
-          How Ethereum replaced energy-intensive mining with an economic stake-based consensus system — and what that means for security, decentralisation, and sustainability.
+          How Ethereum replaced energy-intensive <Link to="/glossary#mining" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Mining">mining</Link> with an economic stake-based consensus system — and what that means for security, decentralisation, and sustainability.
         </p>
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <H2 id="what-is-pos">What is Proof of Stake?</H2>
-        <P>Proof of Stake (PoS) is a method for achieving consensus in a blockchain network. Instead of miners competing to solve cryptographic puzzles (Proof of Work), validators are chosen to propose and attest to new blocks based on the amount of cryptocurrency they have locked up — their <em>stake</em> — as collateral.</P>
+        <P><Link to="/glossary#proof-of-stake" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Proof of Stake">Proof of Stake</Link> (PoS) is a method for achieving consensus in a <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> network. Instead of miners competing to solve cryptographic puzzles (Proof of Work), validators are chosen to propose and attest to new blocks based on the amount of cryptocurrency they have locked up — their <em>stake</em> — as collateral.</P>
         <P>The core security mechanism is economic: to participate as a validator, you must risk your own ETH. Behave honestly and earn rewards. Behave dishonestly and lose your stake through slashing. This creates a direct financial incentive for validators to follow the rules.</P>
 
         <H2 id="the-merge">The Merge: September 2022</H2>
@@ -126,41 +104,9 @@ function ArticlePage() {
         </ul>
         <P>Penalties range from a partial stake burn for isolated incidents to a full stake burn (inactivity leak) if a large portion of validators go offline simultaneously during a network emergency. Slashed validators are also ejected from the validator set.</P>
 
-        <section className="mt-xxl" aria-label="Frequently asked questions">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Frequently Asked Questions</h2>
-          <div className="space-y-md">
-            {faqs.map((f, i) => (
-              <details key={i} className="group border border-outline-variant rounded-lg overflow-hidden">
-                <summary className="flex items-center justify-between p-lg cursor-pointer list-none">
-                  <span className="font-body-lg text-body-lg text-primary font-semibold pr-md">{f.q}</span>
-                  <Plus size={18} className="text-secondary shrink-0 group-open:rotate-45 transition-transform" />
-                </summary>
-                <div className="px-lg pb-lg">
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/ethereum/ethereum-validators-explained" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Ethereum Validators Explained</h3>
-            </Link>
-            <Link to="/ethereum/what-is-ethereum-staking" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">What Is Ethereum Staking?</h3>
-            </Link>
-            <Link to="/ethereum/ethereum-complete-beginners-guide" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Ethereum: Complete Guide</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

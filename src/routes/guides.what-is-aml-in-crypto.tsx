@@ -1,14 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Plus } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/guides/what-is-aml-in-crypto";
 const TITLE = "What Is AML in Crypto? Anti-Money Laundering Rules Explained | CryptoBeacon";
 const DESC = "What is AML (Anti-Money Laundering) in cryptocurrency? An explanation of the FATF travel rule, transaction monitoring, suspicious activity reports (SARs), an...";
 const PUBLISHED = "2026-09-01";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   { q: "What is the difference between KYC and AML?", a: "KYC (Know Your Customer) is the process of verifying a user's identity at onboarding. AML (Anti-Money Laundering) is the broader regulatory framework that includes KYC but also covers ongoing transaction monitoring, risk scoring, and reporting suspicious activity to the government." },
   { q: "How do exchanges monitor crypto transactions?", a: "Exchanges use blockchain analytics software (like Chainalysis, Elliptic, or TRM Labs). These tools map the blockchain and assign risk scores to wallets. If you deposit funds that previously passed through a known darknet market, mixer, or sanctioned address, the software flags your deposit." },
@@ -16,55 +23,22 @@ const faqs: { q: string; a: string }[] = [
   { q: "What is the FATF Travel Rule for crypto?", a: "The FATF Travel Rule requires Virtual Asset Service Providers (exchanges) to collect and share originator and beneficiary information when transferring crypto above a certain threshold (often $1,000 or €1,000) between each other, mirroring rules for traditional bank wire transfers." },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "What Is AML in Crypto? Anti-Money Laundering Rules Explained",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "what is AML crypto, anti-money laundering cryptocurrency, FATF travel rule crypto, crypto transaction monitoring, SARs crypto, proof of funds crypto exchange",
-  articleSection: "Guides",
-  wordCount: 900,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Guides", item: "https://www.cryptobeacon.site/guides" },
-    { "@type": "ListItem", position: 3, name: "What Is AML in Crypto?", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/guides/what-is-aml-in-crypto")({
   head: () => ({
-    meta: [
-      { title: TITLE }, { name: "description", content: DESC },
-      { property: "og:title", content: TITLE }, { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" }, { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Guides" },
-      { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/what-is-aml-in-crypto" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/what-is-aml-in-crypto', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is AML in Crypto? Anti-Money Laundering Rules Explained | CryptoBeacon", description: "What is AML (Anti-Money Laundering) in cryptocurrency? An explanation of the FATF travel rule, transaction monitoring, suspicious activity reports (SARs), an...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/what-is-aml-in-crypto", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Guides", item: "https://www.cryptobeacon.site/guides" },
+        { name: "What Is AML in Crypto? Anti-Money Laundering Rules Explained | CryptoBeacon", item: "https://www.cryptobeacon.site/guides/what-is-aml-in-crypto" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -82,6 +56,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -98,12 +73,15 @@ function ArticlePage() {
           What Is AML in Crypto?
         </h1>
         <p className="font-body-lg text-body-lg text-on-surface-variant mb-xl">
-          Anti-Money Laundering (AML) is the reason your account might get frozen and why exchanges use blockchain analytics to trace your deposits. Here is how it works.
+          Anti-Money Laundering (AML) is the reason your account might get frozen and why exchanges use <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> analytics to trace your deposits. Here is how it works.
         </p>
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <H2 id="aml-explained">AML vs KYC</H2>
-        <P>KYC (Know Your Customer) is verifying *who* you are. AML (Anti-Money Laundering) is verifying *what you are doing*. KYC is just the first step in a broader AML program. Once an exchange knows who you are, AML rules require them to monitor your ongoing behaviour to ensure you aren't using their platform to clean dirty money, fund terrorism, or bypass international sanctions.</P>
+        <P><Link to="/glossary#kyc" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: KYC">KYC</Link> (Know Your Customer) is verifying *who* you are. AML (Anti-Money Laundering) is verifying *what you are doing*. KYC is just the first step in a broader AML program. Once an exchange knows who you are, AML rules require them to monitor your ongoing behaviour to ensure you aren't using their platform to clean dirty money, fund terrorism, or bypass international sanctions.</P>
 
         <H2 id="how-it-works">How crypto AML works in practice</H2>
         <P>Exchanges implement AML through several mechanisms:</P>
@@ -123,43 +101,11 @@ function ArticlePage() {
 
         <H2 id="user-impact">Why innocent users get caught in AML nets</H2>
         <P>Because blockchains are public ledgers, funds have a permanent history. If you sell an NFT to someone who previously interacted with a sanctioned address, and you then deposit those funds to a regulated exchange, the exchange's analytics software might flag *your* deposit due to the "taint" a few hops back in the transaction history.</P>
-        <P>This results in frozen accounts and frustrating, weeks-long support tickets where innocent users must prove they are not money launderers. To minimise this risk, avoid interacting directly with known mixers or high-risk offshore platforms with the same wallet you use for your regulated exchange deposits.</P>
+        <P>This results in frozen accounts and frustrating, weeks-long support tickets where innocent users must prove they are not money launderers. To minimise this risk, avoid interacting directly with known mixers or high-risk offshore platforms with the same <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> you use for your regulated exchange deposits.</P>
 
-        <section className="mt-xxl" aria-label="Frequently asked questions">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Frequently Asked Questions</h2>
-          <div className="space-y-md">
-            {faqs.map((f, i) => (
-              <details key={i} className="group border border-outline-variant rounded-lg overflow-hidden">
-                <summary className="flex items-center justify-between p-lg cursor-pointer list-none">
-                  <span className="font-body-lg text-body-lg text-primary font-semibold pr-md">{f.q}</span>
-                  <Plus size={18} className="text-secondary shrink-0 group-open:rotate-45 transition-transform" />
-                </summary>
-                <div className="px-lg pb-lg">
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/guides/what-is-kyc-in-cryptocurrency" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">What Is KYC?</h3>
-            </Link>
-            <Link to="/guides/how-cryptocurrency-regulation-works" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">How Regulation Works</h3>
-            </Link>
-            <Link to="/guides/crypto-regulation-hub" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Crypto Regulation Hub</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

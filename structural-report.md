@@ -1,0 +1,144 @@
+# Structural SEO Update Report
+
+## Missing Key Takeaway
+Total articles missing keyTakeaway: 94
+
+- altcoins.what-is-an-ai-crypto-token.tsx
+- altcoins.what-is-an-altcoin.tsx
+- altcoins.why-do-meme-coins-have-value.tsx
+- bitcoin.bitcoin-address-vs-wallet-address.tsx
+- bitcoin.bitcoin-wallets-complete-guide.tsx
+- bitcoin.coinbase-vs-kraken-vs-binance-exchange-comparison.tsx
+- bitcoin.common-bitcoin-wallet-scams.tsx
+- bitcoin.how-bitcoin-wallets-work.tsx
+- bitcoin.how-does-bitcoin-halving-work.tsx
+- bitcoin.how-to-buy-your-first-bitcoin-safely.tsx
+- bitcoin.how-to-send-bitcoin-safely.tsx
+- bitcoin.what-happens-if-you-lose-your-seed-phrase.tsx
+- bitcoin.what-is-a-bitcoin-node.tsx
+- bitcoin.what-is-a-bitcoin-seed-phrase.tsx
+- bitcoin.what-is-a-bitcoin-wallet.tsx
+- bitcoin.what-is-bitcoin-mining.tsx
+- bitcoin.what-is-the-bitcoin-halving.tsx
+- bitcoin.why-bitcoin-mining-uses-so-much-energy.tsx
+- bitcoin.why-do-bond-yields-affect-bitcoin-price.tsx
+- ethereum.can-you-send-bitcoin-to-an-ethereum-address.tsx
+- ethereum.ethereum-complete-beginners-guide.tsx
+- ethereum.ethereum-layer-2-scaling-rollups-explained.tsx
+- ethereum.ethereum-transaction-fees-explained.tsx
+- ethereum.ethereum-validators-explained.tsx
+- ethereum.ethereum-vs-bitcoin.tsx
+- ethereum.ethereum-wallets-explained.tsx
+- ethereum.how-does-ethereum-staking-work.tsx
+- ethereum.how-ethereum-works.tsx
+- ethereum.how-to-stake-eth-on-lido-vs-rocketpool.tsx
+- ethereum.proof-of-stake-explained.tsx
+- ethereum.what-are-gas-fees-how-to-save.tsx
+- ethereum.what-is-a-smart-contract.tsx
+- ethereum.what-is-an-erc-20-token.tsx
+- ethereum.what-is-defi-decentralized-finance.tsx
+- ethereum.what-is-ethereum-staking.tsx
+- ethereum.what-is-ethereum.tsx
+- guides.coin-vs-token-difference.tsx
+- guides.crypto-dollar-cost-averaging-explained.tsx
+- guides.crypto-portfolio-rebalancing-explained.tsx
+- guides.crypto-regulation-explained-for-beginners.tsx
+- guides.crypto-regulation-hub.tsx
+- guides.crypto-regulation-vs-cryptocurrency-ban.tsx
+- guides.crypto-tax-basics-for-beginners.tsx
+- guides.cryptocurrency-taxes-explained.tsx
+- guides.exchange-or-personal-wallet-crypto-storage.tsx
+- guides.hardware-wallet-comparison-guide.tsx
+- guides.hot-wallets-vs-cold-wallets-explained.tsx
+- guides.how-crypto-exchanges-are-regulated.tsx
+- guides.how-cryptocurrency-regulation-works.tsx
+- guides.how-to-read-a-block-explorer.tsx
+- guides.how-to-read-crypto-news-without-hype.tsx
+- guides.how-to-set-up-metamask-step-by-step.tsx
+- guides.stablecoin-regulation-explained.tsx
+- guides.what-is-a-blockchain-fork.tsx
+- guides.what-is-a-private-key.tsx
+- guides.what-is-a-short-squeeze-crypto-explained.tsx
+- guides.what-is-a-smart-contract-explained.tsx
+- guides.what-is-a-stablecoin.tsx
+- guides.what-is-aml-in-crypto.tsx
+- guides.what-is-kyc-in-cryptocurrency.tsx
+- guides.what-it-means-when-exchange-pauses-withdrawals.tsx
+- guides.why-bitcoin-price-moves-more-than-stocks.tsx
+- guides.why-crypto-regulation-matters.tsx
+- guides.why-governments-regulate-cryptocurrency.tsx
+- news.bitcoin-rally-august-2026.tsx
+- news.ethereum-merge-two-years-later.tsx
+- news.liquid-network-3400-btc-returned-320-million-incident.tsx
+- news.standard-chartered-uae-institutional-bitcoin-ether-trading.tsx
+- news.symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint.tsx
+- news.trezor-brevo-phishing-email-breach-2026.tsx
+- news.what-is-on-chain-trading-vs-exchange.tsx
+- news.what-is-the-clarity-act-crypto.tsx
+- news.why-are-crypto-atms-everywhere.tsx
+- security.common-crypto-scams.tsx
+- security.crypto-security-hub.tsx
+- security.crypto-wallet-drainer-scams-explained.tsx
+- security.defi-risks-explained.tsx
+- security.exchange-account-security.tsx
+- security.fake-airdrop-scams-explained.tsx
+- security.fake-wallet-apps-explained.tsx
+- security.hardware-wallet-mistakes-to-avoid.tsx
+- security.how-crypto-phishing-scams-work.tsx
+- security.how-to-avoid-crypto-phishing-scams.tsx
+- security.how-to-identify-a-fake-crypto-website.tsx
+- security.how-to-revoke-smart-contract-approvals.tsx
+- security.how-to-spot-a-fake-crypto-wallet-app.tsx
+- security.how-to-spot-a-rug-pull.tsx
+- security.how-to-store-crypto-seed-phrase-safely.tsx
+- security.how-to-verify-a-crypto-transaction.tsx
+- security.private-key-vs-seed-phrase.tsx
+- security.two-factor-authentication-for-crypto.tsx
+- security.what-is-a-crypto-atm-are-they-safe.tsx
+- security.what-is-a-seed-phrase.tsx
+- security.what-to-do-if-your-crypto-wallet-is-hacked.tsx
+
+## Fewer Than 4 FAQs
+Total articles with < 4 FAQs: 26
+
+- altcoins.what-is-an-ai-crypto-token.tsx
+- altcoins.what-is-an-altcoin.tsx
+- altcoins.why-do-meme-coins-have-value.tsx
+- bitcoin.what-is-the-bitcoin-halving.tsx
+- bitcoin.why-bitcoin-mining-uses-so-much-energy.tsx
+- bitcoin.why-do-bond-yields-affect-bitcoin-price.tsx
+- ethereum.can-you-send-bitcoin-to-an-ethereum-address.tsx
+- ethereum.ethereum-layer-2-scaling-rollups-explained.tsx
+- ethereum.how-does-ethereum-staking-work.tsx
+- ethereum.what-are-gas-fees-how-to-save.tsx
+- ethereum.what-is-an-erc-20-token.tsx
+- ethereum.what-is-ethereum-staking.tsx
+- guides.coin-vs-token-difference.tsx
+- guides.hot-wallets-vs-cold-wallets-explained.tsx
+- guides.what-is-a-blockchain-fork.tsx
+- guides.what-is-a-short-squeeze-crypto-explained.tsx
+- guides.what-is-a-smart-contract-explained.tsx
+- guides.what-it-means-when-exchange-pauses-withdrawals.tsx
+- guides.why-bitcoin-price-moves-more-than-stocks.tsx
+- news.what-is-on-chain-trading-vs-exchange.tsx
+- news.why-are-crypto-atms-everywhere.tsx
+- security.defi-risks-explained.tsx
+- security.hardware-wallet-mistakes-to-avoid.tsx
+- security.how-to-revoke-smart-contract-approvals.tsx
+- security.how-to-spot-a-fake-crypto-wallet-app.tsx
+- security.what-is-a-crypto-atm-are-they-safe.tsx
+
+## Heading Hierarchy Violations
+- altcoins.tsx: Has 0 <h1> tags (should be exactly 1)
+- bitcoin.tsx: Has 0 <h1> tags (should be exactly 1)
+- defi.tsx: Has 0 <h1> tags (should be exactly 1)
+- etfs.tsx: Has 0 <h1> tags (should be exactly 1)
+- ethereum.tsx: Has 0 <h1> tags (should be exactly 1)
+- glossary.tsx: Has 0 <h1> tags (should be exactly 1)
+- guides.tsx: Has 0 <h1> tags (should be exactly 1)
+- learn.tsx: Has 0 <h1> tags (should be exactly 1)
+- news.bitcoin-jobs-report-etf-inflows-september-2026.tsx: Has 0 <h1> tags (should be exactly 1)
+- news.liquid-network-hack-4000-btc-withdrawal.tsx: Has 0 <h1> tags (should be exactly 1)
+- news.tsx: Has 0 <h1> tags (should be exactly 1)
+- security.tsx: Has 0 <h1> tags (should be exactly 1)
+- taxes.tsx: Has 0 <h1> tags (should be exactly 1)

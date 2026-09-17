@@ -3,7 +3,7 @@ import { ArticleGrid } from "@/components/ArticleGrid";
 import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Breadcrumbs, breadcrumbSchemaFromItems } from "@/components/Breadcrumbs";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const URL = "https://www.cryptobeacon.site/learn";
 const TITLE = "Learn Crypto — Cryptocurrency & Blockchain Basics | CryptoBeacon";
@@ -13,22 +13,22 @@ const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) 
 
 export const Route = createFileRoute("/learn/")({ validateSearch: searchSchema,
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:url", content: URL },
-      { property: "article:published_time", content: "2026-08-06" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/learn" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/learn/index', publishedTime: undefined, section: 'Learn' }),
+    
+    
     scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(breadcrumbSchemaFromItems([{ label: "Learn Crypto" }])),
-      },
-    ],
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Learn", item: "https://www.cryptobeacon.site/learn" }
+      ])) },
+      { type: "application/ld+json", children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": TITLE,
+        "description": DESC,
+        "url": URL
+      }) }
+    ]
   }),
   component: LearnHub,
 });
@@ -47,6 +47,10 @@ function LearnHub() {
           <p className="font-body-lg text-body-lg text-on-surface-variant">
             Start your journey here. Understand cryptocurrency, blockchain technology, and the fundamentals of digital asset security through clear, evidence-based guides. Our mission at CryptoBeacon is to provide accessible, non-technical explanations of complex concepts.
           </p>
+          {/* INTRO COPY SLOT */}
+          <div className="mt-lg prose prose-lg dark:prose-invert text-on-surface">
+            {/* TODO: Add genuine intro section text here */}
+          </div>
           <p className="font-body-lg text-body-lg text-on-surface-variant">
             Whether you are exploring Bitcoin for the first time or looking to dive deeper into smart contracts and decentralized finance (DeFi), our comprehensive curriculum is designed to help you navigate the crypto landscape with confidence. We emphasize self-custody and personal responsibility as core tenets of digital asset ownership.
           </p>

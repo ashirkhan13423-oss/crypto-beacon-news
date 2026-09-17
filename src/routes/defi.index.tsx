@@ -3,7 +3,7 @@ import { ArticleGrid } from "@/components/ArticleGrid";
 import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Breadcrumbs, breadcrumbSchemaFromItems } from "@/components/Breadcrumbs";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const URL = "https://www.cryptobeacon.site/defi";
 const TITLE = "DeFi (Decentralized Finance) | CryptoBeacon";
@@ -33,20 +33,15 @@ const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) 
 
 export const Route = createFileRoute("/defi/")({ validateSearch: searchSchema,
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:url", content: URL },
-      { property: "og:type", content: "website" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/defi" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/defi/index', publishedTime: undefined, section: 'Defi' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(collectionSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchemaFromItems([{ label: "DeFi" }])) },
-    ],
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Defi", item: "https://www.cryptobeacon.site/defi" }
+      ])) }
+    ]
   }),
   component: DefiHub,
 });
@@ -79,6 +74,10 @@ function DefiHub() {
           <p className="font-body-lg text-body-lg text-on-surface-variant">
             DeFi replaces traditional financial intermediaries — banks, brokers, clearinghouses — with self-executing smart contracts deployed on a blockchain. Lending, borrowing, trading, and yield generation all happen through open-source code rather than a central institution. On CryptoBeacon we cover how these protocols actually work, what the real risks are, and the practical steps involved in using DeFi safely — without investment advice or price speculation.
           </p>
+          {/* INTRO COPY SLOT */}
+          <div className="mt-lg prose prose-lg dark:prose-invert text-on-surface">
+            {/* TODO: Add genuine intro section text here */}
+          </div>
         </div>
 
         <section className="mb-xxl">
@@ -86,6 +85,7 @@ function DefiHub() {
             Foundations
           </h2>
           <ArticleGrid category="DeFi" currentPage={page} />
+          </section>
       </main>
       <SiteFooter />
     </div>

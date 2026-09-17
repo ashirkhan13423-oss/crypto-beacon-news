@@ -1,14 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Plus, AlertTriangle } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/security/how-crypto-phishing-scams-work";
 const TITLE = "How Crypto Phishing Scams Work: Attack Types Explained | CryptoBeacon";
 const DESC = "A technical breakdown of how crypto phishing scams work — DNS hijacking, fake dApps, approval phishing, spear phishing, and browser extension attacks — with ...";
 const PUBLISHED = "2026-09-01";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   { q: "What makes crypto phishing different from regular phishing?", a: "Crypto phishing is more damaging because transactions are irreversible. If a regular bank phishing attack succeeds, the bank can often reverse charges. In crypto, once you sign a malicious transaction or hand over a seed phrase, the funds are gone with no recourse. This irreversibility makes crypto an especially attractive target." },
   { q: "What is approval phishing?", a: "Approval phishing tricks you into signing an ERC-20 token approval transaction, giving a malicious contract unlimited permission to spend a specific token from your wallet. You may think you are doing something harmless (like claiming an airdrop), but the signature grants the attacker's contract the ability to drain your wallet of that token at any time." },
@@ -16,55 +23,22 @@ const faqs: { q: string; a: string }[] = [
   { q: "What is a DNS hijacking attack in crypto?", a: "DNS hijacking replaces a legitimate website's DNS record so that visitors are redirected to an attacker's identical-looking clone. The URL in the browser may look correct but the website is controlled by the attacker. Several major DeFi protocols have been compromised this way." },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "How Crypto Phishing Scams Work: Attack Types Explained",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "how crypto phishing works, crypto approval phishing, DNS hijacking crypto, fake dApp phishing, spear phishing crypto, crypto phishing attack types",
-  articleSection: "Security",
-  wordCount: 900,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Security", item: "https://www.cryptobeacon.site/security" },
-    { "@type": "ListItem", position: 3, name: "How Crypto Phishing Scams Work", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/security/how-crypto-phishing-scams-work")({
   head: () => ({
-    meta: [
-      { title: TITLE }, { name: "description", content: DESC },
-      { property: "og:title", content: TITLE }, { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" }, { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Security" },
-      { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/security/how-crypto-phishing-scams-work" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security/how-crypto-phishing-scams-work', publishedTime: PUBLISHED, section: 'Security' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How Crypto Phishing Scams Work: Attack Types Explained | CryptoBeacon", description: "A technical breakdown of how crypto phishing scams work — DNS hijacking, fake dApps, approval phishing, spear phishing, and browser extension attacks — with ...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/how-crypto-phishing-scams-work", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Security", item: "https://www.cryptobeacon.site/security" },
+        { name: "How Crypto Phishing Scams Work: Attack Types Explained | CryptoBeacon", item: "https://www.cryptobeacon.site/security/how-crypto-phishing-scams-work" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -90,6 +64,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -109,6 +84,9 @@ function ArticlePage() {
           Understanding the mechanics of crypto phishing is the first step to avoiding it. Here are the five most common attack types — with exactly how each works and how to defend against it.
         </p>
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <div className="my-xl p-lg rounded-xl border border-red-500/30 bg-red-500/5 flex gap-md">
           <AlertTriangle className="text-red-400 shrink-0 mt-1" size={20} />
@@ -146,41 +124,9 @@ function ArticlePage() {
           <li>Never share your seed phrase or private key with anyone or anything</li>
         </ul>
 
-        <section className="mt-xxl" aria-label="Frequently asked questions">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Frequently Asked Questions</h2>
-          <div className="space-y-md">
-            {faqs.map((f, i) => (
-              <details key={i} className="group border border-outline-variant rounded-lg overflow-hidden">
-                <summary className="flex items-center justify-between p-lg cursor-pointer list-none">
-                  <span className="font-body-lg text-body-lg text-primary font-semibold pr-md">{f.q}</span>
-                  <Plus size={18} className="text-secondary shrink-0 group-open:rotate-45 transition-transform" />
-                </summary>
-                <div className="px-lg pb-lg">
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/security/how-to-avoid-crypto-phishing-scams" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">How to Avoid Crypto Phishing Scams</h3>
-            </Link>
-            <Link to="/security/how-to-identify-a-fake-crypto-website" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Identify a Fake Crypto Website</h3>
-            </Link>
-            <Link to="/security/crypto-security-hub" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Crypto Security Hub</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

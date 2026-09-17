@@ -1,74 +1,34 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/eth-staking-lido-vs-rocketpool.jpg";
+import hero from "@/assets/eth-staking-lido-vs-rocketpool.webp";
 import { Check, X, Info } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/ethereum/how-to-stake-eth-on-lido-vs-rocketpool";
 const TITLE = "Staking ETH: Lido vs Rocket Pool — A Tested Comparison (2026) | CryptoBeacon";
 const DESC = "A hands-on comparison of Lido and Rocket Pool for liquid ETH staking in 2026 — covering yield, smart contract risk, decentralization, and minimum stake requi...";
 const PUBLISHED = "2026-08-25";
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Staking ETH: Lido vs Rocket Pool — A Tested Comparison",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site/assets/eth-staking-lido-vs-rocketpool.jpg`,
-  inLanguage: "en-US",
-  keywords:
-    "lido vs rocket pool, best eth staking 2026, liquid staking ethereum, stETH vs rETH, ethereum staking comparison",
-  articleSection: "Ethereum",
-  isAccessibleForFree: true,
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Ethereum", item: "https://www.cryptobeacon.site/ethereum" },
-    { "@type": "ListItem", position: 3, name: "Lido vs Rocket Pool ETH Staking", item: URL },
-  ],
-};
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 export const Route = createFileRoute("/ethereum/how-to-stake-eth-on-lido-vs-rocketpool")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Ethereum" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/ethereum/how-to-stake-eth-on-lido-vs-rocketpool" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool', publishedTime: PUBLISHED, section: 'Ethereum' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Staking ETH: Lido vs Rocket Pool — A Tested Comparison (2026) | CryptoBeacon", description: "A hands-on comparison of Lido and Rocket Pool for liquid ETH staking in 2026 — covering yield, smart contract risk, decentralization, and minimum stake requi...", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-25", dateModified: "2026-08-25", url: "https://www.cryptobeacon.site/ethereum/how-to-stake-eth-on-lido-vs-rocketpool", section: "Ethereum", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Ethereum", item: "https://www.cryptobeacon.site/ethereum" },
+        { name: "Staking ETH: Lido vs Rocket Pool — A Tested Comparison (2026) | CryptoBeacon", item: "https://www.cryptobeacon.site/ethereum/how-to-stake-eth-on-lido-vs-rocketpool" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -100,6 +60,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
@@ -119,7 +80,7 @@ function ArticlePage() {
           Staking ETH: Lido vs Rocket Pool — A Tested Comparison
         </h1>
 
-        <Author publishedDate={<time dateTime={PUBLISHED}>August 25, 2026</time>} readTime="10 min read" />
+        <Author publishedDate={<time dateTime={PUBLISHED}>August 25, 2026</time>}  />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -133,12 +94,12 @@ function ArticlePage() {
         </figure>
 
         <P>
-          Running your own Ethereum validator requires 32 ETH — roughly $80,000–$100,000 at most prices — and keeping a server online 24/7. Liquid staking protocols solve both problems: deposit any amount of ETH, receive a receipt token you can use in DeFi, and earn staking rewards without running infrastructure.
+          Running your own Ethereum validator requires 32 ETH — roughly $80,000–$100,000 at most prices — and keeping a server online 24/7. Liquid <Link to="/glossary#staking" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Staking">staking</Link> protocols solve both problems: deposit any amount of ETH, receive a receipt token you can use in <Link to="/glossary#defi" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: DeFi">DeFi</Link>, and earn staking rewards without running infrastructure.
         </P>
         <P>
           Lido and Rocket Pool are the two dominant permissionless options. I've used both with real ETH. Here's what I learned.
         </P>
-        <P><em>This article is educational and not financial advice. Staking involves smart contract risk and ETH price risk.</em></P>
+        <P><em>This article is educational and not financial advice. Staking involves <Link to="/glossary#smart-contract" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Smart Contract">smart contract</Link> risk and ETH price risk.</em></P>
 
 
         {/* Side-by-side data table */}
@@ -216,10 +177,10 @@ function ArticlePage() {
 
         <H2 id="lido-deep-dive">Lido: Dominant for a Reason</H2>
         <P>
-          Lido is the simplest possible experience: connect your wallet on lido.fi, enter an ETH amount, and click "Stake." You immediately receive stETH at a 1:1 ratio. From then on, your stETH balance increases daily as staking rewards accrue — a mechanism called "rebasing."
+          Lido is the simplest possible experience: connect your <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> on lido.fi, enter an ETH amount, and click "Stake." You immediately receive stETH at a 1:1 ratio. From then on, your stETH balance increases daily as staking rewards accrue — a mechanism called "rebasing."
         </P>
         <P>
-          The practical advantage of Lido's scale is deep DeFi liquidity. You can deposit stETH as collateral on Aave to borrow stablecoins, or provide liquidity on Curve's stETH/ETH pool. When I staked a test amount on Lido in late 2023, receiving stETH and then depositing it into Aave took under 5 minutes and cost roughly $3 in gas on mainnet.
+          The practical advantage of Lido's scale is deep DeFi liquidity. You can deposit stETH as collateral on Aave to borrow <Link to="/glossary#stablecoin" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Stablecoin">stablecoins</Link>, or provide liquidity on Curve's stETH/ETH pool. When I staked a test amount on Lido in late 2023, receiving stETH and then depositing it into Aave took under 5 minutes and cost roughly $3 in gas on mainnet.
         </P>
         <div className="p-lg rounded-xl border border-amber-500/30 bg-amber-500/5 my-md">
           <h3 className="font-headline-sm text-headline-sm text-amber-500 mb-sm">The Decentralization Concern</h3>
@@ -230,7 +191,7 @@ function ArticlePage() {
 
         <H2 id="rocketpool-deep-dive">Rocket Pool: More Decentralized, Slightly More Complex</H2>
         <P>
-          Rocket Pool's architecture is meaningfully different. Instead of a DAO-approved operator set, anyone can run a Rocket Pool node by depositing 8 ETH of their own plus RPL tokens as collateral — this collateral requirement aligns node operators' incentives and provides slashing insurance for stakers.
+          Rocket Pool's architecture is meaningfully different. Instead of a DAO-approved operator set, anyone can run a Rocket Pool <Link to="/glossary#node" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Node">node</Link> by depositing 8 ETH of their own plus RPL tokens as collateral — this collateral requirement aligns node operators' incentives and provides slashing insurance for stakers.
         </P>
         <P>
           For regular stakers (not node operators), the experience is similar to Lido: stake on rocketpool.net, receive rETH. The key difference is the token mechanics — rETH doesn't rebalance; instead its exchange rate against ETH rises over time to reflect accumulated rewards. This makes rETH slightly simpler for tax accounting in some jurisdictions (one taxable event on exit vs. daily reward accrual for stETH).
@@ -283,24 +244,9 @@ function ArticlePage() {
           </p>
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/ethereum/what-is-ethereum-staking" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">What Is Ethereum Staking?</h3>
-            </Link>
-            <Link to="/security/defi-risks-explained" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">DeFi Risks Explained</h3>
-            </Link>
-            <Link to="/ethereum/what-are-gas-fees-how-to-save" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">What Are Gas Fees & How to Save?</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

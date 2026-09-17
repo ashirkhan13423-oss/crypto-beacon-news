@@ -1,15 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/guides-private-key.jpg";
+import hero from "@/assets/guides-private-key.webp";
 import { Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/guides/what-is-a-private-key";
 const TITLE = "What Is a Private Key in Crypto? A Plain-Language Explainer | CryptoBeacon";
 const DESC = "A straightforward explanation of what a cryptocurrency private key is, how it differs from a seed phrase and public address, and why whoever controls it cont...";
 const PUBLISHED = "2026-08-29";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "Can I change my private key?",
@@ -29,95 +37,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "What Is a Private Key in Crypto? A Plain-Language Explainer",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "what is a private key, crypto private key, private key vs public key, private key vs seed phrase, crypto cryptography, wallet private key",
-  articleSection: "Guides",
-  wordCount: 1300,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Guides",
-      item: "https://www.cryptobeacon.site/guides",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "What Is a Private Key?",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/guides/what-is-a-private-key")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Guides" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/what-is-a-private-key" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/what-is-a-private-key', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is a Private Key in Crypto? A Plain-Language Explainer | CryptoBeacon", description: "A straightforward explanation of what a cryptocurrency private key is, how it differs from a seed phrase and public address, and why whoever controls it cont...", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-29", dateModified: "2026-08-29", url: "https://www.cryptobeacon.site/guides/what-is-a-private-key", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Guides", item: "https://www.cryptobeacon.site/guides" },
+        { name: "What Is a Private Key in Crypto? A Plain-Language Explainer | CryptoBeacon", item: "https://www.cryptobeacon.site/guides/what-is-a-private-key" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -145,6 +80,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -176,7 +112,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 29, 2026</time>}
-          readTime="5 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -193,7 +129,7 @@ function ArticlePage() {
         <P>
           In the physical world, your money is protected by bank vaults, passwords, and legal
           contracts. In cryptocurrency, your money is protected by a single piece of mathematics:
-          your <strong>private key</strong>.
+          your <strong><Link to="/glossary#private-key" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Private Key">private key</Link></strong>.
         </P>
         <P>
           Understanding what a private key is — and how it interacts with public addresses and seed
@@ -220,8 +156,8 @@ function ArticlePage() {
 
         <H2 id="how-it-works">How It Works: Signing Transactions</H2>
         <P>
-          Your crypto isn't actually "inside" your phone or your hardware wallet. All cryptocurrency
-          lives on the public blockchain. What you actually hold in your wallet is the private key
+          Your crypto isn't actually "inside" your phone or your hardware <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link>. All cryptocurrency
+          lives on the public <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link>. What you actually hold in your wallet is the private key
           that proves ownership over those funds.
         </P>
         <P>
@@ -265,7 +201,7 @@ function ArticlePage() {
         <P>
           Managing dozens of long, random alphanumeric strings is difficult for humans. That's why
           modern wallets use a standard called BIP39, which translates your keys into a{" "}
-          <strong>seed phrase</strong> (usually 12 or 24 English words).
+          <strong><Link to="/glossary#seed-phrase" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Seed Phrase">seed phrase</Link></strong> (usually 12 or 24 English words).
         </P>
         <P>
           The seed phrase acts as a master key. From that one list of words, your wallet can
@@ -276,17 +212,7 @@ function ArticlePage() {
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
-          {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="sources">Sources</H2>
@@ -317,45 +243,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/guides/not-your-keys-not-your-coins-meaning"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Not Your Keys, Not Your Coins
-              </h3>
-            </Link>
-            <Link
-              to="/guides/what-is-a-crypto-wallet-address"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What Is a Crypto Wallet Address?
-              </h3>
-            </Link>
-            <Link
-              to="/security/how-to-store-crypto-seed-phrase-safely"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                How to Store Your Seed Phrase Safely
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

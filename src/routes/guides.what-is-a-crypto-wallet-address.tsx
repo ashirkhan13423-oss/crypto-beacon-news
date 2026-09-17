@@ -1,9 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/guides-wallet-address.png";
+import hero from "@/assets/guides-wallet-address.webp";
 import { Plus, Copy, QrCode, ShieldCheck } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+
 
 const URL = "https://www.cryptobeacon.site/guides/what-is-a-crypto-wallet-address";
 const TITLE =
@@ -31,96 +34,15 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: "What Is a Crypto Wallet Address? How It Works and How to Use It Safely",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "what is a crypto wallet address, how does a cryptocurrency address work, is it safe to share crypto address, crypto wallet address explained, how to use crypto address safely",
-  articleSection: "Guides",
-  wordCount: 900,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Guides",
-      item: "https://www.cryptobeacon.site/guides",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "What Is a Crypto Wallet Address?",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/guides/what-is-a-crypto-wallet-address")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Guides" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/what-is-a-crypto-wallet-address" }],
-    scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
-    ],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/what-is-a-crypto-wallet-address', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
+    scripts: [],
   }),
   component: ArticlePage,
 });
@@ -206,6 +128,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -237,7 +160,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 6, 2026</time>}
-          readTime="5 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -251,7 +174,7 @@ function ArticlePage() {
         </figure>
 
         <P>
-          A crypto wallet address is the string of letters and numbers you share with someone when
+          A crypto <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> address is the string of letters and numbers you share with someone when
           you want to receive cryptocurrency. It looks intimidating at first glance, but
           understanding what it is — and what it isn't — is one of the most useful things you can
           know as a crypto user.
@@ -265,7 +188,7 @@ function ArticlePage() {
           A cryptocurrency address is a unique identifier derived from your wallet's public key — a
           cryptographic string that tells the network where to direct incoming funds. Think of it
           like an account number you can share freely: anyone can send funds to it, but only the
-          holder of the corresponding private key can authorise spending from it.
+          holder of the corresponding <Link to="/glossary#private-key" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Private Key">private key</Link> can authorise spending from it.
         </P>
         <P>
           Unlike a bank account number, a crypto address is generated mathematically from the
@@ -290,7 +213,7 @@ function ArticlePage() {
 
         <H2 id="address-formats">3. Address Formats by Network</H2>
         <P>
-          Different blockchains use different address formats. The format is not just cosmetic —
+          Different <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchains</Link> use different address formats. The format is not just cosmetic —
           sending to an address on the wrong network is a common source of lost funds.
         </P>
         <AddressAnatomyDiagram />
@@ -424,11 +347,7 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial advice. Always verify addresses directly and independently before
-            sending funds.
-          </p>
+          <Disclaimer />
         </div>
 
         <section className="mt-xxl">
@@ -463,7 +382,8 @@ function ArticlePage() {
             </Link>
           </div>
         </section>
-      </main>
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

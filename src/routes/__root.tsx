@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { buildMetadata } from "@/lib/metadata";
 import {
   Outlet,
   Link,
@@ -8,6 +9,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { AdSenseLoader } from "@/components/AdUnit";
 import appCss from "../styles.css?url";
 import { SITE_URL } from "../lib/site-config";
 
@@ -110,59 +112,29 @@ import { twConfig } from "../lib/tw-config";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "google-site-verification", content: "H2r-VbnLhzPsY9KMxhbDMqo0owMSdsqwWrQwUBDIGIc" },
-      { name: "google-adsense-account", content: "ca-pub-3754668913099912" },
-      { title: "CryptoBeacon | Crypto News, Guides & Security" },
-      {
-        name: "description",
-        content:
-          "Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and the wider digital-asset ecosystem.",
-      },
-      { name: "author", content: "CryptoBeacon" },
-      { property: "og:site_name", content: "CryptoBeacon" },
-      { property: "og:title", content: "CryptoBeacon | Crypto News, Guides & Security" },
-      {
-        property: "og:description",
-        content:
-          "Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and the wider digital-asset ecosystem.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: `${SITE_URL}/og-image.png` },
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
-      { property: "og:url", content: `${SITE_URL}/` },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "CryptoBeacon | Crypto News, Guides & Security" },
-      {
-        name: "twitter:description",
-        content:
-          "Institutional-grade analysis, guides, and security research on Bitcoin, Ethereum, and the wider digital-asset ecosystem.",
-      },
-      { name: "twitter:image", content: `${SITE_URL}/og-image.png` },
-    ],
+    ...buildMetadata({ title: "CryptoBeacon", description: "Independent cryptocurrency research...", url: "https://www.cryptobeacon.site", type: 'website', path: '/' }),
+    
     links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
-
+      // Preconnect to all external origins — eliminates connection latency
+      { rel: "preconnect", href: "https://www.googletagmanager.com" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "preconnect", href: "https://pagead2.googlesyndication.com" },
+      // Google Fonts with display=swap to prevent FOIT (flash of invisible text)
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap",
       },
     ],
     scripts: [
-      { src: "https://cdn.tailwindcss.com?plugins=forms,container-queries" },
-      { children: twConfig },
-      { src: "https://www.googletagmanager.com/gtag/js?id=G-VY7EVVG1WL", async: true },
+      { src: "https://www.googletagmanager.com/gtag/js?id=G-VY7EVVG1WL", async: true, defer: true },
       {
         children:
           "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-VY7EVVG1WL');",
       },
       {
         children:
-          "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NZ2CN7HG');",
+          "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.defer=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NZ2CN7HG');",
       },
       { type: "application/ld+json", children: JSON.stringify(websiteSchema) },
       { type: "application/ld+json", children: JSON.stringify(organizationSchema) },
@@ -204,6 +176,8 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      {/* Loads AdSense after idle — does not block LCP */}
+      <AdSenseLoader />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>

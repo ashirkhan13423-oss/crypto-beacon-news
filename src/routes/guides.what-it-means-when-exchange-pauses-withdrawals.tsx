@@ -1,15 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/news-paused-withdrawals.jpg";
+import hero from "@/assets/news-paused-withdrawals.webp";
 import { Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/guides/what-it-means-when-exchange-pauses-withdrawals";
 const TITLE = "What Does It Mean When an Exchange Pauses Withdrawals? | CryptoBeacon";
 const DESC = "Your crypto exchange paused withdrawals — is that normal or a red flag? A comprehensive guide to understanding exchange liquidity, routine maintenance, and w...";
 const PUBLISHED = "2026-08-04";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "Is a withdrawal pause always a bad sign?",
@@ -25,94 +33,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: "What Does It Mean When a Crypto Exchange Pauses Withdrawals?",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: "https://www.cryptobeacon.site/og-image.png",
-  inLanguage: "en-US",
-  keywords:
-    "what does it mean when an exchange pauses withdrawals, crypto exchange withdrawal freeze explained, is it bad when an exchange stops withdrawals, why do exchanges halt withdrawals, crypto insolvency signs, fractional reserve crypto",
-  articleSection: "Guides",
-  wordCount: 1200,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Guides",
-      item: "https://www.cryptobeacon.site/guides",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "What It Means When Exchange Pauses Withdrawals",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/guides/what-it-means-when-exchange-pauses-withdrawals")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Guides" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/what-it-means-when-exchange-pauses-withdrawals" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/what-it-means-when-exchange-pauses-withdrawals', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Does It Mean When an Exchange Pauses Withdrawals? | CryptoBeacon", description: "Your crypto exchange paused withdrawals — is that normal or a red flag? A comprehensive guide to understanding exchange liquidity, routine maintenance, and w...", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-04", dateModified: "2026-08-04", url: "https://www.cryptobeacon.site/guides/what-it-means-when-exchange-pauses-withdrawals", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Guides", item: "https://www.cryptobeacon.site/guides" },
+        { name: "What Does It Mean When an Exchange Pauses Withdrawals? | CryptoBeacon", item: "https://www.cryptobeacon.site/guides/what-it-means-when-exchange-pauses-withdrawals" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -140,6 +76,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -171,7 +108,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 4, 2026</time>}
-          readTime="7 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -194,7 +131,7 @@ function ArticlePage() {
         </P>
         <P>
           To understand why pauses happen, it's helpful to understand how exchanges manage liquidity.
-          Unlike a personal wallet where your assets sit directly on the blockchain under your control,
+          Unlike a personal <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> where your assets sit directly on the <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> under your control,
           exchanges use a system of "hot" (online) and "cold" (offline) wallets. The vast majority of
           user funds are kept in cold storage for security, while a smaller percentage is kept in hot
           wallets to facilitate daily withdrawals. If a sudden spike in withdrawals occurs, an exchange
@@ -369,7 +306,7 @@ function ArticlePage() {
             to="/guides/not-your-keys-not-your-coins-meaning"
             className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
           >
-            private keys
+            <Link to="/glossary#private-key" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Private Key">private keys</Link>
           </Link>
           , is entirely unaffected by any individual platform's operational issues — for better or
           worse, that's the trade-off self-custody involves.
@@ -399,17 +336,7 @@ function ArticlePage() {
 
         <H2 id="faq">Frequently Asked Questions</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
-          {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="sources">Sources & Further Reading</H2>
@@ -450,46 +377,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and does not reference
-            any specific company, platform, or incident. It isn't financial advice — always consult
-            a platform's official communications for guidance on your specific situation.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/guides/exchange-or-personal-wallet-crypto-storage"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Exchange vs. Personal Wallet
-              </h3>
-            </Link>
-            <Link
-              to="/guides/not-your-keys-not-your-coins-meaning"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Not Your Keys, Not Your Coins
-              </h3>
-            </Link>
-            <Link
-              to="/guides/what-is-a-blockchain-fork"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What Is a Blockchain Fork?
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

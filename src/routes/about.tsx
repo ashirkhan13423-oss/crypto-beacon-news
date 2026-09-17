@@ -1,28 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Users, BookOpen, ShieldCheck, Mail } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
-    meta: [
-      { title: "About Us — CryptoBeacon" },
-      {
-        name: "description",
-        content:
-          "Learn about CryptoBeacon's editorial standards — source-verified news reporting, evergreen educational guides, and explanatory analysis without hype or financial advice.",
-      },
-      { property: "og:title", content: "About Us — CryptoBeacon" },
-      {
-        property: "og:description",
-        content:
-          "Learn about CryptoBeacon's editorial standards — source-verified news reporting, evergreen educational guides, and explanatory analysis without hype or financial advice.",
-      },
-      { property: "og:url", content: "https://www.cryptobeacon.site/about" },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/about" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/about", type: 'website', path: '/about' }),
+    
+    
   }),
   component: AboutPage,
 });
@@ -62,7 +48,7 @@ function AboutPage() {
                   Security Research
                 </h3>
                 <p className="text-body-md text-on-surface-variant">
-                  Research focuses on non-custodial wallet architecture, key management
+                  Research focuses on non-custodial <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> architecture, key management
                   protocols, multi-signature security frameworks, and real-world threat analysis.
                 </p>
               </div>
@@ -72,7 +58,7 @@ function AboutPage() {
                 </h3>
                 <p className="text-body-md text-on-surface-variant">
                   Analysis covers Bitcoin market structure, exchange reserve telemetry,
-                  DeFi dynamics, and global cryptocurrency regulation.
+                  <Link to="/glossary#defi" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: DeFi">DeFi</Link> dynamics, and global cryptocurrency regulation.
                 </p>
               </div>
             </div>
@@ -96,7 +82,7 @@ function AboutPage() {
                 <p className="text-body-md">
                   We are educators, not financial advisors. Nothing on CryptoBeacon constitutes
                   investment, trading, legal, or financial advice. Our content is designed to help
-                  you understand how blockchain technology works and the structural risks
+                  you understand how <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> technology works and the structural risks
                   involved—never to tell you what to buy, sell, or hold.
                 </p>
               </div>

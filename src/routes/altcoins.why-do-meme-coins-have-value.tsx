@@ -1,15 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/altcoins-meme-coin-value.jpg";
+import hero from "@/assets/altcoins-meme-coin-value.webp";
 import { Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/altcoins/why-do-meme-coins-have-value";
 const TITLE = "Why Do Meme Coins Have Value? | CryptoBeacon";
 const DESC = "Examining the economics and community dynamics that drive the valuation of meme-based cryptocurrencies.";
 const PUBLISHED = "2026-09-12";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "Why do people buy meme coins?",
@@ -25,93 +33,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Why Do Meme Coins Have Value?",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "CryptoBeacon Editorial",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  articleSection: "Altcoins",
-  wordCount: 1850,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Altcoins",
-      item: "https://www.cryptobeacon.site/altcoins",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Why Do Meme Coins Have Value?",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/altcoins/why-do-meme-coins-have-value")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Altcoins" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/altcoins/why-do-meme-coins-have-value" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/altcoins/why-do-meme-coins-have-value', publishedTime: PUBLISHED, section: 'Altcoins' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Why Do Meme Coins Have Value? | CryptoBeacon", description: "Examining the economics and community dynamics that drive the valuation of meme-based cryptocurrencies.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-09-12", dateModified: "2026-09-12", url: "https://www.cryptobeacon.site/altcoins/why-do-meme-coins-have-value", section: "Altcoins", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Altcoins", item: "https://www.cryptobeacon.site/altcoins" },
+        { name: "Why Do Meme Coins Have Value? | CryptoBeacon", item: "https://www.cryptobeacon.site/altcoins/why-do-meme-coins-have-value" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -139,6 +76,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -170,7 +108,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>September 12, 2026</time>}
-          readTime="8 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -208,17 +146,7 @@ function ArticlePage() {
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
-          {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
         
 
@@ -226,43 +154,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice. Past performance is not indicative of future results.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/altcoins/what-is-an-altcoin"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Altcoins</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What is an Altcoin
-              </h3>
-            </Link>\n            <Link
-              to="/altcoins/what-is-an-ai-crypto-token"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Altcoins</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                AI Crypto Token
-              </h3>
-            </Link>\n            <Link
-              to="/guides/why-bitcoin-price-moves-more-than-stocks"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Crypto Price Volatility
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

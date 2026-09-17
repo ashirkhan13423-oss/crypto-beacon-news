@@ -1,15 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Plus } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/security/how-to-identify-a-fake-crypto-website";
 const TITLE = "How to Identify a Fake Crypto Website: 7 Checks | CryptoBeacon";
 const DESC =
   "Learn how to spot a fake crypto website before it's too late — URL inspection, SSL certificate checks, Whois lookups, typosquatting red flags, and clipboard address verification.";
 const PUBLISHED = "2026-09-01";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   { q: "What is typosquatting?", a: "Typosquatting is when an attacker registers a domain that is nearly identical to a legitimate one — often with a single character changed, replaced with a lookalike (rn vs m), or a different TLD (.net instead of .com). For example, 'uniswap.oom' or 'metamásk.io' (with an accented á)." },
   { q: "Does HTTPS mean a website is safe?", a: "No. HTTPS (the padlock icon) only means the connection between your browser and the server is encrypted. It says nothing about whether the server itself is legitimate or controlled by an attacker. Phishing sites can and do use HTTPS with valid certificates." },
@@ -17,55 +24,22 @@ const faqs: { q: string; a: string }[] = [
   { q: "How do I verify the correct URL for a crypto project?", a: "Go to the project's official Twitter/X, GitHub, CoinGecko page, or CoinMarketCap listing, and click the website link from there. Legitimate projects list their official URLs on these third-party platforms. Avoid clicking links from search engine ads or DMs." },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "How to Identify a Fake Crypto Website: 7 Checks",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "how to identify fake crypto website, fake crypto website checker, typosquatting crypto, whois domain check, crypto phishing site detection, fake defi protocol",
-  articleSection: "Security",
-  wordCount: 850,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Security", item: "https://www.cryptobeacon.site/security" },
-    { "@type": "ListItem", position: 3, name: "How to Identify a Fake Crypto Website", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/security/how-to-identify-a-fake-crypto-website")({
   head: () => ({
-    meta: [
-      { title: TITLE }, { name: "description", content: DESC },
-      { property: "og:title", content: TITLE }, { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" }, { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Security" },
-      { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/security/how-to-identify-a-fake-crypto-website" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security/how-to-identify-a-fake-crypto-website', publishedTime: PUBLISHED, section: 'Security' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How to Identify a Fake Crypto Website: 7 Checks | CryptoBeacon", description: "Learn how to spot a fake crypto website before it's too late — URL inspection, SSL certificate checks, Whois lookups, typosquatting red flags, and clipboard address verification.", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/how-to-identify-a-fake-crypto-website", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Security", item: "https://www.cryptobeacon.site/security" },
+        { name: "How to Identify a Fake Crypto Website: 7 Checks | CryptoBeacon", item: "https://www.cryptobeacon.site/security/how-to-identify-a-fake-crypto-website" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -93,6 +67,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -109,9 +84,12 @@ function ArticlePage() {
           How to Identify a Fake Crypto Website
         </h1>
         <p className="font-body-lg text-body-lg text-on-surface-variant mb-xl">
-          Modern phishing sites are visually indistinguishable from the real thing. These seven checks take under two minutes and will catch the vast majority of fakes before you connect your wallet.
+          Modern phishing sites are visually indistinguishable from the real thing. These seven checks take under two minutes and will catch the vast majority of fakes before you connect your <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link>.
         </p>
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <H2 id="checks">The seven checks</H2>
         <div className="space-y-md my-lg">
@@ -127,44 +105,12 @@ function ArticlePage() {
         </div>
 
         <H2 id="bookmarks">The best protection: bookmarks</H2>
-        <P>The single most effective habit against fake crypto websites is using browser bookmarks for every site you regularly use. When you are already on the legitimate site, bookmark it. Never navigate to DeFi sites, exchanges, or wallet providers by searching — always use your bookmarks.</P>
+        <P>The single most effective habit against fake crypto websites is using browser bookmarks for every site you regularly use. When you are already on the legitimate site, bookmark it. Never navigate to <Link to="/glossary#defi" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: DeFi">DeFi</Link> sites, exchanges, or wallet providers by searching — always use your bookmarks.</P>
         <P>This eliminates the risk of typosquatting, poisoned search results, and paid ads entirely for your regular sites.</P>
 
-        <section className="mt-xxl" aria-label="Frequently asked questions">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Frequently Asked Questions</h2>
-          <div className="space-y-md">
-            {faqs.map((f, i) => (
-              <details key={i} className="group border border-outline-variant rounded-lg overflow-hidden">
-                <summary className="flex items-center justify-between p-lg cursor-pointer list-none">
-                  <span className="font-body-lg text-body-lg text-primary font-semibold pr-md">{f.q}</span>
-                  <Plus size={18} className="text-secondary shrink-0 group-open:rotate-45 transition-transform" />
-                </summary>
-                <div className="px-lg pb-lg">
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/security/how-crypto-phishing-scams-work" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">How Phishing Scams Work</h3>
-            </Link>
-            <Link to="/security/crypto-wallet-drainer-scams-explained" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Wallet Drainer Scams Explained</h3>
-            </Link>
-            <Link to="/security/crypto-security-hub" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Crypto Security Hub</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

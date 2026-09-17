@@ -1,14 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Plus } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/guides/what-is-kyc-in-cryptocurrency";
 const TITLE = "What Is KYC in Cryptocurrency? Requirements & Why It Matters | CryptoBeacon";
 const DESC = "What is KYC (Know Your Customer) in crypto? Learn why cryptocurrency exchanges require ID verification, what documents are needed, and the privacy implicatio...";
 const PUBLISHED = "2026-09-01";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   { q: "Can I buy cryptocurrency without KYC?", a: "Yes, but it is becoming increasingly difficult. You can buy crypto without KYC through decentralised exchanges (DEXs) if you already have crypto, peer-to-peer platforms (like Bisq or HodlHodl), or Bitcoin ATMs (though many now require ID). Centralised exchanges with fiat on-ramps almost universally require KYC." },
   { q: "Is it safe to give my ID to a crypto exchange?", a: "Major regulated exchanges (like Coinbase or Kraken) use industry-standard encryption and security for user data. However, data breaches have happened in the past (e.g., Binance, Ledger). There is always some privacy risk when submitting personal documents to third parties." },
@@ -16,55 +23,22 @@ const faqs: { q: string; a: string }[] = [
   { q: "What happens if I refuse KYC?", a: "If you refuse KYC on a centralised exchange, you typically cannot deposit fiat currency (USD, EUR, etc.), and your crypto withdrawals will be severely limited or blocked entirely until verification is completed." },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "What Is KYC in Cryptocurrency? Requirements & Why It Matters",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "what is KYC crypto, know your customer cryptocurrency, crypto ID verification, buy crypto without KYC, crypto exchange KYC requirements, crypto privacy KYC",
-  articleSection: "Guides",
-  wordCount: 850,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Guides", item: "https://www.cryptobeacon.site/guides" },
-    { "@type": "ListItem", position: 3, name: "What Is KYC in Cryptocurrency?", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/guides/what-is-kyc-in-cryptocurrency")({
   head: () => ({
-    meta: [
-      { title: TITLE }, { name: "description", content: DESC },
-      { property: "og:title", content: TITLE }, { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" }, { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Guides" },
-      { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/what-is-kyc-in-cryptocurrency" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/what-is-kyc-in-cryptocurrency', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is KYC in Cryptocurrency? Requirements & Why It Matters | CryptoBeacon", description: "What is KYC (Know Your Customer) in crypto? Learn why cryptocurrency exchanges require ID verification, what documents are needed, and the privacy implicatio...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/what-is-kyc-in-cryptocurrency", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Guides", item: "https://www.cryptobeacon.site/guides" },
+        { name: "What Is KYC in Cryptocurrency? Requirements & Why It Matters | CryptoBeacon", item: "https://www.cryptobeacon.site/guides/what-is-kyc-in-cryptocurrency" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -82,6 +56,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -101,9 +76,12 @@ function ArticlePage() {
           Why cryptocurrency exchanges require you to upload your ID, what the process involves, and the privacy implications of Know Your Customer laws.
         </p>
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <H2 id="what-is">What is KYC?</H2>
-        <P>KYC stands for "Know Your Customer" (or "Know Your Client"). It is a mandatory process of identifying and verifying the identity of a user when opening an account and periodically over time. In the crypto world, KYC usually involves providing your full name, date of birth, address, a government-issued ID (passport or driver's licence), and a live selfie.</P>
+        <P><Link to="/glossary#kyc" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: KYC">KYC</Link> stands for "Know Your Customer" (or "Know Your Client"). It is a mandatory process of identifying and verifying the identity of a user when opening an account and periodically over time. In the crypto world, KYC usually involves providing your full name, date of birth, address, a government-issued ID (passport or driver's licence), and a live selfie.</P>
         <P>KYC is not a crypto invention. It has been a standard requirement for banks, brokerages, and financial institutions for decades. As crypto exchanges became regulated financial entities, they were forced to adopt the same standard.</P>
 
         <H2 id="why-required">Why do exchanges require KYC?</H2>
@@ -138,41 +116,9 @@ function ArticlePage() {
         </ul>
         <P>For users who prioritise privacy, alternatives like decentralised exchanges (DEXs) exist, but they generally cannot interface with the traditional banking system (fiat currency).</P>
 
-        <section className="mt-xxl" aria-label="Frequently asked questions">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Frequently Asked Questions</h2>
-          <div className="space-y-md">
-            {faqs.map((f, i) => (
-              <details key={i} className="group border border-outline-variant rounded-lg overflow-hidden">
-                <summary className="flex items-center justify-between p-lg cursor-pointer list-none">
-                  <span className="font-body-lg text-body-lg text-primary font-semibold pr-md">{f.q}</span>
-                  <Plus size={18} className="text-secondary shrink-0 group-open:rotate-45 transition-transform" />
-                </summary>
-                <div className="px-lg pb-lg">
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/guides/what-is-aml-in-crypto" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">What Is AML in Crypto?</h3>
-            </Link>
-            <Link to="/guides/crypto-regulation-hub" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Crypto Regulation Hub</h3>
-            </Link>
-            <Link to="/guides/how-crypto-exchanges-are-regulated" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">How Crypto Exchanges Are Regulated</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

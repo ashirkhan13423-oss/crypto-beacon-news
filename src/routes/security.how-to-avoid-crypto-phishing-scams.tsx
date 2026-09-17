@@ -1,16 +1,24 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/phishing-padlock.jpg";
+import hero from "@/assets/phishing-padlock.webp";
 import { AlertTriangle, Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/security/how-to-avoid-crypto-phishing-scams";
 const TITLE = "How to Avoid Crypto Phishing Scams | CryptoBeacon";
 const DESC =
   "Learn how crypto phishing scams actually work, the red flags that repeat across every version, and the verification habits that keep your wallet safe.";
 const PUBLISHED = "2026-07-03";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "Can a crypto phishing scam be reversed?",
@@ -34,95 +42,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: "How to Avoid Crypto Phishing Scams",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "how to avoid crypto phishing scams, crypto phishing red flags, how to spot a fake crypto website, wallet drainer scam explained, crypto phishing checklist, address poisoning, seed phrase phishing",
-  articleSection: "Security",
-  wordCount: 1500,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Security",
-      item: "https://www.cryptobeacon.site/security",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Avoid Crypto Phishing Scams",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/security/how-to-avoid-crypto-phishing-scams")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Security" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/security/how-to-avoid-crypto-phishing-scams" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security/how-to-avoid-crypto-phishing-scams', publishedTime: PUBLISHED, section: 'Security' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How to Avoid Crypto Phishing Scams | CryptoBeacon", description: "Learn how crypto phishing scams actually work, the red flags that repeat across every version, and the verification habits that keep your wallet safe.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-07-03", dateModified: "2026-07-03", url: "https://www.cryptobeacon.site/security/how-to-avoid-crypto-phishing-scams", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Security", item: "https://www.cryptobeacon.site/security" },
+        { name: "How to Avoid Crypto Phishing Scams | CryptoBeacon", item: "https://www.cryptobeacon.site/security/how-to-avoid-crypto-phishing-scams" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -194,6 +129,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -225,7 +161,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>July 3, 2026</time>}
-          readTime="9 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -241,8 +177,8 @@ function ArticlePage() {
         <P>
           Phishing is the most common way people lose cryptocurrency — not because the technology is
           weak, but because it targets something far harder to patch than software: human trust
-          under pressure. Unlike a hacked exchange or a broken smart contract, phishing doesn't
-          require any flaw in the blockchain at all. It only requires you to click, connect, or type
+          under pressure. Unlike a hacked exchange or a broken <Link to="/glossary#smart-contract" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Smart Contract">smart contract</Link>, phishing doesn't
+          require any flaw in the <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> at all. It only requires you to click, connect, or type
           something you shouldn't.
         </P>
         <P>
@@ -338,14 +274,14 @@ function ArticlePage() {
         <H2 id="different">1. What Makes Crypto Phishing Different</H2>
         <P>
           Traditional phishing usually aims to steal a password that a company can later reset.
-          Crypto phishing aims for something with no reset button: your seed phrase, your private
+          Crypto phishing aims for something with no reset button: your <Link to="/glossary#seed-phrase" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Seed Phrase">seed phrase</Link>, your private
           key, or your explicit approval to move funds. Once any of those are handed over or signed,
           the transaction is final. There's no bank to call, no chargeback, and no customer service
           escalation that can undo it.
         </P>
         <P>
           This is why crypto phishing tends to focus less on tricking you into giving up a password,
-          and more on tricking you into taking an action — connecting a wallet, approving a
+          and more on tricking you into taking an action — connecting a <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link>, approving a
           transaction, or entering a recovery phrase into something that looks legitimate but isn't.
         </P>
 
@@ -524,16 +460,7 @@ function ArticlePage() {
 
         <H2 id="faq">7. Frequently Asked Questions</H2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
-          {faqs.map((f) => (
-            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low flex flex-col">
-              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">
-                {f.q}
-              </h3>
-              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </div>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="conclusion">Conclusion</H2>
@@ -583,47 +510,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice. Cryptocurrency scams and phishing tactics
-            evolve continuously; readers should exercise independent judgment and stay informed
-            through official sources for their specific wallets and platforms.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/security/how-to-store-crypto-seed-phrase-safely"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Store Your Seed Phrase Safely
-              </h3>
-            </Link>
-            <Link
-              to="/bitcoin/how-to-send-bitcoin-safely"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                How to Send Bitcoin Safely
-              </h3>
-            </Link>
-            <Link
-              to="/guides/why-governments-regulate-cryptocurrency"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Why Governments Regulate Cryptocurrency
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

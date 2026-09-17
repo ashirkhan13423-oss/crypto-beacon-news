@@ -1,115 +1,35 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/crypto-portfolio-rebalancing.jpg";
+import hero from "@/assets/crypto-portfolio-rebalancing.webp";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/guides/crypto-portfolio-rebalancing-explained";
 const TITLE = "Crypto Portfolio Rebalancing Explained (With Worked Example) | CryptoBeacon";
 const DESC = "What crypto portfolio rebalancing is, when to do it, and how — with a realistic worked example showing exactly how the math works and what taxes to watch out...";
 const PUBLISHED = "2026-08-25";
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Crypto Portfolio Rebalancing Explained (With Worked Example)",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site/assets/crypto-portfolio-rebalancing.jpg`,
-  inLanguage: "en-US",
-  keywords:
-    "crypto portfolio rebalancing, how to rebalance crypto portfolio, bitcoin ethereum rebalancing, crypto rebalancing tax, threshold rebalancing strategy",
-  articleSection: "Guides",
-  isAccessibleForFree: true,
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How often should I rebalance my crypto portfolio?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "There's no universal answer, but two common approaches are time-based (quarterly or annually) and threshold-based (rebalance when any asset drifts more than 5–10% from your target). Threshold rebalancing is generally considered more responsive to crypto's high volatility.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is rebalancing a crypto portfolio taxable?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "In most jurisdictions (including the US), selling one cryptocurrency to buy another is a taxable event — even if you reinvest the proceeds immediately. Each sale triggers a capital gain or loss calculation. Tax-loss harvesting can sometimes offset gains.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is a good target allocation for a crypto portfolio?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "This depends entirely on your risk tolerance, investment horizon, and financial situation. A common approach is a larger Bitcoin and Ethereum allocation (considered relatively more established) with a smaller speculative allocation. There is no one-size-fits-all answer, and this is not financial advice.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Should I rebalance during a bull market or bear market?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Rebalancing is a mechanical discipline — it shouldn't change based on market conditions. Threshold rebalancing in particular triggers automatically when assets drift, regardless of whether that drift happens during a bull or bear market. The point is to maintain your intended risk profile, not to time the market.",
-      },
-    },
-  ],
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Guides", item: "https://www.cryptobeacon.site/guides" },
-    { "@type": "ListItem", position: 3, name: "Crypto Portfolio Rebalancing Explained", item: URL },
-  ],
-};
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 export const Route = createFileRoute("/guides/crypto-portfolio-rebalancing-explained")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Guides" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/crypto-portfolio-rebalancing-explained" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/crypto-portfolio-rebalancing-explained', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Crypto Portfolio Rebalancing Explained (With Worked Example) | CryptoBeacon", description: "What crypto portfolio rebalancing is, when to do it, and how — with a realistic worked example showing exactly how the math works and what taxes to watch out...", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-25", dateModified: "2026-08-25", url: "https://www.cryptobeacon.site/guides/crypto-portfolio-rebalancing-explained", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Guides", item: "https://www.cryptobeacon.site/guides" },
+        { name: "Crypto Portfolio Rebalancing Explained (With Worked Example) | CryptoBeacon", item: "https://www.cryptobeacon.site/guides/crypto-portfolio-rebalancing-explained" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -209,6 +129,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
@@ -228,7 +149,7 @@ function ArticlePage() {
           Crypto Portfolio Rebalancing Explained (With a Worked Example)
         </h1>
 
-        <Author publishedDate={<time dateTime={PUBLISHED}>August 25, 2026</time>} readTime="8 min read" />
+        <Author publishedDate={<time dateTime={PUBLISHED}>August 25, 2026</time>}  />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -274,7 +195,7 @@ function ArticlePage() {
 
         <H2 id="worked-example">Worked Example: A $10,000 Portfolio</H2>
         <P>
-          Let's say you set a target allocation of 50% Bitcoin, 30% Ethereum, and 20% stablecoins. You start with $10,000. Three months later, Bitcoin has rallied significantly and your portfolio looks like this:
+          Let's say you set a target allocation of 50% Bitcoin, 30% Ethereum, and 20% <Link to="/glossary#stablecoin" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Stablecoin">stablecoins</Link>. You start with $10,000. Three months later, Bitcoin has rallied significantly and your portfolio looks like this:
         </P>
 
         <div className="my-lg rounded-xl border border-outline-variant bg-surface-container-lowest overflow-hidden">
@@ -317,14 +238,7 @@ function ArticlePage() {
 
         <H2 id="faq">Frequently Asked Questions</H2>
         <div className="space-y-sm my-lg" itemScope itemType="https://schema.org/FAQPage">
-          {faqs.map((faq) => (
-            <div key={faq.question} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-              <FaqItem question={faq.question} answer={faq.answer} />
-              <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer" className="hidden">
-                <span itemProp="text">{faq.answer}</span>
-              </div>
-            </div>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
@@ -334,24 +248,9 @@ function ArticlePage() {
           </p>
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/guides/crypto-tax-basics-for-beginners" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Crypto Tax Basics for Beginners</h3>
-            </Link>
-            <Link to="/guides/why-bitcoin-price-moves-more-than-stocks" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Why Bitcoin's Price Moves More Than Stocks</h3>
-            </Link>
-            <Link to="/guides/exchange-or-personal-wallet-crypto-storage" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Exchange or Personal Wallet?</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

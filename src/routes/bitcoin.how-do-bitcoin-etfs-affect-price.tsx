@@ -1,9 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/bitcoin-etf-effects.jpg";
+import hero from "@/assets/bitcoin-etf-effects.webp";
 import { Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+
 
 const URL_CANONICAL =
   "https://www.cryptobeacon.site/bitcoin/how-do-bitcoin-etfs-affect-price";
@@ -28,111 +31,17 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "How Do Bitcoin ETFs Actually Affect the Price?",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL_CANONICAL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "how do bitcoin ETFs affect price, bitcoin ETF inflows explained, what happens when money flows into a bitcoin ETF, do ETF inflows always raise bitcoin price, spot ETF, authorized participant, creation and redemption, net asset value, custodian, futures-based ETF",
-  articleSection: "Bitcoin",
-  wordCount: 950,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Bitcoin",
-      item: "https://www.cryptobeacon.site/bitcoin",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "How Bitcoin ETFs Affect Price",
-      item: URL_CANONICAL,
-    },
-  ],
-};
 
 export const Route = createFileRoute(
   "/bitcoin/how-do-bitcoin-etfs-affect-price"
 )({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL_CANONICAL },
-      {
-        property: "og:image",
-        content: "https://www.cryptobeacon.site/og-image.png",
-      },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Bitcoin" },
-      { property: "article:tag", content: "bitcoin basics" },
-      { property: "article:tag", content: "ETFs" },
-      { property: "article:tag", content: "market structure" },
-      { property: "article:tag", content: "beginner guide" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      {
-        name: "twitter:image",
-        content: "https://www.cryptobeacon.site/og-image.png",
-      },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/how-do-bitcoin-etfs-affect-price" },{ rel: "canonical", href: URL_CANONICAL }],
-    scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(breadcrumbSchema),
-      },
-    ],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/bitcoin/how-do-bitcoin-etfs-affect-price', publishedTime: PUBLISHED, section: 'Bitcoin' }),
+    
+    
+    scripts: [],
   }),
   component: ArticlePage,
 });
@@ -254,6 +163,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         {/* Breadcrumb */}
         <nav
           aria-label="Breadcrumb"
@@ -293,7 +203,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>September 2, 2026</time>}
-          readTime="6 min read"
+          
         />
 
         {/* Hero */}
@@ -491,12 +401,7 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and
-            should not be considered financial or investment advice. It does not
-            recommend any specific fund, and it does not predict future price
-            movement.
-          </p>
+          <Disclaimer />
         </div>
 
         {/* Related Reading */}
@@ -529,7 +434,8 @@ function ArticlePage() {
             </Link>
           </div>
         </section>
-      </main>
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

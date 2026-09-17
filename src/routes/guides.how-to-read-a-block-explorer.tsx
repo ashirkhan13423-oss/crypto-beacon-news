@@ -1,16 +1,24 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/read-block-explorer.jpg";
+import hero from "@/assets/read-block-explorer.webp";
 import { Search } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/guides/how-to-read-a-block-explorer";
 const TITLE = "How to Read a Block Explorer (Beginner's Guide) | CryptoBeacon";
 const DESC =
   "A straightforward guide to using block explorers like Mempool.space and Etherscan to track your transactions, verify balances, and read blockchain data.";
 const PUBLISHED = "2026-08-20";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "Are block explorers free to use?",
@@ -30,95 +38,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: TITLE,
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "how to read a block explorer, what is etherscan, how to check bitcoin transaction, crypto block explorer guide, mempool space tutorial",
-  articleSection: "Guides",
-  wordCount: 1300,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Guides",
-      item: "https://www.cryptobeacon.site/guides",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "How to Read a Block Explorer",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/guides/how-to-read-a-block-explorer")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Guides" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/how-to-read-a-block-explorer" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/how-to-read-a-block-explorer', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How to Read a Block Explorer (Beginner's Guide) | CryptoBeacon", description: "A straightforward guide to using block explorers like Mempool.space and Etherscan to track your transactions, verify balances, and read blockchain data.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-20", dateModified: "2026-08-20", url: "https://www.cryptobeacon.site/guides/how-to-read-a-block-explorer", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Guides", item: "https://www.cryptobeacon.site/guides" },
+        { name: "How to Read a Block Explorer (Beginner's Guide) | CryptoBeacon", item: "https://www.cryptobeacon.site/guides/how-to-read-a-block-explorer" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -146,6 +81,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -177,7 +113,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 20, 2026</time>}
-          readTime="6 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -191,12 +127,12 @@ function ArticlePage() {
         </figure>
 
         <P>
-          A block explorer is effectively the search engine for a blockchain. It allows anyone with
+          A block explorer is effectively the search engine for a <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link>. It allows anyone with
           an internet connection to view all historical and real-time data on the network, including
           balances, transaction histories, and network fees.
         </P>
         <P>
-          If you send cryptocurrency from an exchange to your wallet and it doesn't show up
+          If you send cryptocurrency from an exchange to your <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> and it doesn't show up
           immediately, your first instinct might be panic. Learning how to read a block explorer
           cures this panic. It allows you to verify exactly where your transaction is, whether it's
           stuck waiting for a block, or if it has already been confirmed.
@@ -309,16 +245,7 @@ function ArticlePage() {
         {/* Layout D: Card-based FAQ */}
         <H2 id="faq">Frequently Asked Questions</H2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
-          {faqs.map((f) => (
-            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low flex flex-col">
-              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">
-                {f.q}
-              </h3>
-              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </div>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="conclusion">Conclusion</H2>
@@ -333,10 +260,7 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial advice. 
-          </p>
+          <Disclaimer />
         </div>
 
         <H2 id="sources">Sources</H2>
@@ -373,39 +297,9 @@ function ArticlePage() {
           </li>
         </ul>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/guides/what-is-a-crypto-wallet-address"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What is a Wallet Address?
-              </h3>
-            </Link>
-            <Link
-              to="/bitcoin/how-to-send-bitcoin-safely"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                How to Send Bitcoin Safely
-              </h3>
-            </Link>
-            <Link
-              to="/ethereum/ethereum-layer-2-scaling-rollups-explained"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Ethereum Layer 2 Scaling
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Breadcrumbs, breadcrumbSchemaFromItems } from "@/components/Breadcrumbs";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const URL = "https://www.cryptobeacon.site/editorial-policy";
 const TITLE = "Editorial Policy | CryptoBeacon";
@@ -9,21 +9,10 @@ const DESC = "CryptoBeacon's strict editorial standards, our research methodolog
 
 export const Route = createFileRoute("/editorial-policy")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:url", content: URL },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/editorial-policy" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(breadcrumbSchemaFromItems([{ label: "Editorial Policy" }])),
-      },
-    ],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/editorial-policy", type: 'website', path: '/editorial-policy' }),
+    
+    
+    scripts: []
   }),
   component: EditorialPolicyPage,
 });
@@ -33,6 +22,7 @@ function EditorialPolicyPage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <Breadcrumbs items={[{ label: "Editorial Policy" }]} />
         
         <h1 className="font-display-lg text-display-lg text-primary mb-lg">
@@ -41,7 +31,7 @@ function EditorialPolicyPage() {
 
         <div className="space-y-lg text-body-lg text-on-surface leading-relaxed">
           <p>
-            At CryptoBeacon, our primary mission is to provide clear, evidence-based, and accurate coverage of cryptocurrency, blockchain technology, and digital asset security. We prioritize trust and transparency above all else.
+            At CryptoBeacon, our primary mission is to provide clear, evidence-based, and accurate coverage of cryptocurrency, <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> technology, and digital asset security. We prioritize trust and transparency above all else.
           </p>
 
           <section>
@@ -90,7 +80,8 @@ function EditorialPolicyPage() {
             </p>
           </section>
         </div>
-      </main>
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

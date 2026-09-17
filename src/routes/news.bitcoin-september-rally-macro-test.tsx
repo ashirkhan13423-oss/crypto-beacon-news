@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/news-btc-september-macro-test.jpg";
+import hero from "@/assets/news-btc-september-macro-test.webp";
 
 const URL =
   "https://www.cryptobeacon.site/news/bitcoin-september-rally-macro-test";
@@ -39,107 +40,17 @@ const faqs = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline:
-    "Bitcoin's September Rally Faces a New Macro Test: Oil, Yields and the Fed",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    url: "https://www.cryptobeacon.site",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "Bitcoin September 2026, Bitcoin macro test, oil prices Bitcoin, Treasury yields Bitcoin, Fed rate hike crypto, Bitcoin price September 2026, Brent crude Bitcoin, US Iran tensions crypto, Bitcoin risk assets, CryptoBeacon",
-  articleSection: "News",
-  wordCount: 2200,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "News",
-      item: "https://www.cryptobeacon.site/news",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Bitcoin's September Macro Test",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute(
   "/news/bitcoin-september-rally-macro-test"
 )({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      {
-        property: "og:image",
-        content: "https://www.cryptobeacon.site/og-image.png",
-      },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "News" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      {
-        name: "twitter:image",
-        content: "https://www.cryptobeacon.site/og-image.png",
-      },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/news/bitcoin-september-rally-macro-test" }],
-    scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(breadcrumbSchema),
-      },
-    ],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/news/bitcoin-september-rally-macro-test', publishedTime: PUBLISHED, section: 'News' }),
+    
+    
+    scripts: [],
   }),
   component: ArticlePage,
 });
@@ -179,6 +90,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -215,7 +127,7 @@ function ArticlePage() {
           publishedDate={
             <time dateTime={PUBLISHED}>September 2, 2026</time>
           }
-          readTime="9 min read"
+          
         />
 
         <p className="italic text-on-surface-variant mb-lg font-body-sm mt-md">
@@ -683,7 +595,8 @@ function ArticlePage() {
             </Link>
           </div>
         </section>
-      </main>
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

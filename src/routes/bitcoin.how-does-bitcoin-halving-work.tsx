@@ -1,15 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/bitcoin-halving-mechanism.jpg";
+import hero from "@/assets/bitcoin-halving-mechanism.webp";
 import { Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/how-does-bitcoin-halving-work";
 const TITLE = "How Does Bitcoin Halving Work? | CryptoBeacon";
 const DESC = "A pure mechanism breakdown of the Bitcoin halving: the block reward reduction schedule, why it's programmed, and historical dates.";
 const PUBLISHED = "2026-09-12";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "What exactly happens during a Bitcoin halving?",
@@ -29,93 +37,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "How Does Bitcoin Halving Work?",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "CryptoBeacon Editorial",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  articleSection: "Bitcoin",
-  wordCount: 1850,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Bitcoin",
-      item: "https://www.cryptobeacon.site/bitcoin",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "How Does Bitcoin Halving Work?",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/bitcoin/how-does-bitcoin-halving-work")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Bitcoin" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/how-does-bitcoin-halving-work" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/bitcoin/how-does-bitcoin-halving-work', publishedTime: PUBLISHED, section: 'Bitcoin' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How Does Bitcoin Halving Work? | CryptoBeacon", description: "A pure mechanism breakdown of the Bitcoin halving: the block reward reduction schedule, why it's programmed, and historical dates.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-09-12", dateModified: "2026-09-12", url: "https://www.cryptobeacon.site/bitcoin/how-does-bitcoin-halving-work", section: "Bitcoin", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Bitcoin", item: "https://www.cryptobeacon.site/bitcoin" },
+        { name: "How Does Bitcoin Halving Work? | CryptoBeacon", item: "https://www.cryptobeacon.site/bitcoin/how-does-bitcoin-halving-work" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -143,6 +80,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -174,7 +112,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>September 12, 2026</time>}
-          readTime="8 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -190,10 +128,10 @@ function ArticlePage() {
 
         
 
-        <P>The Bitcoin halving is a pre-programmed event that occurs every 210,000 blocks — roughly every four years — cutting the block reward given to miners in half. This mechanism ensures that the total supply of Bitcoin will never exceed 21 million coins, creating a disinflationary monetary policy that distinguishes Bitcoin from every fiat currency ever created.</P>
+        <P>The Bitcoin <Link to="/glossary#halving" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Halving">halving</Link> is a pre-programmed event that occurs every 210,000 blocks — roughly every four years — cutting the block reward given to miners in half. This mechanism ensures that the total supply of Bitcoin will never exceed 21 million coins, creating a disinflationary monetary policy that distinguishes Bitcoin from every fiat currency ever created.</P>
 
         <H2 id="what-is-the-halving">What Is the Bitcoin Halving?</H2>
-        <P>At its core, the halving is a single line of code in the Bitcoin protocol. Every 210,000 blocks, the reward a miner receives for successfully adding a new block to the blockchain is reduced by 50%. When Satoshi Nakamoto launched Bitcoin in January 2009, the block reward was 50 BTC. After the first halving in November 2012, it dropped to 25 BTC. The second halving in July 2016 brought it to 12.5 BTC, the third in May 2020 reduced it to 6.25 BTC, and the most recent halving in April 2024 cut it to 3.125 BTC.</P>
+        <P>At its core, the halving is a single line of code in the Bitcoin protocol. Every 210,000 blocks, the reward a miner receives for successfully adding a new block to the <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> is reduced by 50%. When Satoshi Nakamoto launched Bitcoin in January 2009, the block reward was 50 BTC. After the first halving in November 2012, it dropped to 25 BTC. The second halving in July 2016 brought it to 12.5 BTC, the third in May 2020 reduced it to 6.25 BTC, and the most recent halving in April 2024 cut it to 3.125 BTC.</P>
         <P>This schedule will continue until approximately the year 2140, when the block reward becomes so small it rounds to zero. At that point, all 21 million Bitcoin will have been mined — though in practice, over 99% will be in circulation by the early 2030s.</P>
 
         <H2 id="halving-timeline">Complete Halving Timeline</H2>
@@ -225,7 +163,7 @@ function ArticlePage() {
 
         <H2 id="impact-on-miners">Impact on Bitcoin Miners</H2>
         <P>For miners, the halving is an existential event. Their revenue from block rewards is literally halved overnight. Miners with older, less efficient hardware or higher electricity costs are forced offline because they can no longer mine profitably. This creates a temporary drop in hash rate and a subsequent difficulty adjustment that rebalances the network.</P>
-        <P>The industry trend has been clear: each halving cycle accelerates the professionalization and consolidation of mining. Post-2024, publicly traded miners with access to cheap renewable energy and next-generation ASICs (like the Bitmain Antminer S21) have gained market share at the expense of smaller operations. Transaction fees are also becoming an increasingly important revenue component as block rewards shrink — a trend that will only intensify in future halvings.</P>
+        <P>The industry trend has been clear: each halving cycle accelerates the professionalization and consolidation of <Link to="/glossary#mining" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Mining">mining</Link>. Post-2024, publicly traded miners with access to cheap renewable energy and next-generation ASICs (like the Bitmain Antminer S21) have gained market share at the expense of smaller operations. Transaction fees are also becoming an increasingly important revenue component as block rewards shrink — a trend that will only intensify in future halvings.</P>
 
         <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
           <h3 className="font-headline-sm text-headline-sm text-primary mb-sm">Key Takeaways</h3>
@@ -244,17 +182,7 @@ function ArticlePage() {
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
-          {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
         
 
@@ -262,43 +190,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice. Past performance is not indicative of future results.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/bitcoin/what-is-the-bitcoin-halving"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Bitcoin Halving Explained
-              </h3>
-            </Link>\n            <Link
-              to="/bitcoin/why-bitcoin-mining-uses-so-much-energy"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Bitcoin Mining Energy
-              </h3>
-            </Link>\n            <Link
-              to="/bitcoin/what-is-bitcoin-mining"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What is Bitcoin Mining
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

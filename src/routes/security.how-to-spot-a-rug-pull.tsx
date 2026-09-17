@@ -1,14 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/spot-rug-pull.jpg";
+import hero from "@/assets/spot-rug-pull.webp";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/security/how-to-spot-a-rug-pull";
 const TITLE = "How to Spot a Crypto Rug Pull: Red Flags to Watch For | CryptoBeacon";
 const DESC = "Learn how to identify malicious cryptocurrency projects before they steal your funds. A guide to spotting liquidity drainers, hidden mint functions, and dece...";
 const PUBLISHED = "2026-08-20";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "What exactly is a 'rug pull'?",
@@ -28,95 +36,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: TITLE,
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "how to spot a rug pull, crypto scams, locked liquidity, honeypot crypto, soft rug pull",
-  articleSection: "Security",
-  wordCount: 1350,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Security",
-      item: "https://www.cryptobeacon.site/security",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "How to Spot a Rug Pull",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/security/how-to-spot-a-rug-pull")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Security" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/security/how-to-spot-a-rug-pull" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security/how-to-spot-a-rug-pull', publishedTime: PUBLISHED, section: 'Security' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How to Spot a Crypto Rug Pull: Red Flags to Watch For | CryptoBeacon", description: "Learn how to identify malicious cryptocurrency projects before they steal your funds. A guide to spotting liquidity drainers, hidden mint functions, and dece...", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-20", dateModified: "2026-08-20", url: "https://www.cryptobeacon.site/security/how-to-spot-a-rug-pull", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Security", item: "https://www.cryptobeacon.site/security" },
+        { name: "How to Spot a Crypto Rug Pull: Red Flags to Watch For | CryptoBeacon", item: "https://www.cryptobeacon.site/security/how-to-spot-a-rug-pull" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -144,6 +79,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -175,7 +111,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 20, 2026</time>}
-          readTime="7 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -189,7 +125,7 @@ function ArticlePage() {
         </figure>
 
         <P>
-          In the unregulated corners of decentralized finance (DeFi), creating a new cryptocurrency
+          In the unregulated corners of decentralized finance (<Link to="/glossary#defi" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: DeFi">DeFi</Link>), creating a new cryptocurrency
           takes less than five minutes and costs only a few dollars in network fees. This low barrier
           to entry has fueled innovation, but it has also created a golden age for scammers.
         </P>
@@ -231,13 +167,13 @@ function ArticlePage() {
         <P>
           If the developers retain control of this liquidity pool, they can withdraw the ETH at any
           moment, destroying the ability for anyone else to sell. Legitimate projects use third-party
-          smart contracts to time-lock their liquidity for months or years. If a new project has
-          unlocked liquidity, a rug pull is almost guaranteed. You can use blockchain explorers or tools like Team Finance to verify if a liquidity pool is genuinely locked.
+          <Link to="/glossary#smart-contract" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Smart Contract">smart contracts</Link> to time-lock their liquidity for months or years. If a new project has
+          unlocked liquidity, a rug pull is almost guaranteed. You can use <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> explorers or tools like Team Finance to verify if a liquidity pool is genuinely locked.
         </P>
 
         <H2 id="concentration">2. Red Flag: High Wallet Concentration</H2>
         <P>
-          Using a block explorer, you can see exactly which wallets hold the most tokens. If a single
+          Using a block explorer, you can see exactly which <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallets</Link> hold the most tokens. If a single
           wallet (or a handful of wallets) holds 30%, 50%, or 80% of the total supply, you are in
           danger of a "soft rug."
         </P>
@@ -276,16 +212,7 @@ function ArticlePage() {
         {/* Layout D: Card-based FAQ */}
         <H2 id="faq">Frequently Asked Questions</H2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
-          {faqs.map((f) => (
-            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low flex flex-col">
-              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">
-                {f.q}
-              </h3>
-              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </div>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="conclusion">Conclusion</H2>
@@ -324,46 +251,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial advice. Investing in micro-cap altcoins and new DeFi projects carries
-            a near-certainty of losing your funds.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/security/defi-risks-explained"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                DeFi Risks Explained
-              </h3>
-            </Link>
-            <Link
-              to="/security/how-to-avoid-crypto-phishing-scams"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Avoid Crypto Phishing Scams
-              </h3>
-            </Link>
-            <Link
-              to="/guides/how-to-read-a-block-explorer"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Read a Block Explorer
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

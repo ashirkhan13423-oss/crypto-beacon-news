@@ -1,0 +1,517 @@
+{
+  "/altcoins/what-is-an-ai-crypto-token": {
+    "wordCount": 264,
+    "readTime": "1 min read",
+    "fallbackDesc": "Artificial Intelligence (AI) and blockchain are two of the most disruptive technologies of our time. An AI crypto token is a digital asset that..."
+  },
+  "/altcoins/what-is-an-altcoin": {
+    "wordCount": 262,
+    "readTime": "1 min read",
+    "fallbackDesc": "Needs custom illustration In the simplest terms, an \"altcoin\" refers to any cryptocurrency other than Bitcoin. When Bitcoin was introduced in 2009,..."
+  },
+  "/altcoins/why-do-meme-coins-have-value": {
+    "wordCount": 285,
+    "readTime": "1 min read",
+    "fallbackDesc": "From Dogecoin (DOGE) to Pepe (PEPE), meme coins have dominated crypto news cycles and captured retail attention. But to traditional investors, a..."
+  },
+  "/bitcoin/bitcoin-address-vs-wallet-address": {
+    "wordCount": 425,
+    "readTime": "2 min read",
+    "fallbackDesc": "They are the same thing A \" wallet address\" and a \"Bitcoin address\" refer to the same thing: a unique string of characters — typically 26 to 35..."
+  },
+  "/bitcoin/bitcoin-lightning-network-explained": {
+    "wordCount": 668,
+    "readTime": "3 min read",
+    "fallbackDesc": "Bitcoin's base layer — the blockchain — processes roughly 7 transactions per second globally. For a payment network aspiring to serve billions of..."
+  },
+  "/bitcoin/bitcoin-wallets-complete-guide": {
+    "wordCount": 221,
+    "readTime": "1 min read",
+    "fallbackDesc": "The most important concept in crypto A Bitcoin wallet does not store Bitcoin. Bitcoin itself lives on the blockchain . What a wallet stores are the..."
+  },
+  "/bitcoin/coinbase-vs-kraken-vs-binance-exchange-comparison": {
+    "wordCount": 245,
+    "readTime": "1 min read",
+    "fallbackDesc": "I've used all three of these exchanges with real money, starting with Coinbase in 2021 and eventually moving portions of my activity to Kraken and..."
+  },
+  "/bitcoin/common-bitcoin-wallet-scams": {
+    "wordCount": 127,
+    "readTime": "1 min read",
+    "fallbackDesc": "The golden rule: Your seed phrase and private keys are never needed by any legitimate service, website, or support agent. If anything ever asks for..."
+  },
+  "/bitcoin/how-bitcoin-wallets-work": {
+    "wordCount": 494,
+    "readTime": "2 min read",
+    "fallbackDesc": "Wallets don't store Bitcoin The name \"wallet\" is misleading. A Bitcoin wallet doesn't hold Bitcoin the way a physical wallet holds cash. Bitcoin..."
+  },
+  "/bitcoin/how-do-bitcoin-etfs-affect-price": {
+    "wordCount": 769,
+    "readTime": "3 min read",
+    "fallbackDesc": "Headlines about Bitcoin ETF \"inflows\" and \"outflows\" show up constantly, often paired with a price move on the same day. But the relationship is more"
+  },
+  "/bitcoin/how-does-bitcoin-halving-work": {
+    "wordCount": 674,
+    "readTime": "3 min read",
+    "fallbackDesc": "The Bitcoin halving is a pre-programmed event that occurs every 210,000 blocks — roughly every four years — cutting the block reward given to miners..."
+  },
+  "/bitcoin/how-to-buy-your-first-bitcoin-safely": {
+    "wordCount": 982,
+    "readTime": "4 min read",
+    "fallbackDesc": "Taking the leap into cryptocurrency can feel overwhelming. With so many platforms, jargon-filled interfaces, and scary headlines about hacks, it is..."
+  },
+  "/bitcoin/how-to-send-bitcoin-safely": {
+    "wordCount": 1028,
+    "readTime": "5 min read",
+    "fallbackDesc": "Sending Bitcoin is simple in mechanics — copy an address, enter an amount, confirm — which is exactly what makes it risky. There's no undo button...."
+  },
+  "/bitcoin/what-happens-if-you-lose-your-seed-phrase": {
+    "wordCount": 453,
+    "readTime": "2 min read",
+    "fallbackDesc": "Still have your wallet device? If your hardware wallet or phone is still functional and you know the PIN, your funds are still accessible. Act..."
+  },
+  "/bitcoin/what-is-a-bitcoin-node": {
+    "wordCount": 735,
+    "readTime": "3 min read",
+    "fallbackDesc": "When people talk about Bitcoin, they often focus on wallets , exchanges, and prices. But the quiet infrastructure that makes all of that trustworthy..."
+  },
+  "/bitcoin/what-is-a-bitcoin-seed-phrase": {
+    "wordCount": 539,
+    "readTime": "2 min read",
+    "fallbackDesc": "Never share your seed phrase with anyone No wallet company, exchange, or support team will ever ask for it. Anyone who does is attempting to steal..."
+  },
+  "/bitcoin/what-is-a-bitcoin-wallet": {
+    "wordCount": 526,
+    "readTime": "2 min read",
+    "fallbackDesc": "\"Bitcoin wallet \" is one of those terms that sounds straightforward until you try to explain it. A wallet doesn't hold Bitcoin the way a physical..."
+  },
+  "/bitcoin/what-is-bitcoin-mining": {
+    "wordCount": 806,
+    "readTime": "4 min read",
+    "fallbackDesc": "\" Mining \" is a deliberately evocative word — it suggests effort, scarcity, and reward. In Bitcoin's case, that's intentional: mining is the..."
+  },
+  "/bitcoin/what-is-the-bitcoin-halving": {
+    "wordCount": 615,
+    "readTime": "3 min read",
+    "fallbackDesc": "In traditional finance, central banks manage fiat currency by printing or destroying money at their discretion. This flexible monetary policy is..."
+  },
+  "/bitcoin/why-bitcoin-mining-uses-so-much-energy": {
+    "wordCount": 310,
+    "readTime": "1 min read",
+    "fallbackDesc": "One of the most persistent criticisms of Bitcoin is its massive electricity consumption. Headlines often compare the network's energy use to that of..."
+  },
+  "/bitcoin/why-do-bond-yields-affect-bitcoin-price": {
+    "wordCount": 639,
+    "readTime": "3 min read",
+    "fallbackDesc": "To beginners, the relationship between traditional macroeconomic indicators and decentralized cryptocurrencies can seem disconnected. A common source"
+  },
+  "/ethereum/can-you-send-bitcoin-to-an-ethereum-address": {
+    "wordCount": 658,
+    "readTime": "3 min read",
+    "fallbackDesc": "The short answer is no — you cannot send native Bitcoin directly to an Ethereum address. But understanding why, and what actually happens if you try,"
+  },
+  "/ethereum/ethereum-complete-beginners-guide": {
+    "wordCount": 102,
+    "readTime": "1 min read",
+    "fallbackDesc": "Ethereum in one paragraph Ethereum is a decentralised blockchain network launched in 2015 by Vitalik Buterin and others. Unlike Bitcoin — which is..."
+  },
+  "/ethereum/ethereum-layer-2-scaling-rollups-explained": {
+    "wordCount": 1,
+    "readTime": "1 min read",
+    "fallbackDesc": "\\n"
+  },
+  "/ethereum/ethereum-transaction-fees-explained": {
+    "wordCount": 445,
+    "readTime": "2 min read",
+    "fallbackDesc": "What is gas? Gas is the unit that measures computational effort on the Ethereum network. Every operation has a cost in gas: a simple ETH transfer..."
+  },
+  "/ethereum/ethereum-validators-explained": {
+    "wordCount": 322,
+    "readTime": "1 min read",
+    "fallbackDesc": "What is an Ethereum validator? An Ethereum validator is a node that participates in the Proof-of-Stake consensus process. Validators propose new..."
+  },
+  "/ethereum/ethereum-vs-bitcoin": {
+    "wordCount": 299,
+    "readTime": "1 min read",
+    "fallbackDesc": "The key distinction Bitcoin was designed to solve one problem: creating a peer-to-peer electronic cash system without a trusted third party. Ethereum"
+  },
+  "/ethereum/ethereum-wallets-explained": {
+    "wordCount": 476,
+    "readTime": "2 min read",
+    "fallbackDesc": "Two types of Ethereum wallets Ethereum has two types of accounts, each functioning as a wallet in different ways: {[ { title: \"Externally Owned..."
+  },
+  "/ethereum/how-does-ethereum-staking-work": {
+    "wordCount": 280,
+    "readTime": "1 min read",
+    "fallbackDesc": "In 2022, Ethereum executed \"The Merge,\" transitioning the network from a highly energy-intensive Proof-of-Work (PoW) system to a much more efficient..."
+  },
+  "/ethereum/how-ethereum-works": {
+    "wordCount": 440,
+    "readTime": "2 min read",
+    "fallbackDesc": "Ethereum as a state machine The simplest mental model for Ethereum is a global state machine. The \"state\" is a snapshot of every account balance and..."
+  },
+  "/ethereum/how-to-stake-eth-on-lido-vs-rocketpool": {
+    "wordCount": 833,
+    "readTime": "4 min read",
+    "fallbackDesc": "Running your own Ethereum validator requires 32 ETH — roughly $80,000–$100,000 at most prices — and keeping a server online 24/7. Liquid staking..."
+  },
+  "/ethereum/proof-of-stake-explained": {
+    "wordCount": 357,
+    "readTime": "2 min read",
+    "fallbackDesc": "What is Proof of Stake? Proof of Stake (PoS) is a method for achieving consensus in a blockchain network. Instead of miners competing to solve..."
+  },
+  "/ethereum/what-are-gas-fees-how-to-save": {
+    "wordCount": 620,
+    "readTime": "3 min read",
+    "fallbackDesc": "If you have ever tried to send a transaction on Ethereum during a busy market period, you have likely experienced \"sticker shock\" at the estimated..."
+  },
+  "/ethereum/what-is-a-smart-contract": {
+    "wordCount": 765,
+    "readTime": "3 min read",
+    "fallbackDesc": "If Bitcoin is a decentralized calculator that only tracks who sent money to whom, Ethereum is a decentralized smartphone that can run applications...."
+  },
+  "/ethereum/what-is-an-erc-20-token": {
+    "wordCount": 278,
+    "readTime": "1 min read",
+    "fallbackDesc": "If you have ever used decentralized finance ( DeFi ) or bought a token like Chainlink (LINK) or Uniswap (UNI), you have likely interacted with an..."
+  },
+  "/ethereum/what-is-defi-decentralized-finance": {
+    "wordCount": 653,
+    "readTime": "3 min read",
+    "fallbackDesc": "Decentralized finance — commonly called DeFi — refers to financial services built on public blockchains using smart contracts . It's one of the most..."
+  },
+  "/ethereum/what-is-ethereum-staking": {
+    "wordCount": 1,
+    "readTime": "1 min read",
+    "fallbackDesc": "\\n"
+  },
+  "/ethereum/what-is-ethereum": {
+    "wordCount": 416,
+    "readTime": "2 min read",
+    "fallbackDesc": "The one-sentence answer Ethereum is a decentralised, programmable blockchain — a global network of computers that can run software ( smart contracts..."
+  },
+  "/guides/coin-vs-token-difference": {
+    "wordCount": 280,
+    "readTime": "1 min read",
+    "fallbackDesc": "In the cryptocurrency world, the words \"coin\" and \"token\" are often used interchangeably by newcomers. However, technically speaking, they represent..."
+  },
+  "/guides/crypto-dollar-cost-averaging-explained": {
+    "wordCount": 547,
+    "readTime": "2 min read",
+    "fallbackDesc": "Cryptocurrency markets are famously volatile. A 20% swing in a single week is completely normal. For new investors, this volatility is terrifying. It"
+  },
+  "/guides/crypto-portfolio-rebalancing-explained": {
+    "wordCount": 532,
+    "readTime": "2 min read",
+    "fallbackDesc": "Portfolio rebalancing is one of the oldest ideas in investing, borrowed wholesale from traditional finance and applied — imperfectly — to crypto. The"
+  },
+  "/guides/crypto-regulation-explained-for-beginners": {
+    "wordCount": 372,
+    "readTime": "2 min read",
+    "fallbackDesc": "What does 'regulated' actually mean? When people say crypto is \"regulated,\" they usually mean that businesses operating in the crypto space —..."
+  },
+  "/guides/crypto-regulation-hub": {
+    "wordCount": 117,
+    "readTime": "1 min read",
+    "fallbackDesc": "The landscape in one paragraph Crypto regulation differs significantly by jurisdiction. The US applies existing securities and commodities law..."
+  },
+  "/guides/crypto-regulation-vs-cryptocurrency-ban": {
+    "wordCount": 330,
+    "readTime": "1 min read",
+    "fallbackDesc": "The fundamental difference Regulation Accepts that crypto exists and establishes rules for how it integrates with society. Citizens are legally..."
+  },
+  "/guides/crypto-tax-basics-for-beginners": {
+    "wordCount": 905,
+    "readTime": "4 min read",
+    "fallbackDesc": "One of the rudest awakenings for new cryptocurrency investors is tax season. Because the crypto ecosystem feels separate from the traditional banking"
+  },
+  "/guides/cryptocurrency-taxes-explained": {
+    "wordCount": 318,
+    "readTime": "1 min read",
+    "fallbackDesc": "Key Concept: Tax authorities generally treat cryptocurrency as \"property\" (like stocks or real estate), not as currency. This classification dictates"
+  },
+  "/guides/exchange-or-personal-wallet-crypto-storage": {
+    "wordCount": 637,
+    "readTime": "3 min read",
+    "fallbackDesc": "Once you understand that leaving crypto on an exchange means someone else holds the keys (see our explainer on \" not your keys, not your coins \"),..."
+  },
+  "/guides/hardware-wallet-comparison-guide": {
+    "wordCount": 849,
+    "readTime": "4 min read",
+    "fallbackDesc": "If you plan to hold a significant amount of cryptocurrency for the long term, moving your funds off exchanges and into a hardware wallet is the..."
+  },
+  "/guides/hot-wallets-vs-cold-wallets-explained": {
+    "wordCount": 482,
+    "readTime": "2 min read",
+    "fallbackDesc": "Self-custody—holding your own private keys —is the foundational ethos of cryptocurrency. But once you decide to take your crypto off an exchange, you"
+  },
+  "/guides/how-crypto-exchanges-are-regulated": {
+    "wordCount": 352,
+    "readTime": "2 min read",
+    "fallbackDesc": "The shift from wild west to licensed entities In crypto's early days, exchanges launched globally from offshore jurisdictions with zero oversight...."
+  },
+  "/guides/how-cryptocurrency-regulation-works": {
+    "wordCount": 285,
+    "readTime": "1 min read",
+    "fallbackDesc": "Why crypto gets regulated Governments regulate crypto for several overlapping reasons: preventing money laundering and terrorist financing (AML/CFT),"
+  },
+  "/guides/how-to-read-a-block-explorer": {
+    "wordCount": 678,
+    "readTime": "3 min read",
+    "fallbackDesc": "A block explorer is effectively the search engine for a blockchain . It allows anyone with an internet connection to view all historical and..."
+  },
+  "/guides/how-to-read-crypto-news-without-hype": {
+    "wordCount": 636,
+    "readTime": "3 min read",
+    "fallbackDesc": "The cryptocurrency information ecosystem moves fast. Between social media alerts, breaking news headlines, and daily market wraps, investors are..."
+  },
+  "/guides/how-to-set-up-metamask-step-by-step": {
+    "wordCount": 886,
+    "readTime": "4 min read",
+    "fallbackDesc": "I've walked dozens of people through their first MetaMask setup in person, and the same three mistakes come up every single time: installing from an..."
+  },
+  "/guides/not-your-keys-not-your-coins-meaning": {
+    "wordCount": 706,
+    "readTime": "3 min read",
+    "fallbackDesc": "If you've spent any time in crypto communities, you've probably run into this phrase — often shortened to \"NYKNYC.\" It sounds like a slogan, but it's"
+  },
+  "/guides/stablecoin-regulation-explained": {
+    "wordCount": 367,
+    "readTime": "2 min read",
+    "fallbackDesc": "Why stablecoins are the top regulatory priority To regulators, Bitcoin is a speculative asset. But stablecoins (like USDC, USDT) function as money...."
+  },
+  "/guides/what-is-a-blockchain-fork": {
+    "wordCount": 890,
+    "readTime": "4 min read",
+    "fallbackDesc": "If you've ever noticed two cryptocurrencies with confusingly similar names — Bitcoin and Bitcoin Cash, Ethereum and Ethereum Classic — you've..."
+  },
+  "/guides/what-is-a-crypto-wallet-address": {
+    "wordCount": 672,
+    "readTime": "3 min read",
+    "fallbackDesc": "A crypto wallet address is the string of letters and numbers you share with someone when you want to receive cryptocurrency. It looks intimidating at"
+  },
+  "/guides/what-is-a-private-key": {
+    "wordCount": 476,
+    "readTime": "2 min read",
+    "fallbackDesc": "In the physical world, your money is protected by bank vaults, passwords, and legal contracts. In cryptocurrency, your money is protected by a single"
+  },
+  "/guides/what-is-a-short-squeeze-crypto-explained": {
+    "wordCount": 798,
+    "readTime": "4 min read",
+    "fallbackDesc": "In cryptocurrency markets, rapid price movements are often blamed on fundamental factors like news announcements or regulatory decisions. However,..."
+  },
+  "/guides/what-is-a-smart-contract-explained": {
+    "wordCount": 272,
+    "readTime": "1 min read",
+    "fallbackDesc": "The term smart contract is often thrown around as the revolutionary technology behind decentralized finance ( DeFi ), NFTs, and Web3. First..."
+  },
+  "/guides/what-is-a-stablecoin": {
+    "wordCount": 657,
+    "readTime": "3 min read",
+    "fallbackDesc": "Cryptocurrencies like Bitcoin and Ethereum are famous for their extreme price volatility. They can jump 10% in a day or crash just as quickly. While..."
+  },
+  "/guides/what-is-aml-in-crypto": {
+    "wordCount": 386,
+    "readTime": "2 min read",
+    "fallbackDesc": "AML vs KYC KYC (Know Your Customer) is verifying *who* you are. AML (Anti-Money Laundering) is verifying *what you are doing*. KYC is just the first..."
+  },
+  "/guides/what-is-kyc-in-cryptocurrency": {
+    "wordCount": 405,
+    "readTime": "2 min read",
+    "fallbackDesc": "What is KYC? KYC stands for \"Know Your Customer\" (or \"Know Your Client\"). It is a mandatory process of identifying and verifying the identity of a..."
+  },
+  "/guides/what-it-means-when-exchange-pauses-withdrawals": {
+    "wordCount": 1029,
+    "readTime": "5 min read",
+    "fallbackDesc": "Seeing a withdrawal button greyed out — or a banner saying withdrawals are \"temporarily paused\" — is unsettling the first time it happens. After all,"
+  },
+  "/guides/why-bitcoin-price-moves-more-than-stocks": {
+    "wordCount": 860,
+    "readTime": "4 min read",
+    "fallbackDesc": "Bitcoin's price is known for moving further and faster than stocks, bonds, or major currencies. This isn't random — it comes down to a handful of..."
+  },
+  "/guides/why-crypto-regulation-matters": {
+    "wordCount": 339,
+    "readTime": "2 min read",
+    "fallbackDesc": "1. Unlocking institutional capital Retail investors drove the first decade of crypto's growth. But retail capital is a drop in the ocean compared to..."
+  },
+  "/guides/why-governments-regulate-cryptocurrency": {
+    "wordCount": 870,
+    "readTime": "4 min read",
+    "fallbackDesc": "Cryptocurrency was engineered to function permissionlessly — operating across borderless, peer-to-peer computer networks without relying on..."
+  },
+  "/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally": {
+    "wordCount": 1518,
+    "readTime": "7 min read",
+    "fallbackDesc": "Market conditions as of August 30, 2026. This is a dated market snapshot. Fed hawkishness met Bitcoin ETF outflows while Ethereum funds continued to..."
+  },
+  "/news/bitcoin-jobs-report-etf-inflows-september-2026": {
+    "wordCount": 31,
+    "readTime": "1 min read",
+    "fallbackDesc": "import { createFileRoute, redirect } from \"@tanstack/react-router\"; import { buildMetadata } from \"@/lib/metadata\"; export const Route =..."
+  },
+  "/news/bitcoin-rally-august-2026": {
+    "wordCount": 301,
+    "readTime": "1 min read",
+    "fallbackDesc": "Market conditions as of August 21, 2026. This is a dated market snapshot. Bitcoin moved sharply higher over the week of August 18–21, 2026, climbing..."
+  },
+  "/news/bitcoin-september-rally-macro-test": {
+    "wordCount": 1410,
+    "readTime": "6 min read",
+    "fallbackDesc": "Market conditions as of September 2, 2026. This is a dated market snapshot. Rising oil, climbing yields, and hawkish Fed expectations converge on..."
+  },
+  "/news/ethereum-merge-two-years-later": {
+    "wordCount": 288,
+    "readTime": "1 min read",
+    "fallbackDesc": "Retrospective as of August 2026. This article is a factual look at what the Merge delivered (and didn't) over its first two years. It does not..."
+  },
+  "/news/liquid-network-3400-btc-returned-320-million-incident": {
+    "wordCount": 689,
+    "readTime": "3 min read",
+    "fallbackDesc": "Live Development: September 9, 2026. This article provides an update to the original withdrawal. The recovery claims and technical details regarding..."
+  },
+  "/news/liquid-network-hack-4000-btc-withdrawal": {
+    "wordCount": 31,
+    "readTime": "1 min read",
+    "fallbackDesc": "import { createFileRoute, redirect } from \"@tanstack/react-router\"; import { buildMetadata } from \"@/lib/metadata\"; export const Route =..."
+  },
+  "/news/oil-above-100-bitcoin-crypto-cpi-impact": {
+    "wordCount": 983,
+    "readTime": "4 min read",
+    "fallbackDesc": "Market conditions as of September 10, 2026. Macroeconomic indicators are point-in-time metrics subject to rapid change. The energy shock reaches..."
+  },
+  "/news/standard-chartered-uae-institutional-bitcoin-ether-trading": {
+    "wordCount": 571,
+    "readTime": "3 min read",
+    "fallbackDesc": "In a major step for institutional crypto adoption, Standard Chartered announced on September 3, 2026, that it has launched deliverable spot trading..."
+  },
+  "/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint": {
+    "wordCount": 623,
+    "readTime": "3 min read",
+    "fallbackDesc": "The Symbiosis cross-chain protocol faced a severe exploit in its BridgeV2 contract, leading to unbacked synthetic Bitcoin. On September 11, 2026, the"
+  },
+  "/news/trezor-brevo-phishing-email-breach-2026": {
+    "wordCount": 1070,
+    "readTime": "5 min read",
+    "fallbackDesc": "Security Incident Update Trezor confirmed their third-party email provider, Brevo, was compromised, resulting in phishing emails sent to their..."
+  },
+  "/news/what-is-on-chain-trading-vs-exchange": {
+    "wordCount": 284,
+    "readTime": "1 min read",
+    "fallbackDesc": "As the cryptocurrency ecosystem matures, users face a fundamental choice when buying or selling digital assets: use a centralized platform or trade..."
+  },
+  "/news/what-is-the-clarity-act-crypto": {
+    "wordCount": 718,
+    "readTime": "3 min read",
+    "fallbackDesc": "Status as of August 30, 2026 This article details the legislative status and contents of the Clarity Act as of late August 2026. Because..."
+  },
+  "/news/why-are-crypto-atms-everywhere": {
+    "wordCount": 313,
+    "readTime": "1 min read",
+    "fallbackDesc": "If you've walked into a gas station, a convenience store, or a local mall recently, you might have noticed a glowing, futuristic-looking kiosk..."
+  },
+  "/security/common-crypto-scams": {
+    "wordCount": 68,
+    "readTime": "1 min read",
+    "fallbackDesc": "The five scam types {scams.map((s) => ( {s.name} How it works {s.how} Red flags {s.redFlags.map((r) => ⚠ {r} )} ))} The universal scam filter Across..."
+  },
+  "/security/crypto-security-hub": {
+    "wordCount": 73,
+    "readTime": "1 min read",
+    "fallbackDesc": "The single most important rule Your seed phrase and private keys are never needed by any legitimate service, website, support agent, or application...."
+  },
+  "/security/crypto-wallet-drainer-scams-explained": {
+    "wordCount": 454,
+    "readTime": "2 min read",
+    "fallbackDesc": "Wallet drainers can be triggered by a single signature. Once signed, draining is instantaneous and irreversible. The defence is reading before you..."
+  },
+  "/security/defi-risks-explained": {
+    "wordCount": 613,
+    "readTime": "3 min read",
+    "fallbackDesc": "Decentralized Finance ( DeFi ) promises a utopian financial system: no banks, no credit checks, and yields on your money that traditional savings..."
+  },
+  "/security/exchange-account-security": {
+    "wordCount": 80,
+    "readTime": "1 min read",
+    "fallbackDesc": "The seven security steps {steps.map((s, i) => ( {s.priority} {s.step} {s.desc} ))} A word on custody Even a perfectly secured exchange account..."
+  },
+  "/security/fake-airdrop-scams-explained": {
+    "wordCount": 370,
+    "readTime": "2 min read",
+    "fallbackDesc": "How fake airdrop scams work Step 1: The attacker sends a small amount of worthless tokens to thousands of wallet addresses. These tokens often have..."
+  },
+  "/security/fake-wallet-apps-explained": {
+    "wordCount": 370,
+    "readTime": "2 min read",
+    "fallbackDesc": "How fake wallet apps work Fake wallet apps are near-perfect visual clones of legitimate wallets — MetaMask, Trust Wallet, Exodus, Phantom, Ledger..."
+  },
+  "/security/hardware-wallet-mistakes-to-avoid": {
+    "wordCount": 887,
+    "readTime": "4 min read",
+    "fallbackDesc": "Purchasing a hardware wallet like a Ledger, Trezor, or Coldcard is the most important step you can take toward securing your cryptocurrency. By..."
+  },
+  "/security/how-crypto-phishing-scams-work": {
+    "wordCount": 103,
+    "readTime": "1 min read",
+    "fallbackDesc": "Crypto phishing is uniquely dangerous because transactions are irreversible . Unlike bank fraud, there is no chargeback mechanism and no customer..."
+  },
+  "/security/how-to-avoid-crypto-phishing-scams": {
+    "wordCount": 1150,
+    "readTime": "5 min read",
+    "fallbackDesc": "Phishing is the most common way people lose cryptocurrency — not because the technology is weak, but because it targets something far harder to patch"
+  },
+  "/security/how-to-identify-a-fake-crypto-website": {
+    "wordCount": 76,
+    "readTime": "1 min read",
+    "fallbackDesc": "The seven checks {checks.map((c) => ( {c.num} {c.check} {c.detail} ))} The best protection: bookmarks The single most effective habit against fake..."
+  },
+  "/security/how-to-revoke-smart-contract-approvals": {
+    "wordCount": 864,
+    "readTime": "4 min read",
+    "fallbackDesc": "In the world of decentralized finance ( DeFi ), smart contracts are the engines that power decentralized exchanges, lending platforms, and NFT..."
+  },
+  "/security/how-to-spot-a-fake-crypto-wallet-app": {
+    "wordCount": 302,
+    "readTime": "1 min read",
+    "fallbackDesc": "As cryptocurrency adoption grows, so does the sophistication of scammers targeting new users. One of the most devastating attacks in the space is the"
+  },
+  "/security/how-to-spot-a-rug-pull": {
+    "wordCount": 654,
+    "readTime": "3 min read",
+    "fallbackDesc": "In the unregulated corners of decentralized finance ( DeFi ), creating a new cryptocurrency takes less than five minutes and costs only a few dollars"
+  },
+  "/security/how-to-store-crypto-seed-phrase-safely": {
+    "wordCount": 1592,
+    "readTime": "7 min read",
+    "fallbackDesc": "If you own cryptocurrency and hold it yourself rather than leaving it on an exchange, one piece of information matters more than anything else you'll"
+  },
+  "/security/how-to-verify-a-crypto-transaction": {
+    "wordCount": 610,
+    "readTime": "3 min read",
+    "fallbackDesc": "In traditional banking, if a transfer hasn't arrived, you have to call customer service and trust what they tell you. In crypto, you are your own..."
+  },
+  "/security/private-key-vs-seed-phrase": {
+    "wordCount": 407,
+    "readTime": "2 min read",
+    "fallbackDesc": "The core difference {[ { title: \"Private Key\", items: [\"256-bit number (one per address)\", \"Controls a single wallet address\", \"Derived FROM the seed"
+  },
+  "/security/two-factor-authentication-for-crypto": {
+    "wordCount": 75,
+    "readTime": "1 min read",
+    "fallbackDesc": "The three 2FA methods compared {methods.map((m) => ( {m.name} {m.rank} How it works: {m.how} Pros {m.pros.map((p) => + {p} )} Cons {m.cons.map((c) =>"
+  },
+  "/security/what-is-a-crypto-atm-are-they-safe": {
+    "wordCount": 296,
+    "readTime": "1 min read",
+    "fallbackDesc": "Crypto ATMs are springing up in convenience stores and malls worldwide, providing a quick way to convert cash into Bitcoin. While they offer..."
+  },
+  "/security/what-is-a-seed-phrase": {
+    "wordCount": 454,
+    "readTime": "2 min read",
+    "fallbackDesc": "What is a seed phrase? A seed phrase is a sequence of 12 or 24 random words — selected from a standardised list of 2,048 words (BIP-39) — that..."
+  },
+  "/security/what-to-do-if-your-crypto-wallet-is-hacked": {
+    "wordCount": 230,
+    "readTime": "1 min read",
+    "fallbackDesc": "If this is happening right now: don't read top-to-bottom. Jump to \"Act Now\" immediately. Every minute matters when a wallet drainer is active. A..."
+  }
+}

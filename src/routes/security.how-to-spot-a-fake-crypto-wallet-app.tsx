@@ -1,15 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/security-fake-wallet-app.jpg";
+import hero from "@/assets/security-fake-wallet-app.webp";
 import { Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/security/how-to-spot-a-fake-crypto-wallet-app";
 const TITLE = "How to Spot a Fake Crypto Wallet App | CryptoBeacon";
 const DESC = "Learn how to identify malicious crypto wallet apps in app stores and protect your digital assets from theft.";
 const PUBLISHED = "2026-09-12";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "How do fake wallets get onto app stores?",
@@ -25,93 +33,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "How to Spot a Fake Crypto Wallet App",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "CryptoBeacon Editorial",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  articleSection: "Security",
-  wordCount: 1850,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Security",
-      item: "https://www.cryptobeacon.site/security",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "How to Spot a Fake Crypto Wallet App",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/security/how-to-spot-a-fake-crypto-wallet-app")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Security" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/security/how-to-spot-a-fake-crypto-wallet-app" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security/how-to-spot-a-fake-crypto-wallet-app', publishedTime: PUBLISHED, section: 'Security' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How to Spot a Fake Crypto Wallet App | CryptoBeacon", description: "Learn how to identify malicious crypto wallet apps in app stores and protect your digital assets from theft.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-09-12", dateModified: "2026-09-12", url: "https://www.cryptobeacon.site/security/how-to-spot-a-fake-crypto-wallet-app", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Security", item: "https://www.cryptobeacon.site/security" },
+        { name: "How to Spot a Fake Crypto Wallet App | CryptoBeacon", item: "https://www.cryptobeacon.site/security/how-to-spot-a-fake-crypto-wallet-app" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -139,6 +76,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -170,7 +108,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>September 12, 2026</time>}
-          readTime="8 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -184,13 +122,13 @@ function ArticlePage() {
         </figure>
         
 
-<P>As cryptocurrency adoption grows, so does the sophistication of scammers targeting new users. One of the most devastating attacks in the space is the use of malicious software disguised as legitimate applications. Knowing <strong>how to spot a fake crypto wallet app</strong> is an essential skill that can save you from losing your entire portfolio.</P>
+<P>As cryptocurrency adoption grows, so does the sophistication of scammers targeting new users. One of the most devastating attacks in the space is the use of malicious software disguised as legitimate applications. Knowing <strong>how to spot a fake crypto <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> app</strong> is an essential skill that can save you from losing your entire portfolio.</P>
 
 <H2 id="the-anatomy-of-the-scam">The Anatomy of a Fake Wallet</H2>
 
 <P>Fake wallet apps are designed to look identical to trusted brands like MetaMask, Trust Wallet, or Phantom. They are often uploaded to the Apple App Store or Google Play Store with names that use subtle misspellings (e.g., "MetaMaskk" or "TrustWallet Pro").</P>
 
-<P>The sole purpose of these apps is to steal your recovery phrase (also known as a seed phrase). When you launch a fake wallet, it will prompt you to "import an existing wallet" to restore your funds. The moment you type your 12 or 24-word phrase into the app, it sends that data to the scammer's server, and your real wallet is instantly drained by automated bots.</P>
+<P>The sole purpose of these apps is to steal your recovery phrase (also known as a <Link to="/glossary#seed-phrase" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Seed Phrase">seed phrase</Link>). When you launch a fake wallet, it will prompt you to "import an existing wallet" to restore your funds. The moment you type your 12 or 24-word phrase into the app, it sends that data to the scammer's server, and your real wallet is instantly drained by automated bots.</P>
 
 <H2 id="how-to-protect-yourself">How to Protect Yourself</H2>
 
@@ -210,17 +148,7 @@ function ArticlePage() {
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
-          {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
         
 
@@ -228,43 +156,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice. Past performance is not indicative of future results.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/security/how-to-store-crypto-seed-phrase-safely"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Store Seed Phrase Safely
-              </h3>
-            </Link>\n            <Link
-              to="/security/what-is-a-crypto-atm-are-they-safe"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Crypto ATM Safety
-              </h3>
-            </Link>\n            <Link
-              to="/security/how-to-avoid-crypto-phishing-scams"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Avoid Phishing Scams
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

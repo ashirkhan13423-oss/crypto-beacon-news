@@ -1,15 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/bitcoin-node-explainer.jpg";
+import hero from "@/assets/bitcoin-node-explainer.webp";
 import { Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-node";
 const TITLE = "What Is a Bitcoin Node and Why Does Running One Matter? | CryptoBeacon";
 const DESC = "A plain-language guide to Bitcoin full nodes — what they do, how they differ from miners, and why running your own node is the strongest form of self-soverei...";
 const PUBLISHED = "2026-08-29";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "Do I need a Bitcoin node to use Bitcoin?",
@@ -29,95 +37,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "What Is a Bitcoin Node and Why Does Running One Matter?",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "bitcoin node, full node, bitcoin core, how to run a bitcoin node, bitcoin self-sovereignty, SPV wallet, pruned node",
-  articleSection: "Bitcoin",
-  wordCount: 1400,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Bitcoin",
-      item: "https://www.cryptobeacon.site/bitcoin",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "What Is a Bitcoin Node?",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/bitcoin/what-is-a-bitcoin-node")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Bitcoin" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-node" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/bitcoin/what-is-a-bitcoin-node', publishedTime: PUBLISHED, section: 'Bitcoin' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is a Bitcoin Node and Why Does Running One Matter? | CryptoBeacon", description: "A plain-language guide to Bitcoin full nodes — what they do, how they differ from miners, and why running your own node is the strongest form of self-soverei...", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-29", dateModified: "2026-08-29", url: "https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-node", section: "Bitcoin", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Bitcoin", item: "https://www.cryptobeacon.site/bitcoin" },
+        { name: "What Is a Bitcoin Node and Why Does Running One Matter? | CryptoBeacon", item: "https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-node" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -145,6 +80,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -176,7 +112,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 29, 2026</time>}
-          readTime="6 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -191,9 +127,9 @@ function ArticlePage() {
         </figure>
 
         <P>
-          When people talk about Bitcoin, they often focus on wallets, exchanges, and prices. But
+          When people talk about Bitcoin, they often focus on <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallets</Link>, exchanges, and prices. But
           the quiet infrastructure that makes all of that trustworthy is the global network of{" "}
-          <strong>full nodes</strong> — computers independently verifying every transaction and
+          <strong>full <Link to="/glossary#node" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Node">nodes</Link></strong> — computers independently verifying every transaction and
           every block ever added to the chain.
         </P>
         <P>
@@ -211,7 +147,7 @@ function ArticlePage() {
           <strong>full node</strong>.
         </P>
         <P>
-          A full node downloads the entire Bitcoin blockchain from the genesis block (January 2009)
+          A full node downloads the entire Bitcoin <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> from the genesis block (January 2009)
           to the present, and independently verifies every single transaction against Bitcoin's
           consensus rules. It doesn't trust any other participant — not miners, not exchanges, not
           even the developers who wrote the software. It checks everything itself.
@@ -315,17 +251,7 @@ function ArticlePage() {
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
-          {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="sources">Sources</H2>
@@ -366,45 +292,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/bitcoin/what-is-bitcoin-mining"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What Is Bitcoin Mining?
-              </h3>
-            </Link>
-            <Link
-              to="/bitcoin/what-is-a-bitcoin-wallet"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What Is a Bitcoin Wallet?
-              </h3>
-            </Link>
-            <Link
-              to="/guides/not-your-keys-not-your-coins-meaning"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Not Your Keys, Not Your Coins
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

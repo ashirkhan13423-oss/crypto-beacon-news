@@ -3,7 +3,7 @@ import { ArticleGrid } from "@/components/ArticleGrid";
 import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Breadcrumbs, breadcrumbSchemaFromItems } from "@/components/Breadcrumbs";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const URL = "https://www.cryptobeacon.site/taxes";
 const TITLE = "Crypto Taxes — Capital Gains, Income & Reporting | CryptoBeacon";
@@ -29,20 +29,15 @@ const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) 
 
 export const Route = createFileRoute("/taxes/")({ validateSearch: searchSchema,
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:url", content: URL },
-      { property: "og:type", content: "website" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/taxes" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/taxes/index', publishedTime: undefined, section: 'Taxes' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(collectionSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchemaFromItems([{ label: "Crypto Taxes" }])) },
-    ],
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Taxes", item: "https://www.cryptobeacon.site/taxes" }
+      ])) }
+    ]
   }),
   component: TaxesHub,
 });
@@ -75,6 +70,10 @@ function TaxesHub() {
           <p className="font-body-lg text-body-lg text-on-surface-variant">
             Most cryptocurrency transactions — trades, swaps, staking rewards, spending, and airdrops — create taxable events in most jurisdictions. The specific rules vary significantly by country. CryptoBeacon covers the foundational concepts that apply broadly: what triggers a capital gains event, how short-term and long-term rates typically differ, how staking income is classified, and what records you need to keep. This content is educational. It is not individualized tax advice for your situation.
           </p>
+          {/* INTRO COPY SLOT */}
+          <div className="mt-lg prose prose-lg dark:prose-invert text-on-surface">
+            {/* TODO: Add genuine intro section text here */}
+          </div>
           <div className="p-md rounded-lg bg-surface-container border border-outline-variant">
             <p className="font-body-sm text-body-sm text-on-surface-variant">
               <strong>Disclaimer:</strong> This section is for educational purposes only and does not constitute individualized tax or legal advice. Tax laws vary by jurisdiction and change frequently. Consult a qualified tax professional regarding your specific situation before filing.
@@ -87,6 +86,7 @@ function TaxesHub() {
             Tax Basics
           </h2>
           <ArticleGrid category="Taxes" currentPage={page} />
+          </section>
       </main>
       <SiteFooter />
     </div>

@@ -1,15 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/guides-short-squeeze.jpg";
+import hero from "@/assets/guides-short-squeeze.webp";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/guides/what-is-a-short-squeeze-crypto-explained";
 const TITLE = "What Is a Short Squeeze in Crypto? Mechanics Explained | CryptoBeacon";
 const DESC =
   "What is a short squeeze crypto explained: learn the technical mechanics of short positions, leverage, margin requirements, and liquidation cascades.";
 const PUBLISHED = "2026-08-30";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs = [
   {
     q: "What triggers a short squeeze in crypto?",
@@ -25,95 +33,21 @@ const faqs = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "What Is a Short Squeeze in Crypto? Mechanics Explained",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "what is a short squeeze crypto explained, crypto short squeeze mechanics, short liquidation cascade, leverage liquidations, bitcoin short squeeze, margin calls crypto",
-  articleSection: "Guides",
-  wordCount: 1200,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Guides",
-      item: "https://www.cryptobeacon.site/guides",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Short Squeeze Explained",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/guides/what-is-a-short-squeeze-crypto-explained")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Guides" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/what-is-a-short-squeeze-crypto-explained" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/what-is-a-short-squeeze-crypto-explained', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is a Short Squeeze in Crypto? Mechanics Explained | CryptoBeacon", description: "What is a short squeeze crypto explained: learn the technical mechanics of short positions, leverage, margin requirements, and liquidation cascades.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-30", dateModified: "2026-08-30", url: "https://www.cryptobeacon.site/guides/what-is-a-short-squeeze-crypto-explained", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Guides", item: "https://www.cryptobeacon.site/guides" },
+        { name: "What Is a Short Squeeze in Crypto? Mechanics Explained | CryptoBeacon", item: "https://www.cryptobeacon.site/guides/what-is-a-short-squeeze-crypto-explained" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -141,6 +75,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -174,7 +109,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 30, 2026</time>}
-          readTime="6 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -189,7 +124,7 @@ function ArticlePage() {
         </figure>
 
         <P>
-          In cryptocurrency markets, rapid price movements are often blamed on fundamental factors like news announcements or regulatory decisions. However, some of the most explosive and sudden price spikes are driven by purely technical mechanics. One of the most powerful market mechanics is a <strong>short squeeze</strong>.
+          In cryptocurrency markets, rapid price movements are often blamed on fundamental factors like news announcements or regulatory decisions. However, some of the most explosive and sudden price spikes are driven by purely technical mechanics. One of the most powerful market mechanics is a <strong><Link to="/glossary#short-squeeze" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Short Squeeze">short squeeze</Link></strong>.
         </P>
         <P>
           To understand <strong>what is a short squeeze crypto explained</strong>, you must look beneath the spot market price and examine derivatives markets, leverage, and the forced liquidations that occur when trades go wrong.
@@ -200,7 +135,7 @@ function ArticlePage() {
           To understand a squeeze, you must first understand a short position. When a trader opens a short position, they are betting that the price of an asset will fall.
         </P>
         <P>
-          In traditional finance, this involves borrowing an asset (like Bitcoin), selling it at the current market price, and hoping to buy it back later at a lower price. Once bought back, the borrowed asset is returned, and the trader pockets the difference as profit. In crypto markets, short positions are typically opened using derivatives contracts—such as perpetual futures—which settle in cash or stablecoins but replicate the same economic exposure.
+          In traditional finance, this involves borrowing an asset (like Bitcoin), selling it at the current market price, and hoping to buy it back later at a lower price. Once bought back, the borrowed asset is returned, and the trader pockets the difference as profit. In crypto markets, short positions are typically opened using derivatives contracts—such as perpetual futures—which settle in cash or <Link to="/glossary#stablecoin" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Stablecoin">stablecoins</Link> but replicate the same economic exposure.
         </P>
 
         <H2 id="leverage-and-margin">Leverage, Margin, and Liquidation</H2>
@@ -282,12 +217,7 @@ function ArticlePage() {
 
         <H2 id="faq">Frequently Asked Questions</H2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
-          {faqs.map((f) => (
-            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low">
-              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">{f.q}</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-            </div>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="sources">Sources</H2>
@@ -318,35 +248,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only. It is not financial or investment advice. Technical market mechanics like short squeezes are highly volatile and carry substantial risk of loss, particularly when using leveraged derivatives.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
-            <Link
-              to="/guides/why-bitcoin-price-moves-more-than-stocks"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Why Bitcoin's Price Moves More Than Stocks
-              </h3>
-            </Link>
-            <Link
-              to="/news/bitcoin-rally-august-2026"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">News</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Bitcoin Rallies Toward $77,000 (Aug 2026)
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Breadcrumbs, breadcrumbSchemaFromItems } from "@/components/Breadcrumbs";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const URL = "https://www.cryptobeacon.site/corrections";
 const TITLE = "Corrections Policy | CryptoBeacon";
@@ -9,22 +9,10 @@ const DESC = "How CryptoBeacon handles corrections, factual updates, and error r
 
 export const Route = createFileRoute("/corrections")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:url", content: URL },
-      { property: "article:published_time", content: "2026-08-06" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/corrections" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(breadcrumbSchemaFromItems([{ label: "Corrections" }])),
-      },
-    ],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/corrections", type: 'website', path: '/corrections' }),
+    
+    
+    scripts: []
   }),
   component: CorrectionsPage,
 });
@@ -34,6 +22,7 @@ function CorrectionsPage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <Breadcrumbs items={[{ label: "Corrections" }]} />
 
         <h1 className="font-display-lg text-display-lg text-primary mb-lg">
@@ -77,7 +66,8 @@ function CorrectionsPage() {
             </p>
           </section>
         </div>
-      </main>
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

@@ -1,14 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Plus } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/security/two-factor-authentication-for-crypto";
 const TITLE = "Two-Factor Authentication for Crypto: SMS vs TOTP vs Hardware Keys | CryptoBeacon";
 const DESC = "A complete guide to two-factor authentication for cryptocurrency accounts — SMS vs TOTP apps vs hardware security keys, the risks of each method, and how to ...";
 const PUBLISHED = "2026-09-01";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   { q: "Is SMS 2FA safe for crypto accounts?", a: "SMS 2FA is significantly less secure than app-based TOTP or hardware keys. SIM swap attacks — where an attacker convinces your mobile carrier to transfer your number to their SIM — can bypass SMS 2FA. Several high-profile crypto account takeovers have used this method. Avoid SMS 2FA for exchange accounts if alternatives are offered." },
   { q: "What is a TOTP authenticator app?", a: "TOTP (Time-based One-Time Password) apps like Google Authenticator, Authy, or 1Password generate a new 6-digit code every 30 seconds using a shared secret. These are significantly more secure than SMS because they don't traverse the phone network and cannot be SIM-swapped." },
@@ -16,55 +23,22 @@ const faqs: { q: string; a: string }[] = [
   { q: "What happens if I lose my 2FA device?", a: "For TOTP apps: if you have backup codes (save these when setting up) or have backed up your authenticator's secrets, you can recover. For hardware keys: register a second key as a backup and store it safely. Without recovery options, losing your 2FA device can lock you out — always set up backup methods during initial 2FA configuration." },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Two-Factor Authentication for Crypto: SMS vs TOTP vs Hardware Keys",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "two factor authentication crypto, 2FA for crypto exchanges, SMS 2FA risks, TOTP authenticator crypto, hardware security key crypto, YubiKey crypto account, SIM swap crypto",
-  articleSection: "Security",
-  wordCount: 900,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Security", item: "https://www.cryptobeacon.site/security" },
-    { "@type": "ListItem", position: 3, name: "Two-Factor Authentication for Crypto", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/security/two-factor-authentication-for-crypto")({
   head: () => ({
-    meta: [
-      { title: TITLE }, { name: "description", content: DESC },
-      { property: "og:title", content: TITLE }, { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" }, { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Security" },
-      { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/security/two-factor-authentication-for-crypto" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security/two-factor-authentication-for-crypto', publishedTime: PUBLISHED, section: 'Security' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Two-Factor Authentication for Crypto: SMS vs TOTP vs Hardware Keys | CryptoBeacon", description: "A complete guide to two-factor authentication for cryptocurrency accounts — SMS vs TOTP apps vs hardware security keys, the risks of each method, and how to ...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/two-factor-authentication-for-crypto", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Security", item: "https://www.cryptobeacon.site/security" },
+        { name: "Two-Factor Authentication for Crypto: SMS vs TOTP vs Hardware Keys | CryptoBeacon", item: "https://www.cryptobeacon.site/security/two-factor-authentication-for-crypto" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -94,6 +68,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -113,6 +88,9 @@ function ArticlePage() {
           Not all 2FA is equal — especially for crypto accounts. Here is the honest comparison of SMS, authenticator apps, and hardware keys, with a clear recommendation.
         </p>
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <H2 id="methods">The three 2FA methods compared</H2>
         <div className="space-y-xl my-lg">
@@ -148,41 +126,9 @@ function ArticlePage() {
         <H2 id="setup-priority">Priority order</H2>
         <P>If your exchange supports hardware security keys: enable them as primary 2FA and keep TOTP as backup. If not: use a TOTP authenticator app and never use SMS alone. Back up your TOTP seeds in a secure, offline location when you set them up.</P>
 
-        <section className="mt-xxl" aria-label="Frequently asked questions">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Frequently Asked Questions</h2>
-          <div className="space-y-md">
-            {faqs.map((f, i) => (
-              <details key={i} className="group border border-outline-variant rounded-lg overflow-hidden">
-                <summary className="flex items-center justify-between p-lg cursor-pointer list-none">
-                  <span className="font-body-lg text-body-lg text-primary font-semibold pr-md">{f.q}</span>
-                  <Plus size={18} className="text-secondary shrink-0 group-open:rotate-45 transition-transform" />
-                </summary>
-                <div className="px-lg pb-lg">
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/security/exchange-account-security" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Exchange Account Security</h3>
-            </Link>
-            <Link to="/security/how-to-avoid-crypto-phishing-scams" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Avoid Crypto Phishing Scams</h3>
-            </Link>
-            <Link to="/security/crypto-security-hub" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Crypto Security Hub</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

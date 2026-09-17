@@ -1,98 +1,41 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { ArticleGrid } from "@/components/ArticleGrid";
 import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import etfFedHero from "@/assets/news-bitcoin-etf-fed-stress-test.jpg";
-import scHero from "@/assets/news-standard-chartered-uae.jpg";
-import macroTestHero from "@/assets/news-btc-september-macro-test.jpg";
-import rallyHero from "@/assets/news-bitcoin-rally.jpg";
-import ethMergeHero from "@/assets/ethereum-merge-two-years.jpg";
-import clarityActHero from "@/assets/news-clarity-act.jpg";
-import oilHero from "@/assets/news-oil-btc-impact.jpg";
-import trezorHero from "@/assets/trezor-phishing-breach.jpg";
-import symbiosisHero from "@/assets/symbiosis-bridge-exploit-hero.jpg";
+import etfFedHero from "@/assets/news-bitcoin-etf-fed-stress-test.webp";
+import scHero from "@/assets/news-standard-chartered-uae.webp";
+import macroTestHero from "@/assets/news-btc-september-macro-test.webp";
+import rallyHero from "@/assets/news-bitcoin-rally.webp";
+import ethMergeHero from "@/assets/ethereum-merge-two-years.webp";
+import clarityActHero from "@/assets/news-clarity-act.webp";
+import oilHero from "@/assets/news-oil-btc-impact.webp";
+import trezorHero from "@/assets/trezor-phishing-breach.webp";
+import symbiosisHero from "@/assets/symbiosis-bridge-exploit-hero.webp";
 import { Newspaper } from "lucide-react";
 
-const collectionSchema = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: "Crypto News",
-  url: "https://www.cryptobeacon.site/news",
-  hasPart: [
-    {
-      "@type": "WebPage",
-      name: "Symbiosis Bitcoin Bridge Exploit Mints Unbacked syBTC: What Users Should Check",
-      url: "https://www.cryptobeacon.site/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint",
-    },
-    {
-      "@type": "WebPage",
-      name: "Trezor Email Breach Sends Fake Wallet Alert to 347,000 Users: What to Do",
-      url: "https://www.cryptobeacon.site/news/trezor-brevo-phishing-email-breach-2026",
-    },
-    {
-      "@type": "WebPage",
-      name: "Oil Above $100 Ahead of U.S. CPI: What It Means for Bitcoin and Crypto",
-      url: "https://www.cryptobeacon.site/news/oil-above-100-bitcoin-crypto-cpi-impact",
-    },
-    {
-      "@type": "WebPage",
-      name: "Bitcoin's September Rally Faces a New Macro Test: Oil, Yields and the Fed",
-      url: "https://www.cryptobeacon.site/news/bitcoin-september-rally-macro-test",
-    },
-    {
-      "@type": "WebPage",
-      name: "Bitcoin Rallies Toward $77,000 — What's Driving the Move",
-      url: "https://www.cryptobeacon.site/news/bitcoin-rally-august-2026",
-    },
-    {
-      "@type": "WebPage",
-      name: "Bitcoin ETF Outflows and Hawkish Fed Speech: Is the Crypto Rally Losing Momentum?",
-      url: "https://www.cryptobeacon.site/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally",
-    },
-    {
-      "@type": "WebPage",
-      name: "Standard Chartered Launches Bitcoin and Ether Spot Trading for UAE Institutions",
-      url: "https://www.cryptobeacon.site/news/standard-chartered-uae-institutional-bitcoin-ether-trading",
-    },
-    {
-      "@type": "WebPage",
-      name: "What Is the Clarity Act, and What Would It Actually Change?",
-      url: "https://www.cryptobeacon.site/news/what-is-the-clarity-act-crypto",
-    },
-    {
-      "@type": "WebPage",
-      name: "The Ethereum Merge: Two Years Later — What Actually Changed",
-      url: "https://www.cryptobeacon.site/news/ethereum-merge-two-years-later",
-    },
-    {
-      "@type": "WebPage",
-      name: "Why Are Crypto ATMs Everywhere?",
-      url: "https://www.cryptobeacon.site/news/why-are-crypto-atms-everywhere",
-    },
-    {
-      "@type": "WebPage",
-      name: "On-Chain Trading vs Exchange Trading",
-      url: "https://www.cryptobeacon.site/news/what-is-on-chain-trading-vs-exchange",
-    },
-  ],
-};
 
 const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) });
 
 export const Route = createFileRoute("/news/")({ validateSearch: searchSchema,
   head: () => ({
-    meta: [
-      { title: "Crypto News — CryptoBeacon" },
-      { name: "description", content: "Latest crypto news, macroeconomic impacts, institutional adoption, and regulatory updates." },
-      { property: "og:title", content: "Crypto News — CryptoBeacon" },
-      { property: "og:description", content: "Latest crypto news, macroeconomic impacts, institutional adoption, and regulatory updates." },
-      { property: "og:url", content: "https://www.cryptobeacon.site/news" },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/news/index', publishedTime: undefined, section: 'News' }),
+    
+    
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Crypto News — CryptoBeacon", item: "https://www.cryptobeacon.site/news" }
+      ])) },
+      { type: "application/ld+json", children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": TITLE,
+        "description": DESC,
+        "url": URL
+      }) }
     ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/news" }],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
   }),
   component: NewsHub,
 });
@@ -150,6 +93,7 @@ function NewsHub() {
             Security & Breaches
           </h2>
           <ArticleGrid category="News" currentPage={page} />
+          </section>
       </main>
       <SiteFooter />
     </div>

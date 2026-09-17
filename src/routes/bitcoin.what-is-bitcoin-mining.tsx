@@ -1,16 +1,24 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/bitcoin-what-is-mining.png";
+import hero from "@/assets/bitcoin-what-is-mining.webp";
 import { Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/what-is-bitcoin-mining";
 const TITLE = "What Is Bitcoin Mining? How New Bitcoin Is Created | CryptoBeacon";
 const DESC =
   "A plain-language guide to what Bitcoin mining actually is, why it exists, what miners do, and why the process is designed the way it is.";
 const PUBLISHED = "2026-08-06";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "Can anyone mine Bitcoin?",
@@ -30,95 +38,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: "What Is Bitcoin Mining? How New Bitcoin Is Created",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "what is bitcoin mining, how does bitcoin mining work, bitcoin proof of work explained, bitcoin block reward, bitcoin mining difficulty, what is a bitcoin halving",
-  articleSection: "Bitcoin",
-  wordCount: 1350,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Bitcoin",
-      item: "https://www.cryptobeacon.site/bitcoin",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "What Is Bitcoin Mining?",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/bitcoin/what-is-bitcoin-mining")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Bitcoin" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/what-is-bitcoin-mining" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/bitcoin/what-is-bitcoin-mining', publishedTime: PUBLISHED, section: 'Bitcoin' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is Bitcoin Mining? How New Bitcoin Is Created | CryptoBeacon", description: "A plain-language guide to what Bitcoin mining actually is, why it exists, what miners do, and why the process is designed the way it is.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-06", dateModified: "2026-08-06", url: "https://www.cryptobeacon.site/bitcoin/what-is-bitcoin-mining", section: "Bitcoin", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Bitcoin", item: "https://www.cryptobeacon.site/bitcoin" },
+        { name: "What Is Bitcoin Mining? How New Bitcoin Is Created | CryptoBeacon", item: "https://www.cryptobeacon.site/bitcoin/what-is-bitcoin-mining" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -211,6 +146,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -242,7 +178,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 6, 2026</time>}
-          readTime="7 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -256,7 +192,7 @@ function ArticlePage() {
         </figure>
 
         <P>
-          "Mining" is a deliberately evocative word — it suggests effort, scarcity, and reward. In
+          "<Link to="/glossary#mining" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Mining">Mining</Link>" is a deliberately evocative word — it suggests effort, scarcity, and reward. In
           Bitcoin's case, that's intentional: mining is the mechanism that creates new Bitcoin,
           processes transactions, and keeps the network secure, all at once. Understanding how it
           works explains a lot about why Bitcoin behaves the way it does.
@@ -289,7 +225,7 @@ function ArticlePage() {
           immediately become permanent. It sits in a waiting area called the "mempool". Miners collect 
           these pending transactions into a candidate block, verify that all senders actually have the 
           funds they are trying to send (preventing the "double-spend" problem), and then compete to 
-          add that block to the official blockchain.
+          add that block to the official <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link>.
         </P>
         <P>
           The winner of this competition earns a reward consisting of two parts: newly
@@ -340,7 +276,7 @@ function ArticlePage() {
         <P>
           Because the block time is kept steady at 10 minutes, the issuance schedule of new coins is 
           entirely predictable. Bitcoin's total supply is hard-capped at 21 million coins — a rule 
-          enforced by every node on the network. No government, CEO, or developer can simply "print" 
+          enforced by every <Link to="/glossary#node" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Node">node</Link> on the network. No government, CEO, or developer can simply "print" 
           more Bitcoin. The predictable, mathematically enforced rate at which new Bitcoin is issued 
           is the foundation of its monetary policy and scarcity.
         </P>
@@ -348,7 +284,7 @@ function ArticlePage() {
         <H2 id="halving">4. The Halving</H2>
         <P>
           Every 210,000 blocks (approximately every four years), the block reward paid to miners is
-          cut in half — an event known as the <strong>halving</strong>. This is how Bitcoin's supply
+          cut in half — an event known as the <strong><Link to="/glossary#halving" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Halving">halving</Link></strong>. This is how Bitcoin's supply
           schedule becomes progressively more restrictive over time. The block reward started at 50
           BTC, is currently 3.125 BTC (as of 2024), and will continue halving until all 21 million
           Bitcoin have been issued, around the year 2140.
@@ -361,12 +297,7 @@ function ArticlePage() {
 
         <H2 id="faq">Frequently Asked Questions</H2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
-          {faqs.map((f) => (
-            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low">
-              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">{f.q}</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-            </div>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="conclusion">Conclusion</H2>
@@ -417,46 +348,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice. Mining economics vary significantly by
-            hardware, electricity cost, and network conditions.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/bitcoin/how-to-send-bitcoin-safely"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                How to Send Bitcoin Safely
-              </h3>
-            </Link>
-            <Link
-              to="/bitcoin/what-is-a-bitcoin-wallet"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What Is a Bitcoin Wallet?
-              </h3>
-            </Link>
-            <Link
-              to="/guides/what-is-a-blockchain-fork"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What Is a Blockchain Fork?
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

@@ -1,9 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/keys-coins-meaning.jpg";
+import hero from "@/assets/keys-coins-meaning.webp";
 import { Key, Lock, HelpCircle, Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+
 
 const URL = "https://www.cryptobeacon.site/guides/not-your-keys-not-your-coins-meaning";
 const TITLE = 'What "Not Your Keys, Not Your Coins" Means | CryptoBeacon';
@@ -30,96 +33,15 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: '"Not Your Keys, Not Your Coins" — What It Actually Means',
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "not your keys not your coins meaning, custodial vs non-custodial wallet explained, why does self-custody matter, what happens if an exchange gets hacked, private key, self-custody, counterparty risk",
-  articleSection: "Guides",
-  wordCount: 1400,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Guides",
-      item: "https://www.cryptobeacon.site/guides",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: '"Not Your Keys, Not Your Coins" — What It Means',
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/guides/not-your-keys-not-your-coins-meaning")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Guides" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/not-your-keys-not-your-coins-meaning" }],
-    scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
-    ],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/not-your-keys-not-your-coins-meaning', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
+    scripts: [],
   }),
   component: ArticlePage,
 });
@@ -216,6 +138,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -247,7 +170,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>July 6, 2026</time>}
-          readTime="7 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -276,19 +199,19 @@ function ArticlePage() {
 
         <H2 id="keys">1. What "Keys" Actually Means Here</H2>
         <P>
-          Every cryptocurrency holding is controlled by a private key — a piece of cryptographic
+          Every cryptocurrency holding is controlled by a <Link to="/glossary#private-key" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Private Key">private key</Link> — a piece of cryptographic
           data that proves ownership and authorizes spending. Whoever holds the private key controls
           the funds, full stop. It doesn't matter whose name is on an account, whose app displays
           the balance, or who originally deposited the funds.
         </P>
         <P>
-          When you use a wallet where you generate and hold that private key yourself (typically via
+          When you use a <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> where you generate and hold that private key yourself (typically via
           a{" "}
           <Link
             to="/security/how-to-store-crypto-seed-phrase-safely"
             className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
           >
-            seed phrase
+            <Link to="/glossary#seed-phrase" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Seed Phrase">seed phrase</Link>
           </Link>
           ), you have self-custody. When you deposit crypto onto an exchange or into a custodial
           app, the platform generates and holds the private key on your behalf — you have a claim on
@@ -307,7 +230,7 @@ function ArticlePage() {
           This isn't a theoretical concern. When a custodial platform experiences insolvency, a
           hack, or a freeze on withdrawals, users don't lose money because their crypto itself
           failed — they lose access because they never controlled the underlying keys in the first
-          place. The blockchain kept working exactly as designed; the problem was entirely on the
+          place. The <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> kept working exactly as designed; the problem was entirely on the
           custodial side.
         </P>
         <P>
@@ -445,11 +368,7 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice. Choosing between custodial and non-custodial
-            storage involves trade-offs specific to your own circumstances and risk tolerance.
-          </p>
+          <Disclaimer />
         </div>
 
         <section className="mt-xxl">
@@ -493,7 +412,8 @@ function ArticlePage() {
             </Link>
           </div>
         </section>
-      </main>
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

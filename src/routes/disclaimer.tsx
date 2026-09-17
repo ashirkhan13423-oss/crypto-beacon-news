@@ -75,7 +75,7 @@ function DisclaimerPage() {
               broker-dealer, or financial institution.
             </p>
             <p>
-              Digital assets, cryptocurrencies, and blockchain protocols carry significant
+              Digital assets, cryptocurrencies, and <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> protocols carry significant
               financial, technical, and regulatory risks. Always conduct your own research (DYOR)
               and consult with a licensed financial advisor or legal professional before executing
               financial transactions.
@@ -116,7 +116,7 @@ function DisclaimerPage() {
             </h2>
             <p className="mb-md">
               Security tutorials on CryptoBeacon focus on threat prevention (phishing awareness,
-              seed phrase backup standards, address verification). We encourage non-custodial safety
+              <Link to="/glossary#seed-phrase" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Seed Phrase">seed phrase</Link> backup standards, address verification). We encourage non-custodial safety
               habits and personal key management.
             </p>
           </section>

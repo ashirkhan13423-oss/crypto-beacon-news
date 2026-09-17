@@ -1,15 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Plus } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/guides/crypto-regulation-explained-for-beginners";
 const TITLE = "Crypto Regulation Explained for Beginners | CryptoBeacon";
 const DESC =
   "A plain-language beginner's guide to cryptocurrency regulation — what it means in practice, what it requires of users and exchanges, and what the difference is between regulated and unregulated crypto.";
 const PUBLISHED = "2026-09-01";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   { q: "Does crypto regulation mean crypto is becoming centralised?", a: "Regulation targets the on-ramps and off-ramps to crypto (exchanges, custodians, stablecoin issuers) rather than the blockchain protocols themselves. Bitcoin and Ethereum continue to operate as decentralised networks regardless of regulation. What regulation changes is how businesses serving those networks must operate." },
   { q: "What does regulation mean for average crypto users?", a: "Most users experience regulation through KYC requirements on exchanges (ID verification), tax reporting obligations, and sometimes restricted access to certain tokens or products (e.g., derivatives unavailable in your country). Unregulated aspects — running a self-custody wallet, transacting on-chain — are generally not directly affected." },
@@ -17,55 +24,22 @@ const faqs: { q: string; a: string }[] = [
   { q: "Is it legal to buy and hold crypto?", a: "In the vast majority of countries, yes. Buying, holding, and selling cryptocurrency is legal, subject to applicable tax obligations. A small number of countries have attempted outright bans (China, some others) but even in those jurisdictions, enforcement is imperfect." },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Crypto Regulation Explained for Beginners",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "crypto regulation explained beginners, what does crypto regulation mean, is crypto regulated, cryptocurrency regulation simple explanation, regulated vs unregulated crypto",
-  articleSection: "Guides",
-  wordCount: 800,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Guides", item: "https://www.cryptobeacon.site/guides" },
-    { "@type": "ListItem", position: 3, name: "Crypto Regulation for Beginners", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/guides/crypto-regulation-explained-for-beginners")({
   head: () => ({
-    meta: [
-      { title: TITLE }, { name: "description", content: DESC },
-      { property: "og:title", content: TITLE }, { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" }, { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Guides" },
-      { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/crypto-regulation-explained-for-beginners" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/crypto-regulation-explained-for-beginners', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Crypto Regulation Explained for Beginners | CryptoBeacon", description: "A plain-language beginner's guide to cryptocurrency regulation — what it means in practice, what it requires of users and exchanges, and what the difference is between regulated and unregulated crypto.", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/crypto-regulation-explained-for-beginners", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Guides", item: "https://www.cryptobeacon.site/guides" },
+        { name: "Crypto Regulation Explained for Beginners | CryptoBeacon", item: "https://www.cryptobeacon.site/guides/crypto-regulation-explained-for-beginners" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -83,6 +57,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -102,10 +77,13 @@ function ArticlePage() {
           Cryptocurrency regulation sounds complicated — but its impact on ordinary users is actually quite simple. This guide explains what it means in practice.
         </p>
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <H2 id="what-is">What does 'regulated' actually mean?</H2>
-        <P>When people say crypto is "regulated," they usually mean that businesses operating in the crypto space — exchanges, custodians, stablecoin issuers — are required to follow government rules. The rules typically include: verifying who their customers are (KYC), reporting suspicious activity (AML), holding licences, and meeting financial stability requirements.</P>
-        <P>Regulation targets the <em>intermediaries</em>, not the blockchains. Bitcoin and Ethereum are open-source protocols that no government controls. Regulation applies to the companies that help people buy, sell, and store crypto.</P>
+        <P>When people say crypto is "regulated," they usually mean that businesses operating in the crypto space — exchanges, custodians, <Link to="/glossary#stablecoin" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Stablecoin">stablecoin</Link> issuers — are required to follow government rules. The rules typically include: verifying who their customers are (<Link to="/glossary#kyc" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: KYC">KYC</Link>), reporting suspicious activity (AML), holding licences, and meeting financial stability requirements.</P>
+        <P>Regulation targets the <em>intermediaries</em>, not the <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchains</Link>. Bitcoin and Ethereum are open-source protocols that no government controls. Regulation applies to the companies that help people buy, sell, and store crypto.</P>
 
         <H2 id="what-it-means-for-you">What regulation means for you as a user</H2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-md my-lg">
@@ -133,41 +111,9 @@ function ArticlePage() {
         <H2 id="ban-vs-regulate">Regulation vs ban: the key distinction</H2>
         <P>A ban prohibits owning, trading, or using crypto. China implemented this in 2021. A regulation framework allows crypto activity within defined rules. The US, EU, UK, Singapore, and most developed economies chose regulation, not prohibition. Understanding this distinction matters: regulated does not mean banned, and it does not mean crypto is becoming centralised.</P>
 
-        <section className="mt-xxl" aria-label="Frequently asked questions">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Frequently Asked Questions</h2>
-          <div className="space-y-md">
-            {faqs.map((f, i) => (
-              <details key={i} className="group border border-outline-variant rounded-lg overflow-hidden">
-                <summary className="flex items-center justify-between p-lg cursor-pointer list-none">
-                  <span className="font-body-lg text-body-lg text-primary font-semibold pr-md">{f.q}</span>
-                  <Plus size={18} className="text-secondary shrink-0 group-open:rotate-45 transition-transform" />
-                </summary>
-                <div className="px-lg pb-lg">
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/guides/crypto-regulation-hub" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Crypto Regulation Hub</h3>
-            </Link>
-            <Link to="/guides/what-is-kyc-in-cryptocurrency" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">What Is KYC?</h3>
-            </Link>
-            <Link to="/guides/cryptocurrency-taxes-explained" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Cryptocurrency Taxes Explained</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

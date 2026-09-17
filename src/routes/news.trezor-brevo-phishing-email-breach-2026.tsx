@@ -1,90 +1,34 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/trezor-phishing-breach.jpg";
-import hardwareWalletFirewall from "@/assets/hardware-wallet-firewall.jpg";
+import hero from "@/assets/trezor-phishing-breach.webp";
+import hardwareWalletFirewall from "@/assets/hardware-wallet-firewall.webp";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/news/trezor-brevo-phishing-email-breach-2026";
 const TITLE = "Trezor Email Breach Sends Fake Wallet Alert to 347,000 Users: What to Do | CryptoBeacon";
 const DESC = "A compromised third-party email provider sent fake Trezor security alerts to 347,000 users. Learn how this phishing attack happened and how to protect your s...";
 const PUBLISHED = "2026-09-12";
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: "Trezor Email Breach Sends Fake Wallet Alert to 347,000 Users: What to Do",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    url: "https://www.cryptobeacon.site",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "Trezor phishing email 2026, Trezor Brevo breach, Trezor STM32 vulnerability scam, Trezor recovery phrase phishing, hardware wallet phishing attack, crypto wallet email scam, fake Trezor security alert, crypto supply-chain attack, seed phrase theft",
-  articleSection: "News",
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "News",
-      item: "https://www.cryptobeacon.site/news",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Trezor Email Breach Sends Fake Wallet Alert",
-      item: URL,
-    },
-  ],
-};
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 export const Route = createFileRoute("/news/trezor-brevo-phishing-email-breach-2026")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: `https://www.cryptobeacon.site${hero}` },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "News" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: `https://www.cryptobeacon.site${hero}` },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/news/trezor-brevo-phishing-email-breach-2026" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/news/trezor-brevo-phishing-email-breach-2026', publishedTime: PUBLISHED, section: 'News' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Trezor Email Breach Sends Fake Wallet Alert to 347,000 Users: What to Do | CryptoBeacon", description: "A compromised third-party email provider sent fake Trezor security alerts to 347,000 users. Learn how this phishing attack happened and how to protect your s...", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-09-12", dateModified: "2026-09-12", url: "https://www.cryptobeacon.site/news/trezor-brevo-phishing-email-breach-2026", section: "News", isNews: true })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "News", item: "https://www.cryptobeacon.site/news" },
+        { name: "Trezor Email Breach Sends Fake Wallet Alert to 347,000 Users: What to Do | CryptoBeacon", item: "https://www.cryptobeacon.site/news/trezor-brevo-phishing-email-breach-2026" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -112,6 +56,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -141,14 +86,14 @@ function ArticlePage() {
           Trezor Email Breach Sends Fake Wallet Alert to 347,000 Users: What to Do
         </h1>
 
-        <Author publishedDate={<time dateTime={PUBLISHED}>September 12, 2026</time>} readTime="6 min read" />
+        <Author publishedDate={<time dateTime={PUBLISHED}>September 12, 2026</time>}  />
 
         <div className="mt-md mb-lg border-l-4 border-[#F59E0B] bg-[#F59E0B]/10 p-md rounded-r-md">
           <p className="font-headline-sm text-headline-sm text-primary font-bold">
             Security Incident Update
           </p>
           <p className="font-body-md text-body-md text-on-surface-variant mt-xs">
-            Trezor confirmed their third-party email provider, Brevo, was compromised, resulting in phishing emails sent to their newsletter subscribers. No Trezor hardware devices, wallet systems, or Trezor Suite infrastructures have been compromised.
+            Trezor confirmed their third-party email provider, Brevo, was compromised, resulting in phishing emails sent to their newsletter subscribers. No Trezor hardware devices, <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> systems, or Trezor Suite infrastructures have been compromised.
           </p>
         </div>
 
@@ -190,7 +135,7 @@ function ArticlePage() {
           In the wake of such an attack, panic often leads to confusion. It is absolutely essential to draw a clear line between a compromised email communication channel and a compromised hardware device. Trezor has explicitly stated—and security experts agree—that <strong>no Trezor devices, core wallet systems, or the official Trezor Suite infrastructure were affected in any way.</strong>
         </P>
         <P>
-          Your physical hardware wallet remains as secure today as it was before this incident. The attackers did not breach Trezor's cryptographic security; instead, they abused a marketing tool to conduct a massive social engineering campaign. They hoped that the fear of losing funds due to the fake "STM32 Entropy Vulnerability" would prompt users to voluntarily hand over the very keys that protect their assets. The hardware wallet's entire purpose is to keep your private keys offline, and this incident did not change that reality.
+          Your physical hardware wallet remains as secure today as it was before this incident. The attackers did not breach Trezor's cryptographic security; instead, they abused a marketing tool to conduct a massive social engineering campaign. They hoped that the fear of losing funds due to the fake "STM32 Entropy Vulnerability" would prompt users to voluntarily hand over the very keys that protect their assets. The hardware wallet's entire purpose is to keep your <Link to="/glossary#private-key" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Private Key">private keys</Link> offline, and this incident did not change that reality.
         </P>
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -218,7 +163,7 @@ function ArticlePage() {
 
         <H2 id="the-bigger-picture">The Bigger Picture: Supply-Chain Risks in Crypto</H2>
         <P>
-          The Trezor-Brevo incident vividly illustrates a growing operational vulnerability within the cryptocurrency industry: supply-chain security failures. While crypto users focus heavily on protecting their private keys and avoiding smart contract bugs, they must also recognize that hardware wallet brands, major exchanges, and analytics platforms all depend on a vast network of external email, cloud hosting, and software service providers. 
+          The Trezor-Brevo incident vividly illustrates a growing operational vulnerability within the cryptocurrency industry: supply-chain security failures. While crypto users focus heavily on protecting their private keys and avoiding <Link to="/glossary#smart-contract" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Smart Contract">smart contract</Link> bugs, they must also recognize that hardware wallet brands, major exchanges, and analytics platforms all depend on a vast network of external email, cloud hosting, and software service providers. 
         </P>
         <P>
           A security failure at any of these vendors can expose sensitive customer databases and be instantly weaponized for highly convincing phishing campaigns. This type of supply-chain attack is not isolated; we have seen similar campaigns target other wallet brands and crypto service providers through shared marketing infrastructure. This highlights why self-custody risk encompasses much more than just physical device theft—it includes vendor compromise, mailing-list exposure, fake software updates, and brand impersonation.
@@ -261,39 +206,9 @@ function ArticlePage() {
           </li>
         </ul>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/security/what-is-a-seed-phrase"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What is a Seed Phrase?
-              </h3>
-            </Link>
-            <Link
-              to="/security/hardware-wallet-mistakes-to-avoid"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Hardware Wallet Mistakes to Avoid
-              </h3>
-            </Link>
-            <Link
-              to="/security/how-to-avoid-crypto-phishing-scams"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                How to Avoid Crypto Phishing Scams
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

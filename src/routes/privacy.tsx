@@ -1,28 +1,14 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { RefreshCw, FileEdit, Cpu, Mail } from "lucide-react";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
-    meta: [
-      { title: "Privacy Policy — CryptoBeacon" },
-      {
-        name: "description",
-        content:
-          "How CryptoBeacon collects, uses, and protects your information, including cookies, analytics, and advertising practices.",
-      },
-      { property: "og:title", content: "Privacy Policy — CryptoBeacon" },
-      {
-        property: "og:description",
-        content:
-          "How CryptoBeacon collects, uses, and protects your information, including cookies, analytics, and advertising practices.",
-      },
-      { property: "og:url", content: "https://www.cryptobeacon.site/privacy" },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/privacy" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/privacy", type: 'website', path: '/privacy' }),
+    
+    
   }),
   component: PrivacyPage,
 });
@@ -57,8 +43,8 @@ function PrivacyPage() {
               here.
             </p>
             <p>
-              CryptoBeacon provides educational content about cryptocurrency, digital wallets, and
-              blockchain security. We do not offer financial, investment, or legal advice, and{" "}
+              CryptoBeacon provides educational content about cryptocurrency, digital <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallets</Link>, and
+              <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> security. We do not offer financial, investment, or legal advice, and{" "}
               <strong className="text-secondary">
                 we do not collect any information related to your cryptocurrency holdings, wallet
                 addresses, or transaction history.

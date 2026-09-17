@@ -1,59 +1,60 @@
-import hero_1 from "@/assets/bitcoin-lightning-network.jpg";
-import hero_3 from "@/assets/exchange-comparison.jpg";
-import hero_6 from "@/assets/bitcoin-etf-effects.jpg";
-import hero_7 from "@/assets/bitcoin-buy-safely.jpg";
-import hero_8 from "@/assets/bitcoin-send-safely.jpg";
-import hero_10 from "@/assets/bitcoin-node-explainer.jpg";
-import hero_12 from "@/assets/bitcoin-what-is-a-wallet.png";
-import hero_13 from "@/assets/bitcoin-what-is-mining.png";
-import hero_14 from "@/assets/bitcoin-halving.jpg";
-import hero_15 from "@/assets/bitcoin-bond-yields.jpg";
-import hero_16 from "@/assets/ethereum-address-mismatch.png";
-import hero_18 from "@/assets/ethereum-layer-2-scaling.png";
-import hero_24 from "@/assets/eth-staking-lido-vs-rocketpool.jpg";
-import hero_26 from "@/assets/ethereum-gas-fees.jpg";
-import hero_27 from "@/assets/smart-contract.jpg";
-import hero_28 from "@/assets/ethereum-defi-explainer.jpg";
-import hero_29 from "@/assets/ethereum-staking-hero.png";
-import hero_31 from "@/assets/guides-dca-explained.jpg";
-import hero_32 from "@/assets/crypto-portfolio-rebalancing.jpg";
-import hero_36 from "@/assets/crypto-tax-basics.jpg";
-import hero_38 from "@/assets/exchange-vs-wallet.png";
-import hero_39 from "@/assets/hardware-wallet-comparison.jpg";
-import hero_40 from "@/assets/hot-vs-cold-wallets.jpg";
-import hero_43 from "@/assets/read-block-explorer.jpg";
-import hero_44 from "@/assets/guides-read-news-no-hype.jpg";
-import hero_45 from "@/assets/metamask-setup-guide.jpg";
-import hero_46 from "@/assets/keys-coins-meaning.jpg";
-import hero_48 from "@/assets/news-blockchain-fork.png";
-import hero_49 from "@/assets/guides-wallet-address.png";
-import hero_50 from "@/assets/guides-private-key.jpg";
-import hero_51 from "@/assets/guides-short-squeeze.jpg";
-import hero_52 from "@/assets/what-is-stablecoin.jpg";
-import hero_55 from "@/assets/news-paused-withdrawals.jpg";
+import hero_1 from "@/assets/bitcoin-lightning-network.webp";
+import hero_3 from "@/assets/exchange-comparison.webp";
+import hero_6 from "@/assets/bitcoin-etf-effects.webp";
+import hero_7 from "@/assets/bitcoin-buy-safely.webp";
+import hero_8 from "@/assets/bitcoin-send-safely.webp";
+import hero_10 from "@/assets/bitcoin-node-explainer.webp";
+import hero_12 from "@/assets/bitcoin-what-is-a-wallet.webp";
+import hero_13 from "@/assets/bitcoin-what-is-mining.webp";
+import hero_14 from "@/assets/bitcoin-halving.webp";
+import hero_15 from "@/assets/bitcoin-bond-yields.webp";
+import hero_16 from "@/assets/ethereum-address-mismatch.webp";
+import hero_18 from "@/assets/ethereum-layer-2-scaling.webp";
+import hero_24 from "@/assets/eth-staking-lido-vs-rocketpool.webp";
+import hero_26 from "@/assets/ethereum-gas-fees.webp";
+import hero_27 from "@/assets/smart-contract.webp";
+import hero_28 from "@/assets/ethereum-defi-explainer.webp";
+import hero_29 from "@/assets/ethereum-staking-hero.webp";
+import hero_31 from "@/assets/guides-dca-explained.webp";
+import hero_32 from "@/assets/crypto-portfolio-rebalancing.webp";
+import hero_36 from "@/assets/crypto-tax-basics.webp";
+import hero_38 from "@/assets/exchange-vs-wallet.webp";
+import hero_39 from "@/assets/hardware-wallet-comparison.webp";
+import hero_40 from "@/assets/hot-vs-cold-wallets.webp";
+import hero_43 from "@/assets/read-block-explorer.webp";
+import hero_44 from "@/assets/guides-read-news-no-hype.webp";
+import hero_45 from "@/assets/metamask-setup-guide.webp";
+import hero_46 from "@/assets/keys-coins-meaning.webp";
+import hero_48 from "@/assets/news-blockchain-fork.webp";
+import hero_49 from "@/assets/guides-wallet-address.webp";
+import hero_50 from "@/assets/guides-private-key.webp";
+import hero_51 from "@/assets/guides-short-squeeze.webp";
+import hero_52 from "@/assets/what-is-stablecoin.webp";
+import hero_55 from "@/assets/news-paused-withdrawals.webp";
 import hero_56 from "@/assets/news-bitcoin-volatility.svg";
-import hero_58 from "@/assets/news-crypto-regulation.jpg";
-import hero_59 from "@/assets/news-bitcoin-etf-fed-stress-test.jpg";
-import hero_60 from "@/assets/news-bitcoin-fed-rate-hike.jpg";
-import hero_61 from "@/assets/news-bitcoin-rally.jpg";
-import hero_62 from "@/assets/news-btc-september-macro-test.jpg";
-import hero_63 from "@/assets/ethereum-merge-two-years.jpg";
-import hero_64 from "@/assets/news-standard-chartered-uae.jpg";
-import hero_66 from "@/assets/news-clarity-act.jpg";
-import hero_73 from "@/assets/defi-risks.jpg";
-import hero_77 from "@/assets/hardware-wallet-mistakes.jpg";
-import hero_79 from "@/assets/phishing-padlock.jpg";
-import hero_81 from "@/assets/security-smart-contract-approvals.jpg";
-import hero_82 from "@/assets/spot-rug-pull.jpg";
-import hero_83 from "@/assets/seed-phrase-vault.jpg";
-import hero_84 from "@/assets/security-verify-transaction.jpg";
-import hero_88 from "@/assets/hacked-wallet-emergency.jpg";
-import hero_trezor from "@/assets/trezor-phishing-breach.jpg";
-import hero_atm from "@/assets/security-crypto-atm.jpg";
-import hero_fakewallet from "@/assets/security-fake-wallet-app.jpg";
-import hero_miningenergy from "@/assets/bitcoin-mining-energy.jpg";
-import hero_halvingmech from "@/assets/bitcoin-halving-mechanism.jpg";
-import hero_symbiosis from "@/assets/symbiosis-bridge-exploit-hero.jpg";
+import hero_58 from "@/assets/news-crypto-regulation.webp";
+import hero_59 from "@/assets/news-bitcoin-etf-fed-stress-test.webp";
+import hero_60 from "@/assets/news-bitcoin-fed-rate-hike.webp";
+import hero_61 from "@/assets/news-bitcoin-rally.webp";
+import hero_62 from "@/assets/news-btc-september-macro-test.webp";
+import hero_63 from "@/assets/ethereum-merge-two-years.webp";
+import hero_64 from "@/assets/news-standard-chartered-uae.webp";
+import hero_66 from "@/assets/news-clarity-act.webp";
+import hero_73 from "@/assets/defi-risks.webp";
+import hero_77 from "@/assets/hardware-wallet-mistakes.webp";
+import hero_79 from "@/assets/phishing-padlock.webp";
+import hero_81 from "@/assets/security-smart-contract-approvals.webp";
+import hero_82 from "@/assets/spot-rug-pull.webp";
+import hero_83 from "@/assets/seed-phrase-vault.webp";
+import hero_84 from "@/assets/security-verify-transaction.webp";
+import hero_88 from "@/assets/hacked-wallet-emergency.webp";
+import hero_trezor from "@/assets/trezor-phishing-breach.webp";
+import { buildMetadata } from "@/lib/metadata";
+import hero_atm from "@/assets/security-crypto-atm.webp";
+import hero_fakewallet from "@/assets/security-fake-wallet-app.webp";
+import hero_miningenergy from "@/assets/bitcoin-mining-energy.webp";
+import hero_halvingmech from "@/assets/bitcoin-halving-mechanism.webp";
+import hero_symbiosis from "@/assets/symbiosis-bridge-exploit-hero.webp";
 
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
@@ -181,27 +182,10 @@ const homepageSchema = {
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: PAGE_URL },
-      { property: "og:image", content: `${SITE_URL}/og-image.png` },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: `${SITE_URL}/og-image.png` },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(homepageSchema),
-      },
-    ],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'website', path: '' }),
+    
+    
+    scripts: [],
   }),
   component: IndexPage,
 });

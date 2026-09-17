@@ -1,14 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Plus } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/security/exchange-account-security";
 const TITLE = "Exchange Account Security: Protect Your Crypto on Centralised Exchanges | CryptoBeacon";
 const DESC = "How to properly secure a cryptocurrency exchange account — strong passwords, withdrawal whitelists, 2FA, API key security, phishing-resistant authentication...";
 const PUBLISHED = "2026-09-01";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   { q: "What is the most important security step for an exchange account?", a: "Enabling a hardware security key (FIDO2/WebAuthn, like a YubiKey) as your primary 2FA method. This is phishing-resistant — even if you enter your credentials on a fake site, the attacker cannot complete login without physically having your key. This single step prevents the vast majority of exchange account takeovers." },
   { q: "What is a withdrawal whitelist?", a: "A withdrawal whitelist restricts crypto withdrawals from your account to a pre-approved list of addresses. Any withdrawal to an address not on the whitelist is blocked. Even if an attacker gains access to your account, they cannot withdraw to their own address. Most major exchanges offer this in security settings." },
@@ -16,55 +23,22 @@ const faqs: { q: string; a: string }[] = [
   { q: "What should I do if my exchange account is compromised?", a: "Immediately: change your password from a secure, uncompromised device, revoke all API keys, contact the exchange's security team to freeze the account, enable withdrawal freezing if available, and review recent login history and activity. Document everything for potential law enforcement reporting." },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Exchange Account Security: Protect Your Crypto on Centralised Exchanges",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "crypto exchange account security, protect exchange account, withdrawal whitelist crypto, exchange API key security, crypto account 2FA, exchange account hacked what to do",
-  articleSection: "Security",
-  wordCount: 850,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Security", item: "https://www.cryptobeacon.site/security" },
-    { "@type": "ListItem", position: 3, name: "Exchange Account Security", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/security/exchange-account-security")({
   head: () => ({
-    meta: [
-      { title: TITLE }, { name: "description", content: DESC },
-      { property: "og:title", content: TITLE }, { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" }, { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Security" },
-      { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/security/exchange-account-security" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security/exchange-account-security', publishedTime: PUBLISHED, section: 'Security' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Exchange Account Security: Protect Your Crypto on Centralised Exchanges | CryptoBeacon", description: "How to properly secure a cryptocurrency exchange account — strong passwords, withdrawal whitelists, 2FA, API key security, phishing-resistant authentication...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/exchange-account-security", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Security", item: "https://www.cryptobeacon.site/security" },
+        { name: "Exchange Account Security: Protect Your Crypto on Centralised Exchanges | CryptoBeacon", item: "https://www.cryptobeacon.site/security/exchange-account-security" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -92,6 +66,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -111,6 +86,9 @@ function ArticlePage() {
           Exchange accounts holding crypto are high-value targets. These seven steps protect yours against the most common attack vectors.
         </p>
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <H2 id="steps">The seven security steps</H2>
         <div className="space-y-md my-lg">
@@ -126,45 +104,13 @@ function ArticlePage() {
         </div>
 
         <H2 id="custody">A word on custody</H2>
-        <P>Even a perfectly secured exchange account carries risks that self-custody eliminates: exchange insolvency (FTX), regulatory freezes, or hacks of the exchange's own infrastructure. For significant holdings you don't need to trade regularly, a hardware wallet is the appropriate complement to an exchange account.</P>
+        <P>Even a perfectly secured exchange account carries risks that self-custody eliminates: exchange insolvency (FTX), regulatory freezes, or hacks of the exchange's own infrastructure. For significant holdings you don't need to trade regularly, a hardware <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> is the appropriate complement to an exchange account.</P>
         <P>Learn more: <Link to="/guides/exchange-or-personal-wallet-crypto-storage" className="text-secondary underline">Exchange or Personal Wallet — Which Should You Use? →</Link></P>
         <P>For 2FA method comparison: <Link to="/security/two-factor-authentication-for-crypto" className="text-secondary underline">Two-Factor Authentication for Crypto →</Link></P>
 
-        <section className="mt-xxl" aria-label="Frequently asked questions">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Frequently Asked Questions</h2>
-          <div className="space-y-md">
-            {faqs.map((f, i) => (
-              <details key={i} className="group border border-outline-variant rounded-lg overflow-hidden">
-                <summary className="flex items-center justify-between p-lg cursor-pointer list-none">
-                  <span className="font-body-lg text-body-lg text-primary font-semibold pr-md">{f.q}</span>
-                  <Plus size={18} className="text-secondary shrink-0 group-open:rotate-45 transition-transform" />
-                </summary>
-                <div className="px-lg pb-lg">
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/security/two-factor-authentication-for-crypto" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Two-Factor Authentication for Crypto</h3>
-            </Link>
-            <Link to="/guides/exchange-or-personal-wallet-crypto-storage" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Exchange vs Personal Wallet</h3>
-            </Link>
-            <Link to="/security/crypto-security-hub" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Crypto Security Hub</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

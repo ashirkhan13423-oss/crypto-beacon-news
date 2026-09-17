@@ -1,93 +1,34 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/news-clarity-act.jpg";
+import hero from "@/assets/news-clarity-act.webp";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/news/what-is-the-clarity-act-crypto";
 const TITLE = "What Is the Clarity Act, and What Would It Actually Change? | CryptoBeacon";
 const DESC =
   "What is the Clarity Act crypto: a factual explanation of the proposed U.S. bill, securities vs commodities classifications, and legislative status.";
 const PUBLISHED = "2026-08-30";
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: "What Is the Clarity Act, and What Would It Actually Change?",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "what is the clarity act crypto, crypto clarity act bill, sec vs cftc crypto regulation, securities vs commodities crypto classification, crypto legislative status 2026",
-  articleSection: "News",
-  wordCount: 1100,
-  isAccessibleForFree: true,
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "News",
-      item: "https://www.cryptobeacon.site/news",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Clarity Act Explained",
-      item: URL,
-    },
-  ],
-};
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 export const Route = createFileRoute("/news/what-is-the-clarity-act-crypto")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "News" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/news/what-is-the-clarity-act-crypto" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/news/what-is-the-clarity-act-crypto', publishedTime: PUBLISHED, section: 'News' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is the Clarity Act, and What Would It Actually Change? | CryptoBeacon", description: "What is the Clarity Act crypto: a factual explanation of the proposed U.S. bill, securities vs commodities classifications, and legislative status.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-30", dateModified: "2026-08-30", url: "https://www.cryptobeacon.site/news/what-is-the-clarity-act-crypto", section: "News", isNews: true })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "News", item: "https://www.cryptobeacon.site/news" },
+        { name: "What Is the Clarity Act, and What Would It Actually Change? | CryptoBeacon", item: "https://www.cryptobeacon.site/news/what-is-the-clarity-act-crypto" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -115,6 +56,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -148,7 +90,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 30, 2026</time>}
-          readTime="5 min read"
+          
         />
 
         {/* PROMINENT DATED BANNER */}
@@ -283,30 +225,9 @@ function ArticlePage() {
           </p>
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
-            <Link
-              to="/news/bitcoin-rally-august-2026"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">News</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Bitcoin Rallies Toward $77,000 (Aug 2026)
-              </h3>
-            </Link>
-            <Link
-              to="/guides/why-governments-regulate-cryptocurrency"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Why Governments Regulate Cryptocurrency
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

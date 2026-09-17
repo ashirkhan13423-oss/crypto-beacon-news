@@ -1,14 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Plus } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/security/common-crypto-scams";
 const TITLE = "Common Crypto Scams: Rug Pulls, Pig Butchering & More | CryptoBeacon";
 const DESC = "The most common crypto scams explained — rug pulls, fake giveaways, pump and dump, romance/pig butchering scams, and exit scams — with red flags to identify ...";
 const PUBLISHED = "2026-09-01";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   { q: "What is a rug pull in crypto?", a: "A rug pull is when the developers of a crypto project abandon it after raising funds, draining liquidity from a decentralised exchange, or selling all their tokens — leaving investors with worthless holdings. The name comes from 'pulling the rug out' from under investors." },
   { q: "What is pig butchering?", a: "Pig butchering (SHA ZHU PAN) is an investment fraud where scammers build a fake romantic or friendly relationship with victims over weeks or months, then introduce them to a fake investment platform. Victims invest increasingly large sums before the scammer disappears with everything. The 'pig' (victim) is fattened before the 'butchering' (theft)." },
@@ -16,55 +23,22 @@ const faqs: { q: string; a: string }[] = [
   { q: "How does a pump and dump work?", a: "Coordinated groups accumulate a low-cap token, promote it aggressively in Telegram/Discord groups to attract buyers and inflate the price, then sell (dump) all their holdings at the peak — crashing the price and leaving late buyers with losses." },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Common Crypto Scams: Rug Pulls, Pig Butchering & More",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "common crypto scams, crypto rug pull explained, pig butchering crypto scam, pump and dump crypto, fake celebrity crypto giveaway, crypto exit scam",
-  articleSection: "Security",
-  wordCount: 900,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Security", item: "https://www.cryptobeacon.site/security" },
-    { "@type": "ListItem", position: 3, name: "Common Crypto Scams", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/security/common-crypto-scams")({
   head: () => ({
-    meta: [
-      { title: TITLE }, { name: "description", content: DESC },
-      { property: "og:title", content: TITLE }, { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" }, { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Security" },
-      { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/security/common-crypto-scams" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security/common-crypto-scams', publishedTime: PUBLISHED, section: 'Security' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Common Crypto Scams: Rug Pulls, Pig Butchering & More | CryptoBeacon", description: "The most common crypto scams explained — rug pulls, fake giveaways, pump and dump, romance/pig butchering scams, and exit scams — with red flags to identify ...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/common-crypto-scams", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Security", item: "https://www.cryptobeacon.site/security" },
+        { name: "Common Crypto Scams: Rug Pulls, Pig Butchering & More | CryptoBeacon", item: "https://www.cryptobeacon.site/security/common-crypto-scams" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -90,6 +64,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -109,6 +84,9 @@ function ArticlePage() {
           The five most common cryptocurrency scams — how they work, what they look like in practice, and the specific red flags that identify each one.
         </p>
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <H2 id="scams">The five scam types</H2>
         <div className="space-y-xl my-lg">
@@ -132,41 +110,9 @@ function ArticlePage() {
         <H2 id="universal">The universal scam filter</H2>
         <P>Across every crypto scam, one principle holds: <strong>if something promises outsized returns with no credible mechanism, it is a scam.</strong> Crypto markets are competitive and efficient. Legitimate 2x guaranteed returns don't exist. Any promise of them is extracting value from you, not creating it.</P>
 
-        <section className="mt-xxl" aria-label="Frequently asked questions">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Frequently Asked Questions</h2>
-          <div className="space-y-md">
-            {faqs.map((f, i) => (
-              <details key={i} className="group border border-outline-variant rounded-lg overflow-hidden">
-                <summary className="flex items-center justify-between p-lg cursor-pointer list-none">
-                  <span className="font-body-lg text-body-lg text-primary font-semibold pr-md">{f.q}</span>
-                  <Plus size={18} className="text-secondary shrink-0 group-open:rotate-45 transition-transform" />
-                </summary>
-                <div className="px-lg pb-lg">
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/security/how-to-spot-a-rug-pull" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">How to Spot a Rug Pull</h3>
-            </Link>
-            <Link to="/security/fake-airdrop-scams-explained" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Fake Airdrop Scams Explained</h3>
-            </Link>
-            <Link to="/security/crypto-security-hub" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Crypto Security Hub</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

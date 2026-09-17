@@ -1,15 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ArticleGrid } from "@/components/ArticleGrid";
 import { z } from "zod";
 
-const collectionSchema = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: "Crypto Security & Scam Awareness",
-  url: "https://www.cryptobeacon.site/security",
-};
 
 const securitySearchSchema = z.object({
   page: z.number().catch(1).optional().default(1),
@@ -18,27 +13,22 @@ const securitySearchSchema = z.object({
 export const Route = createFileRoute("/security/")({
   validateSearch: securitySearchSchema,
   head: () => ({
-    meta: [
-      { title: "Security & Scam Awareness — CryptoBeacon" },
-      {
-        name: "description",
-        content:
-          "Wallet safety, phishing awareness, and rug-pull forensics. Practical crypto security guidance.",
-      },
-      { property: "og:title", content: "Security & Scam Awareness — CryptoBeacon" },
-      {
-        property: "og:description",
-        content:
-          "Wallet safety, phishing awareness, and rug-pull forensics. Practical crypto security guidance.",
-      },
-      { property: "og:url", content: "https://www.cryptobeacon.site/security" },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: "2026-08-06" },
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security/index', publishedTime: undefined, section: 'Security' }),
+    
+    
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Security & Scam Awareness — CryptoBeacon", item: "https://www.cryptobeacon.site/security" }
+      ])) },
+      { type: "application/ld+json", children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": TITLE,
+        "description": DESC,
+        "url": URL
+      }) }
     ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/security" }
-    ],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(collectionSchema) }],
   }),
   component: SecurityPage,
 });
@@ -58,6 +48,10 @@ function SecurityPage() {
             Wallet safety, phishing awareness, and rug-pull forensics — peer-reviewed guidance for
             protecting your assets.
           </p>
+          {/* INTRO COPY SLOT */}
+          <div className="mt-lg prose prose-lg dark:prose-invert text-on-surface">
+            {/* TODO: Add genuine intro section text here */}
+          </div>
         </header>
 
         <ArticleGrid category="Security" currentPage={page} />

@@ -1,40 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Scale, Globe, FileText, Shield, Building2, DollarSign, AlertTriangle, BookOpen } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/guides/crypto-regulation-hub";
 const TITLE = "Cryptocurrency Regulation Hub: Complete Guide | CryptoBeacon";
 const DESC = "The definitive cryptocurrency regulation hub — how crypto regulation works globally, KYC and AML explained, stablecoin laws, exchange licensing, crypto taxes...";
 const PUBLISHED = "2026-09-01";
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Cryptocurrency Regulation Hub: Complete Guide",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "cryptocurrency regulation hub, crypto regulation explained, KYC AML crypto, stablecoin regulation, crypto exchange licensing, cryptocurrency taxes explained",
-  articleSection: "Guides",
-  isAccessibleForFree: true,
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Guides", item: "https://www.cryptobeacon.site/guides" },
-    { "@type": "ListItem", position: 3, name: "Crypto Regulation Hub", item: URL },
-  ],
-};
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const sections = [
   { icon: <Globe size={20} />, title: "How Cryptocurrency Regulation Works", desc: "Why crypto is regulated, which agencies are involved, and how the regulatory patchwork of jurisdictions fits together globally.", to: "/guides/how-cryptocurrency-regulation-works", tag: "Overview", color: "#2563EB" },
   { icon: <BookOpen size={20} />, title: "Crypto Regulation for Beginners", desc: "A plain-language introduction to what cryptocurrency regulation means in practice, without the legal jargon.", to: "/guides/crypto-regulation-explained-for-beginners", tag: "Beginner", color: "#0F9D58" },
@@ -50,19 +31,16 @@ const sections = [
 
 export const Route = createFileRoute("/guides/crypto-regulation-hub")({
   head: () => ({
-    meta: [
-      { title: TITLE }, { name: "description", content: DESC },
-      { property: "og:title", content: TITLE }, { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" }, { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Guides" },
-      { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/crypto-regulation-hub" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/crypto-regulation-hub', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Cryptocurrency Regulation Hub: Complete Guide | CryptoBeacon", description: "The definitive cryptocurrency regulation hub — how crypto regulation works globally, KYC and AML explained, stablecoin laws, exchange licensing, crypto taxes...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/crypto-regulation-hub", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Guides", item: "https://www.cryptobeacon.site/guides" },
+        { name: "Cryptocurrency Regulation Hub: Complete Guide | CryptoBeacon", item: "https://www.cryptobeacon.site/guides/crypto-regulation-hub" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -73,6 +51,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -92,6 +71,9 @@ function ArticlePage() {
           Regulation is the single biggest external force shaping crypto markets. This hub covers how it works, what it requires of exchanges and users, and what it means for long-term holders and investors.
         </p>
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <div className="my-xl p-lg rounded-xl border border-[#2563EB]/30 bg-[#2563EB]/5">
           <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">The landscape in one paragraph</h2>
@@ -124,7 +106,9 @@ function ArticlePage() {
             This hub is for informational and educational purposes only. Regulation evolves rapidly. Nothing here constitutes legal or financial advice. Consult a qualified professional for your specific jurisdiction and situation.
           </p>
         </div>
-      </main>
+                <RelatedArticles currentUrl={URL} />
+        </article>
+</main>
       <SiteFooter />
     </div>
   );

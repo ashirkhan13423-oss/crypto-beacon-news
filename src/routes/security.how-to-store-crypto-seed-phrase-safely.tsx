@@ -1,18 +1,26 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import seedVault from "@/assets/seed-phrase-vault.jpg";
-import seedMetalPaper from "@/assets/seed-metal-vs-paper.jpg";
-import seedPhishing from "@/assets/seed-phishing.jpg";
+import seedVault from "@/assets/seed-phrase-vault.webp";
+import seedMetalPaper from "@/assets/seed-metal-vs-paper.webp";
+import seedPhishing from "@/assets/seed-phishing.webp";
 import { Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/security/how-to-store-crypto-seed-phrase-safely";
 const TITLE = "How to Store a Crypto Seed Phrase Safely | CryptoBeacon";
 const DESC =
   "Learn how to store your crypto seed phrase safely, avoid the mistakes that cause permanent loss, and choose the right backup method for you.";
 const PUBLISHED = "2026-08-15";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "What is a seed phrase used for?",
@@ -36,95 +44,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: "How to Store Your Crypto Seed Phrase Safely",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${seedVault}`,
-  inLanguage: "en-US",
-  keywords:
-    "how to store a crypto seed phrase safely, seed phrase storage best practices, seed phrase mistakes to avoid, where to store your seed phrase, metal seed phrase storage, how to backup a crypto wallet, BIP39, self-custody, hardware wallet",
-  articleSection: "Security",
-  wordCount: 1800,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Security",
-      item: "https://www.cryptobeacon.site/security",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Store Your Seed Phrase Safely",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/security/how-to-store-crypto-seed-phrase-safely")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Security" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/security/how-to-store-crypto-seed-phrase-safely" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security/how-to-store-crypto-seed-phrase-safely', publishedTime: PUBLISHED, section: 'Security' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How to Store a Crypto Seed Phrase Safely | CryptoBeacon", description: "Learn how to store your crypto seed phrase safely, avoid the mistakes that cause permanent loss, and choose the right backup method for you.", imageUrl: `https://www.cryptobeacon.site${seedVault}`, datePublished: "2026-08-15", dateModified: "2026-08-15", url: "https://www.cryptobeacon.site/security/how-to-store-crypto-seed-phrase-safely", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Security", item: "https://www.cryptobeacon.site/security" },
+        { name: "How to Store a Crypto Seed Phrase Safely | CryptoBeacon", item: "https://www.cryptobeacon.site/security/how-to-store-crypto-seed-phrase-safely" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -152,6 +87,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         {/* Breadcrumb */}
         <nav
           aria-label="Breadcrumb"
@@ -184,7 +120,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>July 2, 2026</time>}
-          readTime="10 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -194,13 +130,13 @@ function ArticlePage() {
             width={1536}
             height={896}
             className="w-full h-auto"
-          />
+          loading="lazy" decoding="async" />
         </figure>
 
         <P>
           If you own cryptocurrency and hold it yourself rather than leaving it on an exchange, one
           piece of information matters more than anything else you'll ever write down: your{" "}
-          <strong>seed phrase</strong>. It's a short sequence of words, but it's also the single
+          <strong><Link to="/glossary#seed-phrase" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Seed Phrase">seed phrase</Link></strong>. It's a short sequence of words, but it's also the single
           point of failure for everything you own on-chain.
         </P>
         <P>
@@ -272,7 +208,7 @@ function ArticlePage() {
 
         <H2 id="what">1. What Is a Seed Phrase, Exactly?</H2>
         <P>
-          When you create a self-custody wallet, it generates a sequence of 12 or 24 words, chosen
+          When you create a self-custody <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link>, it generates a sequence of 12 or 24 words, chosen
           from a standardized list of 2,048 words defined by a technical standard called{" "}
           <a
             href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"
@@ -286,7 +222,7 @@ function ArticlePage() {
         </P>
         <P>
           That phrase is not just a password. It's the mathematical starting point your wallet uses
-          to generate every private key it will ever produce — for every address, on every account,
+          to generate every <Link to="/glossary#private-key" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Private Key">private key</Link> it will ever produce — for every address, on every account,
           for as long as you use that wallet. Enter the same 12 or 24 words into any compatible
           wallet software, on any device, anywhere in the world, and it will regenerate the exact
           same keys and give whoever holds it full control of the funds.
@@ -608,17 +544,7 @@ function ArticlePage() {
 
         <H2 id="faq">9. Frequently Asked Questions</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
-          {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="conclusion">Conclusion</H2>
@@ -669,57 +595,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice. Cryptocurrency self-custody carries risk,
-            including the risk of permanent loss of funds. Readers should conduct their own research
-            and exercise independent judgment before making decisions about how to store or manage
-            their digital assets.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/security/how-to-avoid-crypto-phishing-scams"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                How to Avoid Crypto Phishing Scams
-              </h3>
-            </Link>
-            <Link
-              to="/bitcoin/how-to-send-bitcoin-safely"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                How to Send Bitcoin Safely
-              </h3>
-            </Link>
-            <Link
-              to="/guides/not-your-keys-not-your-coins-meaning"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                "Not Your Keys, Not Your Coins" — What It Means
-              </h3>
-            </Link>
-            <Link
-              to="/guides/exchange-or-personal-wallet-crypto-storage"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Exchange or Personal Wallet?
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

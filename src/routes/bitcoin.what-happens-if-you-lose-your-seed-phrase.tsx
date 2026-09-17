@@ -1,14 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Plus, AlertTriangle } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/what-happens-if-you-lose-your-seed-phrase";
 const TITLE = "What Happens If You Lose Your Bitcoin Seed Phrase? | CryptoBeacon";
 const DESC = "Losing your Bitcoin seed phrase with no other backup means permanent, irrecoverable loss of access to your funds. Understand why, what limited options exist,...";
 const PUBLISHED = "2026-09-01";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "Is there any way to recover a lost seed phrase?",
@@ -28,75 +35,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "What Happens If You Lose Your Bitcoin Seed Phrase?",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords:
-    "lost bitcoin seed phrase, what happens if you lose seed phrase, bitcoin seed phrase recovery, forgot seed phrase, lost crypto wallet recovery",
-  articleSection: "Bitcoin",
-  wordCount: 800,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Bitcoin", item: "https://www.cryptobeacon.site/bitcoin" },
-    { "@type": "ListItem", position: 3, name: "What Happens If You Lose Your Seed Phrase?", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/bitcoin/what-happens-if-you-lose-your-seed-phrase")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Bitcoin" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/what-happens-if-you-lose-your-seed-phrase" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/bitcoin/what-happens-if-you-lose-your-seed-phrase', publishedTime: PUBLISHED, section: 'Bitcoin' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Happens If You Lose Your Bitcoin Seed Phrase? | CryptoBeacon", description: "Losing your Bitcoin seed phrase with no other backup means permanent, irrecoverable loss of access to your funds. Understand why, what limited options exist,...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/bitcoin/what-happens-if-you-lose-your-seed-phrase", section: "Bitcoin", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Bitcoin", item: "https://www.cryptobeacon.site/bitcoin" },
+        { name: "What Happens If You Lose Your Bitcoin Seed Phrase? | CryptoBeacon", item: "https://www.cryptobeacon.site/bitcoin/what-happens-if-you-lose-your-seed-phrase" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -118,6 +72,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -140,20 +95,23 @@ function ArticlePage() {
         </p>
 
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <div className="my-xl p-lg rounded-xl border border-red-500/40 bg-red-500/5 flex gap-md">
           <AlertTriangle className="text-red-400 shrink-0 mt-1" size={20} />
           <div>
-            <p className="font-body-lg text-body-lg text-primary font-semibold mb-xs">Still have your wallet device?</p>
+            <p className="font-body-lg text-body-lg text-primary font-semibold mb-xs">Still have your <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> device?</p>
             <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-              If your hardware wallet or phone is still functional and you know the PIN, your funds are still accessible. <strong>Act immediately</strong> — go to settings and retrieve your seed phrase now, then store it physically on paper or metal.
+              If your hardware wallet or phone is still functional and you know the PIN, your funds are still accessible. <strong>Act immediately</strong> — go to settings and retrieve your <Link to="/glossary#seed-phrase" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Seed Phrase">seed phrase</Link> now, then store it physically on paper or metal.
             </p>
           </div>
         </div>
 
         <H2 id="the-reality">The reality of seed phrase loss</H2>
         <P>
-          Bitcoin is designed to be permissionless and censorshipresistant. There is no company, no bank, and no government that holds your private keys on your behalf when you self-custody. This is the property that makes Bitcoin censorship-resistant — and it is also why losing your seed phrase has no remedy.
+          Bitcoin is designed to be permissionless and censorshipresistant. There is no company, no bank, and no government that holds your <Link to="/glossary#private-key" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Private Key">private keys</Link> on your behalf when you self-custody. This is the property that makes Bitcoin censorship-resistant — and it is also why losing your seed phrase has no remedy.
         </P>
         <P>
           When a bank customer forgets their password, the bank can verify identity and reset it. Bitcoin has no such mechanism. The seed phrase <em>is</em> the identity proof. Without it, the network has no way to distinguish you from a stranger — because it treats everyone the same.
@@ -211,41 +169,9 @@ function ArticlePage() {
         </P>
 
         {/* FAQ */}
-        <section className="mt-xxl" aria-label="Frequently asked questions">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Frequently Asked Questions</h2>
-          <div className="space-y-md">
-            {faqs.map((f, i) => (
-              <details key={i} className="group border border-outline-variant rounded-lg overflow-hidden">
-                <summary className="flex items-center justify-between p-lg cursor-pointer list-none">
-                  <span className="font-body-lg text-body-lg text-primary font-semibold pr-md">{f.q}</span>
-                  <Plus size={18} className="text-secondary shrink-0 group-open:rotate-45 transition-transform" />
-                </summary>
-                <div className="px-lg pb-lg">
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/bitcoin/what-is-a-bitcoin-seed-phrase" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">What Is a Bitcoin Seed Phrase?</h3>
-            </Link>
-            <Link to="/security/how-to-store-crypto-seed-phrase-safely" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">How to Store a Seed Phrase Safely</h3>
-            </Link>
-            <Link to="/bitcoin/bitcoin-wallets-complete-guide" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Bitcoin Wallets: Complete Guide</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

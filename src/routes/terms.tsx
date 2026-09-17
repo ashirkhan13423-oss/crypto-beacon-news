@@ -1,28 +1,14 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { RefreshCw, AlertTriangle, Ban, Gavel, Scissors, Scale } from "lucide-react";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
-    meta: [
-      { title: "Terms of Service — CryptoBeacon" },
-      {
-        name: "description",
-        content:
-          "The terms and conditions governing your use of CryptoBeacon, including intellectual property, disclaimers, and limitation of liability.",
-      },
-      { property: "og:title", content: "Terms of Service — CryptoBeacon" },
-      {
-        property: "og:description",
-        content:
-          "The terms and conditions governing your use of CryptoBeacon, including intellectual property, disclaimers, and limitation of liability.",
-      },
-      { property: "og:url", content: "https://www.cryptobeacon.site/terms" },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/terms" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/terms", type: 'website', path: '/terms' }),
+    
+    
   }),
   component: TermsPage,
 });
@@ -61,8 +47,8 @@ function TermsPage() {
               2. Description of Service
             </h2>
             <p>
-              CryptoBeacon publishes educational content about cryptocurrency, digital wallets,
-              blockchain technology, and related security practices. Content is provided for general
+              CryptoBeacon publishes educational content about cryptocurrency, digital <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallets</Link>,
+              <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> technology, and related security practices. Content is provided for general
               informational and educational purposes only.
             </p>
           </section>

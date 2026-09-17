@@ -1,15 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/security-smart-contract-approvals.jpg";
+import hero from "@/assets/security-smart-contract-approvals.webp";
 import { Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/security/how-to-revoke-smart-contract-approvals";
 const TITLE = "How to Revoke Smart Contract Approvals | CryptoBeacon";
 const DESC = "A comprehensive guide on what smart contract approvals (token allowances) are, why they can be dangerous, and how to revoke them to secure your crypto portfo...";
 const PUBLISHED = "2026-08-20";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "Does revoking an approval cost gas?",
@@ -25,95 +33,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "How to Revoke Smart Contract Approvals and Protect Your Crypto",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "revoke smart contract approvals, token allowances, revoke.cash, crypto security, defi security, smart contract risk, infinite approval, metamask approvals",
-  articleSection: "Security",
-  wordCount: 1350,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Security",
-      item: "https://www.cryptobeacon.site/security",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "How to Revoke Smart Contract Approvals",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/security/how-to-revoke-smart-contract-approvals")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Security" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/security/how-to-revoke-smart-contract-approvals" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security/how-to-revoke-smart-contract-approvals', publishedTime: PUBLISHED, section: 'Security' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How to Revoke Smart Contract Approvals | CryptoBeacon", description: "A comprehensive guide on what smart contract approvals (token allowances) are, why they can be dangerous, and how to revoke them to secure your crypto portfo...", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-20", dateModified: "2026-08-20", url: "https://www.cryptobeacon.site/security/how-to-revoke-smart-contract-approvals", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Security", item: "https://www.cryptobeacon.site/security" },
+        { name: "How to Revoke Smart Contract Approvals | CryptoBeacon", item: "https://www.cryptobeacon.site/security/how-to-revoke-smart-contract-approvals" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -141,6 +76,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -171,6 +107,9 @@ function ArticlePage() {
         </h1>
 
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -183,10 +122,10 @@ function ArticlePage() {
         </figure>
 
         <P>
-          In the world of decentralized finance (DeFi), smart contracts are the engines that power decentralized exchanges, lending platforms, and NFT marketplaces. But to interact with these protocols, you must grant them permission to move your tokens. This permission is known as a <strong>token approval</strong> or <strong>allowance</strong>. 
+          In the world of decentralized finance (<Link to="/glossary#defi" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: DeFi">DeFi</Link>), <Link to="/glossary#smart-contract" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Smart Contract">smart contracts</Link> are the engines that power decentralized exchanges, lending platforms, and NFT marketplaces. But to interact with these protocols, you must grant them permission to move your tokens. This permission is known as a <strong>token approval</strong> or <strong>allowance</strong>. 
         </P>
         <P>
-          While necessary for DeFi to function, these approvals are often a prime attack vector for hackers. If a smart contract you've previously approved is exploited, or if you accidentally sign an approval for a malicious contract, attackers can drain your wallet of those specific tokens without any further input from you. This comprehensive guide will explain exactly how token approvals work, why they are dangerous, and step-by-step instructions on how to revoke them.
+          While necessary for DeFi to function, these approvals are often a prime attack vector for hackers. If a smart contract you've previously approved is exploited, or if you accidentally sign an approval for a malicious contract, attackers can drain your <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> of those specific tokens without any further input from you. This comprehensive guide will explain exactly how token approvals work, why they are dangerous, and step-by-step instructions on how to revoke them.
         </P>
         <P>
           <em>This article is educational. It isn't financial advice.</em>
@@ -197,10 +136,10 @@ function ArticlePage() {
           When you want to swap a token on a decentralized exchange (like Uniswap) or lend an asset on a protocol (like Aave), the smart contract running that service needs the ability to take the tokens out of your wallet to process the trade or loan. 
         </P>
         <P>
-          Because of the security design of the ERC-20 token standard (and similar standards on other blockchains), smart contracts cannot unilaterally pull tokens from your wallet. You must first send a specific transaction that says, "I authorize this specific smart contract address to move up to X amount of my token."
+          Because of the security design of the ERC-20 token standard (and similar standards on other <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchains</Link>), smart contracts cannot unilaterally pull tokens from your wallet. You must first send a specific transaction that says, "I authorize this specific smart contract address to move up to X amount of my token."
         </P>
         <P>
-          To save users from having to pay gas fees for an approval transaction every single time they want to make a trade, many decentralized applications (dApps) default to asking for an <strong>infinite approval</strong>. This means you authorize the contract to move a practically limitless amount of that token on your behalf, forever, until you explicitly revoke it.
+          To save users from having to pay <Link to="/glossary#gas-fees" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Gas Fees">gas fees</Link> for an approval transaction every single time they want to make a trade, many decentralized applications (dApps) default to asking for an <strong>infinite approval</strong>. This means you authorize the contract to move a practically limitless amount of that token on your behalf, forever, until you explicitly revoke it.
         </P>
 
         <H2 id="the-danger-of-infinite-approvals">The Danger of Infinite Approvals</H2>
@@ -256,17 +195,7 @@ function ArticlePage() {
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
-          {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="sources">Sources</H2>
@@ -317,45 +246,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/security/hardware-wallet-mistakes-to-avoid"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Hardware Wallet Mistakes to Avoid
-              </h3>
-            </Link>
-            <Link
-              to="/guides/hot-wallets-vs-cold-wallets-explained"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Hot Wallets vs Cold Wallets Explained
-              </h3>
-            </Link>
-            <Link
-              to="/guides/not-your-keys-not-your-coins-meaning"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Not Your Keys, Not Your Coins
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

@@ -1,50 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Shield, Key, Smartphone, HardDrive, BookOpen, AlertTriangle, Lock, Wallet } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/bitcoin-wallets-complete-guide";
 const TITLE = "Bitcoin Wallets: Complete Beginner's Guide | CryptoBeacon";
 const DESC = "Everything you need to know about Bitcoin wallets — how they work, types of wallets, seed phrases, private keys, security, and common scams. The definitive s...";
 const PUBLISHED = "2026-09-01";
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Bitcoin Wallets: Complete Beginner's Guide",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords:
-    "bitcoin wallet guide, bitcoin self-custody, bitcoin seed phrase, hot wallet cold wallet, custodial non-custodial wallet, bitcoin private key, hardware wallet bitcoin",
-  articleSection: "Bitcoin",
-  isAccessibleForFree: true,
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Bitcoin", item: "https://www.cryptobeacon.site/bitcoin" },
-    { "@type": "ListItem", position: 3, name: "Bitcoin Wallets: Complete Guide", item: URL },
-  ],
-};
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const sections = [
   {
     icon: <BookOpen size={20} />,
@@ -138,25 +109,16 @@ const sections = [
 
 export const Route = createFileRoute("/bitcoin/bitcoin-wallets-complete-guide")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Bitcoin" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/bitcoin-wallets-complete-guide" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/bitcoin/bitcoin-wallets-complete-guide', publishedTime: PUBLISHED, section: 'Bitcoin' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Bitcoin Wallets: Complete Beginner's Guide | CryptoBeacon", description: "Everything you need to know about Bitcoin wallets — how they work, types of wallets, seed phrases, private keys, security, and common scams. The definitive s...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/bitcoin/bitcoin-wallets-complete-guide", section: "Bitcoin", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Bitcoin", item: "https://www.cryptobeacon.site/bitcoin" },
+        { name: "Bitcoin Wallets: Complete Beginner's Guide | CryptoBeacon", item: "https://www.cryptobeacon.site/bitcoin/bitcoin-wallets-complete-guide" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -167,6 +129,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
@@ -187,16 +150,19 @@ function ArticlePage() {
         </h1>
 
         <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-xl max-w-3xl">
-          Understanding Bitcoin wallets is the single most important skill in crypto. Without it, you're either trusting someone else with your money or risking losing it permanently. This hub covers everything — from what a wallet actually is, to how seed phrases work, to the scams targeting beginners.
+          Understanding Bitcoin <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallets</Link> is the single most important skill in crypto. Without it, you're either trusting someone else with your money or risking losing it permanently. This hub covers everything — from what a wallet actually is, to how <Link to="/glossary#seed-phrase" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Seed Phrase">seed phrases</Link> work, to the scams targeting beginners.
         </p>
 
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         {/* Intro callout */}
         <div className="my-xl p-lg rounded-xl border border-[#F7931A]/30 bg-[#F7931A]/5">
           <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">The most important concept in crypto</h2>
           <p className="font-body-md text-body-md text-on-surface leading-relaxed">
-            A Bitcoin wallet does <strong>not</strong> store Bitcoin. Bitcoin itself lives on the blockchain. What a wallet stores are the <strong>private keys</strong> — the cryptographic proof that you own specific UTXOs (unspent transaction outputs) on the network. If someone else holds your keys, they hold your Bitcoin. This is why the phrase "not your keys, not your coins" exists.
+            A Bitcoin wallet does <strong>not</strong> store Bitcoin. Bitcoin itself lives on the <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link>. What a wallet stores are the <strong><Link to="/glossary#private-key" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Private Key">private keys</Link></strong> — the cryptographic proof that you own specific UTXOs (unspent transaction outputs) on the network. If someone else holds your keys, they hold your Bitcoin. This is why the phrase "not your keys, not your coins" exists.
           </p>
         </div>
 
@@ -250,7 +216,9 @@ function ArticlePage() {
             This guide is for informational and educational purposes only. It does not constitute financial or investment advice. Always research wallet products independently before storing significant value.
           </p>
         </div>
-      </main>
+                <RelatedArticles currentUrl={URL} />
+        </article>
+</main>
       <SiteFooter />
     </div>
   );

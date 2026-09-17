@@ -1,14 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Plus } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/how-bitcoin-wallets-work";
 const TITLE = "How Bitcoin Wallets Work: Private Keys, Addresses & Signing | CryptoBeacon";
 const DESC = "A plain-language technical guide to how Bitcoin wallets actually work — private keys, public keys, wallet addresses, HD wallets, and transaction signing expl...";
 const PUBLISHED = "2026-09-01";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "What is a Bitcoin private key?",
@@ -28,75 +35,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "How Bitcoin Wallets Work: Private Keys, Addresses & Transaction Signing",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords:
-    "how bitcoin wallets work, bitcoin private key explained, bitcoin public key address, HD wallet BIP39, bitcoin transaction signing, secp256k1 elliptic curve",
-  articleSection: "Bitcoin",
-  wordCount: 950,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Bitcoin", item: "https://www.cryptobeacon.site/bitcoin" },
-    { "@type": "ListItem", position: 3, name: "How Bitcoin Wallets Work", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/bitcoin/how-bitcoin-wallets-work")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Bitcoin" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/how-bitcoin-wallets-work" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/bitcoin/how-bitcoin-wallets-work', publishedTime: PUBLISHED, section: 'Bitcoin' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How Bitcoin Wallets Work: Private Keys, Addresses & Signing | CryptoBeacon", description: "A plain-language technical guide to how Bitcoin wallets actually work — private keys, public keys, wallet addresses, HD wallets, and transaction signing expl...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/bitcoin/how-bitcoin-wallets-work", section: "Bitcoin", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Bitcoin", item: "https://www.cryptobeacon.site/bitcoin" },
+        { name: "How Bitcoin Wallets Work: Private Keys, Addresses & Signing | CryptoBeacon", item: "https://www.cryptobeacon.site/bitcoin/how-bitcoin-wallets-work" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -118,6 +72,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -136,14 +91,17 @@ function ArticlePage() {
           How Bitcoin Wallets Work
         </h1>
         <p className="font-body-lg text-body-lg text-on-surface-variant mb-xl">
-          Private keys, public keys, addresses, HD wallets, and transaction signing — explained from first principles.
+          <Link to="/glossary#private-key" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Private Key">Private keys</Link>, public keys, addresses, HD <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallets</Link>, and transaction signing — explained from first principles.
         </p>
 
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <H2 id="not-storing-bitcoin">Wallets don't store Bitcoin</H2>
         <P>
-          The name "wallet" is misleading. A Bitcoin wallet doesn't hold Bitcoin the way a physical wallet holds cash. Bitcoin itself exists only as entries in the blockchain — a global ledger maintained by tens of thousands of nodes. What a wallet actually stores is a <strong>private key</strong>: a secret number that proves you have the right to spend specific Bitcoin.
+          The name "wallet" is misleading. A Bitcoin wallet doesn't hold Bitcoin the way a physical wallet holds cash. Bitcoin itself exists only as entries in the <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> — a global ledger maintained by tens of thousands of <Link to="/glossary#node" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Node">nodes</Link>. What a wallet actually stores is a <strong>private key</strong>: a secret number that proves you have the right to spend specific Bitcoin.
         </P>
         <P>
           Think of it this way: the Bitcoin belongs to whoever can sign for it. The private key is your signature authority. The wallet is the software or hardware that manages and protects that key.
@@ -192,7 +150,7 @@ function ArticlePage() {
 
         <H2 id="hd-wallets">HD wallets and seed phrases</H2>
         <P>
-          Early wallets generated a single private key. If you lost it, you lost everything. Modern wallets use a <strong>Hierarchical Deterministic (HD)</strong> structure, defined by the BIP-32 and BIP-44 standards. An HD wallet generates a master seed — your <strong>seed phrase</strong> — and uses it to derive a virtually unlimited tree of private/public key pairs.
+          Early wallets generated a single private key. If you lost it, you lost everything. Modern wallets use a <strong>Hierarchical Deterministic (HD)</strong> structure, defined by the BIP-32 and BIP-44 standards. An HD wallet generates a master seed — your <strong><Link to="/glossary#seed-phrase" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Seed Phrase">seed phrase</Link></strong> — and uses it to derive a virtually unlimited tree of private/public key pairs.
         </P>
         <P>
           This means your seed phrase is the root of your entire wallet. One 12-word or 24-word backup phrase can restore every address and key the wallet has ever generated, on any compatible wallet software. It also means that if someone finds your seed phrase, they have access to all of it.
@@ -205,41 +163,9 @@ function ArticlePage() {
         </P>
 
         {/* FAQ */}
-        <section className="mt-xxl" aria-label="Frequently asked questions">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Frequently Asked Questions</h2>
-          <div className="space-y-md">
-            {faqs.map((f, i) => (
-              <details key={i} className="group border border-outline-variant rounded-lg overflow-hidden">
-                <summary className="flex items-center justify-between p-lg cursor-pointer list-none">
-                  <span className="font-body-lg text-body-lg text-primary font-semibold pr-md">{f.q}</span>
-                  <Plus size={18} className="text-secondary shrink-0 group-open:rotate-45 transition-transform" />
-                </summary>
-                <div className="px-lg pb-lg">
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/bitcoin/bitcoin-wallets-complete-guide" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Bitcoin Wallets: Complete Guide</h3>
-            </Link>
-            <Link to="/bitcoin/what-is-a-bitcoin-seed-phrase" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">What Is a Bitcoin Seed Phrase?</h3>
-            </Link>
-            <Link to="/guides/what-is-a-private-key" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Bitcoin Private Keys Explained</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

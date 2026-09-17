@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/news-bitcoin-etf-fed-stress-test.jpg";
+import hero from "@/assets/news-bitcoin-etf-fed-stress-test.webp";
 
 const URL =
   "https://www.cryptobeacon.site/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally";
@@ -35,107 +36,17 @@ const faqs = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline:
-    "Bitcoin ETF Outflows and Hawkish Fed Speech: Is the Crypto Rally Losing Momentum?",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    url: "https://www.cryptobeacon.site",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "Bitcoin ETF outflows, Bitcoin price August 30 2026, Federal Reserve Jackson Hole Bitcoin, Kevin Warsh crypto speech, Ethereum ETF inflows, Bitcoin institutional demand, crypto market risk-off, Bitcoin rally correction, Bitcoin versus Ethereum ETFs, institutional crypto rotation",
-  articleSection: "News",
-  wordCount: 1450,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "News",
-      item: "https://www.cryptobeacon.site/news",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Bitcoin ETF Outflows and Fed Speech",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute(
   "/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally"
 )({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      {
-        property: "og:image",
-        content: "https://www.cryptobeacon.site/og-image.png",
-      },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "News" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      {
-        name: "twitter:image",
-        content: "https://www.cryptobeacon.site/og-image.png",
-      },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally" }],
-    scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(breadcrumbSchema),
-      },
-    ],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/news/bitcoin-etf-outflows-hawkish-fed-speech-crypto-rally', publishedTime: PUBLISHED, section: 'News' }),
+    
+    
+    scripts: [],
   }),
   component: ArticlePage,
 });
@@ -164,6 +75,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -198,7 +110,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 30, 2026</time>}
-          readTime="7 min read"
+          
         />
 
         <p className="italic text-on-surface-variant mb-lg font-body-sm mt-md">
@@ -389,7 +301,7 @@ function ArticlePage() {
         <P>
           This relationship is real, but it is not deterministic. Bitcoin has
           previously rallied during periods of high interest rates when other
-          drivers — institutional adoption, regulatory clarity, halving-cycle
+          drivers — institutional adoption, regulatory clarity, <Link to="/glossary#halving" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Halving">halving</Link>-cycle
           dynamics, or ETF flow momentum — were sufficiently strong to outweigh
           the macro headwind. The bond-yield relationship matters more as a
           marginal influence than as a binary switch.
@@ -630,7 +542,8 @@ function ArticlePage() {
             </Link>
           </div>
         </section>
-      </main>
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

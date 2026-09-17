@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { useEffect, useState } from "react";
@@ -9,16 +10,9 @@ export const Route = createFileRoute("/search")({
     q: typeof search.q === "string" ? search.q : "",
   }),
   head: () => ({
-    meta: [
-      { title: "Search — CryptoBeacon" },
-      {
-        name: "description",
-        content:
-          "Search CryptoBeacon's articles and guides on Bitcoin, Ethereum, wallets, self-custody, and crypto security.",
-      },
-      { property: "og:url", content: "https://www.cryptobeacon.site/search" },
-    ],
-    links: [{ rel: "canonical", href: "https://www.cryptobeacon.site/search" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/search", type: 'website', path: '/search' }),
+    
+    
   }),
   component: SearchPage,
 });
@@ -155,6 +149,7 @@ function SearchPage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-max_width mx-auto px-gutter py-xl">
+        <article>
         <header className="mb-xl border-b border-outline-variant pb-lg">
           <div className="flex items-center space-x-md mb-md">
             <div className="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant">
@@ -224,7 +219,8 @@ function SearchPage() {
         )}
 
 
-      </main>
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

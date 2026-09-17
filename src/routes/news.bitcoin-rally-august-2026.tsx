@@ -1,90 +1,34 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/news-bitcoin-rally.jpg";
+import hero from "@/assets/news-bitcoin-rally.webp";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/news/bitcoin-rally-august-2026";
 const TITLE = "Bitcoin Rallies Toward $77K: What's Driving It (Aug 2026) | CryptoBeacon";
 const DESC =
   "Bitcoin climbed sharply the week of August 18–21, 2026. Here's a factual, dated look at what happened and why — no predictions.";
 const PUBLISHED = "2026-08-21";
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: "Bitcoin Rallies Toward $77,000 — What's Driving the Move",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    url: "https://www.cryptobeacon.site",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "bitcoin price rally august 2026, why is bitcoin price up this week, bitcoin clarity act price, bitcoin short squeeze august 2026",
-  articleSection: "News",
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "News",
-      item: "https://www.cryptobeacon.site/news",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Bitcoin Rallies Toward $77,000 (Aug 2026)",
-      item: URL,
-    },
-  ],
-};
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 export const Route = createFileRoute("/news/bitcoin-rally-august-2026")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "News" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/news/bitcoin-rally-august-2026" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/news/bitcoin-rally-august-2026', publishedTime: PUBLISHED, section: 'News' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Bitcoin Rallies Toward $77K: What's Driving It (Aug 2026) | CryptoBeacon", description: "Bitcoin climbed sharply the week of August 18–21, 2026. Here's a factual, dated look at what happened and why — no predictions.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-21", dateModified: "2026-08-21", url: "https://www.cryptobeacon.site/news/bitcoin-rally-august-2026", section: "News", isNews: true })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "News", item: "https://www.cryptobeacon.site/news" },
+        { name: "Bitcoin Rallies Toward $77K: What's Driving It (Aug 2026) | CryptoBeacon", item: "https://www.cryptobeacon.site/news/bitcoin-rally-august-2026" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -112,6 +56,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -141,7 +86,7 @@ function ArticlePage() {
           Bitcoin Rallies Toward $77,000 — What's Driving the Move
         </h1>
 
-        <Author publishedDate={<time dateTime={PUBLISHED}>August 21, 2026</time>} readTime="5 min read" />
+        <Author publishedDate={<time dateTime={PUBLISHED}>August 21, 2026</time>}  />
 
         <p className="italic text-on-surface-variant mb-lg font-body-sm mt-md">
           Market conditions as of August 21, 2026. This is a dated market snapshot.
@@ -241,39 +186,9 @@ function ArticlePage() {
           </p>
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/guides/why-bitcoin-price-moves-more-than-stocks"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Why Bitcoin's Price Moves More Than Stocks
-              </h3>
-            </Link>
-            <Link
-              to="/bitcoin/what-is-the-bitcoin-halving"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What Is the Bitcoin Halving?
-              </h3>
-            </Link>
-            <Link
-              to="/guides/why-governments-regulate-cryptocurrency"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Why Governments Regulate Cryptocurrency
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

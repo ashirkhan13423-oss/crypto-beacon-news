@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Breadcrumbs, breadcrumbSchemaFromItems } from "@/components/Breadcrumbs";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const URL = "https://www.cryptobeacon.site/glossary";
 const TITLE = "Crypto Glossary — A-Z Cryptocurrency Terms | CryptoBeacon";
@@ -30,22 +30,15 @@ const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 export const Route = createFileRoute("/glossary/")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:url", content: URL },
-      { property: "article:published_time", content: "2026-08-06" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/glossary" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/glossary/index', publishedTime: undefined, section: 'Glossary' }),
+    
+    
     scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(breadcrumbSchemaFromItems([{ label: "Glossary" }])),
-      },
-    ],
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Glossary", item: "https://www.cryptobeacon.site/glossary" }
+      ])) }
+    ]
   }),
   component: GlossaryHub,
 });
@@ -101,8 +94,8 @@ function GlossaryHub() {
                   {g.letter}
                 </h2>
                 <div className="space-y-md">
-                  {g.terms.map((t) => (
-                    <div key={t.term} className="p-md rounded-lg border border-outline-variant bg-surface-container-low">
+                  {g.terms.map((t) => { const termId = t.term.toLowerCase().replace(/[^a-z0-9]+/g, "-"); return (
+                    <div key={t.term} id={termId} className="p-md rounded-lg border border-outline-variant bg-surface-container-low scroll-mt-28">
                       <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">
                         {t.term}
                       </h3>
@@ -113,7 +106,7 @@ function GlossaryHub() {
                         Read Full Guide →
                       </Link>
                     </div>
-                  ))}
+                  )})}
                 </div>
               </section>
             ))}

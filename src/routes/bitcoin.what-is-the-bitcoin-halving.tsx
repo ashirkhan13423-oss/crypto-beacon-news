@@ -1,16 +1,24 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/bitcoin-halving.jpg";
+import hero from "@/assets/bitcoin-halving.webp";
 import { Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/what-is-the-bitcoin-halving";
 const TITLE = "What is the Bitcoin Halving? The Supply Schedule Explained | CryptoBeacon";
 const DESC =
   "A clear, financial breakdown of Bitcoin's hard-capped supply, how the block subsidy halves every four years, and its historical market implications.";
 const PUBLISHED = "2026-08-20";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "When is the next Bitcoin halving?",
@@ -26,95 +34,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "What is the Bitcoin Halving? The Supply Schedule Explained",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "bitcoin halving, bitcoin supply schedule, 21 million bitcoin, block subsidy, bitcoin miners reward, btc halving, crypto economics",
-  articleSection: "Bitcoin",
-  wordCount: 1400,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Bitcoin",
-      item: "https://www.cryptobeacon.site/bitcoin",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "What is the Bitcoin Halving?",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/bitcoin/what-is-the-bitcoin-halving")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Bitcoin" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/bitcoin/what-is-the-bitcoin-halving" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/bitcoin/what-is-the-bitcoin-halving', publishedTime: PUBLISHED, section: 'Bitcoin' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What is the Bitcoin Halving? The Supply Schedule Explained | CryptoBeacon", description: "A clear, financial breakdown of Bitcoin's hard-capped supply, how the block subsidy halves every four years, and its historical market implications.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-20", dateModified: "2026-08-20", url: "https://www.cryptobeacon.site/bitcoin/what-is-the-bitcoin-halving", section: "Bitcoin", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Bitcoin", item: "https://www.cryptobeacon.site/bitcoin" },
+        { name: "What is the Bitcoin Halving? The Supply Schedule Explained | CryptoBeacon", item: "https://www.cryptobeacon.site/bitcoin/what-is-the-bitcoin-halving" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -142,6 +77,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -173,7 +109,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 20, 2026</time>}
-          readTime="7 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -190,7 +126,7 @@ function ArticlePage() {
           In traditional finance, central banks manage fiat currency by printing or destroying money at their discretion. This flexible monetary policy is designed to manage inflation and economic growth, but it often results in the slow, persistent devaluation of the currency over time. Bitcoin, on the other hand, operates on a fundamentally different, mathematically predictable model.
         </P>
         <P>
-          At the core of Bitcoin's monetary policy is the <strong>halving</strong> (sometimes called the "halvening"). It is an automated, unalterable event hardcoded into the Bitcoin protocol that cuts the supply of newly issued Bitcoins in half every four years. 
+          At the core of Bitcoin's monetary policy is the <strong><Link to="/glossary#halving" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Halving">halving</Link></strong> (sometimes called the "halvening"). It is an automated, unalterable event hardcoded into the Bitcoin protocol that cuts the supply of newly issued Bitcoins in half every four years. 
         </P>
         <P>
           <em>This article is educational. It isn't financial advice.</em>
@@ -198,7 +134,7 @@ function ArticlePage() {
 
         <H2 id="how-new-bitcoin-is-created">How New Bitcoin is Created</H2>
         <P>
-          To understand the halving, you first have to understand how new Bitcoins enter circulation. The Bitcoin network is secured by "miners"—computers that dedicate enormous processing power to validate transaction blocks and add them to the blockchain.
+          To understand the halving, you first have to understand how new Bitcoins enter circulation. The Bitcoin network is secured by "miners"—computers that dedicate enormous processing power to validate transaction blocks and add them to the <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link>.
         </P>
         <P>
           In exchange for doing this work and securing the network, the protocol awards the winning miner a specific amount of newly created Bitcoin. This is called the <strong>block subsidy</strong> (or block reward). A new block is mined approximately every 10 minutes.
@@ -232,7 +168,7 @@ function ArticlePage() {
         
         <h3 className="font-headline-sm text-headline-sm text-primary mt-lg mb-sm">Predictable Inflation</h3>
         <P>
-          Because of the halving schedule, Bitcoin's inflation rate is entirely transparent and constantly decreasing. After the 2024 halving, Bitcoin's annual inflation rate dropped to less than 1%, making it "harder" money than gold (which typically sees a 1.5% to 2% supply increase per year due to mining). 
+          Because of the halving schedule, Bitcoin's inflation rate is entirely transparent and constantly decreasing. After the 2024 halving, Bitcoin's annual inflation rate dropped to less than 1%, making it "harder" money than gold (which typically sees a 1.5% to 2% supply increase per year due to <Link to="/glossary#mining" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Mining">mining</Link>). 
         </P>
         
         <h3 className="font-headline-sm text-headline-sm text-primary mt-lg mb-sm">The Supply Shock</h3>
@@ -257,17 +193,7 @@ function ArticlePage() {
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
-          {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="sources">Sources</H2>
@@ -308,45 +234,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice. Past performance is not indicative of future results.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/bitcoin/what-is-bitcoin-mining"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What Is Bitcoin Mining?
-              </h3>
-            </Link>
-            <Link
-              to="/bitcoin/what-is-a-bitcoin-wallet"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What Is a Bitcoin Wallet?
-              </h3>
-            </Link>
-            <Link
-              to="/bitcoin/how-to-send-bitcoin-safely"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                How to Send Bitcoin Safely
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

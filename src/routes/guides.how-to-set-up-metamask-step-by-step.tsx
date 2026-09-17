@@ -1,15 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/metamask-setup-guide.jpg";
+import hero from "@/assets/metamask-setup-guide.webp";
 import { CheckCircle, AlertTriangle, Info, ShieldCheck } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/guides/how-to-set-up-metamask-step-by-step";
 const TITLE = "How to Set Up MetaMask: Step-by-Step Walkthrough (2026) | CryptoBeacon";
 const DESC = "A first-hand walkthrough of setting up MetaMask from scratch — installing the extension, securing your seed phrase, adding a network, and making your first t...";
 const PUBLISHED = "2026-08-25";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
@@ -38,66 +45,20 @@ const howToSchema = {
   },
 };
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "How to Set Up MetaMask: Step-by-Step Walkthrough (2026)",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site/assets/metamask-setup-guide.jpg`,
-  inLanguage: "en-US",
-  keywords:
-    "how to set up metamask, metamask setup guide 2026, metamask seed phrase, metamask install chrome, add network metamask",
-  articleSection: "Guides",
-  isAccessibleForFree: true,
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Guides", item: "https://www.cryptobeacon.site/guides" },
-    { "@type": "ListItem", position: 3, name: "How to Set Up MetaMask", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/guides/how-to-set-up-metamask-step-by-step")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Guides" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/how-to-set-up-metamask-step-by-step" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/how-to-set-up-metamask-step-by-step', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(howToSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How to Set Up MetaMask: Step-by-Step Walkthrough (2026) | CryptoBeacon", description: "A first-hand walkthrough of setting up MetaMask from scratch — installing the extension, securing your seed phrase, adding a network, and making your first t...", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-25", dateModified: "2026-08-25", url: "https://www.cryptobeacon.site/guides/how-to-set-up-metamask-step-by-step", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Guides", item: "https://www.cryptobeacon.site/guides" },
+        { name: "How to Set Up MetaMask: Step-by-Step Walkthrough (2026) | CryptoBeacon", item: "https://www.cryptobeacon.site/guides/how-to-set-up-metamask-step-by-step" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -162,6 +123,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
@@ -181,7 +143,7 @@ function ArticlePage() {
           How to Set Up MetaMask: A Step-by-Step Walkthrough
         </h1>
 
-        <Author publishedDate={<time dateTime={PUBLISHED}>August 25, 2026</time>} readTime="10 min read" />
+        <Author publishedDate={<time dateTime={PUBLISHED}>August 25, 2026</time>}  />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
           <img
@@ -195,10 +157,10 @@ function ArticlePage() {
         </figure>
 
         <P>
-          I've walked dozens of people through their first MetaMask setup in person, and the same three mistakes come up every single time: installing from an unofficial source, writing the seed phrase into Notes on their phone, and setting a password they also use for email. This walkthrough is built around those real failure points — not a generic rehash of MetaMask's own docs.
+          I've walked dozens of people through their first MetaMask setup in person, and the same three mistakes come up every single time: installing from an unofficial source, writing the <Link to="/glossary#seed-phrase" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Seed Phrase">seed phrase</Link> into Notes on their phone, and setting a password they also use for email. This walkthrough is built around those real failure points — not a generic rehash of MetaMask's own docs.
         </P>
         <P>
-          MetaMask is a browser extension and mobile app that acts as a self-custody wallet for Ethereum and any EVM-compatible chain (Polygon, Arbitrum, Base, etc.). When you set it up correctly, you control the private key — no company can freeze or take your funds.
+          MetaMask is a browser extension and mobile app that acts as a self-custody <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> for Ethereum and any EVM-compatible chain (Polygon, Arbitrum, Base, etc.). When you set it up correctly, you control the <Link to="/glossary#private-key" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Private Key">private key</Link> — no company can freeze or take your funds.
         </P>
         <P><em>This article is educational and not financial advice.</em></P>
 
@@ -312,24 +274,9 @@ function ArticlePage() {
           </p>
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/guides/what-is-a-crypto-wallet-address" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">What Is a Crypto Wallet Address?</h3>
-            </Link>
-            <Link to="/guides/hot-wallets-vs-cold-wallets-explained" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Hot Wallets vs Cold Wallets Explained</h3>
-            </Link>
-            <Link to="/security/how-to-avoid-crypto-phishing-scams" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">How to Avoid Crypto Phishing Scams</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

@@ -1,94 +1,36 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/hardware-wallet-comparison.jpg";
+import hero from "@/assets/hardware-wallet-comparison.webp";
 import { Check, X, ShieldAlert } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/guides/hardware-wallet-comparison-guide";
 const TITLE = "Hardware Wallet Comparison Guide: Ledger, Trezor & More | CryptoBeacon";
 const DESC =
   "A comprehensive comparison of the top cryptocurrency hardware wallets on the market, helping you choose the right device for self-custody and maximum security.";
 const PUBLISHED = "2026-08-20";
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: TITLE,
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "hardware wallet comparison, ledger vs trezor, best cold wallets 2026, cryptocurrency secure storage, self custody devices",
-  articleSection: "Guides",
-  wordCount: 1550,
-  isAccessibleForFree: true,
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Guides",
-      item: "https://www.cryptobeacon.site/guides",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Hardware Wallet Comparison",
-      item: URL,
-    },
-  ],
-};
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 export const Route = createFileRoute("/guides/hardware-wallet-comparison-guide")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Guides" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/hardware-wallet-comparison-guide" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/hardware-wallet-comparison-guide', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Hardware Wallet Comparison Guide: Ledger, Trezor & More | CryptoBeacon", description: "A comprehensive comparison of the top cryptocurrency hardware wallets on the market, helping you choose the right device for self-custody and maximum security.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-20", dateModified: "2026-08-20", url: "https://www.cryptobeacon.site/guides/hardware-wallet-comparison-guide", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Guides", item: "https://www.cryptobeacon.site/guides" },
+        { name: "Hardware Wallet Comparison Guide: Ledger, Trezor & More | CryptoBeacon", item: "https://www.cryptobeacon.site/guides/hardware-wallet-comparison-guide" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -170,6 +112,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -201,7 +144,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 20, 2026</time>}
-          readTime="9 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -216,18 +159,18 @@ function ArticlePage() {
 
         <P>
           If you plan to hold a significant amount of cryptocurrency for the long term, moving your
-          funds off exchanges and into a hardware wallet is the single most important security upgrade
+          funds off exchanges and into a hardware <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> is the single most important security upgrade
           you can make. But with so many options on the market, choosing the right device can be
           paralyzing.
         </P>
         <P>
           Hardware wallets (often called "cold wallets") all perform the same core function: they
-          generate and store your private keys offline, allowing you to sign transactions without ever
+          generate and store your <Link to="/glossary#private-key" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Private Key">private keys</Link> offline, allowing you to sign transactions without ever
           exposing those keys to your internet-connected computer or phone. However, they differ
           wildly in their security architectures, open-source philosophy, and supported assets.
         </P>
         <P>
-          In our extensive testing of these devices, the biggest mistake we see users make isn't choosing the "wrong" brand, but failing to physically write down their recovery seed phrase correctly. I once spent three stressful days trying to recover a test wallet simply because I had hastily scribbled down an 'e' that looked like an 'a'. 
+          In our extensive testing of these devices, the biggest mistake we see users make isn't choosing the "wrong" brand, but failing to physically write down their recovery <Link to="/glossary#seed-phrase" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Seed Phrase">seed phrase</Link> correctly. I once spent three stressful days trying to recover a test wallet simply because I had hastily scribbled down an 'e' that looked like an 'a'. 
         </P>
         <P>
           <em>This article is educational. It isn't financial advice.</em>
@@ -351,47 +294,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice. The security of a hardware wallet ultimately 
-            depends on how safely you store its backup seed phrase. If you lose the seed phrase, no 
-            customer support can recover your funds.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/guides/not-your-keys-not-your-coins-meaning"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                "Not Your Keys, Not Your Coins" Meaning
-              </h3>
-            </Link>
-            <Link
-              to="/bitcoin/what-is-a-bitcoin-wallet"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What Is a Bitcoin Wallet?
-              </h3>
-            </Link>
-            <Link
-              to="/security/how-to-store-crypto-seed-phrase-safely"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Store Your Seed Phrase Safely
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

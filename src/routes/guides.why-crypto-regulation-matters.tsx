@@ -1,14 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Plus } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/guides/why-crypto-regulation-matters";
 const TITLE = "Why Crypto Regulation Matters to Investors | CryptoBeacon";
 const DESC = "Why does cryptocurrency regulation matter to the average investor? How regulatory clarity drives institutional adoption, affects token prices, and protects c...";
 const PUBLISHED = "2026-09-01";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   { q: "Does regulation make crypto prices go up or down?", a: "Short term, enforcement actions (like the SEC suing an exchange) often cause fear and price drops. Long term, clear regulatory frameworks tend to increase prices because they remove uncertainty, allowing massive institutional capital to enter the market safely." },
   { q: "Why do institutions wait for regulation before buying crypto?", a: "Pension funds, endowments, and major banks manage trillions of dollars under strict fiduciary duties. They literally cannot legally invest in assets that lack clear legal classification, audited custody solutions, and regulated market structures. Regulation builds the pipes they need to invest." },
@@ -16,55 +23,22 @@ const faqs: { q: string; a: string }[] = [
   { q: "Does regulation destroy the original purpose of crypto?", a: "It's a fierce debate. Purists argue that regulation compromises privacy and decentralisation, bending crypto to the will of the state. Pragmatists argue that regulation is the necessary compromise to achieve mainstream global adoption and prevent the industry from being defined by scams like FTX." },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Why Crypto Regulation Matters to Investors",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "why crypto regulation matters, crypto institutional adoption, regulation impact on crypto prices, crypto consumer protection, Bitcoin ETF regulation impact",
-  articleSection: "Guides",
-  wordCount: 800,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Guides", item: "https://www.cryptobeacon.site/guides" },
-    { "@type": "ListItem", position: 3, name: "Why Crypto Regulation Matters", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/guides/why-crypto-regulation-matters")({
   head: () => ({
-    meta: [
-      { title: TITLE }, { name: "description", content: DESC },
-      { property: "og:title", content: TITLE }, { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" }, { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Guides" },
-      { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/why-crypto-regulation-matters" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/why-crypto-regulation-matters', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Why Crypto Regulation Matters to Investors | CryptoBeacon", description: "Why does cryptocurrency regulation matter to the average investor? How regulatory clarity drives institutional adoption, affects token prices, and protects c...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/why-crypto-regulation-matters", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Guides", item: "https://www.cryptobeacon.site/guides" },
+        { name: "Why Crypto Regulation Matters to Investors | CryptoBeacon", item: "https://www.cryptobeacon.site/guides/why-crypto-regulation-matters" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -82,6 +56,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -101,6 +76,9 @@ function ArticlePage() {
           Many early crypto adopters view regulation as an attack. But for long-term investors, clear regulation is the prerequisite for the next wave of massive growth. Here is why.
         </p>
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <H2 id="institutional">1. Unlocking institutional capital</H2>
         <P>Retail investors drove the first decade of crypto's growth. But retail capital is a drop in the ocean compared to institutional capital — pension funds, sovereign wealth funds, and major asset managers. These institutions manage tens of trillions of dollars.</P>
@@ -111,47 +89,15 @@ function ArticlePage() {
         <P>Effective regulation (like Europe's MiCA or proposed US market structure bills) enforces strict segregation of customer funds and requires independent audits. This ensures that if a crypto exchange goes bankrupt, the users' assets are ring-fenced and returned, not liquidated to pay the exchange's corporate creditors.</P>
 
         <H2 id="legitimacy">3. Mainstream legitimacy</H2>
-        <P>For crypto to fulfil its promise as a global financial layer, it must be integrated into everyday commerce. Businesses will not accept stablecoins for payments, and banks will not custody digital assets, as long as the sector is viewed as a wild west of money laundering and regulatory evasion.</P>
+        <P>For crypto to fulfil its promise as a global financial layer, it must be integrated into everyday commerce. Businesses will not accept <Link to="/glossary#stablecoin" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Stablecoin">stablecoins</Link> for payments, and banks will not custody digital assets, as long as the sector is viewed as a wild west of money laundering and regulatory evasion.</P>
         <P>Regulation provides the stamp of legitimacy required for giant tech companies (like Stripe or PayPal) and traditional banks to build crypto-native products for their hundreds of millions of users.</P>
 
         <H2 id="the-cost">The tradeoff</H2>
-        <P>Regulation is not free. It comes at the cost of compliance overhead (which crushes small startups), privacy (via mandatory KYC), and a degree of centralisation (as large, compliant institutions gain market share). For crypto purists, this is a betrayal of the cypherpunk ethos. For investors, it is generally viewed as the necessary maturation of an asset class moving from the fringe to the core of global finance.</P>
+        <P>Regulation is not free. It comes at the cost of compliance overhead (which crushes small startups), privacy (via mandatory <Link to="/glossary#kyc" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: KYC">KYC</Link>), and a degree of centralisation (as large, compliant institutions gain market share). For crypto purists, this is a betrayal of the cypherpunk ethos. For investors, it is generally viewed as the necessary maturation of an asset class moving from the fringe to the core of global finance.</P>
 
-        <section className="mt-xxl" aria-label="Frequently asked questions">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Frequently Asked Questions</h2>
-          <div className="space-y-md">
-            {faqs.map((f, i) => (
-              <details key={i} className="group border border-outline-variant rounded-lg overflow-hidden">
-                <summary className="flex items-center justify-between p-lg cursor-pointer list-none">
-                  <span className="font-body-lg text-body-lg text-primary font-semibold pr-md">{f.q}</span>
-                  <Plus size={18} className="text-secondary shrink-0 group-open:rotate-45 transition-transform" />
-                </summary>
-                <div className="px-lg pb-lg">
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/guides/how-cryptocurrency-regulation-works" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">How Regulation Works</h3>
-            </Link>
-            <Link to="/guides/crypto-regulation-explained-for-beginners" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Regulation for Beginners</h3>
-            </Link>
-            <Link to="/guides/crypto-regulation-hub" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Crypto Regulation Hub</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

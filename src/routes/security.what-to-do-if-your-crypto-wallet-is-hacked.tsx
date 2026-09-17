@@ -1,74 +1,35 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/hacked-wallet-emergency.jpg";
+import hero from "@/assets/hacked-wallet-emergency.webp";
 import { Zap, Clock, FileText, AlertTriangle } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/security/what-to-do-if-your-crypto-wallet-is-hacked";
 const TITLE = "What to Do If Your Crypto Wallet Is Hacked: Emergency Action Guide | CryptoBeacon";
 const DESC = "If your crypto wallet has been compromised, every second counts. This emergency guide covers exactly what to do — in order — from the moment you realize some...";
 const PUBLISHED = "2026-08-25";
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "What to Do If Your Crypto Wallet Is Hacked",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site/assets/hacked-wallet-emergency.jpg`,
-  inLanguage: "en-US",
-  keywords:
-    "crypto wallet hacked what to do, crypto stolen emergency, metamask hacked, recover hacked crypto wallet, crypto drainer attack response",
-  articleSection: "Security",
-  isAccessibleForFree: true,
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Security", item: "https://www.cryptobeacon.site/security" },
-    { "@type": "ListItem", position: 3, name: "What to Do If Your Wallet Is Hacked", item: URL },
-  ],
-};
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 export const Route = createFileRoute("/security/what-to-do-if-your-crypto-wallet-is-hacked")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Security" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/security/what-to-do-if-your-crypto-wallet-is-hacked" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security/what-to-do-if-your-crypto-wallet-is-hacked', publishedTime: PUBLISHED, section: 'Security' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What to Do If Your Crypto Wallet Is Hacked: Emergency Action Guide | CryptoBeacon", description: "If your crypto wallet has been compromised, every second counts. This emergency guide covers exactly what to do — in order — from the moment you realize some...", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-25", dateModified: "2026-08-25", url: "https://www.cryptobeacon.site/security/what-to-do-if-your-crypto-wallet-is-hacked", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Security", item: "https://www.cryptobeacon.site/security" },
+        { name: "What to Do If Your Crypto Wallet Is Hacked: Emergency Action Guide | CryptoBeacon", item: "https://www.cryptobeacon.site/security/what-to-do-if-your-crypto-wallet-is-hacked" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -202,6 +163,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
@@ -221,14 +183,14 @@ function ArticlePage() {
           What to Do If Your Crypto Wallet Is Hacked
         </h1>
 
-        <Author publishedDate={<time dateTime={PUBLISHED}>August 25, 2026</time>} readTime="8 min read" />
+        <Author publishedDate={<time dateTime={PUBLISHED}>August 25, 2026</time>}  />
 
         {/* Critical Warning Banner */}
         <div className="mt-md mb-lg border-l-4 border-red-500 bg-red-500/10 p-md rounded-r-md flex gap-sm">
           <AlertTriangle className="w-5 h-5 text-red-500 shrink-0 mt-px" />
           <div>
             <p className="font-headline-sm text-headline-sm text-red-500 font-bold">If this is happening right now: don't read top-to-bottom. Jump to "Act Now" immediately.</p>
-            <p className="font-body-md text-body-md text-on-surface-variant mt-xs">Every minute matters when a wallet drainer is active.</p>
+            <p className="font-body-md text-body-md text-on-surface-variant mt-xs">Every minute matters when a <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> drainer is active.</p>
           </div>
         </div>
 
@@ -244,7 +206,7 @@ function ArticlePage() {
         </figure>
 
         <P>
-          A compromised crypto wallet is one of the few online security incidents where the damage can be permanent and instantaneous. Unlike a bank fraud incident — where your bank can reverse a transaction — blockchain transfers are final. Once funds leave your wallet to an attacker's address, they are gone unless you can trace them to an exchange that cooperates with law enforcement.
+          A compromised crypto wallet is one of the few online security incidents where the damage can be permanent and instantaneous. Unlike a bank fraud incident — where your bank can reverse a transaction — <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> transfers are final. Once funds leave your wallet to an attacker's address, they are gone unless you can trace them to an exchange that cooperates with law enforcement.
         </P>
         <P>
           This guide is structured by urgency, not by topic. Skip the sections that aren't relevant to your timeline.
@@ -266,7 +228,7 @@ function ArticlePage() {
           Can I Recover Stolen Crypto?
         </h2>
         <P>
-          Bluntly: rarely. Blockchain transactions are irreversible by design. The scenarios where recovery is possible are narrow: the attacker sent funds to a centralized exchange (where their KYC identity might be known), law enforcement gets involved quickly and the exchange cooperates, or a vulnerability in a smart contract is used and a white-hat counter-exploit recovers funds before the attacker can move them.
+          Bluntly: rarely. Blockchain transactions are irreversible by design. The scenarios where recovery is possible are narrow: the attacker sent funds to a centralized exchange (where their <Link to="/glossary#kyc" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: KYC">KYC</Link> identity might be known), law enforcement gets involved quickly and the exchange cooperates, or a vulnerability in a <Link to="/glossary#smart-contract" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Smart Contract">smart contract</Link> is used and a white-hat counter-exploit recovers funds before the attacker can move them.
         </P>
         <P>
           Most successful drainer attacks move funds through multiple wallets and mixers within minutes of the initial theft. The window for intervention is extremely short. The best defense is prevention — the actions above are damage control after the fact.
@@ -274,29 +236,12 @@ function ArticlePage() {
 
         <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">Disclaimer</h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only. It is not legal advice. If you believe you are the victim of a crime, consult a legal professional and contact law enforcement.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/security/how-to-avoid-crypto-phishing-scams" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">How to Avoid Crypto Phishing Scams</h3>
-            </Link>
-            <Link to="/security/how-to-revoke-smart-contract-approvals" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">How to Revoke Smart Contract Approvals</h3>
-            </Link>
-            <Link to="/security/how-to-store-crypto-seed-phrase-safely" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">How to Store Your Seed Phrase Safely</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

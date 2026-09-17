@@ -1,41 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Layers, Coins, Zap, Shield, FileCode, Globe, ArrowRightLeft, Wallet } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/ethereum/ethereum-complete-beginners-guide";
 const TITLE = "Ethereum Explained: Complete Beginner's Guide | CryptoBeacon";
 const DESC =
   "The definitive beginner's guide to Ethereum — what it is, how it works, staking, gas fees, Layer 2, smart contracts, wallets, and how it compares to Bitcoin. All in one place.";
 const PUBLISHED = "2026-09-01";
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Ethereum Explained: Complete Beginner's Guide",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "ethereum explained beginners guide, what is ethereum, how ethereum works, ethereum staking, ethereum gas fees, ethereum vs bitcoin, ethereum layer 2",
-  articleSection: "Ethereum",
-  isAccessibleForFree: true,
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Ethereum", item: "https://www.cryptobeacon.site/ethereum" },
-    { "@type": "ListItem", position: 3, name: "Ethereum: Complete Beginner's Guide", item: URL },
-  ],
-};
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const sections = [
   { icon: <Globe size={20} />, title: "What Is Ethereum?", desc: "Plain-language intro to what Ethereum is, why it was created, and how it differs from a basic cryptocurrency.", to: "/ethereum/what-is-ethereum", tag: "Start Here", color: "#627EEA" },
   { icon: <Layers size={20} />, title: "How Ethereum Works", desc: "The EVM, accounts, transactions, and Proof-of-Stake consensus explained from first principles.", to: "/ethereum/how-ethereum-works", tag: "Explainer", color: "#8B5CF6" },
@@ -52,25 +33,16 @@ const sections = [
 
 export const Route = createFileRoute("/ethereum/ethereum-complete-beginners-guide")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Ethereum" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/ethereum/ethereum-complete-beginners-guide" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/ethereum/ethereum-complete-beginners-guide', publishedTime: PUBLISHED, section: 'Ethereum' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Ethereum Explained: Complete Beginner's Guide | CryptoBeacon", description: "The definitive beginner's guide to Ethereum — what it is, how it works, staking, gas fees, Layer 2, smart contracts, wallets, and how it compares to Bitcoin. All in one place.", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/ethereum-complete-beginners-guide", section: "Ethereum", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Ethereum", item: "https://www.cryptobeacon.site/ethereum" },
+        { name: "Ethereum Explained: Complete Beginner's Guide | CryptoBeacon", item: "https://www.cryptobeacon.site/ethereum/ethereum-complete-beginners-guide" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -81,6 +53,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -98,15 +71,18 @@ function ArticlePage() {
           Ethereum Explained: Complete Beginner's Guide
         </h1>
         <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-xl max-w-3xl">
-          Ethereum is the world's largest programmable blockchain — home to DeFi, NFTs, staking, and most of the innovation in crypto. This hub links every concept you need to understand it from the ground up.
+          Ethereum is the world's largest programmable <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> — home to <Link to="/glossary#defi" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: DeFi">DeFi</Link>, NFTs, <Link to="/glossary#staking" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Staking">staking</Link>, and most of the innovation in crypto. This hub links every concept you need to understand it from the ground up.
         </p>
 
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <div className="my-xl p-lg rounded-xl border border-[#627EEA]/30 bg-[#627EEA]/5">
           <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">Ethereum in one paragraph</h2>
           <p className="font-body-md text-body-md text-on-surface leading-relaxed">
-            Ethereum is a decentralised blockchain network launched in 2015 by Vitalik Buterin and others. Unlike Bitcoin — which is primarily a store of value and payment network — Ethereum is a programmable platform. Developers can deploy <strong>smart contracts</strong>: self-executing code that runs on the Ethereum Virtual Machine (EVM). This enables everything from decentralised exchanges to lending protocols to NFTs, without any single company controlling the infrastructure.
+            Ethereum is a decentralised blockchain network launched in 2015 by Vitalik Buterin and others. Unlike Bitcoin — which is primarily a store of value and payment network — Ethereum is a programmable platform. Developers can deploy <strong><Link to="/glossary#smart-contract" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Smart Contract">smart contracts</Link></strong>: self-executing code that runs on the Ethereum Virtual Machine (EVM). This enables everything from decentralised exchanges to lending protocols to NFTs, without any single company controlling the infrastructure.
           </p>
         </div>
 
@@ -134,7 +110,9 @@ function ArticlePage() {
             This guide is for informational and educational purposes only. It does not constitute financial or investment advice.
           </p>
         </div>
-      </main>
+                <RelatedArticles currentUrl={URL} />
+        </article>
+</main>
       <SiteFooter />
     </div>
   );

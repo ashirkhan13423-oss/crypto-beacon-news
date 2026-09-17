@@ -1,14 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Plus } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/ethereum/ethereum-validators-explained";
 const TITLE = "Ethereum Validators Explained: Requirements, Duties & Risks | CryptoBeacon";
 const DESC = "What is an Ethereum validator? Learn about the 32 ETH requirement, validator duties (proposing and attesting), the validator lifecycle, slashing risks, and w...";
 const PUBLISHED = "2026-09-01";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   { q: "How much ETH do you need to be a validator?", a: "Exactly 32 ETH is required to activate a single validator. This ETH is locked as collateral and can be slashed (partially destroyed) if the validator misbehaves. You can stake less than 32 ETH through liquid staking protocols like Lido or RocketPool." },
   { q: "What does a validator actually do?", a: "Validators perform two main duties: proposing blocks (selected randomly once per epoch approximately) and attesting to blocks proposed by others (assigned each epoch). Validators earn small ETH rewards for performing both duties correctly and on time." },
@@ -17,55 +24,22 @@ const faqs: { q: string; a: string }[] = [
   { q: "What is the activation queue?", a: "To prevent rapid changes in the validator set, Ethereum limits how many new validators can activate per epoch. During high demand periods, this queue can mean waiting days or weeks from deposit to active validation status." },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Ethereum Validators Explained: Requirements, Duties & Risks",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "ethereum validator explained, 32 ETH validator requirement, ethereum staking validator duties, validator slashing risk, ethereum validator rewards, ethereum withdrawal staking",
-  articleSection: "Ethereum",
-  wordCount: 850,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Ethereum", item: "https://www.cryptobeacon.site/ethereum" },
-    { "@type": "ListItem", position: 3, name: "Ethereum Validators Explained", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/ethereum/ethereum-validators-explained")({
   head: () => ({
-    meta: [
-      { title: TITLE }, { name: "description", content: DESC },
-      { property: "og:title", content: TITLE }, { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" }, { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Ethereum" },
-      { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/ethereum/ethereum-validators-explained" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/ethereum/ethereum-validators-explained', publishedTime: PUBLISHED, section: 'Ethereum' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Ethereum Validators Explained: Requirements, Duties & Risks | CryptoBeacon", description: "What is an Ethereum validator? Learn about the 32 ETH requirement, validator duties (proposing and attesting), the validator lifecycle, slashing risks, and w...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/ethereum-validators-explained", section: "Ethereum", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Ethereum", item: "https://www.cryptobeacon.site/ethereum" },
+        { name: "Ethereum Validators Explained: Requirements, Duties & Risks | CryptoBeacon", item: "https://www.cryptobeacon.site/ethereum/ethereum-validators-explained" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -91,6 +65,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -110,14 +85,17 @@ function ArticlePage() {
           The 32 ETH requirement, what validators actually do, the full lifecycle from deposit to withdrawal, and the risks involved.
         </p>
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <H2 id="what-is">What is an Ethereum validator?</H2>
-        <P>An Ethereum validator is a node that participates in the Proof-of-Stake consensus process. Validators propose new blocks, attest to blocks proposed by others, and collectively maintain the security and liveness of the Ethereum network. In return, they earn ETH rewards.</P>
+        <P>An Ethereum validator is a <Link to="/glossary#node" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Node">node</Link> that participates in the Proof-of-Stake consensus process. Validators propose new blocks, attest to blocks proposed by others, and collectively maintain the security and liveness of the Ethereum network. In return, they earn ETH rewards.</P>
         <P>Unlike Bitcoin miners who compete for block rewards through computational work, Ethereum validators are selected pseudo-randomly, weighted by their stake. More validators means more decentralisation and security — as of 2026, Ethereum has over 1 million active validators.</P>
 
         <H2 id="requirements">The 32 ETH requirement</H2>
         <P>Running a validator requires depositing exactly 32 ETH into Ethereum's deposit contract. This ETH is locked as collateral. It cannot be moved while the validator is active — it ensures validators have "skin in the game." Dishonest behaviour risks this collateral through slashing.</P>
-        <P>If you don't have 32 ETH or don't want to manage validator infrastructure yourself, you can use liquid staking protocols: <Link to="/ethereum/what-is-ethereum-staking" className="text-secondary underline">What Is Ethereum Staking? →</Link></P>
+        <P>If you don't have 32 ETH or don't want to manage validator infrastructure yourself, you can use liquid <Link to="/glossary#staking" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Staking">staking</Link> protocols: <Link to="/ethereum/what-is-ethereum-staking" className="text-secondary underline">What Is Ethereum Staking? →</Link></P>
 
         <H2 id="duties">Validator duties</H2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-md my-lg">
@@ -147,41 +125,9 @@ function ArticlePage() {
           ))}
         </div>
 
-        <section className="mt-xxl" aria-label="Frequently asked questions">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Frequently Asked Questions</h2>
-          <div className="space-y-md">
-            {faqs.map((f, i) => (
-              <details key={i} className="group border border-outline-variant rounded-lg overflow-hidden">
-                <summary className="flex items-center justify-between p-lg cursor-pointer list-none">
-                  <span className="font-body-lg text-body-lg text-primary font-semibold pr-md">{f.q}</span>
-                  <Plus size={18} className="text-secondary shrink-0 group-open:rotate-45 transition-transform" />
-                </summary>
-                <div className="px-lg pb-lg">
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/ethereum/proof-of-stake-explained" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Proof of Stake Explained</h3>
-            </Link>
-            <Link to="/ethereum/what-is-ethereum-staking" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">What Is Ethereum Staking?</h3>
-            </Link>
-            <Link to="/ethereum/ethereum-complete-beginners-guide" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Ethereum: Complete Guide</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

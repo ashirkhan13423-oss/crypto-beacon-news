@@ -1,92 +1,33 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/news-standard-chartered-uae.jpg";
+import hero from "@/assets/news-standard-chartered-uae.webp";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/news/standard-chartered-uae-institutional-bitcoin-ether-trading";
 const TITLE = "Standard Chartered Launches Bitcoin and Ether Spot Trading for UAE Institutions | CryptoBeacon";
 const DESC = "Standard Chartered has launched deliverable spot trading for Bitcoin and Ether for institutional clients in the UAE. Explore how this move bridges traditiona...";
 const PUBLISHED = "2026-09-04";
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: "Standard Chartered Launches Bitcoin and Ether Spot Trading for UAE Institutions",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "Standard Chartered UAE crypto trading, institutional Bitcoin trading UAE, institutional Ether trading UAE, Standard Chartered Bitcoin spot trading, UAE crypto regulation, DIFC digital asset trading, bank crypto custody and execution, institutional crypto adoption 2026",
-  articleSection: "News",
-  wordCount: 1250,
-  isAccessibleForFree: true,
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "News",
-      item: "https://www.cryptobeacon.site/news",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Standard Chartered Launches Bitcoin and Ether Spot Trading for UAE Institutions",
-      item: URL,
-    },
-  ],
-};
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 export const Route = createFileRoute("/news/standard-chartered-uae-institutional-bitcoin-ether-trading")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: `https://www.cryptobeacon.site${hero}` },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "News" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: `https://www.cryptobeacon.site${hero}` },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/news/standard-chartered-uae-institutional-bitcoin-ether-trading" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/news/standard-chartered-uae-institutional-bitcoin-ether-trading', publishedTime: PUBLISHED, section: 'News' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Standard Chartered Launches Bitcoin and Ether Spot Trading for UAE Institutions | CryptoBeacon", description: "Standard Chartered has launched deliverable spot trading for Bitcoin and Ether for institutional clients in the UAE. Explore how this move bridges traditiona...", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-09-04", dateModified: "2026-09-04", url: "https://www.cryptobeacon.site/news/standard-chartered-uae-institutional-bitcoin-ether-trading", section: "News", isNews: true })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "News", item: "https://www.cryptobeacon.site/news" },
+        { name: "Standard Chartered Launches Bitcoin and Ether Spot Trading for UAE Institutions | CryptoBeacon", item: "https://www.cryptobeacon.site/news/standard-chartered-uae-institutional-bitcoin-ether-trading" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -122,6 +63,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -153,7 +95,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>September 4, 2026</time>}
-          readTime="6 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -250,39 +192,9 @@ function ArticlePage() {
           </p>
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/guides/how-crypto-exchanges-are-regulated"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                How Crypto Exchanges Are Regulated
-              </h3>
-            </Link>
-            <Link
-              to="/bitcoin/how-do-bitcoin-etfs-affect-price"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                How Do Bitcoin ETFs Affect Price?
-              </h3>
-            </Link>
-            <Link
-              to="/guides/why-governments-regulate-cryptocurrency"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Why Do Governments Regulate Cryptocurrency?
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

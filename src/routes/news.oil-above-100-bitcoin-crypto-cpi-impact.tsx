@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/news-oil-btc-impact.jpg";
+import hero from "@/assets/news-oil-btc-impact.webp";
 
 const URL =
   "https://www.cryptobeacon.site/news/oil-above-100-bitcoin-crypto-cpi-impact";
@@ -30,106 +31,17 @@ const faqs = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: TITLE,
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    url: "https://www.cryptobeacon.site",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "oil prices Bitcoin impact, Brent crude above $100 crypto, U.S. CPI Bitcoin impact, Fed rate hike crypto September 2026, Middle East conflict Bitcoin, Treasury yields crypto market, inflation and cryptocurrency, crypto macro outlook, oil shock risk assets, CryptoBeacon",
-  articleSection: "News",
-  wordCount: 1350,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "News",
-      item: "https://www.cryptobeacon.site/news",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Oil Above $100: Bitcoin Impact",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute(
   "/news/oil-above-100-bitcoin-crypto-cpi-impact"
 )({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      {
-        property: "og:image",
-        content: `https://www.cryptobeacon.site${hero}`,
-      },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "News" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      {
-        name: "twitter:image",
-        content: `https://www.cryptobeacon.site${hero}`,
-      },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/news/oil-above-100-bitcoin-crypto-cpi-impact" }],
-    scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(breadcrumbSchema),
-      },
-    ],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/news/oil-above-100-bitcoin-crypto-cpi-impact', publishedTime: PUBLISHED, section: 'News' }),
+    
+    
+    scripts: [],
   }),
   component: ArticlePage,
 });
@@ -169,6 +81,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -202,7 +115,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>September 10, 2026</time>}
-          readTime="7 min read"
+          
         />
 
         <p className="italic text-on-surface-variant mb-lg font-body-sm mt-md">
@@ -292,7 +205,7 @@ function ArticlePage() {
           First, expect heightened volatility in major assets like Bitcoin (BTC) and Ethereum (ETH). While these assets have seen strong institutional inflows recently, macroeconomic uncertainty often leads to immediate de-risking by algorithmic and macro-driven funds. Second, leverage in the system becomes a vulnerability. If price action swings violently in response to upcoming inflation data, highly leveraged long positions could face cascading liquidations, exacerbating any downward move.
         </P>
         <P>
-          High-beta altcoins and decentralized finance (DeFi) tokens are particularly susceptible. These assets usually behave as leveraged plays on Bitcoin's liquidity. If Bitcoin struggles to maintain momentum under the weight of higher yields and a hawkish Fed, smaller cap assets will likely experience amplified weakness.
+          High-beta altcoins and decentralized finance (<Link to="/glossary#defi" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: DeFi">DeFi</Link>) tokens are particularly susceptible. These assets usually behave as leveraged plays on Bitcoin's liquidity. If Bitcoin struggles to maintain momentum under the weight of higher yields and a hawkish Fed, smaller cap assets will likely experience amplified weakness.
         </P>
         <P>
           Furthermore, investors must monitor currency dynamics, particularly the Japanese yen. If global anxiety leads to a strengthening yen, we could see an unwinding of carry trades, which traditionally saps liquidity from riskier global markets, including crypto.
@@ -418,7 +331,8 @@ function ArticlePage() {
 
           </div>
         </section>
-      </main>
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

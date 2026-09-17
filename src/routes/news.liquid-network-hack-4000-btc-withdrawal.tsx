@@ -1,4 +1,5 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 
 export const Route = createFileRoute("/news/liquid-network-hack-4000-btc-withdrawal")({
   beforeLoad: () => {

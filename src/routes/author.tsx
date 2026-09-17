@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import authorAvatar from "@/assets/ashir.png";
+import authorAvatar from "@/assets/ashir.webp";
 import {
   BookOpen,
   ShieldCheck,
@@ -44,31 +45,14 @@ const personSchema = {
   description: DESC,
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "About", item: "https://www.cryptobeacon.site/about" },
-    { "@type": "ListItem", position: 3, name: "Ashir Khan", item: AUTHOR_URL },
-  ],
-};
 
 export const Route = createFileRoute("/author")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:url", content: AUTHOR_URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/author" },{ rel: "canonical", href: AUTHOR_URL }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/author", type: 'website', path: '/author' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(personSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildPersonSchema()) }
     ],
   }),
   component: AuthorPage,
@@ -96,7 +80,7 @@ function AuthorPage() {
             src={authorAvatar}
             alt="Portrait of Ashir Khan, writer and researcher at CryptoBeacon"
             className="w-28 h-28 rounded-full object-cover border-4 border-primary-container shadow-md shrink-0"
-          />
+          loading="lazy" decoding="async" />
           <div>
             <span className="inline-block px-sm py-xs rounded-full bg-secondary-container text-secondary font-label-caps text-[11px] uppercase tracking-widest font-semibold mb-xs">
               Writer &amp; Researcher — CryptoBeacon

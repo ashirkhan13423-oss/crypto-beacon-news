@@ -1,14 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Plus } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/guides/cryptocurrency-taxes-explained";
 const TITLE = "Cryptocurrency Taxes Explained: Capital Gains, Income & Reporting | CryptoBeacon";
 const DESC = "A beginner-friendly guide to cryptocurrency taxes. Learn how capital gains apply to crypto trading, how staking and airdrops are taxed as income, and how to ...";
 const PUBLISHED = "2026-09-01";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   { q: "Is buying and holding crypto a taxable event?", a: "No. Simply buying cryptocurrency with fiat (like USD or EUR) and holding it in your wallet or exchange account is not a taxable event. Taxes only apply when you dispose of the asset (sell, trade, or spend it)." },
   { q: "Do I have to pay taxes if I trade one crypto for another?", a: "Yes. In most jurisdictions (including the US, UK, and Australia), trading one cryptocurrency for another (e.g., trading Bitcoin for Ethereum) is a taxable event. It is treated as selling the first asset for its fiat value, and using that fiat to buy the second. You owe capital gains on the profit made on the first asset." },
@@ -16,55 +23,22 @@ const faqs: { q: string; a: string }[] = [
   { q: "Will the tax authority know about my crypto?", a: "Yes. Major exchanges are legally required to report user activity to tax authorities (e.g., the IRS uses Form 1099). Furthermore, blockchains are public; tax authorities use blockchain analytics tools to trace funds moving from exchanges to private wallets." },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Cryptocurrency Taxes Explained: Capital Gains, Income & Reporting",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "cryptocurrency taxes explained, crypto capital gains tax, is crypto crypto trading taxed, how are airdrops taxed, crypto tax reporting, IRS crypto tax",
-  articleSection: "Guides",
-  wordCount: 850,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Guides", item: "https://www.cryptobeacon.site/guides" },
-    { "@type": "ListItem", position: 3, name: "Cryptocurrency Taxes Explained", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/guides/cryptocurrency-taxes-explained")({
   head: () => ({
-    meta: [
-      { title: TITLE }, { name: "description", content: DESC },
-      { property: "og:title", content: TITLE }, { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" }, { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Guides" },
-      { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/cryptocurrency-taxes-explained" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/cryptocurrency-taxes-explained', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Cryptocurrency Taxes Explained: Capital Gains, Income & Reporting | CryptoBeacon", description: "A beginner-friendly guide to cryptocurrency taxes. Learn how capital gains apply to crypto trading, how staking and airdrops are taxed as income, and how to ...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/cryptocurrency-taxes-explained", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Guides", item: "https://www.cryptobeacon.site/guides" },
+        { name: "Cryptocurrency Taxes Explained: Capital Gains, Income & Reporting | CryptoBeacon", item: "https://www.cryptobeacon.site/guides/cryptocurrency-taxes-explained" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -82,6 +56,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -101,6 +76,9 @@ function ArticlePage() {
           A practical primer on how crypto is taxed. Disclaimer: We are a news site, not tax professionals. Tax rules vary by country; this guide covers the general principles applied by agencies like the IRS, HMRC, and ATO.
         </p>
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <div className="p-md rounded-lg bg-surface-container-low border border-outline-variant my-lg">
           <p className="font-body-sm text-body-sm text-on-surface-variant">
@@ -143,43 +121,11 @@ function ArticlePage() {
         </ul>
 
         <H2 id="tracking">How to manage crypto taxes</H2>
-        <P>Tracking the cost basis of every trade manually is impossible for active users. The industry standard is to use crypto tax software (like CoinTracker, Koinly, or TokenTax). You connect your exchanges via read-only APIs and upload your public wallet addresses, and the software calculates your capital gains and generates the necessary tax forms automatically.</P>
+        <P>Tracking the cost basis of every trade manually is impossible for active users. The industry standard is to use crypto tax software (like CoinTracker, Koinly, or TokenTax). You connect your exchanges via read-only APIs and upload your public <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> addresses, and the software calculates your capital gains and generates the necessary tax forms automatically.</P>
 
-        <section className="mt-xxl" aria-label="Frequently asked questions">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Frequently Asked Questions</h2>
-          <div className="space-y-md">
-            {faqs.map((f, i) => (
-              <details key={i} className="group border border-outline-variant rounded-lg overflow-hidden">
-                <summary className="flex items-center justify-between p-lg cursor-pointer list-none">
-                  <span className="font-body-lg text-body-lg text-primary font-semibold pr-md">{f.q}</span>
-                  <Plus size={18} className="text-secondary shrink-0 group-open:rotate-45 transition-transform" />
-                </summary>
-                <div className="px-lg pb-lg">
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/guides/crypto-regulation-hub" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Crypto Regulation Hub</h3>
-            </Link>
-            <Link to="/guides/what-is-kyc-in-cryptocurrency" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">What Is KYC?</h3>
-            </Link>
-            <Link to="/guides/crypto-regulation-explained-for-beginners" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Crypto Regulation for Beginners</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

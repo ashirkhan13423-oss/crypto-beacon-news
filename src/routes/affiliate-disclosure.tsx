@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Breadcrumbs, breadcrumbSchemaFromItems } from "@/components/Breadcrumbs";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const URL = "https://www.cryptobeacon.site/affiliate-disclosure";
 const TITLE = "Affiliate Disclosure | CryptoBeacon";
@@ -9,21 +9,10 @@ const DESC = "How CryptoBeacon discloses affiliate relationships and ensures edi
 
 export const Route = createFileRoute("/affiliate-disclosure")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:url", content: URL },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/affiliate-disclosure" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(breadcrumbSchemaFromItems([{ label: "Affiliate Disclosure" }])),
-      },
-    ],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/affiliate-disclosure", type: 'website', path: '/affiliate-disclosure' }),
+    
+    
+    scripts: []
   }),
   component: AffiliateDisclosurePage,
 });
@@ -33,6 +22,7 @@ function AffiliateDisclosurePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <Breadcrumbs items={[{ label: "Affiliate Disclosure" }]} />
 
         <h1 className="font-display-lg text-display-lg text-primary mb-lg">
@@ -65,7 +55,8 @@ function AffiliateDisclosurePage() {
             </p>
           </section>
         </div>
-      </main>
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

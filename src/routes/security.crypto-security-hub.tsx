@@ -1,40 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Shield, AlertTriangle, Lock, Eye, Key, Smartphone, Globe, UserX, Wifi } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/security/crypto-security-hub";
 const TITLE = "Crypto Security Hub: Complete Guide to Protecting Your Assets | CryptoBeacon";
 const DESC = "The definitive crypto security hub — phishing scams, wallet drainers, fake apps, seed phrase storage, private keys, 2FA, exchange security, and everything yo...";
 const PUBLISHED = "2026-09-01";
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Crypto Security Hub: Complete Guide to Protecting Your Assets",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "crypto security guide, crypto phishing scams, bitcoin wallet security, seed phrase safety, crypto scam prevention, exchange account security",
-  articleSection: "Security",
-  isAccessibleForFree: true,
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Security", item: "https://www.cryptobeacon.site/security" },
-    { "@type": "ListItem", position: 3, name: "Crypto Security Hub", item: URL },
-  ],
-};
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const sections = [
   { icon: <AlertTriangle size={20} />, title: "What Is a Crypto Phishing Attack?", desc: "How phishing targets crypto users, what makes it different from regular email scams, and why it is so effective.", to: "/security/how-to-avoid-crypto-phishing-scams", tag: "Phishing", color: "#EF4444" },
   { icon: <Globe size={20} />, title: "How Crypto Phishing Scams Work", desc: "The technical mechanics: DNS hijacking, fake dApps, approval phishing, spear phishing — a full breakdown.", to: "/security/how-crypto-phishing-scams-work", tag: "Phishing", color: "#EF4444" },
@@ -52,19 +33,16 @@ const sections = [
 
 export const Route = createFileRoute("/security/crypto-security-hub")({
   head: () => ({
-    meta: [
-      { title: TITLE }, { name: "description", content: DESC },
-      { property: "og:title", content: TITLE }, { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" }, { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Security" },
-      { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/security/crypto-security-hub" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security/crypto-security-hub', publishedTime: PUBLISHED, section: 'Security' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Crypto Security Hub: Complete Guide to Protecting Your Assets | CryptoBeacon", description: "The definitive crypto security hub — phishing scams, wallet drainers, fake apps, seed phrase storage, private keys, 2FA, exchange security, and everything yo...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/crypto-security-hub", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Security", item: "https://www.cryptobeacon.site/security" },
+        { name: "Crypto Security Hub: Complete Guide to Protecting Your Assets | CryptoBeacon", item: "https://www.cryptobeacon.site/security/crypto-security-hub" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -75,6 +53,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -92,15 +71,18 @@ function ArticlePage() {
           Crypto Security Hub
         </h1>
         <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-xl max-w-3xl">
-          Crypto scams are growing in sophistication every year. This hub covers every major threat — from phishing and wallet drainers to fake apps and exchange account takeovers — with practical defence guides for each.
+          Crypto scams are growing in sophistication every year. This hub covers every major threat — from phishing and <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> drainers to fake apps and exchange account takeovers — with practical defence guides for each.
         </p>
 
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <div className="my-xl p-lg rounded-xl border border-red-500/30 bg-red-500/5">
           <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">The single most important rule</h2>
           <p className="font-body-md text-body-md text-on-surface leading-relaxed">
-            Your seed phrase and private keys are never needed by any legitimate service, website, support agent, or application. If anything asks for them, it is a scam. No exceptions.
+            Your <Link to="/glossary#seed-phrase" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Seed Phrase">seed phrase</Link> and <Link to="/glossary#private-key" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Private Key">private keys</Link> are never needed by any legitimate service, website, support agent, or application. If anything asks for them, it is a scam. No exceptions.
           </p>
         </div>
 
@@ -128,7 +110,9 @@ function ArticlePage() {
             This hub is for informational and educational purposes only. Security practices evolve — always verify information against current guidance from wallet providers and official security researchers.
           </p>
         </div>
-      </main>
+                <RelatedArticles currentUrl={URL} />
+        </article>
+</main>
       <SiteFooter />
     </div>
   );

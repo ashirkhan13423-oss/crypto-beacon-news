@@ -1,4 +1,5 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 
 export const Route = createFileRoute("/news/bitcoin-jobs-report-etf-inflows-september-2026")({
   beforeLoad: () => {

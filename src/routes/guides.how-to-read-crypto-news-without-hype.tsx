@@ -1,15 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/guides-read-news-no-hype.jpg";
+import hero from "@/assets/guides-read-news-no-hype.webp";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/guides/how-to-read-crypto-news-without-hype";
 const TITLE = "How to Read Crypto News Without Getting Swept Up in Hype | CryptoBeacon";
 const DESC =
   "How to read crypto news without hype: a media literacy guide for identifying speculation, filtering out FOMO, and focusing on primary data.";
 const PUBLISHED = "2026-08-30";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "How can I tell if a crypto article is sponsored?",
@@ -29,84 +36,21 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "How to Read Crypto Market News Without Getting Swept Up in Hype",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "how to read crypto news without hype, crypto media literacy, spotting crypto clickbait, price prediction red flags, verify crypto source, crypto news fomo",
-  articleSection: "Guides",
-  wordCount: 1200,
-  isAccessibleForFree: true,
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Guides",
-      item: "https://www.cryptobeacon.site/guides",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Read news without hype",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/guides/how-to-read-crypto-news-without-hype")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Guides" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/guides/how-to-read-crypto-news-without-hype" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/how-to-read-crypto-news-without-hype', publishedTime: PUBLISHED, section: 'Guides' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How to Read Crypto News Without Getting Swept Up in Hype | CryptoBeacon", description: "How to read crypto news without hype: a media literacy guide for identifying speculation, filtering out FOMO, and focusing on primary data.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-30", dateModified: "2026-08-30", url: "https://www.cryptobeacon.site/guides/how-to-read-crypto-news-without-hype", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Guides", item: "https://www.cryptobeacon.site/guides" },
+        { name: "How to Read Crypto News Without Getting Swept Up in Hype | CryptoBeacon", item: "https://www.cryptobeacon.site/guides/how-to-read-crypto-news-without-hype" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -134,6 +78,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -167,7 +112,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 30, 2026</time>}
-          readTime="5 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -201,7 +146,7 @@ function ArticlePage() {
           Many cryptocurrency news sites rewrite secondary summaries of primary events. In this telephone game, nuance is often lost or exaggerated to make headlines more clickable.
         </P>
         <P>
-          Always check if the article links directly to the source. If the article reports on a regulatory announcement, find the press release on the SEC, CFTC, or Treasury website. If it reports on a blockchain developer decision, verify it on GitHub or the project's official governance forum. If it reports on wallet flows, look up the addresses on a block explorer. If an article provides no links to primary documents, treat its conclusions as unverified.
+          Always check if the article links directly to the source. If the article reports on a regulatory announcement, find the press release on the SEC, CFTC, or Treasury website. If it reports on a <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> developer decision, verify it on GitHub or the project's official governance forum. If it reports on <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> flows, look up the addresses on a block explorer. If an article provides no links to primary documents, treat its conclusions as unverified.
         </P>
 
         <div className="border-l-4 border-[#0F9D58] bg-[#0F9D58]/5 p-lg rounded-r-lg mb-md">
@@ -248,12 +193,7 @@ function ArticlePage() {
 
         <H2 id="faq">Frequently Asked Questions</H2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
-          {faqs.map((f) => (
-            <div key={f.q} className="p-lg rounded-xl border border-outline-variant bg-surface-container-low">
-              <h3 className="font-headline-sm text-headline-sm text-primary mb-sm font-semibold">{f.q}</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-            </div>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="sources">Sources</H2>
@@ -289,30 +229,9 @@ function ArticlePage() {
           </p>
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
-            <Link
-              to="/guides/exchange-or-personal-wallet-crypto-storage"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Exchange vs. Personal Wallet Storage
-              </h3>
-            </Link>
-            <Link
-              to="/guides/why-governments-regulate-cryptocurrency"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Why Governments Regulate Cryptocurrency
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

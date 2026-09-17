@@ -3,7 +3,7 @@ import { ArticleGrid } from "@/components/ArticleGrid";
 import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Breadcrumbs, breadcrumbSchemaFromItems } from "@/components/Breadcrumbs";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const URL = "https://www.cryptobeacon.site/etfs";
 const TITLE = "Crypto ETFs & Institutional Investment | CryptoBeacon";
@@ -28,20 +28,15 @@ const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) 
 
 export const Route = createFileRoute("/etfs/")({ validateSearch: searchSchema,
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:url", content: URL },
-      { property: "og:type", content: "website" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/etfs" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/etfs/index', publishedTime: undefined, section: 'Etfs' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(collectionSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchemaFromItems([{ label: "ETFs & Institutional" }])) },
-    ],
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Etfs", item: "https://www.cryptobeacon.site/etfs" }
+      ])) }
+    ]
   }),
   component: EtfsHub,
 });
@@ -74,6 +69,10 @@ function EtfsHub() {
           <p className="font-body-lg text-body-lg text-on-surface-variant">
             Spot Bitcoin ETFs — approved in the U.S. in January 2024 — allow investors to gain price exposure to Bitcoin through a standard brokerage account without managing private keys or interacting with a crypto exchange. These products hold actual Bitcoin in custody (unlike earlier futures-based ETFs) and track the spot price through a creation and redemption mechanism. CryptoBeacon covers how these products work mechanically, what drives daily inflow and outflow numbers, and what growing institutional participation means for market structure. We report on the mechanics and the data — not price predictions.
           </p>
+          {/* INTRO COPY SLOT */}
+          <div className="mt-lg prose prose-lg dark:prose-invert text-on-surface">
+            {/* TODO: Add genuine intro section text here */}
+          </div>
         </div>
 
         <section className="mb-xxl">
@@ -81,6 +80,7 @@ function EtfsHub() {
             How ETFs Work
           </h2>
           <ArticleGrid category="ETFs" currentPage={page} />
+          </section>
       </main>
       <SiteFooter />
     </div>

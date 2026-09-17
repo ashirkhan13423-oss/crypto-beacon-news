@@ -1,14 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Plus } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/ethereum/ethereum-vs-bitcoin";
 const TITLE = "Ethereum vs Bitcoin: Key Differences Explained | CryptoBeacon";
 const DESC = "Ethereum vs Bitcoin compared side-by-side: purpose, supply model, consensus mechanism, programmability, transaction speed, and which use cases each is best s...";
 const PUBLISHED = "2026-09-01";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   { q: "Is Ethereum better than Bitcoin?", a: "Neither is objectively better — they serve different purposes. Bitcoin excels as a store of value and censorship-resistant money with a fixed supply. Ethereum excels as a programmable platform for decentralised applications. Many investors and developers use both." },
   { q: "Which is more decentralised, Ethereum or Bitcoin?", a: "Bitcoin is widely considered more decentralised at the base layer. Its simpler design, larger number of full nodes, and more distributed mining (historically) give it an edge. Ethereum has more validators but concentration in liquid staking protocols like Lido raises decentralisation questions." },
@@ -16,55 +23,22 @@ const faqs: { q: string; a: string }[] = [
   { q: "What is the difference in supply?", a: "Bitcoin has a hard cap of 21 million BTC — no more will ever be created. Ethereum has no hard cap, but EIP-1559 burns a portion of each transaction's fee, making ETH deflationary during periods of high network activity. Bitcoin's fixed supply is by design; Ethereum's flexible supply is debated." },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Ethereum vs Bitcoin: Key Differences Explained",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "ethereum vs bitcoin, bitcoin vs ethereum differences, which is better bitcoin or ethereum, ethereum supply vs bitcoin supply, proof of work vs proof of stake",
-  articleSection: "Ethereum",
-  wordCount: 900,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Ethereum", item: "https://www.cryptobeacon.site/ethereum" },
-    { "@type": "ListItem", position: 3, name: "Ethereum vs Bitcoin", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/ethereum/ethereum-vs-bitcoin")({
   head: () => ({
-    meta: [
-      { title: TITLE }, { name: "description", content: DESC },
-      { property: "og:title", content: TITLE }, { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" }, { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Ethereum" },
-      { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/ethereum/ethereum-vs-bitcoin" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/ethereum/ethereum-vs-bitcoin', publishedTime: PUBLISHED, section: 'Ethereum' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Ethereum vs Bitcoin: Key Differences Explained | CryptoBeacon", description: "Ethereum vs Bitcoin compared side-by-side: purpose, supply model, consensus mechanism, programmability, transaction speed, and which use cases each is best s...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/ethereum-vs-bitcoin", section: "Ethereum", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Ethereum", item: "https://www.cryptobeacon.site/ethereum" },
+        { name: "Ethereum vs Bitcoin: Key Differences Explained | CryptoBeacon", item: "https://www.cryptobeacon.site/ethereum/ethereum-vs-bitcoin" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -94,6 +68,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -110,9 +85,12 @@ function ArticlePage() {
           Ethereum vs Bitcoin
         </h1>
         <p className="font-body-lg text-body-lg text-on-surface-variant mb-xl">
-          The two largest blockchains serve fundamentally different purposes. Here is how they compare across every dimension that matters.
+          The two largest <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchains</Link> serve fundamentally different purposes. Here is how they compare across every dimension that matters.
         </p>
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <H2 id="the-key-distinction">The key distinction</H2>
         <P>Bitcoin was designed to solve one problem: creating a peer-to-peer electronic cash system without a trusted third party. Ethereum was designed to solve a different problem: enabling arbitrary, trustless computation on a global blockchain. These different design goals result in very different networks, despite sharing some surface-level similarities (both are blockchains, both use cryptography, both are decentralised).</P>
@@ -145,44 +123,12 @@ function ArticlePage() {
         <P>Ethereum has no hard cap. However, EIP-1559 (August 2021) changed the fee structure so that a portion of every transaction fee is burned — permanently removed from supply. During periods of high network activity, ETH is net deflationary. During low activity, it is slightly inflationary. Whether this model is superior to a hard cap is an ongoing debate in the ecosystem.</P>
 
         <H2 id="programmability">Programmability: where Ethereum leads</H2>
-        <P>Ethereum's EVM allows developers to write smart contracts — self-executing programs that run on the blockchain. This has enabled an enormous ecosystem: DeFi protocols with billions in locked value, NFT marketplaces, stablecoins (USDC, DAI), prediction markets, and more. Almost all major crypto innovations of the past decade have been built on Ethereum or EVM-compatible chains.</P>
-        <P>Bitcoin's scripting language is intentionally limited. This is a design choice: Bitcoin's developers believe simplicity reduces attack surface and improves security and predictability. The Lightning Network extends Bitcoin's functionality for payments without adding EVM complexity.</P>
+        <P>Ethereum's EVM allows developers to write <Link to="/glossary#smart-contract" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Smart Contract">smart contracts</Link> — self-executing programs that run on the blockchain. This has enabled an enormous ecosystem: <Link to="/glossary#defi" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: DeFi">DeFi</Link> protocols with billions in locked value, NFT marketplaces, <Link to="/glossary#stablecoin" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Stablecoin">stablecoins</Link> (USDC, DAI), prediction markets, and more. Almost all major crypto innovations of the past decade have been built on Ethereum or EVM-compatible chains.</P>
+        <P>Bitcoin's scripting language is intentionally limited. This is a design choice: Bitcoin's developers believe simplicity reduces attack surface and improves security and predictability. The <Link to="/glossary#lightning-network" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Lightning Network">Lightning Network</Link> extends Bitcoin's functionality for payments without adding EVM complexity.</P>
 
-        <section className="mt-xxl" aria-label="Frequently asked questions">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Frequently Asked Questions</h2>
-          <div className="space-y-md">
-            {faqs.map((f, i) => (
-              <details key={i} className="group border border-outline-variant rounded-lg overflow-hidden">
-                <summary className="flex items-center justify-between p-lg cursor-pointer list-none">
-                  <span className="font-body-lg text-body-lg text-primary font-semibold pr-md">{f.q}</span>
-                  <Plus size={18} className="text-secondary shrink-0 group-open:rotate-45 transition-transform" />
-                </summary>
-                <div className="px-lg pb-lg">
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/ethereum/what-is-ethereum" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">What Is Ethereum?</h3>
-            </Link>
-            <Link to="/bitcoin/what-is-a-bitcoin-wallet" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">What Is a Bitcoin Wallet?</h3>
-            </Link>
-            <Link to="/ethereum/can-you-send-bitcoin-to-an-ethereum-address" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Can You Send Bitcoin to an Ethereum Address?</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

@@ -1,5 +1,6 @@
-import { Link } from "@tanstack/react-router";
-import authorAvatar from "@/assets/ashir.png";
+import { Link, useLocation } from "@tanstack/react-router";
+import authorAvatar from "@/assets/ashir.webp";
+import generatedMetadata from "@/data/generated-metadata.json";
 
 interface AuthorProps {
   publishedDate?: React.ReactNode;
@@ -7,6 +8,14 @@ interface AuthorProps {
 }
 
 export function Author({ publishedDate, readTime }: AuthorProps) {
+  const location = useLocation();
+  const path = location.pathname;
+  
+  // Use passed readTime if present (though we'll remove them), 
+  // otherwise fallback to the generated one.
+  const generatedMeta = (generatedMetadata as Record<string, any>)[path];
+  const displayReadTime = readTime || (generatedMeta ? generatedMeta.readTime : null);
+
   return (
     <div className="mt-md mb-lg flex flex-col sm:flex-row items-start sm:items-center gap-md p-md bg-surface-container-low border border-outline-variant rounded-xl max-w-3xl">
       <img
@@ -28,10 +37,10 @@ export function Author({ publishedDate, readTime }: AuthorProps) {
               {publishedDate}
             </>
           )}
-          {readTime && (
+          {displayReadTime && (
             <>
               <span aria-hidden>·</span>
-              <span>{readTime}</span>
+              <span>{displayReadTime}</span>
             </>
           )}
         </div>

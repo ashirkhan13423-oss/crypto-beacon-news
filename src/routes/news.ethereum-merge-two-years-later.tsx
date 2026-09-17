@@ -1,74 +1,35 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/ethereum-merge-two-years.jpg";
+import hero from "@/assets/ethereum-merge-two-years.webp";
 import { Check, X } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/news/ethereum-merge-two-years-later";
 const TITLE = "The Ethereum Merge: Two Years Later — What Actually Changed | CryptoBeacon";
 const DESC =
   "A factual retrospective on the Ethereum Merge at its two-year mark (September 2024): what the upgrade delivered, what it didn't, and what the data shows now.";
 const PUBLISHED = "2026-08-25";
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: "The Ethereum Merge: Two Years Later — What Actually Changed",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site/assets/ethereum-merge-two-years.jpg`,
-  inLanguage: "en-US",
-  keywords:
-    "ethereum merge anniversary, ethereum proof of stake results, did the merge work, ethereum energy usage after merge, ethereum staking data 2026",
-  articleSection: "News",
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "News", item: "https://www.cryptobeacon.site/news" },
-    { "@type": "ListItem", position: 3, name: "Ethereum Merge: Two Years Later", item: URL },
-  ],
-};
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 export const Route = createFileRoute("/news/ethereum-merge-two-years-later")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "News" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/news/ethereum-merge-two-years-later" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/news/ethereum-merge-two-years-later', publishedTime: PUBLISHED, section: 'News' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "The Ethereum Merge: Two Years Later — What Actually Changed | CryptoBeacon", description: "A factual retrospective on the Ethereum Merge at its two-year mark (September 2024): what the upgrade delivered, what it didn't, and what the data shows now.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-25", dateModified: "2026-08-25", url: "https://www.cryptobeacon.site/news/ethereum-merge-two-years-later", section: "News", isNews: true })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "News", item: "https://www.cryptobeacon.site/news" },
+        { name: "The Ethereum Merge: Two Years Later — What Actually Changed | CryptoBeacon", item: "https://www.cryptobeacon.site/news/ethereum-merge-two-years-later" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -164,6 +125,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
@@ -183,7 +145,7 @@ function ArticlePage() {
           The Ethereum Merge: Two Years Later — What the Data Actually Shows
         </h1>
 
-        <Author publishedDate={<time dateTime={PUBLISHED}>August 25, 2026</time>} readTime="7 min read" />
+        <Author publishedDate={<time dateTime={PUBLISHED}>August 25, 2026</time>}  />
 
         {/* Dated Banner */}
         <div className="mt-md mb-lg border-l-4 border-[#2563EB] bg-[#2563EB]/10 p-md rounded-r-md">
@@ -205,13 +167,13 @@ function ArticlePage() {
         </figure>
 
         <P>
-          On September 15, 2022, Ethereum stopped mining. In the space of one block, the world's second-largest blockchain switched from proof-of-work (PoW) to proof-of-stake (PoS) in a live transition watched by hundreds of thousands of developers and investors. The Merge had been in development for seven years. It worked on the first try. Now, two years later, it's worth looking at the data rather than the narrative.
+          On September 15, 2022, Ethereum stopped <Link to="/glossary#mining" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Mining">mining</Link>. In the space of one block, the world's second-largest <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link> switched from proof-of-work (PoW) to proof-of-stake (PoS) in a live transition watched by hundreds of thousands of developers and investors. The Merge had been in development for seven years. It worked on the first try. Now, two years later, it's worth looking at the data rather than the narrative.
         </P>
 
 
         <H2 id="what-it-promised">What the Merge Promised</H2>
         <P>
-          Ethereum's developers were careful to scope the Merge narrowly. It was not supposed to lower transaction fees, speed up the chain, or enable new smart contract features directly. The stated goals were: (1) eliminate proof-of-work energy consumption, (2) create the foundation for future scalability upgrades (sharding, later replaced by a rollup-centric roadmap), and (3) issue less ETH per block.
+          Ethereum's developers were careful to scope the Merge narrowly. It was not supposed to lower transaction fees, speed up the chain, or enable new <Link to="/glossary#smart-contract" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Smart Contract">smart contract</Link> features directly. The stated goals were: (1) eliminate proof-of-work energy consumption, (2) create the foundation for future scalability upgrades (sharding, later replaced by a rollup-centric roadmap), and (3) issue less ETH per block.
         </P>
 
         <H2 id="the-timeline">Key Milestones</H2>
@@ -283,24 +245,9 @@ function ArticlePage() {
           </p>
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/ethereum/what-is-ethereum-staking" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">What Is Ethereum Staking?</h3>
-            </Link>
-            <Link to="/ethereum/ethereum-layer-2-scaling-rollups-explained" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Ethereum Layer 2 & Rollups Explained</h3>
-            </Link>
-            <Link to="/ethereum/what-are-gas-fees-how-to-save" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">What Are Gas Fees & How to Save on Them?</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

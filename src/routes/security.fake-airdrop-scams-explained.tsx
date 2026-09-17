@@ -1,15 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
 import { Plus } from "lucide-react";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/security/fake-airdrop-scams-explained";
 const TITLE = "Fake Airdrop Scams Explained: How They Work & How to Stay Safe | CryptoBeacon";
 const DESC =
   "How fake crypto airdrop scams work — the approval requests they hide, how to safely verify whether an airdrop is legitimate, and what to do if you've already interacted with one.";
 const PUBLISHED = "2026-09-01";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   { q: "What is a crypto airdrop scam?", a: "A fake airdrop scam sends free tokens to your wallet address, then directs you to a website to 'claim' them. The claim process requires you to sign a malicious approval transaction that gives the attacker's contract access to your real tokens or NFTs." },
   { q: "Can simply receiving airdropped tokens harm me?", a: "Receiving tokens passively in your wallet is harmless — tokens cannot steal from you just by being there. The risk occurs only when you interact with those tokens: visiting a claim site, approving transactions, or interacting with a malicious contract." },
@@ -17,55 +24,22 @@ const faqs: { q: string; a: string }[] = [
   { q: "What should I do if I already visited a fake airdrop site?", a: "If you only visited the site but did not sign any transaction, you are likely unharmed. If you signed a transaction, immediately check your approvals on Etherscan's token approval checker or Revoke.cash and revoke any suspicious approvals. If funds have already been drained, unfortunately they are not recoverable." },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Fake Airdrop Scams Explained: How They Work & How to Stay Safe",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: { "@type": "Person", name: "Ashir", url: "https://www.cryptobeacon.site/author", worksFor: { "@type": "Organization", name: "CryptoBeacon" } },
-  publisher: { "@type": "Organization", name: "CryptoBeacon", logo: { "@type": "ImageObject", url: "https://www.cryptobeacon.site/favicon.png" } },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  inLanguage: "en-US",
-  keywords: "fake airdrop scam crypto, crypto airdrop approval scam, how fake airdrops work, is this airdrop legitimate, airdrop scam red flags, crypto dust attack",
-  articleSection: "Security",
-  wordCount: 800,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cryptobeacon.site/" },
-    { "@type": "ListItem", position: 2, name: "Security", item: "https://www.cryptobeacon.site/security" },
-    { "@type": "ListItem", position: 3, name: "Fake Airdrop Scams Explained", item: URL },
-  ],
-};
 
 export const Route = createFileRoute("/security/fake-airdrop-scams-explained")({
   head: () => ({
-    meta: [
-      { title: TITLE }, { name: "description", content: DESC },
-      { property: "og:title", content: TITLE }, { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" }, { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED }, { property: "article:section", content: "Security" },
-      { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: TITLE }, { name: "twitter:description", content: DESC },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/security/fake-airdrop-scams-explained" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security/fake-airdrop-scams-explained', publishedTime: PUBLISHED, section: 'Security' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Fake Airdrop Scams Explained: How They Work & How to Stay Safe | CryptoBeacon", description: "How fake crypto airdrop scams work — the approval requests they hide, how to safely verify whether an airdrop is legitimate, and what to do if you've already interacted with one.", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/fake-airdrop-scams-explained", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Security", item: "https://www.cryptobeacon.site/security" },
+        { name: "Fake Airdrop Scams Explained: How They Work & How to Stay Safe | CryptoBeacon", item: "https://www.cryptobeacon.site/security/fake-airdrop-scams-explained" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -83,6 +57,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav aria-label="Breadcrumb" className="mb-lg font-label-caps text-label-caps text-on-surface-variant">
           <ol className="flex flex-wrap items-center gap-xs">
             <li><Link to="/" className="hover:text-secondary">Home</Link></li>
@@ -102,9 +77,12 @@ function ArticlePage() {
           You received tokens you didn't ask for. There is now a website telling you to claim more. Here is exactly what's about to happen if you interact with it — and how to protect yourself.
         </p>
         <Author />
+        <LastUpdated date={MODIFIED} />
+        <KeyTakeaway text={keyTakeaway} />
+        <TableOfContents />
 
         <H2 id="how-it-works">How fake airdrop scams work</H2>
-        <P>Step 1: The attacker sends a small amount of worthless tokens to thousands of wallet addresses. These tokens often have names designed to look like legitimate projects ("Uniswap V4 Reward", "ETH2 Bonus", etc.).</P>
+        <P>Step 1: The attacker sends a small amount of worthless tokens to thousands of <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> addresses. These tokens often have names designed to look like legitimate projects ("Uniswap V4 Reward", "ETH2 Bonus", etc.).</P>
         <P>Step 2: The token contract has a function that, when queried, returns a URL pointing to a "claim" website. Your wallet or Etherscan may display this URL when you view the token.</P>
         <P>Step 3: The claim website looks professional and shows you a large reward to claim. Clicking "Claim" prompts you to sign an ERC-20 token approval — not a claim transaction, but a permission for the attacker's contract to spend your real tokens.</P>
         <P>Step 4: Once signed, the attacker drains your real valuable tokens (USDC, WETH, etc.) immediately. The "free tokens" you were going to claim were worth nothing; your real tokens are now gone.</P>
@@ -132,41 +110,9 @@ function ArticlePage() {
           <li>No official announcement from a verifiable project Twitter/X account</li>
         </ul>
 
-        <section className="mt-xxl" aria-label="Frequently asked questions">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Frequently Asked Questions</h2>
-          <div className="space-y-md">
-            {faqs.map((f, i) => (
-              <details key={i} className="group border border-outline-variant rounded-lg overflow-hidden">
-                <summary className="flex items-center justify-between p-lg cursor-pointer list-none">
-                  <span className="font-body-lg text-body-lg text-primary font-semibold pr-md">{f.q}</span>
-                  <Plus size={18} className="text-secondary shrink-0 group-open:rotate-45 transition-transform" />
-                </summary>
-                <div className="px-lg pb-lg">
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{f.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link to="/security/crypto-wallet-drainer-scams-explained" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Wallet Drainer Scams Explained</h3>
-            </Link>
-            <Link to="/security/how-to-revoke-smart-contract-approvals" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Revoke Smart Contract Approvals</h3>
-            </Link>
-            <Link to="/security/crypto-security-hub" className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all">
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">Crypto Security Hub</h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

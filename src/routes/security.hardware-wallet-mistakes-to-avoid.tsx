@@ -1,16 +1,24 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/hardware-wallet-mistakes.jpg";
+import hero from "@/assets/hardware-wallet-mistakes.webp";
 import { Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/security/hardware-wallet-mistakes-to-avoid";
 const TITLE = "5 Fatal Hardware Wallet Mistakes and How to Avoid Them | CryptoBeacon";
 const DESC =
   "Buying a hardware wallet isn't enough. Learn the critical operational security errors like buying from third-party resellers, digital seed storage, and blind-signing.";
 const PUBLISHED = "2026-08-20";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "Can I buy a hardware wallet on Amazon?",
@@ -26,95 +34,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "5 Fatal Hardware Wallet Mistakes and How to Avoid Them",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "hardware wallet mistakes, crypto security, ledger hack, trezor security, seed phrase storage, blind signing, opsec",
-  articleSection: "Security",
-  wordCount: 1400,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Security",
-      item: "https://www.cryptobeacon.site/security",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Hardware Wallet Mistakes",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/security/hardware-wallet-mistakes-to-avoid")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Security" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/security/hardware-wallet-mistakes-to-avoid" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security/hardware-wallet-mistakes-to-avoid', publishedTime: PUBLISHED, section: 'Security' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "5 Fatal Hardware Wallet Mistakes and How to Avoid Them | CryptoBeacon", description: "Buying a hardware wallet isn't enough. Learn the critical operational security errors like buying from third-party resellers, digital seed storage, and blind-signing.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-20", dateModified: "2026-08-20", url: "https://www.cryptobeacon.site/security/hardware-wallet-mistakes-to-avoid", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Security", item: "https://www.cryptobeacon.site/security" },
+        { name: "5 Fatal Hardware Wallet Mistakes and How to Avoid Them | CryptoBeacon", item: "https://www.cryptobeacon.site/security/hardware-wallet-mistakes-to-avoid" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -142,6 +77,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -173,7 +109,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 20, 2026</time>}
-          readTime="7 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -187,7 +123,7 @@ function ArticlePage() {
         </figure>
 
         <P>
-          Purchasing a hardware wallet like a Ledger, Trezor, or Coldcard is the most important step you can take toward securing your cryptocurrency. By keeping your private keys offline, these devices make remote hacking virtually impossible.
+          Purchasing a hardware <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> like a Ledger, Trezor, or Coldcard is the most important step you can take toward securing your cryptocurrency. By keeping your <Link to="/glossary#private-key" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Private Key">private keys</Link> offline, these devices make remote hacking virtually impossible.
         </P>
         <P>
           However, owning a hardware wallet does not grant you immunity from theft. The device is only as secure as the person operating it. Many investors buy a hardware wallet, assume they are fully protected, and then make critical operational security (OpSec) errors that result in a total loss of funds. 
@@ -204,7 +140,7 @@ function ArticlePage() {
           The security of a hardware wallet relies entirely on the integrity of the physical device. If the device is tampered with before it reaches your hands, your funds are at risk from the moment you plug it in.
         </P>
         <P>
-          A common attack vector is a "supply chain attack." A hacker will buy a hardware wallet, carefully open the packaging, extract the seed phrase (or alter the firmware), reseal the package to look brand new, and resell it on platforms like eBay, Amazon, or Reddit. When the victim deposits funds into the pre-compromised wallet, the hacker sweeps the funds.
+          A common attack vector is a "supply chain attack." A hacker will buy a hardware wallet, carefully open the packaging, extract the <Link to="/glossary#seed-phrase" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Seed Phrase">seed phrase</Link> (or alter the firmware), reseal the package to look brand new, and resell it on platforms like eBay, Amazon, or Reddit. When the victim deposits funds into the pre-compromised wallet, the hacker sweeps the funds.
         </P>
         <P>
           <strong>How to avoid it:</strong> Always buy directly from the manufacturer's official website. Never buy a used hardware wallet, and be highly suspicious of "discounted" devices sold by third parties.
@@ -223,7 +159,7 @@ function ArticlePage() {
 
         <H2 id="mistake-3">3. Blind-Signing Transactions</H2>
         <P>
-          When you use a hardware wallet to interact with decentralized finance (DeFi) protocols or mint NFTs, the device will ask you to confirm the transaction on its screen. Because smart contract data can be dense and unreadable (appearing as a long string of hexadecimal code), many users develop a habit of "blind-signing"—clicking approve without actually verifying what the transaction is doing.
+          When you use a hardware wallet to interact with decentralized finance (<Link to="/glossary#defi" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: DeFi">DeFi</Link>) protocols or mint NFTs, the device will ask you to confirm the transaction on its screen. Because <Link to="/glossary#smart-contract" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Smart Contract">smart contract</Link> data can be dense and unreadable (appearing as a long string of hexadecimal code), many users develop a habit of "blind-signing"—clicking approve without actually verifying what the transaction is doing.
         </P>
         <P>
           Phishing scams exploit this by tricking you into interacting with a malicious smart contract. If you blind-sign the transaction, you might unknowingly grant the hacker permission to drain all your tokens.
@@ -281,17 +217,7 @@ function ArticlePage() {
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
-          {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="sources">Sources</H2>
@@ -332,45 +258,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/guides/hot-wallets-vs-cold-wallets-explained"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Hot Wallets vs Cold Wallets Explained
-              </h3>
-            </Link>
-            <Link
-              to="/security/how-to-revoke-smart-contract-approvals"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                How to Revoke Smart Contract Approvals
-              </h3>
-            </Link>
-            <Link
-              to="/guides/not-your-keys-not-your-coins-meaning"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Not Your Keys, Not Your Coins
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

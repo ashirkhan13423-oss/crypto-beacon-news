@@ -1,15 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/ethereum-gas-fees.jpg";
+import hero from "@/assets/ethereum-gas-fees.webp";
 import { Plus } from "lucide-react";
+import { Disclaimer } from "@/components/Disclaimer";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/ethereum/what-are-gas-fees-how-to-save";
 const TITLE = "What Are Ethereum Gas Fees and How to Save on Them? | CryptoBeacon";
 const DESC = "An explainer on how network congestion drives up transaction costs on Ethereum, how Gwei works, and practical strategies for minimizing fees using Layer 2 ne...";
 const PUBLISHED = "2026-08-20";
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "Why are Ethereum gas fees sometimes so high?",
@@ -25,95 +33,22 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "What Are Ethereum Gas Fees and How to Save on Them?",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Person",
-    name: "Ashir",
-    url: "https://www.cryptobeacon.site/author",
-    worksFor: { "@type": "Organization", name: "CryptoBeacon" },
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "ethereum gas fees, what is gwei, how to save on gas, eth transaction fees, layer 2 rollups, lower gas fees",
-  articleSection: "Ethereum",
-  wordCount: 1350,
-  isAccessibleForFree: true,
-};
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Ethereum",
-      item: "https://www.cryptobeacon.site/ethereum",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "What Are Ethereum Gas Fees?",
-      item: URL,
-    },
-  ],
-};
 
 export const Route = createFileRoute("/ethereum/what-are-gas-fees-how-to-save")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: "https://www.cryptobeacon.site/og-image.png" },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "Ethereum" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: "https://www.cryptobeacon.site/og-image.png" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/ethereum/what-are-gas-fees-how-to-save" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/ethereum/what-are-gas-fees-how-to-save', publishedTime: PUBLISHED, section: 'Ethereum' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Are Ethereum Gas Fees and How to Save on Them? | CryptoBeacon", description: "An explainer on how network congestion drives up transaction costs on Ethereum, how Gwei works, and practical strategies for minimizing fees using Layer 2 ne...", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-20", dateModified: "2026-08-20", url: "https://www.cryptobeacon.site/ethereum/what-are-gas-fees-how-to-save", section: "Ethereum", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Ethereum", item: "https://www.cryptobeacon.site/ethereum" },
+        { name: "What Are Ethereum Gas Fees and How to Save on Them? | CryptoBeacon", item: "https://www.cryptobeacon.site/ethereum/what-are-gas-fees-how-to-save" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -141,6 +76,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -172,7 +108,7 @@ function ArticlePage() {
 
         <Author
           publishedDate={<time dateTime={PUBLISHED}>August 20, 2026</time>}
-          readTime="7 min read"
+          
         />
 
         <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
@@ -186,7 +122,7 @@ function ArticlePage() {
         </figure>
 
         <P>
-          If you have ever tried to send a transaction on Ethereum during a busy market period, you have likely experienced "sticker shock" at the estimated network fee. These transaction costs, commonly referred to as <strong>gas fees</strong>, are a fundamental mechanic of how the Ethereum network operates, secures itself, and allocates its limited computational resources.
+          If you have ever tried to send a transaction on Ethereum during a busy market period, you have likely experienced "sticker shock" at the estimated network fee. These transaction costs, commonly referred to as <strong><Link to="/glossary#gas-fees" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Gas Fees">gas fees</Link></strong>, are a fundamental mechanic of how the Ethereum network operates, secures itself, and allocates its limited computational resources.
         </P>
         <P>
           This guide breaks down exactly what gas is, why it can become incredibly expensive, and practical, actionable strategies you can use to minimize your fees without sacrificing security.
@@ -200,7 +136,7 @@ function ArticlePage() {
           Ethereum is essentially a massive, decentralized global computer. When you send a transaction—whether it's transferring ETH to a friend, swapping tokens on Uniswap, or minting an NFT—you are asking this global computer to perform computational work on your behalf.
         </P>
         <P>
-          "Gas" is the unit that measures the amount of computational effort required to execute a specific operation. A simple transfer of ETH requires exactly 21,000 units of gas. A complex smart contract interaction, like providing liquidity to a decentralized exchange, might require 150,000 to 300,000 units of gas.
+          "Gas" is the unit that measures the amount of computational effort required to execute a specific operation. A simple transfer of ETH requires exactly 21,000 units of gas. A complex <Link to="/glossary#smart-contract" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Smart Contract">smart contract</Link> interaction, like providing liquidity to a decentralized exchange, might require 150,000 to 300,000 units of gas.
         </P>
         <P>
           You pay for this gas in Ether (ETH), but because the amounts are so small, the price of gas is usually denominated in <strong>Gwei</strong>. One Gwei is equal to one billionth of a single ETH (0.000000001 ETH).
@@ -232,7 +168,7 @@ function ArticlePage() {
           Gas prices fluctuate significantly based on global timezones and network activity. Historically, the most expensive times to transact are during US business hours on weekdays.
         </P>
         <P>
-          Conversely, the cheapest times to transact are often on weekends, or during the late night/early morning hours in the US (when both the US and Europe are largely asleep). If your transaction is not urgent—such as moving funds to cold storage or consolidating wallets—wait for a low-gas window.
+          Conversely, the cheapest times to transact are often on weekends, or during the late night/early morning hours in the US (when both the US and Europe are largely asleep). If your transaction is not urgent—such as moving funds to cold storage or consolidating <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallets</Link>—wait for a low-gas window.
         </P>
 
         <h3 className="font-headline-sm text-headline-sm text-primary mt-lg mb-sm">3. Monitor Gas Trackers</h3>
@@ -242,17 +178,7 @@ function ArticlePage() {
 
         <H2 id="faq">FAQ</H2>
         <div className="divide-y divide-outline-variant border-y border-outline-variant">
-          {faqs.map((f) => (
-            <details key={f.q} className="group py-md">
-              <summary className="cursor-pointer list-none flex justify-between items-start gap-md font-headline-sm text-headline-sm text-primary">
-                <span>{f.q}</span>
-                <Plus className="text-secondary transition-transform group-open:rotate-45" />
-              </summary>
-              <p className="mt-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                {f.a}
-              </p>
-            </details>
-          ))}
+          <FAQ faqs={faqs} />
         </div>
 
         <H2 id="sources">Sources</H2>
@@ -293,45 +219,12 @@ function ArticlePage() {
           <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Financial Disclaimer
           </h3>
-          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            This article is for informational and educational purposes only and should not be
-            considered financial or investment advice.
-          </p>
+          <Disclaimer />
         </div>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Link
-              to="/ethereum/ethereum-layer-2-scaling-rollups-explained"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Ethereum Layer 2 Rollups Explained
-              </h3>
-            </Link>
-            <Link
-              to="/ethereum/what-is-a-smart-contract"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What Is a Smart Contract?
-              </h3>
-            </Link>
-            <Link
-              to="/ethereum/what-is-ethereum-staking"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Ethereum</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                What Is Ethereum Staking?
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

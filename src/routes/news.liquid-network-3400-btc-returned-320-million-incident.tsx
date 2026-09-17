@@ -1,89 +1,33 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/liquid-network-3400-btc-returned.jpg";
+import hero from "@/assets/liquid-network-3400-btc-returned.webp";
+import { KeyTakeaway } from "@/components/KeyTakeaway";
+import { LastUpdated } from "@/components/LastUpdated";
+import { TableOfContents } from "@/components/TableOfContents";
+import { FAQ } from "@/components/FAQ";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 const URL = "https://www.cryptobeacon.site/news/liquid-network-3400-btc-returned-320-million-incident";
 const TITLE = "Liquid Network Recovers 3,400 BTC After $320 Million Incident—What Happens Next? | CryptoBeacon";
 const DESC = "The Liquid Network sidechain reportedly recovered 3,400 BTC after a massive $320 million withdrawal from its federation wallet. But the crisis is far from ov...";
 const PUBLISHED = "2026-09-09";
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: "Liquid Network Recovers 3,400 BTC After $320 Million Incident—What Happens Next?",
-  description: DESC,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  author: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    url: "https://www.cryptobeacon.site",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "CryptoBeacon",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.cryptobeacon.site/favicon.png",
-    },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  image: `https://www.cryptobeacon.site${hero}`,
-  inLanguage: "en-US",
-  keywords:
-    "Liquid Network hack, Liquid Network 3,400 BTC returned, Liquid Network 4,000 BTC withdrawal, $320 million Bitcoin sidechain incident, LBTC withdrawals suspended, Bitcoin federation wallet, Elements bug Liquid Network, Bitcoin sidechain security, wrapped Bitcoin risk",
-  articleSection: "News",
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.cryptobeacon.site/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "News",
-      item: "https://www.cryptobeacon.site/news",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Liquid Network 3,400 BTC Recovery",
-      item: URL,
-    },
-  ],
-};
-
+let MODIFIED = PUBLISHED;
+let keyTakeaway = "";
 export const Route = createFileRoute("/news/liquid-network-3400-btc-returned-320-million-incident")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: `https://www.cryptobeacon.site${hero}` },
-      { property: "article:published_time", content: PUBLISHED },
-      { property: "article:section", content: "News" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: `https://www.cryptobeacon.site${hero}` },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/news/liquid-network-3400-btc-returned-320-million-incident" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/news/liquid-network-3400-btc-returned-320-million-incident', publishedTime: PUBLISHED, section: 'News' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(articleSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Liquid Network Recovers 3,400 BTC After $320 Million Incident—What Happens Next? | CryptoBeacon", description: "The Liquid Network sidechain reportedly recovered 3,400 BTC after a massive $320 million withdrawal from its federation wallet. But the crisis is far from ov...", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-09-09", dateModified: "2026-09-09", url: "https://www.cryptobeacon.site/news/liquid-network-3400-btc-returned-320-million-incident", section: "News", isNews: true })) },
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "News", item: "https://www.cryptobeacon.site/news" },
+        { name: "Liquid Network Recovers 3,400 BTC After $320 Million Incident—What Happens Next? | CryptoBeacon", item: "https://www.cryptobeacon.site/news/liquid-network-3400-btc-returned-320-million-incident" }
+      ])) }
     ],
   }),
   component: ArticlePage,
@@ -111,6 +55,7 @@ function ArticlePage() {
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
+        <article>
         <nav
           aria-label="Breadcrumb"
           className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
@@ -140,7 +85,7 @@ function ArticlePage() {
           Liquid Network Recovers 3,400 BTC After $320 Million Incident—What Happens Next?
         </h1>
 
-        <Author publishedDate={<time dateTime={PUBLISHED}>September 9, 2026</time>} readTime="5 min read" />
+        <Author publishedDate={<time dateTime={PUBLISHED}>September 9, 2026</time>}  />
 
         <div className="mt-md mb-lg border-l-4 border-[#F59E0B] bg-[#F59E0B]/10 p-md rounded-r-md">
           <p className="font-headline-sm text-headline-sm text-primary font-bold">
@@ -166,7 +111,7 @@ function ArticlePage() {
           In a significant development for the Bitcoin ecosystem, actors behind the massive $320 million withdrawal from the Liquid Network have reportedly returned approximately 3,400 BTC. While the recovery of over 85% of the drained funds is a positive step, roughly 598 BTC (valued at nearly $47 million) remain outstanding, and the sidechain remains paused.
         </P>
         <P>
-          The initial incident on September 6 sent shockwaves through the market when about 4,000 BTC were extracted from Liquid's federation wallet, leading to an immediate halt of transactions, bridge activity, and LBTC withdrawals on major exchanges. This partial recovery does not mean the crisis is over; instead, it raises critical questions about Bitcoin sidechain security, the underlying technical vulnerabilities, and how users evaluate the safety of wrapped Bitcoin products.
+          The initial incident on September 6 sent shockwaves through the market when about 4,000 BTC were extracted from Liquid's federation <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link>, leading to an immediate halt of transactions, bridge activity, and LBTC withdrawals on major exchanges. This partial recovery does not mean the crisis is over; instead, it raises critical questions about Bitcoin sidechain security, the underlying technical vulnerabilities, and how users evaluate the safety of wrapped Bitcoin products.
         </P>
 
 
@@ -254,31 +199,9 @@ function ArticlePage() {
           </li>
         </ul>
 
-        <section className="mt-xxl">
-          <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-
-            <Link
-              to="/bitcoin/bitcoin-lightning-network-explained"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                Bitcoin Lightning Network Explained
-              </h3>
-            </Link>
-            <Link
-              to="/security/defi-risks-explained"
-              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
-            >
-              <span className="font-label-caps text-label-caps text-secondary">Security</span>
-              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
-                DeFi Risks Explained
-              </h3>
-            </Link>
-          </div>
-        </section>
-      </main>
+        <RelatedArticles currentUrl={URL} />
+              </article>
+</main>
       <SiteFooter />
     </div>
   );

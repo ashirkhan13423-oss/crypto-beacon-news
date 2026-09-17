@@ -3,7 +3,7 @@ import { ArticleGrid } from "@/components/ArticleGrid";
 import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Breadcrumbs, breadcrumbSchemaFromItems } from "@/components/Breadcrumbs";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const URL = "https://www.cryptobeacon.site/altcoins";
 const TITLE = "Altcoins & Stablecoins | CryptoBeacon";
@@ -40,20 +40,15 @@ const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) 
 
 export const Route = createFileRoute("/altcoins/")({ validateSearch: searchSchema,
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:url", content: URL },
-      { property: "og:type", content: "website" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.cryptobeacon.site/altcoins" }],
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/altcoins/index', publishedTime: undefined, section: 'Altcoins' }),
+    
+    
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(collectionSchema) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchemaFromItems([{ label: "Altcoins" }])) },
-    ],
+      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", item: "https://www.cryptobeacon.site/" },
+        { name: "Altcoins", item: "https://www.cryptobeacon.site/altcoins" }
+      ])) }
+    ]
   }),
   component: AltcoinsHub,
 });
@@ -86,6 +81,10 @@ function AltcoinsHub() {
           <p className="font-body-lg text-body-lg text-on-surface-variant">
             "Altcoin" covers every cryptocurrency other than Bitcoin. CryptoBeacon's current coverage in this section focuses on the mechanics that apply broadly across the altcoin market: how stablecoins work and how they're regulated, what happens when a blockchain forks into two competing chains, how short squeezes and leverage affect smaller-cap tokens, and the specific risks — including rug pulls — that are more common in altcoin markets than in Bitcoin or Ethereum. Guides on specific networks (Solana, XRP, Avalanche) are planned for a future update.
           </p>
+          {/* INTRO COPY SLOT */}
+          <div className="mt-lg prose prose-lg dark:prose-invert text-on-surface">
+            {/* TODO: Add genuine intro section text here */}
+          </div>
         </div>
 
         <section className="mb-xxl">
@@ -93,6 +92,7 @@ function AltcoinsHub() {
             Getting Started
           </h2>
           <ArticleGrid category="Altcoins" currentPage={page} />
+          </section>
       </main>
       <SiteFooter />
     </div>
