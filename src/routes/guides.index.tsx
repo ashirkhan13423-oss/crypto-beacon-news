@@ -19,7 +19,7 @@ const guidesSearchSchema = z.object({
 export const Route = createFileRoute("/guides/")({
   validateSearch: guidesSearchSchema,
   head: () => ({
-    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/index', publishedTime: undefined, section: 'Guides' }),
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides', publishedTime: undefined, section: 'Guides' }),
     
     
     scripts: [

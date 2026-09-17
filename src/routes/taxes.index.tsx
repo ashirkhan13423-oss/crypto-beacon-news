@@ -1,3 +1,4 @@
+import { buildMetadata } from "@/lib/metadata";
 
 import { buildBreadcrumbSchema } from "@/lib/schema/builders";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -31,7 +32,7 @@ const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) 
 
 export const Route = createFileRoute("/taxes/")({ validateSearch: searchSchema,
   head: () => ({
-    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/taxes/index', publishedTime: undefined, section: 'Taxes' }),
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/taxes', publishedTime: undefined, section: 'Taxes' }),
     
     
     scripts: [
@@ -59,6 +60,7 @@ function Card({ to, tag, title, desc }: { to: string; tag: string; title: string
 }
 
 function TaxesHub() {
+  const { page } = Route.useSearch();
   return (
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />

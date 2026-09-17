@@ -25,7 +25,7 @@ const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) 
 
 export const Route = createFileRoute("/news/")({ validateSearch: searchSchema,
   head: () => ({
-    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/news/index', publishedTime: undefined, section: 'News' }),
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/news', publishedTime: undefined, section: 'News' }),
     
     
     scripts: [
@@ -77,6 +77,7 @@ function NewsCard({ to, image, tag, title, desc, alt }: { to: string; image: str
 }
 
 function NewsHub() {
+  const { page } = Route.useSearch();
   return (
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />

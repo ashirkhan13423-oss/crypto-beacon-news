@@ -1,3 +1,4 @@
+import { buildMetadata } from "@/lib/metadata";
 
 import { buildBreadcrumbSchema } from "@/lib/schema/builders";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -15,7 +16,7 @@ const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) 
 
 export const Route = createFileRoute("/learn/")({ validateSearch: searchSchema,
   head: () => ({
-    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/learn/index', publishedTime: undefined, section: 'Learn' }),
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/learn', publishedTime: undefined, section: 'Learn' }),
     
     
     scripts: [

@@ -1,3 +1,4 @@
+import { buildPersonSchema } from "@/lib/schema/builders";
 import { Link } from "@tanstack/react-router";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { buildMetadata } from "@/lib/metadata";

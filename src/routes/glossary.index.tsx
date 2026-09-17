@@ -1,3 +1,4 @@
+import { buildMetadata } from "@/lib/metadata";
 import { Link } from "@tanstack/react-router";
 
 import { buildBreadcrumbSchema } from "@/lib/schema/builders";
@@ -33,7 +34,7 @@ const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 export const Route = createFileRoute("/glossary/")({
   head: () => ({
-    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/glossary/index', publishedTime: undefined, section: 'Glossary' }),
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/glossary', publishedTime: undefined, section: 'Glossary' }),
     
     
     scripts: [

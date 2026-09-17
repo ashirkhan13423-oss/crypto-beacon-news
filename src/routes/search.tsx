@@ -6,6 +6,10 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { useEffect, useState } from "react";
 import { Search, SearchX, FileSearch } from "lucide-react";
 
+const TITLE = "Search | CryptoBeacon";
+const DESC = "Search across our entire library of crypto articles and guides.";
+const URL = "https://www.cryptobeacon.site/search";
+
 export const Route = createFileRoute("/search")({
   validateSearch: (search: Record<string, unknown>) => ({
     q: typeof search.q === "string" ? search.q : "",

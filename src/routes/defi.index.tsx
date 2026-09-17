@@ -1,3 +1,4 @@
+import { buildMetadata } from "@/lib/metadata";
 
 import { buildBreadcrumbSchema } from "@/lib/schema/builders";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -35,7 +36,7 @@ const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) 
 
 export const Route = createFileRoute("/defi/")({ validateSearch: searchSchema,
   head: () => ({
-    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/defi/index', publishedTime: undefined, section: 'Defi' }),
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/defi', publishedTime: undefined, section: 'Defi' }),
     
     
     scripts: [
@@ -63,6 +64,7 @@ function Card({ to, tag, title, desc }: { to: string; tag: string; title: string
 }
 
 function DefiHub() {
+  const { page } = Route.useSearch();
   return (
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />

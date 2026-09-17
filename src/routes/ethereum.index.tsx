@@ -23,7 +23,7 @@ const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) 
 
 export const Route = createFileRoute("/ethereum/")({ validateSearch: searchSchema,
   head: () => ({
-    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/ethereum/index', publishedTime: undefined, section: 'Ethereum' }),
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/ethereum', publishedTime: undefined, section: 'Ethereum' }),
     
     
     scripts: [
@@ -44,6 +44,7 @@ export const Route = createFileRoute("/ethereum/")({ validateSearch: searchSchem
 });
 
 function EthereumPage() {
+  const { page } = Route.useSearch();
   return (
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />

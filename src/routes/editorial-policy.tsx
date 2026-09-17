@@ -1,3 +1,4 @@
+import { buildMetadata } from "@/lib/metadata";
 import { Link } from "@tanstack/react-router";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";

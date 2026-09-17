@@ -18,7 +18,7 @@ const securitySearchSchema = z.object({
 export const Route = createFileRoute("/security/")({
   validateSearch: securitySearchSchema,
   head: () => ({
-    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security/index', publishedTime: undefined, section: 'Security' }),
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/security', publishedTime: undefined, section: 'Security' }),
     
     
     scripts: [
