@@ -121,7 +121,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://www.googletagmanager.com" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "preconnect", href: "https://pagead2.googlesyndication.com" },
+      // Preconnect to pagead2.googlesyndication.com is intentionally OMITTED —
+      // AdSense is not approved yet, so we do not open any connection to the
+      // ad host. Re-add `{ rel:"preconnect", href:"https://pagead2.googlesyndication.com" }`
+      // here ONLY after approval (alongside ADS_APPROVED = true in AdUnit.tsx).
       // Google Fonts with display=swap to prevent FOIT (flash of invisible text)
       {
         rel: "stylesheet",

@@ -9,6 +9,15 @@ const MAX_SLOTS         = 3;           // Absolute ceiling
 const MIN_WORDS_BETWEEN = 300;         // Minimum gap between slots
 const PUBLISHER_ID      = "ca-pub-3754668913099912"; // Do NOT change
 
+// ── Approval gate ───────────────────────────────────────────────────────────
+// Google AdSense has NOT approved this site yet. Per policy:
+//   • While false, NO live pagead2.googlesyndication.com script is injected
+//     and every ArticleAdSlot renders nothing (hidden entirely).
+//   • Flip to `true` ONLY after Google AdSense approves the site — then the
+//     density policy (MIN_WORDS_FOR_ADS / WORDS_PER_SLOT / MAX_SLOTS) still
+//     governs how many units actually render.
+const ADS_APPROVED = false; // TODO: set to true once AdSense approves the site
+
 // ─── Dimensions ─────────────────────────────────────────────────────────────
 // Reserved height prevents CLS. Matches standard responsive leaderboard.
 const AD_MIN_HEIGHT_PX = 280; // conservative: covers 250px medium-rectangle + margin
@@ -42,6 +51,11 @@ export function ArticleAdSlot({ slotIndex }: ArticleAdSlotsProps) {
 
   const meta = (generatedMetadata as Record<string, any>)[path];
   const wordCount: number = meta?.wordCount ?? 0;
+
+  // ── Approval gate ──────────────────────────────────────────────────────
+  // AdSense hasn't approved the site yet, so the slot renders NOTHING
+  // (hidden entirely) — it never renders "Advertisement" or an <ins>.
+  if (!ADS_APPROVED) return null;
 
   // ── Density policy ─────────────────────────────────────────────────────
   if (wordCount < MIN_WORDS_FOR_ADS) return null;
@@ -97,6 +111,7 @@ export function ArticleAdSlot({ slotIndex }: ArticleAdSlotsProps) {
 export function AdSenseLoader() {
   useEffect(() => {
     const inject = () => {
+      if (!ADS_APPROVED) return; // not approved yet → never load live script
       if (document.getElementById("adsense-script")) return; // already injected
       const s = document.createElement("script");
       s.id = "adsense-script";
