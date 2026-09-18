@@ -2,16 +2,16 @@ import { Link } from "@tanstack/react-router";
 import { Search, Menu, Twitter } from "lucide-react";
 
 const navLinks: { label: string; to: string }[] = [
-  { label: "Security", to: "/security" },
   { label: "Bitcoin", to: "/bitcoin" },
-  { label: "Guides", to: "/guides" },
-  { label: "News", to: "/news" },
   { label: "Ethereum", to: "/ethereum" },
+  { label: "Guides", to: "/guides" },
+  { label: "Security", to: "/security" },
+  { label: "News", to: "/news" },
   { label: "Altcoins", to: "/altcoins" },
-  { label: "Learn", to: "/learn" },
-  { label: "Taxes", to: "/taxes" },
   { label: "DeFi", to: "/defi" },
   { label: "ETFs", to: "/etfs" },
+  { label: "Taxes", to: "/taxes" },
+  { label: "Learn", to: "/learn" },
   { label: "Glossary", to: "/glossary" },
 ];
 

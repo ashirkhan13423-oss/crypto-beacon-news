@@ -130,11 +130,11 @@ const homepageSchema = {
     },
     {
       "@type": "Article",
-      headline: "Cryptocurrency: News, Prices & Meaning",
+      headline: "Cryptocurrency: Education, Security & Market Analysis",
       description: DESC,
       datePublished: PUBLISHED_DATE,
       dateModified: MODIFIED_DATE,
-      author: [{ "@type": "Person", name: "Ashir", url: PAGE_URL }],
+      author: [{ "@type": "Person", name: "Ashir Khan", url: PAGE_URL }],
       publisher: {
         "@type": "Organization",
         name: "CryptoBeacon",
@@ -816,44 +816,12 @@ const articles = [
     desc: "Standard Chartered has launched deliverable spot trading for Bitcoin and Ether for institutional clients in the UAE. Explore how this move bridges traditional finance and crypto.",
   },
   {
-    to: "/guides/what-is-a-blockchain-fork",
-    image: hero_48,
-    alt: "Abstract illustration representing a blockchain splitting into two separate paths",
-    tag: "Guides · Article",
-    title: "What Is a Blockchain Fork? Explained Simply",
-    desc: "A plain-language explainer on what a blockchain fork is, the difference between hard and soft forks, and why cryptocurrencies sometimes split into two.",
-  },
-  {
     to: "/news/what-is-the-clarity-act-crypto",
     image: hero_66,
     alt: "Illustration showing abstract Capitol lines, balanced scales, and a gavel representing cryptocurrency regulation",
     tag: "News · Article",
     title: "What Is the Clarity Act, and What Would It Actually Change?",
     desc: "What is the Clarity Act crypto: a factual explanation of the proposed U.S. bill, securities vs commodities classifications, and legislative status.",
-  },
-  {
-    to: "/guides/what-it-means-when-exchange-pauses-withdrawals",
-    image: hero_55,
-    alt: "Illustration representing a paused crypto withdrawal process",
-    tag: "Guides · Article",
-    title: "What Does It Mean When an Exchange Pauses Withdrawals?",
-    desc: "Your crypto exchange paused withdrawals — is that normal or a red flag? A comprehensive guide to understanding exchange liquidity, routine maintenance, and warning signs of insolvency.",
-  },
-  {
-    to: "/guides/why-bitcoin-price-moves-more-than-stocks",
-    image: hero_56,
-    alt: "Illustration representing Bitcoin's price movement compared to traditional markets",
-    tag: "Guides · Article",
-    title: "Why Does Bitcoin's Price Move More Than Stocks?",
-    desc: "A plain-language look at the structural reasons Bitcoin's price swings more than traditional assets — no predictions, just the mechanics.",
-  },
-  {
-    to: "/guides/why-governments-regulate-cryptocurrency",
-    image: hero_58,
-    alt: "Illustration representing government regulatory oversight of cryptocurrency",
-    tag: "Guides · Article",
-    title: "Why Do Governments Regulate Cryptocurrency? Full Guide",
-    desc: "An in-depth editorial guide on why governments regulate crypto, the major global legal frameworks (MiCA, SEC, FATF), and what regulations mean for retail investors.",
   },
   {
     to: "/security/common-crypto-scams",
@@ -1071,13 +1039,13 @@ function IndexPage() {
           </div>
 
           <h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-md leading-tight">
-            Cryptocurrency: News, Prices &amp; Meaning
+            Cryptocurrency: Education, Security &amp; Market Analysis
           </h1>
 
           <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
             Welcome to CryptoBeacon — your institutional-grade editorial reference on what{" "}
             <strong>cryptocurrency</strong> is, how <strong>blockchain technology</strong> enables
-            self-custody and permissionless transactions, and how cryptocurrency prices are
+            self-custody and permissionless transactions, and how crypto assets are
             evaluated in global markets. Our independent research provides objective analysis on
             Bitcoin, Ethereum, regulatory policies, and essential security practices.
           </p>

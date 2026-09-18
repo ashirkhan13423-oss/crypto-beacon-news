@@ -1,6 +1,32 @@
 import { Link, useLocation } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import authorAvatar from "@/assets/ashir.webp";
 import generatedMetadata from "@/data/generated-metadata.json";
+
+const WORDS_PER_MINUTE = 200;
+
+function measureArticleReadTime(): string | null {
+  if (typeof document === "undefined") return null;
+  const article = document.querySelector("article");
+  if (!article) return null;
+
+  // Count the actual rendered text of the article body, excluding the author
+  // box, nav elements (breadcrumbs/TOC), diagrams, and related-reading blocks.
+  const clone = article.cloneNode(true) as HTMLElement;
+  clone
+    .querySelectorAll("[data-rt-exclude], nav, svg, script, style, noscript")
+    .forEach((el) => el.remove());
+
+  const text = (clone.textContent ?? "")
+    .replace(/&[a-zA-Z#0-9]+;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  if (!text) return null;
+  const words = text.split(" ").length;
+  const minutes = Math.max(1, Math.ceil(words / WORDS_PER_MINUTE));
+  return `${minutes} min read`;
+}
 
 interface AuthorProps {
   publishedDate?: React.ReactNode;
@@ -10,14 +36,26 @@ interface AuthorProps {
 export function Author({ publishedDate, readTime }: AuthorProps) {
   const location = useLocation();
   const path = location.pathname;
-  
-  // Use passed readTime if present (though we'll remove them), 
-  // otherwise fallback to the generated one.
-  const generatedMeta = (generatedMetadata as Record<string, any>)[path];
-  const displayReadTime = readTime || (generatedMeta ? generatedMeta.readTime : null);
+
+  // Hydration-safe initial value: render the generated read time on both
+  // server and first client render, then replace it with the exact value
+  // measured from the rendered article body once the page has mounted.
+  const generatedMeta = (generatedMetadata as Record<string, { readTime?: string } | undefined>)[
+    path
+  ];
+  const fallbackReadTime = readTime || generatedMeta?.readTime || null;
+  const [displayReadTime, setDisplayReadTime] = useState<string | null>(fallbackReadTime);
+
+  useEffect(() => {
+    const measured = measureArticleReadTime();
+    if (measured) setDisplayReadTime(measured);
+  }, []);
 
   return (
-    <div className="mt-md mb-lg flex flex-col sm:flex-row items-start sm:items-center gap-md p-md bg-surface-container-low border border-outline-variant rounded-xl max-w-3xl">
+    <div
+      data-rt-exclude
+      className="mt-md mb-lg flex flex-col sm:flex-row items-start sm:items-center gap-md p-md bg-surface-container-low border border-outline-variant rounded-xl max-w-3xl"
+    >
       <img
         src={authorAvatar}
         alt="Ashir Khan"
@@ -45,7 +83,8 @@ export function Author({ publishedDate, readTime }: AuthorProps) {
           )}
         </div>
         <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-          Ashir Khan writes about cryptocurrency security, self-custody, macro market analysis, and regulatory policy at CryptoBeacon.
+          Ashir Khan writes about cryptocurrency security, self-custody, macro market analysis, and
+          regulatory policy at CryptoBeacon.
         </p>
       </div>
     </div>

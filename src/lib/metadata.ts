@@ -54,6 +54,7 @@ export function buildMetadata(args: MetadataArgs) {
       meta.push({ property: "article:section", content: section });
     }
     if (author) {
+      meta.push({ name: "author", content: author });
       meta.push({ property: "article:author", content: author });
     }
   }

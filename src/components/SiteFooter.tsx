@@ -37,11 +37,12 @@ export function SiteFooter() {
           <span className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Platform
           </span>
-          <Link to="/" className={linkCls}>Home</Link>
-          <Link to="/learn" className={linkCls}>Learn</Link>
+          <Link to="/bitcoin" className={linkCls}>Bitcoin</Link>
+          <Link to="/ethereum" className={linkCls}>Ethereum</Link>
           <Link to="/guides" className={linkCls}>Guides</Link>
+          <Link to="/security" className={linkCls}>Security</Link>
           <Link to="/news" className={linkCls}>News</Link>
-          <Link to="/glossary" className={linkCls}>Glossary</Link>
+          <Link to="/altcoins" className={linkCls}>Altcoins</Link>
         </div>
 
         {/* Column 2 — Topics */}
@@ -49,13 +50,11 @@ export function SiteFooter() {
           <span className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
             Topics
           </span>
-          <Link to="/bitcoin" className={linkCls}>Bitcoin</Link>
-          <Link to="/ethereum" className={linkCls}>Ethereum</Link>
-          <Link to="/security" className={linkCls}>Security</Link>
-          <Link to="/taxes" className={linkCls}>Taxes</Link>
-          <Link to="/altcoins" className={linkCls}>Altcoins</Link>
           <Link to="/defi" className={linkCls}>DeFi</Link>
           <Link to="/etfs" className={linkCls}>ETFs</Link>
+          <Link to="/taxes" className={linkCls}>Taxes</Link>
+          <Link to="/learn" className={linkCls}>Learn</Link>
+          <Link to="/glossary" className={linkCls}>Glossary</Link>
         </div>
 
         {/* Column 3 — Company */}

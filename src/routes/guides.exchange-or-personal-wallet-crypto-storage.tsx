@@ -175,7 +175,7 @@ function ArticlePage() {
         </div>
 
         <P>
-          Whether holding major <strong>crypto currencies</strong> on large centralized spot venues
+          Whether holding major <strong>cryptocurrencies</strong> on large centralized spot venues
           or using specialized peer-to-peer trading platforms, understanding counterparty risk vs
           self-custody is critical.
         </P>

@@ -287,7 +287,7 @@ function ArticlePage() {
           Every 210,000 blocks (approximately every four years), the block reward paid to miners is
           cut in half — an event known as the <strong><Link to="/glossary#halving" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Halving">halving</Link></strong>. This is how Bitcoin's supply
           schedule becomes progressively more restrictive over time. The block reward started at 50
-          BTC, is currently 3.125 BTC (as of 2024), and will continue halving until all 21 million
+          BTC, is currently 3.125 BTC (the rate set by the April 2024 halving), and will continue halving until all 21 million
           Bitcoin have been issued, around the year 2140.
         </P>
         <P>

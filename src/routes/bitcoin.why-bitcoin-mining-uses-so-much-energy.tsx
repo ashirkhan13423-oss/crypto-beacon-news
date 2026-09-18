@@ -22,7 +22,7 @@ let keyTakeaway = "";
 const faqs: { q: string; a: string }[] = [
   {
     q: "How much energy does Bitcoin actually use?",
-    a: "Estimates vary, but as of late 2024, the Bitcoin network consumes around 130-150 TWh annually, comparable to the energy usage of a small to medium-sized country like Argentina.",
+    a: "Estimates vary, but recent estimates put Bitcoin's annual energy use in the range of 130-150 TWh, comparable to the energy usage of a small to medium-sized country like Argentina.",
   },
   {
     q: "Can Bitcoin switch to a greener system like Ethereum did?",

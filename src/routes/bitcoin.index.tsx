@@ -15,8 +15,8 @@ import etfHero from "@/assets/bitcoin-etf-effects.webp";
 import bondYieldsHero from "@/assets/bitcoin-bond-yields.webp";
 import { Bitcoin } from "lucide-react";
 
-const TITLE = "Bitcoin (BTC): Benchmark Crypto Currency Architecture & Analysis — CryptoBeacon";
-const DESC = "Definitive Bitcoin analysis: global crypto currency macro factors, network difficulty, halving mechanics, and transaction security.";
+const TITLE = "Bitcoin (BTC): Benchmark Cryptocurrency Architecture & Analysis — CryptoBeacon";
+const DESC = "Definitive Bitcoin analysis: global cryptocurrency macro factors, network difficulty, halving mechanics, and transaction security.";
 const URL = "https://www.cryptobeacon.site/bitcoin";
 
 import hero_miningenergy from "@/assets/bitcoin-mining-energy.webp";
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/bitcoin/")({ validateSearch: searchSchema
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },
-        { name: "Bitcoin (BTC): Benchmark Crypto Currency Architecture & Analysis — CryptoBeacon", item: "https://www.cryptobeacon.site/bitcoin" }
+        { name: "Bitcoin (BTC): Benchmark Cryptocurrency Architecture & Analysis — CryptoBeacon", item: "https://www.cryptobeacon.site/bitcoin" }
       ])) },
       { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
@@ -64,7 +64,7 @@ function BitcoinPage() {
             <h1 className="font-display-lg text-display-lg text-primary">Bitcoin (BTC)</h1>
           </div>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
-            The foundational <strong>crypto currency</strong> of the digital asset ecosystem —
+            The foundational <strong>cryptocurrency</strong> of the digital asset ecosystem —
             in-depth analysis of supply caps, global <strong>market</strong> drivers,
             and network safety.
           </p>

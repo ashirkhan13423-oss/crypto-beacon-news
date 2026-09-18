@@ -35,7 +35,7 @@ const howToSchema = {
   ],
   author: {
     "@type": "Person",
-    name: "Ashir",
+    name: "Ashir Khan",
     url: "https://www.cryptobeacon.site/author",
     worksFor: { "@type": "Organization", name: "CryptoBeacon" },
   },

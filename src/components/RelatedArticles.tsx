@@ -48,7 +48,7 @@ export function RelatedArticles({ currentUrl }: RelatedArticlesProps) {
   if (topRelated.length === 0) return null;
 
   return (
-    <section className="mt-xxl">
+    <section data-rt-exclude className="mt-xxl">
       <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
         {topRelated.map(article => (

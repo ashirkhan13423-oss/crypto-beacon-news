@@ -58,7 +58,7 @@ for (const file of files) {
   // Count words
   const words = plainText.split(' ').filter(w => w.length > 0);
   const wordCount = words.length;
-  const readTimeMinutes = Math.max(1, Math.round(wordCount / 225));
+  const readTimeMinutes = Math.max(1, Math.ceil(wordCount / 200));
   
   // Generate fallback description (first 150 chars)
   const first150 = plainText.substring(0, 150).trim();

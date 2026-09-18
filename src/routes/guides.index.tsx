@@ -7,8 +7,8 @@ import { ArticleGrid } from "@/components/ArticleGrid";
 import { BookOpen } from "lucide-react";
 import { z } from "zod";
 
-const TITLE = "Crypto Currency Guides & Explanations — CryptoBeacon";
-const DESC = "Comprehensive guides on what crypto currency is, the true crypto currency meaning behind self-custody, wallet management, and securing your crypto currencies.";
+const TITLE = "Cryptocurrency Guides & Explanations — CryptoBeacon";
+const DESC = "Comprehensive guides to what cryptocurrency is, the principles of self-custody, wallet management, and securing your digital assets.";
 const URL = "https://www.cryptobeacon.site/guides";
 
 
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/guides/")({
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },
-        { name: "Crypto Currency Guides & Explanations — CryptoBeacon", item: "https://www.cryptobeacon.site/guides" }
+        { name: "Cryptocurrency Guides & Explanations — CryptoBeacon", item: "https://www.cryptobeacon.site/guides" }
       ])) },
       { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
@@ -54,12 +54,12 @@ function GuidesHub() {
                 style={{ fontVariationSettings: "'FILL' 1", fontSize: "20px" }}
               />
             </div>
-            <h1 className="font-display-lg text-display-lg text-primary">Crypto Currency Guides</h1>
+            <h1 className="font-display-lg text-display-lg text-primary">Cryptocurrency Guides</h1>
           </div>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
-            Essential educational references explaining <strong>what crypto currency is</strong>,
-            the deeper <strong>crypto currency meaning</strong> of private key custody, and how to
-            safely manage major <strong>crypto currencies</strong>.
+            Essential educational references on how <strong>cryptocurrency</strong> works, the
+            deeper meaning of <strong>private key custody</strong>, and how to safely manage
+            your <strong>digital assets</strong>.
           </p>
         </header>
 

@@ -769,16 +769,7 @@ export const articles: Article[] = [
     desc: "Standard Chartered has launched deliverable spot trading for Bitcoin and Ether for institutional clients in the UAE. Explore how this move bridges traditional finance and crypto.",
     publishedDate: "2026-09-04",
 },
-  {
-    to: "/guides/what-is-a-blockchain-fork",
-    image: hero_48,
-    alt: "Abstract illustration representing a blockchain splitting into two separate paths",
-    tag: "Guides · Article",
-    title: "What Is a Blockchain Fork? Explained Simply",
-    desc: "A plain-language explainer on what a blockchain fork is, the difference between hard and soft forks, and why cryptocurrencies sometimes split into two.",
-    publishedDate: "2026-08-15",
-},
-  {
+{
     to: "/news/what-is-the-clarity-act-crypto",
     image: hero_66,
     alt: "Illustration showing abstract Capitol lines, balanced scales, and a gavel representing cryptocurrency regulation",
@@ -787,34 +778,7 @@ export const articles: Article[] = [
     desc: "What is the Clarity Act crypto: a factual explanation of the proposed U.S. bill, securities vs commodities classifications, and legislative status.",
     publishedDate: "2026-08-30",
 },
-  {
-    to: "/guides/what-it-means-when-exchange-pauses-withdrawals",
-    image: hero_55,
-    alt: "Illustration representing a paused crypto withdrawal process",
-    tag: "Guides · Article",
-    title: "What Does It Mean When an Exchange Pauses Withdrawals?",
-    desc: "Your crypto exchange paused withdrawals — is that normal or a red flag? A comprehensive guide to understanding exchange liquidity, routine maintenance, and warning signs of insolvency.",
-    publishedDate: "2026-08-04",
-},
-  {
-    to: "/guides/why-bitcoin-price-moves-more-than-stocks",
-    image: hero_56,
-    alt: "Illustration representing Bitcoin's price movement compared to traditional markets",
-    tag: "Guides · Article",
-    title: "Why Does Bitcoin's Price Move More Than Stocks?",
-    desc: "A plain-language look at the structural reasons Bitcoin's price swings more than traditional assets — no predictions, just the mechanics.",
-    publishedDate: "2026-08-12",
-},
-  {
-    to: "/guides/why-governments-regulate-cryptocurrency",
-    image: hero_58,
-    alt: "Illustration representing government regulatory oversight of cryptocurrency",
-    tag: "Guides · Article",
-    title: "Why Do Governments Regulate Cryptocurrency? Full Guide",
-    desc: "An in-depth editorial guide on why governments regulate crypto, the major global legal frameworks (MiCA, SEC, FATF), and what regulations mean for retail investors.",
-    publishedDate: "2026-08-15",
-},
-  {
+{
     to: "/security/common-crypto-scams",
     image: undefined,
     alt: "",

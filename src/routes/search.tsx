@@ -68,28 +68,28 @@ const ARTICLES = [
   {
     title: "Should You Keep Your Crypto on an Exchange or Move It to Your Own Wallet?",
     description:
-      "Comparing exchange custody vs personal wallet custody across top crypto currencies.",
+      "Comparing exchange custody vs personal wallet custody across top cryptocurrencies.",
     path: "/guides/exchange-or-personal-wallet-crypto-storage",
     category: "Guides",
   },
   {
     title: '"Not Your Keys, Not Your Coins" — What It Actually Means',
     description:
-      "The foundational crypto currency meaning of self-custody: why private key ownership matters when holding crypto currencies.",
+      "The foundational cryptocurrency meaning of self-custody: why private key ownership matters when holding cryptocurrencies.",
     path: "/guides/not-your-keys-not-your-coins-meaning",
     category: "Guides",
   },
   {
     title: "What Is a Crypto Wallet Address? How to Use It Safely",
     description:
-      "How public keys and wallet addresses work across major crypto currencies, address format validation, and transfer safety.",
+      "How public keys and wallet addresses work across major cryptocurrencies, address format validation, and transfer safety.",
     path: "/guides/what-is-a-crypto-wallet-address",
     category: "Guides",
   },
   {
     title: "What Is a Blockchain Fork? Hard & Soft Forks Explained",
     description:
-      "A beginner-friendly explainer on what a blockchain fork is, hard vs soft forks, and what happens to crypto currency prices during network splits.",
+      "A beginner-friendly explainer on what a blockchain fork is, hard vs soft forks, and what happens to cryptocurrency prices during network splits.",
     path: "/guides/what-is-a-blockchain-fork",
     category: "Guides",
   },

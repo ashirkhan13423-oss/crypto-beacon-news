@@ -1,5 +1,5 @@
 export const AUTHOR = {
-  name: "Ashir",
+  name: "Ashir Khan",
   url: "https://www.cryptobeacon.site/author",
   jobTitle: "Founder & Lead Analyst",
   description: "Cryptocurrency educator and researcher focusing on Bitcoin, Ethereum, and digital asset security.",
