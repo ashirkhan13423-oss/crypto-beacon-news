@@ -55,6 +55,49 @@ import hero_fakewallet from "@/assets/security-fake-wallet-app.webp";
 import hero_miningenergy from "@/assets/bitcoin-mining-energy.webp";
 import hero_halvingmech from "@/assets/bitcoin-halving-mechanism.webp";
 import hero_symbiosis from "@/assets/symbiosis-bridge-exploit-hero.webp";
+import hero_fix_100 from "@/assets/guides-wallet-address.webp";
+import hero_fix_101 from "@/assets/exchange-vs-wallet.webp";
+import hero_fix_102 from "@/assets/security-fake-wallet-app.webp";
+import hero_fix_103 from "@/assets/bitcoin-buy-safely.webp";
+import hero_fix_104 from "@/assets/bitcoin-what-is-a-wallet.webp";
+import hero_fix_105 from "@/assets/bitcoin-what-is-a-wallet.webp";
+import hero_fix_106 from "@/assets/ethereum-erc20-token.webp";
+import hero_fix_107 from "@/assets/ethereum-staking-mechanism.webp";
+import hero_fix_108 from "@/assets/ethereum-address-mismatch.webp";
+import hero_fix_109 from "@/assets/ethereum-address-mismatch.webp";
+import hero_fix_110 from "@/assets/ethereum-address-mismatch.webp";
+import hero_fix_111 from "@/assets/ethereum-address-mismatch.webp";
+import hero_fix_112 from "@/assets/ethereum-address-mismatch.webp";
+import hero_fix_113 from "@/assets/bitcoin-buy-safely.webp";
+import hero_fix_114 from "@/assets/bitcoin-buy-safely.webp";
+import hero_fix_115 from "@/assets/bitcoin-what-is-a-wallet.webp";
+import hero_fix_116 from "@/assets/guides-smart-contract.webp";
+import hero_fix_117 from "@/assets/guides-coin-vs-token.webp";
+import hero_fix_118 from "@/assets/altcoins-ai-crypto-token.webp";
+import hero_fix_119 from "@/assets/altcoins-ai-crypto-token.webp";
+import hero_fix_120 from "@/assets/altcoins-ai-crypto-token.webp";
+import hero_fix_121 from "@/assets/bitcoin-buy-safely.webp";
+import hero_fix_122 from "@/assets/bitcoin-buy-safely.webp";
+import hero_fix_123 from "@/assets/bitcoin-buy-safely.webp";
+import hero_fix_124 from "@/assets/what-is-stablecoin.webp";
+import hero_fix_125 from "@/assets/bitcoin-what-is-a-wallet.webp";
+import hero_fix_126 from "@/assets/bitcoin-what-is-a-wallet.webp";
+import hero_fix_127 from "@/assets/bitcoin-buy-safely.webp";
+import hero_fix_128 from "@/assets/bitcoin-buy-safely.webp";
+import hero_fix_129 from "@/assets/altcoins-ai-crypto-token.webp";
+import hero_fix_130 from "@/assets/altcoins-ai-crypto-token.webp";
+import hero_fix_131 from "@/assets/exchange-comparison.webp";
+import hero_fix_132 from "@/assets/security-fake-wallet-app.webp";
+import hero_fix_133 from "@/assets/security-fake-wallet-app.webp";
+import hero_fix_134 from "@/assets/bitcoin-buy-safely.webp";
+import hero_fix_135 from "@/assets/bitcoin-buy-safely.webp";
+import hero_fix_136 from "@/assets/guides-private-key.webp";
+import hero_fix_137 from "@/assets/bitcoin-lightning-network.webp";
+import hero_fix_138 from "@/assets/bitcoin-what-is-a-wallet.webp";
+import hero_fix_139 from "@/assets/news-crypto-atms-everywhere.webp";
+import hero_fix_140 from "@/assets/news-onchain-vs-exchange.webp";
+import hero_fix_141 from "@/assets/altcoins-ai-crypto-token.webp";
+import hero_fix_142 from "@/assets/altcoins-meme-coin-value.webp";
 
 export type Article = {
   to: string;
@@ -114,7 +157,7 @@ export const articles: Article[] = [
 },
   {
     to: "/guides/what-is-a-smart-contract-explained",
-    image: undefined,
+    image: hero_fix_116,
     alt: "",
     tag: "Guides · Article",
     title: "What Is a Smart Contract? The Vending Machine Analogy",
@@ -123,7 +166,7 @@ export const articles: Article[] = [
 },
   {
     to: "/guides/coin-vs-token-difference",
-    image: undefined,
+    image: hero_fix_117,
     alt: "",
     tag: "Guides · Article",
     title: "Coin vs. Token: What Is the Actual Difference?",
@@ -132,7 +175,7 @@ export const articles: Article[] = [
 },
   {
     to: "/news/why-are-crypto-atms-everywhere",
-    image: undefined,
+    image: hero_fix_139,
     alt: "",
     tag: "News · Article",
     title: "Why Are Crypto ATMs Suddenly Everywhere?",
@@ -141,7 +184,7 @@ export const articles: Article[] = [
 },
   {
     to: "/news/what-is-on-chain-trading-vs-exchange",
-    image: undefined,
+    image: hero_fix_140,
     alt: "",
     tag: "News · Article",
     title: "What Is On-Chain Trading vs. Exchange Trading?",
@@ -150,7 +193,7 @@ export const articles: Article[] = [
 },
   {
     to: "/ethereum/what-is-an-erc-20-token",
-    image: undefined,
+    image: hero_fix_106,
     alt: "",
     tag: "Ethereum · Article",
     title: "What Is an ERC-20 Token? The Standard That Built DeFi",
@@ -159,7 +202,7 @@ export const articles: Article[] = [
 },
   {
     to: "/ethereum/how-does-ethereum-staking-work",
-    image: undefined,
+    image: hero_fix_107,
     alt: "",
     tag: "Ethereum · Article",
     title: "How Does Ethereum Staking Work? Proof of Stake Explained",
@@ -168,7 +211,7 @@ export const articles: Article[] = [
 },
   {
     to: "/altcoins/what-is-an-ai-crypto-token",
-    image: undefined,
+    image: hero_fix_141,
     alt: "",
     tag: "Altcoins · Article",
     title: "What Is an AI Crypto Token? Mechanics and Hype Explained",
@@ -177,7 +220,7 @@ export const articles: Article[] = [
 },
   {
     to: "/altcoins/why-do-meme-coins-have-value",
-    image: undefined,
+    image: hero_fix_142,
     alt: "",
     tag: "Altcoins · Article",
     title: "Why Do Meme Coins Have Value? The Economics of Attention",
@@ -186,7 +229,7 @@ export const articles: Article[] = [
 },
   {
     to: "/bitcoin/bitcoin-address-vs-wallet-address",
-    image: undefined,
+    image: hero_fix_100,
     alt: "",
     tag: "Bitcoin · Article",
     title: "Bitcoin Address vs Wallet Address: What's the Difference?",
@@ -204,7 +247,7 @@ export const articles: Article[] = [
 },
   {
     to: "/bitcoin/bitcoin-wallets-complete-guide",
-    image: undefined,
+    image: hero_fix_101,
     alt: "",
     tag: "Bitcoin · Article",
     title: "Bitcoin Wallets: Complete Beginner's Guide",
@@ -222,7 +265,7 @@ export const articles: Article[] = [
 },
   {
     to: "/bitcoin/common-bitcoin-wallet-scams",
-    image: undefined,
+    image: hero_fix_102,
     alt: "",
     tag: "Bitcoin · Article",
     title: "Common Bitcoin Wallet Scams: How to Spot and Avoid Them",
@@ -231,7 +274,7 @@ export const articles: Article[] = [
 },
   {
     to: "/bitcoin/how-bitcoin-wallets-work",
-    image: undefined,
+    image: hero_fix_103,
     alt: "",
     tag: "Bitcoin · Article",
     title: "How Bitcoin Wallets Work: Private Keys, Addresses & Signing",
@@ -267,7 +310,7 @@ export const articles: Article[] = [
 },
   {
     to: "/bitcoin/what-happens-if-you-lose-your-seed-phrase",
-    image: undefined,
+    image: hero_fix_104,
     alt: "",
     tag: "Bitcoin · Article",
     title: "What Happens If You Lose Your Bitcoin Seed Phrase?",
@@ -285,7 +328,7 @@ export const articles: Article[] = [
 },
   {
     to: "/bitcoin/what-is-a-bitcoin-seed-phrase",
-    image: undefined,
+    image: hero_fix_105,
     alt: "",
     tag: "Bitcoin · Article",
     title: "What Is a Bitcoin Seed Phrase? BIP-39 Explained",
@@ -339,7 +382,7 @@ export const articles: Article[] = [
 },
   {
     to: "/ethereum/ethereum-complete-beginners-guide",
-    image: undefined,
+    image: hero_fix_108,
     alt: "",
     tag: "Ethereum · Article",
     title: "Ethereum Explained: Complete Beginner's Guide",
@@ -357,7 +400,7 @@ export const articles: Article[] = [
 },
   {
     to: "/ethereum/ethereum-transaction-fees-explained",
-    image: undefined,
+    image: hero_fix_109,
     alt: "",
     tag: "Ethereum · Article",
     title: "Ethereum Transaction Fees Explained: Gas, EIP-1559 & How to Save",
@@ -366,7 +409,7 @@ export const articles: Article[] = [
 },
   {
     to: "/ethereum/ethereum-validators-explained",
-    image: undefined,
+    image: hero_fix_110,
     alt: "",
     tag: "Ethereum · Article",
     title: "Ethereum Validators Explained: Requirements, Duties & Risks",
@@ -375,7 +418,7 @@ export const articles: Article[] = [
 },
   {
     to: "/ethereum/ethereum-vs-bitcoin",
-    image: undefined,
+    image: hero_fix_111,
     alt: "",
     tag: "Ethereum · Article",
     title: "Ethereum vs Bitcoin: Key Differences Explained",
@@ -384,7 +427,7 @@ export const articles: Article[] = [
 },
   {
     to: "/ethereum/ethereum-wallets-explained",
-    image: undefined,
+    image: hero_fix_112,
     alt: "",
     tag: "Ethereum · Article",
     title: "Ethereum Wallets Explained: EOAs, MetaMask & Hardware Wallets",
@@ -393,7 +436,7 @@ export const articles: Article[] = [
 },
   {
     to: "/ethereum/how-ethereum-works",
-    image: undefined,
+    image: hero_fix_113,
     alt: "",
     tag: "Ethereum · Article",
     title: "How Ethereum Works: EVM, Accounts, Transactions & Consensus",
@@ -411,7 +454,7 @@ export const articles: Article[] = [
 },
   {
     to: "/ethereum/proof-of-stake-explained",
-    image: undefined,
+    image: hero_fix_114,
     alt: "",
     tag: "Ethereum · Article",
     title: "Proof of Stake Explained: How Ethereum's Consensus Works",
@@ -456,7 +499,7 @@ export const articles: Article[] = [
 },
   {
     to: "/ethereum/what-is-ethereum",
-    image: undefined,
+    image: hero_fix_115,
     alt: "",
     tag: "Ethereum · Article",
     title: "What Is Ethereum? A Plain-Language Introduction",
@@ -483,7 +526,7 @@ export const articles: Article[] = [
 },
   {
     to: "/guides/crypto-regulation-explained-for-beginners",
-    image: undefined,
+    image: hero_fix_118,
     alt: "",
     tag: "Guides · Article",
     title: "Crypto Regulation Explained for Beginners",
@@ -492,7 +535,7 @@ export const articles: Article[] = [
 },
   {
     to: "/guides/crypto-regulation-hub",
-    image: undefined,
+    image: hero_fix_119,
     alt: "",
     tag: "Guides · Article",
     title: "Cryptocurrency Regulation Hub: Complete Guide",
@@ -501,7 +544,7 @@ export const articles: Article[] = [
 },
   {
     to: "/guides/crypto-regulation-vs-cryptocurrency-ban",
-    image: undefined,
+    image: hero_fix_120,
     alt: "",
     tag: "Guides · Article",
     title: "Crypto Regulation vs Crypto Ban: Understanding the Difference",
@@ -519,7 +562,7 @@ export const articles: Article[] = [
 },
   {
     to: "/guides/cryptocurrency-taxes-explained",
-    image: undefined,
+    image: hero_fix_121,
     alt: "",
     tag: "Guides · Article",
     title: "Cryptocurrency Taxes Explained: Capital Gains, Income & Reporting",
@@ -555,7 +598,7 @@ export const articles: Article[] = [
 },
   {
     to: "/guides/how-crypto-exchanges-are-regulated",
-    image: undefined,
+    image: hero_fix_122,
     alt: "",
     tag: "Guides · Article",
     title: "How Crypto Exchanges Are Regulated: Licensing & Compliance",
@@ -564,7 +607,7 @@ export const articles: Article[] = [
 },
   {
     to: "/guides/how-cryptocurrency-regulation-works",
-    image: undefined,
+    image: hero_fix_123,
     alt: "",
     tag: "Guides · Article",
     title: "How Cryptocurrency Regulation Works: Agencies, Frameworks & Jurisdictions",
@@ -609,7 +652,7 @@ export const articles: Article[] = [
 },
   {
     to: "/guides/stablecoin-regulation-explained",
-    image: undefined,
+    image: hero_fix_124,
     alt: "",
     tag: "Guides · Article",
     title: "Stablecoin Regulation Explained: Rules, Reserves & MiCA",
@@ -663,7 +706,7 @@ export const articles: Article[] = [
 },
   {
     to: "/guides/what-is-aml-in-crypto",
-    image: undefined,
+    image: hero_fix_125,
     alt: "",
     tag: "Guides · Article",
     title: "What Is AML in Crypto? Anti-Money Laundering Rules Explained",
@@ -672,7 +715,7 @@ export const articles: Article[] = [
 },
   {
     to: "/guides/what-is-kyc-in-cryptocurrency",
-    image: undefined,
+    image: hero_fix_126,
     alt: "",
     tag: "Guides · Article",
     title: "What Is KYC in Cryptocurrency? Requirements & Why It Matters",
@@ -699,7 +742,7 @@ export const articles: Article[] = [
 },
   {
     to: "/guides/why-crypto-regulation-matters",
-    image: undefined,
+    image: hero_fix_127,
     alt: "",
     tag: "Guides · Article",
     title: "Why Crypto Regulation Matters to Investors",
@@ -780,7 +823,7 @@ export const articles: Article[] = [
 },
 {
     to: "/security/common-crypto-scams",
-    image: undefined,
+    image: hero_fix_128,
     alt: "",
     tag: "Security · Article",
     title: "Common Crypto Scams: Rug Pulls, Pig Butchering & More",
@@ -789,7 +832,7 @@ export const articles: Article[] = [
 },
   {
     to: "/security/crypto-security-hub",
-    image: undefined,
+    image: hero_fix_129,
     alt: "",
     tag: "Security · Article",
     title: "Crypto Security Hub: Complete Guide to Protecting Your Assets",
@@ -798,7 +841,7 @@ export const articles: Article[] = [
 },
   {
     to: "/security/crypto-wallet-drainer-scams-explained",
-    image: undefined,
+    image: hero_fix_130,
     alt: "",
     tag: "Security · Article",
     title: "Crypto Wallet Drainer Scams Explained",
@@ -816,7 +859,7 @@ export const articles: Article[] = [
 },
   {
     to: "/security/exchange-account-security",
-    image: undefined,
+    image: hero_fix_131,
     alt: "",
     tag: "Security · Article",
     title: "Exchange Account Security: Protect Your Crypto on Centralised Exchanges",
@@ -825,7 +868,7 @@ export const articles: Article[] = [
 },
   {
     to: "/security/fake-airdrop-scams-explained",
-    image: undefined,
+    image: hero_fix_132,
     alt: "",
     tag: "Security · Article",
     title: "Fake Airdrop Scams Explained: How They Work & How to Stay Safe",
@@ -834,7 +877,7 @@ export const articles: Article[] = [
 },
   {
     to: "/security/fake-wallet-apps-explained",
-    image: undefined,
+    image: hero_fix_133,
     alt: "",
     tag: "Security · Article",
     title: "Fake Crypto Wallet Apps: How to Spot Them Before You Download",
@@ -852,7 +895,7 @@ export const articles: Article[] = [
 },
   {
     to: "/security/how-crypto-phishing-scams-work",
-    image: undefined,
+    image: hero_fix_134,
     alt: "",
     tag: "Security · Article",
     title: "How Crypto Phishing Scams Work: Attack Types Explained",
@@ -870,7 +913,7 @@ export const articles: Article[] = [
 },
   {
     to: "/security/how-to-identify-a-fake-crypto-website",
-    image: undefined,
+    image: hero_fix_135,
     alt: "",
     tag: "Security · Article",
     title: "How to Identify a Fake Crypto Website: 7 Checks",
@@ -915,7 +958,7 @@ export const articles: Article[] = [
 },
   {
     to: "/security/private-key-vs-seed-phrase",
-    image: undefined,
+    image: hero_fix_136,
     alt: "",
     tag: "Security · Article",
     title: "Private Key vs Seed Phrase: What's the Difference?",
@@ -924,7 +967,7 @@ export const articles: Article[] = [
 },
   {
     to: "/security/two-factor-authentication-for-crypto",
-    image: undefined,
+    image: hero_fix_137,
     alt: "",
     tag: "Security · Article",
     title: "Two-Factor Authentication for Crypto: SMS vs TOTP vs Hardware Keys",
@@ -933,7 +976,7 @@ export const articles: Article[] = [
 },
   {
     to: "/security/what-is-a-seed-phrase",
-    image: undefined,
+    image: hero_fix_138,
     alt: "",
     tag: "Security · Article",
     title: "What Is a Seed Phrase? Security Guide for Crypto Users",
