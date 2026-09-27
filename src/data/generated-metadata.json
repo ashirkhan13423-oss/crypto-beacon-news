@@ -415,7 +415,7 @@
     "fallbackDesc": "Home / Security / Common Crypto Scams Security · Scams Common Crypto Scams The five most common cryptocurrency scams — how they work, what they look..."
   },
   "/security/crypto-security-hub": {
-    "wordCount": 417,
+    "wordCount": 482,
     "readTime": "3 min read",
     "fallbackDesc": "Home / Security / Crypto Security Hub Security · Hub Crypto Security Hub Crypto scams are growing in sophistication every year. This hub covers every"
   },
@@ -469,6 +469,11 @@
     "readTime": "5 min read",
     "fallbackDesc": "Home / Security / How to Revoke Smart Contract Approvals Security How to Revoke Smart Contract Approvals and Protect Your Crypto In the world of..."
   },
+  "/security/how-to-revoke-token-approvals-metamask": {
+    "wordCount": 819,
+    "readTime": "5 min read",
+    "fallbackDesc": "Home / Security / Revoke Token Approvals Security How to Revoke Token Approvals on MetaMask (Step-by-Step) Every time you use a decentralized app —..."
+  },
   "/security/how-to-spot-a-fake-crypto-wallet-app": {
     "wordCount": 324,
     "readTime": "2 min read",
@@ -480,8 +485,8 @@
     "fallbackDesc": "Home / Security / Spotting a Rug Pull Security How to Spot a Crypto Rug Pull In the unregulated corners of decentralized finance ( DeFi ), creating a"
   },
   "/security/how-to-store-crypto-seed-phrase-safely": {
-    "wordCount": 1598,
-    "readTime": "8 min read",
+    "wordCount": 1627,
+    "readTime": "9 min read",
     "fallbackDesc": "Home / Security / Seed Phrase Storage Security How to Store Your Crypto Seed Phrase Safely If you own cryptocurrency and hold it yourself rather than"
   },
   "/security/how-to-verify-a-crypto-transaction": {
@@ -493,6 +498,11 @@
     "wordCount": 355,
     "readTime": "2 min read",
     "fallbackDesc": "Home / Security / Private Key vs Seed Phrase Security · Explainer Private Key vs Seed Phrase Both are critical secrets in self-custody — but they..."
+  },
+  "/security/seed-phrase-storage-steel-vs-paper-vs-metal": {
+    "wordCount": 715,
+    "readTime": "4 min read",
+    "fallbackDesc": "Home / Security / Seed Phrase Storage: Steel vs. Paper Security Seed Phrase Storage: Steel Plates vs. Paper vs. Metal Backup Compared Once you have..."
   },
   "/security/two-factor-authentication-for-crypto": {
     "wordCount": 343,

@@ -55,6 +55,8 @@ import hero_fakewallet from "@/assets/security-fake-wallet-app.webp";
 import hero_miningenergy from "@/assets/bitcoin-mining-energy.webp";
 import hero_halvingmech from "@/assets/bitcoin-halving-mechanism.webp";
 import hero_symbiosis from "@/assets/symbiosis-bridge-exploit-hero.webp";
+import hero_revoke_approval from "@/assets/revoke-approval.jpg";
+import hero_steel_paper from "@/assets/seed-phrase-steel-vs-paper.jpg";
 
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
@@ -191,6 +193,14 @@ export const Route = createFileRoute("/")({
 });
 
 const articles = [
+  {
+    to: "/security/seed-phrase-storage-steel-vs-paper-vs-metal",
+    image: hero_steel_paper,
+    alt: "Illustration comparing paper and metal seed phrase backup mediums",
+    tag: "Security · Article",
+    title: "Seed Phrase Storage: Steel Plates vs. Paper vs. Metal Backup Compared",
+    desc: "Paper, DIY steel stamping, or a commercial metal plate — which seed phrase backup actually holds up? A neutral durability and cost comparison.",
+  },
   {
     to: "/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint",
     image: hero_symbiosis,
@@ -910,6 +920,14 @@ const articles = [
     tag: "Security · Article",
     title: "How to Identify a Fake Crypto Website: 7 Checks",
     desc: "Learn how to spot a fake crypto website before it's too late — URL inspection, SSL certificate checks, Whois lookups, typosquatting red flags, and clipboard address verification.",
+  },
+  {
+    to: "/security/how-to-revoke-token-approvals-metamask",
+    image: hero_revoke_approval,
+    alt: "Illustration of a permission/key icon being revoked from a contract shape",
+    tag: "Security · Article",
+    title: "How to Revoke Token Approvals on MetaMask (Step-by-Step)",
+    desc: "Old token approvals can let drained wallets happen. Here's exactly how to review and revoke them on MetaMask, step by step.",
   },
   {
     to: "/security/how-to-revoke-smart-contract-approvals",

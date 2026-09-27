@@ -412,8 +412,8 @@ function ArticlePage() {
             documents how these signing tricks work in practice.
           </li>
           <li>
-            <strong>Review token approvals periodically.</strong> Revoke "unlimited" spending
-            permissions you no longer recognize or need, using your wallet's connected-sites or
+            <strong>Review token approvals periodically.</strong> <Link to="/security/how-to-revoke-token-approvals-metamask" className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]">Revoke "unlimited" spending
+            permissions</Link> you no longer recognize or need, using your wallet's connected-sites or
             approvals settings.
           </li>
           <li>

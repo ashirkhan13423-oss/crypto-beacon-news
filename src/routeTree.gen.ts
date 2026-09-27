@@ -46,11 +46,13 @@ import { Route as SecurityWhatToDoIfYourCryptoWalletIsHackedRouteImport } from '
 import { Route as SecurityWhatIsASeedPhraseRouteImport } from './routes/security.what-is-a-seed-phrase'
 import { Route as SecurityWhatIsACryptoAtmAreTheySafeRouteImport } from './routes/security.what-is-a-crypto-atm-are-they-safe'
 import { Route as SecurityTwoFactorAuthenticationForCryptoRouteImport } from './routes/security.two-factor-authentication-for-crypto'
+import { Route as SecuritySeedPhraseStorageSteelVsPaperVsMetalRouteImport } from './routes/security.seed-phrase-storage-steel-vs-paper-vs-metal'
 import { Route as SecurityPrivateKeyVsSeedPhraseRouteImport } from './routes/security.private-key-vs-seed-phrase'
 import { Route as SecurityHowToVerifyACryptoTransactionRouteImport } from './routes/security.how-to-verify-a-crypto-transaction'
 import { Route as SecurityHowToStoreCryptoSeedPhraseSafelyRouteImport } from './routes/security.how-to-store-crypto-seed-phrase-safely'
 import { Route as SecurityHowToSpotARugPullRouteImport } from './routes/security.how-to-spot-a-rug-pull'
 import { Route as SecurityHowToSpotAFakeCryptoWalletAppRouteImport } from './routes/security.how-to-spot-a-fake-crypto-wallet-app'
+import { Route as SecurityHowToRevokeTokenApprovalsMetamaskRouteImport } from './routes/security.how-to-revoke-token-approvals-metamask'
 import { Route as SecurityHowToRevokeSmartContractApprovalsRouteImport } from './routes/security.how-to-revoke-smart-contract-approvals'
 import { Route as SecurityHowToIdentifyAFakeCryptoWebsiteRouteImport } from './routes/security.how-to-identify-a-fake-crypto-website'
 import { Route as SecurityHowToAvoidCryptoPhishingScamsRouteImport } from './routes/security.how-to-avoid-crypto-phishing-scams'
@@ -335,6 +337,12 @@ const SecurityTwoFactorAuthenticationForCryptoRoute =
     path: '/two-factor-authentication-for-crypto',
     getParentRoute: () => SecurityRoute,
   } as any)
+const SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute =
+  SecuritySeedPhraseStorageSteelVsPaperVsMetalRouteImport.update({
+    id: '/seed-phrase-storage-steel-vs-paper-vs-metal',
+    path: '/seed-phrase-storage-steel-vs-paper-vs-metal',
+    getParentRoute: () => SecurityRoute,
+  } as any)
 const SecurityPrivateKeyVsSeedPhraseRoute =
   SecurityPrivateKeyVsSeedPhraseRouteImport.update({
     id: '/private-key-vs-seed-phrase',
@@ -363,6 +371,12 @@ const SecurityHowToSpotAFakeCryptoWalletAppRoute =
   SecurityHowToSpotAFakeCryptoWalletAppRouteImport.update({
     id: '/how-to-spot-a-fake-crypto-wallet-app',
     path: '/how-to-spot-a-fake-crypto-wallet-app',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityHowToRevokeTokenApprovalsMetamaskRoute =
+  SecurityHowToRevokeTokenApprovalsMetamaskRouteImport.update({
+    id: '/how-to-revoke-token-approvals-metamask',
+    path: '/how-to-revoke-token-approvals-metamask',
     getParentRoute: () => SecurityRoute,
   } as any)
 const SecurityHowToRevokeSmartContractApprovalsRoute =
@@ -1042,11 +1056,13 @@ export interface FileRoutesByFullPath {
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
   '/security/how-to-identify-a-fake-crypto-website': typeof SecurityHowToIdentifyAFakeCryptoWebsiteRoute
   '/security/how-to-revoke-smart-contract-approvals': typeof SecurityHowToRevokeSmartContractApprovalsRoute
+  '/security/how-to-revoke-token-approvals-metamask': typeof SecurityHowToRevokeTokenApprovalsMetamaskRoute
   '/security/how-to-spot-a-fake-crypto-wallet-app': typeof SecurityHowToSpotAFakeCryptoWalletAppRoute
   '/security/how-to-spot-a-rug-pull': typeof SecurityHowToSpotARugPullRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
   '/security/how-to-verify-a-crypto-transaction': typeof SecurityHowToVerifyACryptoTransactionRoute
   '/security/private-key-vs-seed-phrase': typeof SecurityPrivateKeyVsSeedPhraseRoute
+  '/security/seed-phrase-storage-steel-vs-paper-vs-metal': typeof SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute
   '/security/two-factor-authentication-for-crypto': typeof SecurityTwoFactorAuthenticationForCryptoRoute
   '/security/what-is-a-crypto-atm-are-they-safe': typeof SecurityWhatIsACryptoAtmAreTheySafeRoute
   '/security/what-is-a-seed-phrase': typeof SecurityWhatIsASeedPhraseRoute
@@ -1169,11 +1185,13 @@ export interface FileRoutesByTo {
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
   '/security/how-to-identify-a-fake-crypto-website': typeof SecurityHowToIdentifyAFakeCryptoWebsiteRoute
   '/security/how-to-revoke-smart-contract-approvals': typeof SecurityHowToRevokeSmartContractApprovalsRoute
+  '/security/how-to-revoke-token-approvals-metamask': typeof SecurityHowToRevokeTokenApprovalsMetamaskRoute
   '/security/how-to-spot-a-fake-crypto-wallet-app': typeof SecurityHowToSpotAFakeCryptoWalletAppRoute
   '/security/how-to-spot-a-rug-pull': typeof SecurityHowToSpotARugPullRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
   '/security/how-to-verify-a-crypto-transaction': typeof SecurityHowToVerifyACryptoTransactionRoute
   '/security/private-key-vs-seed-phrase': typeof SecurityPrivateKeyVsSeedPhraseRoute
+  '/security/seed-phrase-storage-steel-vs-paper-vs-metal': typeof SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute
   '/security/two-factor-authentication-for-crypto': typeof SecurityTwoFactorAuthenticationForCryptoRoute
   '/security/what-is-a-crypto-atm-are-they-safe': typeof SecurityWhatIsACryptoAtmAreTheySafeRoute
   '/security/what-is-a-seed-phrase': typeof SecurityWhatIsASeedPhraseRoute
@@ -1308,11 +1326,13 @@ export interface FileRoutesById {
   '/security/how-to-avoid-crypto-phishing-scams': typeof SecurityHowToAvoidCryptoPhishingScamsRoute
   '/security/how-to-identify-a-fake-crypto-website': typeof SecurityHowToIdentifyAFakeCryptoWebsiteRoute
   '/security/how-to-revoke-smart-contract-approvals': typeof SecurityHowToRevokeSmartContractApprovalsRoute
+  '/security/how-to-revoke-token-approvals-metamask': typeof SecurityHowToRevokeTokenApprovalsMetamaskRoute
   '/security/how-to-spot-a-fake-crypto-wallet-app': typeof SecurityHowToSpotAFakeCryptoWalletAppRoute
   '/security/how-to-spot-a-rug-pull': typeof SecurityHowToSpotARugPullRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
   '/security/how-to-verify-a-crypto-transaction': typeof SecurityHowToVerifyACryptoTransactionRoute
   '/security/private-key-vs-seed-phrase': typeof SecurityPrivateKeyVsSeedPhraseRoute
+  '/security/seed-phrase-storage-steel-vs-paper-vs-metal': typeof SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute
   '/security/two-factor-authentication-for-crypto': typeof SecurityTwoFactorAuthenticationForCryptoRoute
   '/security/what-is-a-crypto-atm-are-they-safe': typeof SecurityWhatIsACryptoAtmAreTheySafeRoute
   '/security/what-is-a-seed-phrase': typeof SecurityWhatIsASeedPhraseRoute
@@ -1448,11 +1468,13 @@ export interface FileRouteTypes {
     | '/security/how-to-avoid-crypto-phishing-scams'
     | '/security/how-to-identify-a-fake-crypto-website'
     | '/security/how-to-revoke-smart-contract-approvals'
+    | '/security/how-to-revoke-token-approvals-metamask'
     | '/security/how-to-spot-a-fake-crypto-wallet-app'
     | '/security/how-to-spot-a-rug-pull'
     | '/security/how-to-store-crypto-seed-phrase-safely'
     | '/security/how-to-verify-a-crypto-transaction'
     | '/security/private-key-vs-seed-phrase'
+    | '/security/seed-phrase-storage-steel-vs-paper-vs-metal'
     | '/security/two-factor-authentication-for-crypto'
     | '/security/what-is-a-crypto-atm-are-they-safe'
     | '/security/what-is-a-seed-phrase'
@@ -1575,11 +1597,13 @@ export interface FileRouteTypes {
     | '/security/how-to-avoid-crypto-phishing-scams'
     | '/security/how-to-identify-a-fake-crypto-website'
     | '/security/how-to-revoke-smart-contract-approvals'
+    | '/security/how-to-revoke-token-approvals-metamask'
     | '/security/how-to-spot-a-fake-crypto-wallet-app'
     | '/security/how-to-spot-a-rug-pull'
     | '/security/how-to-store-crypto-seed-phrase-safely'
     | '/security/how-to-verify-a-crypto-transaction'
     | '/security/private-key-vs-seed-phrase'
+    | '/security/seed-phrase-storage-steel-vs-paper-vs-metal'
     | '/security/two-factor-authentication-for-crypto'
     | '/security/what-is-a-crypto-atm-are-they-safe'
     | '/security/what-is-a-seed-phrase'
@@ -1713,11 +1737,13 @@ export interface FileRouteTypes {
     | '/security/how-to-avoid-crypto-phishing-scams'
     | '/security/how-to-identify-a-fake-crypto-website'
     | '/security/how-to-revoke-smart-contract-approvals'
+    | '/security/how-to-revoke-token-approvals-metamask'
     | '/security/how-to-spot-a-fake-crypto-wallet-app'
     | '/security/how-to-spot-a-rug-pull'
     | '/security/how-to-store-crypto-seed-phrase-safely'
     | '/security/how-to-verify-a-crypto-transaction'
     | '/security/private-key-vs-seed-phrase'
+    | '/security/seed-phrase-storage-steel-vs-paper-vs-metal'
     | '/security/two-factor-authentication-for-crypto'
     | '/security/what-is-a-crypto-atm-are-they-safe'
     | '/security/what-is-a-seed-phrase'
@@ -2021,6 +2047,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SecurityTwoFactorAuthenticationForCryptoRouteImport
       parentRoute: typeof SecurityRoute
     }
+    '/security/seed-phrase-storage-steel-vs-paper-vs-metal': {
+      id: '/security/seed-phrase-storage-steel-vs-paper-vs-metal'
+      path: '/seed-phrase-storage-steel-vs-paper-vs-metal'
+      fullPath: '/security/seed-phrase-storage-steel-vs-paper-vs-metal'
+      preLoaderRoute: typeof SecuritySeedPhraseStorageSteelVsPaperVsMetalRouteImport
+      parentRoute: typeof SecurityRoute
+    }
     '/security/private-key-vs-seed-phrase': {
       id: '/security/private-key-vs-seed-phrase'
       path: '/private-key-vs-seed-phrase'
@@ -2054,6 +2087,13 @@ declare module '@tanstack/react-router' {
       path: '/how-to-spot-a-fake-crypto-wallet-app'
       fullPath: '/security/how-to-spot-a-fake-crypto-wallet-app'
       preLoaderRoute: typeof SecurityHowToSpotAFakeCryptoWalletAppRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/how-to-revoke-token-approvals-metamask': {
+      id: '/security/how-to-revoke-token-approvals-metamask'
+      path: '/how-to-revoke-token-approvals-metamask'
+      fullPath: '/security/how-to-revoke-token-approvals-metamask'
+      preLoaderRoute: typeof SecurityHowToRevokeTokenApprovalsMetamaskRouteImport
       parentRoute: typeof SecurityRoute
     }
     '/security/how-to-revoke-smart-contract-approvals': {
@@ -3039,11 +3079,13 @@ interface SecurityRouteChildren {
   SecurityHowToAvoidCryptoPhishingScamsRoute: typeof SecurityHowToAvoidCryptoPhishingScamsRoute
   SecurityHowToIdentifyAFakeCryptoWebsiteRoute: typeof SecurityHowToIdentifyAFakeCryptoWebsiteRoute
   SecurityHowToRevokeSmartContractApprovalsRoute: typeof SecurityHowToRevokeSmartContractApprovalsRoute
+  SecurityHowToRevokeTokenApprovalsMetamaskRoute: typeof SecurityHowToRevokeTokenApprovalsMetamaskRoute
   SecurityHowToSpotAFakeCryptoWalletAppRoute: typeof SecurityHowToSpotAFakeCryptoWalletAppRoute
   SecurityHowToSpotARugPullRoute: typeof SecurityHowToSpotARugPullRoute
   SecurityHowToStoreCryptoSeedPhraseSafelyRoute: typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
   SecurityHowToVerifyACryptoTransactionRoute: typeof SecurityHowToVerifyACryptoTransactionRoute
   SecurityPrivateKeyVsSeedPhraseRoute: typeof SecurityPrivateKeyVsSeedPhraseRoute
+  SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute: typeof SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute
   SecurityTwoFactorAuthenticationForCryptoRoute: typeof SecurityTwoFactorAuthenticationForCryptoRoute
   SecurityWhatIsACryptoAtmAreTheySafeRoute: typeof SecurityWhatIsACryptoAtmAreTheySafeRoute
   SecurityWhatIsASeedPhraseRoute: typeof SecurityWhatIsASeedPhraseRoute
@@ -3071,6 +3113,8 @@ const SecurityRouteChildren: SecurityRouteChildren = {
     SecurityHowToIdentifyAFakeCryptoWebsiteRoute,
   SecurityHowToRevokeSmartContractApprovalsRoute:
     SecurityHowToRevokeSmartContractApprovalsRoute,
+  SecurityHowToRevokeTokenApprovalsMetamaskRoute:
+    SecurityHowToRevokeTokenApprovalsMetamaskRoute,
   SecurityHowToSpotAFakeCryptoWalletAppRoute:
     SecurityHowToSpotAFakeCryptoWalletAppRoute,
   SecurityHowToSpotARugPullRoute: SecurityHowToSpotARugPullRoute,
@@ -3079,6 +3123,8 @@ const SecurityRouteChildren: SecurityRouteChildren = {
   SecurityHowToVerifyACryptoTransactionRoute:
     SecurityHowToVerifyACryptoTransactionRoute,
   SecurityPrivateKeyVsSeedPhraseRoute: SecurityPrivateKeyVsSeedPhraseRoute,
+  SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute:
+    SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute,
   SecurityTwoFactorAuthenticationForCryptoRoute:
     SecurityTwoFactorAuthenticationForCryptoRoute,
   SecurityWhatIsACryptoAtmAreTheySafeRoute:
@@ -3130,13 +3176,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

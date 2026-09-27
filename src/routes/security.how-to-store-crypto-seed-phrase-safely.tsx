@@ -426,7 +426,15 @@ function ArticlePage() {
             CISA guidance on protecting sensitive information
           </a>{" "}
           reinforces the same principle: offline, redundant, and physically controlled storage beats
-          convenience every time.
+          convenience every time. If you are deciding specifically between paper, DIY-stamped metal,
+          and commercial metal backup products, our{" "}
+          <Link
+            to="/security/seed-phrase-storage-steel-vs-paper-vs-metal"
+            className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+          >
+            steel vs. paper vs. metal deep-dive
+          </Link>{" "}
+          covers the durability and cost differences in detail.
         </P>
 
         <H2 id="plan">5. Building a Storage Plan That Fits Your Holdings</H2>

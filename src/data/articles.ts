@@ -98,6 +98,8 @@ import hero_fix_139 from "@/assets/news-crypto-atms-everywhere.webp";
 import hero_fix_140 from "@/assets/news-onchain-vs-exchange.webp";
 import hero_fix_141 from "@/assets/altcoins-ai-crypto-token.webp";
 import hero_fix_142 from "@/assets/altcoins-meme-coin-value.webp";
+import hero_revoke_approval from "@/assets/revoke-approval.jpg";
+import hero_steel_paper from "@/assets/seed-phrase-steel-vs-paper.jpg";
 
 export type Article = {
   to: string;
@@ -110,6 +112,24 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    to: "/security/seed-phrase-storage-steel-vs-paper-vs-metal",
+    image: hero_steel_paper,
+    alt: "Illustration comparing paper and metal seed phrase backup mediums",
+    tag: "Security · Article",
+    title: "Seed Phrase Storage: Steel Plates vs. Paper vs. Metal Backup Compared",
+    desc: "Paper, DIY steel stamping, or a commercial metal plate — which seed phrase backup actually holds up? A neutral durability and cost comparison.",
+    publishedDate: "2026-09-27",
+  },
+  {
+    to: "/security/how-to-revoke-token-approvals-metamask",
+    image: hero_revoke_approval,
+    alt: "Illustration of a permission/key icon being revoked from a contract shape",
+    tag: "Security · Article",
+    title: "How to Revoke Token Approvals on MetaMask (Step-by-Step)",
+    desc: "Old token approvals can let drained wallets happen. Here is exactly how to review and revoke them on MetaMask, step by step, to secure your crypto.",
+    publishedDate: "2026-09-27",
+  },
   {
     to: "/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint",
     image: hero_symbiosis,
