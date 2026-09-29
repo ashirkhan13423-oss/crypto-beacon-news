@@ -415,7 +415,7 @@
     "fallbackDesc": "Home / Security / Common Crypto Scams Security · Scams Common Crypto Scams The five most common cryptocurrency scams — how they work, what they look..."
   },
   "/security/crypto-security-hub": {
-    "wordCount": 482,
+    "wordCount": 518,
     "readTime": "3 min read",
     "fallbackDesc": "Home / Security / Crypto Security Hub Security · Hub Crypto Security Hub Crypto scams are growing in sophistication every year. This hub covers every"
   },
@@ -455,7 +455,7 @@
     "fallbackDesc": "Home / Security / How Crypto Phishing Scams Work Security · Phishing How Crypto Phishing Scams Work Understanding the mechanics of crypto phishing is"
   },
   "/security/how-to-avoid-crypto-phishing-scams": {
-    "wordCount": 1154,
+    "wordCount": 1181,
     "readTime": "6 min read",
     "fallbackDesc": "Home / Security / Avoid Phishing Scams Security How to Avoid Crypto Phishing Scams Phishing is the most common way people lose cryptocurrency — not..."
   },
@@ -470,7 +470,7 @@
     "fallbackDesc": "Home / Security / How to Revoke Smart Contract Approvals Security How to Revoke Smart Contract Approvals and Protect Your Crypto In the world of..."
   },
   "/security/how-to-revoke-token-approvals-metamask": {
-    "wordCount": 819,
+    "wordCount": 856,
     "readTime": "5 min read",
     "fallbackDesc": "Home / Security / Revoke Token Approvals Security How to Revoke Token Approvals on MetaMask (Step-by-Step) Every time you use a decentralized app —..."
   },
@@ -493,6 +493,11 @@
     "wordCount": 629,
     "readTime": "4 min read",
     "fallbackDesc": "Home / Security / Verify Crypto Transaction Security How to Verify a Crypto Transaction Using a Block Explorer In traditional banking, if a transfer..."
+  },
+  "/security/is-this-airdrop-a-scam": {
+    "wordCount": 666,
+    "readTime": "4 min read",
+    "fallbackDesc": "Home / Security / Is This Airdrop a Scam? Security How to Tell If a Crypto Airdrop Is a Scam Free tokens appear in your wallet, or you see a post..."
   },
   "/security/private-key-vs-seed-phrase": {
     "wordCount": 355,

@@ -14,9 +14,10 @@ import hero from "@/assets/seed-phishing.webp";
 const URL = "https://www.cryptobeacon.site/security/is-this-airdrop-a-scam";
 const TITLE = "Is This Airdrop a Scam? How to Tell | CryptoBeacon";
 const DESC =
-  "Free tokens just showed up in your wallet — is it real? Here's how to tell a legitimate airdrop from a scam before you connect anything.";
+  "Free tokens just showed up in your wallet — is it real? Discover how to tell a legitimate crypto airdrop from a fake scam before you connect anything.";
 const PUBLISHED = "2026-09-29";
 let MODIFIED = PUBLISHED;
+let keyTakeaway = "Legitimate airdrops never require a seed phrase, upfront payments, or signing confusing transactions. Verify through official channels.";
 
 const faqs: { q: string; a: string }[] = [
   {
@@ -219,7 +220,7 @@ function ArticlePage() {
           </P>
 
           <div className="my-md">
-            <ArticleAdSlot slotIndex={1} />
+            {/* Word count is too low for ad slot 1 */}
           </div>
 
           <aside className="my-xl p-lg rounded-lg border border-outline-variant bg-surface-container-low">
@@ -291,7 +292,7 @@ function ArticlePage() {
           <DecisionChart />
 
           <div className="my-md">
-            <ArticleAdSlot slotIndex={2} />
+            {/* Word count is too low for ad slot 2 */}
           </div>
 
           <H2 id="disqualifiers">
@@ -379,7 +380,7 @@ function ArticlePage() {
           <H2 id="takeaways">Key Takeaways</H2>
 
           <div className="my-md">
-            <ArticleAdSlot slotIndex={3} />
+            {/* Word count is too low for ad slot 3 */}
           </div>
 
           <ul className="list-disc pl-lg space-y-md font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
