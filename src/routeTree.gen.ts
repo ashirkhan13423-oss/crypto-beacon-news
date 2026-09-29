@@ -48,6 +48,7 @@ import { Route as SecurityWhatIsACryptoAtmAreTheySafeRouteImport } from './route
 import { Route as SecurityTwoFactorAuthenticationForCryptoRouteImport } from './routes/security.two-factor-authentication-for-crypto'
 import { Route as SecuritySeedPhraseStorageSteelVsPaperVsMetalRouteImport } from './routes/security.seed-phrase-storage-steel-vs-paper-vs-metal'
 import { Route as SecurityPrivateKeyVsSeedPhraseRouteImport } from './routes/security.private-key-vs-seed-phrase'
+import { Route as SecurityIsThisAirdropAScamRouteImport } from './routes/security.is-this-airdrop-a-scam'
 import { Route as SecurityHowToVerifyACryptoTransactionRouteImport } from './routes/security.how-to-verify-a-crypto-transaction'
 import { Route as SecurityHowToStoreCryptoSeedPhraseSafelyRouteImport } from './routes/security.how-to-store-crypto-seed-phrase-safely'
 import { Route as SecurityHowToSpotARugPullRouteImport } from './routes/security.how-to-spot-a-rug-pull'
@@ -347,6 +348,12 @@ const SecurityPrivateKeyVsSeedPhraseRoute =
   SecurityPrivateKeyVsSeedPhraseRouteImport.update({
     id: '/private-key-vs-seed-phrase',
     path: '/private-key-vs-seed-phrase',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityIsThisAirdropAScamRoute =
+  SecurityIsThisAirdropAScamRouteImport.update({
+    id: '/is-this-airdrop-a-scam',
+    path: '/is-this-airdrop-a-scam',
     getParentRoute: () => SecurityRoute,
   } as any)
 const SecurityHowToVerifyACryptoTransactionRoute =
@@ -1061,6 +1068,7 @@ export interface FileRoutesByFullPath {
   '/security/how-to-spot-a-rug-pull': typeof SecurityHowToSpotARugPullRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
   '/security/how-to-verify-a-crypto-transaction': typeof SecurityHowToVerifyACryptoTransactionRoute
+  '/security/is-this-airdrop-a-scam': typeof SecurityIsThisAirdropAScamRoute
   '/security/private-key-vs-seed-phrase': typeof SecurityPrivateKeyVsSeedPhraseRoute
   '/security/seed-phrase-storage-steel-vs-paper-vs-metal': typeof SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute
   '/security/two-factor-authentication-for-crypto': typeof SecurityTwoFactorAuthenticationForCryptoRoute
@@ -1190,6 +1198,7 @@ export interface FileRoutesByTo {
   '/security/how-to-spot-a-rug-pull': typeof SecurityHowToSpotARugPullRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
   '/security/how-to-verify-a-crypto-transaction': typeof SecurityHowToVerifyACryptoTransactionRoute
+  '/security/is-this-airdrop-a-scam': typeof SecurityIsThisAirdropAScamRoute
   '/security/private-key-vs-seed-phrase': typeof SecurityPrivateKeyVsSeedPhraseRoute
   '/security/seed-phrase-storage-steel-vs-paper-vs-metal': typeof SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute
   '/security/two-factor-authentication-for-crypto': typeof SecurityTwoFactorAuthenticationForCryptoRoute
@@ -1331,6 +1340,7 @@ export interface FileRoutesById {
   '/security/how-to-spot-a-rug-pull': typeof SecurityHowToSpotARugPullRoute
   '/security/how-to-store-crypto-seed-phrase-safely': typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
   '/security/how-to-verify-a-crypto-transaction': typeof SecurityHowToVerifyACryptoTransactionRoute
+  '/security/is-this-airdrop-a-scam': typeof SecurityIsThisAirdropAScamRoute
   '/security/private-key-vs-seed-phrase': typeof SecurityPrivateKeyVsSeedPhraseRoute
   '/security/seed-phrase-storage-steel-vs-paper-vs-metal': typeof SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute
   '/security/two-factor-authentication-for-crypto': typeof SecurityTwoFactorAuthenticationForCryptoRoute
@@ -1473,6 +1483,7 @@ export interface FileRouteTypes {
     | '/security/how-to-spot-a-rug-pull'
     | '/security/how-to-store-crypto-seed-phrase-safely'
     | '/security/how-to-verify-a-crypto-transaction'
+    | '/security/is-this-airdrop-a-scam'
     | '/security/private-key-vs-seed-phrase'
     | '/security/seed-phrase-storage-steel-vs-paper-vs-metal'
     | '/security/two-factor-authentication-for-crypto'
@@ -1602,6 +1613,7 @@ export interface FileRouteTypes {
     | '/security/how-to-spot-a-rug-pull'
     | '/security/how-to-store-crypto-seed-phrase-safely'
     | '/security/how-to-verify-a-crypto-transaction'
+    | '/security/is-this-airdrop-a-scam'
     | '/security/private-key-vs-seed-phrase'
     | '/security/seed-phrase-storage-steel-vs-paper-vs-metal'
     | '/security/two-factor-authentication-for-crypto'
@@ -1742,6 +1754,7 @@ export interface FileRouteTypes {
     | '/security/how-to-spot-a-rug-pull'
     | '/security/how-to-store-crypto-seed-phrase-safely'
     | '/security/how-to-verify-a-crypto-transaction'
+    | '/security/is-this-airdrop-a-scam'
     | '/security/private-key-vs-seed-phrase'
     | '/security/seed-phrase-storage-steel-vs-paper-vs-metal'
     | '/security/two-factor-authentication-for-crypto'
@@ -2059,6 +2072,13 @@ declare module '@tanstack/react-router' {
       path: '/private-key-vs-seed-phrase'
       fullPath: '/security/private-key-vs-seed-phrase'
       preLoaderRoute: typeof SecurityPrivateKeyVsSeedPhraseRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/is-this-airdrop-a-scam': {
+      id: '/security/is-this-airdrop-a-scam'
+      path: '/is-this-airdrop-a-scam'
+      fullPath: '/security/is-this-airdrop-a-scam'
+      preLoaderRoute: typeof SecurityIsThisAirdropAScamRouteImport
       parentRoute: typeof SecurityRoute
     }
     '/security/how-to-verify-a-crypto-transaction': {
@@ -3084,6 +3104,7 @@ interface SecurityRouteChildren {
   SecurityHowToSpotARugPullRoute: typeof SecurityHowToSpotARugPullRoute
   SecurityHowToStoreCryptoSeedPhraseSafelyRoute: typeof SecurityHowToStoreCryptoSeedPhraseSafelyRoute
   SecurityHowToVerifyACryptoTransactionRoute: typeof SecurityHowToVerifyACryptoTransactionRoute
+  SecurityIsThisAirdropAScamRoute: typeof SecurityIsThisAirdropAScamRoute
   SecurityPrivateKeyVsSeedPhraseRoute: typeof SecurityPrivateKeyVsSeedPhraseRoute
   SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute: typeof SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute
   SecurityTwoFactorAuthenticationForCryptoRoute: typeof SecurityTwoFactorAuthenticationForCryptoRoute
@@ -3122,6 +3143,7 @@ const SecurityRouteChildren: SecurityRouteChildren = {
     SecurityHowToStoreCryptoSeedPhraseSafelyRoute,
   SecurityHowToVerifyACryptoTransactionRoute:
     SecurityHowToVerifyACryptoTransactionRoute,
+  SecurityIsThisAirdropAScamRoute: SecurityIsThisAirdropAScamRoute,
   SecurityPrivateKeyVsSeedPhraseRoute: SecurityPrivateKeyVsSeedPhraseRoute,
   SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute:
     SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute,

@@ -330,7 +330,14 @@ function ArticlePage() {
           <li>
             <strong>Fake airdrops and claims.</strong> A site invites you to "claim" free tokens by
             connecting your wallet and signing a transaction — one that actually grants the site
-            broad spending permission.
+            broad spending permission. If you have a specific airdrop in front of you right now,{" "}
+            <Link
+              to="/security/is-this-airdrop-a-scam"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              see our dedicated guide on how to tell if an airdrop is a scam
+            </Link>
+            .
           </li>
           <li>
             <strong>Lookalike websites.</strong> A domain nearly identical to a real service,

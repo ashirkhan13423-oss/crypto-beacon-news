@@ -57,6 +57,7 @@ import hero_halvingmech from "@/assets/bitcoin-halving-mechanism.webp";
 import hero_symbiosis from "@/assets/symbiosis-bridge-exploit-hero.webp";
 import hero_revoke_approval from "@/assets/revoke-approval.jpg";
 import hero_steel_paper from "@/assets/seed-phrase-steel-vs-paper.jpg";
+import hero_airdrop_scam from "@/assets/seed-phishing.webp";
 
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
@@ -193,6 +194,14 @@ export const Route = createFileRoute("/")({
 });
 
 const articles = [
+  {
+    to: "/security/is-this-airdrop-a-scam",
+    image: hero_airdrop_scam,
+    alt: "Illustration representing a suspicious crypto token drop being inspected for scam signals",
+    tag: "Security · Article",
+    title: "How to Tell If a Crypto Airdrop Is a Scam",
+    desc: "Free tokens just showed up in your wallet — is it real? A decision chart and three automatic disqualifiers to evaluate any airdrop before you connect anything.",
+  },
   {
     to: "/security/seed-phrase-storage-steel-vs-paper-vs-metal",
     image: hero_steel_paper,
