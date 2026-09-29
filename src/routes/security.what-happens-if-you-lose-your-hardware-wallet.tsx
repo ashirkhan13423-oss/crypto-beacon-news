@@ -223,10 +223,13 @@ function ArticlePage() {
 
           <H2 id="next-steps">How to Prevent Future Panic</H2>
           <P>
-            Once you have completed your lost hardware wallet recovery, it is vital to ensure your backup strategy is robust. Relying on a single piece of paper can lead to catastrophic loss if there is a fire or flood.
+            Once you have completed your lost hardware wallet recovery, it is vital to ensure your backup strategy is robust. Relying on a single piece of paper can lead to catastrophic loss if there is a fire or flood. The entire security model of hardware wallets relies on the physical security of your seed phrase. If your seed phrase is compromised, your funds can be stolen even if you still have your device; conversely, if your seed phrase is destroyed alongside your device, the funds are gone forever.
           </P>
           <P>
-            Consider upgrading your backup medium. You can review our detailed comparison of <Link to="/security/seed-phrase-storage-steel-vs-paper-vs-metal" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4">seed phrase storage options</Link> to learn how steel plates and commercial metal backups offer significantly more protection against physical damage than standard paper.
+            Consider upgrading your backup medium. You can review our detailed comparison of <Link to="/security/seed-phrase-storage-steel-vs-paper-vs-metal" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4">seed phrase storage options</Link> to learn how steel plates and commercial metal backups offer significantly more protection against physical damage than standard paper. Metal plates can withstand temperatures well above what a typical house fire produces, and they are impervious to water damage. 
+          </P>
+          <P>
+            In addition to upgrading your storage medium, consider distributing your backups. Keeping one backup in your home safe and a second backup in a secure off-site location, such as a bank deposit box or a trusted family member's safe, provides redundancy. This ensures that even in the worst-case scenario—where a natural disaster destroys your home—you will not lose access to your cryptocurrency. Always remember: the time to plan your recovery strategy is before you need it, not after the device goes missing.
           </P>
 
           <H2 id="faq">Frequently Asked Questions</H2>

@@ -272,13 +272,16 @@ function ArticlePage() {
               <Link to="/security/what-is-a-seed-phrase" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4">
                 standard BIP-39 seed phrase
               </Link>{" "}
-              or any other wallet backup format.
+              or any other wallet backup format. Storing one metal plate in a home safe and another in a bank safety deposit box ensures that even if one location suffers a catastrophic event (like a severe natural disaster or theft), you still have access to your funds. The goal of a secure backup plan is redundancy.
             </li>
             <li>
-              <strong>Test legibility before relying on it.</strong> For DIY stamping specifically, do a practice stamp on scrap metal first to confirm your lettering is consistent and readable.
+              <strong>Test legibility before relying on it.</strong> For DIY stamping specifically, do a practice stamp on scrap metal first to confirm your lettering is consistent and readable. Some people find that their first few attempts at stamping metal result in characters that are too shallow, crooked, or overlapping. Taking the time to practice ensures that when you stamp your actual seed phrase, every single word is unambiguous.
             </li>
             <li>
-              <strong>Material matters within the metal category too.</strong> Stainless steel resists corrosion far better than plain carbon steel, which can rust over years — check what material any plate (DIY blank or commercial product) is actually made of.
+              <strong>Material matters within the metal category too.</strong> Stainless steel resists corrosion far better than plain carbon steel, which can rust over years — check what material any plate (DIY blank or commercial product) is actually made of. Titanium is another excellent option offered by some commercial products due to its extremely high melting point and superior corrosion resistance, though it is usually more expensive. Always avoid cheap metals like aluminum for long-term storage, as its low melting point makes it vulnerable to typical house fires.
+            </li>
+            <li>
+              <strong>Keep it hidden and secure.</strong> While metal plates protect against environmental damage, they do not protect against theft. A fireproof backup does you no good if it is left in plain sight on your desk. Ensure your backup medium is stored in a location that is difficult for casual intruders to find, such as a hidden floor safe or a securely locked document box.
             </li>
           </ul>
 

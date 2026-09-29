@@ -350,6 +350,31 @@ function ArticlePage() {
             attacks. The safest response is to simply ignore it. It sitting in your wallet,
             untouched, causes no harm on its own.
           </P>
+          <P>
+            In many cases, the scam relies on human curiosity. You see a token with a very high
+            supposed dollar value suddenly sitting in your assets list. When you attempt to swap it
+            on a decentralized exchange, the transaction fails with a custom error message directing
+            you to a specific website to "claim" or "unlock" the tokens. This website is a phishing
+            trap. If you connect your wallet and sign the transaction they present, you will not
+            unlock the fake tokens; instead, you will authorize the attackers to drain your real
+            assets. Always remember that anyone can create a token, give it any name they want,
+            and send it to thousands of addresses for pennies.
+          </P>
+          <P>
+            To prevent these tokens from cluttering your view, most modern wallet applications
+            allow you to hide or flag unrecognized assets. Use these features rather than interacting
+            with the smart contract. Furthermore, if you are unsure whether a token is legitimate,
+            you can review our guide on{" "}
+            <Link
+              to="/security/crypto-security-hub"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              comprehensive crypto security
+            </Link>{" "}
+            to learn how to better protect your portfolio against unsolicited token drops and similar
+            deceptive marketing tactics. Never let the illusion of free money override your
+            fundamental security practices.
+          </P>
 
           <H2 id="verification">Quick Verification Steps</H2>
           <ol className="list-decimal pl-lg space-y-md font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
