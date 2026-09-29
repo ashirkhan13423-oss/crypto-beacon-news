@@ -601,17 +601,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.cryptobeacon.site/security/how-to-revoke-token-approvals-metamask</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.cryptobeacon.site/security/how-to-identify-a-fake-crypto-website</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cryptobeacon.site/security/how-to-revoke-smart-contract-approvals</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/security/how-to-revoke-token-approvals-metamask</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -641,7 +641,17 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.cryptobeacon.site/security/is-this-airdrop-a-scam</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.cryptobeacon.site/security/private-key-vs-seed-phrase</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/security/seed-phrase-storage-steel-vs-paper-vs-metal</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -652,6 +662,11 @@
   </url>
   <url>
     <loc>https://www.cryptobeacon.site/security/two-factor-authentication-for-crypto</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/security/what-happens-if-you-lose-your-hardware-wallet</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -682,16 +697,6 @@
   </url>
   <url>
     <loc>https://www.cryptobeacon.site/terms</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.cryptobeacon.site/security/seed-phrase-storage-steel-vs-paper-vs-metal</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.cryptobeacon.site/security/is-this-airdrop-a-scam</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

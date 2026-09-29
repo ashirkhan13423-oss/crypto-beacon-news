@@ -45,6 +45,7 @@ import { Route as AltcoinsIndexRouteImport } from './routes/altcoins.index'
 import { Route as SecurityWhatToDoIfYourCryptoWalletIsHackedRouteImport } from './routes/security.what-to-do-if-your-crypto-wallet-is-hacked'
 import { Route as SecurityWhatIsASeedPhraseRouteImport } from './routes/security.what-is-a-seed-phrase'
 import { Route as SecurityWhatIsACryptoAtmAreTheySafeRouteImport } from './routes/security.what-is-a-crypto-atm-are-they-safe'
+import { Route as SecurityWhatHappensIfYouLoseYourHardwareWalletRouteImport } from './routes/security.what-happens-if-you-lose-your-hardware-wallet'
 import { Route as SecurityTwoFactorAuthenticationForCryptoRouteImport } from './routes/security.two-factor-authentication-for-crypto'
 import { Route as SecuritySeedPhraseStorageSteelVsPaperVsMetalRouteImport } from './routes/security.seed-phrase-storage-steel-vs-paper-vs-metal'
 import { Route as SecurityPrivateKeyVsSeedPhraseRouteImport } from './routes/security.private-key-vs-seed-phrase'
@@ -330,6 +331,12 @@ const SecurityWhatIsACryptoAtmAreTheySafeRoute =
   SecurityWhatIsACryptoAtmAreTheySafeRouteImport.update({
     id: '/what-is-a-crypto-atm-are-they-safe',
     path: '/what-is-a-crypto-atm-are-they-safe',
+    getParentRoute: () => SecurityRoute,
+  } as any)
+const SecurityWhatHappensIfYouLoseYourHardwareWalletRoute =
+  SecurityWhatHappensIfYouLoseYourHardwareWalletRouteImport.update({
+    id: '/what-happens-if-you-lose-your-hardware-wallet',
+    path: '/what-happens-if-you-lose-your-hardware-wallet',
     getParentRoute: () => SecurityRoute,
   } as any)
 const SecurityTwoFactorAuthenticationForCryptoRoute =
@@ -1072,6 +1079,7 @@ export interface FileRoutesByFullPath {
   '/security/private-key-vs-seed-phrase': typeof SecurityPrivateKeyVsSeedPhraseRoute
   '/security/seed-phrase-storage-steel-vs-paper-vs-metal': typeof SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute
   '/security/two-factor-authentication-for-crypto': typeof SecurityTwoFactorAuthenticationForCryptoRoute
+  '/security/what-happens-if-you-lose-your-hardware-wallet': typeof SecurityWhatHappensIfYouLoseYourHardwareWalletRoute
   '/security/what-is-a-crypto-atm-are-they-safe': typeof SecurityWhatIsACryptoAtmAreTheySafeRoute
   '/security/what-is-a-seed-phrase': typeof SecurityWhatIsASeedPhraseRoute
   '/security/what-to-do-if-your-crypto-wallet-is-hacked': typeof SecurityWhatToDoIfYourCryptoWalletIsHackedRoute
@@ -1202,6 +1210,7 @@ export interface FileRoutesByTo {
   '/security/private-key-vs-seed-phrase': typeof SecurityPrivateKeyVsSeedPhraseRoute
   '/security/seed-phrase-storage-steel-vs-paper-vs-metal': typeof SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute
   '/security/two-factor-authentication-for-crypto': typeof SecurityTwoFactorAuthenticationForCryptoRoute
+  '/security/what-happens-if-you-lose-your-hardware-wallet': typeof SecurityWhatHappensIfYouLoseYourHardwareWalletRoute
   '/security/what-is-a-crypto-atm-are-they-safe': typeof SecurityWhatIsACryptoAtmAreTheySafeRoute
   '/security/what-is-a-seed-phrase': typeof SecurityWhatIsASeedPhraseRoute
   '/security/what-to-do-if-your-crypto-wallet-is-hacked': typeof SecurityWhatToDoIfYourCryptoWalletIsHackedRoute
@@ -1344,6 +1353,7 @@ export interface FileRoutesById {
   '/security/private-key-vs-seed-phrase': typeof SecurityPrivateKeyVsSeedPhraseRoute
   '/security/seed-phrase-storage-steel-vs-paper-vs-metal': typeof SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute
   '/security/two-factor-authentication-for-crypto': typeof SecurityTwoFactorAuthenticationForCryptoRoute
+  '/security/what-happens-if-you-lose-your-hardware-wallet': typeof SecurityWhatHappensIfYouLoseYourHardwareWalletRoute
   '/security/what-is-a-crypto-atm-are-they-safe': typeof SecurityWhatIsACryptoAtmAreTheySafeRoute
   '/security/what-is-a-seed-phrase': typeof SecurityWhatIsASeedPhraseRoute
   '/security/what-to-do-if-your-crypto-wallet-is-hacked': typeof SecurityWhatToDoIfYourCryptoWalletIsHackedRoute
@@ -1487,6 +1497,7 @@ export interface FileRouteTypes {
     | '/security/private-key-vs-seed-phrase'
     | '/security/seed-phrase-storage-steel-vs-paper-vs-metal'
     | '/security/two-factor-authentication-for-crypto'
+    | '/security/what-happens-if-you-lose-your-hardware-wallet'
     | '/security/what-is-a-crypto-atm-are-they-safe'
     | '/security/what-is-a-seed-phrase'
     | '/security/what-to-do-if-your-crypto-wallet-is-hacked'
@@ -1617,6 +1628,7 @@ export interface FileRouteTypes {
     | '/security/private-key-vs-seed-phrase'
     | '/security/seed-phrase-storage-steel-vs-paper-vs-metal'
     | '/security/two-factor-authentication-for-crypto'
+    | '/security/what-happens-if-you-lose-your-hardware-wallet'
     | '/security/what-is-a-crypto-atm-are-they-safe'
     | '/security/what-is-a-seed-phrase'
     | '/security/what-to-do-if-your-crypto-wallet-is-hacked'
@@ -1758,6 +1770,7 @@ export interface FileRouteTypes {
     | '/security/private-key-vs-seed-phrase'
     | '/security/seed-phrase-storage-steel-vs-paper-vs-metal'
     | '/security/two-factor-authentication-for-crypto'
+    | '/security/what-happens-if-you-lose-your-hardware-wallet'
     | '/security/what-is-a-crypto-atm-are-they-safe'
     | '/security/what-is-a-seed-phrase'
     | '/security/what-to-do-if-your-crypto-wallet-is-hacked'
@@ -2051,6 +2064,13 @@ declare module '@tanstack/react-router' {
       path: '/what-is-a-crypto-atm-are-they-safe'
       fullPath: '/security/what-is-a-crypto-atm-are-they-safe'
       preLoaderRoute: typeof SecurityWhatIsACryptoAtmAreTheySafeRouteImport
+      parentRoute: typeof SecurityRoute
+    }
+    '/security/what-happens-if-you-lose-your-hardware-wallet': {
+      id: '/security/what-happens-if-you-lose-your-hardware-wallet'
+      path: '/what-happens-if-you-lose-your-hardware-wallet'
+      fullPath: '/security/what-happens-if-you-lose-your-hardware-wallet'
+      preLoaderRoute: typeof SecurityWhatHappensIfYouLoseYourHardwareWalletRouteImport
       parentRoute: typeof SecurityRoute
     }
     '/security/two-factor-authentication-for-crypto': {
@@ -3108,6 +3128,7 @@ interface SecurityRouteChildren {
   SecurityPrivateKeyVsSeedPhraseRoute: typeof SecurityPrivateKeyVsSeedPhraseRoute
   SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute: typeof SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute
   SecurityTwoFactorAuthenticationForCryptoRoute: typeof SecurityTwoFactorAuthenticationForCryptoRoute
+  SecurityWhatHappensIfYouLoseYourHardwareWalletRoute: typeof SecurityWhatHappensIfYouLoseYourHardwareWalletRoute
   SecurityWhatIsACryptoAtmAreTheySafeRoute: typeof SecurityWhatIsACryptoAtmAreTheySafeRoute
   SecurityWhatIsASeedPhraseRoute: typeof SecurityWhatIsASeedPhraseRoute
   SecurityWhatToDoIfYourCryptoWalletIsHackedRoute: typeof SecurityWhatToDoIfYourCryptoWalletIsHackedRoute
@@ -3149,6 +3170,8 @@ const SecurityRouteChildren: SecurityRouteChildren = {
     SecuritySeedPhraseStorageSteelVsPaperVsMetalRoute,
   SecurityTwoFactorAuthenticationForCryptoRoute:
     SecurityTwoFactorAuthenticationForCryptoRoute,
+  SecurityWhatHappensIfYouLoseYourHardwareWalletRoute:
+    SecurityWhatHappensIfYouLoseYourHardwareWalletRoute,
   SecurityWhatIsACryptoAtmAreTheySafeRoute:
     SecurityWhatIsACryptoAtmAreTheySafeRoute,
   SecurityWhatIsASeedPhraseRoute: SecurityWhatIsASeedPhraseRoute,
@@ -3198,13 +3221,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

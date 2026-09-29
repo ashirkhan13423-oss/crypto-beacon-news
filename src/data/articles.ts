@@ -100,6 +100,7 @@ import hero_fix_141 from "@/assets/altcoins-ai-crypto-token.webp";
 import hero_fix_142 from "@/assets/altcoins-meme-coin-value.webp";
 import hero_revoke_approval from "@/assets/revoke-approval.jpg";
 import hero_steel_paper from "@/assets/seed-phrase-steel-vs-paper.jpg";
+import hero_lost_hw from "@/assets/lost-hardware-wallet.jpg";
 
 export type Article = {
   to: string;
@@ -112,6 +113,15 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    to: "/security/what-happens-if-you-lose-your-hardware-wallet",
+    image: hero_lost_hw,
+    alt: "Illustration of a stressed person searching for a lost hardware wallet",
+    tag: "Security · Article",
+    title: "What Happens If You Lose Your Hardware Wallet?",
+    desc: "Lost your Ledger or Trezor? Don't panic. Learn exactly what is safe, what is lost, and the step-by-step recovery process using your seed phrase.",
+    publishedDate: "2026-09-30",
+  },
   {
     to: "/security/seed-phrase-storage-steel-vs-paper-vs-metal",
     image: hero_steel_paper,

@@ -33,6 +33,7 @@ const sections = [
   { icon: <Smartphone size={20} />, title: "Fake Wallet Apps Explained", desc: "App store clones, how to verify official wallet apps, and the red flags that distinguish fakes from real software.", to: "/security/fake-wallet-apps-explained", tag: "Scams", color: "#EF4444" },
   { icon: <Shield size={20} />, title: "Exchange Account Security", desc: "Strong passwords, withdrawal whitelists, API key security, and phishing-resistant authentication for exchange accounts.", to: "/security/exchange-account-security", tag: "Accounts", color: "#2563EB" },
   { icon: <Lock size={20} />, title: "Two-Factor Authentication for Crypto", desc: "SMS vs TOTP vs hardware security keys — setup, strengths, and weaknesses of each 2FA method for crypto accounts.", to: "/security/two-factor-authentication-for-crypto", tag: "2FA", color: "#0F9D58" },
+  { icon: <Lock size={20} />, title: "What Happens If You Lose Your Hardware Wallet?", desc: "Lost your Ledger or Trezor? Don't panic. Learn exactly what is safe, what is lost, and the step-by-step recovery process using your seed phrase.", to: "/security/what-happens-if-you-lose-your-hardware-wallet", tag: "Recovery", color: "#0F9D58" },
 ];
 
 export const Route = createFileRoute("/security/crypto-security-hub")({

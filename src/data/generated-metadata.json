@@ -415,7 +415,7 @@
     "fallbackDesc": "Home / Security / Common Crypto Scams Security · Scams Common Crypto Scams The five most common cryptocurrency scams — how they work, what they look..."
   },
   "/security/crypto-security-hub": {
-    "wordCount": 518,
+    "wordCount": 553,
     "readTime": "3 min read",
     "fallbackDesc": "Home / Security / Crypto Security Hub Security · Hub Crypto Security Hub Crypto scams are growing in sophistication every year. This hub covers every"
   },
@@ -513,6 +513,11 @@
     "wordCount": 343,
     "readTime": "2 min read",
     "fallbackDesc": "Home / Security / Two-Factor Authentication for Crypto Security · 2FA Two-Factor Authentication for Crypto Not all 2FA is equal — especially for..."
+  },
+  "/security/what-happens-if-you-lose-your-hardware-wallet": {
+    "wordCount": 620,
+    "readTime": "4 min read",
+    "fallbackDesc": "Home / Security / Lost Hardware Wallet Recovery Security What Happens If You Lose Your Hardware Wallet? (Recovery Steps) Losing a hardware wallet —..."
   },
   "/security/what-is-a-crypto-atm-are-they-safe": {
     "wordCount": 320,
