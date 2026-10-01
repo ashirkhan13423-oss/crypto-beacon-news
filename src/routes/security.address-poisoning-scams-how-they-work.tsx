@@ -9,10 +9,11 @@ import { LastUpdated } from "@/components/LastUpdated";
 import { TableOfContents } from "@/components/TableOfContents";
 import { FAQ } from "@/components/FAQ";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import hero from "@/assets/phishing-padlock.webp";
 
 const URL = "https://www.cryptobeacon.site/security/address-poisoning-scams-how-they-work";
-const TITLE = "Address Poisoning Scams: How They Work and How to Avoid Them | CryptoBeacon";
-const DESC = "Address poisoning is a crypto scam where attackers send zero-value transactions from an address that looks almost identical to yours. Learn how it works and how to protect yourself.";
+const TITLE = "Address Poisoning Scams: How They Work & Avoid Them";
+const DESC = "Address poisoning is a crypto scam where attackers send zero-value transactions from an address that looks identical to yours. Learn how to stay safe.";
 const PUBLISHED = "2026-10-02";
 let MODIFIED = PUBLISHED;
 let keyTakeaway = "Never copy-paste an address from your transaction history. Always verify the full address, not just the first and last characters.";

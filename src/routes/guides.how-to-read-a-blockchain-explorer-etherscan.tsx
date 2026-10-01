@@ -9,10 +9,11 @@ import { LastUpdated } from "@/components/LastUpdated";
 import { TableOfContents } from "@/components/TableOfContents";
 import { FAQ } from "@/components/FAQ";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import hero from "@/assets/read-block-explorer.webp";
 
 const URL = "https://www.cryptobeacon.site/guides/how-to-read-a-blockchain-explorer-etherscan";
-const TITLE = "How to Read a Blockchain Explorer (Etherscan Walkthrough) | CryptoBeacon";
-const DESC = "Learn how to use Etherscan to track your crypto transactions, verify smart contracts, and read blockchain data like a pro.";
+const TITLE = "How to Read a Blockchain Explorer: Etherscan Guide";
+const DESC = "Learn how to use Etherscan to track your crypto transactions, verify smart contracts, and read complex blockchain data like a seasoned professional.";
 const PUBLISHED = "2026-10-02";
 let MODIFIED = PUBLISHED;
 let keyTakeaway = "Etherscan does not hold your funds or control the network. It is simply a search engine that displays public data stored on the Ethereum blockchain.";

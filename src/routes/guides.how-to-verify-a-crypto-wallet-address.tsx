@@ -9,10 +9,11 @@ import { LastUpdated } from "@/components/LastUpdated";
 import { TableOfContents } from "@/components/TableOfContents";
 import { FAQ } from "@/components/FAQ";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import hero from "@/assets/guides-wallet-address.webp";
 
 const URL = "https://www.cryptobeacon.site/guides/how-to-verify-a-crypto-wallet-address";
-const TITLE = "How to Verify a Crypto Wallet Address Before Sending Funds | CryptoBeacon";
-const DESC = "Learn the essential habits for verifying cryptocurrency wallet addresses to prevent catastrophic losses from typos, clipboard hijackers, and address poisoning.";
+const TITLE = "Verify a Crypto Wallet Address Before Sending Funds";
+const DESC = "Learn essential habits for verifying cryptocurrency wallet addresses to prevent catastrophic losses from typos, clipboard hijackers, and address poison.";
 const PUBLISHED = "2026-10-02";
 let MODIFIED = PUBLISHED;
 let keyTakeaway = "Crypto transactions are irreversible. Never rely on verifying just the first and last few characters of an address.";

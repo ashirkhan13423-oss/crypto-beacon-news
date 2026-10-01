@@ -9,10 +9,11 @@ import { LastUpdated } from "@/components/LastUpdated";
 import { TableOfContents } from "@/components/TableOfContents";
 import { FAQ } from "@/components/FAQ";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import hero from "@/assets/exchange-vs-wallet.webp";
 
 const URL = "https://www.cryptobeacon.site/guides/how-to-move-crypto-from-coinbase-to-hardware-wallet";
-const TITLE = "How to Move Crypto from Coinbase to a Hardware Wallet | CryptoBeacon";
-const DESC = "Step-by-step guide to transferring crypto from Coinbase to a Ledger or Trezor hardware wallet safely, avoiding high fees and common mistakes.";
+const TITLE = "Transfer Crypto From Coinbase To A Hardware Wallet";
+const DESC = "Step-by-step guide to transferring crypto from Coinbase to a Ledger or Trezor hardware wallet safely, avoiding high network fees and common mistakes.";
 const PUBLISHED = "2026-10-02";
 let MODIFIED = PUBLISHED;
 let keyTakeaway = "Always send a small test transaction first before transferring your entire balance from Coinbase to your hardware wallet.";

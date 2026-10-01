@@ -9,10 +9,11 @@ import { LastUpdated } from "@/components/LastUpdated";
 import { TableOfContents } from "@/components/TableOfContents";
 import { FAQ } from "@/components/FAQ";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import hero from "@/assets/hot-vs-cold-wallets.webp";
 
 const URL = "https://www.cryptobeacon.site/guides/what-is-a-crypto-cold-wallet-do-you-need-one";
-const TITLE = "What Is a Crypto Cold Wallet and Do You Actually Need One? | CryptoBeacon";
-const DESC = "Learn what a cold wallet is, how hardware storage protects your private keys offline, and whether your crypto portfolio actually requires one.";
+const TITLE = "What Is a Crypto Cold Wallet? Do You Actually Need One?";
+const DESC = "Learn what a crypto cold wallet is, how hardware storage protects your private keys offline, and whether your cryptocurrency portfolio requires one.";
 const PUBLISHED = "2026-10-02";
 let MODIFIED = PUBLISHED;
 let keyTakeaway = "A cold wallet never connects your private keys to the internet, making it immune to digital hacks, malware, and remote theft.";

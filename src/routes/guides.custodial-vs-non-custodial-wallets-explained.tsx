@@ -9,9 +9,10 @@ import { LastUpdated } from "@/components/LastUpdated";
 import { TableOfContents } from "@/components/TableOfContents";
 import { FAQ } from "@/components/FAQ";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import hero from "@/assets/exchange-vs-wallet.webp";
 
 const URL = "https://www.cryptobeacon.site/guides/custodial-vs-non-custodial-wallets-explained";
-const TITLE = "Custodial vs Non-Custodial Wallets: Which Should Beginners Use? | CryptoBeacon";
+const TITLE = "Custodial vs Non-Custodial Crypto Wallets Compared";
 const DESC = "Understand the critical differences between custodial (exchange) and non-custodial (self-hosted) wallets to decide where you should store your crypto.";
 const PUBLISHED = "2026-10-02";
 let MODIFIED = PUBLISHED;

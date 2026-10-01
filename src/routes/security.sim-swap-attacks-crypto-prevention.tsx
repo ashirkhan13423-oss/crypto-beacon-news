@@ -9,10 +9,11 @@ import { LastUpdated } from "@/components/LastUpdated";
 import { TableOfContents } from "@/components/TableOfContents";
 import { FAQ } from "@/components/FAQ";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import hero from "@/assets/hacked-wallet-emergency.webp";
 
 const URL = "https://www.cryptobeacon.site/security/sim-swap-attacks-crypto-prevention";
-const TITLE = "SIM Swap Attacks on Crypto Accounts: Prevention Checklist | CryptoBeacon";
-const DESC = "A SIM swap attack allows hackers to bypass SMS 2FA and steal your crypto. Learn how this attack works and implement our checklist to prevent it.";
+const TITLE = "SIM Swap Attacks on Crypto Accounts: Prevention Guide";
+const DESC = "A SIM swap attack allows hackers to bypass SMS 2FA and steal your crypto assets. Learn how this attack works and implement our checklist to prevent it.";
 const PUBLISHED = "2026-10-02";
 let MODIFIED = PUBLISHED;
 let keyTakeaway = "Never use SMS for two-factor authentication (2FA) on your crypto exchange accounts. Always use an authenticator app (like Authy or Google Authenticator) or a hardware security key (like YubiKey).";

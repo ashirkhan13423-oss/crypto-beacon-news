@@ -9,10 +9,11 @@ import { LastUpdated } from "@/components/LastUpdated";
 import { TableOfContents } from "@/components/TableOfContents";
 import { FAQ } from "@/components/FAQ";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import hero from "@/assets/spot-rug-pull.webp";
 
 const URL = "https://www.cryptobeacon.site/security/how-to-check-if-smart-contract-is-safe";
-const TITLE = "How to Check If a Smart Contract Is Safe Before Interacting | CryptoBeacon";
-const DESC = "Learn how to verify the safety of a smart contract before interacting. A step-by-step checklist to avoid honeypots, rug pulls, and infinite approval drains.";
+const TITLE = "Check If a Smart Contract Is Safe Before Interacting";
+const DESC = "Learn how to verify the safety of a smart contract before interacting. A step-by-step checklist to avoid honeypots, rug pulls, and infinite approvals.";
 const PUBLISHED = "2026-10-02";
 let MODIFIED = PUBLISHED;
 let keyTakeaway = "Always check for verified source code on a block explorer and never grant unlimited token approvals to untrusted or newly deployed contracts.";

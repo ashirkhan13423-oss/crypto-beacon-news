@@ -9,9 +9,10 @@ import { LastUpdated } from "@/components/LastUpdated";
 import { TableOfContents } from "@/components/TableOfContents";
 import { FAQ } from "@/components/FAQ";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import hero from "@/assets/ethereum-gas-fees.webp";
 
 const URL = "https://www.cryptobeacon.site/guides/what-is-gas-fee-optimization-when-to-send";
-const TITLE = "What Is Gas Fee Optimization? When to Send Transactions | CryptoBeacon";
+const TITLE = "Gas Fee Optimization: Best Time To Send Transactions";
 const DESC = "Learn how to optimize Ethereum gas fees by understanding network congestion, base fees, priority tips, and finding the best time to send transactions.";
 const PUBLISHED = "2026-10-02";
 let MODIFIED = PUBLISHED;
