@@ -11,7 +11,7 @@ function extractParagraphs(content) {
   const pTags = content.match(/<[pP][^>]*>([\s\S]*?)<\/[pP]>/g) || [];
   return pTags.map(p => {
     return p.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-  }).filter(text => text.length > 0 && text !== '{children}');
+  }).filter(text => text.length > 0 && text !== '{children}' && text !== "This article is educational. It isn't financial advice.");
 }
 
 for (const file of files) {
