@@ -8,13 +8,53 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "crypto-beacon-news.vercel.app"
-        }
-      ],
+      "has": [{ "type": "host", "value": "crypto-beacon-news.vercel.app" }],
       "destination": "https://www.cryptobeacon.site/$1",
+      "permanent": true
+    },
+    {
+      "source": "/news/liquid-network-hack-4000-btc-withdrawal",
+      "destination": "/news/liquid-network-3400-btc-returned-320-million-incident",
+      "permanent": true
+    },
+    {
+      "source": "/ethereum/how-does-ethereum-staking-work",
+      "destination": "/ethereum/what-is-ethereum-staking",
+      "permanent": true
+    },
+    {
+      "source": "/bitcoin/what-is-the-bitcoin-halving",
+      "destination": "/bitcoin/how-does-bitcoin-halving-work",
+      "permanent": true
+    },
+    {
+      "source": "/bitcoin/how-bitcoin-wallets-work",
+      "destination": "/bitcoin/bitcoin-wallets-complete-guide",
+      "permanent": true
+    },
+    {
+      "source": "/bitcoin/what-is-a-bitcoin-wallet",
+      "destination": "/bitcoin/bitcoin-wallets-complete-guide",
+      "permanent": true
+    },
+    {
+      "source": "/bitcoin/what-is-a-bitcoin-seed-phrase",
+      "destination": "/security/what-is-a-seed-phrase",
+      "permanent": true
+    },
+    {
+      "source": "/guides/what-is-a-smart-contract-explained",
+      "destination": "/ethereum/what-is-a-smart-contract",
+      "permanent": true
+    },
+    {
+      "source": "/guides/why-crypto-regulation-matters",
+      "destination": "/guides/why-governments-regulate-cryptocurrency",
+      "permanent": true
+    },
+    {
+      "source": "/security/seed-phrase-storage-steel-vs-paper-vs-metal",
+      "destination": "/security/how-to-store-crypto-seed-phrase-safely",
       "permanent": true
     }
   ],
@@ -22,15 +62,27 @@
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/xml" },
-        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=3600" }
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600"
+        }
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain" },
-        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=3600" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600"
+        }
       ]
     }
   ]

@@ -23,8 +23,8 @@ for (const file of files) {
   for (const text of paragraphs) {
     localParagraphs.set(text, (localParagraphs.get(text) || 0) + 1);
 
-    const wordCount = text.split(' ').filter(w => w.length > 0).length;
-    if (wordCount >= 20) {
+    const sentenceCount = (text.match(/[.!?]+/g) || []).length;
+    if (sentenceCount >= 2) {
       if (!globalParagraphs.has(text)) {
         globalParagraphs.set(text, new Set());
       }

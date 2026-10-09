@@ -129,7 +129,7 @@ function ArticlePage() {
           While necessary for DeFi to function, these approvals are often a prime attack vector for hackers. If a smart contract you've previously approved is exploited, or if you accidentally sign an approval for a malicious contract, attackers can drain your <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link> of those specific tokens without any further input from you. This comprehensive guide will explain exactly how token approvals work, why they are dangerous, and step-by-step instructions on how to revoke them.
         </P>
         <P>
-          <em>This article is educational. It isn't financial advice.</em>
+          <em>This comprehensive guide to how to revoke smart contract approvals is for educational purposes only and should not be construed as financial advice. Always do your own research before making investment decisions.</em>
         </P>
 
         <H2 id="what-are-smart-contract-approvals">What Are Smart Contract Approvals?</H2>

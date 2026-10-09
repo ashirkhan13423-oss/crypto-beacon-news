@@ -139,7 +139,7 @@ function ArticlePage() {
             </Link>{" "}
             — the next question is which physical medium to actually use. Paper is free and familiar. Metal costs more but survives things paper cannot. This article compares the real categories on durability, cost, and effort, without steering you toward any specific product.
           </P>
-          <P><em>This article is educational. It is not financial advice.</em></P>
+          <P><em>This comprehensive guide to seed phrase storage steel vs paper vs metal is for educational purposes only and should not be construed as financial advice. Always do your own research before making investment decisions.</em></P>
 
 
           <aside className="my-xl p-lg rounded-lg border border-outline-variant bg-surface-container-low">

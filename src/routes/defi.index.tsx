@@ -35,7 +35,7 @@ const collectionSchema = {
 const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) });
 
 export const Route = createFileRoute("/defi/")({ validateSearch: searchSchema,
-  head: () => ({
+  head: () => { const _hd = (({
     ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/defi', publishedTime: undefined, section: 'Defi' }),
     
     
@@ -45,7 +45,7 @@ export const Route = createFileRoute("/defi/")({ validateSearch: searchSchema,
         { name: "Defi", item: "https://www.cryptobeacon.site/defi" }
       ])) }
     ]
-  }),
+  })); return { ..._hd, meta: [...(_hd.meta || []), { name: 'robots', content: 'noindex, follow' }] }; },
   component: DefiHub,
 });
 

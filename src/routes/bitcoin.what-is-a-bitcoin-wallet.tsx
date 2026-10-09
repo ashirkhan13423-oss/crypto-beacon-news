@@ -161,7 +161,7 @@ function ArticlePage() {
           everything else about using Bitcoin clearer.
         </P>
         <P>
-          <em>This article is educational. It isn't financial advice.</em>
+          <em>This comprehensive guide to what is a bitcoin wallet is for educational purposes only and should not be construed as financial advice. Always do your own research before making investment decisions.</em>
         </P>
 
         <div className="my-xl grid grid-cols-1 md:grid-cols-3 gap-md">

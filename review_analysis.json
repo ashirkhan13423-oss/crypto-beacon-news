@@ -1,0 +1,237 @@
+[
+  {
+    "slug": "/author",
+    "wordCount": 522,
+    "hasBoilerplate": true
+  },
+  {
+    "slug": "/learn",
+    "wordCount": 23,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/glossary",
+    "wordCount": 23,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/defi",
+    "wordCount": 23,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/etfs",
+    "wordCount": 23,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/taxes",
+    "wordCount": 23,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/ethereum/what-is-ethereum-staking",
+    "wordCount": 1164,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/ethereum/how-does-ethereum-staking-work",
+    "wordCount": 699,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/ethereum/proof-of-stake-explained",
+    "wordCount": 967,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/ethereum/ethereum-validators-explained",
+    "wordCount": 1035,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/bitcoin/what-is-the-bitcoin-halving",
+    "wordCount": 1077,
+    "hasBoilerplate": true
+  },
+  {
+    "slug": "/bitcoin/how-does-bitcoin-halving-work",
+    "wordCount": 1209,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/bitcoin/bitcoin-wallets-complete-guide",
+    "wordCount": 978,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/bitcoin/how-bitcoin-wallets-work",
+    "wordCount": 1042,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/bitcoin/what-is-a-bitcoin-wallet",
+    "wordCount": 1210,
+    "hasBoilerplate": true
+  },
+  {
+    "slug": "/bitcoin/what-is-a-bitcoin-seed-phrase",
+    "wordCount": 1189,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/security/what-is-a-seed-phrase",
+    "wordCount": 1028,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/security/how-to-store-crypto-seed-phrase-safely",
+    "wordCount": 2196,
+    "hasBoilerplate": true
+  },
+  {
+    "slug": "/security/seed-phrase-storage-steel-vs-paper-vs-metal",
+    "wordCount": 1382,
+    "hasBoilerplate": true
+  },
+  {
+    "slug": "/guides/what-is-a-private-key",
+    "wordCount": 1017,
+    "hasBoilerplate": true
+  },
+  {
+    "slug": "/security/private-key-vs-seed-phrase",
+    "wordCount": 985,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/security/how-crypto-phishing-scams-work",
+    "wordCount": 1025,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/security/how-to-avoid-crypto-phishing-scams",
+    "wordCount": 1759,
+    "hasBoilerplate": true
+  },
+  {
+    "slug": "/security/how-to-revoke-smart-contract-approvals",
+    "wordCount": 1337,
+    "hasBoilerplate": true
+  },
+  {
+    "slug": "/security/how-to-revoke-token-approvals-metamask",
+    "wordCount": 1337,
+    "hasBoilerplate": true
+  },
+  {
+    "slug": "/bitcoin/common-bitcoin-wallet-scams",
+    "wordCount": 1079,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/security/common-crypto-scams",
+    "wordCount": 976,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/ethereum/what-is-a-smart-contract",
+    "wordCount": 1286,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/guides/what-is-a-smart-contract-explained",
+    "wordCount": 720,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/guides/crypto-regulation-hub",
+    "wordCount": 750,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/guides/crypto-regulation-explained-for-beginners",
+    "wordCount": 941,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/guides/how-cryptocurrency-regulation-works",
+    "wordCount": 1025,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/guides/why-governments-regulate-cryptocurrency",
+    "wordCount": 1607,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/guides/why-crypto-regulation-matters",
+    "wordCount": 893,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/news/liquid-network-3400-btc-returned-320-million-incident",
+    "wordCount": 1012,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/news/liquid-network-hack-4000-btc-withdrawal",
+    "wordCount": 31,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/news/bitcoin-rally-august-2026",
+    "wordCount": 612,
+    "hasBoilerplate": true
+  },
+  {
+    "slug": "/news/bitcoin-september-rally-macro-test",
+    "wordCount": 2089,
+    "hasBoilerplate": true
+  },
+  {
+    "slug": "/security/what-is-a-crypto-atm-are-they-safe",
+    "wordCount": 741,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/security/how-to-spot-a-fake-crypto-wallet-app",
+    "wordCount": 745,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/bitcoin/why-bitcoin-mining-uses-so-much-energy",
+    "wordCount": 763,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/guides/coin-vs-token-difference",
+    "wordCount": 1379,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/news/why-are-crypto-atms-everywhere",
+    "wordCount": 722,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/news/what-is-on-chain-trading-vs-exchange",
+    "wordCount": 698,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/ethereum/what-is-an-erc-20-token",
+    "wordCount": 690,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/altcoins/what-is-an-ai-crypto-token",
+    "wordCount": 690,
+    "hasBoilerplate": false
+  },
+  {
+    "slug": "/altcoins/why-do-meme-coins-have-value",
+    "wordCount": 690,
+    "hasBoilerplate": false
+  }
+]

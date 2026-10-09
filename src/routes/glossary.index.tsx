@@ -32,7 +32,7 @@ const glossaryTerms = [
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 export const Route = createFileRoute("/glossary/")({
-  head: () => ({
+  head: () => { const _hd = (({
     ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/glossary', publishedTime: undefined, section: 'Glossary' }),
     
     
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/glossary/")({
         { name: "Glossary", item: "https://www.cryptobeacon.site/glossary" }
       ])) }
     ]
-  }),
+  })); return { ..._hd, meta: [...(_hd.meta || []), { name: 'robots', content: 'noindex, follow' }] }; },
   component: GlossaryHub,
 });
 

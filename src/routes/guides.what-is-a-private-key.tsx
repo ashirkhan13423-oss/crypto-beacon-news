@@ -137,7 +137,7 @@ function ArticlePage() {
           phrases — is the first step toward true financial self-sovereignty.
         </P>
         <P>
-          <em>This article is educational. It isn't financial advice.</em>
+          <em>This comprehensive guide to what is a private key is for educational purposes only and should not be construed as financial advice. Always do your own research before making investment decisions.</em>
         </P>
 
         <H2 id="what-is-it">What Is a Private Key?</H2>

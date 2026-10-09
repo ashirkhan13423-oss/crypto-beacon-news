@@ -13,11 +13,13 @@ export const Route = createFileRoute("/search")({
   validateSearch: (search: Record<string, unknown>) => ({
     q: typeof search.q === "string" ? search.q : "",
   }),
-  head: () => ({
-    ...buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/search", type: 'website', path: '/search' }),
-    
-    
-  }),
+  head: () => {
+    const md = buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/search", type: 'website', path: '/search' });
+    return {
+      ...md,
+      meta: [...(md.meta || []), { name: "robots", content: "noindex, follow" }]
+    };
+  },
   component: SearchPage,
 });
 

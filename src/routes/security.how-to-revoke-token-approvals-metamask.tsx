@@ -136,7 +136,7 @@ function ArticlePage() {
           </P>
           <P>
             <em>
-              This article is educational. It isn't financial advice.
+              This comprehensive guide to how to revoke token approvals metamask is for educational purposes only and should not be construed as financial advice. Always do your own research before making investment decisions.
             </em>
           </P>
 

@@ -15,7 +15,7 @@ const DESC = "The primary educational entry point for beginners to understand cr
 const searchSchema = z.object({ page: z.number().catch(1).optional().default(1) });
 
 export const Route = createFileRoute("/learn/")({ validateSearch: searchSchema,
-  head: () => ({
+  head: () => { const _hd = (({
     ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/learn', publishedTime: undefined, section: 'Learn' }),
     
     
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/learn/")({ validateSearch: searchSchema,
         "url": URL
       }) }
     ]
-  }),
+  })); return { ..._hd, meta: [...(_hd.meta || []), { name: 'robots', content: 'noindex, follow' }] }; },
   component: LearnHub,
 });
 
