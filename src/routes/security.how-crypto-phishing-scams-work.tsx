@@ -33,7 +33,7 @@ export const Route = createFileRoute("/security/how-crypto-phishing-scams-work")
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How Crypto Phishing Scams Work: Attack Types Explained | CryptoBeacon", description: "A technical breakdown of how crypto phishing scams work — DNS hijacking, fake dApps, approval phishing, spear phishing, and browser extension attacks — with ...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/how-crypto-phishing-scams-work", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How Crypto Phishing Scams Work: Attack Types Explained | CryptoBeacon", description: "A technical breakdown of how crypto phishing scams work — DNS hijacking, fake dApps, approval phishing, spear phishing, and browser extension attacks — with ...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/how-crypto-phishing-scams-work", section: "Security", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

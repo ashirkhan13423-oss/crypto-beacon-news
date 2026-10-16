@@ -33,7 +33,7 @@ export const Route = createFileRoute("/guides/why-crypto-regulation-matters")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Why Crypto Regulation Matters to Investors | CryptoBeacon", description: "Why does cryptocurrency regulation matter to the average investor? How regulatory clarity drives institutional adoption, affects token prices, and protects c...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/why-crypto-regulation-matters", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Why Crypto Regulation Matters to Investors | CryptoBeacon", description: "Why does cryptocurrency regulation matter to the average investor? How regulatory clarity drives institutional adoption, affects token prices, and protects c...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/why-crypto-regulation-matters", section: "Guides", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

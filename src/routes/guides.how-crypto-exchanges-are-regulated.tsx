@@ -33,7 +33,7 @@ export const Route = createFileRoute("/guides/how-crypto-exchanges-are-regulated
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How Crypto Exchanges Are Regulated: Licensing & Compliance | CryptoBeacon", description: "A guide to how cryptocurrency exchanges are regulated — licensing regimes, geographic restrictions, asset listing rules, and how exchanges handle regulatory ...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/how-crypto-exchanges-are-regulated", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How Crypto Exchanges Are Regulated: Licensing & Compliance | CryptoBeacon", description: "A guide to how cryptocurrency exchanges are regulated — licensing regimes, geographic restrictions, asset listing rules, and how exchanges handle regulatory ...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/how-crypto-exchanges-are-regulated", section: "Guides", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

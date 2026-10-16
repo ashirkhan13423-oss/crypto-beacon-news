@@ -12,7 +12,7 @@ export function SiteFooter() {
         {/* Branding row */}
         <div className="col-span-2 md:col-span-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-md mb-lg pb-lg border-b border-outline-variant">
           <img
-            src={logoAsset.url}
+            src="/logo.png"
             alt="CryptoBeacon - Editorial Rigor and Financial Clarity"
             className="h-14 md:h-16 w-auto"
           />

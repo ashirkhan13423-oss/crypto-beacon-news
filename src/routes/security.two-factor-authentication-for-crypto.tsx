@@ -33,7 +33,7 @@ export const Route = createFileRoute("/security/two-factor-authentication-for-cr
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Two-Factor Authentication for Crypto: SMS vs TOTP vs Hardware Keys | CryptoBeacon", description: "A complete guide to two-factor authentication for cryptocurrency accounts — SMS vs TOTP apps vs hardware security keys, the risks of each method, and how to ...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/two-factor-authentication-for-crypto", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Two-Factor Authentication for Crypto: SMS vs TOTP vs Hardware Keys | CryptoBeacon", description: "A complete guide to two-factor authentication for cryptocurrency accounts — SMS vs TOTP apps vs hardware security keys, the risks of each method, and how to ...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/two-factor-authentication-for-crypto", section: "Security", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

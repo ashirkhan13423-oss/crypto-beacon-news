@@ -45,7 +45,7 @@ export const Route = createFileRoute("/bitcoin/what-happens-if-you-lose-your-see
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Happens If You Lose Your Bitcoin Seed Phrase? | CryptoBeacon", description: "Losing your Bitcoin seed phrase with no other backup means permanent, irrecoverable loss of access to your funds. Understand why, what limited options exist,...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/bitcoin/what-happens-if-you-lose-your-seed-phrase", section: "Bitcoin", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Happens If You Lose Your Bitcoin Seed Phrase? | CryptoBeacon", description: "Losing your Bitcoin seed phrase with no other backup means permanent, irrecoverable loss of access to your funds. Understand why, what limited options exist,...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/bitcoin/what-happens-if-you-lose-your-seed-phrase", section: "Bitcoin", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

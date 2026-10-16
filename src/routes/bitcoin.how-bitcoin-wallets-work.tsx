@@ -45,7 +45,7 @@ export const Route = createFileRoute("/bitcoin/how-bitcoin-wallets-work")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How Bitcoin Wallets Work: Private Keys, Addresses & Signing | CryptoBeacon", description: "A plain-language technical guide to how Bitcoin wallets actually work — private keys, public keys, wallet addresses, HD wallets, and transaction signing expl...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/bitcoin/how-bitcoin-wallets-work", section: "Bitcoin", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How Bitcoin Wallets Work: Private Keys, Addresses & Signing | CryptoBeacon", description: "A plain-language technical guide to how Bitcoin wallets actually work — private keys, public keys, wallet addresses, HD wallets, and transaction signing expl...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/bitcoin/how-bitcoin-wallets-work", section: "Bitcoin", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

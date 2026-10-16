@@ -45,7 +45,7 @@ export const Route = createFileRoute("/altcoins/what-is-an-altcoin")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is an Altcoin? The Complete Guide to Cryptocurrency Alternatives | CryptoBeacon", description: "A complete guide to altcoins: understand smart contract platforms, stablecoins, utility tokens, and meme coins. Learn what makes an altcoin different from Bi...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-12", dateModified: "2026-09-12", url: "https://www.cryptobeacon.site/altcoins/what-is-an-altcoin", section: "Altcoins", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is an Altcoin? The Complete Guide to Cryptocurrency Alternatives | CryptoBeacon", description: "A complete guide to altcoins: understand smart contract platforms, stablecoins, utility tokens, and meme coins. Learn what makes an altcoin different from Bi...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-12", dateModified: "2026-09-12", url: "https://www.cryptobeacon.site/altcoins/what-is-an-altcoin", section: "Altcoins", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

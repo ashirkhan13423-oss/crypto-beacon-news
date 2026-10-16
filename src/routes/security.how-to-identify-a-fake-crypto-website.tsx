@@ -34,7 +34,7 @@ export const Route = createFileRoute("/security/how-to-identify-a-fake-crypto-we
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How to Identify a Fake Crypto Website: 7 Checks | CryptoBeacon", description: "Learn how to spot a fake crypto website before it's too late — URL inspection, SSL certificate checks, Whois lookups, typosquatting red flags, and clipboard address verification.", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/how-to-identify-a-fake-crypto-website", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How to Identify a Fake Crypto Website: 7 Checks | CryptoBeacon", description: "Learn how to spot a fake crypto website before it's too late — URL inspection, SSL certificate checks, Whois lookups, typosquatting red flags, and clipboard address verification.", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/how-to-identify-a-fake-crypto-website", section: "Security", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

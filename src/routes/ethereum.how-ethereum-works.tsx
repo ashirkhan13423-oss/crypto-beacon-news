@@ -33,7 +33,7 @@ export const Route = createFileRoute("/ethereum/how-ethereum-works")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How Ethereum Works: EVM, Accounts, Transactions & Consensus | CryptoBeacon", description: "A technical yet accessible explanation of how Ethereum works — the EVM, account types, transaction lifecycle, Proof-of-Stake consensus, and block production ...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/how-ethereum-works", section: "Ethereum", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How Ethereum Works: EVM, Accounts, Transactions & Consensus | CryptoBeacon", description: "A technical yet accessible explanation of how Ethereum works — the EVM, account types, transaction lifecycle, Proof-of-Stake consensus, and block production ...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/how-ethereum-works", section: "Ethereum", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

@@ -33,7 +33,7 @@ export const Route = createFileRoute("/ethereum/ethereum-vs-bitcoin")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Ethereum vs Bitcoin: Key Differences Explained | CryptoBeacon", description: "Ethereum vs Bitcoin compared side-by-side: purpose, supply model, consensus mechanism, programmability, transaction speed, and which use cases each is best s...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/ethereum-vs-bitcoin", section: "Ethereum", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Ethereum vs Bitcoin: Key Differences Explained | CryptoBeacon", description: "Ethereum vs Bitcoin compared side-by-side: purpose, supply model, consensus mechanism, programmability, transaction speed, and which use cases each is best s...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/ethereum-vs-bitcoin", section: "Ethereum", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

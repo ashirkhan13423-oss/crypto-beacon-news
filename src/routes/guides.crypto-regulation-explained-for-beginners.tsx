@@ -34,7 +34,7 @@ export const Route = createFileRoute("/guides/crypto-regulation-explained-for-be
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Crypto Regulation Explained for Beginners | CryptoBeacon", description: "A plain-language beginner's guide to cryptocurrency regulation — what it means in practice, what it requires of users and exchanges, and what the difference is between regulated and unregulated crypto.", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/crypto-regulation-explained-for-beginners", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Crypto Regulation Explained for Beginners | CryptoBeacon", description: "A plain-language beginner's guide to cryptocurrency regulation — what it means in practice, what it requires of users and exchanges, and what the difference is between regulated and unregulated crypto.", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/crypto-regulation-explained-for-beginners", section: "Guides", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

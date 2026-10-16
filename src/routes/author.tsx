@@ -49,7 +49,7 @@ const personSchema = {
 
 export const Route = createFileRoute("/author")({
   head: () => ({
-    ...buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/author", type: 'website', path: '/author' }),
+    ...buildMetadata({ title: TITLE, description: DESC, url: AUTHOR_URL, type: 'website', path: '/author' }),
     
     
     scripts: [

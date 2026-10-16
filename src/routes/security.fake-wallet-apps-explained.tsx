@@ -33,7 +33,7 @@ export const Route = createFileRoute("/security/fake-wallet-apps-explained")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Fake Crypto Wallet Apps: How to Spot Them Before You Download | CryptoBeacon", description: "How fake cryptocurrency wallet apps work, how they appear in app stores alongside legitimate wallets, and exactly how to verify you are downloading a genuine...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/fake-wallet-apps-explained", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Fake Crypto Wallet Apps: How to Spot Them Before You Download | CryptoBeacon", description: "How fake cryptocurrency wallet apps work, how they appear in app stores alongside legitimate wallets, and exactly how to verify you are downloading a genuine...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/fake-wallet-apps-explained", section: "Security", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

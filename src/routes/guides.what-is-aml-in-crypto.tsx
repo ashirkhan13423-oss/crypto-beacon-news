@@ -33,7 +33,7 @@ export const Route = createFileRoute("/guides/what-is-aml-in-crypto")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is AML in Crypto? Anti-Money Laundering Rules Explained | CryptoBeacon", description: "What is AML (Anti-Money Laundering) in cryptocurrency? An explanation of the FATF travel rule, transaction monitoring, suspicious activity reports (SARs), an...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/what-is-aml-in-crypto", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is AML in Crypto? Anti-Money Laundering Rules Explained | CryptoBeacon", description: "What is AML (Anti-Money Laundering) in cryptocurrency? An explanation of the FATF travel rule, transaction monitoring, suspicious activity reports (SARs), an...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/what-is-aml-in-crypto", section: "Guides", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

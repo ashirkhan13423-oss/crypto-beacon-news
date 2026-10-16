@@ -7,14 +7,14 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const URL = "https://www.cryptobeacon.site/glossary";
-const TITLE = "Crypto Glossary — A-Z Cryptocurrency Terms | CryptoBeacon";
-const DESC = "A comprehensive A-Z glossary of cryptocurrency, blockchain, and DeFi terminology. Clear definitions with practical context.";
+const TITLE = "Crypto Glossary: A-Z Cryptocurrency Terms & Definitions | CryptoBeacon";
+const DESC = "Explore CryptoBeacon's comprehensive crypto glossary with concise definitions of essential blockchain, DeFi, Bitcoin, and trading terminology.";
 
 const glossaryTerms = [
   { term: "Blockchain", slug: "/guides/what-is-a-blockchain-fork", definition: "A distributed digital ledger that records transactions across a network of computers." },
   { term: "DeFi", slug: "/ethereum/what-is-defi-decentralized-finance", definition: "Decentralized Finance — financial services built on blockchains without traditional intermediaries." },
   { term: "Gas Fees", slug: "/ethereum/what-are-gas-fees-how-to-save", definition: "The cost of executing a transaction or smart contract on a blockchain like Ethereum." },
-  { term: "Halving", slug: "/bitcoin/what-is-the-bitcoin-halving", definition: "A programmed event that cuts the block reward miners receive in half, reducing the rate of new Bitcoin issuance." },
+  { term: "Halving", slug: "/bitcoin/how-does-bitcoin-halving-work", definition: "A programmed event that cuts the block reward miners receive in half, reducing the rate of new Bitcoin issuance." },
   { term: "KYC", slug: "/guides/what-is-kyc-in-cryptocurrency", definition: "Know Your Customer — identity verification required by regulated exchanges and financial institutions." },
   { term: "Lightning Network", slug: "/bitcoin/bitcoin-lightning-network-explained", definition: "A Layer-2 payment protocol that enables fast, cheap Bitcoin transactions off-chain." },
   { term: "Mining", slug: "/bitcoin/what-is-bitcoin-mining", definition: "The process of validating transactions and adding new blocks to a Proof-of-Work blockchain." },
@@ -26,23 +26,21 @@ const glossaryTerms = [
   { term: "Smart Contract", slug: "/ethereum/what-is-a-smart-contract", definition: "Self-executing code deployed on a blockchain that runs automatically when conditions are met." },
   { term: "Stablecoin", slug: "/guides/what-is-a-stablecoin", definition: "A cryptocurrency designed to maintain a stable value, typically pegged to the US dollar." },
   { term: "Staking", slug: "/ethereum/what-is-ethereum-staking", definition: "Locking up cryptocurrency to help secure a Proof-of-Stake network in exchange for rewards." },
-  { term: "Wallet", slug: "/bitcoin/what-is-a-bitcoin-wallet", definition: "Software or hardware that stores cryptographic keys and enables sending and receiving cryptocurrency." },
+  { term: "Wallet", slug: "/bitcoin/bitcoin-wallets-complete-guide", definition: "Software or hardware that stores cryptographic keys and enables sending and receiving cryptocurrency." },
 ];
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 export const Route = createFileRoute("/glossary/")({
-  head: () => { const _hd = (({
+  head: () => ({
     ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/glossary', publishedTime: undefined, section: 'Glossary' }),
-    
-    
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },
         { name: "Glossary", item: "https://www.cryptobeacon.site/glossary" }
       ])) }
     ]
-  })); return { ..._hd, meta: [...(_hd.meta || []), { name: 'robots', content: 'noindex, follow' }] }; },
+  }),
   component: GlossaryHub,
 });
 
@@ -58,12 +56,15 @@ function GlossaryHub() {
       <main className="flex-grow w-full max-w-6xl mx-auto px-gutter py-xl">
         <Breadcrumbs items={[{ label: "Glossary" }]} />
 
-        <div className="mb-xxl max-w-3xl">
+        <div className="mb-xxl max-w-3xl space-y-md">
           <h1 className="font-display-lg text-display-lg text-primary mb-md">
             Crypto Glossary
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant mb-md">
-            A clear, no-jargon reference for the most important terms in cryptocurrency and blockchain. Each definition includes links to our in-depth guides for further reading.
+          <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Navigating the cryptocurrency and blockchain ecosystem requires getting comfortable with specialized terminology that blends computer science, cryptography, financial markets, and distributed networking. Whether you are encountering technical concepts like zero-knowledge rollups and validator consensus, or economic terms like halving schedules and liquidity pools, having clear definitions helps you evaluate information objectively.
+          </p>
+          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            This glossary serves as an accessible, jargon-free reference designed for both newcomers taking their first steps and experienced market participants looking for precise explanations. Each entry provides a straightforward summary along with direct links to our full educational guides. If you are starting out, we suggest checking our guides on <Link to="/bitcoin/bitcoin-wallets-complete-guide" className="text-secondary font-medium hover:underline">crypto wallets</Link>, understanding how <Link to="/guides/what-is-a-private-key" className="text-secondary font-medium hover:underline">private keys</Link> secure funds, and learning how <Link to="/ethereum/what-is-a-smart-contract" className="text-secondary font-medium hover:underline">smart contracts</Link> power decentralized applications.
           </p>
         </div>
 

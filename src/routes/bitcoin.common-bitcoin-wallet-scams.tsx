@@ -45,7 +45,7 @@ export const Route = createFileRoute("/bitcoin/common-bitcoin-wallet-scams")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Common Bitcoin Wallet Scams: How to Spot and Avoid Them | CryptoBeacon", description: "Fake wallet apps, clipboard hijackers, seed phrase phishing, and supply chain attacks on hardware wallets — the most common Bitcoin wallet scams explained wi...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/bitcoin/common-bitcoin-wallet-scams", section: "Bitcoin", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Common Bitcoin Wallet Scams: How to Spot and Avoid Them | CryptoBeacon", description: "Fake wallet apps, clipboard hijackers, seed phrase phishing, and supply chain attacks on hardware wallets — the most common Bitcoin wallet scams explained wi...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/bitcoin/common-bitcoin-wallet-scams", section: "Bitcoin", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

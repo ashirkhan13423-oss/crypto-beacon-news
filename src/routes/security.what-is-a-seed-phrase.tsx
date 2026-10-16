@@ -33,7 +33,7 @@ export const Route = createFileRoute("/security/what-is-a-seed-phrase")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is a Seed Phrase? Security Guide for Crypto Users | CryptoBeacon", description: "A security-focused guide to seed phrases — why they are the highest-value target in crypto, how attackers try to steal them, and the threat model every self-...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/what-is-a-seed-phrase", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is a Seed Phrase? Security Guide for Crypto Users | CryptoBeacon", description: "A security-focused guide to seed phrases — why they are the highest-value target in crypto, how attackers try to steal them, and the threat model every self-...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/what-is-a-seed-phrase", section: "Security", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

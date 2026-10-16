@@ -10,7 +10,7 @@ const DESC = "How CryptoBeacon discloses affiliate relationships and ensures edi
 
 export const Route = createFileRoute("/affiliate-disclosure")({
   head: () => ({
-    ...buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/affiliate-disclosure", type: 'website', path: '/affiliate-disclosure' }),
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'website', path: '/affiliate-disclosure' }),
     
     
     scripts: []

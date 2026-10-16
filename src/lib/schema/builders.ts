@@ -68,19 +68,21 @@ export function buildBreadcrumbSchema(items: { name: string; item: string }[]): 
   };
 }
 
-export function buildFAQSchema(faqs: { q: string; a: string }[]): WithContext<FAQPage> | null {
+export function buildFAQSchema(
+  faqs: ({ q: string; a: string } | { question: string; answer: string })[]
+): WithContext<FAQPage> | null {
   if (!faqs || faqs.length === 0) {
     return null;
   }
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((f) => ({
+    mainEntity: faqs.map((f: any) => ({
       "@type": "Question",
-      name: f.q,
+      name: f.q || f.question || "",
       acceptedAnswer: {
         "@type": "Answer",
-        text: f.a,
+        text: f.a || f.answer || "",
       },
     })),
   };
@@ -102,6 +104,14 @@ interface ArticleSchemaParams {
 export function buildArticleSchema(params: ArticleSchemaParams): WithContext<Article | NewsArticle> {
   const type = params.isNews ? "NewsArticle" : "Article";
 
+  // Enforce a valid absolute image URL (default to public og-image.png if empty or invalid)
+  let imgUrl = params.imageUrl ? params.imageUrl.trim() : "";
+  if (!imgUrl || imgUrl === "https://www.cryptobeacon.site" || imgUrl === "https://www.cryptobeacon.site/") {
+    imgUrl = "https://www.cryptobeacon.site/og-image.png";
+  } else if (!imgUrl.startsWith("http://") && !imgUrl.startsWith("https://")) {
+    imgUrl = `https://www.cryptobeacon.site${imgUrl.startsWith("/") ? "" : "/"}${imgUrl}`;
+  }
+
   return {
     "@context": "https://schema.org",
     "@type": type,
@@ -109,9 +119,9 @@ export function buildArticleSchema(params: ArticleSchemaParams): WithContext<Art
     description: params.description,
     image: {
       "@type": "ImageObject",
-      url: params.imageUrl,
-      ...(params.imageWidth && { width: params.imageWidth.toString() }),
-      ...(params.imageHeight && { height: params.imageHeight.toString() }),
+      url: imgUrl,
+      width: params.imageWidth ? params.imageWidth.toString() : "1200",
+      height: params.imageHeight ? params.imageHeight.toString() : "630",
     },
     datePublished: params.datePublished,
     dateModified: params.dateModified,

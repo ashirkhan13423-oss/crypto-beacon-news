@@ -36,7 +36,7 @@ export const Route = createFileRoute("/guides/crypto-regulation-hub")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Cryptocurrency Regulation Hub: Complete Guide | CryptoBeacon", description: "The definitive cryptocurrency regulation hub — how crypto regulation works globally, KYC and AML explained, stablecoin laws, exchange licensing, crypto taxes...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/crypto-regulation-hub", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Cryptocurrency Regulation Hub: Complete Guide | CryptoBeacon", description: "The definitive cryptocurrency regulation hub — how crypto regulation works globally, KYC and AML explained, stablecoin laws, exchange licensing, crypto taxes...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/crypto-regulation-hub", section: "Guides", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },
         { name: "Guides", item: "https://www.cryptobeacon.site/guides" },

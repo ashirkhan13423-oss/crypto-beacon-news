@@ -33,7 +33,7 @@ export const Route = createFileRoute("/guides/crypto-regulation-vs-cryptocurrenc
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Crypto Regulation vs Crypto Ban: Understanding the Difference | CryptoBeacon", description: "What is the difference between regulating cryptocurrency and banning it? A look at how countries choose their approach, why bans often fail, and why regulati...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/crypto-regulation-vs-cryptocurrency-ban", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Crypto Regulation vs Crypto Ban: Understanding the Difference | CryptoBeacon", description: "What is the difference between regulating cryptocurrency and banning it? A look at how countries choose their approach, why bans often fail, and why regulati...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/crypto-regulation-vs-cryptocurrency-ban", section: "Guides", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

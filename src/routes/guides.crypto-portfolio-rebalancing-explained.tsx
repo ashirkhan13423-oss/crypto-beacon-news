@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { buildMetadata } from "@/lib/metadata";
-import { buildBreadcrumbSchema, buildArticleSchema } from "@/lib/schema/builders";
+import { buildBreadcrumbSchema, buildArticleSchema, buildFAQSchema } from "@/lib/schema/builders";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
@@ -19,18 +19,41 @@ const DESC = "What crypto portfolio rebalancing is, when to do it, and how — w
 const PUBLISHED = "2026-08-25";
 let MODIFIED = PUBLISHED;
 let keyTakeaway = "";
+
+const faqs = [
+  {
+    q: "How often should I rebalance my crypto portfolio?",
+    a: "There's no universal answer, but two common approaches are time-based (quarterly or annually) and threshold-based (rebalance when any asset drifts more than 5–10% from your target). Threshold rebalancing is generally considered more responsive to crypto's high volatility because it's triggered by actual drift rather than a calendar event.",
+  },
+  {
+    q: "Is rebalancing a crypto portfolio taxable?",
+    a: "In most jurisdictions (including the US, UK, and Australia), selling one cryptocurrency to buy another is a taxable event — even if you reinvest the proceeds immediately. Each sale triggers a capital gain or loss calculation based on your cost basis. Tax-loss harvesting — deliberately selling assets at a loss to offset gains — is a related strategy some investors use at year-end. Consult a tax professional for your specific situation.",
+  },
+  {
+    q: "What's a good target allocation for a crypto portfolio?",
+    a: "This depends entirely on your risk tolerance, investment horizon, and financial situation — and this article deliberately won't prescribe one. Common examples range from a simple 60/40 BTC/ETH split to portfolios with 5–10% in higher-risk altcoins. The specific allocation matters less than having one deliberately chosen and sticking to it consistently.",
+  },
+  {
+    q: "Should I rebalance during a bull or bear market?",
+    a: "Rebalancing is a mechanical discipline — it shouldn't change based on market conditions. Threshold rebalancing triggers when assets drift beyond your set boundaries, regardless of whether that drift happens in a bull or bear market. The objective is to maintain your intended risk exposure, not to call market direction.",
+  },
+  {
+    q: "Can I avoid taxable events by rebalancing with new deposits instead of selling?",
+    a: "Yes — this is called 'cash-flow rebalancing.' Instead of selling overweight assets, you direct new purchases exclusively toward underweight assets until the portfolio realigns. This only works if you're regularly adding funds, and it may take longer to correct large drifts. But it can significantly reduce taxable events compared to selling-based rebalancing.",
+  },
+];
+
 export const Route = createFileRoute("/guides/crypto-portfolio-rebalancing-explained")({
   head: () => ({
     ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/guides/crypto-portfolio-rebalancing-explained', publishedTime: PUBLISHED, section: 'Guides' }),
-    
-    
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Crypto Portfolio Rebalancing Explained (With Worked Example) | CryptoBeacon", description: "What crypto portfolio rebalancing is, when to do it, and how — with a realistic worked example showing exactly how the math works and what taxes to watch out...", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-25", dateModified: "2026-08-25", url: "https://www.cryptobeacon.site/guides/crypto-portfolio-rebalancing-explained", section: "Guides", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },
         { name: "Guides", item: "https://www.cryptobeacon.site/guides" },
         { name: "Crypto Portfolio Rebalancing Explained (With Worked Example) | CryptoBeacon", item: "https://www.cryptobeacon.site/guides/crypto-portfolio-rebalancing-explained" }
-      ])) }
+      ])) },
+      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) }
     ],
   }),
   component: ArticlePage,
@@ -45,30 +68,6 @@ function H2({ id, children }: { id: string; children: React.ReactNode }) {
     <h2 id={id} className="scroll-mt-28 font-headline-md text-headline-md md:text-headline-lg text-primary mt-xxl mb-md">
       {children}
     </h2>
-  );
-}
-
-function FaqItem({ question, answer }: { question: string; answer: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border border-outline-variant rounded-lg overflow-hidden">
-      <button
-        type="button"
-        className="w-full flex items-center justify-between gap-md p-md text-left hover:bg-surface-container-low/50 transition-colors"
-        onClick={() => setOpen((o) => !o)}
-        aria-expanded={open}
-      >
-        <span className="font-headline-sm text-headline-sm text-primary">{question}</span>
-        <ChevronDown
-          className={`w-5 h-5 text-secondary shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
-        />
-      </button>
-      {open && (
-        <div className="px-md pb-md border-t border-outline-variant">
-          <p className="font-body-lg text-body-lg text-on-surface leading-relaxed pt-md">{answer}</p>
-        </div>
-      )}
-    </div>
   );
 }
 
@@ -103,29 +102,6 @@ function ExampleRow({
 }
 
 function ArticlePage() {
-  const faqs: { question: string; answer: string }[] = [
-    {
-      question: "How often should I rebalance my crypto portfolio?",
-      answer: "There's no universal answer, but two common approaches are time-based (quarterly or annually) and threshold-based (rebalance when any asset drifts more than 5–10% from your target). Threshold rebalancing is generally considered more responsive to crypto's high volatility because it's triggered by actual drift rather than a calendar event.",
-    },
-    {
-      question: "Is rebalancing a crypto portfolio taxable?",
-      answer: "In most jurisdictions (including the US, UK, and Australia), selling one cryptocurrency to buy another is a taxable event — even if you reinvest the proceeds immediately. Each sale triggers a capital gain or loss calculation based on your cost basis. Tax-loss harvesting — deliberately selling assets at a loss to offset gains — is a related strategy some investors use at year-end. Consult a tax professional for your specific situation.",
-    },
-    {
-      question: "What's a good target allocation for a crypto portfolio?",
-      answer: "This depends entirely on your risk tolerance, investment horizon, and financial situation — and this article deliberately won't prescribe one. Common examples range from a simple 60/40 BTC/ETH split to portfolios with 5–10% in higher-risk altcoins. The specific allocation matters less than having one deliberately chosen and sticking to it consistently.",
-    },
-    {
-      question: "Should I rebalance during a bull or bear market?",
-      answer: "Rebalancing is a mechanical discipline — it shouldn't change based on market conditions. Threshold rebalancing triggers when assets drift beyond your set boundaries, regardless of whether that drift happens in a bull or bear market. The objective is to maintain your intended risk exposure, not to call market direction.",
-    },
-    {
-      question: "Can I avoid taxable events by rebalancing with new deposits instead of selling?",
-      answer: "Yes — this is called 'cash-flow rebalancing.' Instead of selling overweight assets, you direct new purchases exclusively toward underweight assets until the portfolio realigns. This only works if you're regularly adding funds, and it may take longer to correct large drifts. But it can significantly reduce taxable events compared to selling-based rebalancing.",
-    },
-  ];
-
   return (
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />

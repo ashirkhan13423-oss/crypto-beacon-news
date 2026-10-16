@@ -38,7 +38,7 @@ export const Route = createFileRoute("/ethereum/ethereum-complete-beginners-guid
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Ethereum Explained: Complete Beginner's Guide | CryptoBeacon", description: "The definitive beginner's guide to Ethereum — what it is, how it works, staking, gas fees, Layer 2, smart contracts, wallets, and how it compares to Bitcoin. All in one place.", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/ethereum-complete-beginners-guide", section: "Ethereum", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Ethereum Explained: Complete Beginner's Guide | CryptoBeacon", description: "The definitive beginner's guide to Ethereum — what it is, how it works, staking, gas fees, Layer 2, smart contracts, wallets, and how it compares to Bitcoin. All in one place.", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/ethereum-complete-beginners-guide", section: "Ethereum", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },
         { name: "Ethereum", item: "https://www.cryptobeacon.site/ethereum" },

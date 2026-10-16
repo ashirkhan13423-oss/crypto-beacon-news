@@ -49,7 +49,7 @@ export const Route = createFileRoute("/bitcoin/what-is-a-bitcoin-seed-phrase")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is a Bitcoin Seed Phrase? BIP-39 Explained | CryptoBeacon", description: "A Bitcoin seed phrase is the 12 or 24 words that back up your entire wallet. Learn what seed phrases are, how BIP-39 works, 12 vs 24 words, and why losing yo...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-seed-phrase", section: "Bitcoin", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is a Bitcoin Seed Phrase? BIP-39 Explained | CryptoBeacon", description: "A Bitcoin seed phrase is the 12 or 24 words that back up your entire wallet. Learn what seed phrases are, how BIP-39 works, 12 vs 24 words, and why losing yo...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-seed-phrase", section: "Bitcoin", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

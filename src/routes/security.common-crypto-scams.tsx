@@ -33,7 +33,7 @@ export const Route = createFileRoute("/security/common-crypto-scams")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Common Crypto Scams: Rug Pulls, Pig Butchering & More | CryptoBeacon", description: "The most common crypto scams explained — rug pulls, fake giveaways, pump and dump, romance/pig butchering scams, and exit scams — with red flags to identify ...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/common-crypto-scams", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Common Crypto Scams: Rug Pulls, Pig Butchering & More | CryptoBeacon", description: "The most common crypto scams explained — rug pulls, fake giveaways, pump and dump, romance/pig butchering scams, and exit scams — with red flags to identify ...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/common-crypto-scams", section: "Security", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

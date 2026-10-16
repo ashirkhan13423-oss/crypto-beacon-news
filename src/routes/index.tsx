@@ -185,7 +185,7 @@ const homepageSchema = {
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'website', path: '' }),
+    ...buildMetadata({ title: TITLE, description: DESC, url: PAGE_URL, type: 'website', path: '' }),
     
     
     scripts: [],

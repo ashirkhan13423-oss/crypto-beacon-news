@@ -34,7 +34,7 @@ export const Route = createFileRoute("/ethereum/ethereum-validators-explained")(
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Ethereum Validators Explained: Requirements, Duties & Risks | CryptoBeacon", description: "What is an Ethereum validator? Learn about the 32 ETH requirement, validator duties (proposing and attesting), the validator lifecycle, slashing risks, and w...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/ethereum-validators-explained", section: "Ethereum", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Ethereum Validators Explained: Requirements, Duties & Risks | CryptoBeacon", description: "What is an Ethereum validator? Learn about the 32 ETH requirement, validator duties (proposing and attesting), the validator lifecycle, slashing risks, and w...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/ethereum-validators-explained", section: "Ethereum", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

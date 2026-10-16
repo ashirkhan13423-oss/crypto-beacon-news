@@ -33,7 +33,7 @@ export const Route = createFileRoute("/guides/what-is-kyc-in-cryptocurrency")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is KYC in Cryptocurrency? Requirements & Why It Matters | CryptoBeacon", description: "What is KYC (Know Your Customer) in crypto? Learn why cryptocurrency exchanges require ID verification, what documents are needed, and the privacy implicatio...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/what-is-kyc-in-cryptocurrency", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is KYC in Cryptocurrency? Requirements & Why It Matters | CryptoBeacon", description: "What is KYC (Know Your Customer) in crypto? Learn why cryptocurrency exchanges require ID verification, what documents are needed, and the privacy implicatio...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/what-is-kyc-in-cryptocurrency", section: "Guides", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

@@ -35,7 +35,7 @@ export const Route = createFileRoute("/ethereum/proof-of-stake-explained")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Proof of Stake Explained: How Ethereum's Consensus Works | CryptoBeacon", description: "How does Ethereum's Proof of Stake work? This guide explains validators, staking, finality, slashing, and how PoS replaced Proof of Work mining in The Merge.", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/proof-of-stake-explained", section: "Ethereum", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Proof of Stake Explained: How Ethereum's Consensus Works | CryptoBeacon", description: "How does Ethereum's Proof of Stake work? This guide explains validators, staking, finality, slashing, and how PoS replaced Proof of Work mining in The Merge.", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/proof-of-stake-explained", section: "Ethereum", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

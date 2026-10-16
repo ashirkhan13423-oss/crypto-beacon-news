@@ -33,7 +33,7 @@ export const Route = createFileRoute("/guides/how-cryptocurrency-regulation-work
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How Cryptocurrency Regulation Works: Agencies, Frameworks & Jurisdictions | CryptoBeacon", description: "How does cryptocurrency regulation work? An overview of the key regulatory agencies (SEC, CFTC, FinCEN, FCA, MiCA), how different jurisdictions approach cryp...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/how-cryptocurrency-regulation-works", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "How Cryptocurrency Regulation Works: Agencies, Frameworks & Jurisdictions | CryptoBeacon", description: "How does cryptocurrency regulation work? An overview of the key regulatory agencies (SEC, CFTC, FinCEN, FCA, MiCA), how different jurisdictions approach cryp...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/how-cryptocurrency-regulation-works", section: "Guides", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

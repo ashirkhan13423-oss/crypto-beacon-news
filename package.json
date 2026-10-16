@@ -5,13 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "node scripts/generate-metadata.cjs && node scripts/lint-content.cjs && node scripts/validate-articles.cjs && node scripts/check-metadata.cjs && npm run check-duplicates && vite build",
+    "build": "node scripts/generate-metadata.cjs && node scripts/lint-content.cjs && node scripts/validate-articles.cjs && node scripts/check-structured-data.cjs && node scripts/check-metadata.cjs && npm run check-duplicates && vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
     "check-links": "node scripts/check-links.js",
-    "check-duplicates": "node scripts/check-duplicates.cjs"
+    "check-duplicates": "node scripts/check-duplicates.cjs",
+    "generate-sitemap": "node scripts/generate-sitemap-index.cjs",
+    "verify-sitemap": "node scripts/verify-sitemap.cjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

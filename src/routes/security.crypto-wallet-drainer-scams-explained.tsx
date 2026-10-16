@@ -33,7 +33,7 @@ export const Route = createFileRoute("/security/crypto-wallet-drainer-scams-expl
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Crypto Wallet Drainer Scams Explained | CryptoBeacon", description: "What are crypto wallet drainers? How approval scams and setApprovalForAll exploits work, how to detect them before signing, and how to revoke existing danger...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/crypto-wallet-drainer-scams-explained", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Crypto Wallet Drainer Scams Explained | CryptoBeacon", description: "What are crypto wallet drainers? How approval scams and setApprovalForAll exploits work, how to detect them before signing, and how to revoke existing danger...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/crypto-wallet-drainer-scams-explained", section: "Security", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

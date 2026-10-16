@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import { AdSenseLoader } from "@/components/AdUnit";
 import appCss from "../styles.css?url";
 import { SITE_URL } from "../lib/site-config";
+import { twConfig } from "../lib/tw-config";
 
 const websiteSchema = {
   "@context": "https://schema.org",
@@ -108,7 +109,6 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-import { twConfig } from "../lib/tw-config";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -134,14 +134,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     scripts: [
       { src: "https://cdn.tailwindcss.com?plugins=forms,container-queries" },
       { children: twConfig },
-      { src: "https://www.googletagmanager.com/gtag/js?id=G-VY7EVVG1WL", async: true, defer: true },
+      // Google Tag Manager — handles GA4 (G-VY7EVVG1WL) and other tags
+      // internally. Do NOT add a separate gtag.js; GTM fires it via its own
+      // container, avoiding duplicate page-view events.
       {
         children:
-          "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-VY7EVVG1WL');",
-      },
-      {
-        children:
-          "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.defer=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NZ2CN7HG');",
+          "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NZ2CN7HG');",
       },
       { type: "application/ld+json", children: JSON.stringify(websiteSchema) },
       { type: "application/ld+json", children: JSON.stringify(organizationSchema) },

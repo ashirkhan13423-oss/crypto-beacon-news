@@ -34,7 +34,7 @@ export const Route = createFileRoute("/ethereum/ethereum-wallets-explained")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Ethereum Wallets Explained: EOAs, MetaMask & Hardware Wallets | CryptoBeacon", description: "What is an Ethereum wallet? Learn about EOAs vs contract wallets, how MetaMask works, using Ledger with Ethereum, seed phrases on ETH, and how to stay secure.", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/ethereum-wallets-explained", section: "Ethereum", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Ethereum Wallets Explained: EOAs, MetaMask & Hardware Wallets | CryptoBeacon", description: "What is an Ethereum wallet? Learn about EOAs vs contract wallets, how MetaMask works, using Ledger with Ethereum, seed phrases on ETH, and how to stay secure.", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/ethereum-wallets-explained", section: "Ethereum", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

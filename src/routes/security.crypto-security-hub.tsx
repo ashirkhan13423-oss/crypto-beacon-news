@@ -42,7 +42,7 @@ export const Route = createFileRoute("/security/crypto-security-hub")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Crypto Security Hub: Complete Guide to Protecting Your Assets | CryptoBeacon", description: "The definitive crypto security hub — phishing scams, wallet drainers, fake apps, seed phrase storage, private keys, 2FA, exchange security, and everything yo...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/crypto-security-hub", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Crypto Security Hub: Complete Guide to Protecting Your Assets | CryptoBeacon", description: "The definitive crypto security hub — phishing scams, wallet drainers, fake apps, seed phrase storage, private keys, 2FA, exchange security, and everything yo...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/crypto-security-hub", section: "Security", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },
         { name: "Security", item: "https://www.cryptobeacon.site/security" },

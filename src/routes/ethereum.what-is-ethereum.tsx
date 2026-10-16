@@ -34,7 +34,7 @@ export const Route = createFileRoute("/ethereum/what-is-ethereum")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is Ethereum? A Plain-Language Introduction | CryptoBeacon", description: "What is Ethereum? A clear, beginner-friendly explanation of what Ethereum is, how it differs from Bitcoin, what the EVM is, and why it became the foundation ...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/what-is-ethereum", section: "Ethereum", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is Ethereum? A Plain-Language Introduction | CryptoBeacon", description: "What is Ethereum? A clear, beginner-friendly explanation of what Ethereum is, how it differs from Bitcoin, what the EVM is, and why it became the foundation ...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/ethereum/what-is-ethereum", section: "Ethereum", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

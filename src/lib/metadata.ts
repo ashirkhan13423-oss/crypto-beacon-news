@@ -15,6 +15,21 @@ interface MetadataArgs {
 export function buildMetadata(args: MetadataArgs) {
   let { title, description, url, type = 'website', publishedTime, modifiedTime, section, author = 'Ashir Khan', path } = args;
 
+  if (typeof url !== 'string' || !url.trim()) {
+    const errorMsg = `[buildMetadata] Invalid metadata URL: expected a non-empty string, but got ${typeof url} (${String(url)}) on path "${path || 'unknown'}".`;
+    if (process.env.NODE_ENV !== 'production') {
+      throw new TypeError(errorMsg);
+    }
+    console.error(errorMsg);
+    url = "https://www.cryptobeacon.site/";
+  } else if (!url.startsWith("https://www.cryptobeacon.site")) {
+    const errorMsg = `[buildMetadata] URL "${url}" does not start with "https://www.cryptobeacon.site".`;
+    if (process.env.NODE_ENV !== 'production') {
+      throw new Error(errorMsg);
+    }
+    console.warn(errorMsg);
+  }
+
   // Fall back gracefully to generated description if description is empty or missing
   if (!description && path) {
     const generatedMeta = (generatedMetadata as Record<string, any>)[path];

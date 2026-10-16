@@ -33,7 +33,7 @@ export const Route = createFileRoute("/security/exchange-account-security")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Exchange Account Security: Protect Your Crypto on Centralised Exchanges | CryptoBeacon", description: "How to properly secure a cryptocurrency exchange account — strong passwords, withdrawal whitelists, 2FA, API key security, phishing-resistant authentication...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/exchange-account-security", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Exchange Account Security: Protect Your Crypto on Centralised Exchanges | CryptoBeacon", description: "How to properly secure a cryptocurrency exchange account — strong passwords, withdrawal whitelists, 2FA, API key security, phishing-resistant authentication...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/exchange-account-security", section: "Security", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

@@ -34,7 +34,7 @@ export const Route = createFileRoute("/security/private-key-vs-seed-phrase")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Private Key vs Seed Phrase: What's the Difference? | CryptoBeacon", description: "Private key vs seed phrase — what each is, how they're related, when each is used, and the security implications of each type of cryptographic secret in self-custody.", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/private-key-vs-seed-phrase", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Private Key vs Seed Phrase: What's the Difference? | CryptoBeacon", description: "Private key vs seed phrase — what each is, how they're related, when each is used, and the security implications of each type of cryptographic secret in self-custody.", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/private-key-vs-seed-phrase", section: "Security", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

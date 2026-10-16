@@ -114,7 +114,7 @@ export const Route = createFileRoute("/bitcoin/bitcoin-wallets-complete-guide")(
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Bitcoin Wallets: Complete Beginner's Guide | CryptoBeacon", description: "Everything you need to know about Bitcoin wallets — how they work, types of wallets, seed phrases, private keys, security, and common scams. The definitive s...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/bitcoin/bitcoin-wallets-complete-guide", section: "Bitcoin", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Bitcoin Wallets: Complete Beginner's Guide | CryptoBeacon", description: "Everything you need to know about Bitcoin wallets — how they work, types of wallets, seed phrases, private keys, security, and common scams. The definitive s...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/bitcoin/bitcoin-wallets-complete-guide", section: "Bitcoin", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },
         { name: "Bitcoin", item: "https://www.cryptobeacon.site/bitcoin" },

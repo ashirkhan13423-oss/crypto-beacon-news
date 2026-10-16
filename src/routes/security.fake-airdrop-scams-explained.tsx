@@ -34,7 +34,7 @@ export const Route = createFileRoute("/security/fake-airdrop-scams-explained")({
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Fake Airdrop Scams Explained: How They Work & How to Stay Safe | CryptoBeacon", description: "How fake crypto airdrop scams work — the approval requests they hide, how to safely verify whether an airdrop is legitimate, and what to do if you've already interacted with one.", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/fake-airdrop-scams-explained", section: "Security", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Fake Airdrop Scams Explained: How They Work & How to Stay Safe | CryptoBeacon", description: "How fake crypto airdrop scams work — the approval requests they hide, how to safely verify whether an airdrop is legitimate, and what to do if you've already interacted with one.", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/security/fake-airdrop-scams-explained", section: "Security", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

@@ -10,7 +10,7 @@ const URL = "https://www.cryptobeacon.site/about";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
-    ...buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/about", type: 'website', path: '/about' }),
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'website', path: '/about' }),
     
     
   }),

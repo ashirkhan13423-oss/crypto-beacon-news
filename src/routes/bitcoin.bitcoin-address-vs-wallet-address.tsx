@@ -49,7 +49,7 @@ export const Route = createFileRoute("/bitcoin/bitcoin-address-vs-wallet-address
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Bitcoin Address vs Wallet Address: What's the Difference? | CryptoBeacon", description: "Are a Bitcoin address and a wallet address the same thing? Learn how Bitcoin addresses are generated, the types of addresses (Legacy, SegWit, Taproot), addre...", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/bitcoin/bitcoin-address-vs-wallet-address", section: "Bitcoin", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Bitcoin Address vs Wallet Address: What's the Difference? | CryptoBeacon", description: "Are a Bitcoin address and a wallet address the same thing? Learn how Bitcoin addresses are generated, the types of addresses (Legacy, SegWit, Taproot), addre...", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/bitcoin/bitcoin-address-vs-wallet-address", section: "Bitcoin", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

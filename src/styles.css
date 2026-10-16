@@ -201,32 +201,7 @@ a, p, li, td, th, span, h1, h2, h3, h4, h5, h6 {
   word-break: break-word;
 }
 
-/* Minimum tap target size for mobile */
-@media (max-width: 768px) {
-  a, button, [role="button"], summary {
-    min-height: 44px;
-    min-width: 44px;
-  }
-  
-  /* Tighter padding on mobile */
-  main {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
 
-  /* Stack grids on mobile */
-  .grid {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-/* Medium screens */
-@media (max-width: 1024px) {
-  /* Ensure max-width containers don't overflow */
-  .max-w-4xl, .max-w-5xl, .max-w-6xl, .max-w-7xl {
-    max-width: 100%;
-  }
-}
 
 /* Print styles for articles */
 @media print {

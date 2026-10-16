@@ -38,7 +38,7 @@ export const Route = createFileRoute(
   "/bitcoin/how-do-bitcoin-etfs-affect-price"
 )({
   head: () => ({
-    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/bitcoin/how-do-bitcoin-etfs-affect-price', publishedTime: PUBLISHED, section: 'Bitcoin' }),
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL_CANONICAL, type: 'article', path: '/bitcoin/how-do-bitcoin-etfs-affect-price', publishedTime: PUBLISHED, section: 'Bitcoin' }),
     
     
     scripts: [],

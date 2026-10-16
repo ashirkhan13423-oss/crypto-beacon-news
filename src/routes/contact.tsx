@@ -40,7 +40,7 @@ const contactSchema = {
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
-    ...buildMetadata({ title: TITLE, description: DESC, url: URL || "https://www.cryptobeacon.site/contact", type: 'website', path: '/contact' }),
+    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'website', path: '/contact' }),
     
     
     scripts: [],

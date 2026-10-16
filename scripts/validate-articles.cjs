@@ -144,7 +144,7 @@ for (const file of files) {
     }
   }
 
-  // ── 4. JSON-LD completeness ────────────────────────────────────────────────
+  // ── 4. JSON-LD completeness & validation ──────────────────────────────────
   if (/buildArticleSchema\s*\(/.test(content)) {
     // Extract the argument object to check required fields
     const schemaCall = content.match(/buildArticleSchema\s*\(\s*\{([\s\S]*?)\}\s*\)/);
@@ -154,6 +154,21 @@ for (const file of files) {
       for (const field of required) {
         if (!args.includes(field + ':') && !args.includes(field + ' :')) {
           err(`buildArticleSchema() is missing required field: "${field}"`);
+        }
+      }
+
+      // Check for empty or invalid imageUrl in schema call
+      const imgMatch = args.match(/imageUrl:\s*([^\n,]+)/);
+      if (imgMatch) {
+        const imgVal = imgMatch[1].trim();
+        if (
+          imgVal === '""' ||
+          imgVal === "''" ||
+          imgVal.includes('${""}') ||
+          imgVal === '`https://www.cryptobeacon.site`' ||
+          imgVal === '"https://www.cryptobeacon.site"'
+        ) {
+          err(`buildArticleSchema() has empty or invalid imageUrl: ${imgVal}`);
         }
       }
     }

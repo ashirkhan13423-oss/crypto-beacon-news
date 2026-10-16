@@ -34,7 +34,7 @@ export const Route = createFileRoute("/guides/stablecoin-regulation-explained")(
     
     
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Stablecoin Regulation Explained: Rules, Reserves & MiCA | CryptoBeacon", description: "How stablecoins are regulated globally. Understand reserve requirements, issuer licensing, MiCA's stablecoin rules, and why governments view stablecoins as a systemic risk.", imageUrl: `https://www.cryptobeacon.site${""}`, datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/stablecoin-regulation-explained", section: "Guides", isNews: false })) },
+      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "Stablecoin Regulation Explained: Rules, Reserves & MiCA | CryptoBeacon", description: "How stablecoins are regulated globally. Understand reserve requirements, issuer licensing, MiCA's stablecoin rules, and why governments view stablecoins as a systemic risk.", imageUrl: "https://www.cryptobeacon.site/og-image.png", datePublished: "2026-09-01", dateModified: "2026-09-01", url: "https://www.cryptobeacon.site/guides/stablecoin-regulation-explained", section: "Guides", isNews: false })) },
       { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
       { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
         { name: "Home", item: "https://www.cryptobeacon.site/" },

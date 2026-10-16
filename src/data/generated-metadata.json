@@ -80,7 +80,7 @@
     "fallbackDesc": "Home / Bitcoin / What Is a Bitcoin Seed Phrase? Bitcoin · Essential What Is a Bitcoin Seed Phrase? The 12 or 24 words printed on a card when you set..."
   },
   "/bitcoin/what-is-a-bitcoin-wallet": {
-    "wordCount": 634,
+    "wordCount": 657,
     "readTime": "4 min read",
     "fallbackDesc": "Home / Bitcoin / What Is a Bitcoin Wallet? Bitcoin What Is a Bitcoin Wallet? Hot, Cold, and Custodial Wallets Explained \"Bitcoin wallet \" is one of..."
   },
@@ -200,8 +200,8 @@
     "fallbackDesc": "Home / Guides / Dollar-Cost Averaging Explained Guides Dollar-Cost Averaging (DCA) in Crypto: What It Is and How It Works Cryptocurrency markets are..."
   },
   "/guides/crypto-portfolio-rebalancing-explained": {
-    "wordCount": 549,
-    "readTime": "3 min read",
+    "wordCount": 865,
+    "readTime": "5 min read",
     "fallbackDesc": "Home / Guides / Crypto Portfolio Rebalancing Guides Crypto Portfolio Rebalancing Explained (With a Worked Example) Portfolio rebalancing is one of..."
   },
   "/guides/crypto-regulation-explained-for-beginners": {
@@ -229,6 +229,11 @@
     "readTime": "2 min read",
     "fallbackDesc": "Home / Guides / Crypto Taxes Explained Guides · Taxes Cryptocurrency Taxes Explained A practical primer on how crypto is taxed. Disclaimer: We are a..."
   },
+  "/guides/custodial-vs-non-custodial-wallets-explained": {
+    "wordCount": 413,
+    "readTime": "3 min read",
+    "fallbackDesc": "Home / Guides / Custodial vs Non-Custodial Guides · Wallets Custodial vs Non-Custodial Wallets: Which Should Beginners Use? The most important..."
+  },
   "/guides/exchange-or-personal-wallet-crypto-storage": {
     "wordCount": 650,
     "readTime": "4 min read",
@@ -254,10 +259,20 @@
     "readTime": "3 min read",
     "fallbackDesc": "Home / Guides / How Crypto Regulation Works Guides · Overview How Cryptocurrency Regulation Works Crypto regulation is complex, fragmented, and..."
   },
+  "/guides/how-to-move-crypto-from-coinbase-to-hardware-wallet": {
+    "wordCount": 372,
+    "readTime": "2 min read",
+    "fallbackDesc": "Home / Guides / Coinbase to Hardware Wallet Guides · Tutorials How to Move Crypto from Coinbase to a Hardware Wallet Taking self-custody of your..."
+  },
   "/guides/how-to-read-a-block-explorer": {
     "wordCount": 649,
     "readTime": "4 min read",
     "fallbackDesc": "Home / Guides / Read a Block Explorer Guides How to Read a Block Explorer A block explorer is effectively the search engine for a blockchain . It..."
+  },
+  "/guides/how-to-read-a-blockchain-explorer-etherscan": {
+    "wordCount": 390,
+    "readTime": "2 min read",
+    "fallbackDesc": "Home / Guides / Etherscan Walkthrough Guides · Tools How to Read a Blockchain Explorer (Etherscan Walkthrough) Etherscan looks intimidating, but it's"
   },
   "/guides/how-to-read-crypto-news-without-hype": {
     "wordCount": 658,
@@ -268,6 +283,11 @@
     "wordCount": 749,
     "readTime": "4 min read",
     "fallbackDesc": "Home / Guides / How to Set Up MetaMask Guides How to Set Up MetaMask: A Step-by-Step Walkthrough I've walked dozens of people through their first..."
+  },
+  "/guides/how-to-verify-a-crypto-wallet-address": {
+    "wordCount": 404,
+    "readTime": "3 min read",
+    "fallbackDesc": "Home / Guides / Verifying Wallet Addresses Guides · Security How to Verify a Crypto Wallet Address Before Sending Funds One wrong character means..."
   },
   "/guides/not-your-keys-not-your-coins-meaning": {
     "wordCount": 713,
@@ -284,13 +304,18 @@
     "readTime": "5 min read",
     "fallbackDesc": "Home / Guides / What Is a Blockchain Fork? Guides What Is a Blockchain Fork? Why Cryptocurrencies Sometimes Split in Two If you've ever noticed two..."
   },
+  "/guides/what-is-a-crypto-cold-wallet-do-you-need-one": {
+    "wordCount": 411,
+    "readTime": "3 min read",
+    "fallbackDesc": "Home / Guides / Crypto Cold Wallets Guides · Hardware What Is a Crypto Cold Wallet and Do You Actually Need One? Cold wallets provide the highest..."
+  },
   "/guides/what-is-a-crypto-wallet-address": {
     "wordCount": 771,
     "readTime": "4 min read",
     "fallbackDesc": "Home / Guides / What Is a Crypto Wallet Address? Guides What Is a Crypto Wallet Address? How It Works and How to Use It Safely A crypto wallet..."
   },
   "/guides/what-is-a-private-key": {
-    "wordCount": 495,
+    "wordCount": 518,
     "readTime": "3 min read",
     "fallbackDesc": "Home / Guides / What Is a Private Key? Guides What Is a Private Key in Crypto? A Plain-Language Explainer In the physical world, your money is..."
   },
@@ -313,6 +338,11 @@
     "wordCount": 429,
     "readTime": "3 min read",
     "fallbackDesc": "Home / Guides / What Is AML in Crypto? Guides · AML What Is AML in Crypto? Anti-Money Laundering (AML) is the reason your account might get frozen..."
+  },
+  "/guides/what-is-gas-fee-optimization-when-to-send": {
+    "wordCount": 386,
+    "readTime": "2 min read",
+    "fallbackDesc": "Home / Guides / Gas Fee Optimization Guides · Economics What Is Gas Fee Optimization? When to Send Transactions Don't overpay for blockchain..."
   },
   "/guides/what-is-kyc-in-cryptocurrency": {
     "wordCount": 354,
@@ -409,6 +439,11 @@
     "readTime": "2 min read",
     "fallbackDesc": "Home / News / Why Are Crypto ATMs Everywhere? News Why Are Crypto ATMs Everywhere? If you've walked into a gas station, a convenience store, or a..."
   },
+  "/security/address-poisoning-scams-how-they-work": {
+    "wordCount": 487,
+    "readTime": "3 min read",
+    "fallbackDesc": "Home / Security / Address Poisoning Scams Security · Phishing Address Poisoning Scams: How They Work and How to Avoid Them Address poisoning relies..."
+  },
   "/security/common-crypto-scams": {
     "wordCount": 396,
     "readTime": "2 min read",
@@ -459,18 +494,23 @@
     "readTime": "6 min read",
     "fallbackDesc": "Home / Security / Avoid Phishing Scams Security How to Avoid Crypto Phishing Scams Phishing is the most common way people lose cryptocurrency — not..."
   },
+  "/security/how-to-check-if-smart-contract-is-safe": {
+    "wordCount": 523,
+    "readTime": "3 min read",
+    "fallbackDesc": "Home / Security / Smart Contract Safety Security · Smart Contracts How to Check If a Smart Contract Is Safe Before Interacting Interacting with a..."
+  },
   "/security/how-to-identify-a-fake-crypto-website": {
     "wordCount": 406,
     "readTime": "3 min read",
     "fallbackDesc": "Home / Security / Identify a Fake Crypto Website Security · Scam Detection How to Identify a Fake Crypto Website Modern phishing sites are visually..."
   },
   "/security/how-to-revoke-smart-contract-approvals": {
-    "wordCount": 885,
+    "wordCount": 909,
     "readTime": "5 min read",
     "fallbackDesc": "Home / Security / How to Revoke Smart Contract Approvals Security How to Revoke Smart Contract Approvals and Protect Your Crypto In the world of..."
   },
   "/security/how-to-revoke-token-approvals-metamask": {
-    "wordCount": 856,
+    "wordCount": 880,
     "readTime": "5 min read",
     "fallbackDesc": "Home / Security / Revoke Token Approvals Security How to Revoke Token Approvals on MetaMask (Step-by-Step) Every time you use a decentralized app —..."
   },
@@ -495,8 +535,8 @@
     "fallbackDesc": "Home / Security / Verify Crypto Transaction Security How to Verify a Crypto Transaction Using a Block Explorer In traditional banking, if a transfer..."
   },
   "/security/is-this-airdrop-a-scam": {
-    "wordCount": 666,
-    "readTime": "4 min read",
+    "wordCount": 858,
+    "readTime": "5 min read",
     "fallbackDesc": "Home / Security / Is This Airdrop a Scam? Security How to Tell If a Crypto Airdrop Is a Scam Free tokens appear in your wallet, or you see a post..."
   },
   "/security/private-key-vs-seed-phrase": {
@@ -505,9 +545,14 @@
     "fallbackDesc": "Home / Security / Private Key vs Seed Phrase Security · Explainer Private Key vs Seed Phrase Both are critical secrets in self-custody — but they..."
   },
   "/security/seed-phrase-storage-steel-vs-paper-vs-metal": {
-    "wordCount": 715,
-    "readTime": "4 min read",
+    "wordCount": 941,
+    "readTime": "5 min read",
     "fallbackDesc": "Home / Security / Seed Phrase Storage: Steel vs. Paper Security Seed Phrase Storage: Steel Plates vs. Paper vs. Metal Backup Compared Once you have..."
+  },
+  "/security/sim-swap-attacks-crypto-prevention": {
+    "wordCount": 504,
+    "readTime": "3 min read",
+    "fallbackDesc": "Home / Security / SIM Swap Prevention Security · Account Takeover SIM Swap Attacks on Crypto Accounts: Prevention Checklist SMS-based security is..."
   },
   "/security/two-factor-authentication-for-crypto": {
     "wordCount": 343,
@@ -515,8 +560,8 @@
     "fallbackDesc": "Home / Security / Two-Factor Authentication for Crypto Security · 2FA Two-Factor Authentication for Crypto Not all 2FA is equal — especially for..."
   },
   "/security/what-happens-if-you-lose-your-hardware-wallet": {
-    "wordCount": 620,
-    "readTime": "4 min read",
+    "wordCount": 842,
+    "readTime": "5 min read",
     "fallbackDesc": "Home / Security / Lost Hardware Wallet Recovery Security What Happens If You Lose Your Hardware Wallet? (Recovery Steps) Losing a hardware wallet —..."
   },
   "/security/what-is-a-crypto-atm-are-they-safe": {
