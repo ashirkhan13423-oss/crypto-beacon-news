@@ -5,6 +5,7 @@ import hero_6 from "@/assets/bitcoin-etf-effects.webp";
 import hero_7 from "@/assets/bitcoin-buy-safely.webp";
 import hero_8 from "@/assets/bitcoin-send-safely.webp";
 import hero_10 from "@/assets/bitcoin-node-explainer.webp";
+import hero_when_halving from "@/assets/when-is-bitcoin-halving.webp";
 import hero_12 from "@/assets/bitcoin-what-is-a-wallet.webp";
 import hero_13 from "@/assets/bitcoin-what-is-mining.webp";
 import hero_14 from "@/assets/bitcoin-halving.webp";
@@ -463,6 +464,15 @@ export const articles: Article[] = [
     title: "What Is Bitcoin Mining? How New Bitcoin Is Created",
     desc: "A plain-language guide to what Bitcoin mining actually is, why it exists, what miners do, and why the process is designed the way it is.",
     publishedDate: "2026-08-06",
+},
+  {
+    to: "/bitcoin/when-is-the-bitcoin-halving",
+    image: hero_when_halving,
+    alt: "Bitcoin halving timeline visualization showing block height progression from block 840,000 toward the next halving target at block 1,050,000",
+    tag: "Bitcoin · Article",
+    title: "When Is the Bitcoin Halving? Next Date, Cycle & Schedule",
+    desc: "When is the next Bitcoin halving? Discover projected 2028 dates, block countdown metrics, historic market cycles, and the complete supply schedule.",
+    publishedDate: "2026-10-30",
 },
   {
     to: "/bitcoin/what-is-the-bitcoin-halving",

@@ -52,6 +52,7 @@ import { Route as BitcoinWhatIsABitcoinSeedPhraseRouteImport } from './routes/bi
 import { Route as BitcoinWhatIsABitcoinWalletRouteImport } from './routes/bitcoin.what-is-a-bitcoin-wallet'
 import { Route as BitcoinWhatIsBitcoinMiningRouteImport } from './routes/bitcoin.what-is-bitcoin-mining'
 import { Route as BitcoinWhatIsTheBitcoinHalvingRouteImport } from './routes/bitcoin.what-is-the-bitcoin-halving'
+import { Route as BitcoinWhenIsTheBitcoinHalvingRouteImport } from './routes/bitcoin.when-is-the-bitcoin-halving'
 import { Route as BitcoinWhyBitcoinMiningUsesSoMuchEnergyRouteImport } from './routes/bitcoin.why-bitcoin-mining-uses-so-much-energy'
 import { Route as BitcoinWhyDoBondYieldsAffectBitcoinPriceRouteImport } from './routes/bitcoin.why-do-bond-yields-affect-bitcoin-price'
 import { Route as DefiIndexRouteImport } from './routes/defi.index'
@@ -390,6 +391,12 @@ const BitcoinWhatIsTheBitcoinHalvingRoute =
   BitcoinWhatIsTheBitcoinHalvingRouteImport.update({
     id: '/what-is-the-bitcoin-halving',
     path: '/what-is-the-bitcoin-halving',
+    getParentRoute: () => BitcoinRoute,
+  } as any)
+const BitcoinWhenIsTheBitcoinHalvingRoute =
+  BitcoinWhenIsTheBitcoinHalvingRouteImport.update({
+    id: '/when-is-the-bitcoin-halving',
+    path: '/when-is-the-bitcoin-halving',
     getParentRoute: () => BitcoinRoute,
   } as any)
 const BitcoinWhyBitcoinMiningUsesSoMuchEnergyRoute =
@@ -1058,6 +1065,7 @@ export interface FileRoutesByFullPath {
   '/bitcoin/what-is-a-bitcoin-wallet': typeof BitcoinWhatIsABitcoinWalletRoute
   '/bitcoin/what-is-bitcoin-mining': typeof BitcoinWhatIsBitcoinMiningRoute
   '/bitcoin/what-is-the-bitcoin-halving': typeof BitcoinWhatIsTheBitcoinHalvingRoute
+  '/bitcoin/when-is-the-bitcoin-halving': typeof BitcoinWhenIsTheBitcoinHalvingRoute
   '/bitcoin/why-bitcoin-mining-uses-so-much-energy': typeof BitcoinWhyBitcoinMiningUsesSoMuchEnergyRoute
   '/bitcoin/why-do-bond-yields-affect-bitcoin-price': typeof BitcoinWhyDoBondYieldsAffectBitcoinPriceRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
@@ -1198,6 +1206,7 @@ export interface FileRoutesByTo {
   '/bitcoin/what-is-a-bitcoin-wallet': typeof BitcoinWhatIsABitcoinWalletRoute
   '/bitcoin/what-is-bitcoin-mining': typeof BitcoinWhatIsBitcoinMiningRoute
   '/bitcoin/what-is-the-bitcoin-halving': typeof BitcoinWhatIsTheBitcoinHalvingRoute
+  '/bitcoin/when-is-the-bitcoin-halving': typeof BitcoinWhenIsTheBitcoinHalvingRoute
   '/bitcoin/why-bitcoin-mining-uses-so-much-energy': typeof BitcoinWhyBitcoinMiningUsesSoMuchEnergyRoute
   '/bitcoin/why-do-bond-yields-affect-bitcoin-price': typeof BitcoinWhyDoBondYieldsAffectBitcoinPriceRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
@@ -1350,6 +1359,7 @@ export interface FileRoutesById {
   '/bitcoin/what-is-a-bitcoin-wallet': typeof BitcoinWhatIsABitcoinWalletRoute
   '/bitcoin/what-is-bitcoin-mining': typeof BitcoinWhatIsBitcoinMiningRoute
   '/bitcoin/what-is-the-bitcoin-halving': typeof BitcoinWhatIsTheBitcoinHalvingRoute
+  '/bitcoin/when-is-the-bitcoin-halving': typeof BitcoinWhenIsTheBitcoinHalvingRoute
   '/bitcoin/why-bitcoin-mining-uses-so-much-energy': typeof BitcoinWhyBitcoinMiningUsesSoMuchEnergyRoute
   '/bitcoin/why-do-bond-yields-affect-bitcoin-price': typeof BitcoinWhyDoBondYieldsAffectBitcoinPriceRoute
   '/ethereum/can-you-send-bitcoin-to-an-ethereum-address': typeof EthereumCanYouSendBitcoinToAnEthereumAddressRoute
@@ -1503,6 +1513,7 @@ export interface FileRouteTypes {
     | '/bitcoin/what-is-a-bitcoin-wallet'
     | '/bitcoin/what-is-bitcoin-mining'
     | '/bitcoin/what-is-the-bitcoin-halving'
+    | '/bitcoin/when-is-the-bitcoin-halving'
     | '/bitcoin/why-bitcoin-mining-uses-so-much-energy'
     | '/bitcoin/why-do-bond-yields-affect-bitcoin-price'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
@@ -1643,6 +1654,7 @@ export interface FileRouteTypes {
     | '/bitcoin/what-is-a-bitcoin-wallet'
     | '/bitcoin/what-is-bitcoin-mining'
     | '/bitcoin/what-is-the-bitcoin-halving'
+    | '/bitcoin/when-is-the-bitcoin-halving'
     | '/bitcoin/why-bitcoin-mining-uses-so-much-energy'
     | '/bitcoin/why-do-bond-yields-affect-bitcoin-price'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
@@ -1794,6 +1806,7 @@ export interface FileRouteTypes {
     | '/bitcoin/what-is-a-bitcoin-wallet'
     | '/bitcoin/what-is-bitcoin-mining'
     | '/bitcoin/what-is-the-bitcoin-halving'
+    | '/bitcoin/when-is-the-bitcoin-halving'
     | '/bitcoin/why-bitcoin-mining-uses-so-much-energy'
     | '/bitcoin/why-do-bond-yields-affect-bitcoin-price'
     | '/ethereum/can-you-send-bitcoin-to-an-ethereum-address'
@@ -2230,6 +2243,13 @@ declare module '@tanstack/react-router' {
       path: '/what-is-the-bitcoin-halving'
       fullPath: '/bitcoin/what-is-the-bitcoin-halving'
       preLoaderRoute: typeof BitcoinWhatIsTheBitcoinHalvingRouteImport
+      parentRoute: typeof BitcoinRoute
+    }
+    '/bitcoin/when-is-the-bitcoin-halving': {
+      id: '/bitcoin/when-is-the-bitcoin-halving'
+      path: '/when-is-the-bitcoin-halving'
+      fullPath: '/bitcoin/when-is-the-bitcoin-halving'
+      preLoaderRoute: typeof BitcoinWhenIsTheBitcoinHalvingRouteImport
       parentRoute: typeof BitcoinRoute
     }
     '/bitcoin/why-bitcoin-mining-uses-so-much-energy': {
@@ -3012,6 +3032,7 @@ interface BitcoinRouteChildren {
   BitcoinWhatIsABitcoinWalletRoute: typeof BitcoinWhatIsABitcoinWalletRoute
   BitcoinWhatIsBitcoinMiningRoute: typeof BitcoinWhatIsBitcoinMiningRoute
   BitcoinWhatIsTheBitcoinHalvingRoute: typeof BitcoinWhatIsTheBitcoinHalvingRoute
+  BitcoinWhenIsTheBitcoinHalvingRoute: typeof BitcoinWhenIsTheBitcoinHalvingRoute
   BitcoinWhyBitcoinMiningUsesSoMuchEnergyRoute: typeof BitcoinWhyBitcoinMiningUsesSoMuchEnergyRoute
   BitcoinWhyDoBondYieldsAffectBitcoinPriceRoute: typeof BitcoinWhyDoBondYieldsAffectBitcoinPriceRoute
   BitcoinIndexRoute: typeof BitcoinIndexRoute
@@ -3041,6 +3062,7 @@ const BitcoinRouteChildren: BitcoinRouteChildren = {
   BitcoinWhatIsABitcoinWalletRoute: BitcoinWhatIsABitcoinWalletRoute,
   BitcoinWhatIsBitcoinMiningRoute: BitcoinWhatIsBitcoinMiningRoute,
   BitcoinWhatIsTheBitcoinHalvingRoute: BitcoinWhatIsTheBitcoinHalvingRoute,
+  BitcoinWhenIsTheBitcoinHalvingRoute: BitcoinWhenIsTheBitcoinHalvingRoute,
   BitcoinWhyBitcoinMiningUsesSoMuchEnergyRoute:
     BitcoinWhyBitcoinMiningUsesSoMuchEnergyRoute,
   BitcoinWhyDoBondYieldsAffectBitcoinPriceRoute:
