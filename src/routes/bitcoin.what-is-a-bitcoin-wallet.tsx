@@ -4,57 +4,83 @@ import { buildBreadcrumbSchema, buildArticleSchema, buildFAQSchema } from "@/lib
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Author } from "@/components/Author";
-import hero from "@/assets/bitcoin-what-is-a-wallet.webp";
-import { Plus, Wifi, WifiOff, Building2 } from "lucide-react";
 import { Disclaimer } from "@/components/Disclaimer";
 import { KeyTakeaway } from "@/components/KeyTakeaway";
 import { LastUpdated } from "@/components/LastUpdated";
 import { TableOfContents } from "@/components/TableOfContents";
 import { FAQ } from "@/components/FAQ";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import hero from "@/assets/bitcoin-wallet-key-node.svg";
 
 const URL = "https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-wallet";
-const TITLE = "What Is a Bitcoin Wallet? Hot, Cold, and Custodial Wallets Explained | CryptoBeacon";
+const TITLE = "What Is a Bitcoin Wallet? Types Explained | CryptoBeacon";
 const DESC =
-  "A clear guide to what a Bitcoin wallet actually is, how hot, cold, and custodial wallets differ, and how to choose the right type for your situation.";
-const PUBLISHED = "2026-08-06";
-let MODIFIED = PUBLISHED;
-let keyTakeaway = "";
+  "A Bitcoin wallet doesn't hold bitcoin. It holds keys. Here's what wallets actually do, the main types, and how custody differs between each of them.";
+const PUBLISHED = "2026-11-13";
+const MODIFIED = PUBLISHED;
+const keyTakeaway =
+  "A bitcoin wallet stores cryptographic keys, not coins. Bitcoin itself lives on the blockchain, and your private keys authorize spending.";
+
 const faqs: { q: string; a: string }[] = [
   {
-    q: "Does a Bitcoin wallet store Bitcoin?",
-    a: "No — Bitcoin itself lives on the blockchain. A wallet stores the private keys that prove ownership and allow you to sign transactions moving those funds.",
+    q: "Do I need a wallet to own bitcoin?",
+    a: "Not always. A custodial account holds the keys for you. Owning bitcoin in the self-custody sense requires a wallet where you control the keys.",
   },
   {
-    q: "What's the difference between a hot and cold wallet?",
-    a: "A hot wallet is connected to the internet (e.g. a mobile or desktop app), which makes it more convenient but more exposed to online threats. A cold wallet stores keys offline (e.g. a hardware device or paper), reducing that exposure at the cost of some convenience.",
+    q: "Can I use more than one bitcoin wallet?",
+    a: "Yes. Many people separate spending funds from long-term holdings.",
   },
   {
-    q: "Is it safe to keep Bitcoin on an exchange?",
-    a: "An exchange holds your Bitcoin on your behalf using a custodial wallet — you don't control the private keys. This is convenient but means your access depends on the platform's security and continued operation.",
+    q: "What happens if I lose my phone?",
+    a: "If you backed up your seed phrase, you can restore the wallet on a new device. If you didn't, the keys may be unrecoverable.",
   },
   {
-    q: "Can I have multiple Bitcoin wallets?",
-    a: "Yes — and many people do, using different types for different purposes: a hot wallet for small, regular amounts and a cold wallet for long-term holdings.",
+    q: "Is a bitcoin wallet the same as an exchange account?",
+    a: "No. An exchange account is custodial. The exchange controls the keys. A non-custodial wallet gives you that control yourself.",
   },
 ];
 
-
-
-
 export const Route = createFileRoute("/bitcoin/what-is-a-bitcoin-wallet")({
   head: () => ({
-    ...buildMetadata({ title: TITLE, description: DESC, url: URL, type: 'article', path: '/bitcoin/what-is-a-bitcoin-wallet', publishedTime: PUBLISHED, section: 'Bitcoin' }),
-    
-    
+    ...buildMetadata({
+      title: TITLE,
+      description: DESC,
+      url: URL,
+      type: "article",
+      path: "/bitcoin/what-is-a-bitcoin-wallet",
+      publishedTime: PUBLISHED,
+      section: "Bitcoin",
+    }),
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(buildArticleSchema({ headline: "What Is a Bitcoin Wallet? Hot, Cold, and Custodial Wallets Explained | CryptoBeacon", description: "A clear guide to what a Bitcoin wallet actually is, how hot, cold, and custodial wallets differ, and how to choose the right type for your situation.", imageUrl: `https://www.cryptobeacon.site${hero}`, datePublished: "2026-08-06", dateModified: "2026-08-06", url: "https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-wallet", section: "Bitcoin", isNews: false })) },
-      { type: "application/ld+json", children: JSON.stringify(buildFAQSchema(faqs)) },
-      { type: "application/ld+json", children: JSON.stringify(buildBreadcrumbSchema([
-        { name: "Home", item: "https://www.cryptobeacon.site/" },
-        { name: "Bitcoin", item: "https://www.cryptobeacon.site/bitcoin" },
-        { name: "What Is a Bitcoin Wallet? Hot, Cold, and Custodial Wallets Explained | CryptoBeacon", item: "https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-wallet" }
-      ])) }
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildArticleSchema({
+            headline: TITLE,
+            description: DESC,
+            imageUrl: `https://www.cryptobeacon.site${hero}`,
+            datePublished: PUBLISHED,
+            dateModified: MODIFIED,
+            url: URL,
+            section: "Bitcoin",
+            isNews: false,
+          }),
+        ),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(buildFAQSchema(faqs)),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbSchema([
+            { name: "Home", item: "https://www.cryptobeacon.site/" },
+            { name: "Bitcoin", item: "https://www.cryptobeacon.site/bitcoin" },
+            { name: TITLE, item: URL },
+          ]),
+        ),
+      },
     ],
   }),
   component: ArticlePage,
@@ -77,269 +103,427 @@ function P({ children }: { children: React.ReactNode }) {
   );
 }
 
-const walletTypes = [
-  {
-    icon: <Wifi />,
-    title: "Hot Wallet",
-    subtitle: "Software / Online",
-    body: "Connected to the internet. Convenient for regular use and small amounts. Mobile apps, browser extensions, and desktop wallets all fall into this category.",
-    note: "Higher convenience, higher online exposure",
-    noteColor: "#F59E0B",
-  },
-  {
-    icon: <WifiOff />,
-    title: "Cold Wallet",
-    subtitle: "Hardware / Offline",
-    body: "Keys are stored offline on a dedicated physical device or paper. Better suited for long-term storage of significant amounts you don't need to access frequently.",
-    note: "Lower convenience, lower online exposure",
-    noteColor: "#0F9D58",
-  },
-  {
-    icon: <Building2 />,
-    title: "Custodial Wallet",
-    subtitle: "Exchange / Platform",
-    body: "Managed by a third party (usually an exchange). You don't hold the private keys — the platform does. Convenient, but your access depends on the platform's continued operation.",
-    note: "Easiest to use — you don't control the keys",
-    noteColor: "#2563EB",
-  },
-];
-
 function ArticlePage() {
   return (
     <div className="bg-surface-bright text-on-surface min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-grow w-full max-w-4xl mx-auto px-gutter py-xl">
         <article>
-        <nav
-          aria-label="Breadcrumb"
-          className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
-        >
-          <ol className="flex flex-wrap items-center gap-xs">
-            <li>
-              <Link to="/" className="hover:text-secondary">
-                Home
-              </Link>
-            </li>
-            <li aria-hidden>/</li>
-            <li>
-              <Link to="/bitcoin" className="hover:text-secondary">
-                Bitcoin
-              </Link>
-            </li>
-            <li aria-hidden>/</li>
-            <li className="text-primary">What Is a Bitcoin Wallet?</li>
-          </ol>
-        </nav>
-
-        <span className="inline-block px-sm py-xs rounded-full bg-[#F7931A] text-white font-label-caps text-[11px] uppercase tracking-widest font-semibold">
-          Bitcoin
-        </span>
-
-        <h1 className="mt-md font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-primary leading-tight">
-          What Is a Bitcoin Wallet? Hot, Cold, and Custodial Wallets Explained
-        </h1>
-
-        <Author
-          publishedDate={<time dateTime={PUBLISHED}>August 6, 2026</time>}
-          
-        />
-
-        <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
-          <img
-            fetchPriority="high" src={hero}
-            alt="Illustration contrasting a hot software wallet and a cold hardware wallet for Bitcoin"
-            width={1024}
-            height={1024}
-            className="w-full h-auto"
-          />
-        </figure>
-
-        <P>
-          "Bitcoin <Link to="/glossary#wallet" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Wallet">wallet</Link>" is one of those terms that sounds straightforward until you try to
-          explain it. A wallet doesn't hold Bitcoin the way a physical wallet holds cash.
-          Understanding what it actually does — and why there are so many different types — makes
-          everything else about using Bitcoin clearer.
-        </P>
-        <P>
-          <em>This comprehensive guide to what is a bitcoin wallet is for educational purposes only and should not be construed as financial advice. Always do your own research before making investment decisions.</em>
-        </P>
-
-        <div className="my-xl grid grid-cols-1 md:grid-cols-3 gap-md">
-          <div className="p-md rounded-xl border border-outline-variant bg-surface-container-low text-center">
-            <Wifi className="w-8 h-8 text-secondary mx-auto mb-xs" />
-            <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Hot Wallet</h3>
-            <p className="font-body-sm text-body-sm text-on-surface-variant">Online, convenient for daily use. Higher exposure to threats.</p>
-          </div>
-          <div className="p-md rounded-xl border border-outline-variant bg-surface-container-low text-center">
-            <WifiOff className="w-8 h-8 text-secondary mx-auto mb-xs" />
-            <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Cold Wallet</h3>
-            <p className="font-body-sm text-body-sm text-on-surface-variant">Offline, best for long-term storage. Keys never touch the internet.</p>
-          </div>
-          <div className="p-md rounded-xl border border-outline-variant bg-surface-container-low text-center">
-            <Building2 className="w-8 h-8 text-secondary mx-auto mb-xs" />
-            <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Custodial</h3>
-            <p className="font-body-sm text-body-sm text-on-surface-variant">Third party holds keys. Easiest to use but carries counterparty risk.</p>
-          </div>
-        </div>
-
-        <H2 id="what-wallet-does">1. What a Wallet Actually Does</H2>
-        <P>
-          Bitcoin itself never moves — it exists as a record on the <Link to="/glossary#blockchain" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Blockchain">blockchain</Link>, a public ledger that
-          anyone can read. What changes is which address the Bitcoin is associated with. A Bitcoin
-          wallet's real job is to store and manage the <strong><Link to="/glossary#private-key" className="text-secondary hover:underline decoration-secondary/50 underline-offset-4" title="Glossary: Private Key">private key</Link></strong> — the
-          cryptographic secret that proves you have the right to authorise a transaction from a
-          given address.
-        </P>
-        <P>
-          Think of your Bitcoin address as an account number you can share freely, and your private
-          key as the only signature that can authorise spending from it. If you lose the private
-          key, you lose access to the Bitcoin permanently. If someone else gets it, they can move
-          your Bitcoin without your permission.
-        </P>
-        <P>
-          This is why the phrase{" "}
-          <Link
-            to="/guides/not-your-keys-not-your-coins-meaning"
-            className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-lg font-label-caps text-label-caps text-on-surface-variant"
           >
-            "not your keys, not your coins"
-          </Link>{" "}
-          matters — it's a direct description of how wallet ownership actually works.
-        </P>
+            <ol className="flex flex-wrap items-center gap-xs">
+              <li>
+                <Link to="/" className="hover:text-secondary">
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden>/</li>
+              <li>
+                <Link to="/bitcoin" className="hover:text-secondary">
+                  Bitcoin
+                </Link>
+              </li>
+              <li aria-hidden>/</li>
+              <li className="text-primary">What Is a Bitcoin Wallet?</li>
+            </ol>
+          </nav>
 
+          <span className="inline-block px-sm py-xs rounded-full bg-[#0F9D58] text-white font-label-caps text-[11px] uppercase tracking-widest font-semibold">
+            Bitcoin
+          </span>
 
-        <H2 id="wallet-types">2. Three Types of Bitcoin Wallet</H2>
-        <P>
-          Wallets are most usefully divided by two factors: whether they're connected to the
-          internet, and who controls the private keys.
-        </P>
+          <h1 className="mt-md font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-primary leading-tight">
+            What Is a Bitcoin Wallet? Types, Custody, and How It Works
+          </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-md my-lg">
-          {walletTypes.map((w) => (
-            <div
-              key={w.title}
-              className="p-lg rounded-lg border border-outline-variant bg-surface-container-lowest flex flex-col gap-sm"
-            >
-              <div
-                aria-hidden
-                className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 [&>svg]:w-5 [&>svg]:h-5"
-                style={{
-                  backgroundColor: `${w.noteColor}18`,
-                  border: `1px solid ${w.noteColor}30`,
-                  color: w.noteColor,
-                }}
+          <Author publishedDate={<time dateTime={PUBLISHED}>November 13, 2026</time>} />
+
+          <LastUpdated date={MODIFIED} />
+
+          <KeyTakeaway text={keyTakeaway} />
+
+          <figure className="mt-lg mb-lg rounded-xl overflow-hidden bg-[#0A0B0D]">
+            <img
+              fetchPriority="high"
+              src={hero}
+              alt="Illustration of a secure key icon connected to a Bitcoin network node"
+              width={1536}
+              height={896}
+              className="w-full h-auto"
+            />
+          </figure>
+
+          <P>
+            The most common misunderstanding about bitcoin wallets is that they hold bitcoin. They
+            don't. Bitcoin is recorded on the blockchain, and a wallet holds the private keys that
+            prove ownership and authorize spending. Losing access to a wallet app isn't the same as
+            losing your bitcoin. Losing the keys is.
+          </P>
+          <P>
+            <em>This article is educational. It isn't financial advice.</em>
+          </P>
+
+          <aside className="my-xl p-lg rounded-lg border border-outline-variant bg-surface-container-low">
+            <h2 className="font-headline-sm text-headline-sm text-primary mb-sm">
+              Table of Contents
+            </h2>
+            <ol className="list-decimal list-inside space-y-xs font-body-md text-body-md text-on-surface">
+              <li>
+                <a
+                  href="#what-a-wallet-actually-stores"
+                  className="hover:underline decoration-secondary"
+                >
+                  What a Wallet Actually Stores
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#the-main-types-of-bitcoin-wallets"
+                  className="hover:underline decoration-secondary"
+                >
+                  The Main Types of Bitcoin Wallets
+                </a>
+              </li>
+              <li>
+                <a href="#hot-vs-cold-storage" className="hover:underline decoration-secondary">
+                  Hot vs. Cold Storage
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#custodial-vs-non-custodial"
+                  className="hover:underline decoration-secondary"
+                >
+                  Custodial vs. Non-Custodial
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#how-to-choose-a-wallet-type"
+                  className="hover:underline decoration-secondary"
+                >
+                  How to Choose a Wallet Type
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#common-beginner-mistakes"
+                  className="hover:underline decoration-secondary"
+                >
+                  Common Beginner Mistakes
+                </a>
+              </li>
+              <li>
+                <a href="#key-takeaways" className="hover:underline decoration-secondary">
+                  Key Takeaways
+                </a>
+              </li>
+              <li>
+                <a href="#faq" className="hover:underline decoration-secondary">
+                  Frequently Asked Questions
+                </a>
+              </li>
+            </ol>
+          </aside>
+
+          <H2 id="what-a-wallet-actually-stores">What a Wallet Actually Stores</H2>
+          <P>A bitcoin wallet manages a set of cryptographic keys:</P>
+          <ul className="list-disc pl-lg space-y-sm font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
+            <li>
+              A <strong>private key</strong> is a secret number that signs transactions. Whoever
+              holds it controls the funds it protects.
+            </li>
+            <li>
+              A <strong>public key</strong> is derived from the private key and is used to create
+              addresses that others can send bitcoin to.
+            </li>
+            <li>
+              A{" "}
+              <strong>
+                <Link
+                  to="/security/how-to-store-crypto-seed-phrase-safely"
+                  className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+                >
+                  seed phrase
+                </Link>
+              </strong>{" "}
+              is a list of words that can regenerate all of these keys. It's the backup you write
+              down.
+            </li>
+          </ul>
+          <P>
+            The blockchain stores the transaction history. The wallet is the tool that lets you
+            prove ownership and create valid transactions.
+          </P>
+
+          {/* Inline SVG Diagram */}
+          <div className="my-lg p-lg rounded-xl border border-outline-variant bg-surface-container-low flex flex-col items-center">
+            <svg viewBox="0 0 700 200" className="w-full max-w-lg h-auto">
+              <rect
+                x="20"
+                y="30"
+                width="280"
+                height="140"
+                rx="12"
+                fill="#1F2937"
+                stroke="#2563EB"
+                strokeWidth="3"
+              />
+              <text
+                x="160"
+                y="75"
+                textAnchor="middle"
+                fill="#FFFFFF"
+                fontFamily="Space Grotesk, sans-serif"
+                fontWeight="bold"
+                fontSize="18"
               >
-                {w.icon}
-              </div>
-              <div>
-                <h3 className="font-headline-sm text-headline-sm text-primary">{w.title}</h3>
-                <span className="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-wider">
-                  {w.subtitle}
-                </span>
-              </div>
-              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed flex-grow">
-                {w.body}
-              </p>
-              <p
-                className="font-label-caps text-[11px] uppercase tracking-wider font-semibold"
-                style={{ color: w.noteColor }}
+                Blockchain
+              </text>
+              <text
+                x="160"
+                y="110"
+                textAnchor="middle"
+                fill="#9CA3AF"
+                fontFamily="Inter, sans-serif"
+                fontSize="14"
               >
-                {w.note}
-              </p>
-            </div>
-          ))}
-        </div>
+                Holds transactions &
+              </text>
+              <text
+                x="160"
+                y="135"
+                textAnchor="middle"
+                fill="#9CA3AF"
+                fontFamily="Inter, sans-serif"
+                fontSize="14"
+              >
+                ledger state
+              </text>
 
-        <H2 id="which-to-use">3. Which Type Is Right for You?</H2>
-        <P>
-          There's no single right answer — most experienced Bitcoin holders use a combination. A
-          practical starting framework:
-        </P>
-        <ul className="list-disc pl-lg space-y-md font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
-          <li>
-            <strong>If you're new and just buying small amounts</strong> to learn with, an exchange
-            or reputable mobile hot wallet is reasonable. The trade-off is that you're trusting the
-            platform (exchange) or accepting more online exposure (hot wallet).
-          </li>
-          <li>
-            <strong>If you're holding a meaningful amount long-term</strong> and don't need to
-            access it regularly, a hardware cold wallet significantly reduces your exposure to
-            online threats. The trade-off is physical security of the device and{" "}
+              <path
+                d="M 320 100 L 375 100"
+                stroke="#0F9D58"
+                strokeWidth="4"
+                strokeDasharray="6 6"
+              />
+              <polygon points="380,100 370,93 370,107" fill="#0F9D58" />
+
+              <rect
+                x="400"
+                y="30"
+                width="280"
+                height="140"
+                rx="12"
+                fill="#1F2937"
+                stroke="#0F9D58"
+                strokeWidth="3"
+              />
+              <text
+                x="540"
+                y="75"
+                textAnchor="middle"
+                fill="#FFFFFF"
+                fontFamily="Space Grotesk, sans-serif"
+                fontWeight="bold"
+                fontSize="18"
+              >
+                Bitcoin Wallet
+              </text>
+              <text
+                x="540"
+                y="110"
+                textAnchor="middle"
+                fill="#9CA3AF"
+                fontFamily="Inter, sans-serif"
+                fontSize="14"
+              >
+                Holds private keys &
+              </text>
+              <text
+                x="540"
+                y="135"
+                textAnchor="middle"
+                fill="#9CA3AF"
+                fontFamily="Inter, sans-serif"
+                fontSize="14"
+              >
+                signs transactions
+              </text>
+            </svg>
+          </div>
+
+          <H2 id="the-main-types-of-bitcoin-wallets">The Main Types of Bitcoin Wallets</H2>
+          <div className="overflow-x-auto mb-md border rounded-xl border-[#0F9D58]/20 bg-surface-container-low">
+            <table className="w-full text-left font-body-md text-body-md text-on-surface min-w-[640px]">
+              <thead className="bg-[#0F9D58] text-white">
+                <tr>
+                  <th className="p-md font-semibold">Wallet type</th>
+                  <th className="p-md font-semibold border-l border-white/20">Where keys live</th>
+                  <th className="p-md font-semibold border-l border-white/20">
+                    Connected to internet?
+                  </th>
+                  <th className="p-md font-semibold border-l border-white/20">Convenience</th>
+                  <th className="p-md font-semibold border-l border-white/20">Main trade-off</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-outline-variant">
+                  <td className="p-md font-semibold bg-surface-container-lowest">
+                    Software (mobile or desktop)
+                  </td>
+                  <td className="p-md border-l border-outline-variant">On your device</td>
+                  <td className="p-md border-l border-outline-variant">Yes</td>
+                  <td className="p-md border-l border-outline-variant">High</td>
+                  <td className="p-md border-l border-outline-variant">
+                    Exposed to device malware
+                  </td>
+                </tr>
+                <tr className="border-b border-outline-variant">
+                  <td className="p-md font-semibold bg-surface-container-lowest">Hardware</td>
+                  <td className="p-md border-l border-outline-variant">Dedicated device</td>
+                  <td className="p-md border-l border-outline-variant">Only when you connect it</td>
+                  <td className="p-md border-l border-outline-variant">Medium</td>
+                  <td className="p-md border-l border-outline-variant">
+                    Requires purchase and careful setup
+                  </td>
+                </tr>
+                <tr className="border-b border-outline-variant">
+                  <td className="p-md font-semibold bg-surface-container-lowest">Paper</td>
+                  <td className="p-md border-l border-outline-variant">Printed on paper</td>
+                  <td className="p-md border-l border-outline-variant">No</td>
+                  <td className="p-md border-l border-outline-variant">Low</td>
+                  <td className="p-md border-l border-outline-variant">
+                    Fragile; easy to damage or lose
+                  </td>
+                </tr>
+                <tr className="border-b border-outline-variant">
+                  <td className="p-md font-semibold bg-surface-container-lowest">Web</td>
+                  <td className="p-md border-l border-outline-variant">Browser-based service</td>
+                  <td className="p-md border-l border-outline-variant">Yes</td>
+                  <td className="p-md border-l border-outline-variant">High</td>
+                  <td className="p-md border-l border-outline-variant">
+                    Depends heavily on the provider's security
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-md font-semibold bg-surface-container-lowest">Custodial</td>
+                  <td className="p-md border-l border-outline-variant">Held by a third party</td>
+                  <td className="p-md border-l border-outline-variant">Yes</td>
+                  <td className="p-md border-l border-outline-variant">Very high</td>
+                  <td className="p-md border-l border-outline-variant">You rely on that company</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <P>
+            Many people use more than one type: a small software wallet for everyday use and a
+            hardware or paper-based backup for longer-term holdings.
+          </P>
+
+          <H2 id="hot-vs-cold-storage">Hot vs. Cold Storage</H2>
+          <P>
+            Wallets are often described as "hot" or "cold." Hot wallets stay connected to the
+            internet, which makes them convenient for frequent transactions but more exposed to
+            online threats. Cold storage keeps keys offline, which reduces exposure and makes it
+            slower to move funds. Neither is automatically better. The right choice depends on how
+            often you spend and how much you're holding.
+          </P>
+
+          <H2 id="custodial-vs-non-custodial">Custodial vs. Non-Custodial</H2>
+          <P>
+            A non-custodial wallet gives you control of your keys. A{" "}
             <Link
-              to="/security/how-to-store-crypto-seed-phrase-safely"
+              to="/guides/exchange-or-personal-wallet-crypto-storage"
               className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
             >
-              safe storage of your seed phrase
+              custodial
+            </Link>{" "}
+            account means a third party holds the keys for you, and you have a claim on a balance
+            they track. For the full difference, see our guide on{" "}
+            <Link
+              to="/guides/not-your-keys-not-your-coins-meaning"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              not your keys, not your coins
             </Link>
             .
-          </li>
-          <li>
-            <strong>If you're actively trading or using Bitcoin regularly</strong>, a hot wallet
-            offers the convenience needed for frequent access, ideally with only the amount you're
-            actively using rather than your full holdings.
-          </li>
-        </ul>
-        <P>
-          For a more detailed comparison of the exchange vs. personal wallet decision, see our{" "}
-          <Link
-            to="/guides/exchange-or-personal-wallet-crypto-storage"
-            className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
-          >
-            exchange vs. personal wallet guide
-          </Link>
-          .
-        </P>
+          </P>
 
+          <H2 id="how-to-choose-a-wallet-type">How to Choose a Wallet Type</H2>
+          <P>Ask yourself:</P>
+          <ul className="list-disc pl-lg space-y-sm font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
+            <li>
+              <strong>How much am I holding?</strong> Larger balances usually justify more secure
+              storage.
+            </li>
+            <li>
+              <strong>How often will I spend?</strong> Frequent use favors convenience. Long-term
+              holding favors offline storage.
+            </li>
+            <li>
+              <strong>How comfortable am I managing backups?</strong> Non-custodial wallets make you
+              responsible for your seed phrase.
+            </li>
+            <li>
+              <strong>Can I test a restore?</strong> Confirm you can recover your wallet on another
+              device before relying on it. See{" "}
+              <Link
+                to="/security/how-to-store-crypto-seed-phrase-safely"
+                className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+              >
+                how to store your seed phrase safely
+              </Link>
+              .
+            </li>
+          </ul>
 
-        <H2 id="faq">Frequently Asked Questions</H2>
-        <div className="space-y-md mb-xl">
-          <FAQ faqs={faqs} />
-        </div>
+          <H2 id="common-beginner-mistakes">Common Beginner Mistakes</H2>
+          <ul className="list-disc pl-lg space-y-sm font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
+            <li>Losing the seed phrase and assuming the wallet app can recover it</li>
+            <li>Downloading a fake wallet app that imitates a real one</li>
+            <li>Sharing a private key or seed phrase with "support" staff</li>
+            <li>Confusing a wallet address with the wallet itself</li>
+          </ul>
 
-        <H2 id="conclusion">Conclusion</H2>
-        <P>
-          A Bitcoin wallet is fundamentally a key management tool. The type you choose — hot, cold,
-          or custodial — determines who controls those keys and how exposed they are to online
-          threats. Getting this decision right for your situation is one of the most practical
-          things you can do as a Bitcoin holder.
-        </P>
+          <H2 id="key-takeaways">Key Takeaways</H2>
+          <ul className="list-disc pl-lg space-y-md font-body-lg text-body-lg text-on-surface leading-relaxed mb-md">
+            <li>
+              A bitcoin wallet stores keys, not coins. Bitcoin itself lives on the blockchain.
+            </li>
+            <li>
+              Wallets come in several types, each balancing convenience against security
+              differently.
+            </li>
+            <li>Hot wallets are convenient but connected. Cold storage is offline and slower.</li>
+            <li>
+              Your seed phrase is the real backup. Protect it as carefully as the funds it controls.
+            </li>
+          </ul>
 
-        <H2 id="sources">Sources</H2>
-        <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
-          <li>
-            <a
-              href="https://bitcoin.org/en/choose-your-wallet"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
-            >
-              Bitcoin.org — Choose Your Wallet (overview of wallet types and recommendations)
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://en.bitcoin.it/wiki/Wallet"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
-            >
-              Bitcoin Wiki — Wallet (technical overview of how Bitcoin wallets work)
-            </a>
-          </li>
-        </ul>
+          <H2 id="faq">Frequently Asked Questions</H2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
+            <FAQ faqs={faqs} />
+          </div>
 
-        <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
-          <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
-            Financial Disclaimer
-          </h3>
-          <Disclaimer />
-        </div>
+          <div className="mt-xxl p-lg rounded-lg bg-surface-container-low border border-outline-variant">
+            <h3 className="font-label-caps text-label-caps text-secondary font-semibold mb-sm">
+              Financial Disclaimer
+            </h3>
+            <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              This article is for informational and educational purposes only. It is not financial
+              or investment advice. Wallet features and security practices change, so verify current
+              details with your provider.
+            </p>
+          </div>
 
-        <RelatedArticles currentUrl={URL} />
-              </article>
-</main>
+          <RelatedArticles currentUrl={URL} />
+        </article>
+      </main>
       <SiteFooter />
     </div>
   );
 }
-

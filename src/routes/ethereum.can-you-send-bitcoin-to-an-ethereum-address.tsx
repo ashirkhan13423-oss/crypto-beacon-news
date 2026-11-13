@@ -268,7 +268,14 @@ function ArticlePage() {
         <P>
           The fear of sending Bitcoin to an Ethereum address is understandable, but the mechanics
           work in your favour: the address formats are so different that most wallets block the
-          attempt before anything moves. The genuine risks — wrong-network exchange deposits and
+          attempt before anything moves. If your goal is to move funds from bitcoin into ether, see our complete guide on{" "}
+          <Link
+            to="/ethereum/how-to-convert-bitcoin-to-ethereum"
+            className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+          >
+            how to convert bitcoin to ethereum
+          </Link>
+          . The genuine risks — wrong-network exchange deposits and
           sends to valid-but-unintended addresses — are subtler, which is why understanding the
           distinction matters more than worrying about the headline scenario.
         </P>

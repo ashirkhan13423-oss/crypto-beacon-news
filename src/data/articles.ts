@@ -48,6 +48,10 @@ import hero_79 from "@/assets/phishing-padlock.webp";
 import hero_81 from "@/assets/security-smart-contract-approvals.webp";
 import hero_82 from "@/assets/spot-rug-pull.webp";
 import hero_83 from "@/assets/seed-phrase-vault.webp";
+import hero_scales from "@/assets/news-crypto-regulation-scales.svg";
+import hero_btc_wallet from "@/assets/bitcoin-wallet-key-node.svg";
+import hero_btc_eth from "@/assets/convert-btc-eth-chains.svg";
+import hero_address_marker from "@/assets/wallet-address-marker-key.svg";
 import hero_84 from "@/assets/security-verify-transaction.webp";
 import hero_88 from "@/assets/hacked-wallet-emergency.webp";
 import hero_trezor from "@/assets/trezor-phishing-breach.webp";
@@ -449,12 +453,12 @@ export const articles: Article[] = [
 },
   {
     to: "/bitcoin/what-is-a-bitcoin-wallet",
-    image: hero_12,
-    alt: "Illustration contrasting a hot software wallet and a cold hardware wallet for Bitcoin",
+    image: hero_btc_wallet,
+    alt: "Illustration of a secure key icon connected to a Bitcoin network node",
     tag: "Bitcoin · Article",
-    title: "What Is a Bitcoin Wallet? Hot, Cold, and Custodial Wallets Explained",
-    desc: "A clear guide to what a Bitcoin wallet actually is, how hot, cold, and custodial wallets differ, and how to choose the right type for your situation.",
-    publishedDate: "2026-08-06",
+    title: "What Is a Bitcoin Wallet? Types Explained",
+    desc: "A Bitcoin wallet doesn't hold bitcoin. It holds keys. Here's what wallets actually do, the main types, and how custody differs between each of them.",
+    publishedDate: "2026-11-13",
 },
   {
     to: "/bitcoin/what-is-bitcoin-mining",
@@ -1112,5 +1116,32 @@ export const articles: Article[] = [
     title: "What to Do If Your Crypto Wallet Is Hacked: Emergency Action Guide",
     desc: "If your crypto wallet has been compromised, every second counts. This emergency guide covers exactly what to do — in order — from the moment you realize something is wrong.",
     publishedDate: "2026-08-25",
-}
+},
+  {
+    to: "/news/should-cryptocurrency-be-regulated",
+    image: hero_scales,
+    alt: "Illustration of two balanced scales representing arguments on regulation",
+    tag: "News · Article",
+    title: "Should Crypto Be Regulated? The Arguments on Both Sides",
+    desc: "Should cryptocurrency be regulated? The strongest arguments for and against, presented neutrally, with no verdict on what governments should do now.",
+    publishedDate: "2026-11-13",
+  },
+  {
+    to: "/ethereum/how-to-convert-bitcoin-to-ethereum",
+    image: hero_btc_eth,
+    alt: "Illustration of two linked chain shapes representing a bitcoin-to-ethereum conversion",
+    tag: "Ethereum · Article",
+    title: "How to Convert Bitcoin to Ethereum: Methods Explained",
+    desc: "Want to turn Bitcoin into Ethereum? Compare the main conversion methods, including exchange swaps, wrapped tokens, and bridges, and the risks involved.",
+    publishedDate: "2026-11-13",
+  },
+  {
+    to: "/guides/what-is-a-wallet-address",
+    image: hero_address_marker,
+    alt: "Illustration of a public address marker beside a locked private key",
+    tag: "Guides · Article",
+    title: "What Is a Wallet Address? A Beginner's Guide",
+    desc: "A wallet address is where crypto is sent, not where it's stored. Learn what an address is, how it differs from a private key, and why it's safe to share.",
+    publishedDate: "2026-11-13",
+  },
 ];

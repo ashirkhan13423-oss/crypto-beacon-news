@@ -569,6 +569,14 @@ function ArticlePage() {
         <H2 id="sources">Sources</H2>
         <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
           <li>
+            <Link
+              to="/bitcoin/what-is-a-bitcoin-wallet"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              What Is a Bitcoin Wallet? Types, Custody, and How It Works
+            </Link>
+          </li>
+          <li>
             <a
               href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"
               target="_blank"

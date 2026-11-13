@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.cryptobeacon.site</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -121,6 +121,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.cryptobeacon.site/bitcoin/what-is-a-bitcoin-wallet</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.cryptobeacon.site/bitcoin/what-is-bitcoin-mining</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -231,6 +237,12 @@
   <url>
     <loc>https://www.cryptobeacon.site/ethereum/how-ethereum-works</loc>
     <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/ethereum/how-to-convert-bitcoin-to-ethereum</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -463,6 +475,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.cryptobeacon.site/guides/what-is-a-wallet-address</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.cryptobeacon.site/guides/what-is-aml-in-crypto</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -543,6 +561,12 @@
   <url>
     <loc>https://www.cryptobeacon.site/news/oil-above-100-bitcoin-crypto-cpi-impact</loc>
     <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cryptobeacon.site/news/should-cryptocurrency-be-regulated</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

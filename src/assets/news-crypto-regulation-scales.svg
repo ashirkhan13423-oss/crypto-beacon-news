@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 896" width="1536" height="896">
+  <rect width="1536" height="896" fill="#0A0B0D" />
+  <g transform="translate(768, 448)">
+    <!-- Base and Pillar -->
+    <path d="M -160 320 L 160 320" stroke="#2563EB" stroke-width="12" stroke-linecap="round" />
+    <path d="M -90 320 L -40 270 L 40 270 L 90 320 Z" fill="#1F2937" stroke="#2563EB" stroke-width="4" />
+    <path d="M -16 270 L -16 -120 L 16 -120 L 16 270 Z" fill="#1F2937" stroke="#64748B" stroke-width="4" />
+    <circle cx="0" cy="-140" r="32" fill="#0F9D58" />
+    <circle cx="0" cy="-140" r="14" fill="#0A0B0D" />
+    
+    <!-- Balance Beam (Level) -->
+    <path d="M -420 -140 L 420 -140" stroke="#0F9D58" stroke-width="14" stroke-linecap="round" />
+    
+    <!-- Left Scale (Supporters / Regulation) -->
+    <path d="M -380 -133 L -490 80" stroke="#64748B" stroke-width="4" stroke-linecap="round" />
+    <path d="M -380 -133 L -270 80" stroke="#64748B" stroke-width="4" stroke-linecap="round" />
+    <path d="M -520 80 Q -380 160 -240 80 Z" fill="#1F2937" stroke="#0F9D58" stroke-width="6" />
+    <circle cx="-380" cy="-140" r="12" fill="#2563EB" />
+    
+    <!-- Right Scale (Critics / Free Market) -->
+    <path d="M 380 -133 L 270 80" stroke="#64748B" stroke-width="4" stroke-linecap="round" />
+    <path d="M 380 -133 L 490 80" stroke="#64748B" stroke-width="4" stroke-linecap="round" />
+    <path d="M 240 80 Q 380 160 520 80 Z" fill="#1F2937" stroke="#2563EB" stroke-width="6" />
+    <circle cx="380" cy="-140" r="12" fill="#0F9D58" />
+  </g>
+</svg>
+

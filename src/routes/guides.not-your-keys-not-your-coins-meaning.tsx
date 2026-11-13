@@ -375,6 +375,24 @@ function ArticlePage() {
           <h2 className="font-headline-md text-headline-md text-primary mb-md">Related Reading</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
             <Link
+              to="/bitcoin/what-is-a-bitcoin-wallet"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Bitcoin</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                What Is a Bitcoin Wallet?
+              </h3>
+            </Link>
+            <Link
+              to="/guides/what-is-a-wallet-address"
+              className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
+            >
+              <span className="font-label-caps text-label-caps text-secondary">Guides</span>
+              <h3 className="font-headline-sm text-headline-sm text-primary mt-xs">
+                What Is a Wallet Address?
+              </h3>
+            </Link>
+            <Link
               to="/security/how-to-store-crypto-seed-phrase-safely"
               className="block p-lg rounded-lg border border-outline-variant hover:border-secondary transition-all"
             >

@@ -416,6 +416,14 @@ function ArticlePage() {
         <H2 id="sources">7. Primary Sources & References</H2>
         <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
           <li>
+            <Link
+              to="/news/should-cryptocurrency-be-regulated"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              Should Cryptocurrency Be Regulated? The Arguments on Both Sides
+            </Link>
+          </li>
+          <li>
             <a
               href="https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets.html"
               target="_blank"

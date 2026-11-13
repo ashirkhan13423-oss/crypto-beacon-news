@@ -60,7 +60,7 @@
     "fallbackDesc": "Home / Bitcoin / Buy Your First Bitcoin Safely Bitcoin How to Buy Your First Bitcoin Safely Taking the leap into cryptocurrency can feel..."
   },
   "/bitcoin/how-to-send-bitcoin-safely": {
-    "wordCount": 1032,
+    "wordCount": 1043,
     "readTime": "6 min read",
     "fallbackDesc": "Home / Bitcoin / Send Bitcoin Safely Bitcoin How to Send Bitcoin Safely Sending Bitcoin is simple in mechanics — copy an address, enter an amount,..."
   },
@@ -80,9 +80,9 @@
     "fallbackDesc": "Home / Bitcoin / What Is a Bitcoin Seed Phrase? Bitcoin · Essential What Is a Bitcoin Seed Phrase? The 12 or 24 words printed on a card when you set..."
   },
   "/bitcoin/what-is-a-bitcoin-wallet": {
-    "wordCount": 657,
+    "wordCount": 668,
     "readTime": "4 min read",
-    "fallbackDesc": "Home / Bitcoin / What Is a Bitcoin Wallet? Bitcoin What Is a Bitcoin Wallet? Hot, Cold, and Custodial Wallets Explained \"Bitcoin wallet \" is one of..."
+    "fallbackDesc": "Home / Bitcoin / What Is a Bitcoin Wallet? Bitcoin What Is a Bitcoin Wallet? Types, Custody, and How It Works The most common misunderstanding about..."
   },
   "/bitcoin/what-is-bitcoin-mining": {
     "wordCount": 787,
@@ -110,7 +110,7 @@
     "fallbackDesc": "Home / Bitcoin / Yields and Bitcoin Bitcoin Why Do Falling Bond Yields Affect Bitcoin's Price? To beginners, the relationship between traditional..."
   },
   "/ethereum/can-you-send-bitcoin-to-an-ethereum-address": {
-    "wordCount": 675,
+    "wordCount": 698,
     "readTime": "4 min read",
     "fallbackDesc": "Home / Ethereum / Bitcoin to Ethereum Address Ethereum Can You Send Bitcoin to an Ethereum Address? What Actually Happens The short answer is no —..."
   },
@@ -153,6 +153,11 @@
     "wordCount": 406,
     "readTime": "3 min read",
     "fallbackDesc": "Home / Ethereum / How Ethereum Works Ethereum · Explainer How Ethereum Works The EVM, account types, transaction lifecycle, validators, and block..."
+  },
+  "/ethereum/how-to-convert-bitcoin-to-ethereum": {
+    "wordCount": 736,
+    "readTime": "4 min read",
+    "fallbackDesc": "Home / Ethereum / How to Convert Bitcoin to Ethereum Ethereum How to Convert Bitcoin to Ethereum: Methods, Trade-Offs, and Risks Bitcoin and Ethereum"
   },
   "/ethereum/how-to-stake-eth-on-lido-vs-rocketpool": {
     "wordCount": 855,
@@ -295,7 +300,7 @@
     "fallbackDesc": "Home / Guides / Verifying Wallet Addresses Guides · Security How to Verify a Crypto Wallet Address Before Sending Funds One wrong character means..."
   },
   "/guides/not-your-keys-not-your-coins-meaning": {
-    "wordCount": 713,
+    "wordCount": 725,
     "readTime": "4 min read",
     "fallbackDesc": "Home / Guides / Not Your Keys, Not Your Coins Guides \"Not Your Keys, Not Your Coins\" — What It Actually Means If you've spent any time in crypto..."
   },
@@ -339,6 +344,11 @@
     "readTime": "4 min read",
     "fallbackDesc": "Home / Guides / What is a Stablecoin? Guides What is a Stablecoin? Cryptocurrencies like Bitcoin and Ethereum are famous for their extreme price..."
   },
+  "/guides/what-is-a-wallet-address": {
+    "wordCount": 647,
+    "readTime": "4 min read",
+    "fallbackDesc": "Home / Guides / What Is a Wallet Address? Guides What Is a Wallet Address? (And Why It's Safe to Share) A wallet address is the destination you give..."
+  },
   "/guides/what-is-aml-in-crypto": {
     "wordCount": 429,
     "readTime": "3 min read",
@@ -370,7 +380,7 @@
     "fallbackDesc": "Home / Guides / Why Regulation Matters Guides · Analysis Why Crypto Regulation Matters to Investors Many early crypto adopters view regulation as an..."
   },
   "/guides/why-governments-regulate-cryptocurrency": {
-    "wordCount": 880,
+    "wordCount": 889,
     "readTime": "5 min read",
     "fallbackDesc": "Home / Guides / Why Governments Regulate Crypto Policy & Legal Analysis Why Do Governments Regulate Cryptocurrency? Global Frameworks & User Impact..."
   },
@@ -413,6 +423,11 @@
     "wordCount": 1217,
     "readTime": "7 min read",
     "fallbackDesc": "Home / News / Oil Above $100: Bitcoin Impact News Oil Above $100 Ahead of U.S. CPI: What It Means for Bitcoin and Crypto Market conditions as of..."
+  },
+  "/news/should-cryptocurrency-be-regulated": {
+    "wordCount": 859,
+    "readTime": "5 min read",
+    "fallbackDesc": "Home / News / Should Cryptocurrency Be Regulated? News Should Cryptocurrency Be Regulated? The Arguments on Both Sides Few questions in crypto divide"
   },
   "/news/standard-chartered-uae-institutional-bitcoin-ether-trading": {
     "wordCount": 596,
@@ -515,7 +530,7 @@
     "fallbackDesc": "Home / Security / How to Revoke Smart Contract Approvals Security How to Revoke Smart Contract Approvals and Protect Your Crypto In the world of..."
   },
   "/security/how-to-revoke-token-approvals-metamask": {
-    "wordCount": 880,
+    "wordCount": 898,
     "readTime": "5 min read",
     "fallbackDesc": "Home / Security / Revoke Token Approvals Security How to Revoke Token Approvals on MetaMask (Step-by-Step) Every time you use a decentralized app —..."
   },
@@ -530,7 +545,7 @@
     "fallbackDesc": "Home / Security / Spotting a Rug Pull Security How to Spot a Crypto Rug Pull In the unregulated corners of decentralized finance ( DeFi ), creating a"
   },
   "/security/how-to-store-crypto-seed-phrase-safely": {
-    "wordCount": 1627,
+    "wordCount": 1638,
     "readTime": "9 min read",
     "fallbackDesc": "Home / Security / Seed Phrase Storage Security How to Store Your Crypto Seed Phrase Safely If you own cryptocurrency and hold it yourself rather than"
   },

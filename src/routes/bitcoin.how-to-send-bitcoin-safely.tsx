@@ -429,6 +429,14 @@ function ArticlePage() {
         <H2 id="sources">Sources</H2>
         <ul className="list-disc pl-lg space-y-sm font-body-md text-body-md text-on-surface leading-relaxed mb-md">
           <li>
+            <Link
+              to="/guides/what-is-a-wallet-address"
+              className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]"
+            >
+              What Is a Wallet Address? (And Why It's Safe to Share)
+            </Link>
+          </li>
+          <li>
             <a
               href="https://bitcoin.org/en/you-need-to-know"
               target="_blank"

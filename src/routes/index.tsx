@@ -4,7 +4,7 @@ import hero_6 from "@/assets/bitcoin-etf-effects.webp";
 import hero_7 from "@/assets/bitcoin-buy-safely.webp";
 import hero_8 from "@/assets/bitcoin-send-safely.webp";
 import hero_10 from "@/assets/bitcoin-node-explainer.webp";
-import hero_12 from "@/assets/bitcoin-what-is-a-wallet.webp";
+import hero_12 from "@/assets/bitcoin-wallet-key-node.svg";
 import hero_13 from "@/assets/bitcoin-what-is-mining.webp";
 import hero_14 from "@/assets/bitcoin-halving.webp";
 import hero_15 from "@/assets/bitcoin-bond-yields.webp";
@@ -413,10 +413,10 @@ const articles = [
   {
     to: "/bitcoin/what-is-a-bitcoin-wallet",
     image: hero_12,
-    alt: "Illustration contrasting a hot software wallet and a cold hardware wallet for Bitcoin",
+    alt: "Illustration of a secure key icon connected to a Bitcoin network node",
     tag: "Bitcoin · Article",
-    title: "What Is a Bitcoin Wallet? Hot, Cold, and Custodial Wallets Explained",
-    desc: "A clear guide to what a Bitcoin wallet actually is, how hot, cold, and custodial wallets differ, and how to choose the right type for your situation.",
+    title: "What Is a Bitcoin Wallet? Types Explained",
+    desc: "A Bitcoin wallet doesn't hold bitcoin. It holds keys. Here's what wallets actually do, the main types, and how custody differs between each of them.",
   },
   {
     to: "/bitcoin/what-is-bitcoin-mining",

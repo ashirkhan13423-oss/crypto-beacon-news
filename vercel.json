@@ -33,11 +33,6 @@
       "permanent": true
     },
     {
-      "source": "/bitcoin/what-is-a-bitcoin-wallet",
-      "destination": "/bitcoin/bitcoin-wallets-complete-guide",
-      "permanent": true
-    },
-    {
       "source": "/bitcoin/what-is-a-bitcoin-seed-phrase",
       "destination": "/security/what-is-a-seed-phrase",
       "permanent": true

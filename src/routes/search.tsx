@@ -23,7 +23,7 @@ export const Route = createFileRoute("/search")({
   component: SearchPage,
 });
 
-// All 12 articles for search index
+// Article search index
 const ARTICLES = [
   {
     title: "How to Send Bitcoin Safely",
@@ -33,9 +33,9 @@ const ARTICLES = [
     category: "Bitcoin",
   },
   {
-    title: "What Is a Bitcoin Wallet? Hot, Cold & Custodial Explained",
+    title: "What Is a Bitcoin Wallet? Types Explained",
     description:
-      "Understand how software, hardware, and exchange wallets manage Bitcoin private keys, and how to select the right storage option.",
+      "A Bitcoin wallet doesn't hold bitcoin. It holds keys. Here's what wallets actually do, the main types, and how custody differs between each of them.",
     path: "/bitcoin/what-is-a-bitcoin-wallet",
     category: "Bitcoin",
   },
@@ -122,6 +122,27 @@ const ARTICLES = [
       "Learn how to store your crypto seed phrase safely, avoid the mistakes that cause permanent loss, and choose the right backup method for you.",
     path: "/security/how-to-store-crypto-seed-phrase-safely",
     category: "Security",
+  },
+  {
+    title: "Should Crypto Be Regulated? The Arguments on Both Sides",
+    description:
+      "Should cryptocurrency be regulated? The strongest arguments for and against, presented neutrally, with no verdict on what governments should do now.",
+    path: "/news/should-cryptocurrency-be-regulated",
+    category: "News",
+  },
+  {
+    title: "How to Convert Bitcoin to Ethereum: Methods Explained",
+    description:
+      "Want to turn Bitcoin into Ethereum? Compare the main conversion methods, including exchange swaps, wrapped tokens, and bridges, and the risks involved.",
+    path: "/ethereum/how-to-convert-bitcoin-to-ethereum",
+    category: "Ethereum",
+  },
+  {
+    title: "What Is a Wallet Address? A Beginner's Guide",
+    description:
+      "A wallet address is where crypto is sent, not where it's stored. Learn what an address is, how it differs from a private key, and why it's safe to share.",
+    path: "/guides/what-is-a-wallet-address",
+    category: "Guides",
   },
 ];
 

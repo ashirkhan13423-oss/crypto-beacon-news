@@ -67,6 +67,7 @@ import { Route as EthereumEthereumVsBitcoinRouteImport } from './routes/ethereum
 import { Route as EthereumEthereumWalletsExplainedRouteImport } from './routes/ethereum.ethereum-wallets-explained'
 import { Route as EthereumHowDoesEthereumStakingWorkRouteImport } from './routes/ethereum.how-does-ethereum-staking-work'
 import { Route as EthereumHowEthereumWorksRouteImport } from './routes/ethereum.how-ethereum-works'
+import { Route as EthereumHowToConvertBitcoinToEthereumRouteImport } from './routes/ethereum.how-to-convert-bitcoin-to-ethereum'
 import { Route as EthereumHowToStakeEthOnLidoVsRocketpoolRouteImport } from './routes/ethereum.how-to-stake-eth-on-lido-vs-rocketpool'
 import { Route as EthereumProofOfStakeExplainedRouteImport } from './routes/ethereum.proof-of-stake-explained'
 import { Route as EthereumWhatAreGasFeesHowToSaveRouteImport } from './routes/ethereum.what-are-gas-fees-how-to-save'
@@ -106,6 +107,7 @@ import { Route as GuidesWhatIsAPrivateKeyRouteImport } from './routes/guides.wha
 import { Route as GuidesWhatIsAShortSqueezeCryptoExplainedRouteImport } from './routes/guides.what-is-a-short-squeeze-crypto-explained'
 import { Route as GuidesWhatIsASmartContractExplainedRouteImport } from './routes/guides.what-is-a-smart-contract-explained'
 import { Route as GuidesWhatIsAStablecoinRouteImport } from './routes/guides.what-is-a-stablecoin'
+import { Route as GuidesWhatIsAWalletAddressRouteImport } from './routes/guides.what-is-a-wallet-address'
 import { Route as GuidesWhatIsAmlInCryptoRouteImport } from './routes/guides.what-is-aml-in-crypto'
 import { Route as GuidesWhatIsGasFeeOptimizationWhenToSendRouteImport } from './routes/guides.what-is-gas-fee-optimization-when-to-send'
 import { Route as GuidesWhatIsKycInCryptocurrencyRouteImport } from './routes/guides.what-is-kyc-in-cryptocurrency'
@@ -123,6 +125,7 @@ import { Route as NewsEthereumMergeTwoYearsLaterRouteImport } from './routes/new
 import { Route as NewsLiquidNetwork3400BtcReturned320MillionIncidentRouteImport } from './routes/news.liquid-network-3400-btc-returned-320-million-incident'
 import { Route as NewsLiquidNetworkHack4000BtcWithdrawalRouteImport } from './routes/news.liquid-network-hack-4000-btc-withdrawal'
 import { Route as NewsOilAbove100BitcoinCryptoCpiImpactRouteImport } from './routes/news.oil-above-100-bitcoin-crypto-cpi-impact'
+import { Route as NewsShouldCryptocurrencyBeRegulatedRouteImport } from './routes/news.should-cryptocurrency-be-regulated'
 import { Route as NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRouteImport } from './routes/news.standard-chartered-uae-institutional-bitcoin-ether-trading'
 import { Route as NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRouteImport } from './routes/news.symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint'
 import { Route as NewsTrezorBrevoPhishingEmailBreach2026RouteImport } from './routes/news.trezor-brevo-phishing-email-breach-2026'
@@ -480,6 +483,12 @@ const EthereumHowEthereumWorksRoute =
     path: '/how-ethereum-works',
     getParentRoute: () => EthereumRoute,
   } as any)
+const EthereumHowToConvertBitcoinToEthereumRoute =
+  EthereumHowToConvertBitcoinToEthereumRouteImport.update({
+    id: '/how-to-convert-bitcoin-to-ethereum',
+    path: '/how-to-convert-bitcoin-to-ethereum',
+    getParentRoute: () => EthereumRoute,
+  } as any)
 const EthereumHowToStakeEthOnLidoVsRocketpoolRoute =
   EthereumHowToStakeEthOnLidoVsRocketpoolRouteImport.update({
     id: '/how-to-stake-eth-on-lido-vs-rocketpool',
@@ -709,6 +718,12 @@ const GuidesWhatIsAStablecoinRoute = GuidesWhatIsAStablecoinRouteImport.update({
   path: '/what-is-a-stablecoin',
   getParentRoute: () => GuidesRoute,
 } as any)
+const GuidesWhatIsAWalletAddressRoute =
+  GuidesWhatIsAWalletAddressRouteImport.update({
+    id: '/what-is-a-wallet-address',
+    path: '/what-is-a-wallet-address',
+    getParentRoute: () => GuidesRoute,
+  } as any)
 const GuidesWhatIsAmlInCryptoRoute = GuidesWhatIsAmlInCryptoRouteImport.update({
   id: '/what-is-aml-in-crypto',
   path: '/what-is-aml-in-crypto',
@@ -806,6 +821,12 @@ const NewsOilAbove100BitcoinCryptoCpiImpactRoute =
   NewsOilAbove100BitcoinCryptoCpiImpactRouteImport.update({
     id: '/oil-above-100-bitcoin-crypto-cpi-impact',
     path: '/oil-above-100-bitcoin-crypto-cpi-impact',
+    getParentRoute: () => NewsRoute,
+  } as any)
+const NewsShouldCryptocurrencyBeRegulatedRoute =
+  NewsShouldCryptocurrencyBeRegulatedRouteImport.update({
+    id: '/should-cryptocurrency-be-regulated',
+    path: '/should-cryptocurrency-be-regulated',
     getParentRoute: () => NewsRoute,
   } as any)
 const NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute =
@@ -1077,6 +1098,7 @@ export interface FileRoutesByFullPath {
   '/ethereum/ethereum-wallets-explained': typeof EthereumEthereumWalletsExplainedRoute
   '/ethereum/how-does-ethereum-staking-work': typeof EthereumHowDoesEthereumStakingWorkRoute
   '/ethereum/how-ethereum-works': typeof EthereumHowEthereumWorksRoute
+  '/ethereum/how-to-convert-bitcoin-to-ethereum': typeof EthereumHowToConvertBitcoinToEthereumRoute
   '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool': typeof EthereumHowToStakeEthOnLidoVsRocketpoolRoute
   '/ethereum/proof-of-stake-explained': typeof EthereumProofOfStakeExplainedRoute
   '/ethereum/what-are-gas-fees-how-to-save': typeof EthereumWhatAreGasFeesHowToSaveRoute
@@ -1114,6 +1136,7 @@ export interface FileRoutesByFullPath {
   '/guides/what-is-a-short-squeeze-crypto-explained': typeof GuidesWhatIsAShortSqueezeCryptoExplainedRoute
   '/guides/what-is-a-smart-contract-explained': typeof GuidesWhatIsASmartContractExplainedRoute
   '/guides/what-is-a-stablecoin': typeof GuidesWhatIsAStablecoinRoute
+  '/guides/what-is-a-wallet-address': typeof GuidesWhatIsAWalletAddressRoute
   '/guides/what-is-aml-in-crypto': typeof GuidesWhatIsAmlInCryptoRoute
   '/guides/what-is-gas-fee-optimization-when-to-send': typeof GuidesWhatIsGasFeeOptimizationWhenToSendRoute
   '/guides/what-is-kyc-in-cryptocurrency': typeof GuidesWhatIsKycInCryptocurrencyRoute
@@ -1129,6 +1152,7 @@ export interface FileRoutesByFullPath {
   '/news/liquid-network-3400-btc-returned-320-million-incident': typeof NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute
   '/news/liquid-network-hack-4000-btc-withdrawal': typeof NewsLiquidNetworkHack4000BtcWithdrawalRoute
   '/news/oil-above-100-bitcoin-crypto-cpi-impact': typeof NewsOilAbove100BitcoinCryptoCpiImpactRoute
+  '/news/should-cryptocurrency-be-regulated': typeof NewsShouldCryptocurrencyBeRegulatedRoute
   '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
   '/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint': typeof NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRoute
   '/news/trezor-brevo-phishing-email-breach-2026': typeof NewsTrezorBrevoPhishingEmailBreach2026Route
@@ -1218,6 +1242,7 @@ export interface FileRoutesByTo {
   '/ethereum/ethereum-wallets-explained': typeof EthereumEthereumWalletsExplainedRoute
   '/ethereum/how-does-ethereum-staking-work': typeof EthereumHowDoesEthereumStakingWorkRoute
   '/ethereum/how-ethereum-works': typeof EthereumHowEthereumWorksRoute
+  '/ethereum/how-to-convert-bitcoin-to-ethereum': typeof EthereumHowToConvertBitcoinToEthereumRoute
   '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool': typeof EthereumHowToStakeEthOnLidoVsRocketpoolRoute
   '/ethereum/proof-of-stake-explained': typeof EthereumProofOfStakeExplainedRoute
   '/ethereum/what-are-gas-fees-how-to-save': typeof EthereumWhatAreGasFeesHowToSaveRoute
@@ -1255,6 +1280,7 @@ export interface FileRoutesByTo {
   '/guides/what-is-a-short-squeeze-crypto-explained': typeof GuidesWhatIsAShortSqueezeCryptoExplainedRoute
   '/guides/what-is-a-smart-contract-explained': typeof GuidesWhatIsASmartContractExplainedRoute
   '/guides/what-is-a-stablecoin': typeof GuidesWhatIsAStablecoinRoute
+  '/guides/what-is-a-wallet-address': typeof GuidesWhatIsAWalletAddressRoute
   '/guides/what-is-aml-in-crypto': typeof GuidesWhatIsAmlInCryptoRoute
   '/guides/what-is-gas-fee-optimization-when-to-send': typeof GuidesWhatIsGasFeeOptimizationWhenToSendRoute
   '/guides/what-is-kyc-in-cryptocurrency': typeof GuidesWhatIsKycInCryptocurrencyRoute
@@ -1270,6 +1296,7 @@ export interface FileRoutesByTo {
   '/news/liquid-network-3400-btc-returned-320-million-incident': typeof NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute
   '/news/liquid-network-hack-4000-btc-withdrawal': typeof NewsLiquidNetworkHack4000BtcWithdrawalRoute
   '/news/oil-above-100-bitcoin-crypto-cpi-impact': typeof NewsOilAbove100BitcoinCryptoCpiImpactRoute
+  '/news/should-cryptocurrency-be-regulated': typeof NewsShouldCryptocurrencyBeRegulatedRoute
   '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
   '/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint': typeof NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRoute
   '/news/trezor-brevo-phishing-email-breach-2026': typeof NewsTrezorBrevoPhishingEmailBreach2026Route
@@ -1371,6 +1398,7 @@ export interface FileRoutesById {
   '/ethereum/ethereum-wallets-explained': typeof EthereumEthereumWalletsExplainedRoute
   '/ethereum/how-does-ethereum-staking-work': typeof EthereumHowDoesEthereumStakingWorkRoute
   '/ethereum/how-ethereum-works': typeof EthereumHowEthereumWorksRoute
+  '/ethereum/how-to-convert-bitcoin-to-ethereum': typeof EthereumHowToConvertBitcoinToEthereumRoute
   '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool': typeof EthereumHowToStakeEthOnLidoVsRocketpoolRoute
   '/ethereum/proof-of-stake-explained': typeof EthereumProofOfStakeExplainedRoute
   '/ethereum/what-are-gas-fees-how-to-save': typeof EthereumWhatAreGasFeesHowToSaveRoute
@@ -1408,6 +1436,7 @@ export interface FileRoutesById {
   '/guides/what-is-a-short-squeeze-crypto-explained': typeof GuidesWhatIsAShortSqueezeCryptoExplainedRoute
   '/guides/what-is-a-smart-contract-explained': typeof GuidesWhatIsASmartContractExplainedRoute
   '/guides/what-is-a-stablecoin': typeof GuidesWhatIsAStablecoinRoute
+  '/guides/what-is-a-wallet-address': typeof GuidesWhatIsAWalletAddressRoute
   '/guides/what-is-aml-in-crypto': typeof GuidesWhatIsAmlInCryptoRoute
   '/guides/what-is-gas-fee-optimization-when-to-send': typeof GuidesWhatIsGasFeeOptimizationWhenToSendRoute
   '/guides/what-is-kyc-in-cryptocurrency': typeof GuidesWhatIsKycInCryptocurrencyRoute
@@ -1423,6 +1452,7 @@ export interface FileRoutesById {
   '/news/liquid-network-3400-btc-returned-320-million-incident': typeof NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute
   '/news/liquid-network-hack-4000-btc-withdrawal': typeof NewsLiquidNetworkHack4000BtcWithdrawalRoute
   '/news/oil-above-100-bitcoin-crypto-cpi-impact': typeof NewsOilAbove100BitcoinCryptoCpiImpactRoute
+  '/news/should-cryptocurrency-be-regulated': typeof NewsShouldCryptocurrencyBeRegulatedRoute
   '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
   '/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint': typeof NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRoute
   '/news/trezor-brevo-phishing-email-breach-2026': typeof NewsTrezorBrevoPhishingEmailBreach2026Route
@@ -1525,6 +1555,7 @@ export interface FileRouteTypes {
     | '/ethereum/ethereum-wallets-explained'
     | '/ethereum/how-does-ethereum-staking-work'
     | '/ethereum/how-ethereum-works'
+    | '/ethereum/how-to-convert-bitcoin-to-ethereum'
     | '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool'
     | '/ethereum/proof-of-stake-explained'
     | '/ethereum/what-are-gas-fees-how-to-save'
@@ -1562,6 +1593,7 @@ export interface FileRouteTypes {
     | '/guides/what-is-a-short-squeeze-crypto-explained'
     | '/guides/what-is-a-smart-contract-explained'
     | '/guides/what-is-a-stablecoin'
+    | '/guides/what-is-a-wallet-address'
     | '/guides/what-is-aml-in-crypto'
     | '/guides/what-is-gas-fee-optimization-when-to-send'
     | '/guides/what-is-kyc-in-cryptocurrency'
@@ -1577,6 +1609,7 @@ export interface FileRouteTypes {
     | '/news/liquid-network-3400-btc-returned-320-million-incident'
     | '/news/liquid-network-hack-4000-btc-withdrawal'
     | '/news/oil-above-100-bitcoin-crypto-cpi-impact'
+    | '/news/should-cryptocurrency-be-regulated'
     | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
     | '/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint'
     | '/news/trezor-brevo-phishing-email-breach-2026'
@@ -1666,6 +1699,7 @@ export interface FileRouteTypes {
     | '/ethereum/ethereum-wallets-explained'
     | '/ethereum/how-does-ethereum-staking-work'
     | '/ethereum/how-ethereum-works'
+    | '/ethereum/how-to-convert-bitcoin-to-ethereum'
     | '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool'
     | '/ethereum/proof-of-stake-explained'
     | '/ethereum/what-are-gas-fees-how-to-save'
@@ -1703,6 +1737,7 @@ export interface FileRouteTypes {
     | '/guides/what-is-a-short-squeeze-crypto-explained'
     | '/guides/what-is-a-smart-contract-explained'
     | '/guides/what-is-a-stablecoin'
+    | '/guides/what-is-a-wallet-address'
     | '/guides/what-is-aml-in-crypto'
     | '/guides/what-is-gas-fee-optimization-when-to-send'
     | '/guides/what-is-kyc-in-cryptocurrency'
@@ -1718,6 +1753,7 @@ export interface FileRouteTypes {
     | '/news/liquid-network-3400-btc-returned-320-million-incident'
     | '/news/liquid-network-hack-4000-btc-withdrawal'
     | '/news/oil-above-100-bitcoin-crypto-cpi-impact'
+    | '/news/should-cryptocurrency-be-regulated'
     | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
     | '/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint'
     | '/news/trezor-brevo-phishing-email-breach-2026'
@@ -1818,6 +1854,7 @@ export interface FileRouteTypes {
     | '/ethereum/ethereum-wallets-explained'
     | '/ethereum/how-does-ethereum-staking-work'
     | '/ethereum/how-ethereum-works'
+    | '/ethereum/how-to-convert-bitcoin-to-ethereum'
     | '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool'
     | '/ethereum/proof-of-stake-explained'
     | '/ethereum/what-are-gas-fees-how-to-save'
@@ -1855,6 +1892,7 @@ export interface FileRouteTypes {
     | '/guides/what-is-a-short-squeeze-crypto-explained'
     | '/guides/what-is-a-smart-contract-explained'
     | '/guides/what-is-a-stablecoin'
+    | '/guides/what-is-a-wallet-address'
     | '/guides/what-is-aml-in-crypto'
     | '/guides/what-is-gas-fee-optimization-when-to-send'
     | '/guides/what-is-kyc-in-cryptocurrency'
@@ -1870,6 +1908,7 @@ export interface FileRouteTypes {
     | '/news/liquid-network-3400-btc-returned-320-million-incident'
     | '/news/liquid-network-hack-4000-btc-withdrawal'
     | '/news/oil-above-100-bitcoin-crypto-cpi-impact'
+    | '/news/should-cryptocurrency-be-regulated'
     | '/news/standard-chartered-uae-institutional-bitcoin-ether-trading'
     | '/news/symbiosis-bitcoin-bridge-exploit-sybtc-unbacked-mint'
     | '/news/trezor-brevo-phishing-email-breach-2026'
@@ -2350,6 +2389,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EthereumHowEthereumWorksRouteImport
       parentRoute: typeof EthereumRoute
     }
+    '/ethereum/how-to-convert-bitcoin-to-ethereum': {
+      id: '/ethereum/how-to-convert-bitcoin-to-ethereum'
+      path: '/how-to-convert-bitcoin-to-ethereum'
+      fullPath: '/ethereum/how-to-convert-bitcoin-to-ethereum'
+      preLoaderRoute: typeof EthereumHowToConvertBitcoinToEthereumRouteImport
+      parentRoute: typeof EthereumRoute
+    }
     '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool': {
       id: '/ethereum/how-to-stake-eth-on-lido-vs-rocketpool'
       path: '/how-to-stake-eth-on-lido-vs-rocketpool'
@@ -2623,6 +2669,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuidesWhatIsAStablecoinRouteImport
       parentRoute: typeof GuidesRoute
     }
+    '/guides/what-is-a-wallet-address': {
+      id: '/guides/what-is-a-wallet-address'
+      path: '/what-is-a-wallet-address'
+      fullPath: '/guides/what-is-a-wallet-address'
+      preLoaderRoute: typeof GuidesWhatIsAWalletAddressRouteImport
+      parentRoute: typeof GuidesRoute
+    }
     '/guides/what-is-aml-in-crypto': {
       id: '/guides/what-is-aml-in-crypto'
       path: '/what-is-aml-in-crypto'
@@ -2740,6 +2793,13 @@ declare module '@tanstack/react-router' {
       path: '/oil-above-100-bitcoin-crypto-cpi-impact'
       fullPath: '/news/oil-above-100-bitcoin-crypto-cpi-impact'
       preLoaderRoute: typeof NewsOilAbove100BitcoinCryptoCpiImpactRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/should-cryptocurrency-be-regulated': {
+      id: '/news/should-cryptocurrency-be-regulated'
+      path: '/should-cryptocurrency-be-regulated'
+      fullPath: '/news/should-cryptocurrency-be-regulated'
+      preLoaderRoute: typeof NewsShouldCryptocurrencyBeRegulatedRouteImport
       parentRoute: typeof NewsRoute
     }
     '/news/standard-chartered-uae-institutional-bitcoin-ether-trading': {
@@ -3103,6 +3163,7 @@ interface EthereumRouteChildren {
   EthereumEthereumWalletsExplainedRoute: typeof EthereumEthereumWalletsExplainedRoute
   EthereumHowDoesEthereumStakingWorkRoute: typeof EthereumHowDoesEthereumStakingWorkRoute
   EthereumHowEthereumWorksRoute: typeof EthereumHowEthereumWorksRoute
+  EthereumHowToConvertBitcoinToEthereumRoute: typeof EthereumHowToConvertBitcoinToEthereumRoute
   EthereumHowToStakeEthOnLidoVsRocketpoolRoute: typeof EthereumHowToStakeEthOnLidoVsRocketpoolRoute
   EthereumProofOfStakeExplainedRoute: typeof EthereumProofOfStakeExplainedRoute
   EthereumWhatAreGasFeesHowToSaveRoute: typeof EthereumWhatAreGasFeesHowToSaveRoute
@@ -3130,6 +3191,8 @@ const EthereumRouteChildren: EthereumRouteChildren = {
   EthereumHowDoesEthereumStakingWorkRoute:
     EthereumHowDoesEthereumStakingWorkRoute,
   EthereumHowEthereumWorksRoute: EthereumHowEthereumWorksRoute,
+  EthereumHowToConvertBitcoinToEthereumRoute:
+    EthereumHowToConvertBitcoinToEthereumRoute,
   EthereumHowToStakeEthOnLidoVsRocketpoolRoute:
     EthereumHowToStakeEthOnLidoVsRocketpoolRoute,
   EthereumProofOfStakeExplainedRoute: EthereumProofOfStakeExplainedRoute,
@@ -3189,6 +3252,7 @@ interface GuidesRouteChildren {
   GuidesWhatIsAShortSqueezeCryptoExplainedRoute: typeof GuidesWhatIsAShortSqueezeCryptoExplainedRoute
   GuidesWhatIsASmartContractExplainedRoute: typeof GuidesWhatIsASmartContractExplainedRoute
   GuidesWhatIsAStablecoinRoute: typeof GuidesWhatIsAStablecoinRoute
+  GuidesWhatIsAWalletAddressRoute: typeof GuidesWhatIsAWalletAddressRoute
   GuidesWhatIsAmlInCryptoRoute: typeof GuidesWhatIsAmlInCryptoRoute
   GuidesWhatIsGasFeeOptimizationWhenToSendRoute: typeof GuidesWhatIsGasFeeOptimizationWhenToSendRoute
   GuidesWhatIsKycInCryptocurrencyRoute: typeof GuidesWhatIsKycInCryptocurrencyRoute
@@ -3251,6 +3315,7 @@ const GuidesRouteChildren: GuidesRouteChildren = {
   GuidesWhatIsASmartContractExplainedRoute:
     GuidesWhatIsASmartContractExplainedRoute,
   GuidesWhatIsAStablecoinRoute: GuidesWhatIsAStablecoinRoute,
+  GuidesWhatIsAWalletAddressRoute: GuidesWhatIsAWalletAddressRoute,
   GuidesWhatIsAmlInCryptoRoute: GuidesWhatIsAmlInCryptoRoute,
   GuidesWhatIsGasFeeOptimizationWhenToSendRoute:
     GuidesWhatIsGasFeeOptimizationWhenToSendRoute,
@@ -3287,6 +3352,7 @@ interface NewsRouteChildren {
   NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute: typeof NewsLiquidNetwork3400BtcReturned320MillionIncidentRoute
   NewsLiquidNetworkHack4000BtcWithdrawalRoute: typeof NewsLiquidNetworkHack4000BtcWithdrawalRoute
   NewsOilAbove100BitcoinCryptoCpiImpactRoute: typeof NewsOilAbove100BitcoinCryptoCpiImpactRoute
+  NewsShouldCryptocurrencyBeRegulatedRoute: typeof NewsShouldCryptocurrencyBeRegulatedRoute
   NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute: typeof NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute
   NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRoute: typeof NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRoute
   NewsTrezorBrevoPhishingEmailBreach2026Route: typeof NewsTrezorBrevoPhishingEmailBreach2026Route
@@ -3311,6 +3377,8 @@ const NewsRouteChildren: NewsRouteChildren = {
     NewsLiquidNetworkHack4000BtcWithdrawalRoute,
   NewsOilAbove100BitcoinCryptoCpiImpactRoute:
     NewsOilAbove100BitcoinCryptoCpiImpactRoute,
+  NewsShouldCryptocurrencyBeRegulatedRoute:
+    NewsShouldCryptocurrencyBeRegulatedRoute,
   NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute:
     NewsStandardCharteredUaeInstitutionalBitcoinEtherTradingRoute,
   NewsSymbiosisBitcoinBridgeExploitSybtcUnbackedMintRoute:
@@ -3450,13 +3518,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

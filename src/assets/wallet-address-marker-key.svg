@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 896" width="1536" height="896">
+  <rect width="1536" height="896" fill="#0A0B0D" />
+  <g transform="translate(768, 448)">
+    <!-- Left side: Public Address Destination Marker -->
+    <g transform="translate(-260, 0)">
+      <circle cx="0" cy="-40" r="120" fill="#111827" stroke="#2563EB" stroke-width="8" />
+      <!-- Location marker pin icon -->
+      <path d="M 0 -130 C -45 -130 -80 -95 -80 -50 C -80 15 0 80 0 80 C 0 80 80 15 80 -50 C 80 -95 45 -130 0 -130 Z" fill="#2563EB" />
+      <circle cx="0" cy="-50" r="32" fill="#FFFFFF" />
+      <rect x="-100" y="120" width="200" height="28" rx="8" fill="#1F2937" stroke="#64748B" stroke-width="4" />
+      <circle cx="-60" cy="134" r="5" fill="#2563EB" />
+      <circle cx="-30" cy="134" r="5" fill="#2563EB" />
+      <circle cx="0" cy="134" r="5" fill="#2563EB" />
+      <circle cx="30" cy="134" r="5" fill="#2563EB" />
+      <circle cx="60" cy="134" r="5" fill="#2563EB" />
+    </g>
+
+    <!-- One-way arrow from private to public (mathematical derivation) -->
+    <g transform="translate(0, 0)">
+      <path d="M 120 0 L -80 0" stroke="#64748B" stroke-width="8" stroke-dasharray="12 12" />
+      <polygon points="-80,-16 -115,0 -80,16" fill="#64748B" />
+    </g>
+
+    <!-- Right side: Locked Private Key (Vault/Lock) -->
+    <g transform="translate(260, 0)">
+      <circle cx="0" cy="-40" r="120" fill="#111827" stroke="#0F9D58" stroke-width="8" />
+      <!-- Padlock body -->
+      <rect x="-65" y="-30" width="130" height="110" rx="20" fill="#0F9D58" />
+      <!-- Padlock shackle -->
+      <path d="M -42 -30 L -42 -75 C -42 -105 42 -105 42 -75 L 42 -30" fill="none" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" />
+      <!-- Keyhole -->
+      <circle cx="0" cy="15" r="14" fill="#0A0B0D" />
+      <polygon points="-6,15 6,15 10,48 -10,48" fill="#0A0B0D" />
+    </g>
+  </g>
+</svg>
+

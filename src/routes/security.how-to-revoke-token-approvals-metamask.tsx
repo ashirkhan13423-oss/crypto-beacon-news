@@ -225,7 +225,7 @@ function ArticlePage() {
             <li>A token approval gives a smart contract permission to move a specific token from your wallet — sometimes indefinitely, if set to "unlimited."</li>
             <li>Old approvals remain a risk even long after you've stopped using the dApp, since a later compromise of that contract can still use your standing permission.</li>
             <li>Revoking sets the approval back to zero and costs a small network fee, but doesn't touch your existing token balance.</li>
-            <li>A quarterly review habit, or a check after using any new dApp, is a reasonable baseline.</li>
+            <li>A quarterly review habit, or a check after using any new dApp, is a reasonable baseline. When managing multi-chain positions or decentralized trades, see our guide on <Link to="/ethereum/how-to-convert-bitcoin-to-ethereum" className="text-[#2563EB] underline decoration-[#2563EB]/40 hover:decoration-[#2563EB]">how to convert bitcoin to ethereum</Link>.</li>
           </ul>
 
 
